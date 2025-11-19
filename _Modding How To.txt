@@ -1,0 +1,1391 @@
+ ========================
+
+ Welcome to ATS modding.
+ 
+ This is Luke AP, I'll try to walk you through how a mod works and what to do.
+ You'll need these programs installed before you do anything:
+ 
+ 1. Blender. For creating 3D models.
+ 2. Visual Studio Code (it's lightweight) or any IDE with LUA support to make editing your lua files easier and help you spot mistakes.
+     - In Visual Studio Code, select your mod folder and it will load in all the files to the Explorer tab.
+
+ ========================
+  
+ What can a mod do?
+ 
+ Mods can add factions, ships, structures, missiles, bullets, weapons and stuff to the game.
+ This is rather simple "character sheet" modding, you don't have to write any code. Just copy files and edit the parts you care about.
+ However do remember to checkout the official Discord server for updated documentation or just to get help. I have tried to cover everything, but it's very complicated.
+ 
+ In the future (2025/04/22) mods will be able to add audio, portraits, and other things to the game. I just don't have the time for it at the moment.
+ 
+ ========================
+ 
+ Advice to novice modders:
+ 
+ Have fun!!!
+ 
+ Start small, do not make the same mistake as many others and try to make the perfect most awesome mod.
+ Everyone, myself included, is first and foremost an idiot on anything he hasn't done before. The only way to make "good" mods is to practice on small things and get good at specific things first.
+ Making and fixing mistakes is necessary to learning. If you have a tiny project, you can learn quickly and overhaul quickly. If you have a massive project, you will learn slowly, overhaul slowly, and burn out long before it is complete.
+ 
+ Opinion-seeking advice; don't show off your mod until you have something to show off. There's not much that can be said about a white square :)P . But don't wait until your done. If you're done it's more effort to go back and make changes. Especially from a balance perspective. Seek out other people's opinions once you have something that is far enough along to be opinionable. And be nice to those that take the time to comment, because very few will.
+ 
+ Finally, compress your mod folder (zip, 7zip, winrar, etc) then please feel free to make a forum post in the Discord server with your zipped mod file. Depending on how large it is you may need to use a file hosting website.
+ 
+ ========================
+ 
+	MAKING A FACTION
+ 
+ A faction is the container for all your ships, and stuff.
+ - - - - - - - - - - - -
+ 
+ Setup
+ 
+ First ensure that your mod folder has all these files:
+ 1. .manifest.lua
+ 2. .faction.lua
+ 3. .unit.lua
+ 4. .weapons.lua
+ If you are missing any of these, go get it from the ATS official Mod Example "The Glave Fleet" on our Discord server. (If that isn't still around, modders of the far future, you'll just have to go hunting I'm sorry)
+ 
+ These files provide a full template for each of the things we're going to be adding to the game.
+ 
+ - - - - - - - - - - - -
+ 
+ All files have an explanation inside themselves for what they do, but here is a summary.
+ 
+ - - - - - - - - - - - -
+ 
+ .manifest.lua
+ 
+ This file controls the modID of your mod, among other attributes.
+ 
+ The modID is crucial and must be unique as it is used to identify your mod's models, weapons, and units in the game's code.
+ Feel free to use reasonably unique stuff like LukeAPGlaveFleet100 as your modID, but if you want to be totally safe here is a GUID generator https://www.uuidgenerator.net/guid
+ 
+ The modID also allows other mods to referance your mod, or the other way around. (using sounds from a Sound Pack mod, or muzzle flash meshs from a Models Pack map, etc)
+ If two mods have the same ID the game will only use the one found first.
+ It is also saved in Maps, in order to tell users what mods they need to get for the map to work.
+ 
+ Version, helps the game know if the player's local version of the mod is out of date when looking at other mods or maps. EG. a map could expect v2.0.0 while the local copy is v1.5.0. Then the map can tell the player "Hey this mod probably needs an update."
+ 
+ - - - - - - - - - - - -
+ 
+ .faction.lua
+ 
+ This defines a faction itself, so that it and it's units can appear in Skirmish, the Map Editor, and Databank.
+ It controls the Skirmish Loadout, Skirmish Platform, Skirmish AI, aswell as specific catagories for the Databank such as ships and structures.
+ 
+ - - - - - - - - - - - -
+ 
+ .materials.lua
+ 
+ Defines all the materials that you will be using to "paint" your units. Such as hull, glows, thrusters, muzzle flashes, etc.
+ 
+ - - - - - - - - - - - -
+ 
+ .unit.lua
+ 
+ Defines one unit. A unit is a very broad term, and can be anything. Such as a ship, structure, drone, missle, rock, debris or bullet.
+ 
+ - - - - - - - - - - - -
+ 
+ .weapons.lua
+ 
+ Defines one or more weapons for use by units. Also handles the info needed for displaying them in the databank.
+  Weapons, like units, are a very broad term and can be used for anything such as lasers, bullet warheads, missile warheads, harmless visuals, spawning units (drone/missile launchers), etc.
+ 
+ - - - - - - - - - - - -
+  
+       FIRST STEPS
+ 
+ - - - - - - - - - - - -
+
+ A faction must have a unique ID between 100 and 214,748
+ This is to prevent conflict with other mods, as maps and other mods may rely on them.
+ This is due to some rather ground-level architecture in ATS that isn't possible to change.
+  
+ Before doing anything, you must pick a unique numerical faction id. Between 100 and 214,748.
+ FactionID must be unique to 
+ You must also remember to prefix any unit typeIDs or weaponIDs with your factionID to prevent conflicts with other mods or ATS itself.
+ 
+ Sadly I cannot automate this for you, so you'll have to make sure you don't pick an ID that is currently used by any major mods. Chat with your fellow modders.
+ 
+ In ATS we ID our units and weapons using the factionID, a category, and the index of the unit in our list.
+ 
+ ...FAIII (...F = factionID, A = unit catagory, I = unit index)
+ 
+ eg. the Kontaalen (id 1), Tolly 		(ship 1, index 0) 		is typeID = 11000
+ eg. the Kontaalen (id 1), Katalosteer 	(ship 1, index 1) 		is typeID = 11001
+ eg. the Kontaalen (id 1), Coheser 		(structure 2, index 4) 	is typeID = 12004
+ eg. the Glowfish  (id 5), Aggressor 	(ship 1, index 0) 		is typeID = 51000
+ 
+ Go to the .faction.lua and setup the values inside to your liking. Heed the comments.
+ 
+ - - - - - - - - - - - -
+  
+	MAKING A UNIT
+	
+ - - - - - - - - - - - -
+ 
+ First you need a model mesh for your ship. Go ahead an make a copy of the 1001000_glave_assault.blend file. Rename it and open it in Blender.
+ I can't teach you Blender, so you'll have to figure out how to make a model, and assign materials to that model yourself.
+ Bare in mind that the materials you set will not be used by ATS, they are instead "material slots" that we will fill in with custom defined materials via .materials.lua
+ 
+ NOTICE: Unit models MUST be normalised to 1, aka, the longest part of your ships (Y is length) must be 1.
+ You can set the dimensions via hotkey N (item) > Dimensions > Y = 1, then copy the Scale: Y and paste to the other scale values. Then CTRL + A > Scale to apply this scaling.
+ 
+ Assuming that you now know some basic Blender stuff, (how to make a model and how to assign materials in Blender)
+ I have already prepared the file with all the relevant export settings, all you need to do is go (File > Export > glTF 2.0) to your mod folder.
+ 
+ 
+ OK, to the actual unit definition.
+ 
+ When making a unit, the components we give it will determine whether it acts like a ship, a resource generator, or a bullet.
+ 
+ If you want to make a ship, let's cheat and go make a copy of (1001000 Glave Assault.unit.lua)
+  I have prepared the Glave with all the same components as a Tolly, plus parts for thrusters, plus an example of a turreted gun.
+ 
+ 
+ 
+ = = = = = = = = = = = = 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ using System;
+using System.IO;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using MoonSharp.Interpreter;
+using GLTFast;
+using GLTFast.Loading;
+using ALO.Entities.Components;
+using ALO.Component;
+using ALO.Structure;
+using Unity.Mathematics;
+using Unity.Physics.Authoring;
+
+public class SC_ModLoader : MonoBehaviour
+     {
+     // ─────────── Singleton ───────────
+     public static SC_ModLoader Instance { get; private set; }
+
+     // ─────────── Core Libraries ───────────
+     /// <summary> fileKey → ( objectName → mesh+materials ) </summary>
+     public Dictionary<string, Dictionary<string, Mesh>> MeshLibrary { get; private set; }
+         = new Dictionary<string, Dictionary<string, Mesh>>();
+
+     /// <summary> materialId → material definition metadata </summary>
+     public Dictionary<string, MaterialDefinition> MaterialLibrary { get; private set; }
+         = new Dictionary<string, MaterialDefinition>();
+
+     /// <summary> factionId → faction data </summary>
+     public Dictionary<string, FactionData> FactionDefinitions { get; private set; }
+         = new Dictionary<string, FactionData>();
+
+     /// <summary> modId → parsed manifest info </summary>
+     public Dictionary<string, ModInfo> ModManifests { get; private set; }
+         = new Dictionary<string, ModInfo>();
+
+     public List<GLTFast.GltfImport> importers = new List<GltfImport>();
+
+     public Dictionary<string, Sprite> Images = new Dictionary<string, Sprite>();
+
+     // Runtime unit lookups
+     Dictionary<int, UnitData> _unitById = new Dictionary<int, UnitData>();
+     public List<UnitData> unitDataList = new List<UnitData>();
+
+     Vector3 lastSpawnPos = Vector3.zero;
+
+     [Header( "Mod Loader Settings" )]
+     [Tooltip( "Relative folder under persistentDataPath where mods live" )]
+     string modsFolder = "Mods";
+
+     [Header( "Material Templates" )]
+     [Tooltip( "Clone these for hull/GLOW material instantiation" )]
+     [SerializeField] Material materialNoneTemplate;
+     [SerializeField] Material materialHullTemplate;
+     [SerializeField] Material materialGlowTemplate;
+     [SerializeField] Material materialThrusterTemplate;
+     [SerializeField] Material materialTranslucentTemplate;
+
+     // Single Lua interpreter instance for efficiency
+     Script _lua;
+
+     void Awake()
+          {
+          // Enforce singleton
+          if (Instance != null)
+               { Destroy( gameObject ); return; }
+          Instance = this;
+
+          // Initialize Lua
+          _lua = new Script( CoreModules.Preset_HardSandbox );
+          //UserData.RegisterAssembly();
+          }
+
+     public void Start()
+          {
+          Debug.Log( "Mod Loader Start" );
+          StartCoroutine(LoadAllMods());
+          }
+
+     // ─────────── Main Mod Scan ───────────
+     IEnumerator LoadAllMods()
+          {
+          string root = Path.Combine( Application.persistentDataPath, modsFolder );
+          if (!Directory.Exists( root ))
+               {
+               Directory.CreateDirectory( root );
+               Debug.Log($"Created mods folder at: {root}");
+               yield break;
+               }
+
+          Debug.Log("Loading Mods...");
+
+          foreach (var modDir in Directory.GetDirectories( root ))
+               {
+
+               Debug.Log( $"Found mod folder: '{modDir}'" );
+
+               // 0) Manifest: take first *.manifest.lua
+               var manifests = Directory.GetFiles( modDir, "*.manifest.lua" );
+               if (manifests.Length == 0)
+                    {
+                    Debug.LogWarning( $"[SC_ModLoader] No manifest in {modDir}, skipping." );
+                    continue;
+                    }
+               if (manifests.Length > 1)
+                    Debug.LogWarning( $"[SC_ModLoader] Multiple manifests in {modDir}, using '{Path.GetFileName( manifests[0] )}'" );
+               var manifestInfo = ParseManifest( manifests[0] );
+               if (manifestInfo == null)
+                    continue;
+               ModManifests[manifestInfo.Id] = manifestInfo;
+
+               Debug.Log( $"Found mod manifest: {manifestInfo.Id} : {manifestInfo.ModName} : {manifestInfo.Author}" );
+
+               // 1) Load GLB models
+               foreach (var glb in Directory.GetFiles( modDir, "*.glb" ))
+                    {
+                    Debug.Log( $"Loading model file {glb}..." );
+                    yield return LoadGlb( glb, Path.GetFileNameWithoutExtension( glb ), manifestInfo.Id );
+                    }
+
+               // 2) Parse factions
+               foreach (var fx in Directory.GetFiles( modDir, "*.faction.lua" ))
+                    {
+                    Debug.Log( $"Loading faction file {fx}..." );
+                    TryAddFaction( fx, manifestInfo.Id );
+                    }
+
+               // 3) Parse materials
+               foreach (var mx in Directory.GetFiles( modDir, "*.materials.lua" ))
+                    {
+                    Debug.Log( $"Loading material file {mx}..." );
+                    TryAddMaterials( mx, manifestInfo.Id );
+                    }
+
+               // 4) Parse units
+               foreach (var ux in Directory.GetFiles( modDir, "*.unit.lua" ))
+                    {
+                    Debug.Log($"Loading unit file {ux}...");
+                    try
+                         {
+                         TryAddUnit( ux, modDir, manifestInfo.Id );
+                         }
+                    catch (Exception e )
+                         {
+                         Debug.LogError($"FAILED: {e}");
+                         }
+                    yield return null;
+                    }
+               }
+
+          Debug.Log( $"[SC_ModLoader] Loaded: Mods={ModManifests.Count}, Models={MeshLibrary.Count}, " +
+                    $"Materials={MaterialLibrary.Count}, Factions={FactionDefinitions.Count}, Units={_unitById.Count}" );
+          }
+
+     // ─────────── GLB Import ───────────
+     IEnumerator LoadGlb( string path, string fileKey, string modID )
+          {
+          string dictKey = modID + fileKey;
+          if (MeshLibrary.ContainsKey( dictKey ))
+               yield break;
+
+          var importer = new GltfImport();
+          var settings = new ImportSettings { NodeNameMethod = NameImportMethod.OriginalUnique };
+
+          var req = importer.Load( new Uri( "file://" + path ), settings );
+          while (!req.IsCompleted)
+               yield return null;
+
+          if (!req.Result)
+               {
+               Debug.LogError( $"[ModLoader] Failed to load GLB: {path}" );
+               yield break;
+               }
+
+          // ---------- grab meshes ----------
+          var dict = new Dictionary<string, Mesh>();
+
+          Debug.Log($"Extracting meshes from file {fileKey} >> path {path}");
+
+          var gltfMeshs = importer.Meshes.GetEnumerator();
+          
+          while (gltfMeshs.MoveNext())
+               {
+               var mesh = gltfMeshs.Current;
+               if (mesh == null)
+                    {
+                    Debug.LogWarning( "Mesh was null???" );
+                    continue;
+                    }
+               Debug.Log( $"Found mesh {mesh.name}" );
+               dict[mesh.name] = mesh;
+               }
+
+          Debug.Log($"Added {dict.Count} meshes to mesh library entry '{dictKey}'");
+
+          MeshLibrary[dictKey] = dict;
+          }
+
+     // ─────────── Lua Helpers ───────────
+     Table LoadLua( string path )
+          {
+          try
+               {
+               string code = File.ReadAllText( path );
+               var res = _lua.DoString( code );
+               return res.Type == DataType.Table ? res.Table : null;
+               }
+          catch (Exception ex)
+               {
+               Debug.LogError( $"[SC_ModLoader] Lua load error ({path}): {ex.Message}" );
+               return null;
+               }
+          }
+
+     static List<int> DynToIntList( DynValue dv )
+          {
+          var list = new List<int>();
+          if (dv.Type != DataType.Table)
+               return list;
+          foreach (var v in dv.Table.Values)
+               list.Add( (int)v.Number );
+          return list;
+          }
+
+     static List<string> DynToStringList( DynValue dv )
+          {
+          var list = new List<string>();
+          if (dv.Type != DataType.Table)
+               return list;
+          foreach (var v in dv.Table.Values)
+               if (v.Type == DataType.String)
+                    list.Add( v.String );
+          return list;
+          }
+
+     // ─────────── Parse Manifest ───────────
+     ModInfo ParseManifest( string path )
+          {
+          var t = LoadLua( path );
+          if (t == null)
+               return null;
+          return new ModInfo
+               {
+               ModName = t.Get( "modName" ).String,
+               Author = t.Get( "author" ).String,
+               Id = t.Get( "id" ).String,
+               Version = t.Get( "version" ).String,
+               Description = t.Get( "description" ).String
+               };
+          }
+
+     // ─────────── Parse Faction ───────────
+     void TryAddFaction( string luaPath, string modID )
+          {
+          var t = LoadLua( luaPath );
+          if (t == null)
+               return;
+
+          var f = new FactionData
+               {
+               FactionName = t.Get( "factionName" ).String,
+               Id = t.Get( "id" ).String,
+               Skirmish = t.Get( "skirmish" ).Boolean,
+               Editor = t.Get( "editor" ).Boolean,
+               SkirmishLoadout = DynToIntList( t.Get( "skirmish_loadout" ) ),
+               SkirmishPlatforms = DynToIntList( t.Get( "skirmish_platforms" ) ),
+               Ships = DynToIntList( t.Get( "ships" ) ),
+               Structures = DynToIntList( t.Get( "structures" ) ),
+               Icon = LoadSprite( Path.GetDirectoryName( luaPath ), "icon" )
+               };
+          FactionDefinitions[modID + f.Id] = f;
+          }
+
+     // ─────────── Parse Materials ───────────
+     void TryAddMaterials( string luaPath, string modID )
+          {
+
+          Debug.Log($"ModLoader: TryAddMaterials: {luaPath}/{modID}");
+
+          var t = LoadLua( luaPath );
+          if (t == null)
+               return;
+
+          var list = t.Get( "materials" );
+          if (list.Type != DataType.Table)
+               return;
+
+          foreach (var dv in list.Table.Values)
+               {
+               var m = dv.Table;
+               var def = new MaterialDefinition
+                    {
+                    Id = m.Get( "id" ).String,
+                    Behaviour = Enum.TryParse( m.Get( "behaviour" ).String, true, out MaterialBehaviour mb )
+                               ? mb : MaterialBehaviour.NONE
+                    };
+
+               // BaseColor
+               var colDv = m.Get( "colour" );
+               if (colDv.Type == DataType.Table)
+                    {
+                    var ct = colDv.Table;
+                    def.BaseColor = new Color(
+                        (float)ct.Get( 1 ).Number,
+                        (float)ct.Get( 2 ).Number,
+                        (float)ct.Get( 3 ).Number
+                    );
+                    }
+
+               // EmissionRGBA
+               var emDv = m.Get( "emission" );
+               if (emDv.Type == DataType.Table)
+                    {
+                    var et = emDv.Table;
+                    def.EmissionRGBA = new Vector4(
+                        (float)et.Get( 1 ).Number,
+                        (float)et.Get( 2 ).Number,
+                        (float)et.Get( 3 ).Number,
+                        (float)et.Get( 4 ).Number
+                    );
+                    }
+
+               def.Metallic = (float)m.Get( "metallic" ).Number;
+               def.Roughness = (float)m.Get( "roughness" ).Number;
+               def.BaseSkuff = (float)m.Get( "baseSkuff" ).Number;
+
+               Material templateMaterial = null;
+
+               switch (def.Behaviour)
+                    {
+                    case MaterialBehaviour.NONE:
+                         templateMaterial = materialNoneTemplate;
+                         break;
+                    case MaterialBehaviour.HULL:
+                         templateMaterial = materialHullTemplate;
+                         break;
+                    case MaterialBehaviour.GLOW:
+                         templateMaterial = materialGlowTemplate;
+                         break;
+                    case MaterialBehaviour.THRUSTER:
+                         templateMaterial = materialThrusterTemplate;
+                         break;
+                    case MaterialBehaviour.TRANSPARENT:
+                         templateMaterial = materialTranslucentTemplate;
+                         break;
+                    default:
+                         break;
+                    }
+
+               def.material = new Material( templateMaterial );
+               def.material.name = def.Id;
+               def.material.SetColor( "_Color", def.BaseColor );
+               Color emission = new Color(
+                    def.EmissionRGBA.x,
+                    def.EmissionRGBA.y,
+                    def.EmissionRGBA.z
+               ) * def.EmissionRGBA.w;           // Color * float is a valid operator
+
+               if (emission.maxColorComponent > 0)
+                    {
+                    def.material.EnableKeyword( "_EMISSION" );
+                    def.material.SetColor( "_EmissionColor", emission );
+                    }
+               else
+                    {
+                    def.material.DisableKeyword( "_EMISSION" );
+                    }
+
+               def.material.SetFloat( "_Metallic", def.Metallic );
+               def.material.SetFloat( "_Smoothness", 1f - def.Roughness );
+               def.material.SetFloat( "_BaseSkuff", def.BaseSkuff );
+                    
+
+               MaterialLibrary[modID + def.Id] = def;
+               }
+          }
+
+     void TryAddUnit( string luaPath, string modDir, string modID )
+          {
+
+          Debug.Log($"ModLoader: TryAddUnit '{luaPath}'");
+
+          Table root = LoadLua( luaPath );
+          if (root == null)
+               return;
+
+          // --- data block guard --------------------------------------------------
+          if (root.Get( "data" ).Type != DataType.Table)
+               {
+               Debug.LogError( $"[ModLoader] '{luaPath}' missing <data>" );
+               return;
+               }
+          var unitDataTable = root.Get( "data" ).Table;
+          string name = root.Get( "unitName" ).String;
+          int id = (int)unitDataTable.Get( "typeID" ).Number;
+          if (_unitById.ContainsKey( id ))
+               { Debug.LogWarning( $"Duplicate id {id}" ); return; }
+
+          // --- Parse parts -------------------------------------------------------
+          var partsRoot = new List<PartDefinition>();
+          ParsePartsRecursive( root.Get( "parts" ), partsRoot );
+
+          // --- Build prefab ------------------------------------------------------
+          GameObject prefab = new GameObject( name );
+          prefab.transform.parent = this.gameObject.transform;
+          prefab.transform.localScale = Vector3.one * (float)(root.Get( "scale" ).IsNil() ? 1.0 : root.Get( "scale" ).Number);
+          lastSpawnPos += (Vector3.right * prefab.transform.localScale.x * 0.5f);
+          prefab.transform.position = lastSpawnPos;
+          lastSpawnPos += (Vector3.right * prefab.transform.localScale.x * 0.5f) + Vector3.right;
+
+          // main hull mesh + materials
+          AttachMeshAndMats( prefab, root.Get( "mainMesh" ).String,
+                            DynToStringList( root.Get( "materials" ) ),
+                            modID );
+
+
+          
+
+          // recurse children
+          foreach (var pd in partsRoot)
+               BuildPartGO( pd, prefab.transform, modID );
+
+          // --- Get Collider diemensions.
+
+          // Get the Collider dimensions both to guess a collider for this unit, and for later anyway.
+          COColliderDimensions colliderDimensions = new COColliderDimensions( 1, 1, 1 );
+
+          if (root.Get( "colliderDimensions" ).Type == DataType.Table)
+               {
+               var colliderDimensionsTable = root.Get( "colliderDimensions" ).Table;
+
+               Debug.Log($"ColliderDimensions Table has {colliderDimensionsTable.Length} items.");
+
+               float width = (float)colliderDimensionsTable.Get( "widthMultiplier" ).Number;
+               float hight = (float)colliderDimensionsTable.Get( "heightMultiplier" ).Number;
+               float lengt = (float)colliderDimensionsTable.Get( "lengthMultiplier" ).Number;
+
+               colliderDimensions = new COColliderDimensions( width, hight, lengt );
+               }
+
+          // --- Physics Authoring
+
+          var physicsShapeAuthoring = prefab.AddComponent<PhysicsShapeAuthoring>();
+          physicsShapeAuthoring.SetBox( new Unity.Physics.BoxGeometry { Center = 0, BevelRadius = 0.5f, Orientation = quaternion.identity, Size = new float3( colliderDimensions.widthMultiplier, colliderDimensions.heightMultiplier, colliderDimensions.lengthMultiplier ) } );
+          physicsShapeAuthoring.CollidesWith = PhysicsCategoryTags.Nothing;
+          physicsShapeAuthoring.CollisionResponse = Unity.Physics.CollisionResponsePolicy.None;
+
+          // --- Create UnitData minimal ------------------------------------------
+          var unit = new UnitData();
+
+          unit.data = new COUnitData
+               {
+               typeID = id,
+               factionID = (int)unitDataTable.Get( "factionID" ).Number,
+               macroType = Enum.Parse<UNITMACROTYPE>( unitDataTable.Get( "macroType" ).String ),
+               cost_energy = (int)unitDataTable.Get( "cost_energy" ).Number,
+               cost_matter = (int)unitDataTable.Get( "cost_matter" ).Number,
+               cost_supply = (uint)unitDataTable.Get( "cost_supply" ).Number,
+               cost_time = (uint)unitDataTable.Get( "cost_time" ).Number,
+               };
+
+          var healthDv = root.Get( "health" );
+          if (healthDv.Type == DataType.Table)
+               {
+               var healthStruct = unit.health;          // copy
+               ParseHealth( healthDv.Table, ref healthStruct );
+               unit.health = healthStruct;              // assign back
+               }
+
+          unit.isMobile = root.Get( "isMobile" ).Boolean;
+          var mvDv = root.Get( "movement" );
+          if (unit.isMobile && mvDv.Type == DataType.Table)
+               {
+               var mvStruct = unit.movement;          // copy defaults
+               ParseMovement( mvDv.Table, ref mvStruct );
+               unit.movement = mvStruct;              // assign back
+               }
+
+          unit.isRotating = root.Get( "isRotating" ).Boolean;
+          if (unit.isRotating && root.Get( "rotation" ).Type == DataType.Table)
+               {
+               var rotStruct = unit.rotation;                 // copy defaults
+               ParseRotation( root.Get( "rotation" ).Table, ref rotStruct );
+               unit.rotation = rotStruct;                     // assign back
+               }
+
+          unit.isTargeting = root.Get( "isTargeting" ).Boolean;
+          var tdDv = root.Get( "targetingData" );
+          if (unit.isTargeting && tdDv.Type == DataType.Table)
+               {
+               var tdStruct = unit.targetingData;          // copy defaults
+               ParseTargeting( tdDv.Table, ref tdStruct );
+               unit.targetingData = tdStruct;              // assign back
+               }
+
+          unit.hasPayload = root.Get( "hasPayload" ).Boolean;
+          if (unit.hasPayload && root.Get( "payload" ).Type == DataType.Table)
+               {
+               var pay = unit.payload;                        // copy defaults
+               ParsePayload( root.Get( "payload" ).Table, ref pay );
+               unit.payload = pay;                            // assign back
+               }
+
+          unit.isStructure = root.Get( "isStructure" ).Boolean;
+          if (unit.isStructure && root.Get( "structure" ).Type == DataType.Table)
+               {
+               unit.structure = ParseStructure( root.Get( "structure" ).Table );
+               }
+
+          _unitById[id] = unit;
+          unitDataList.Add( unit );
+          }
+
+     /// <summary>
+     /// Fill a COUnitHealth struct from a Lua table.
+     /// Expects the table you get from  root.Get("health") .
+     /// Any missing field keeps the struct’s existing default.
+     /// </summary>
+     static void ParseHealth( Table hTbl, ref COUnitHealth h )
+          {
+          // ── Enums -------------------------------------------------------------
+          Enum.TryParse( hTbl.Get( "unitClass" ).CastToString(), true, out UNITCLASS cls );
+          h.unitClass = cls;
+
+          // ── Basic health ------------------------------------------------------
+          h.health = (float)hTbl.Get( "health" ).Number;
+          h.health_regen_per_second = (float)hTbl.Get( "health_regen_per_second" ).Number;
+          h.max_regen_frac = (float)hTbl.Get( "max_regen_frac" ).Number;
+          h.shield_activation_threshold = 0f;   // not present in Lua
+
+          // ── Armour ------------------------------------------------------------
+          h.armour = (float)hTbl.Get( "armour" ).Number;
+          h.vulnerability_max = (float)hTbl.Get( "vulnerability_max" ).Number;
+          h.shredMultiplier = (float)hTbl.Get( "shredMultiplier" ).Number;
+
+          // ── Death‑sound -------------------------------------------------------
+          h.explosionSFX = (int)hTbl.Get( "explosionSFX" ).Number;
+          h.explosionSFXIntensity = (float)hTbl.Get( "explosionSFXIntensity" ).Number;
+
+          // ── Heat / Resist etc. ------------------------------------------------
+          h.heatResistancePercentage = (float)hTbl.Get( "heatResistancePercentage" ).Number;
+          h.shredResistancePercentage = (float)hTbl.Get( "shredResistancePercentage" ).Number;
+          h.aegisMaximum = (float)hTbl.Get( "aegisMaximum" ).Number;
+          h.isResourceMatter = hTbl.Get( "isResourceMatter" ).Boolean;
+          h.isResourceEnergy = hTbl.Get( "isResourceEnergy" ).Boolean;
+          h.isUncapturable = hTbl.Get( "isUncapturable" ).Boolean;
+          h.ignoreImpulse = hTbl.Get( "ignoreImpulse" ).Boolean;
+
+          // ── Targeting ---------------------------------------------------------
+          h.targetingPriorityMultiplier = (float)hTbl.Get( "targetingPriorityMultiplier" ).Number;
+          h.untargetableTime = (float)hTbl.Get( "untargetableTime" ).Number;
+
+          // ── Cloak -------------------------------------------------------------
+          h.doesCloaking = hTbl.Get( "doesCloaking" ).Boolean;
+          h.isCloaked = hTbl.Get( "isCloaked" ).Boolean;
+          h.cloakFrac = (float)hTbl.Get( "cloakFrac" ).Number;
+          h.cloakTime = (float)hTbl.Get( "cloakTime" ).Number;
+          h.decloakDistance = (float)hTbl.Get( "decloakDistance" ).Number;
+
+          // ── Phase / lifetime --------------------------------------------------
+          h.phaseBlockFraction = (float)hTbl.Get( "phaseBlockFraction" ).Number;
+          h.lifetime = (float)hTbl.Get( "lifetime" ).Number;
+          h.explodeOnTimeout = hTbl.Get( "explodeOnTimeout" ).Boolean;
+
+          // ── Explosion control -------------------------------------------------
+          if (Enum.TryParse( hTbl.Get( "explosionType" ).CastToString(), true,
+                            out VISUALEFFECTTYPE vfx ))
+               h.explosionType = vfx;
+          h.explosionVolatility = (float)hTbl.Get( "explosionVolatility" ).Number;
+          h.explosionSizeOveride = (float)hTbl.Get( "explosionSizeOveride" ).Number;
+          h.flashSizeOverride = (float)hTbl.Get( "flashSizeOverride" ).Number;
+          h.forceShockwave = hTbl.Get( "forceShockwave" ).Boolean;
+          h.preventShockwave = hTbl.Get( "preventShockwave" ).Boolean;
+          h.randomiseInAllDirections = hTbl.Get( "randomiseInAllDirections" ).Boolean;
+          h.deathUnitSpawnDoNotRandomiseRotation =
+              hTbl.Get( "deathUnitSpawnDoNotRandomiseRotation" ).Boolean;
+          h.deathUnitSpawnTypeID = (int)hTbl.Get( "deathUnitSpawnTypeID" ).Number;
+          h.invulnerable = hTbl.Get( "invulnerable" ).Boolean;
+          h.unkillable = hTbl.Get( "unkillable" ).Boolean;
+
+          // ── Misc --------------------------------------------------------------
+          h.death_countdown = (float)hTbl.Get( "death_countdown" ).Number;
+          h.mass = (float)hTbl.Get( "mass" ).Number;
+          h.densityMult = (float)hTbl.Get( "densityMult" ).Number;
+          h.tonnage = (float)hTbl.Get( "tonnage" ).Number;
+          h.ignoreInstaDeath = hTbl.Get( "ignoreInstaDeath" ).Boolean;
+          h.alertPlayerOnDeath = hTbl.Get( "alertPlayerOnDeath" ).Boolean;
+          }
+
+     /// <summary>
+     /// Fill a COUnitMovement struct from a Lua table (root.Get("movement")).
+     /// Any field missing in Lua leaves the struct’s current value unchanged.
+     /// </summary>
+     static void ParseMovement( Table mTbl, ref COUnitMovement mv )
+          {
+          // ── Enum ----------------------------------------------------------------
+          if (Enum.TryParse( mTbl.Get( "type" ).CastToString(), true,
+                            out UNITMOVETYPE mvType ))
+               mv.type = mvType;
+
+          // ── Basic numbers -------------------------------------------------------
+          mv.maximumAngleToTarget = (float)mTbl.Get( "maximumAngleToTarget" ).Number;
+          mv.acceleration = (float)mTbl.Get( "acceleration" ).Number;
+          mv.strafingAccelMultiplier = (float)mTbl.Get( "strafingAccelMultiplier" ).Number;
+          mv.reverseAccelMultiplier = (float)mTbl.Get( "reverseAccelMultiplier" ).Number;
+
+          // ── Behaviour flags & distances ----------------------------------------
+          mv.inertialCorrection = mTbl.Get( "inertialCorrection" ).Boolean;
+          mv.isStrafing = mTbl.Get( "isStrafing" ).Boolean;
+          mv.standoffDistance = (float)mTbl.Get( "standoffDistance" ).Number;
+          mv.retreatDistance = (float)mTbl.Get( "retreatDistance" ).Number;
+          mv.strafeMargin = (float)mTbl.Get( "strafeMargin" ).Number;
+
+          mv.useMinimumWorldYPosition = mTbl.Get( "useMinimumWorldYPosition" ).Boolean;
+          mv.minimumWorldYPosition = (float)mTbl.Get( "minimumWorldYPosition" ).Number;
+          mv.alwaysFaceCombatTarget = mTbl.Get( "alwaysFaceCombatTarget" ).Boolean;
+          mv.GoToStructurePlaneForFinalWaypoint =
+              mTbl.Get( "GoToStructurePlaneForFinalWaypoint" ).Boolean;
+
+          // Hidden/Runtime fields (morrison, waypointMoveMode, etc.)
+          // are left at their default values.
+          }
+
+     /// <summary>
+     /// Fill a COUnitRotation struct from a Lua table (root.Get("rotation")).
+     /// Missing fields leave their current values unchanged.
+     /// </summary>
+     static void ParseRotation( Table rTbl, ref COUnitRotation rot )
+          {
+          // ── Enum (Acceleration / Linear) --------------------------------------
+          if (Enum.TryParse( rTbl.Get( "turnMode" ).CastToString(), true,
+                            out COUnitRotation.SHIPTURNMODE mode ))
+               rot.turnMode = mode;
+
+          // ── Numeric properties -------------------------------------------------
+          rot.baseRotationSpeed = (float)rTbl.Get( "baseRotationSpeed" ).Number;
+          rot.maxSpeedMultiplier = (float)rTbl.Get( "maxSpeedMultiplier" ).Number;
+          rot.preferredAngle = (float)rTbl.Get( "preferredAngle" ).Number;
+
+          // ── Flags --------------------------------------------------------------
+          rot.ignoreWorldUp = rTbl.Get( "ignoreWorldUp" ).Boolean;
+
+          // hidden runtime fields (lastDirection, seconds, frames) stay default
+          }
+
+     /// <summary>
+     /// Populate unit.targetingData from the Lua table:
+     ///   root.Get("targetingData")  (which contains "acquisition" & "tracking").
+     /// </summary>
+     static void ParseTargeting( Table tdTbl, ref TargetingData targ )
+          {
+          // ───────── Acquisition ─────────
+          var acqDv = tdTbl.Get( "acquisition" );
+          if (acqDv.Type == DataType.Table)
+               {
+               var a = targ.aquisition;   // copy defaults
+               var at = acqDv.Table;
+
+               // Enum
+               Enum.TryParse( at.Get( "type" ).CastToString(), true, out TARGETINGTYPE tType );
+               a.type = tType;
+
+               // Behaviour
+               a.isFriendly = at.Get( "isFriendly" ).Boolean;
+               a.isResourceMiner = at.Get( "isResourceMiner" ).Boolean;
+               a.acceptFirstValidTarget = at.Get( "acceptFirstValidTarget" ).Boolean;
+               a.pauseIfHasTarget = at.Get( "pauseIfHasTarget" ).Boolean;
+               a.ignoreUncapturable = at.Get( "ignoreUncapturable" ).Boolean;
+               a.secondsPerScan = (float)at.Get( "secondsPerScan" ).Number;
+
+               // Validators / geometry
+               a.ignoreFullHealth = at.Get( "ignoreFullHealth" ).Boolean;
+               a.minimumHealth = (float)at.Get( "minimumHealth" ).Number;
+               a.minimumDistance = (float)at.Get( "minimumDistance" ).Number;
+               a.maximumDistance = (float)at.Get( "maximumDistance" ).Number;
+               a.maximumAngle = (float)at.Get( "maximumAngle" ).Number;
+               a.addedPreaimDistance = (float)at.Get( "addedPreaimDistance" ).Number;
+
+               // Scores
+               a.scoreForDistance = (float)at.Get( "scoreForDistance" ).Number;
+               a.scoreForHealth = (float)at.Get( "scoreForHealth" ).Number;
+               a.scoreForHealthCurrent = (float)at.Get( "scoreForHealthCurrent" ).Number;
+               a.scoreForHealthCurrentMissing = (float)at.Get( "scoreForHealthCurrentMissing" ).Number;
+               a.scoreForHealthCurrentPercentage = (float)at.Get( "scoreForHealthCurrentPercentage" ).Number;
+               a.scoreForArmour = (float)at.Get( "scoreForArmour" ).Number;
+               a.scoreForArmourCurrent = (float)at.Get( "scoreForArmourCurrent" ).Number;
+               a.scoreForAngle = (float)at.Get( "scoreForAngle" ).Number;
+
+               // Perceived clamps
+               a.perceivedHealthMax = (float)at.Get( "perceivedHealthMax" ).Number;
+               a.perceivedHealthMin = (float)at.Get( "perceivedHealthMin" ).Number;
+               a.perceivedArmourMax = (float)at.Get( "perceivedArmourMax" ).Number;
+               a.perceivedArmourMin = (float)at.Get( "perceivedArmourMin" ).Number;
+               a.perceivedDistanceMin = (float)at.Get( "perceivedDistanceMin" ).Number;
+
+               // Class multipliers
+               a.classMultMissile = (float)at.Get( "classMultMissile" ).Number;
+               a.classMultDrone = (float)at.Get( "classMultDrone" ).Number;
+               a.classMultLight = (float)at.Get( "classMultLight" ).Number;
+               a.classMultMedium = (float)at.Get( "classMultMedium" ).Number;
+               a.classMultHeavy = (float)at.Get( "classMultHeavy" ).Number;
+               a.classMultCapital = (float)at.Get( "classMultCapital" ).Number;
+               a.classMultTitan = (float)at.Get( "classMultTitan" ).Number;
+
+               // Overall multipliers
+               a.shipMultiplier = (float)at.Get( "shipMultiplier" ).Number;
+               a.structureMultiplier = (float)at.Get( "structureMultiplier" ).Number;
+               a.keepTargetMultiplier = (float)at.Get( "keepTargetMultiplier" ).Number;
+               a.scoreBandingSize = (float)at.Get( "scoreBandingSize" ).Number;
+
+               targ.aquisition = a;   // assign back
+               }
+
+          // ───────── Tracking ─────────
+          var trDv = tdTbl.Get( "tracking" );
+          if (trDv.Type == DataType.Table)
+               {
+               var tr = targ.tracking;          // copy defaults
+               var tt = trDv.Table;
+
+               Enum.TryParse( tt.Get( "positionPredictionType" ).CastToString(), true,
+                             out TARGETPOSITIONPREDICTIONTYPE ptype );
+               tr.positionPredictionType = ptype;
+
+               tr.predictionVelocityOveride = (float)tt.Get( "predictionVelocityOveride" ).Number;
+               tr.doAimingComputation = tt.Get( "doAimingComputation" ).Boolean;
+               tr.canInvalidateTarget = tt.Get( "canInvalidateTarget" ).Boolean;
+               tr.invalidationDistance = (float)tt.Get( "invalidationDistance" ).Number;
+               tr.invalidationAngle = (float)tt.Get( "invalidationAngle" ).Number;
+               tr.invalidationVelocityHeadOn = (float)tt.Get( "invalidationVelocityHeadOn" ).Number;
+
+               targ.tracking = tr;             // assign back
+               }
+          }
+
+
+     // ---------------------------------------------------------------------------
+     // Parse a Lua "parts" table into PartDefinition hierarchy
+     void ParsePartsRecursive( DynValue dv, List<PartDefinition> list )
+          {
+          if (dv.Type != DataType.Table)
+               return;
+          foreach (var entry in dv.Table.Values)
+               {
+               var partTable = entry.Table;
+
+               var meshkey = partTable.Get( "mesh" );
+
+               var part = new PartDefinition
+                    {
+                        name = string.IsNullOrEmpty(partTable.Get("name").CastToString())
+                               ? "Part"
+                               : partTable.Get("name").String,
+
+
+                        meshKey = meshkey.IsNilOrNan() ? string.Empty : meshkey.CastToString(),
+
+                        // materials list
+                        materials = DynToStringList(partTable.Get("materials")),
+
+                        // transform
+                        position = partTable.Get("position").Type == DataType.Table
+                                   ? TableToVec3(partTable.Get("position").Table)
+                                   : Vector3.zero,
+
+                        rotation = partTable.Get("rotation").Type == DataType.Table   // ★ now Vector3
+                                   ? TableToVec3(partTable.Get("rotation").Table)
+                                   : Vector3.zero,     // 0 ° on all axes = identity
+
+                        scale    = partTable.Get("scale").Type == DataType.Table
+                                   ? TableToVec3(partTable.Get("scale").Table)
+                                   : Vector3.one,
+
+                        // feature flags
+                        barrel     = partTable.Get("barrel").Boolean,
+                        turretBody = partTable.Get("turretBody").Boolean
+                    };
+
+
+               // weapon
+               if (partTable.Get( "weapon" ).Type == DataType.Table)
+                    {
+                    var weapon = partTable.Get( "weapon" ).Table;
+                    part.weapon = new TurretConfig
+                         {
+                         weaponID = (int)weapon.Get( "weaponID" ).Number,
+                         turnSpeed = (float)(weapon.Get( "turnSpeed" ).IsNil() ? 0 : weapon.Get( "turnSpeed" ).Number),
+                         turnMode = weapon.Get( "turnMode" ).CastToString(),
+                         turnInstant = weapon.Get( "turnInstant" ).Boolean,
+                         mount = new TurretConfig.MountAngles
+                              {
+                              left = (float)weapon.Get( "mountAngles" ).Table.Get( "left" ).Number,
+                              right = (float)weapon.Get( "mountAngles" ).Table.Get( "right" ).Number,
+                              up = (float)weapon.Get( "mountAngles" ).Table.Get( "up" ).Number,
+                              down = (float)weapon.Get( "mountAngles" ).Table.Get( "down" ).Number
+                              }
+                         };
+                    }
+
+               // thruster
+               if (partTable.Get( "thruster" ).Type == DataType.Table)
+                    {
+                    var thrusterTable = partTable.Get( "thruster" ).Table;
+                    part.thruster = new ThrusterConfig
+                         {
+                         decayTime = (float)(thrusterTable.Get( "decayTime" ).IsNil() ? 0 : thrusterTable.Get( "decayTime" ).Number),
+                         workWhenThrustWithinAngleDegrees = (float)(thrusterTable.Get( "workWhenThrustWithinAngleDegrees" ).IsNil() ? 60 : thrusterTable.Get( "workWhenThrustWithinAngleDegrees" ).Number)
+                         };
+                    }
+
+               if (partTable.Get("weaponVisual").Type == DataType.Table)
+                    {
+                    var weaponVisualTable = partTable.Get( "weaponVisual" ).Table;
+                    var laserDescriptionTable = weaponVisualTable.Get( "laserDescription" ).Table;
+                    part.weaponVisual = new WeaponVisualConfig
+                         {
+                         laserColour = TableToColor( weaponVisualTable.Get("laserColour").Table),
+                         intensity = (float)weaponVisualTable.Get("intensity").Number,
+                         useTurretDescription = weaponVisualTable.Get("useTurretDescription").Boolean,
+                         laserDescription = new LaserDescription
+                              {
+                              diameter = (float)laserDescriptionTable.Get("diameter").Number,
+                              duration = (float)laserDescriptionTable.Get("duration").Number,
+                              opacity = (float)laserDescriptionTable.Get("opacity").Number,
+                              offset = (float)laserDescriptionTable.Get("offset").Number,
+                              noShrink = laserDescriptionTable.Get("noShrink").Boolean,
+                              noFade = laserDescriptionTable.Get("noFade").Boolean,
+                              noRescaleLength = (float)laserDescriptionTable.Get("noRescaleLength").Number,
+                              rotateY = laserDescriptionTable.Get("rotateY").Boolean,
+                              rotateYUpdate = laserDescriptionTable.Get("rotateYUpdate").Boolean,
+                              rotateZ = laserDescriptionTable.Get("rotateZ").Boolean,
+                              rotateZUpdate = laserDescriptionTable.Get("rotateZUpdate").Boolean,
+                              }
+                         };
+                    }
+
+               // AutoModules
+
+               // Particle Emitters
+
+               // recurse children
+               ParsePartsRecursive( partTable.Get( "parts" ), part.children );
+               list.Add( part );
+               }
+          }
+
+     // ───────────────────────────────────────────────────────────────────────────
+     // Entire payload  ←  Lua table (root.payload)
+     static void ParsePayload( Table pTbl, ref COUnitPayload p )
+          {
+          // damage block
+          var dmgDv = pTbl.Get( "damage" );
+          if (dmgDv.Type == DataType.Table)
+               {
+               var dmg = p.damage;
+               ParseDamage( dmgDv.Table, ref dmg );
+               p.damage = dmg;
+               }
+
+          // areaEffect block
+          var aeDv = pTbl.Get( "areaEffect" );
+          if (aeDv.Type == DataType.Table)
+               {
+               var ae = p.areaEffect;
+               ParseAreaEffect( aeDv.Table, ref ae );
+               p.areaEffect = ae;
+               }
+          }
+
+     // ───────────────────────────────────────────────────────────────────────────
+     // DamageData  ←  Lua table (payload.damage)
+     static void ParseDamage( Table tbl, ref DamageData d )
+          {
+          d.isNondamaging = tbl.Get( "isNondamaging" ).Boolean;
+          d.instances = (int)tbl.Get( "instances" ).Number;
+          d.damage = (float)tbl.Get( "damage" ).Number;
+          d.piercing = (float)tbl.Get( "piercing" ).Number;
+          d.shred = (float)tbl.Get( "shred" ).Number;
+          d.heat = (float)tbl.Get( "heat" ).Number;
+          d.vulnerability = (float)tbl.Get( "vulnerability" ).Number;
+          d.decloak = (float)tbl.Get( "decloak" ).Number;
+          d.targetingPriorityMultiplier = (float)tbl.Get( "targetingPriorityMultiplier" ).Number;
+          d.impulseForce = (float)tbl.Get( "impulseForce" ).Number;
+          }
+
+     // ───────────────────────────────────────────────────────────────────────────
+     // AreaEffectData  ←  Lua table (payload.areaEffect)
+     static void ParseAreaEffect( Table tbl, ref AreaEffectData a )
+          {
+          a.maximumDegrees = (float)tbl.Get( "maximumDegrees" ).Number;
+          a.radiusOuter = (float)tbl.Get( "radiusOuter" ).Number;
+          a.radiusInner = (float)tbl.Get( "radiusInner" ).Number;
+          }
+
+     static InspectorStructureData ParseStructure(Table tbl)
+          {
+          var inspectorData = new InspectorStructureData();
+
+          var footprintData = TableOfNumbersToBoolArray( tbl.Get( "footprintMatrix" ).Table );
+          var footprintDimensions = TableToIntArray(tbl.Get( "footprintDimensions" ).Table);
+
+          if (footprintDimensions.Length <= 1)
+               {
+               return null;
+               }
+
+          int2 dims = new int2( footprintDimensions[0], footprintDimensions[1] );
+
+          inspectorData.footprint = new ALO.Tile.InspectorFootprint( footprintData, new int2( footprintDimensions[0], footprintDimensions[1] ), 0, math.cmax( dims ) );
+
+          return inspectorData;
+          }
+
+     // ---------------------------------------------------------------------------
+     // Build GameObjects from PartDefinition recursively
+     void BuildPartGO( PartDefinition partDefinition, Transform parent, string modID )
+          {
+          var gameObject = new GameObject( partDefinition.name );
+          gameObject.transform.parent = parent;
+          gameObject.transform.localPosition = partDefinition.position;
+          gameObject.transform.localRotation = Quaternion.Euler(partDefinition.rotation);
+
+          // mesh + mats
+          if (partDefinition.meshKey != string.Empty && partDefinition.meshKey != "")
+               {
+               AttachMeshAndMats( gameObject, partDefinition.meshKey, partDefinition.materials, modID );
+               }
+
+          // feature flags  ➜ add components
+          if (partDefinition.barrel)
+               gameObject.AddComponent<AUBarrelSetup>();
+          if (partDefinition.turretBody)
+               gameObject.AddComponent<AUTurretBodySetup>();
+          if (partDefinition.weapon != null)
+               {
+               var turret = gameObject.AddComponent<AUTurretSetup>();
+               turret.weaponID = partDefinition.weapon.weaponID;
+               turret.turretData.turretSpeed = partDefinition.weapon.turnSpeed;
+               if (!string.IsNullOrEmpty( partDefinition.weapon.turnMode ) &&
+                    Enum.TryParse( partDefinition.weapon.turnMode, true, out COTurret.TURRETTURNMODE mode ))
+                    {
+                    turret.turretData.turnMode = mode;
+                    }
+               turret.turretData.isInstant = partDefinition.weapon.turnInstant;
+               turret.mount.useMount = partDefinition.weapon.mount.Used();
+               turret.mount.mountAngle_left_Max = partDefinition.weapon.mount.left;
+               turret.mount.mountAngle_right_Max = partDefinition.weapon.mount.right;
+               turret.mount.mountAngle_up_Max = partDefinition.weapon.mount.up;
+               turret.mount.mountAngle_down_Max = partDefinition.weapon.mount.down;
+               }
+          if (partDefinition.thruster != null)
+               {
+               var thrusterGlow = gameObject.AddComponent<AUThrusterGlowSetup>();
+               thrusterGlow.decayTime = partDefinition.thruster.decayTime;
+               thrusterGlow.workWhenThrustWithinAngleDegrees = partDefinition.thruster.workWhenThrustWithinAngleDegrees;
+               }
+          if (partDefinition.weaponVisual != null)
+               {
+               var laserSetup = gameObject.AddComponent<AULaserSetup>();
+               laserSetup.description = partDefinition.weaponVisual.laserDescription;
+               }
+
+          // recurse
+          foreach (var child in partDefinition.children)
+               BuildPartGO( child, gameObject.transform, modID );
+          }
+
+     // ---------------------------------------------------------------------------
+     // Shared helper – attach mesh + cloned materials to a GameObject
+     void AttachMeshAndMats( GameObject gameObject, string meshKey, List<string> matIds, string modID )
+          {
+          var mesh = GetMesh( meshKey, modID );
+          if (mesh == null)
+               { Debug.LogError( $"Missing mesh '{meshKey}:{modID}'" ); return; }
+
+          var meshFilter = gameObject.AddComponent<MeshFilter>();
+          meshFilter.sharedMesh = mesh;
+          var meshRenderer = gameObject.AddComponent<MeshRenderer>();
+
+          var mats = new List<Material>();
+          foreach (var id in matIds)
+               {
+               if (MaterialLibrary.TryGetValue( modID + id, out var materialDefinition ))
+                    {
+                    mats.Add( materialDefinition.material );
+                    }
+               else
+                    Debug.LogWarning( $"Material '{id}' not found." );
+               }
+          meshRenderer.sharedMaterials = mats.ToArray();
+          }
+
+     static Vector3 TableToVec3( Table t )
+          {
+          // Lua tables are 1‑based; if any slot is nil we fall back to 0
+          float x = (float)(t.Get( 1 ).IsNil() ? 0.0 : t.Get( 1 ).Number);
+          float y = (float)(t.Get( 2 ).IsNil() ? 0.0 : t.Get( 2 ).Number);
+          float z = (float)(t.Get( 3 ).IsNil() ? 0.0 : t.Get( 3 ).Number);
+          return new Vector3( x, y, z );
+          }
+
+     static Color TableToColor( Table t )
+          {
+          // Lua tables are 1‑based; if any slot is nil we fall back to 0
+          float x = (float)(t.Get( 1 ).IsNil() ? 0.0 : t.Get( 1 ).Number);
+          float y = (float)(t.Get( 2 ).IsNil() ? 0.0 : t.Get( 2 ).Number);
+          float z = (float)(t.Get( 3 ).IsNil() ? 0.0 : t.Get( 3 ).Number);
+          float w = (float)(t.Get( 4 ).IsNil() ? 0.0 : t.Get( 4 ).Number);
+          return new Color( x, y, z, w );
+          }
+
+     static Quaternion TableToQuat( Table t )
+          {
+          float x = (float)(t.Get( 1 ).IsNil() ? 0.0 : t.Get( 1 ).Number);
+          float y = (float)(t.Get( 2 ).IsNil() ? 0.0 : t.Get( 2 ).Number);
+          float z = (float)(t.Get( 3 ).IsNil() ? 0.0 : t.Get( 3 ).Number);
+          float w = (float)(t.Get( 4 ).IsNil() ? 1.0 : t.Get( 4 ).Number);   // default w = 1
+          return new Quaternion( x, y, z, w );
+          }
+
+     static int[] TableToIntArray( Table t )
+          {
+          if (t == null || t.Length == 0)
+               return Array.Empty<int>();
+
+          var list = new List<int>( t.Length );
+
+          // Lua arrays are 1‑based; iterate in numeric order
+          for (int i = 1 ; i <= t.Length ; i++)
+               {
+               DynValue dv = t.Get( i );
+               if (dv.Type == DataType.Number)
+                    list.Add( (int)dv.Number );
+               }
+          return list.ToArray();
+          }
+
+     static float[] TableToFloatArray( Table t )
+          {
+          if (t == null || t.Length == 0)
+               return Array.Empty<float>();
+
+          var list = new List<float>( t.Length );
+
+          // Lua arrays are 1‑based; iterate in numeric order
+          for (int i = 1 ; i <= t.Length ; i++)
+               {
+               DynValue dv = t.Get( i );
+               if (dv.Type == DataType.Number)
+                    list.Add( (float)dv.Number );
+               }
+          return list.ToArray();
+          }
+
+     static bool[] TableOfNumbersToBoolArray( Table t )
+          {
+          if (t == null || t.Length == 0)
+               return Array.Empty<bool>();
+
+          var list = new List<bool>( t.Length );
+          for (int i = 1 ; i <= t.Length ; i++)
+               {
+               var dv = t.Get( i );
+               if (dv.Type == DataType.Number)
+                    {
+                    // treat 1 as true, anything else (including 0) as false
+                    list.Add( (int)dv.Number == 1 );
+                    }
+               else if (dv.Type == DataType.Boolean)
+                    {
+                    list.Add( dv.Boolean );
+                    }
+               else
+                    {
+                    list.Add( false );
+                    }
+               }
+          return list.ToArray();
+          }
+
+
+
+     // ─────────── Public API ───────────
+     public UnitData GetUnitData( int id ) => _unitById.TryGetValue( id, out var u ) ? u : null;
+
+     public Mesh GetMesh( string key, string modID )
+          {
+          if (string.IsNullOrEmpty( key ))
+               return null;                 // guard
+
+          var parts = key.Split( '/' );
+          if (parts.Length <= 1)
+               {
+               Debug.Log($"ERROR, mesh key '{key}' does not direct us to an object to get.");
+               return null;                                 // needs "file/object"
+               }
+
+          string fileKey = modID + parts[0];    // prefix modID if given
+          string meshName = parts[1];
+
+          Debug.Log($"Looking for {key} >> {fileKey}:{meshName}");
+
+          if (!MeshLibrary.TryGetValue( fileKey, out var objectMeshs ))
+               {
+               Debug.LogWarning($"Could not find file by key '{fileKey}'.");
+               }
+
+          if (!objectMeshs.TryGetValue( meshName, out var mesh ))
+               {
+               Debug.LogWarning( $"Could not find mesh '{meshName}'." );
+               }
+
+          return mesh;
+
+          }
+
+
+     Sprite LoadSprite( string folder, string filename )
+          {
+          if (string.IsNullOrEmpty( filename ))
+               return null;
+          foreach (var ext in new[] { ".png", ".jpg" })
+               {
+               string cand = filename.EndsWith( ext, StringComparison.OrdinalIgnoreCase )
+                   ? filename : filename + ext;
+               string path = Path.Combine( folder, cand );
+               if (!File.Exists( path ))
+                    continue;
+               var tex = new Texture2D( 2, 2, TextureFormat.RGBA32, false );
+               tex.LoadImage( File.ReadAllBytes( path ) );
+               return Sprite.Create( tex, new Rect( 0, 0, tex.width, tex.height ), new Vector2( .5f, .5f ) );
+               }
+          return null;
+          }
+
+     public void OnApplicationQuit()
+          {
+          foreach (var item in importers)
+               {
+               item.Dispose();
+               }
+          }
+
+     }
+
+// ─── Helper Data Containers ───
+
+public class FactionData
+     {
+     public string FactionName;
+     public string Id;
+     public bool Skirmish, Editor;
+     public List<int> SkirmishLoadout, SkirmishPlatforms, Ships, Structures;
+     public Sprite Icon;
+     }
+
+public enum MaterialBehaviour { NONE, HULL, GLOW, THRUSTER, TRANSPARENT }
+
+public class MaterialDefinition
+     {
+     public string Id;
+     public MaterialBehaviour Behaviour;
+     public Color BaseColor;
+     public Vector4 EmissionRGBA;
+     public float Metallic;
+     public float Roughness;
+     public float BaseSkuff;
+     public Material material;
+     }
+
+public class ModInfo
+     {
+     public string ModName;
+     public string Author;
+     public string Id;
+     public string Version;
+     public string Description;
+     }
+
+public class ModUnit
+     {
+     public string UnitName;
+     public int Id;
+     public string MainMesh;
+     public List<string> Materials;
+     public float Scale;
+     }
+
+// ---------- PART DEFINITIONS ----------
+class PartDefinition
+     {
+     public string name;
+     public string meshKey;
+     public List<string> materials = new();
+     public Vector3 position;
+     public Vector3 scale;
+     public Vector3 rotation;
+     public TurretConfig weapon;
+     public WeaponVisualConfig weaponVisual;
+     public bool barrel;
+     public bool turretBody;
+     public ThrusterConfig thruster;
+     public List<PartDefinition> children = new();
+     }
+
+class TurretConfig
+     {
+     public int weaponID;
+     public float turnSpeed;
+     public string turnMode;      // "Linear" / "Acceleration"
+     public bool turnInstant;
+     public MountAngles mount = new();
+     public class MountAngles { public float left, right, up, down; public bool Used() { return left > 0 || right > 0 || down > 0 || up > 0; } }
+     }
+
+class WeaponVisualConfig
+     {
+     public Color laserColour = Color.white;
+     public float intensity = 3;
+     public bool useTurretDescription = false;
+     public LaserDescription laserDescription;
+     }
+
+class ThrusterConfig
+     {
+     public float decayTime;
+     public float workWhenThrustWithinAngleDegrees;
+     }

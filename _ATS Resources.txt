@@ -1,0 +1,39 @@
+
+ Hey Luke here.
+ I have made available a number of our inbuilt meshes for weapon effects, and the materials for them.
+ We will make more available as they are requested, or as we feel. So check for updated versions of this file from time to time.
+
+ FILE LAST UPDATED (check our discord server)
+ [2025/06/25]
+
+ Regrettably, we may accidentally rename a mesh or two over the following years since this was written. 
+ As such, if a mesh is no longer available please let us know as soon as possible.
+
+ 
+ These can be accessed with 'ats' 
+ 
+
+--- Meshes: eg. mesh = "ats/laser_beam"
+laser_beam
+cannonflash
+casabacone
+disruptor_beam
+coilbeam
+beam_ring
+beam_thin
+beam_edgefade
+autoflash
+autoflash_long
+hakkurcone
+lightning_arc
+lightning_bolt
+railflash
+scancone
+scancone_inverted
+taperbeam
+taperbeam_single
+taperbeam_tractor
+unstable_beam
+
+--- Materials: eg. materials = { "ats/mt_01_hull", "ats/mt_01_thrusterGlow" }
+

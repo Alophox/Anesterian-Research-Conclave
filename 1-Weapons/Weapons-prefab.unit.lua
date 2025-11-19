@@ -1,0 +1,3 @@
+-- this is needed so that the sub folder prefabs don't index a null var
+-- prefab.weapon = {}
+-- prefab.weapon_info = {}

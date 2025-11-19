@@ -1,0 +1,34 @@
+
+ = = = = = = = = = = = =
+
+ General Performance Tips for ATS modding
+ - - -
+ ATS is a large and complicated game, many tiny things add up to large reductions in performance.
+ If you want your mod to achieve levels of unit spam equal to the base game you must keep your models and unit complexity restrained.
+ 
+ = = = = = = = = = = = =
+ 
+ Models and Meshes
+ 
+ - Where possible, try to keep models "low detail" and "abstract". Most unit models in the game are quite simple, and our textureless abstract style helps make that appealing.
+	Note that in many cases small fine details or intricate meshes will go totally unseen and unnoticed by players. You can infact get away with rather "messy" geometry so long as the unit as a whole looks decent from afar.
+	Remember: every unit is just one in a sea of hundreds.
+ 
+ - Reuse model meshs where possible. (laser beams, muzzle flashes, engine thruster plumes)
+	The game can render multiple instances of the same mesh more efficiently than it can many unique meshes.
+	99% of all LAUNCHER weapons in ATS use the same 'cannonflash' mesh - as well as it simply being easy to do without anyone noticing or caring.
+ 
+ - Reuse materials where possible. (laser beams, muzzle flashes, engine thruster plumes, glow colours, hull)
+	The game can render multiple instances of the same materials more efficiently than it can many unique materials.
+	Most factions use the same material for the hull and glows of all their ships. Not only for visual consistency, but performance.
+	
+ = = = = = = = = = = = =
+ 
+ target Aquisition, MaximumDistance, and ScanTime
+ 
+ - Targeting is the most expensive operation in ATS, due to the pure volume of units at any given time
+   and the nature of ATS as a game where units must be responcive to new threats as they appear.
+   As such 
+	-- most units have a ScanTime that is relatively low depending on how fast they move. (eg. 0.1s)
+	-- most units keep a very low MaximumDistance that is at the most equal to their main weapon range.
+	-- It is very unwise to give units MaximumDistance > 30.
