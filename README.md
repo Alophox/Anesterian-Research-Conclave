@@ -2,11 +2,17 @@
  An Annihilate the Spance mod
 
 =====
+
 MOD INFO:
+
 ID: 101ARC v0.2.0
+
 ATS: v0.91
+
 Faction IDs used: 101
+
 Unit IDs used:1010000 - 1019999
+
 =====
 
 
