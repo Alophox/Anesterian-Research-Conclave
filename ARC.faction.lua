@@ -323,7 +323,7 @@ return {
 		--1017000, --experimental
 	},               -- Ships
 	structures = { 
-		1012000, 1012001, --platforms
+		1012000, 1012001, 1012002, --platforms
 		1012003, -- utility
 		1012011, 1012012, 1012013, --yards
 		1012020, 1012022, --turrets

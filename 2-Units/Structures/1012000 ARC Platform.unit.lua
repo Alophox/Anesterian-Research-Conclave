@@ -3,9 +3,9 @@ return {
 
 	-- 🟦 DEFINITIONS
 	unitName                    = "arc_platform",
-	unitDisplayName             = "Core",
+	unitDisplayName             = "Starbase",
 	unitTooltip                 = "",
-	unitBlurb                   = "Base command center.",
+	unitBlurb                   = "Medium Command Platform",
 	unitBlurbExcludeFromTooltip = false,
 	hotkey                      = "",
 	picture                     = "arc_platform.png",
@@ -15,8 +15,21 @@ return {
 		visibility                  = "VISIBLE", --VISIBLE (always available) / HIDDEN (never visible)/ DISCOVER (visible once required level)
 		requiredLevelForVisible     = "",
 		requiredLevelForDescription = "",
-		tactical                    = "",
-		description                 =	"I feel like I've seen those structures surrounding the hub before...",
+		tactical                    = "<color=yellow>Tactical:</color>\n"..
+										" - Poor defense against Missiles / Drones / Lights\n"..
+										" - Produces Matter, Energy, and Logistics\n"..
+										" - Breach Communications Suite\n"..
+										" - Breach Core\n",
+		description                 =	"Powered by a Breach Core, these multipurpose structures are utilized in standard Research and Reconnaissance missions.\n"..
+										"\n"..
+										"The Starbase was born when it was realized that the Starpost could not hope to power all the equipment necessary to study local systems.\n"..
+										"\n"..
+										"It was fortunate timing- these were tougher, and early renditions included lasers for asteroid defense; enough so that when a fleet of treasure seekers arrived, chasing rumors of a convoy, they were more than capable of defending against them- at least after it was clear they were not going to take no for an answer.\n"..
+										"\n"..
+										"Here in the Spance, the Starbases have their Warp Drive replaced with a SAIL drive to accompany their Breach Interdiction and Breach Communications Suite. Breach Interdiction destabalized space around it, preventing anything nearby from safely exiting the zone- and tripping failsafes of those passing by. Unfortunately the shear amount of matter in the Spance has reduced its effectiveness to below what other Interdictors are capable of, in its already fairly short range. The Breach Communication Suite, however, enabled 0 lag communication between other BCSs, by 'entangling' Breaches to send data.\n"..
+										"\n"..
+										"The Breach Nodes surrounding the Starbase enable it to punch through the strange distortions present within the Spance, providing auxiliary power in addition to strengthened communications.\n"..
+										"\n",
 		weaponInfo                  = {},
 		relatedUnitIDs              = {}
 	},

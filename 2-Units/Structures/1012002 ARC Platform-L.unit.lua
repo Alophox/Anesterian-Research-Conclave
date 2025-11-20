@@ -1,14 +1,14 @@
-scaleConst = 3.8442;
+scaleConst = 7.8;
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "arc_platform_s",
-	unitDisplayName             = "Starpost",
+	unitName                    = "arc_platform",
+	unitDisplayName             = "Starhold",
 	unitTooltip                 = "",
-	unitBlurb                   = "Light Command Platform",
+	unitBlurb                   = "Super Command Platform",
 	unitBlurbExcludeFromTooltip = false,
 	hotkey                      = "",
-	picture                     = "arc_platform_s.png",
+	picture                     = "arc_platform.png",
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {
@@ -20,15 +20,15 @@ return {
 										" - Produces Matter, Energy, and Logistics\n"..
 										" - Breach Communications Suite\n"..
 										" - Breach Core\n",
-		description                 =	"Powered by a Breach Core, these multipurpose structures are utilized in light Research and Reconnaissance missions.\n"..
+		description                 =	"Powered by a Breach Core, these multipurpose structures are utilized in highly dangerous Research and Reconnaissance missions.\n"..
 										"\n"..
-										"Long ago, an expedition found itself in a lonely system, surrounded by the darkness only found between galactic arms. With a desire to light their night sky as their lost homes were, they build a great constellation out of the very first models of Starposts, powered by fusion reactors. Years have passed since such humble beginnings along with many refits, but the core design remains the same.\n"..
+										"Following the eventual colonization of 'nearby' star systems, it was determined that a central, fortified communications station would be required in each system. This turned into the Starhold- a stronghold that would orbit stars, providing a heavy duty node in the now interestellar constellation.\n"..
 										"\n"..
-										"A central building with a power source capable of fueling the station for eons, infrastructure to support comfortable life, and a hangar for shuttling personnel, equipment, and trash. This then has modules attached to it, for whatever purposes are required. While the first Starposts were powered by fusion, modern Starposts instead make use of Breach Cores- Highly efficient, these volatile rends in reality can be particularly deadly if not contained properly.\n"..
+										"The first Breach Cores in space were first installed on one of these, as only they had the auxilliary power required to contain a Breach. The first attempt, unfortunately, resulted in the complete destruction of the Starhold- but the Anesterian Research Conclave learned from their mistakes, and revisited their designs- determining that putting too much power into the containment fields would feed the Breech, leading to a catastrophic failure as it started feeding on energy rather than producing any.\n"..
 										"\n"..
-										"Here in the Spance, the Starposts have their Warp Drive replaced with a SAIL drive to accompany their Breach Interdiction and Breach Communications Suite. Breach Interdiction destabalized space around it, preventing anything nearby from safely exiting the zone- and tripping failsafes of those passing by. Unfortunately the shear amount of matter in the Spance has reduced its effectiveness to below what other Interdictors are capable of, in its already fairly short range. The Breach Communication Suite, however, enabled 0 lag communication between other BCSs, by 'entangling' Breaches to send data.\n"..
+										"Here in the Spance, the Starholds have their Warp Drive replaced with a SAIL drive to accompany their Breach Interdiction and Breach Communications Suite. Breach Interdiction destabalized space around it, preventing anything nearby from safely exiting the zone- and tripping failsafes of those passing by. Unfortunately the shear amount of matter in the Spance has reduced its effectiveness to below what other Interdictors are capable of, in its already fairly short range. The Breach Communication Suite, however, enabled 0 lag communication between other BCSs, by 'entangling' Breaches to send data.\n"..
 										"\n"..
-										"The Breach Nodes surrounding the Starpost enable it to punch through the strange distortions present within the Spance, providing auxiliary power in addition to strengthened communications."..
+										"The Breach Nodes surrounding the Starhold enable it to punch through the strange distortions present within the Spance, providing auxiliary power in addition to strengthened communications.\n"..
 										"\n",
 		weaponInfo                  = {},
 		relatedUnitIDs              = {}
@@ -36,17 +36,17 @@ return {
 
 	-- BODY SETUP
 	scale                       = scaleConst,
-	mainMesh                    = "Core/Core-Small",
+	mainMesh                    = "Core/Core-Large",
 	materials                   = { "arc_hull", "arc_teamGlow", "arc_teamColour", "arc_hull_dark" },
 	colliderDimensions = {
 		widthMultiplier  = 1,
-		heightMultiplier = .530,
+		heightMultiplier = .261,
 		lengthMultiplier = 1,
 	},
 
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data                        = {
-		typeID       = 1012001,
+		typeID       = 1012002,
 		factionID    = 101,
 		macroType    = "AUTO",
 		cost_matter  = 0, -- Platforms are not buildable, so it does not require a cost.
@@ -138,12 +138,12 @@ return {
 
 	-- 🟦 HEALTH & ARMOR
 	health = {
-		unitClass = "CAPITAL",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = 10000,
-		health_regen_per_second = 10,
+		unitClass = "TITAN",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
+		health = 50000,
+		health_regen_per_second = 50,
 		max_regen_frac = 1,
 
-		armour = 20,
+		armour = 40,
 		vulnerability_max = 0,
 		shredMultiplier = 1.0,
 
@@ -174,7 +174,7 @@ return {
 
 		explosionType = "EXPLOSION",          	-- EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
 		explosionVolatility = 1.0,
-		explosionSizeOveride = 10,			-- Give it a hearty platform saildrive critical BOOM!!!
+		explosionSizeOveride = 20,			-- Give it a hearty platform saildrive critical BOOM!!!
 		flashSizeOverride = 0,
 		forceShockwave = false,
 		preventShockwave = false,
@@ -200,12 +200,16 @@ return {
 		type = "NONE", --NONE, ECONOMY, PRODUCTION, DEFENCE, OFFENCE, UTILITY, EXTENDER
 		--rectangle = {5,5}, 		-- optional, float2: xz dimensions of the influence, facing ^
 		--ring = {0, 2.5},			-- optional, float2: Inner and outer ring radius. Inner > 0 lets you make donuts. If structure footprint is odd, add +0.5 for a cleaner circle.
-		matrixDimensions = {4,4},
+		matrixDimensions = {8,8},
 		matrix = {				-- optional, int bool: matrix for detailed footprints. 0 = empty space, 1 = occupied space
-			1, 1, 1, 1,
-			1, 1, 1, 1,
-			1, 1, 1, 1,
-			1, 1, 1, 1,
+			0, 0, 1, 1, 1, 1, 0, 0,
+			0, 1, 1, 1, 1, 1, 1, 0,
+			1, 1, 1, 1, 1, 1, 1, 1,
+			1, 1, 1, 1, 1, 1, 1, 1,
+			1, 1, 1, 1, 1, 1, 1, 1,
+			1, 1, 1, 1, 1, 1, 1, 1,
+			0, 1, 1, 1, 1, 1, 1, 0,
+			0, 0, 1, 1, 1, 1, 0, 0,
 		 },
 	},
 
@@ -213,7 +217,7 @@ return {
 	influence = {
 		strength = {20, 1},
 		--rectangle = {5,5}, 		-- optional, float2: xz dimensions of the influence, facing ^
-		ring = {0,9},			-- optional, float2: Inner and outer ring radius. Inner > 0 lets you make donuts. If structure footprint is odd, add +0.5 for a cleaner circle.
+		ring = {0,17},			-- optional, float2: Inner and outer ring radius. Inner > 0 lets you make donuts. If structure footprint is odd, add +0.5 for a cleaner circle.
 		--matrixDimensions = {5,5},
 		--matrix = {				-- optional, int bool: matrix for detailed footprints. 0 = empty space, 1 = occupied space
 		--	0, 1, 1, 1, 0,
@@ -227,16 +231,16 @@ return {
 	-- 🟨 RESOURCE GENERATOR AND STORAGE CONFIGURATION
 	isGenerator        = true,
 	resourceGeneration = {
-		matter = 1.5, 	-- float: Matter generation per second
-		energy = 2, 	-- float: Energy generation per second
+		matter = 5, 	-- float: Matter generation per second
+		energy = 7, 	-- float: Energy generation per second
 		phase  = 0 	-- float: Phase generation per second
 	},
 
 	isCapacitor        = true,
 	resourceCapacity           = {
-		logistics = 40, 	-- int: Logistics
-		matter    = 300, 	-- int: Max stored matter
-		energy    = 150, 	-- int: Max stored energy
+		logistics = 250, 	-- int: Logistics
+		matter    = 750, 	-- int: Max stored matter
+		energy    = 1000, 	-- int: Max stored energy
 		phase     = 0 		-- int: Max stored phase energy
 	},
 
