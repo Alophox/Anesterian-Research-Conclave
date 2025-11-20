@@ -41,7 +41,7 @@ return {
 		active = true,                -- is the weapon online (for use with necrofire)
 		oneuse = false,               -- destroy root unit when out of ammo, (for bullets, missiles, etc) (fires entire magazine then destroys the unit it's on)
 		rangeInUnits = weaponStats.fireRangeMult * weaponStats.rangeMult[weaponConst.size] * weaponStats.cannon.baseRange,            -- Target must be within range, for gun to fire.
-		maximumAngleToTarget = 0.1,   -- Radians, target must be within angle for gun to fire.
+		maximumAngleToTarget = 0.01,   -- Radians, target must be within angle for gun to fire.
 		unitsPerSecond = weaponStats.cannon.velocity,           -- projectile velocity for LAUNCHER in 100m/s
 		spreadDegrees = weaponStats.accuracySpread * ((1 - weaponStats.cannon.accuracy)/(weaponStats.fireRangeMult * weaponStats.rangeMult[weaponConst.size] * weaponStats.cannon.baseRange)),          -- Radians, spread for LAUNCHER (machine guns, etc)
 		spreadType = "BELLCURVE",       -- Spread style. BELLCURVE (more in the center), RANDOM 
