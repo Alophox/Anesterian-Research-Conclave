@@ -19,9 +19,9 @@ return {
 	
 	--Version helps the game know if the player's local version of the mod is out of date when looking at other mods or maps. 
 	--EG. a map could expect v2.0.0 while the local copy is v1.5.0. Then the map can tell the player "Hey this mod probably needs an update."
-	version        = "0.2.0", -- Major.Minor.Patch
+	version        = "0.3.0", -- Major.Minor.Patch
 
-	description    = "What's this? Overreaching again?",
+	description    = "When the stars are few and far between, make your own to light the night",
 	
 	conflictControls = {
 		mergeSameID = false,	--Allows other mods to merge with this mod and override items, aka, mod modding. If false, this mod will be ignored if another with the same ID is already loaded.

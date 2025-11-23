@@ -1,4 +1,4 @@
-scaleConst = 7.8;
+scaleConst = 7.7596;
 return {
 
 	-- 🟦 DEFINITIONS
@@ -16,21 +16,26 @@ return {
 		requiredLevelForVisible     = "",
 		requiredLevelForDescription = "",
 		tactical                    = "<color=yellow>Tactical:</color>\n"..
-										" - Poor defense against Missiles / Drones / Lights\n"..
 										" - Produces Matter, Energy, and Logistics\n"..
 										" - Breach Communications Suite\n"..
 										" - Breach Core\n",
 		description                 =	"Powered by a Breach Core, these multipurpose structures are utilized in highly dangerous Research and Reconnaissance missions.\n"..
 										"\n"..
-										"Following the eventual colonization of 'nearby' star systems, it was determined that a central, fortified communications station would be required in each system. This turned into the Starhold- a stronghold that would orbit stars, providing a heavy duty node in the now interestellar constellation.\n"..
+										"Following the eventual colonization of 'nearby' star systems, it was determined that a central, fortified communications station would be required in each system. This turned into the Starhold- a stronghold that would orbit stars, providing a heavy duty node in the now interestellar constellation of stations.\n"..
 										"\n"..
-										"The first Breach Cores in space were first installed on one of these, as only they had the auxilliary power required to contain a Breach. The first attempt, unfortunately, resulted in the complete destruction of the Starhold- but the Anesterian Research Conclave learned from their mistakes, and revisited their designs- determining that putting too much power into the containment fields would feed the Breech, leading to a catastrophic failure as it started feeding on energy rather than producing any.\n"..
+										"The first Breach Cores in space were first installed on one of these, as only they had the auxilliary power required to contain a Breach. The first attempt, unfortunately, resulted in the complete destruction of the Starhold- but the Anesterian Research Conclave learned from their mistakes, and revisited their designs- leading to the refinement of the technology to such a degree it could be considered 'safe' by most metrics.\n"..
 										"\n"..
-										"Here in the Spance, the Starholds have their Warp Drive replaced with a SAIL drive to accompany their Breach Interdiction and Breach Communications Suite. Breach Interdiction destabalized space around it, preventing anything nearby from safely exiting the zone- and tripping failsafes of those passing by. Unfortunately the shear amount of matter in the Spance has reduced its effectiveness to below what other Interdictors are capable of, in its already fairly short range. The Breach Communication Suite, however, enabled 0 lag communication between other BCSs, by 'entangling' Breaches to send data.\n"..
+										"Here in the Spance, the Starholds have their Warp Drive replaced with a SAIL drive to accompany their Breach Interdiction and Breach Communications Suite. Breach Interdiction destabalizes space around it, preventing anything nearby from safely exiting the zone- and tripping failsafes of those passing by. Unfortunately the technlogy is still in its infancy, and much less efficient than what other Interdictors are capable of. The Breach Communication Suite, however, enables 0 lag communication between other BCSs, by 'entangling' Breaches to send data.\n"..
 										"\n"..
 										"The Breach Nodes surrounding the Starhold enable it to punch through the strange distortions present within the Spance, providing auxiliary power in addition to strengthened communications.\n"..
 										"\n",
-		weaponInfo                  = {},
+		weaponInfo                  = functions.combineWeaponInfo({
+			{prefab.weapon_info.hangar.quartz(4),},
+			prefab.weapon_info.platform.L.A(8),
+			prefab.weapon_info.platform.L.B(8),
+			prefab.weapon_info.platform.L.C1(4),
+			prefab.weapon_info.platform.L.C2(4),
+		}),
 		relatedUnitIDs              = {}
 	},
 
@@ -40,7 +45,7 @@ return {
 	materials                   = { "arc_hull", "arc_teamGlow", "arc_teamColour", "arc_hull_dark" },
 	colliderDimensions = {
 		widthMultiplier  = 1,
-		heightMultiplier = .261,
+		heightMultiplier = .263,
 		lengthMultiplier = 1,
 	},
 
@@ -134,6 +139,35 @@ return {
 				},
 			},
 		},
+
+		prefab.part.platform.L.A(scaleConst, 1, false),
+		prefab.part.platform.L.A(scaleConst, 3, false),
+		prefab.part.platform.L.A(scaleConst, 5, false),
+		prefab.part.platform.L.A(scaleConst, 7, false),
+		prefab.part.platform.L.A(scaleConst, 9, false),
+		prefab.part.platform.L.A(scaleConst, 11, false),
+		prefab.part.platform.L.A(scaleConst, 13, false),
+		prefab.part.platform.L.A(scaleConst, 15, false),
+
+		prefab.part.platform.L.B(scaleConst, 0, false),
+		prefab.part.platform.L.B(scaleConst, 2, false),
+		prefab.part.platform.L.B(scaleConst, 4, false),
+		prefab.part.platform.L.B(scaleConst, 6, false),
+		prefab.part.platform.L.B(scaleConst, 8, false),
+		prefab.part.platform.L.B(scaleConst, 10, false),
+		prefab.part.platform.L.B(scaleConst, 12, false),
+		prefab.part.platform.L.B(scaleConst, 14, false),
+
+		prefab.part.platform.L.C1(scaleConst, 0, false),
+		prefab.part.platform.L.C1(scaleConst, 4, false),
+		prefab.part.platform.L.C1(scaleConst, 8, false),
+		prefab.part.platform.L.C1(scaleConst, 12, false),
+		
+		prefab.part.platform.L.C2(scaleConst, 2, false),
+		prefab.part.platform.L.C2(scaleConst, 6, false),
+		prefab.part.platform.L.C2(scaleConst, 10, false),
+		prefab.part.platform.L.C2(scaleConst, 14, false),
+
 	},
 
 	-- 🟦 HEALTH & ARMOR

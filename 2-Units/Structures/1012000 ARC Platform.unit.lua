@@ -30,7 +30,9 @@ return {
 										"\n"..
 										"The Breach Nodes surrounding the Starbase enable it to punch through the strange distortions present within the Spance, providing auxiliary power in addition to strengthened communications.\n"..
 										"\n",
-		weaponInfo                  = {},
+		weaponInfo                  = functions.combineWeaponInfo({
+			{prefab.weapon_info.hangar.quartz(4),},
+		}),
 		relatedUnitIDs              = {}
 	},
 

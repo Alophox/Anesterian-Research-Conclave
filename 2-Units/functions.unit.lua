@@ -34,3 +34,18 @@ function functions.averageMultiplier(struct)
 	end
 	return return_info
 end
+
+-- in 22.5 degree steps because I shouldn't need any other values that don't multiply off of that...
+function functions.rotateRecursive(posStruct,originStruct,count)
+	if count <= 0 then
+		return posStruct
+	end
+	cosVal = 0.92387953251
+	sinVal = 0.38268343236
+	newPos = functions.rotateRecursive(posStruct,originStruct,count-1)
+	offsetPos = {x=newPos.x - originStruct.x,z=newPos.z-originStruct.z}
+	return {
+		x=(cosVal*offsetPos.x - sinVal*offsetPos.z + originStruct.x),
+		z=(sinVal*offsetPos.x + cosVal*offsetPos.z + originStruct.z)
+	}
+end
