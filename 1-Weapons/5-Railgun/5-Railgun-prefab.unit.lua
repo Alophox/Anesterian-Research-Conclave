@@ -25,7 +25,7 @@ function prefab.weapon.railgun.S(pos, rot, sca, isGhost)
 				scale 	= { 1, 1, 1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 
 				weapon    = {
-					weaponID = 1015201, --int: The weaponData id to be used for this weapon.
+					weaponID = 1015501, --int: The weaponData id to be used for this weapon.
 					turnSpeed = weaponStats.baseTracking*weaponStats.railgun.trackingMult.S, 	--float: Degrees per second.
 					turnMode = "Linear", --string enum: Linear / Acceleration
 					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -94,7 +94,7 @@ function prefab.weapon.railgun.M(pos, rot, sca, isGhost)
 				scale 	= { 1, 1, 1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 
 				weapon    = {
-					weaponID = 1015202, --int: The weaponData id to be used for this weapon.
+					weaponID = 1015502, --int: The weaponData id to be used for this weapon.
 					turnSpeed = weaponStats.baseTracking*weaponStats.railgun.trackingMult.M, 	--float: Degrees per second.
 					turnMode = "Linear", --string enum: Linear / Acceleration
 					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
