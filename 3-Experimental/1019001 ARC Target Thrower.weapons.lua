@@ -124,7 +124,7 @@ return {
 		barrelIndexCurrent = 0,            --Controls which barrel (in child order) the weapon will start with.
 
 		--LAUNCHER / TESLA Controls
-		spawnID = 1017001,       --unit typeID
+		spawnID = 1019701,       --unit typeID
 		arrivalData = {
 			type           = "NONE",    --NONE, ARRIVE, DEPART, CONSTRUCT, LAUNCH, WARP
 			arrivalDuration= 1.0,

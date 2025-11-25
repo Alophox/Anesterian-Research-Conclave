@@ -1,29 +1,23 @@
-
+scaleConst = 1.944;
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "arc_emplacement_1_node",              	-- Internal name for debugging and errors.
-	unitDisplayName             = "Defense Platform Node",                    	-- Actual display name of the unit in the Databank, HUD, etc.
+	unitName                    = "arc_emplacement_2",              	-- Internal name for debugging and errors.
+	unitDisplayName             = "Medium Emplacement",                    	-- Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   	-- Shown when moused over in the HUD.
 	unitBlurb                   = "Fully modular turret base!", 		-- Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           	-- The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
-	hotkey                      = "F",                             	-- For buildbar. The hotkey for this unit.
-	picture                     = "arc_emplacement_1_node.png",            -- The name of the image file in this folder to be used for this unit.
-
-	controllable 	= false;	-- bool: Can this unit be given move orders with right click?
-	unselectable = false;	-- Cannot be selected.
-	untargetable = true;	-- Cannot be targeted.
-	unhittable 	= true;  -- Will be ignored by any RAYCAST or CAST based aquisition types (as are used for bullets). Also cannot be hit by explosions or incidental weapon raycasts (lasers). But can still be hit by PureHit weapons.
-
+	hotkey                      = "f",                             	-- For buildbar. The hotkey for this unit.
+	picture                     = "arc_emplacement_2.png",            -- The name of the image file in this folder to be used for this unit.
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {
-		visibility                  = "HIDDEN", --VISIBLE (always available) / HIDDEN (never visible)/ DISCOVER (visible once required level)
+		visibility                  = "VISIBLE", --VISIBLE (always available) / HIDDEN (never visible)/ DISCOVER (visible once required level)
 		requiredLevelForVisible     = "",
 		requiredLevelForDescription = "",
 		tactical                    = "", --Added to the top of all tooltips and Databank descriptions. Used to quickly explain what a unit is good at doing. Strong against, decent against, weak against.
 		description                 =
-		"Oh, you wanted turrets that only could do one thing? Too bad.",
+		"WOW",
 		weaponInfo                  = { --Tells the databank which weaponDatas to grab and display for this unit. Not automatic, you have to do this.
 			
 		},
@@ -31,8 +25,8 @@ return {
 	},
 
 	-- BODY SETUP
-	scale                       = 0.85,                                          -- A Tolly is scale 0.4, all units are a uniform scale. Normalise mesh size to 1 in Blender. (make sure the longest horizontal part (width/length) is 1)
-	mainMesh                    = "Emplacement/Emplacement-Node",   -- Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
+	scale                       = scaleConst,                                          -- A Tolly is scale 0.4, all units are a uniform scale. Normalise mesh size to 1 in Blender. (make sure the longest horizontal part (width/length) is 1)
+	mainMesh                    = "Emplacement/Emplacement-2",   -- Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
 	
 	--NOTICE, WORKING WITH MATERIALS AND MESHS:
 	--When making a mesh in Blender, you can assign materials to different surfaces. The number of materials used create 'material slots' for the mesh.
@@ -40,7 +34,7 @@ return {
 	--Inorder for ATS to know which material goes to which material slot on a mesh, we must define the ordering.
 	--Assign materials here in the same order as they are defined on the object in your Blender file. 
 	--(Can only get materials from .materials.lua files in this mod folder.)
-	materials                   = { "arc_hull", "arc_teamGlow", "arc_hull_dark", "arc_teamColour" },
+	materials                   = { "arc_hull", "arc_teamGlow", "arc_teamColour", "arc_hull_dark" },
 
 	-- Percieved dimensions of the unit. Multiplied against scale. Controls how big the unit is percieved by other units. 
 	-- Units cannot actually "see" anything, so we need to mathematically define how big the unit is for standoff behaviour among other things.
@@ -48,7 +42,7 @@ return {
 	-- Better to have the dimensions too small, than too large. Otherwise units will struggle to get in actual firing range of the target's colliders.
 	colliderDimensions = {
 		widthMultiplier  = 1, --Multiplied by scale to determine the percieved width of the unit. Long units (Vaalkorei) have this at about 0.5~0.6, aka we're only half as wide as we are long.
-		heightMultiplier = 1, --Multiplied by scale to determine the percieved height of the unit, flat units (Kontaalen) have this at about 0.6, aka we're shorter than we are long.
+		heightMultiplier = .517, --Multiplied by scale to determine the percieved height of the unit, flat units (Kontaalen) have this at about 0.6, aka we're shorter than we are long.
 		lengthMultiplier = 1, --Multiplied by scale to determine the percieved length of the unit. wide units (Soul Warden Fore section) have this at about 0.5, aka we're only half as long as we are wide.
 	},
 
@@ -57,16 +51,26 @@ return {
 		typeID       = 1012021, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
 		factionID    = 101, 	--The faction this unit is associated with in the Databank.
 		macroType    = "AUTO", 	--MacroTarget state: AUTO (is capital or command?) / TRUE / FALSE
-		cost_matter  = 20, 		--integer, For structures.
-		cost_energy  = 2, 		--integer, For structures.
-		cost_supply  = 2, 		--integer, For structures. Logistics cost.
-		cost_time    = 15, 		--integer, For structures, how long in seconds it takes to build.
+		cost_matter  = 100, 		--integer, For structures.
+		cost_energy  = 75, 		--integer, For structures.
+		cost_supply  = 0, 		--integer, For structures. Logistics cost.
+		cost_time    = 20, 		--integer, For structures, how long in seconds it takes to build.
 		techRequired = 0
 	},
 
 	-- 🟦 PARTS
 	parts = {
-			
+		{
+			name     = "Emplacement Node",			
+			position = { .55/.85, 0, 0 },                	
+			rotation = { 0, 0, 90 },              
+			scale 	= { .85, .85, .85 },
+			-- autoModule = {
+			-- 	moduleTypeID = 1012021, -- The TypeID of the unit that will be attached to this unit, as a "module".
+			-- 	reportKillsToParent = true, --Any kills this "module" (unit) makes will be attributed to it's root parent. Yes, even the parent of other modules if this is on a module itself and it's parent module has true also.
+			-- },
+		},
+
 		{
 			name     = "Spawner Spawn and Ghost Point",	
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
@@ -76,17 +80,16 @@ return {
 				code = 0, -- The code used to identify this spawnpoint, spawnItems with the same code will be spawned at this spawnpoint and any others with the same code.
 			},
 		},
-		
 	},
 
 	-- 🟦 HEALTH & ARMOR
 	health = {
-		unitClass = "NONE",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = 500,              --Health, also the unit's heat capacity.
+		unitClass = "HEAVY",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
+		health = 3000,              --Health, also the unit's heat capacity.
 		health_regen_per_second = 5, --Health regen per second. Duh.
-		max_regen_frac = 0.2,      --The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
+		max_regen_frac = 0,      --The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
 
-		armour = 5,                --Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
+		armour = 30,                --Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
 		vulnerability_max = 0.2,   --Prevent the unit from losing more than X fraction of it's armour.
 		shredMultiplier = 1.0,     --Multiplies incomming shred, pretty self explanatory right?
 
@@ -113,15 +116,15 @@ return {
 
 		phaseBlockFraction = 0,               --How much Phase is used to block damage. I don't think this works. 
 		
-		lifetime = 0,                         --How long before this unit self-destructs. (drones, missiles, bullets)
+		lifetime = 21.1,                         --How long before this unit self-destructs. (drones, missiles, bullets)
 		explodeOnTimeout = false,             --Was it a peaceful death?
 
-		explosionType = "EXPLOSION",          	-- EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
-		explosionVolatility = 1.0,            	-- 1000 * unit scale * volatility = area damage when a unit of scale 2 or greater dies.
+		explosionType = "NONE",          	-- EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
+		explosionVolatility = 0,            	-- 1000 * unit scale * volatility = area damage when a unit of scale 2 or greater dies.
 		explosionSizeOveride = 0,             	-- Size of the visual explosion. A Tolly is 0.4 in size. 0 is automatic.
 		flashSizeOverride = 0,                	-- Size of the white internal flash. 0 is automatic.
 		forceShockwave = false,               	-- Forces a repulsive shockwave to be created, uses explosionSizeOveride or auto if not set.
-		preventShockwave = false,             	-- Prevents a repulsive shockwave from being created automatically on units scale 1+
+		preventShockwave = true,             	-- Prevents a repulsive shockwave from being created automatically on units scale 1+
 		randomiseInAllDirections = false,     	--Let the explosion randomise it's direction.
 		deathUnitSpawnDoNotRandomiseRotation = false, --Randomise the rotation of the unit spawned on death, if any.
 		deathUnitSpawnTypeID = -1,            	--The unit spawned when this dies. -1 is nothing. Used for debris, and Glowfish Blobs.
@@ -136,10 +139,10 @@ return {
 	},
 
 	-- 🟦 STRUCTURE
-	isStructure = false,
+	isStructure = true,
 	structure = {
-		type = "DEFENSE", --NONE, ECONOMY, PRODUCTION, DEFENCE, OFFENCE, UTILITY, EXTENDER
-		rectangle = {1,2}, 		-- optional, float2: xz dimensions of the influence, facing ^
+		type = "DEFENCE", --NONE, ECONOMY, PRODUCTION, DEFENCE, OFFENCE, UTILITY, EXTENDER
+		rectangle = {2,2}, 		-- optional, float2: xz dimensions of the influence, facing ^
 		--ring = {0, 2.5},			-- optional, float2: Inner and outer ring radius. Inner > 0 lets you make donuts. If structure footprint is odd, add +0.5 for a cleaner circle.
 		--matrixDimensions = {5,5},
 		--matrix = {				-- optional, int bool: matrix for detailed footprints. 0 = empty space, 1 = occupied space
@@ -151,20 +154,19 @@ return {
 		-- },
 	},
 
-
 	-- 🟨 SPAWNER CONFIGURATION (yards)
 	isSpawner = true,
 	spawner = {
-		spawnOffset = { 0, 0, 0 },      -- XYZ local offset
+		spawnOffset = { 0, 1, 0 },      -- XYZ local offset
 		spawnOffsetHeightRandomisation = 0.5, -- Adds +/- Y random variation
 		endRotationUseStructureForward = false, -- Align to structure's forward?
 
 		noUnitGhost = false,            -- If true, don't spawn ghost previews
-		usesToSelfdestruct = 0,         -- Number of uses before self-destruct
+		usesToSelfdestruct = 1,         -- Number of uses before self-destruct
 		simultaneousUnitLimit = 1,      -- Max spawns at once, (Jerens and Refinery M6 use 1)
 
 		arrivalData = {
-			type = "ARRIVE", 		-- ARRIVETYPE: NONE, ARRIVE (appear and rise up), WARP (like a platform, or Petrel)
+			type = "NONE", 		-- ARRIVETYPE: NONE, ARRIVE (appear and rise up), WARP (like a platform, or Petrel)
 			arrivalDuration = 1.5, 	-- Seconds that the unit will spend moving from the point it is spawned, to the spawnOffset. AKA, makes it rise into place nicely. Distance = speed * duration
 			approachSpeed = 5.0, 	-- Speed of movement, will extend the distance the unit moves. Distance = speed * duration
 			keepDisabled = false 	-- The unit will be braindead on spawn and ignore repulsion. Not useful for spawners (used by map events and stuff), but exposed here just incase.
@@ -174,8 +176,8 @@ return {
 	-- 🟨 SPAWNER UNITS (units a yard can build)
 	spawnItems = {
 		{
-			id = 1011100, -- typeID of the unit to spawn
-			spawnTime = 15, -- How long to build/spawn
+			id = 1017011, -- typeID of the unit to spawn
+			spawnTime = 1, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
@@ -188,8 +190,8 @@ return {
 			techID = 0 -- Required tech to enable.
 		},
 		{
-			id = 1011101, -- typeID of the unit to spawn
-			spawnTime = 15, -- How long to build/spawn
+			id = 1017013, -- typeID of the unit to spawn
+			spawnTime = 1, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
@@ -202,8 +204,8 @@ return {
 			techID = 0 -- Required tech to enable.
 		},
 		{
-			id = 1011102, -- typeID of the unit to spawn
-			spawnTime = 15, -- How long to build/spawn
+			id = 1017014, -- typeID of the unit to spawn
+			spawnTime = 1, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
@@ -216,8 +218,8 @@ return {
 			techID = 0 -- Required tech to enable.
 		},
 		{
-			id = 1011200, -- typeID of the unit to spawn
-			spawnTime = 15, -- How long to build/spawn
+			id = 1017015, -- typeID of the unit to spawn
+			spawnTime = 1, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
@@ -231,4 +233,5 @@ return {
 		},
 		
 	},
+
 }

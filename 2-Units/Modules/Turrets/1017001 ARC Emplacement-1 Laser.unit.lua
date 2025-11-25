@@ -2,13 +2,13 @@ scaleConst = .78;
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "arc_emplacement_1",              	-- Internal name for debugging and errors.
-	unitDisplayName             = "Small Emplacement",                    	-- Actual display name of the unit in the Databank, HUD, etc.
+	unitName                    = "arc_emplacement_1-laser",              	-- Internal name for debugging and errors.
+	unitDisplayName             = "Small Emplacement-Laser",                    	-- Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   	-- Shown when moused over in the HUD.
 	unitBlurb                   = "Fully modular turret base!", 		-- Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           	-- The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
-	hotkey                      = "c",                             	-- For buildbar. The hotkey for this unit.
-	picture                     = "arc_emplacement_1.png",            -- The name of the image file in this folder to be used for this unit.
+	hotkey                      = "F",                             	-- For buildbar. The hotkey for this unit.
+	picture                     = "arc_emplacement_1-laser.png",            -- The name of the image file in this folder to be used for this unit.
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {
@@ -18,12 +18,10 @@ return {
 		tactical                    = "", --Added to the top of all tooltips and Databank descriptions. Used to quickly explain what a unit is good at doing. Strong against, decent against, weak against.
 		description                 =
 		"WOW",
-		weaponInfo                  = { --Tells the databank which weaponDatas to grab and display for this unit. Not automatic, you have to do this.
-			
-		},
-		relatedUnitIDs              = {
-			-- 1017001, 1017003
-		} --TypeID of other units in the family tree
+		weaponInfo                  = functions.combineWeaponInfo({
+			prefab.weapon_info.module.emplacement.S(1, "laser"),
+		}),
+		relatedUnitIDs              = {1012020} --TypeID of other units in the family tree
 	},
 
 	-- BODY SETUP
@@ -50,27 +48,23 @@ return {
 
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data                        = {
-		typeID       = 1012020, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
+		typeID       = 1017001, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
 		factionID    = 101, 	--The faction this unit is associated with in the Databank.
 		macroType    = "AUTO", 	--MacroTarget state: AUTO (is capital or command?) / TRUE / FALSE
 		cost_matter  = 10, 		--integer, For structures.
 		cost_energy  = 5, 		--integer, For structures.
 		cost_supply  = 0, 		--integer, For structures. Logistics cost.
-		cost_time    = 7, 		--integer, For structures, how long in seconds it takes to build.
+		cost_time    = 9999, 		--integer, For structures, how long in seconds it takes to build.
 		techRequired = 0
 	},
 
 	-- 🟦 PARTS
 	parts = {
-		{
-			name     = "Spawner Spawn and Ghost Point",	
-			pos       = { 0, 0, 0 },        --Relative local position of this object.
-			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
-			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
-			spawnerSpawnPoint = {
-				code = 0, -- The code used to identify this spawnpoint, spawnItems with the same code will be spawned at this spawnpoint and any others with the same code.
-			},
-		},
+		prefab.part.module.emplacement.S(scaleConst, 0, "laser", false),
+	},
+
+	ghostParts = {
+		prefab.part.module.emplacement.S(scaleConst, 0, "laser", true),
 	},
 
 	-- 🟦 HEALTH & ARMOR
@@ -107,15 +101,15 @@ return {
 
 		phaseBlockFraction = 0,               --How much Phase is used to block damage. I don't think this works. 
 		
-		lifetime = 8.1,                         --How long before this unit self-destructs. (drones, missiles, bullets)
+		lifetime = 0,                         --How long before this unit self-destructs. (drones, missiles, bullets)
 		explodeOnTimeout = false,             --Was it a peaceful death?
 
-		explosionType = "NONE",          	-- EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
+		explosionType = "EXPLOSION",          	-- EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
 		explosionVolatility = 0,            	-- 1000 * unit scale * volatility = area damage when a unit of scale 2 or greater dies.
 		explosionSizeOveride = 0,             	-- Size of the visual explosion. A Tolly is 0.4 in size. 0 is automatic.
 		flashSizeOverride = 0,                	-- Size of the white internal flash. 0 is automatic.
 		forceShockwave = false,               	-- Forces a repulsive shockwave to be created, uses explosionSizeOveride or auto if not set.
-		preventShockwave = true,             	-- Prevents a repulsive shockwave from being created automatically on units scale 1+
+		preventShockwave = false,             	-- Prevents a repulsive shockwave from being created automatically on units scale 1+
 		randomiseInAllDirections = false,     	--Let the explosion randomise it's direction.
 		deathUnitSpawnDoNotRandomiseRotation = false, --Randomise the rotation of the unit spawned on death, if any.
 		deathUnitSpawnTypeID = -1,            	--The unit spawned when this dies. -1 is nothing. Used for debris, and Glowfish Blobs.
@@ -132,7 +126,7 @@ return {
 	-- 🟦 STRUCTURE
 	isStructure = true,
 	structure = {
-		type = "DEFENCE", --NONE, ECONOMY, PRODUCTION, DEFENCE, OFFENCE, UTILITY, EXTENDER
+		type = "NONE", --NONE, ECONOMY, PRODUCTION, DEFENCE, OFFENCE, UTILITY, EXTENDER
 		rectangle = {1,1}, 		-- optional, float2: xz dimensions of the influence, facing ^
 		--ring = {0, 2.5},			-- optional, float2: Inner and outer ring radius. Inner > 0 lets you make donuts. If structure footprint is odd, add +0.5 for a cleaner circle.
 		--matrixDimensions = {5,5},
@@ -144,85 +138,4 @@ return {
 		--	0, 1, 1, 1, 0,
 		-- },
 	},
-
-	-- 🟨 SPAWNER CONFIGURATION (yards)
-	isSpawner = true,
-	spawner = {
-		spawnOffset = { 0, 0, 0 },      -- XYZ local offset
-		spawnOffsetHeightRandomisation = 0.5, -- Adds +/- Y random variation
-		endRotationUseStructureForward = false, -- Align to structure's forward?
-
-		noUnitGhost = false,            -- If true, don't spawn ghost previews
-		usesToSelfdestruct = 1,         -- Number of uses before self-destruct
-		simultaneousUnitLimit = 1,      -- Max spawns at once, (Jerens and Refinery M6 use 1)
-
-		arrivalData = {
-			type = "NONE", 		-- ARRIVETYPE: NONE, ARRIVE (appear and rise up), WARP (like a platform, or Petrel)
-			arrivalDuration = 1.5, 	-- Seconds that the unit will spend moving from the point it is spawned, to the spawnOffset. AKA, makes it rise into place nicely. Distance = speed * duration
-			approachSpeed = 5.0, 	-- Speed of movement, will extend the distance the unit moves. Distance = speed * duration
-			keepDisabled = false 	-- The unit will be braindead on spawn and ignore repulsion. Not useful for spawners (used by map events and stuff), but exposed here just incase.
-		}
-	},
-
-	-- 🟨 SPAWNER UNITS (units a yard can build)
-	spawnItems = {
-		{
-			id = 1017001, -- typeID of the unit to spawn
-			spawnTime = 1, -- How long to build/spawn
-			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
-
-			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
-			spawnPointCode = 0,
-
-			spawnVelocity = 0, -- Ejection speed, eg. Kontaalagrad. Normal yards don't use this.
-			ignoreWaypoints = false, -- EG. Kontaalagrad.
-			heatPercentage = 0, -- What fraction of heat the unit spawns with, eg. Tychon units start with 20% (0.2) heat.
-
-			techID = 0 -- Required tech to enable.
-		},
-		{
-			id = 1017003, -- typeID of the unit to spawn
-			spawnTime = 1, -- How long to build/spawn
-			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
-
-			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
-			spawnPointCode = 0,
-
-			spawnVelocity = 0, -- Ejection speed, eg. Kontaalagrad. Normal yards don't use this.
-			ignoreWaypoints = false, -- EG. Kontaalagrad.
-			heatPercentage = 0, -- What fraction of heat the unit spawns with, eg. Tychon units start with 20% (0.2) heat.
-
-			techID = 0 -- Required tech to enable.
-		},
-		{
-			id = 1017004, -- typeID of the unit to spawn
-			spawnTime = 1, -- How long to build/spawn
-			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
-
-			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
-			spawnPointCode = 0,
-
-			spawnVelocity = 0, -- Ejection speed, eg. Kontaalagrad. Normal yards don't use this.
-			ignoreWaypoints = false, -- EG. Kontaalagrad.
-			heatPercentage = 0, -- What fraction of heat the unit spawns with, eg. Tychon units start with 20% (0.2) heat.
-
-			techID = 0 -- Required tech to enable.
-		},
-		{
-			id = 1017005, -- typeID of the unit to spawn
-			spawnTime = 1, -- How long to build/spawn
-			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
-
-			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
-			spawnPointCode = 0,
-
-			spawnVelocity = 0, -- Ejection speed, eg. Kontaalagrad. Normal yards don't use this.
-			ignoreWaypoints = false, -- EG. Kontaalagrad.
-			heatPercentage = 0, -- What fraction of heat the unit spawns with, eg. Tychon units start with 20% (0.2) heat.
-
-			techID = 0 -- Required tech to enable.
-		},
-		
-	},
-
 }

@@ -1,14 +1,14 @@
-scaleConst = .78;
+scaleConst = 2.6671;
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "arc_emplacement_1",              	-- Internal name for debugging and errors.
-	unitDisplayName             = "Small Emplacement",                    	-- Actual display name of the unit in the Databank, HUD, etc.
+	unitName                    = "arc_emplacement_3",              	-- Internal name for debugging and errors.
+	unitDisplayName             = "Large Emplacement",                    	-- Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   	-- Shown when moused over in the HUD.
 	unitBlurb                   = "Fully modular turret base!", 		-- Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           	-- The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
-	hotkey                      = "c",                             	-- For buildbar. The hotkey for this unit.
-	picture                     = "arc_emplacement_1.png",            -- The name of the image file in this folder to be used for this unit.
+	hotkey                      = "r",                             	-- For buildbar. The hotkey for this unit.
+	picture                     = "arc_emplacement_3.png",            -- The name of the image file in this folder to be used for this unit.
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {
@@ -21,14 +21,12 @@ return {
 		weaponInfo                  = { --Tells the databank which weaponDatas to grab and display for this unit. Not automatic, you have to do this.
 			
 		},
-		relatedUnitIDs              = {
-			-- 1017001, 1017003
-		} --TypeID of other units in the family tree
+		relatedUnitIDs              = {} --TypeID of other units in the family tree
 	},
 
 	-- BODY SETUP
 	scale                       = scaleConst,                                          -- A Tolly is scale 0.4, all units are a uniform scale. Normalise mesh size to 1 in Blender. (make sure the longest horizontal part (width/length) is 1)
-	mainMesh                    = "Emplacement/Emplacement-1",   -- Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
+	mainMesh                    = "Emplacement/Emplacement-3",   -- Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
 	
 	--NOTICE, WORKING WITH MATERIALS AND MESHS:
 	--When making a mesh in Blender, you can assign materials to different surfaces. The number of materials used create 'material slots' for the mesh.
@@ -43,25 +41,36 @@ return {
 	-- CONTROLS: standoff, targeting, repulsion distance.
 	-- Better to have the dimensions too small, than too large. Otherwise units will struggle to get in actual firing range of the target's colliders.
 	colliderDimensions = {
-		widthMultiplier  = .97, --Multiplied by scale to determine the percieved width of the unit. Long units (Vaalkorei) have this at about 0.5~0.6, aka we're only half as wide as we are long.
-		heightMultiplier = 1, --Multiplied by scale to determine the percieved height of the unit, flat units (Kontaalen) have this at about 0.6, aka we're shorter than we are long.
-		lengthMultiplier = .97, --Multiplied by scale to determine the percieved length of the unit. wide units (Soul Warden Fore section) have this at about 0.5, aka we're only half as long as we are wide.
+		widthMultiplier  = 1, --Multiplied by scale to determine the percieved width of the unit. Long units (Vaalkorei) have this at about 0.5~0.6, aka we're only half as wide as we are long.
+		heightMultiplier = .452, --Multiplied by scale to determine the percieved height of the unit, flat units (Kontaalen) have this at about 0.6, aka we're shorter than we are long.
+		lengthMultiplier = 1, --Multiplied by scale to determine the percieved length of the unit. wide units (Soul Warden Fore section) have this at about 0.5, aka we're only half as long as we are wide.
 	},
 
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data                        = {
-		typeID       = 1012020, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
+		typeID       = 1012022, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
 		factionID    = 101, 	--The faction this unit is associated with in the Databank.
 		macroType    = "AUTO", 	--MacroTarget state: AUTO (is capital or command?) / TRUE / FALSE
-		cost_matter  = 10, 		--integer, For structures.
-		cost_energy  = 5, 		--integer, For structures.
+		cost_matter  = 250, 		--integer, For structures.
+		cost_energy  = 250, 		--integer, For structures.
 		cost_supply  = 0, 		--integer, For structures. Logistics cost.
-		cost_time    = 7, 		--integer, For structures, how long in seconds it takes to build.
+		cost_time    = 30, 		--integer, For structures, how long in seconds it takes to build.
 		techRequired = 0
 	},
 
 	-- 🟦 PARTS
 	parts = {
+		{
+			name     = "Emplacement Node",			
+			position = { .55/.85, 0, 0 },                	
+			rotation = { 0, 0, 90 },              
+			scale 	= { .85, .85, .85 },
+			-- autoModule = {
+			-- 	moduleTypeID = 1012021, -- The TypeID of the unit that will be attached to this unit, as a "module".
+			-- 	reportKillsToParent = true, --Any kills this "module" (unit) makes will be attributed to it's root parent. Yes, even the parent of other modules if this is on a module itself and it's parent module has true also.
+			-- },
+		},
+
 		{
 			name     = "Spawner Spawn and Ghost Point",	
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
@@ -75,12 +84,12 @@ return {
 
 	-- 🟦 HEALTH & ARMOR
 	health = {
-		unitClass = "MEDIUM",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = 500,              --Health, also the unit's heat capacity.
-		health_regen_per_second = 3, --Health regen per second. Duh.
-		max_regen_frac = 0,      --The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
+		unitClass = "Capital",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
+		health = 6000,              --Health, also the unit's heat capacity.
+		health_regen_per_second = 10, --Health regen per second. Duh.
+		max_regen_frac = 0.2,      --The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
 
-		armour = 10,                --Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
+		armour = 40,                --Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
 		vulnerability_max = 0.2,   --Prevent the unit from losing more than X fraction of it's armour.
 		shredMultiplier = 1.0,     --Multiplies incomming shred, pretty self explanatory right?
 
@@ -107,7 +116,7 @@ return {
 
 		phaseBlockFraction = 0,               --How much Phase is used to block damage. I don't think this works. 
 		
-		lifetime = 8.1,                         --How long before this unit self-destructs. (drones, missiles, bullets)
+		lifetime = 31.1,                         --How long before this unit self-destructs. (drones, missiles, bullets)
 		explodeOnTimeout = false,             --Was it a peaceful death?
 
 		explosionType = "NONE",          	-- EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
@@ -133,22 +142,20 @@ return {
 	isStructure = true,
 	structure = {
 		type = "DEFENCE", --NONE, ECONOMY, PRODUCTION, DEFENCE, OFFENCE, UTILITY, EXTENDER
-		rectangle = {1,1}, 		-- optional, float2: xz dimensions of the influence, facing ^
+		-- rectangle = {2,1}, 		-- optional, float2: xz dimensions of the influence, facing ^
 		--ring = {0, 2.5},			-- optional, float2: Inner and outer ring radius. Inner > 0 lets you make donuts. If structure footprint is odd, add +0.5 for a cleaner circle.
-		--matrixDimensions = {5,5},
-		--matrix = {				-- optional, int bool: matrix for detailed footprints. 0 = empty space, 1 = occupied space
-		--	0, 1, 1, 1, 0,
-		--	1, 1, 1, 1, 1,
-		--	1, 1, 1, 1, 1,
-		--	1, 1, 1, 1, 1,
-		--	0, 1, 1, 1, 0,
-		-- },
+		matrixDimensions = {3,3},
+		matrix = {				-- optional, int bool: matrix for detailed footprints. 0 = empty space, 1 = occupied space
+			1, 1, 1,
+			1, 0, 1,
+			1, 1, 1,
+		},
 	},
 
 	-- 🟨 SPAWNER CONFIGURATION (yards)
 	isSpawner = true,
 	spawner = {
-		spawnOffset = { 0, 0, 0 },      -- XYZ local offset
+		spawnOffset = { 0, 1, 0 },      -- XYZ local offset
 		spawnOffsetHeightRandomisation = 0.5, -- Adds +/- Y random variation
 		endRotationUseStructureForward = false, -- Align to structure's forward?
 
@@ -167,7 +174,7 @@ return {
 	-- 🟨 SPAWNER UNITS (units a yard can build)
 	spawnItems = {
 		{
-			id = 1017001, -- typeID of the unit to spawn
+			id = 1017021, -- typeID of the unit to spawn
 			spawnTime = 1, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
@@ -181,7 +188,7 @@ return {
 			techID = 0 -- Required tech to enable.
 		},
 		{
-			id = 1017003, -- typeID of the unit to spawn
+			id = 1017023, -- typeID of the unit to spawn
 			spawnTime = 1, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
@@ -195,7 +202,7 @@ return {
 			techID = 0 -- Required tech to enable.
 		},
 		{
-			id = 1017004, -- typeID of the unit to spawn
+			id = 1017024, -- typeID of the unit to spawn
 			spawnTime = 1, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
@@ -209,7 +216,7 @@ return {
 			techID = 0 -- Required tech to enable.
 		},
 		{
-			id = 1017005, -- typeID of the unit to spawn
+			id = 1017025, -- typeID of the unit to spawn
 			spawnTime = 1, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 

@@ -1,14 +1,14 @@
-scaleConst =5.8019;
+scaleConst = 1.944;
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "arc_aurora_beam",              	-- Internal name for debugging and errors.
-	unitDisplayName             = "Aurora Beam",                    	-- Actual display name of the unit in the Databank, HUD, etc.
+	unitName                    = "arc_emplacement_2-railgun",              	-- Internal name for debugging and errors.
+	unitDisplayName             = "Medium Emplacement-Plasma Railgun",                    	-- Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   	-- Shown when moused over in the HUD.
-	unitBlurb                   = "Teleports above you: nothing personal, Junior.", 		-- Shown just below the unit name in tooltips and databank.
+	unitBlurb                   = "Fully modular turret base!", 		-- Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           	-- The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
 	hotkey                      = "F",                             	-- For buildbar. The hotkey for this unit.
-	picture                     = "arc_aurora_beam.png",            -- The name of the image file in this folder to be used for this unit.
+	picture                     = "arc_emplacement_2-railgun.png",            -- The name of the image file in this folder to be used for this unit.
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {
@@ -17,16 +17,16 @@ return {
 		requiredLevelForDescription = "",
 		tactical                    = "", --Added to the top of all tooltips and Databank descriptions. Used to quickly explain what a unit is good at doing. Strong against, decent against, weak against.
 		description                 =
-		"When a star's worth of power isn't enough, you start to look for ways to transport energy more efficiently... no matter what's in the way.",
-		weaponInfo                  = { --Tells the databank which weaponDatas to grab and display for this unit. Not automatic, you have to do this.
-			{1016700, 28, 0}
-		},
-		relatedUnitIDs              = {} --TypeID of other units in the family tree
+		"WOW",
+		weaponInfo                  = functions.combineWeaponInfo({
+			prefab.weapon_info.module.emplacement.M(4, "railgun"),
+		}),
+		relatedUnitIDs              = {1012021} --TypeID of other units in the family tree
 	},
 
 	-- BODY SETUP
 	scale                       = scaleConst,                                          -- A Tolly is scale 0.4, all units are a uniform scale. Normalise mesh size to 1 in Blender. (make sure the longest horizontal part (width/length) is 1)
-	mainMesh                    = "Emplacement/Aurora-Beam",   -- Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
+	mainMesh                    = "Emplacement/Emplacement-2",   -- Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
 	
 	--NOTICE, WORKING WITH MATERIALS AND MESHS:
 	--When making a mesh in Blender, you can assign materials to different surfaces. The number of materials used create 'material slots' for the mesh.
@@ -42,101 +42,45 @@ return {
 	-- Better to have the dimensions too small, than too large. Otherwise units will struggle to get in actual firing range of the target's colliders.
 	colliderDimensions = {
 		widthMultiplier  = 1, --Multiplied by scale to determine the percieved width of the unit. Long units (Vaalkorei) have this at about 0.5~0.6, aka we're only half as wide as we are long.
-		heightMultiplier = .27, --Multiplied by scale to determine the percieved height of the unit, flat units (Kontaalen) have this at about 0.6, aka we're shorter than we are long.
+		heightMultiplier = .517, --Multiplied by scale to determine the percieved height of the unit, flat units (Kontaalen) have this at about 0.6, aka we're shorter than we are long.
 		lengthMultiplier = 1, --Multiplied by scale to determine the percieved length of the unit. wide units (Soul Warden Fore section) have this at about 0.5, aka we're only half as long as we are wide.
 	},
 
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data                        = {
-		typeID       = 1012022, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
+		typeID       = 1017015, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
 		factionID    = 101, 	--The faction this unit is associated with in the Databank.
 		macroType    = "AUTO", 	--MacroTarget state: AUTO (is capital or command?) / TRUE / FALSE
-		cost_matter  = 20, 		--integer, For structures.
-		cost_energy  = 2, 		--integer, For structures.
-		cost_supply  = 2, 		--integer, For structures. Logistics cost.
-		cost_time    = 15, 		--integer, For structures, how long in seconds it takes to build.
+		cost_matter  = 100, 		--integer, For structures.
+		cost_energy  = 75, 		--integer, For structures.
+		cost_supply  = 0, 		--integer, For structures. Logistics cost.
+		cost_time    = 9999, 		--integer, For structures, how long in seconds it takes to build.
 		techRequired = 0
 	},
 
 	-- 🟦 PARTS
 	parts = {
-		{
-			name	= "Turret Aurora Beam",
-			position  = { 0, 1/scaleConst, 0 },    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
-			rotation  = { 0, 0, 0 },        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
-			scale 	= { 1/scaleConst, 1/scaleConst, 1/scaleConst },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
-			parts={
-				{
-					name      = "Turret-top",	position  = { 0,.75, 0 },	rotation  = { 0, 0, 0 },	scale 	= { 1, 1, 1 },
-					weapon    = {
-						weaponID = 1015700, --int: The weaponData id to be used for this weapon.
-						turnSpeed = 120, 	--float: Degrees per second.
-						turnMode = "Linear", --string enum: Linear / Acceleration
-						turnInstant = true, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
-						mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
-							left = 180, --float:
-							right = 180,--float:
-							up = 90,	 --float:
-							down = 90  --float:
-						},
-					},
+		prefab.part.module.emplacement.M(scaleConst, 2, "railgun", false),
+		prefab.part.module.emplacement.M(scaleConst, 6, "railgun", false),
+		prefab.part.module.emplacement.M(scaleConst, 10, "railgun", false),
+		prefab.part.module.emplacement.M(scaleConst, 14, "railgun", false),
+	},
 
-					parts = {
-						{	name = "Turret Muzzle",	position = { 0, 0, 0 },	rotation = { 0, 0, 0 },	scale = { 1, 1, 1 },	barrel = true,	},	
-						{
-							name		 = "Rift",
-							-- mesh       = "Emplacement/Rift",
-							-- materials  = { "arc_rift_red" },
-							position   = { 0, 0, 0 },
-							rotation   = { 0, 0, 0 },
-							scale 	 = { 1, 1, 1 },
-							weaponVisualConfig = { 
-								laserColour = {1,1,1}, 
-								intensity = 0;
-								useWeaponLaserDescription = true,
-								laserDescription = {	duration = 1,	opacity = 1,	diameter = .5,	offset = 0,	rotateZ = true,	rotateY = false,	rotateZUpdate = false,	rotateYUpdate = false,	noRescaleLength = 2,	noFade = true,	noShrink = false,}, 
-							},
-							parts={
-								{
-									name = "Rift",
-									mesh = "Emplacement/Rift",
-									materials = { "arc_rift_red"  },
-									rotation = { 0, 0, 0 },
-									position = { 0, 0, 0},
-									scale = { 1, 1, 1 },
-								},
-								{
-									name = "Rift",
-									mesh = "Emplacement/Rift",
-									materials = { "arc_rift_green"  },
-									rotation = { 120, 120, 120 },
-									position = { 0, 0, 0},
-									scale = { 1, 1, 1 },
-								},
-								{
-									name = "Rift",
-									mesh = "Emplacement/Rift",
-									materials = { "arc_rift_blue"  },
-									rotation = { 240, 240, 240 },
-									position = { 0, 0, 0},
-									scale = { 1, 1, 1 },
-								},
-							}
-						},
-					},
-				},
-			}
-		},
+	ghostParts = {
+		prefab.part.module.emplacement.M(scaleConst, 2, "railgun", true),
+		prefab.part.module.emplacement.M(scaleConst, 6, "railgun", true),
+		prefab.part.module.emplacement.M(scaleConst, 10, "railgun", true),
+		prefab.part.module.emplacement.M(scaleConst, 14, "railgun", true),
 	},
 
 	-- 🟦 HEALTH & ARMOR
 	health = {
-		unitClass = "TITAN",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = 50000,              --Health, also the unit's heat capacity.
+		unitClass = "HEAVY",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
+		health = 3000,              --Health, also the unit's heat capacity.
 		health_regen_per_second = 5, --Health regen per second. Duh.
-		max_regen_frac = 0.2,      --The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
+		max_regen_frac = 0,      --The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
 
-		armour = 5,                --Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
+		armour = 30,                --Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
 		vulnerability_max = 0.2,   --Prevent the unit from losing more than X fraction of it's armour.
 		shredMultiplier = 1.0,     --Multiplies incomming shred, pretty self explanatory right?
 
@@ -167,7 +111,7 @@ return {
 		explodeOnTimeout = false,             --Was it a peaceful death?
 
 		explosionType = "EXPLOSION",          	-- EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
-		explosionVolatility = 1.0,            	-- 1000 * unit scale * volatility = area damage when a unit of scale 2 or greater dies.
+		explosionVolatility = 0,            	-- 1000 * unit scale * volatility = area damage when a unit of scale 2 or greater dies.
 		explosionSizeOveride = 0,             	-- Size of the visual explosion. A Tolly is 0.4 in size. 0 is automatic.
 		flashSizeOverride = 0,                	-- Size of the white internal flash. 0 is automatic.
 		forceShockwave = false,               	-- Forces a repulsive shockwave to be created, uses explosionSizeOveride or auto if not set.
@@ -188,18 +132,16 @@ return {
 	-- 🟦 STRUCTURE
 	isStructure = true,
 	structure = {
-		type = "DEFENSE", --NONE, ECONOMY, PRODUCTION, DEFENCE, OFFENCE, UTILITY, EXTENDER
-		--rectangle = {2,1}, 		-- optional, float2: xz dimensions of the influence, facing ^
+		type = "NONE", --NONE, ECONOMY, PRODUCTION, DEFENCE, OFFENCE, UTILITY, EXTENDER
+		rectangle = {2,2}, 		-- optional, float2: xz dimensions of the influence, facing ^
 		--ring = {0, 2.5},			-- optional, float2: Inner and outer ring radius. Inner > 0 lets you make donuts. If structure footprint is odd, add +0.5 for a cleaner circle.
-		matrixDimensions = {6,6},
-		matrix = {				-- optional, int bool: matrix for detailed footprints. 0 = empty space, 1 = occupied space
-			1, 1, 0, 0, 1, 1,
-			1, 1, 1, 1, 1, 1,
-			0, 1, 1, 1, 1, 0,
-			0, 1, 1, 1, 1, 0,
-			1, 1, 1, 1, 1, 1,
-			1, 1, 0, 0, 1, 1,
-		},
+		--matrixDimensions = {5,5},
+		--matrix = {				-- optional, int bool: matrix for detailed footprints. 0 = empty space, 1 = occupied space
+		--	0, 1, 1, 1, 0,
+		--	1, 1, 1, 1, 1,
+		--	1, 1, 1, 1, 1,
+		--	1, 1, 1, 1, 1,
+		--	0, 1, 1, 1, 0,
+		-- },
 	},
-
 }
