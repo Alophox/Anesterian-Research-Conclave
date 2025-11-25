@@ -19,7 +19,7 @@ return {
 	
 	--Version helps the game know if the player's local version of the mod is out of date when looking at other mods or maps. 
 	--EG. a map could expect v2.0.0 while the local copy is v1.5.0. Then the map can tell the player "Hey this mod probably needs an update."
-	version        = "0.3.0", -- Major.Minor.Patch
+	version        = "0.4.0", -- Major.Minor.Patch
 
 	description    = "When the stars are few and far between, make your own to light the night",
 	
