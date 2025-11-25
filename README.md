@@ -42,7 +42,7 @@ I *do* have ideas for lore, I just haven't written most of it down. Most, as in 
 I'll post a new version soon with patch notes from the last version(includes mini platform since I apparently forgot to make that too). Also getting rid of the temporary project name from the folder.
 
 ## Installation
-Check for the zip under the release you want to download <a href="https://github.com/Alophox/Anesterian-Research-Conclave/releases">here</a>, and move it into the Foreign Mods folder; you might need to unzip it, I haven't tried. The Main menu in ATS has a button on the bottom right that will open your local file explorer directly there. From there, Start (or restart) ATS.
+Check for the zip under the release you want to download <a href="https://github.com/Alophox/Anesterian-Research-Conclave/releases">here</a>, and move it into the Local Mods folder(Foreign does not currently work); you might need to unzip it, I haven't tried. The Main menu in ATS has a button on the bottom right that will open your local file explorer directly there. From there, Start (or restart) ATS.
 There will be mod warnings about mesh "" being missing; these are expected and can be ignored. Eventually I'll clean them up but for now they are harmless.
 
 ## Using the mod
