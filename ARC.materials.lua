@@ -48,7 +48,7 @@ return {
 		{
 			id = "arc_teamGlow",
 			behaviour = "GLOW",
-			colour = { 0.00, 1.00, 1.00, 1 },
+			colour = { 0.30, .30, .30, 1 },
 			emission = { 0.3, 1.5, 1.5, 1 },
 			metallic = 0,
 			roughness = 1,
