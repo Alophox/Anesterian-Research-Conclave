@@ -216,7 +216,7 @@ return {
 			-- Multiplies the target score by this.
 			classMultMissile = -1,	-- float: 
 			classMultDrone = -1,	-- float: 
-			classMultLight = .6,		-- float: 
+			classMultLight = -1,		-- float: 
 			classMultMedium = 1,	-- float: 
 			classMultHeavy = 1,	-- float: 
 			classMultCapital = 1,	-- float: 
