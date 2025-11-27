@@ -8,7 +8,7 @@ return {
 	unitBlurb                   = "It's hollow, how does it do anything?",
 	unitBlurbExcludeFromTooltip = false,
 	hotkey                      = "b",
-	picture                     = "arc_logic_node-1.png",
+	picture                     = "arc_logic_node.png",
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {

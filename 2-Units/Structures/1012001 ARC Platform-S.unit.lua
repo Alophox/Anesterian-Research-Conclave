@@ -8,7 +8,7 @@ return {
 	unitBlurb                   = "Light Command Platform",
 	unitBlurbExcludeFromTooltip = false,
 	hotkey                      = "",
-	picture                     = "arc_platform_s.png",
+	picture                     = "arc_platform-s.png",
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {

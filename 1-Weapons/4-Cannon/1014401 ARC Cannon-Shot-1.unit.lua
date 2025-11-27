@@ -1,6 +1,7 @@
 weaponConst = {
 	size="S",
 };
+scaleConst = .2;
 return {
 
 	-- 🟦 DEFINITIONS
@@ -32,7 +33,7 @@ return {
 	},
 
 	-- BODY SETUP
-	scale                       	= .2,                                          -- float: A Tolly is scale 0.4, all units are a uniform scale. Normalise XY mesh size to 1 in Blender. (controls selection ring, among other things. the longest horizontal part (width/length) is 1)
+	scale                       	= scaleConst,                                          -- float: A Tolly is scale 0.4, all units are a uniform scale. Normalise XY mesh size to 1 in Blender. (controls selection ring, among other things. the longest horizontal part (width/length) is 1)
 	mainMesh                    	= "Turrets-1/Turret-1-Cannon-Effect",   -- string: Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
 	
 	--NOTICE, WORKING WITH MATERIALS AND MESHS:
@@ -91,13 +92,29 @@ return {
 
 		{
 			name     = "Trail Example",
-			position = { 0, 0, -0.12*.1/.044921 },
+			-- position = { 0, 0, -0.12*.1/.044921 },
+			position = { 0, 0, 0 },
 			rotation = { 0, 0, 0 },
 			scale 	= { 1, 1, 1 },
+
 			particleEmitter = {
-				particleType = "RIBBON", -- PARTICLE, RIBBON, PULSE
-				--TODO: add the rest of the particle inputs.
+				particleType = "PARTICLE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
+				distancePerParticle = 0.01,       -- decimal
+				minSecondsPerParticle = 0.02,     -- decimal
+				ejectionVelocity = 0,             -- decimal
+				ejectionVelocityAwayFromEmitter = false, -- bool
+				randomRadius = scaleConst*.1,                 -- decimal
+				randomScaleMinFraction = 1,       -- decimal
+				startDisabled = false,            -- bool
+				stateToggleTrigger = "None",      -- enum EMITTERSTATETRIGGER
+				colourStart = {1,1,1},            -- decimals
+				colourEnd   = {1,1,1},            -- decimals
+				opacity     = .1,                  -- decimal
+				scaleStart  = scaleConst*.2,                  -- decimal
+				scaleEnd    = 0,                  -- decimal
+				lifetime    = .1,                  -- decimal
 			},
+			
 		},
 	},
 
@@ -142,9 +159,9 @@ return {
 		phaseBlockFraction = 0,               -- float: How much Phase is used to block damage. I don't think this works. 
 		
 		lifetime = weaponStats.cannon.baseRange * weaponStats.overShootMult * weaponStats.rangeMult[weaponConst.size] / weaponStats.cannon.velocity,                         -- float: How long in seconds before this unit self-destructs. (drones, missiles, bullets)
-		explodeOnTimeout = true,             -- Was it a peaceful death?
+		explodeOnTimeout = false,             -- Was it a peaceful death?
 
-		explosionType = "EXPLOSION",          	-- string enum: EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
+		explosionType = "FLAK",          	-- string enum: EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
 		explosionVolatility = 0,            	-- float: 1000 * unit scale * volatility = area damage when a unit of scale 2 or greater dies.
 		explosionSizeOveride = weaponStats.cannon.baseAOE * weaponStats.rangeMult[weaponConst.size],             	-- float: Size of the visual explosion. A Tolly is 0.4 in size. 0 is automatic.
 		flashSizeOverride = weaponStats.cannon.baseAOE * weaponStats.rangeMult[weaponConst.size] / 2,                	-- float: Size of the white internal flash. 0 is automatic.

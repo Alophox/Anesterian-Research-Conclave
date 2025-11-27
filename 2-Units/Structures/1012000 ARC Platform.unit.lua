@@ -8,7 +8,7 @@ return {
 	unitBlurb                   = "Medium Command Platform",
 	unitBlurbExcludeFromTooltip = false,
 	hotkey                      = "",
-	picture                     = "arc_platform.png",
+	picture                     = "arc_platform-m.png",
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {

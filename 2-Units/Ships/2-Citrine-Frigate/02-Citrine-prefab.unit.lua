@@ -117,7 +117,7 @@ function prefab.ship.citrine.core.A(scaleConst, isGhost)
 			prefab.part.emblem(
 				{ 0, -1*.1/scaleConst, -3*.1/scaleConst},
 				{ -18.4349, 0, 180 },
-				{ 1*.1/scaleConst, 1*.1/scaleConst, 1*.1/scaleConst },
+				{ .8*.1/scaleConst, .8*.1/scaleConst, .8*.1/scaleConst },
 				isGhost
 			),
 

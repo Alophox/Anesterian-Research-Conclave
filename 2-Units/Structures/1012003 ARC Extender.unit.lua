@@ -8,7 +8,7 @@ return {
 	unitBlurb                   = "FTL Relay Node",
 	unitBlurbExcludeFromTooltip = false,
 	hotkey                      = "x",
-	picture                     = "arc_relay.png",
+	picture                     = "arc_extender.png",
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {

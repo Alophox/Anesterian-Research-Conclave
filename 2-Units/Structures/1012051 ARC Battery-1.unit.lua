@@ -8,7 +8,7 @@ return {
 	unitBlurb                   = "",
 	unitBlurbExcludeFromTooltip = false,
 	hotkey                      = "",
-	picture                     = "arc_battery-1.png",
+	picture                     = "arc_storage-e.png",
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {

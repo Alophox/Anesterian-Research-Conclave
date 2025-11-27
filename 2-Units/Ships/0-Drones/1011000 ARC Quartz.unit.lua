@@ -99,7 +99,7 @@ return {
 			name     = "Thruster",
 			position = { 0, 0, -.4125*.1/scaleConst },
 			rotation = { 0, 0, 0 },
-			scale 	= { scaleConst, scaleConst, scaleConst },
+			scale 	= { scaleConst*2, scaleConst*1.5, scaleConst*1.5 },
 			thruster = {
 				-- This part will respond to how the ship tries to move. It will scale along the Z axis (XYZ) starting from 0 (invisible), and return up to it's starting scale.
 				decayTime = 1,	--float: Seconds, how long it takes for the thruster to shrink to 0, or return to full scale.
@@ -119,16 +119,31 @@ return {
 			},
 		},
 
-		-- {
-		-- 	name     = "Trail Example",
-		-- 	position = { 0, 0, -0.5 },
-		-- 	rotation = { 0, 0, 0 },
-		-- 	scale 	= { 1, 1, 1 },
-		-- 	particleEmitter = {
-		-- 		particleType = "RIBBON", -- PARTICLE, RIBBON, PULSE
-		-- 		--TODO: add the rest of the particle inputs.
-		-- 	},
-		-- },
+		{
+			name     = "Trail Examplee",
+			position = { 0, 0, .0125+-.4125*.1/scaleConst },
+			rotation = { 0, 0, 0 },
+			scale 	= { 1, 1, 1 },
+
+			particleEmitter = {
+				particleType = "RIBBON",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
+				distancePerParticle = .2,       -- decimal
+				minSecondsPerParticle = 0,     -- decimal
+				ejectionVelocity = 2,             -- decimal
+				ejectionVelocityAwayFromEmitter = false, -- bool
+				randomRadius = 0,                 -- decimal
+				randomScaleMinFraction = 1,       -- decimal
+				startDisabled = false,            -- bool
+				stateToggleTrigger = "None",      -- enum EMITTERSTATETRIGGER
+				colourStart = {.5,1,1},            -- decimals
+				colourEnd   = {1,1,1},            -- decimals
+				opacity     = .5,                  -- decimal
+				scaleStart  = scaleConst/8,                  -- decimal
+				scaleEnd    = scaleConst,                  -- decimal
+				lifetime    = .1,                  -- decimal
+			},
+			
+		},
 	},
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).

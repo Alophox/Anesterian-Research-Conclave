@@ -1,13 +1,13 @@
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "arc_shipyard_1",              	-- Internal name for debugging and errors.
+	unitName                    = "arc_shipyard-1",              	-- Internal name for debugging and errors.
 	unitDisplayName             = "Light Yard",                    	-- Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   	-- Shown when moused over in the HUD.
 	unitBlurb                   = "Produces light units.", 		-- Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           	-- The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
 	hotkey                      = "c",                             	-- For buildbar. The hotkey for this unit.
-	picture                     = "arc_shipyard_light.png",            -- The name of the image file in this folder to be used for this unit.
+	picture                     = "arc_shipyard-1.png",            -- The name of the image file in this folder to be used for this unit.
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {

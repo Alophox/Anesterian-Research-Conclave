@@ -1,6 +1,7 @@
 weaponConst = {
 	size = "S",
 };
+scaleConst = .1;
 return {
 
 	-- 🟦 DEFINITIONS
@@ -32,7 +33,7 @@ return {
 	},
 
 	-- BODY SETUP
-	scale                       	= .1,                                          -- float: A Tolly is scale 0.4, all units are a uniform scale. Normalise XY mesh size to 1 in Blender. (controls selection ring, among other things. the longest horizontal part (width/length) is 1)
+	scale                       	= scaleConst,                                          -- float: A Tolly is scale 0.4, all units are a uniform scale. Normalise XY mesh size to 1 in Blender. (controls selection ring, among other things. the longest horizontal part (width/length) is 1)
 	mainMesh                    	= "Turrets-1/Turret-1-Railgun-Effect",   -- string: Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
 	
 	--NOTICE, WORKING WITH MATERIALS AND MESHS:
@@ -87,35 +88,51 @@ return {
 			},
 		},
 
-		{
-			name="trail thrower",
-			position  = { 0,0, 0 },    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
-			rotation  = { 0, 0, 0 },        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
-			scale 	= { 1, 1, 1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
+		-- {
+		-- 	name="trail thrower",
+		-- 	position  = { 0,0, 0 },    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
+		-- 	rotation  = { 0, 0, 0 },        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
+		-- 	scale 	= { 1, 1, 1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 
-			weapon    = {
-				weaponID = 1015711, --int: The weaponData id to be used for this weapon.
-				turnSpeed = 0, 	--float: Degrees per second.
-				turnMode = "Linear", --string enum: Linear / Acceleration
-				turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
-				mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
-					left = 0, --float:
-					right = 0,--float:
-					up = 0,	 --float:
-					down = 0  --float:
-				},
-			},
-		},
+		-- 	weapon    = {
+		-- 		weaponID = 1015711, --int: The weaponData id to be used for this weapon.
+		-- 		turnSpeed = 0, 	--float: Degrees per second.
+		-- 		turnMode = "Linear", --string enum: Linear / Acceleration
+		-- 		turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
+		-- 		mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
+		-- 			left = 0, --float:
+		-- 			right = 0,--float:
+		-- 			up = 0,	 --float:
+		-- 			down = 0  --float:
+		-- 		},
+		-- 	},
+		-- },
 
 		{
 			name     = "Trail Example",
-			position = { 0, 0, -0.12*.1/.044921 },
+			-- position = { 0, 0, -0.12*.1/.044921 },
+			position = { 0, 0, 0 },
 			rotation = { 0, 0, 0 },
 			scale 	= { 1, 1, 1 },
+
 			particleEmitter = {
-				particleType = "RIBBON", -- PARTICLE, RIBBON, PULSE
-				--TODO: add the rest of the particle inputs.
+				particleType = "RIBBON",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
+				distancePerParticle = 0.01,       -- decimal
+				minSecondsPerParticle = 0.02,     -- decimal
+				ejectionVelocity = 0,             -- decimal
+				ejectionVelocityAwayFromEmitter = false, -- bool
+				randomRadius = 0,                 -- decimal
+				randomScaleMinFraction = 1,       -- decimal
+				startDisabled = false,            -- bool
+				stateToggleTrigger = "None",      -- enum EMITTERSTATETRIGGER
+				colourStart = {1,0,1, 1},            -- decimals
+				colourEnd   = {1,1,1, 0},            -- decimals
+				opacity     = .1,                  -- decimal
+				scaleStart  = scaleConst*.1/2,                  -- decimal
+				scaleEnd    = 0,                  -- decimal
+				lifetime    = .2,                  -- decimal
 			},
+			
 		},
 	},
 
