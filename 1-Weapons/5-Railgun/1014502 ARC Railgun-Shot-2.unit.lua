@@ -128,7 +128,7 @@ return {
 				colourStart = {1,0,1},            -- decimals
 				colourEnd   = {1,1,1},            -- decimals
 				opacity     = .1,                  -- decimal
-				scaleStart  = scaleConst*.1/2,                  -- decimal
+				scaleStart  = scaleConst*.1,                  -- decimal
 				scaleEnd    = 0,                  -- decimal
 				lifetime    = .2,                  -- decimal
 			},

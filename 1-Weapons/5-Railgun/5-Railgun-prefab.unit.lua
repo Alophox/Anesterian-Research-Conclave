@@ -119,7 +119,7 @@ function prefab.weapon.railgun.M(pos, rot, sca, isGhost)
 					{
 						name      = "Turret Barrel",
 						mesh      = "Turrets-3/Turret-3-Railgun",
-						materials = { "arc_hull", "arc_hull_dark", "arc_teamGlow" },
+						materials = { "arc_hull", "arc_teamGlow", "arc_hull_dark" },
 						position  = { .15, 0, 0 },
 						rotation  = { 0, 0, 0 },
 						scale 	= { 1, 1, 1 },
@@ -128,7 +128,7 @@ function prefab.weapon.railgun.M(pos, rot, sca, isGhost)
 					{
 						name      = "Turret Barrel",
 						mesh      = "Turrets-3/Turret-3-Railgun",
-						materials = { "arc_hull", "arc_hull_dark", "arc_teamGlow" },
+						materials = { "arc_hull", "arc_teamGlow", "arc_hull_dark" },
 						position  = { -.15, 0, 0 },
 						rotation  = { 0, 0, 0 },
 						scale 	= { 1, 1, 1 },
