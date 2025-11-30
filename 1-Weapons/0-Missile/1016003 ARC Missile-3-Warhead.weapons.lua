@@ -1,8 +1,8 @@
 return {
      id = 1016003,
-     name = "Z-Class Plasma",
+     name = "Large Breach Warhead",
      blurb = "The brightest stars burn the shortest.",
-     metaNote = "Set the world on fiiiiiiire",
+     metaNote = "Who needs tractor beams anyways",
      hideInDatabank = false,
      displayType = "NORMAL", -- NORMAL, DRONE
 
