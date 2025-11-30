@@ -58,6 +58,9 @@ return {
 		techRequired = 0
 	},
 
+	displayAreaRadius        = weaponStats.laser.baseRange * weaponStats.rangeMult.L,            -- decimal
+    displayAreaColour        = { 1,0,0,.2 },  -- decimals
+
 	-- 🟦 PARTS
 	parts = {
 		prefab.part.module.emplacement.L(scaleConst, 1, "laser", false),

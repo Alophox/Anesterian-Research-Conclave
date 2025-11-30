@@ -58,6 +58,9 @@ return {
 		techRequired = 0
 	},
 
+	displayAreaRadius        = weaponStats.lightning.baseRange * weaponStats.rangeMult.S,            -- decimal
+	displayAreaColour        = { 1,0,0,.2 },  -- decimals
+
 	-- 🟦 PARTS
 	parts = {
 		prefab.part.module.emplacement.S(scaleConst, 0, "lightning", false),

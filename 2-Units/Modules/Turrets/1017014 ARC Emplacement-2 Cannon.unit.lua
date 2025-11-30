@@ -58,6 +58,9 @@ return {
 		techRequired = 0
 	},
 
+	displayAreaRadius        = weaponStats.cannon.baseRange * weaponStats.rangeMult.M,            -- decimal
+    displayAreaColour        = { 1,0,0,.2 },  -- decimals
+
 	-- 🟦 PARTS
 	parts = {
 		prefab.part.module.emplacement.M(scaleConst, 2, "cannon", false),
