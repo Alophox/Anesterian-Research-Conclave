@@ -1,4 +1,4 @@
-
+scaleConst = 2.8;
 return {
 
 	-- 🟦 DEFINITIONS
@@ -21,14 +21,17 @@ return {
 										,
 		description                 = 	"Utilizing their Breach technology, the Zero-Point Inductor invests energy into a singular point to produce more energy. The laws of reality temporarily break down at that point, expanding the singularity into a moderately volatile vacuum zone that could then have energy extracted from.\n"..
 										"\n"..
-										"While the name implies certain methods of collection, attempts to engineer similar reactors have left rival groups with fancy, but useless, examples of failure.",
+										"While the name implies certain methods of collection, attempts to engineer similar reactors have left rival groups with fancy, but useless, examples of failure.\n"..
+										"\n"..
+										"The first iterations only had one extractor- though somebody had the bright idea of adding another, as 2 times 0 is still 0, and therefore more efficient as you only have one 0 with this setup!\n"..
+										"",
 		weaponInfo                  = {},
 		relatedUnitIDs              = {}
 	},
 
 	-- BODY SETUP
-	scale                       = 2.8, -- 0.035714
-	mainMesh                    = "Reactor/Reactor-3",
+	scale                       = scaleConst, -- 0.035714
+	mainMesh                    = "Reactor/Reactor-3_2",
 	materials                   = { "arc_hull", "arc_teamGlow", "arc_teamColour", "arc_hull_dark" },
 	colliderDimensions = {
 		widthMultiplier  = 1,
@@ -50,6 +53,75 @@ return {
 
 	-- 🟦 PARTS
 	parts = {
+		prefab.part.rift(
+			{ 0, 0, 0},
+			{ 0, 0, 0 },
+			{ 6*.1/scaleConst, 6*.1/scaleConst, 6*.1/scaleConst },
+			.6,
+			false
+		),
+		{
+			name = "Particle Tube",
+			position = {0,0,0},
+			rotation = {0,0,0},
+			rotate = {
+				timeStepSeconds = .01,             -- decimal
+				degreeRotationPerSecond = { 1,0,0 }, -- decimals (x,y,z)
+			},
+			parts = {
+				{
+					name     = "Particles",
+					position = { 0, .001, 0 },
+					rotation = { 0, 90, 0 },
+					scale 	= { 1, 1, 1 },
+					
+					particleEmitter = {
+						particleType = "PARTICLE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
+						distancePerParticle = .00001,       -- decimal
+						minSecondsPerParticle = 9999,     -- decimal
+						ejectionVelocity = .2,             -- decimal
+						ejectionVelocityAwayFromEmitter = false, -- bool
+						randomRadius = 0.1,                 -- decimal
+						randomScaleMinFraction = 1,       -- decimal
+						startDisabled = false,            -- bool
+						stateToggleTrigger = "None",      -- enum EMITTERSTATETRIGGER
+						colourStart = {1,1,1},            -- decimals
+						colourEnd   = {1,1,1},            -- decimals
+						opacity     = .1,                  -- decimal
+						scaleStart  = .15,                  -- decimal
+						scaleEnd    = 0,                  -- decimal
+						lifetime    = 3.5,                  -- decimal
+					},
+					
+				},
+				{
+					name     = "Particles",
+					position = { 0, .001, 0 },
+					rotation = { 0, -90, 0 },
+					scale 	= { 1, 1, 1 },
+					
+					particleEmitter = {
+						particleType = "PARTICLE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
+						distancePerParticle = .00001,       -- decimal
+						minSecondsPerParticle = 9999,     -- decimal
+						ejectionVelocity = .2,             -- decimal
+						ejectionVelocityAwayFromEmitter = false, -- bool
+						randomRadius = 0.1,                 -- decimal
+						randomScaleMinFraction = 1,       -- decimal
+						startDisabled = false,            -- bool
+						stateToggleTrigger = "None",      -- enum EMITTERSTATETRIGGER
+						colourStart = {1,1,1},            -- decimals
+						colourEnd   = {1,1,1},            -- decimals
+						opacity     = .1,                  -- decimal
+						scaleStart  = .15,                  -- decimal
+						scaleEnd    = 0,                  -- decimal
+						lifetime    = 3.5,                  -- decimal
+					},
+					
+				},
+			}
+		}
+		
 	},
 
 	-- 🟦 HEALTH & ARMOR

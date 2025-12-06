@@ -1,4 +1,4 @@
-
+scaleConst = 50;
 return {
 
 	-- 🟦 DEFINITIONS
@@ -28,9 +28,9 @@ return {
 	},
 
 	-- BODY SETUP
-	scale                       = 50, 
-	mainMesh                    = "Gateway/Gateway",
-	materials                   = { "arc_hull", "arc_teamGlow", "arc_teamColour", "arc_hull_dark", },
+	scale                       = scaleConst, 
+	-- mainMesh                    = "Gateway/Gateway",
+	-- materials                   = { "arc_hull", "arc_teamGlow", "arc_teamColour", "arc_hull_dark", },
 	colliderDimensions = {
 		widthMultiplier  = .873,
 		heightMultiplier = 1,
@@ -51,6 +51,59 @@ return {
 
 	-- 🟦 PARTS
 	parts = {
+		{
+			name = "Gateway Top",
+			mesh = "Gateway/Gateway",
+			materials = { "arc_hull", "arc_teamGlow", "arc_teamColour", "arc_hull_dark", },
+			rotation = {0,0,0},
+			position = {0,0,0},
+			scale = {1,1,1},
+			rotate = {
+				timeStepSeconds = .01,             -- decimal
+				degreeRotationPerSecond = { 0,.02,0 }, -- decimals (x,y,z)
+			},
+			piston = {
+                localDistanceUp = .05,              -- decimal
+                direction = "Up",                 -- enum PISTONDIRECTION: Up/Down/UpAndDown
+                startProgressFraction = 0,        -- decimal 0-1
+                duration = 100,                     -- decimal (seconds)
+            },
+			parts={
+				{
+					name = "test",
+					rotation = {0,0,0},
+					position = {0,5,0},
+					scale = {1,1,1},
+					-- vortex = true,
+				}
+				
+			}
+		},
+		prefab.part.rift(
+			{ 0, 0, 0},
+			{ 0, 0, 0 },
+			{ 150*.1/scaleConst, 150*.1/scaleConst, 150*.1/scaleConst },
+			15,
+			false
+		),
+		{
+			name = "Gateway Bot",
+			mesh = "Gateway/Gateway",
+			materials = { "arc_hull", "arc_teamGlow", "arc_teamColour", "arc_hull_dark", },
+			rotation = {0,0,180},
+			position = {0,0,0},
+			scale = {1,1,1},
+			rotate = {
+				timeStepSeconds = .01,             -- decimal
+				degreeRotationPerSecond = { 0,.02,0 }, -- decimals (x,y,z)
+			},
+			piston = {
+                localDistanceUp = .05,              -- decimal
+                direction = "Up",                 -- enum PISTONDIRECTION: Up/Down/UpAndDown
+                startProgressFraction = 0,        -- decimal 0-1
+                duration = 100,                     -- decimal (seconds)
+            },
+		},
 	},
 
 	-- 🟦 HEALTH & ARMOR
