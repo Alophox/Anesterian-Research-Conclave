@@ -1,6 +1,48 @@
 prefab.weapon.railgun = {}
 prefab.weapon_info.railgun = {}
 
+
+function prefab.weapon_info.railgun.D(count)
+	return { 1015500, 1 * count, 1016500 }
+end
+function prefab.weapon.railgun.D(pos, rot, sca, isGhost)
+	prefab_part = {
+		name	= "Small Turret Base",
+		-- mesh      = "Turrets-1/Turret-1-Base",
+		-- materials = { "arc_hull",  "arc_teamColour", "arc_teamGlow", "arc_hull_dark" },
+		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
+		rotation  = rot,        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
+		scale 	= sca,					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
+	}
+	-- ghosts should NOT have weapons, as it causes a crash.
+	if isGhost then
+		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+	else
+		prefab_part.parts={
+			{
+				name      = "Turret",	position  = { 0,0, 0 },	rotation  = { 0, 0, 0 },	scale 	= { 1, 1, 1 },
+				weapon    = {
+					weaponID = 1015500, --int: The weaponData id to be used for this weapon.
+					turnSpeed = weaponStats.baseTracking*weaponStats.railgun.trackingMult.D, 	--float: Degrees per second.
+					turnMode = "Linear", --string enum: Linear / Acceleration
+					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
+					mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
+						left = 25, --float:
+						right = 25,--float:
+						up = 15,	 --float:
+						down = 15  --float:
+					},
+				},
+
+				parts = {
+					
+				},
+			},
+		}
+	end
+	return prefab_part
+end
+
 function prefab.weapon_info.railgun.S(count)
 	return { 1015501, 1 * count, 1016501 }
 end

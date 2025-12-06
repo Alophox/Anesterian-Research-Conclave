@@ -61,11 +61,13 @@ weaponStats.railgun = {
 	baseCD		= 2.9,
 	secondsPerShot=.02,
 	trackingMult = {
+		D = .7,
 		S = .5,
 		M = .3,
 		L = .05
 	},
 	shotsPerBurst = {
+		D = 1,
 		S = 1,
 		M = 2,
 		L = 3
@@ -82,7 +84,7 @@ weaponStats.cannon = {
 	baseAOE		= .5,
 	instances	= 1,
 	baseCD		= 2,
-	secondsPerShot=.1,
+	secondsPerShot=.02,
 	trackingMult = {
 		S = .4,
 		M = .2,
@@ -183,14 +185,16 @@ weaponStats.lightning = {
 		T = 45
 	},
 	accuracy	= 1,
-	sfxID		= 21,
+	sfxID		= 16,
 }
 
 -- missiles have two turrets per 'slot', so damage is half
 weaponStats.missile = {
 	baseRange	= 11,
+	baseRetargetRange = 11.5,
+	baseCloakRange = 2,
 	baseDMG		= 20,
-	baseHeat	= 2,
+	baseHeat	= 0,
 	baseAOE		= .75,
 	baseShred	= .5,
 	instances	= {

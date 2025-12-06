@@ -169,7 +169,7 @@ return {
 			acceptFirstValidTarget = false, 	--For launchers and things that don't need to actually target something. Shoot at the first thing you see.
 			pauseIfHasTarget = false, 		--Don't look for a target again, until you're current one is dead. USE WITH canInvalidateTarget otherwise units WILL get stuck trying to shoot stuff out of their range.
 			ignoreUncapturable = false, 		--If the target is uncapturable, ignore it.
-			secondsPerScan = .5, 			--How long to wait before reassessing what you're targeting.
+			secondsPerScan = .25, 			--How long to wait before reassessing what you're targeting.
 
 			ignoreFullHealth = false, 		--Good for healers.
 			minimumHealth = 0, 				--Don't target things with less Max Health than this.
@@ -210,7 +210,7 @@ return {
 			shipMultiplier = 1.0, 			--Priority for ships.
 			structureMultiplier = .1, 		--Priority for structures.
 			keepTargetMultiplier = 2, 		--Important. Allows the unit to keep it's current target, and not bounce between things.
-			scoreBandingSize = 1,			--Allows the targeter to pick a random target within bands. Useful for PD and AOE, but requires a high keep target to prevent schizophrenia.
+			scoreBandingSize = 2,			--Allows the targeter to pick a random target within bands. Useful for PD and AOE, but requires a high keep target to prevent schizophrenia.
 		},
 		tracking = {
 			positionPredictionType = "NONE", --Algorithm for predicting target position. NONE (lasers, most ships), SIMPLE (bad, nothing uses this), TRIGONOMETRIC (spinal ships, turrets, missiles)
