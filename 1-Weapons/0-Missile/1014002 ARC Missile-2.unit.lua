@@ -149,16 +149,16 @@ return {
 				randomScaleMinFraction = 1,       -- decimal
 				startDisabled = false,            -- bool
 				stateToggleTrigger = "None",      -- enum EMITTERSTATETRIGGER
-				colourStart = {.5,1,1},            -- decimals
+				colourStart = {0,1,1},            -- decimals
 				colourEnd   = {1,1,1},            -- decimals
-				opacity     = .5,                  -- decimal
+				opacity     = .2,                  -- decimal
 				scaleStart  = scaleConst/2,                  -- decimal
 				scaleEnd    = scaleConst,                  -- decimal
 				lifetime    = 1,                  -- decimal
 			},
 			
 		},
-				{
+		{
 			name     = "Suck Particles",
 			position = { 0, 0, 0.0001 },
 			rotation = { 0, 0, 0 },
@@ -167,7 +167,7 @@ return {
 			particleEmitter = {
 				particleType = "PULSE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
 				distancePerParticle = .01,       -- decimal
-				minSecondsPerParticle = 0.006,     -- decimal
+				minSecondsPerParticle = 9999,     -- decimal
 				ejectionVelocity = 0,             -- decimal
 				ejectionVelocityAwayFromEmitter = true, -- bool
 				randomRadius = 0,                 -- decimal
@@ -177,9 +177,9 @@ return {
 				colourStart = {1,1,1},            -- decimals
 				colourEnd   = {1,1,1},            -- decimals
 				opacity     = .5,                  -- decimal
-				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*1.5,                  -- decimal
+				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size],                  -- decimal
 				scaleEnd    = 0,                  -- decimal
-				lifetime    = .5,                  -- decimal
+				lifetime    = .25,                  -- decimal
 			},
 			
 		},
@@ -201,7 +201,7 @@ return {
 				colourStart = {.6,0,.6},            -- decimals
 				colourEnd   = {.6,0,.6},            -- decimals
 				opacity     = .5,                  -- decimal
-				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size],                  -- decimal
+				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.8,                  -- decimal
 				scaleEnd    = 0,                  -- decimal
 				lifetime    = .5,                  -- decimal
 			},
@@ -223,8 +223,8 @@ return {
 				stateToggleTrigger = "OnDeath",      -- enum EMITTERSTATETRIGGER
 				colourStart = {.7,0,.7},            -- decimals
 				colourEnd   = {.7,0,.7},            -- decimals
-				opacity     = .5,                  -- decimal
-				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.9,                  -- decimal
+				opacity     = .6,                  -- decimal
+				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.6,                  -- decimal
 				scaleEnd    = 0,                  -- decimal
 				lifetime    = .5,                  -- decimal
 			},
@@ -246,31 +246,8 @@ return {
 				stateToggleTrigger = "OnDeath",      -- enum EMITTERSTATETRIGGER
 				colourStart = {.8,.1,.8},            -- decimals
 				colourEnd   = {.8,.1,.8},            -- decimals
-				opacity     = .5,                  -- decimal
-				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.8,                  -- decimal
-				scaleEnd    = 0,                  -- decimal
-				lifetime    = .5,                  -- decimal
-			},
-		},
-		{
-			name     = "Suck Particles",
-			position = { 0, 0, 0.0001 },
-			rotation = { 0, 0, 0 },
-			scale 	= { 1, 1, 1 },
-			particleEmitter = {
-				particleType = "PARTICLE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
-				distancePerParticle = 1,       -- decimal
-				minSecondsPerParticle = 0.006,     -- decimal
-				ejectionVelocity = 0,             -- decimal
-				ejectionVelocityAwayFromEmitter = true, -- bool
-				randomRadius = 0,                 -- decimal
-				randomScaleMinFraction = 1,       -- decimal
-				startDisabled = true,            -- bool
-				stateToggleTrigger = "OnDeath",      -- enum EMITTERSTATETRIGGER
-				colourStart = {.9,.3,.9},            -- decimals
-				colourEnd   = {.9,.3,.9},            -- decimals
-				opacity     = .5,                  -- decimal
-				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.7,                  -- decimal
+				opacity     = .7,                  -- decimal
+				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.4,                  -- decimal
 				scaleEnd    = 0,                  -- decimal
 				lifetime    = .5,                  -- decimal
 			},
@@ -292,8 +269,8 @@ return {
 				stateToggleTrigger = "OnDeath",      -- enum EMITTERSTATETRIGGER
 				colourStart = {1,.5,1},            -- decimals
 				colourEnd   = {1,.5,1},            -- decimals
-				opacity     = .5,                  -- decimal
-				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.6,                  -- decimal
+				opacity     = .9,                  -- decimal
+				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.2,                  -- decimal
 				scaleEnd    = 0,                  -- decimal
 				lifetime    = .5,                  -- decimal
 			},
@@ -344,11 +321,11 @@ return {
 		isCloaked = false,                    --Current state of cloak.
 		cloakFrac = 0,
 		cloakTime = 1.0,                      -- float: How long it takes to cloak.
-		decloakDistance = 0,                -- float: How close it can get to something before being visible. Used by Glowfish blobs to let them get close enough to targets.
+		decloakDistance = 0, --weaponStats.missile.baseCloakRange * weaponStats.rangeMult[weaponConst.size],                -- float: How close it can get to something before being visible. Used by Glowfish blobs to let them get close enough to targets.
 
 		phaseBlockFraction = 0,               -- float: How much Phase is used to block damage. I don't think this works. 
 		
-		lifetime = (weaponStats.missile.baseRange * weaponStats.overShootMult * weaponStats.rangeMult[weaponConst.size]) / weaponStats.missile.velocity * 1.5,                         -- float: How long in seconds before this unit self-destructs. (drones, missiles, bullets)
+		lifetime = (((weaponStats.missile.baseRange * weaponStats.overShootMult * weaponStats.rangeMult[weaponConst.size]) / weaponStats.missile.velocity)^(0.5))*2,                         -- float: How long in seconds before this unit self-destructs. (drones, missiles, bullets)
 		explodeOnTimeout = true,             -- Was it a peaceful death?
 
 		explosionType = "NONE",          	-- string enum: EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
@@ -415,7 +392,7 @@ return {
 			ignoreFullHealth = false, 		--Good for healers.
 			minimumHealth = 0, 				-- float: Don't target things with less Max Health than this.
 			minimumDistance = 0, 			-- float: Don't target things that are closer than this.
-			maximumDistance =weaponStats.rangeMult[weaponConst.size] * weaponStats.missile.baseRange+1, 			-- float: Important. Scan radius. Don't target things further than this. KEEP THIS NUMBER LOW, SERIOUS PERFORMANCE IMPACT. Light ~15, Medium ~20, Heavy ~25, Capital ~25
+			maximumDistance =weaponStats.rangeMult[weaponConst.size] * weaponStats.missile.baseRetargetRange, 			-- float: Important. Scan radius. Don't target things further than this. KEEP THIS NUMBER LOW, SERIOUS PERFORMANCE IMPACT. Light ~15, Medium ~20, Heavy ~25, Capital ~25
 			maximumAngle = 0, 				-- float: Good for spinal weapons/missiles.
 			addedPreaimDistance = 1, 		-- float: If you have no target in maximumDistance, you may try to target something this far beyond max distance. (use on turrets, not ships)
 			
@@ -427,7 +404,7 @@ return {
 			scoreForHealthCurrentPercentage = 0, -- float: Good for healers, good for spreading healing between units regardless of total health.
 			scoreForArmour = 0,      		-- float: Good for anti-armour, if negative good for units with weapons that are better against raw hull. But can be misleading on it's own (*cough cough* GLADIATOR)
 			scoreForArmourCurrent = 0, 		-- float: Good for anti-armour, if negative good for units with weapons that are better spent against raw hull.
-			scoreForAngle = 0,       		-- float: Good for slow units and turrets that need to shoot things infront of them to minimise traverse.
+			scoreForAngle = -1,       		-- float: Good for slow units and turrets that need to shoot things infront of them to minimise traverse.
 
 			-- If scoreForX is not 0, clamp the X (eg. the enemy's health) to this perceived value. Useful for helping units put a floor and ceiling to how much they care about different stats.
 			perceivedHealthMax = 0,			-- float: 

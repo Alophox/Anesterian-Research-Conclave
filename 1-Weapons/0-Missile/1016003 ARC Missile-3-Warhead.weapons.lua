@@ -170,7 +170,7 @@ return {
                ignoreFullHealth = false, 		--Good for healers.
                minimumHealth = 0, 				--Don't target things with less Max Health than this.
                minimumDistance = 0, 			--Don't target things that are closer than this.
-               maximumDistance = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size] / 2, 			--Important. Scan radius. Don't target things further than this. KEEP THIS NUMBER LOW, SERIOUS PERFORMANCE IMPACT. Light ~15, Medium ~20, Heavy ~25, Capital ~25
+               maximumDistance = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size] / 1.5, 			--Important. Scan radius. Don't target things further than this. KEEP THIS NUMBER LOW, SERIOUS PERFORMANCE IMPACT. Light ~15, Medium ~20, Heavy ~25, Capital ~25
                maximumAngle = 360, 				--Good for spinal weapons/missiles.
                addedPreaimDistance = 0, 		--If you have no target in maximumDistance, you may try to target something this far beyond max distance. (use on turrets, not ships)
                
