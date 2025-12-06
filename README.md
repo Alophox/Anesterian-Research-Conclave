@@ -5,7 +5,7 @@
 
 MOD INFO:
 
-ID: 101ARC v0.4.2
+ID: 101ARC v0.4.3
 
 ATS: v0.91
 
