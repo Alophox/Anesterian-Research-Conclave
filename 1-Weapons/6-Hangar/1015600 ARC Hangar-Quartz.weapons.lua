@@ -37,7 +37,7 @@ return {
           necrofire = false,            -- enable weapon on parent death (good for SPARKLER visual effects, among other things)
           active = true,                -- is the weapon online (for use with necrofire)
           oneuse = false,               -- destroy root unit when out of ammo, (for bullets, missiles, etc) (fires entire magazine then destroys the unit it's on)
-          rangeInUnits = 0,            -- Target must be within range, for gun to fire.
+          rangeInUnits = weaponStats.hangar.baseRange,            -- Target must be within range, for gun to fire.
           maximumAngleToTarget = 0,   -- Radians, target must be within angle for gun to fire.
           unitsPerSecond = weaponStats.hangar.velocity*2,           -- projectile velocity for LAUNCHER in 100m/s
           spreadDegrees = 0,          -- Radians, spread for LAUNCHER (machine guns, etc)
@@ -170,9 +170,9 @@ return {
                ignoreFullHealth = false, 		--Good for healers.
                minimumHealth = 0, 				--Don't target things with less Max Health than this.
                minimumDistance = 0, 			--Don't target things that are closer than this.
-               maximumDistance = 10, 			--Important. Scan radius. Don't target things further than this. KEEP THIS NUMBER LOW, SERIOUS PERFORMANCE IMPACT. Light ~15, Medium ~20, Heavy ~25, Capital ~25
+               maximumDistance = weaponStats.hangar.baseRange, 			--Important. Scan radius. Don't target things further than this. KEEP THIS NUMBER LOW, SERIOUS PERFORMANCE IMPACT. Light ~15, Medium ~20, Heavy ~25, Capital ~25
                maximumAngle = 0, 				--Good for spinal weapons/missiles.
-               addedPreaimDistance = 1, 		--If you have no target in maximumDistance, you may try to target something this far beyond max distance. (use on turrets, not ships)
+               addedPreaimDistance = 5, 		--If you have no target in maximumDistance, you may try to target something this far beyond max distance. (use on turrets, not ships)
                
                -- Scoring can be negative. Will invert behaviour.
                scoreForDistance = 1,    		--Foundational. NOTICE, VALUE IS INVERTED. Keep at 1. 1 unit distance = -1 score, means prioritise closer targets. Negative means prioritise farther targets.
