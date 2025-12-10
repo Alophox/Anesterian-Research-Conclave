@@ -29,8 +29,8 @@ return {
 		"\n"..
 		"This fighter was the very first to receive a capacitor capable of not exploding when faced with a Breach Core, utilized in powering up a sizable shield. Unfortunately, it is unable to supply enough power to regenerate the shield, and the capacitor has reduced structual integrity significantly. In the Spance, its cockpit has replaced by a remote control suite, converting it into a drone.",
 		weaponInfo                  = { 	-- int3 array: Tells the databank which weaponDatas to grab and display for this unit. Not automatic you have to do this, I'm sorry.
-			prefab.weapon_info.laser.D(2),  		-- (int, int, int): weaponID, count, subMunitionWeaponID (bullet, missile, etc, 0 = none) This gets the damage data of the subMunitionWeapon if it has any, important for bullets which themselves do damage via a subweapon.
-			prefab.weapon_info.lightning.D(1)
+			prefab.weapon_info.laser.D(1),  		-- (int, int, int): weaponID, count, subMunitionWeaponID (bullet, missile, etc, 0 = none) This gets the damage data of the subMunitionWeapon if it has any, important for bullets which themselves do damage via a subweapon.
+			prefab.weapon_info.lightning.D(2)
 		},
 		relatedUnitIDs              = {} 	-- int array: TypeID of other units in the family tree
 	},
