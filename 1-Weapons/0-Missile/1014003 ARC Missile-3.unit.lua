@@ -180,7 +180,7 @@ return {
 				opacity     = .5,                  -- decimal
 				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size],                  -- decimal
 				scaleEnd    = 0,                  -- decimal
-				lifetime    = .25,                  -- decimal
+				lifetime    = .75,                  -- decimal
 			},
 			
 		},
@@ -204,7 +204,7 @@ return {
 				opacity     = .5,                  -- decimal
 				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.8,                  -- decimal
 				scaleEnd    = 0,                  -- decimal
-				lifetime    = .5,                  -- decimal
+				lifetime    = 1,                  -- decimal
 			},
 		},
 		{
@@ -227,7 +227,7 @@ return {
 				opacity     = .6,                  -- decimal
 				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.6,                  -- decimal
 				scaleEnd    = 0,                  -- decimal
-				lifetime    = .5,                  -- decimal
+				lifetime    = 1,                  -- decimal
 			},
 		},
 		{
@@ -250,7 +250,7 @@ return {
 				opacity     = .7,                  -- decimal
 				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.4,                  -- decimal
 				scaleEnd    = 0,                  -- decimal
-				lifetime    = .5,                  -- decimal
+				lifetime    = 1,                  -- decimal
 			},
 		},
 		{
@@ -273,7 +273,7 @@ return {
 				opacity     = .9,                  -- decimal
 				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.2,                  -- decimal
 				scaleEnd    = 0,                  -- decimal
-				lifetime    = .5,                  -- decimal
+				lifetime    = 1,                  -- decimal
 			},
 		},
 	},
@@ -295,7 +295,7 @@ return {
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "MISSILE",       -- string enum: UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = 8,              -- float: Health, also the unit's heat capacity.
+		health = weaponStats.missile.baseHP * weaponStats.damageMult[weaponConst.size],              -- float: Health, also the unit's heat capacity.
 		health_regen_per_second = 0, -- float: Health regen per second. Duh.
 		max_regen_frac = 0,      -- float: The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
 

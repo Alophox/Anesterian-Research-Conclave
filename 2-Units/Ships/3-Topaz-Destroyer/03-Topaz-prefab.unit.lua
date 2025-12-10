@@ -86,8 +86,8 @@ end
 
 function prefab.weapon_info.topaz.stern.B()
 	weapon_info = {
-		prefab.weapon_info.cannon.S(2),
-		prefab.weapon_info.cannon.S(2),
+		prefab.weapon_info.cannon.M(2),
+		-- prefab.weapon_info.cannon.S(2),
 	}
 	return weapon_info
 end
@@ -100,26 +100,26 @@ function prefab.ship.topaz.stern.B(scaleConst, isGhost)
 		rotation = {0,0,0},
 		scale = {1,1,1},
 		parts={
-			prefab.weapon.cannon.S(
-				{ 0, 1.75*.1/scaleConst, -1.75*.1/scaleConst },
-				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
-			),
-			prefab.weapon.cannon.S(
-				{ 0, -1.75*.1/scaleConst, -1.75*.1/scaleConst },
-				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
-			),
-			prefab.weapon.cannon.S(
-				{ 2.25*.1/scaleConst, 0, -4.25*.1/scaleConst },
+			-- prefab.weapon.cannon.S(
+			-- 	{ 0, 1.75*.1/scaleConst, -1.75*.1/scaleConst },
+			-- 	{ 0, 0, 0 },
+			-- 	{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
+			-- 	isGhost
+			-- ),
+			-- prefab.weapon.cannon.S(
+			-- 	{ 0, -1.75*.1/scaleConst, -1.75*.1/scaleConst },
+			-- 	{ 0, 0, 180 },
+			-- 	{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
+			-- 	isGhost
+			-- ),
+			prefab.weapon.cannon.M(
+				{ 2.25*.1/scaleConst, 0, -3.25*.1/scaleConst },
 				{ 0, 0, -90 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost
 			),
-			prefab.weapon.cannon.S(
-				{ -2.25*.1/scaleConst, 0, -4.25*.1/scaleConst },
+			prefab.weapon.cannon.M(
+				{ -2.25*.1/scaleConst, 0, -3.25*.1/scaleConst },
 				{ 0, 0, 90 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost

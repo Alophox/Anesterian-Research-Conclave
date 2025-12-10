@@ -228,7 +228,7 @@ return {
 			--Multiplied against score at the end.
 			shipMultiplier = 1.0, 			-- float: Priority for ships.
 			structureMultiplier = 1.0, 		-- float: Priority for structures.
-			keepTargetMultiplier = 2, 		-- float: Important. Allows the unit to keep it's current target, and not bounce between things.
+			keepTargetMultiplier = 1.1, 		-- float: Important. Allows the unit to keep it's current target, and not bounce between things.
 			scoreBandingSize = 0,			-- float: Allows the targeter to pick a random target within bands. Useful for PD and AOE, but requires a high keep target to prevent schizophrenia.
 		},
 		tracking = {

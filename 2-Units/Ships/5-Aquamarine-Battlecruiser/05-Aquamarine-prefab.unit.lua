@@ -71,13 +71,13 @@ function prefab.ship.aquamarine.stern.P(scaleConst, isGhost)
 		scale = {1,1,1},
 		parts={
 			prefab.weapon.laser.M(
-				{ 0, 2.75*.1/scaleConst, -6*.1/scaleConst },
+				{ 0, 3.25*.1/scaleConst, -7.5*.1/scaleConst },
 				{ 0, 0, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost
 			),
 			prefab.weapon.laser.M(
-				{ 0, -2.75*.1/scaleConst, -6*.1/scaleConst },
+				{ 0, -3.25*.1/scaleConst, -7.5*.1/scaleConst },
 				{ 0, 0, 180 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost
@@ -97,14 +97,14 @@ function prefab.ship.aquamarine.stern.P(scaleConst, isGhost)
 			),
 			
 			prefab.part.emblem(
-				{ 0, 2.75*.1/scaleConst, -9*.1/scaleConst},
-				{ 0, 0, 0 },
+				{ 0, 2.75*.1/scaleConst, -10.5*.1/scaleConst},
+				{ -18.4349, 0, 0 },
 				{ 2.5*.1/scaleConst, 2.5*.1/scaleConst, 2.5*.1/scaleConst },
 				isGhost
 			),
 			prefab.part.emblem(
-				{ 0, -2.75*.1/scaleConst, -9*.1/scaleConst},
-				{ 0, 0, 180 },
+				{ 0, -2.75*.1/scaleConst, -10.5*.1/scaleConst},
+				{ 18.4349, 0, 180 },
 				{ 2.5*.1/scaleConst, 2.5*.1/scaleConst, 2.5*.1/scaleConst },
 				isGhost
 			),
@@ -119,8 +119,8 @@ end
 
 function prefab.weapon_info.aquamarine.stern.B()
 	weapon_info = {
+		prefab.weapon_info.cannon.M(2),
 		prefab.weapon_info.cannon.S(2),
-		prefab.weapon_info.cannon.S(4),
 	}
 	return weapon_info
 end
@@ -134,52 +134,52 @@ function prefab.ship.aquamarine.stern.B(scaleConst, isGhost)
 		scale = {1,1,1},
 		parts={
 			prefab.weapon.cannon.S(
-				{ -1.5*.1/scaleConst, 2.75*.1/scaleConst, -7.25*.1/scaleConst },
+				{ -0*.1/scaleConst, 3.25*.1/scaleConst, -7.5*.1/scaleConst },
 				{ 0, 0, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost
 			),
+			-- prefab.weapon.cannon.S(
+			-- 	{ 1.5*.1/scaleConst, 2.75*.1/scaleConst, -7.25*.1/scaleConst },
+			-- 	{ 0, 0, 0 },
+			-- 	{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
+			-- 	isGhost
+			-- ),
 			prefab.weapon.cannon.S(
-				{ 1.5*.1/scaleConst, 2.75*.1/scaleConst, -7.25*.1/scaleConst },
-				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
-			),
-			prefab.weapon.cannon.S(
-				{ -1.5*.1/scaleConst, -2.75*.1/scaleConst, -7.25*.1/scaleConst },
+				{ -0*.1/scaleConst, -3.25*.1/scaleConst, -7.5*.1/scaleConst },
 				{ 0, 0, 180 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost
 			),
-			prefab.weapon.cannon.S(
-				{ 1.5*.1/scaleConst, -2.75*.1/scaleConst, -7.25*.1/scaleConst },
-				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
-			),
+			-- prefab.weapon.cannon.S(
+			-- 	{ 1.5*.1/scaleConst, -2.75*.1/scaleConst, -7.25*.1/scaleConst },
+			-- 	{ 0, 0, 180 },
+			-- 	{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
+			-- 	isGhost
+			-- ),
 
-			prefab.weapon.cannon.S(
-				{ -4.25*.1/scaleConst, 0, -5.25*.1/scaleConst },
+			prefab.weapon.cannon.M(
+				{ -4.25*.1/scaleConst, 0, -7.5*.1/scaleConst },
 				{ 0, 0, 90 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost
 			),
-			prefab.weapon.cannon.S(
-				{ 4.25*.1/scaleConst, 0, -5.25*.1/scaleConst },
+			prefab.weapon.cannon.M(
+				{ 4.25*.1/scaleConst, 0, -7.5*.1/scaleConst },
 				{ 0, 0, -90 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost
 			),
 			
 			prefab.part.emblem(
-				{ 0, 2.75*.1/scaleConst, -9*.1/scaleConst},
-				{ 0, 0, 0 },
+				{ 0, 2.75*.1/scaleConst, -10.5*.1/scaleConst},
+				{ -18.4349, 0, 0 },
 				{ 2.5*.1/scaleConst, 2.5*.1/scaleConst, 2.5*.1/scaleConst },
 				isGhost
 			),
 			prefab.part.emblem(
-				{ 0, -2.75*.1/scaleConst, -9*.1/scaleConst},
-				{ 0, 0, 180 },
+				{ 0, -2.75*.1/scaleConst, -10.5*.1/scaleConst},
+				{ 18.4349, 0, 180 },
 				{ 2.5*.1/scaleConst, 2.5*.1/scaleConst, 2.5*.1/scaleConst },
 				isGhost
 			),
@@ -307,8 +307,7 @@ end
 
 function prefab.weapon_info.aquamarine.core.B()
 	weapon_info = {
-		prefab.weapon_info.cannon.M(2),
-		prefab.weapon_info.cannon.M(2),
+		prefab.weapon_info.cannon.L(2),
 		prefab.weapon_info.cannon.S(2),
 	}
 	return weapon_info
@@ -322,44 +321,44 @@ function prefab.ship.aquamarine.core.B(scaleConst, isGhost)
 		rotation = {0,0,0},
 		scale = {1,1,1},
 		parts={
-			prefab.weapon.cannon.M(
+			prefab.weapon.cannon.L(
 				{ 0, 2.75*.1/scaleConst, -1.75*.1/scaleConst },
 				{ 0, 0, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost
 			),
-			prefab.weapon.cannon.M(
+			prefab.weapon.cannon.L(
 				{ 0, -2.75*.1/scaleConst, -1.75*.1/scaleConst },
 				{ 0, 0, 180 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost
 			),
 
-			prefab.weapon.cannon.M(
+			prefab.weapon.cannon.S(
 				{ -4.25*.1/scaleConst, 0, -.25*.1/scaleConst },
 				{ 0, 0, 90 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost
 			),
-			prefab.weapon.cannon.M(
+			prefab.weapon.cannon.S(
 				{ 4.25*.1/scaleConst, 0, -.25*.1/scaleConst },
 				{ 0, 0, -90 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost
 			),
 
-			prefab.weapon.cannon.S(
-				{ 0, 2.25*.1/scaleConst, 2*.1/scaleConst },
-				{ 18.4349, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
-			),
-			prefab.weapon.cannon.S(
-				{ 0, -2.25*.1/scaleConst, 2*.1/scaleConst },
-				{ -18.4349, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
-			),
+			-- prefab.weapon.cannon.S(
+			-- 	{ 0, 2.25*.1/scaleConst, 2*.1/scaleConst },
+			-- 	{ 18.4349, 0, 0 },
+			-- 	{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
+			-- 	isGhost
+			-- ),
+			-- prefab.weapon.cannon.S(
+			-- 	{ 0, -2.25*.1/scaleConst, 2*.1/scaleConst },
+			-- 	{ -18.4349, 0, 180 },
+			-- 	{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
+			-- 	isGhost
+			-- ),
 		}
 	}
 	if isGhost then
@@ -507,7 +506,7 @@ end
 
 function prefab.weapon_info.aquamarine.bow.B()
 	weapon_info = {
-		prefab.weapon_info.cannon.S(4),
+		prefab.weapon_info.cannon.M(2),
 		prefab.weapon_info.cannon.S(4),
 	}
 	return weapon_info
@@ -521,30 +520,30 @@ function prefab.ship.aquamarine.bow.B(scaleConst, isGhost)
 		rotation = {0,0,0},
 		scale = {1,1,1},
 		parts={
-			prefab.weapon.cannon.S(
-				{ -.9999*.1/scaleConst, 1.75*.1/scaleConst, 6.25*.1/scaleConst },
+			prefab.weapon.cannon.M(
+				{ -0*.1/scaleConst, 1.75*.1/scaleConst, 6.25*.1/scaleConst },
 				{ 0, 0, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost
 			),
-			prefab.weapon.cannon.S(
-				{ .9999*.1/scaleConst, 1.75*.1/scaleConst, 6.25*.1/scaleConst },
-				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
-			),
-			prefab.weapon.cannon.S(
-				{ -.9999*.1/scaleConst, -1.75*.1/scaleConst, 6.25*.1/scaleConst },
+			-- prefab.weapon.cannon.S(
+			-- 	{ .9999*.1/scaleConst, 1.75*.1/scaleConst, 6.25*.1/scaleConst },
+			-- 	{ 0, 0, 0 },
+			-- 	{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
+			-- 	isGhost
+			-- ),
+			prefab.weapon.cannon.M(
+				{ -0*.1/scaleConst, -1.75*.1/scaleConst, 6.25*.1/scaleConst },
 				{ 0, 0, 180 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost
 			),
-			prefab.weapon.cannon.S(
-				{ .9999*.1/scaleConst, -1.75*.1/scaleConst, 6.25*.1/scaleConst },
-				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
-			),
+			-- prefab.weapon.cannon.S(
+			-- 	{ .9999*.1/scaleConst, -1.75*.1/scaleConst, 6.25*.1/scaleConst },
+			-- 	{ 0, 0, 180 },
+			-- 	{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
+			-- 	isGhost
+			-- ),
 
 
 			prefab.weapon.cannon.S(
