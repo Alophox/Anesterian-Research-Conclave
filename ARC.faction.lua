@@ -284,6 +284,24 @@ healthStats = {
 		C = .3,
 		S = .4,
 	},
+	accelMult = {
+		P = 1,
+		B = 1.1,
+		M = .75,
+		G = 1.1,
+		A = .6,
+		C = .6,
+		S = .6,
+	},
+	retreatMult = {
+		P = .6,
+		B = .75,
+		M = .5,
+		G = .75,
+		A = .4,
+		C = .4,
+		S = .4,
+	},
 }
 
 return {

@@ -151,9 +151,9 @@ return {
 	movement           = {
 		type = "MAPLOCKED",                -- string enum: UNITMOVETYPE: MAPLOCKED / FREE --Does this unit act like a normal ship, and stay within the 0-7y world height. Or like a drone/missile?
 		maximumAngleToTarget = 1, -- .2       -- float: Radians within in which a unit is allowed to accelerate towards a target.
-		acceleration = 0.35,               -- float: The units per second of the ship's acceleration. A tolly is 0.4 units long, and accelerates at 0.35
+		acceleration = 0.35 * functions.averageMultiplier({healthStats.accelMult.B}),               -- float: The units per second of the ship's acceleration. A tolly is 0.4 units long, and accelerates at 0.35
 		strafingAccelMultiplier = 0.8,     -- float: Fraction of accel used for strafing
-		reverseAccelMultiplier = 0.6,      -- float: Fraction of accel used for reverse/breaking
+		reverseAccelMultiplier = functions.averageMultiplier({healthStats.retreatMult.B}),      -- float: Fraction of accel used for reverse/breaking
 		inertialCorrection = true,         --Try to cancel out excess velocity in directions you don't want to go.
 		isStrafing = false,                 --Should this unit strafe around? (Partell, Skua)
 		standoffDistance = weaponStats.fireRangeMult * weaponStats.rangeMult["S"] * weaponStats.cannon.baseRange-1,              -- float: How far away from a target's ColliderDimensions should a unit hold position?
