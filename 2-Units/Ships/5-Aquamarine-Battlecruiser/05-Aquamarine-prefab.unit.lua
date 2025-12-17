@@ -521,7 +521,7 @@ function prefab.ship.aquamarine.bow.B(scaleConst, isGhost)
 		scale = {1,1,1},
 		parts={
 			prefab.weapon.cannon.M(
-				{ -0*.1/scaleConst, 1.75*.1/scaleConst, 6.25*.1/scaleConst },
+				{ -0*.1/scaleConst, 1.75*.1/scaleConst, 5.75*.1/scaleConst },
 				{ 0, 0, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost
@@ -533,7 +533,7 @@ function prefab.ship.aquamarine.bow.B(scaleConst, isGhost)
 			-- 	isGhost
 			-- ),
 			prefab.weapon.cannon.M(
-				{ -0*.1/scaleConst, -1.75*.1/scaleConst, 6.25*.1/scaleConst },
+				{ -0*.1/scaleConst, -1.75*.1/scaleConst, 5.75*.1/scaleConst },
 				{ 0, 0, 180 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost
