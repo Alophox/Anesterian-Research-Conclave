@@ -151,13 +151,13 @@ return {
 	movement           = {
 		type = "MAPLOCKED",                -- string enum: UNITMOVETYPE: MAPLOCKED / FREE --Does this unit act like a normal ship, and stay within the 0-7y world height. Or like a drone/missile?
 		maximumAngleToTarget = 1, -- .2       -- float: Radians within in which a unit is allowed to accelerate towards a target.
-		acceleration = 0.35,               -- float: The units per second of the ship's acceleration. A tolly is 0.4 units long, and accelerates at 0.35
+		acceleration = 0.35 * functions.averageMultiplier({healthStats.accelMult.B}),               -- float: The units per second of the ship's acceleration. A tolly is 0.4 units long, and accelerates at 0.35
 		strafingAccelMultiplier = 0.8,     -- float: Fraction of accel used for strafing
-		reverseAccelMultiplier = 0.6,      -- float: Fraction of accel used for reverse/breaking
+		reverseAccelMultiplier = functions.averageMultiplier({healthStats.retreatMult.B}),      -- float: Fraction of accel used for reverse/breaking
 		inertialCorrection = true,         --Try to cancel out excess velocity in directions you don't want to go.
 		isStrafing = false,                 --Should this unit strafe around? (Partell, Skua)
-		standoffDistance = weaponStats.fireRangeMult * weaponStats.rangeMult["S"] * weaponStats.cannon.baseRange*.5+1,              -- float: How far away from a target's ColliderDimensions should a unit hold position?
-		retreatDistance = (weaponStats.fireRangeMult * weaponStats.rangeMult["S"] * weaponStats.cannon.baseRange)*.5,               -- float: How far away from a target's ColliderDimensions should a unit begin to retreat?
+		standoffDistance = weaponStats.fireRangeMult * weaponStats.rangeMult["S"] * weaponStats.cannon.baseRange-1,              -- float: How far away from a target's ColliderDimensions should a unit hold position?
+		retreatDistance = (weaponStats.fireRangeMult * weaponStats.rangeMult["S"] * weaponStats.cannon.baseRange)/2,               -- float: How far away from a target's ColliderDimensions should a unit begin to retreat?
 		strafeMargin = 1.5,                -- float: How far away from standoffDistance strafe thrust is allowed to start. Default = 1
 		useMinimumWorldYPosition = false,
 		minimumWorldYPosition = 0,         -- float: What does this unit consider the lowest it can go? Capitals and Heavies often use 3~4 to stop them sinking into bases, and keep them looking imposing.
@@ -226,7 +226,7 @@ return {
 			--Multiplied against score at the end.
 			shipMultiplier = 1.0, 			-- float: Priority for ships.
 			structureMultiplier = 1.0, 		-- float: Priority for structures.
-			keepTargetMultiplier = 2, 		-- float: Important. Allows the unit to keep it's current target, and not bounce between things.
+			keepTargetMultiplier = 1, 		-- float: Important. Allows the unit to keep it's current target, and not bounce between things.
 			scoreBandingSize = 0,			-- float: Allows the targeter to pick a random target within bands. Useful for PD and AOE, but requires a high keep target to prevent schizophrenia.
 		},
 		tracking = {

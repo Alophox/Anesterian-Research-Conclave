@@ -39,7 +39,7 @@ return {
 		cost_matter  = 200,
 		cost_energy  = 50,
 		cost_supply  = 5,
-		cost_time    = 10,
+		cost_time    = 20,
 		techRequired = 0
 	},
 

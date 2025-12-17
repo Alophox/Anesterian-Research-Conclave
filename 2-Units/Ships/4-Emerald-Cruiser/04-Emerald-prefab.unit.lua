@@ -38,6 +38,7 @@ end
 function prefab.weapon_info.emerald.stern.G()
 	weapon_info = {
 		prefab.weapon_info.lightning.M(2),
+		prefab.weapon_info.lightning.S(2),
 	}
 	return weapon_info
 end
@@ -62,7 +63,20 @@ function prefab.ship.emerald.stern.G(scaleConst, isGhost)
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost
 			),
-			
+			prefab.weapon.lightning.S(
+				{ 3*.1/scaleConst, 0, -4.25*.1/scaleConst },
+				{ 0, 0, -90 },
+				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
+				isGhost
+			),
+			prefab.weapon.lightning.S(
+				{ -3*.1/scaleConst, 0, -4.25*.1/scaleConst },
+				{ 0, 0, 90 },
+				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
+				isGhost
+			),
+
+
 			prefab.part.emblem(
 				{ 0, 2.25*.1/scaleConst, -5.75*.1/scaleConst},
 				{ 0, 0, 0 },

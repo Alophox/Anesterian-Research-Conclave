@@ -30,7 +30,7 @@ return {
 		"This fighter was the very first to receive a capacitor capable of not exploding when faced with a Breach Core, utilized in powering up a sizable shield. Unfortunately, it is unable to supply enough power to regenerate the shield, and the capacitor has reduced structual integrity significantly. In the Spance, its cockpit has replaced by a remote control suite, converting it into a drone.",
 		weaponInfo                  = { 	-- int3 array: Tells the databank which weaponDatas to grab and display for this unit. Not automatic you have to do this, I'm sorry.
 			prefab.weapon_info.laser.D(2),  		-- (int, int, int): weaponID, count, subMunitionWeaponID (bullet, missile, etc, 0 = none) This gets the damage data of the subMunitionWeapon if it has any, important for bullets which themselves do damage via a subweapon.
-			prefab.weapon_info.lightning.D(1)
+			-- prefab.weapon_info.lightning.D(2)
 		},
 		relatedUnitIDs              = {} 	-- int array: TypeID of other units in the family tree
 	},
@@ -71,12 +71,12 @@ return {
 
 	-- 🟦 PARTS
 	parts = {
-		prefab.weapon.lightning.D(
-			{ 0, 0, .825*.1/scaleConst },
-			{ 0, 0, 0 },
-			{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-			isGhost
-		),
+		-- prefab.weapon.laser.D(
+		-- 	{ 0, 0, .825*.1/scaleConst },
+		-- 	{ 0, 0, 0 },
+		-- 	{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
+		-- 	isGhost
+		-- ),
 		prefab.weapon.laser.D(
 			{ -.2625*.1/scaleConst, 0, .373*.1/scaleConst },
 			{ 0, 0, 0 },
@@ -89,12 +89,12 @@ return {
 			{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 			isGhost
 		),
-		prefab.weapon.special.spawn_shield(
-			{ 0, 0, 0 },
-			{ 0, 0, 0 },
-			{ 1, 1, 1 },
-			isGhost
-		),
+		-- prefab.weapon.special.spawn_shield(
+		-- 	{ 0, 0, 0 },
+		-- 	{ 0, 0, 0 },
+		-- 	{ 1, 1, 1 },
+		-- 	isGhost
+		-- ),
 		{
 			name     = "Thruster",
 			position = { 0, 0, -.4125*.1/scaleConst },
@@ -118,6 +118,15 @@ return {
 				},
 			},
 		},
+		-- {
+		-- 	name     = "Aegis",
+		-- 	mesh     = "0-Quartz/Quartz",
+		-- 	materials  = { "arc_teamGlow", "arc_hull_dark", "arc_engine","arc_teamColour", "arc_hull" },
+		-- 	position = { 0, 0, 0 },
+		-- 	rotation = { 0, 0, 0 },
+		-- 	scale 	= { 1.1, 1.1, 1.1 },
+		-- 	aegisVisual = true,
+		-- },
 
 		{
 			name     = "Trail Examplee",
@@ -155,7 +164,7 @@ return {
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "DRONE",       -- string enum: UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = 12,              -- float: Health, also the unit's heat capacity.
+		health = 35,              -- float: Health, also the unit's heat capacity.
 		health_regen_per_second = 0, -- float: Health regen per second. Duh.
 		max_regen_frac = 0,      -- float: The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
 
@@ -168,7 +177,7 @@ return {
 
 		heatResistancePercentage = 0, -- float: Fraction of heat resistance. (0-1) Normally 0
 		shredResistancePercentage = 0, -- float: Fraction of shred resistance. (0-1) Normally 0. If 0 game automatically assigns shredResistance based on unit class (as is done for the entire vanilla game).
-		aegisMaximum = 25, 			-- float: Game will automatically determine, but can be manually set here.
+		aegisMaximum = 0, 			-- float: Game will automatically determine, but can be manually set here.
 		isResourceMatter = false,  	-- bool: For Matter Deposits. When damaged, gives the damage back to the attacking team as Matter.
 		isResourceEnergy = false,  	-- bool: For Energy Deposits. When damaged, gives the damage back to the attacking team as Energy.
 		isUncapturable = false,    	-- bool: Prevents capture, such as from Glowfish.

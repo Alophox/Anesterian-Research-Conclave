@@ -90,32 +90,32 @@ return {
 			}
 		},
 
-		{
-			name     = "Trail Example",
-			-- position = { 0, 0, -0.12*.1/.044921 },
-			position = { 0, 0, 0 },
-			rotation = { 0, 0, 0 },
-			scale 	= { 1, 1, 1 },
+		-- {
+		-- 	name     = "Trail Example",
+		-- 	-- position = { 0, 0, -0.12*.1/.044921 },
+		-- 	position = { 0, 0, 0 },
+		-- 	rotation = { 0, 0, 0 },
+		-- 	scale 	= { 1, 1, 1 },
 
-			particleEmitter = {
-				particleType = "PARTICLE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
-				distancePerParticle = 0.01,       -- decimal
-				minSecondsPerParticle = 0.02,     -- decimal
-				ejectionVelocity = 0,             -- decimal
-				ejectionVelocityAwayFromEmitter = false, -- bool
-				randomRadius = scaleConst*.1,                 -- decimal
-				randomScaleMinFraction = 1,       -- decimal
-				startDisabled = false,            -- bool
-				stateToggleTrigger = "None",      -- enum EMITTERSTATETRIGGER
-				colourStart = {1,1,1},            -- decimals
-				colourEnd   = {1,1,1},            -- decimals
-				opacity     = .1,                  -- decimal
-				scaleStart  = scaleConst*.2,                  -- decimal
-				scaleEnd    = 0,                  -- decimal
-				lifetime    = .1,                  -- decimal
-			},
+		-- 	particleEmitter = {
+		-- 		particleType = "PARTICLE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
+		-- 		distancePerParticle = 0.01,       -- decimal
+		-- 		minSecondsPerParticle = 0.02,     -- decimal
+		-- 		ejectionVelocity = 0,             -- decimal
+		-- 		ejectionVelocityAwayFromEmitter = false, -- bool
+		-- 		randomRadius = scaleConst*.1,                 -- decimal
+		-- 		randomScaleMinFraction = 1,       -- decimal
+		-- 		startDisabled = false,            -- bool
+		-- 		stateToggleTrigger = "None",      -- enum EMITTERSTATETRIGGER
+		-- 		colourStart = {1,1,1},            -- decimals
+		-- 		colourEnd   = {1,1,1},            -- decimals
+		-- 		opacity     = .1,                  -- decimal
+		-- 		scaleStart  = scaleConst*.2,                  -- decimal
+		-- 		scaleEnd    = 0,                  -- decimal
+		-- 		lifetime    = .1,                  -- decimal
+		-- 	},
 			
-		},
+		-- },
 	},
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).

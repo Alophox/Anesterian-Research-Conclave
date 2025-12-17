@@ -36,16 +36,16 @@ return {
 
 		--Fire Control 
 		alwaysfire = false,           -- fire constantly if not disabled (good for SPARKLER effects, constant drones, deploying mines, etc, but can look dumb when there are no enemies)
-		magdump = true,              -- always expend entire magazine, good for drone launchers to ensure the whole squadron is deployed. DAKKA DAKKA DAKKA DAKKA
+		magdump = false,              -- always expend entire magazine, good for drone launchers to ensure the whole squadron is deployed. DAKKA DAKKA DAKKA DAKKA
 		necrofire = false,            -- enable weapon on parent death (good for SPARKLER visual effects, among other things)
 		active = true,                -- is the weapon online (for use with necrofire)
 		oneuse = false,               -- destroy root unit when out of ammo, (for bullets, missiles, etc) (fires entire magazine then destroys the unit it's on)
 		rangeInUnits = weaponStats.rangeMult[weaponConst.size] * weaponStats.laser.baseRange * weaponStats.overShootMult,            -- Target must be within range, for gun to fire.
-		maximumAngleToTarget = 0.01,   -- Radians, target must be within angle for gun to fire.
+		maximumAngleToTarget = 0.001,   -- Radians, target must be within angle for gun to fire.
 		unitsPerSecond = 0,           -- projectile velocity for LAUNCHER in 100m/s
 		spreadDegrees = 0,          -- Radians, spread for LAUNCHER (machine guns, etc)
 		spreadType = "BELLCURVE",       -- Spread style. BELLCURVE (more in the center), RANDOM 
-		forceRaycastDirectlyToTarget = false, -- LASERS, forces the laser to hit it's intended target even if the turret is not looking perfectly at it. (Important for PD weapons, and most laser weapons)
+		forceRaycastDirectlyToTarget = true, -- LASERS, forces the laser to hit it's intended target even if the turret is not looking perfectly at it. (Important for PD weapons, and most laser weapons)
 		lockTime = 0,                 -- Seconds this weapon must have the same target before it can fire.
 		simultaniousObjectLimit = 0,  -- LAUNCHER, used for Drones, mines, etc. 0 = no limit.
 
@@ -145,7 +145,7 @@ return {
 		-- > 0 : reload a set amount at a time, cannot be interupted. Starts reloading the moment shotsPerCycleCurrent < shotsPerCycle
 		-- < 0 : reload a set amount at a time, interupted when firing. The moment the weapon fires, will reset the secondsPerCycleCurrent to secondsPerCycle.
 		reloadAmount = 0,             --Normal weapons use 0, aka full
-		secondsPerCycle = weaponStats.laser.baseCD*weaponStats.CDMult[weaponConst.size] + weaponStats.CDMod[weaponConst.size] - weaponStats.laser.secondsPerShot*(weaponStats.laser.baseDuration / weaponStats.laser.secondsPerShot - 1),        --Seconds per reload. Negative value prevent reloading (limited ammo weapons).
+		secondsPerCycle = (weaponStats.laser.baseCD*weaponStats.CDMult[weaponConst.size] + weaponStats.CDMod[weaponConst.size])*weaponStats.laser.shotsPerBurst[weaponConst.size] - weaponStats.laser.secondsPerShot*(weaponStats.laser.baseDuration / weaponStats.laser.secondsPerShot - 1),
 		secondsPerCycleCurrent = 0,   --Starting delay. Good if you don't want your bomber launching bombs the moment it spawns.
 
 		--Magazine Size

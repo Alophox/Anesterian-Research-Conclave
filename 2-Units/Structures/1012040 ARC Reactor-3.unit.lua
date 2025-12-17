@@ -47,7 +47,7 @@ return {
 		cost_matter  = 30, -- Platforms are not buildable, so it does not require a cost.
 		cost_energy  = 45,
 		cost_supply  = 3,
-		cost_time    = 45,
+		cost_time    = 15,
 		techRequired = 0
 	},
 
