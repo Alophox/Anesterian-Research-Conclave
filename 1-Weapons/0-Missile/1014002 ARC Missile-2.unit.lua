@@ -179,7 +179,7 @@ return {
 				opacity     = .5,                  -- decimal
 				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size],                  -- decimal
 				scaleEnd    = 0,                  -- decimal
-				lifetime    = .75,                  -- decimal
+				lifetime    = .5,                  -- decimal
 			},
 			
 		},
@@ -201,7 +201,7 @@ return {
 				colourStart = {.6,0,.6},            -- decimals
 				colourEnd   = {.6,0,.6},            -- decimals
 				opacity     = .5,                  -- decimal
-				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.8,                  -- decimal
+				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*1,                  -- decimal
 				scaleEnd    = 0,                  -- decimal
 				lifetime    = 1,                  -- decimal
 			},
@@ -224,7 +224,7 @@ return {
 				colourStart = {.7,0,.7},            -- decimals
 				colourEnd   = {.7,0,.7},            -- decimals
 				opacity     = .6,                  -- decimal
-				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.6,                  -- decimal
+				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.8,                  -- decimal
 				scaleEnd    = 0,                  -- decimal
 				lifetime    = .5,                  -- decimal
 			},
@@ -247,7 +247,7 @@ return {
 				colourStart = {.8,.1,.8},            -- decimals
 				colourEnd   = {.8,.1,.8},            -- decimals
 				opacity     = .7,                  -- decimal
-				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.4,                  -- decimal
+				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.6,                  -- decimal
 				scaleEnd    = 0,                  -- decimal
 				lifetime    = 1,                  -- decimal
 			},
@@ -270,7 +270,7 @@ return {
 				colourStart = {1,.5,1},            -- decimals
 				colourEnd   = {1,.5,1},            -- decimals
 				opacity     = .9,                  -- decimal
-				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.2,                  -- decimal
+				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.4,                  -- decimal
 				scaleEnd    = 0,                  -- decimal
 				lifetime    = 1,                  -- decimal
 			},
