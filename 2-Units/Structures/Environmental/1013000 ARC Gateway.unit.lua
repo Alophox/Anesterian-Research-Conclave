@@ -80,7 +80,7 @@ return {
 				{
 					name = "Gateway Vortex",
 					mesh = "Gateway/Swirl-R",
-					materials = { "arc_vortex_r" },
+					materials = { "arc_vortex" },
 					rotation = {0,0,0},
 					position = {0,0,0},
 					scale = {1,1,1},
@@ -124,7 +124,7 @@ return {
 				{
 					name = "Gateway Vortex",
 					mesh = "Gateway/Swirl-R",
-					materials = { "arc_vortex_r" },
+					materials = { "arc_vortex" },
 					rotation = {0,0,0},
 					position = {0,0,0},
 					scale = {1,1,1},
