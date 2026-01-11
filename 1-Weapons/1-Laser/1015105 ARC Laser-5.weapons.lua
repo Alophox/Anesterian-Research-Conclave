@@ -53,10 +53,10 @@ return {
 		damageData = {
 			isNondamaging = false,             -- false> normal, true> Healing, armour repair, aegis
 			instances = weaponStats.laser.instances,                     -- int: How many times is this damage dealt. For making weapons worse against armour.
-			damage = (weaponStats.damageMult[weaponConst.size] * weaponStats.laser.baseDMG / (weaponStats.laser.baseDuration / weaponStats.laser.secondsPerShot))/weaponStats.laser.instances,
+			damage = (weaponStats.damageMult[weaponConst.size] * weaponStats.laser.baseDMG / (weaponStats.laser.baseDuration / weaponStats.laser.secondsPerShot))/weaponStats.laser.instances/weaponStats.laser.shotsPerBurst[weaponConst.size],
 			piercing = weaponStats.laser.piercing * weaponStats.damageMult[weaponConst.size],                      -- float: Ignore this much armour. Negative piercing is AEGIS shielding.
 			shred = 0,                      -- float: Destroy this much armour * class shred resistance. Negative heals armour.
-			heat = (weaponStats.damageMult[weaponConst.size] * weaponStats.laser.baseHeat / (weaponStats.laser.baseDuration / weaponStats.laser.secondsPerShot))/weaponStats.laser.instances,                          -- float: Apply this much heat. Health is heat capacity.
+			heat = (weaponStats.damageMult[weaponConst.size] * weaponStats.laser.baseHeat / (weaponStats.laser.baseDuration / weaponStats.laser.secondsPerShot))/weaponStats.laser.instances/weaponStats.laser.shotsPerBurst[weaponConst.size],                          -- float: Apply this much heat. Health is heat capacity.
 			vulnerability = 0,               -- float: Negate this much armour. Negative vulnerability is CAPTURE.
 			decloak = 1.0,                     -- float: Reduce target cloak by this amount. Unused.
 			targetingPriorityMultiplier = 1,   -- float: Temporarily make the target this much more attractive a target.
@@ -145,7 +145,7 @@ return {
 		-- > 0 : reload a set amount at a time, cannot be interupted. Starts reloading the moment shotsPerCycleCurrent < shotsPerCycle
 		-- < 0 : reload a set amount at a time, interupted when firing. The moment the weapon fires, will reset the secondsPerCycleCurrent to secondsPerCycle.
 		reloadAmount = 0,
-		secondsPerCycle = (weaponStats.laser.baseCD*weaponStats.CDMult[weaponConst.size] + weaponStats.CDMod[weaponConst.size])*weaponStats.laser.shotsPerBurst[weaponConst.size] - weaponStats.laser.secondsPerShot*(weaponStats.laser.baseDuration / weaponStats.laser.secondsPerShot - 1),
+		secondsPerCycle = (weaponStats.laser.baseCD*weaponStats.CDMult[weaponConst.size] + weaponStats.CDMod[weaponConst.size]) - weaponStats.laser.secondsPerShot*(weaponStats.laser.baseDuration / weaponStats.laser.secondsPerShot - 1),
 		secondsPerCycleCurrent = 0,
 
 		--Magazine Size
