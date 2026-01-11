@@ -5,13 +5,13 @@
 
 MOD INFO:
 
-ID: 101ARC v0.4.3
+ID: 329ARC v0.5.0
 
-ATS: v0.91
+ATS: v0.92
 
-Faction IDs used: 101
+Faction IDs used: 329
 
-Unit IDs used:1010000 - 1019999
+Unit IDs used:3290000 - 3299999
 
 =====
 

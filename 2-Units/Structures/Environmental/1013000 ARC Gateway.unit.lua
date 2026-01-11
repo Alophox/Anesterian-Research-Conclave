@@ -39,8 +39,8 @@ return {
 
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data                        = {
-		typeID       = 1013000,
-		factionID    = 101,
+		typeID       = 3293000,
+		factionID    = 329,
 		macroType    = "AUTO",
 		cost_matter  = 50, -- Platforms are not buildable, so it does not require a cost.
 		cost_energy  = 0,
@@ -70,11 +70,20 @@ return {
             },
 			parts={
 				{
-					name = "test",
+					name = "Gateway Vortex",
+					mesh = "Gateway/Swirl",
+					materials = { "arc_vortex" },
 					rotation = {0,0,0},
-					position = {0,5,0},
+					position = {0,0,0},
 					scale = {1,1,1},
-					-- vortex = true,
+				},
+				{
+					name = "Gateway Vortex",
+					mesh = "Gateway/Swirl-R",
+					materials = { "arc_vortex_r" },
+					rotation = {0,0,0},
+					position = {0,0,0},
+					scale = {1,1,1},
 				}
 				
 			}
@@ -103,6 +112,25 @@ return {
                 startProgressFraction = 0,        -- decimal 0-1
                 duration = 100,                     -- decimal (seconds)
             },
+			parts={
+				{
+					name = "Gateway Vortex",
+					mesh = "Gateway/Swirl",
+					materials = { "arc_vortex" },
+					rotation = {0,0,0},
+					position = {0,0,0},
+					scale = {1,1,1},
+				},
+				{
+					name = "Gateway Vortex",
+					mesh = "Gateway/Swirl-R",
+					materials = { "arc_vortex_r" },
+					rotation = {0,0,0},
+					position = {0,0,0},
+					scale = {1,1,1},
+				}
+				
+			}
 		},
 	},
 

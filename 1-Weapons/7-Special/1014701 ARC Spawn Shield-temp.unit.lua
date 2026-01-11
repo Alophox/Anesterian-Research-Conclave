@@ -24,7 +24,7 @@ return {
 		description                 =
 		".",
 		weaponInfo                  = { 	-- int3 array: Tells the databank which weaponDatas to grab and display for this unit. Not automatic you have to do this, I'm sorry.
-			{ 1016701, 1, 0 }   		-- (int, int, int): weaponID, count, subMunitionWeaponID (bullet, missile, etc, 0 = none) This gets the damage data of the subMunitionWeapon if it has any, important for bullets which themselves do damage via a subweapon.
+			{ 3296701, 1, 0 }   		-- (int, int, int): weaponID, count, subMunitionWeaponID (bullet, missile, etc, 0 = none) This gets the damage data of the subMunitionWeapon if it has any, important for bullets which themselves do damage via a subweapon.
 		},
 		relatedUnitIDs              = {} 	-- int array: TypeID of other units in the family tree
 	},
@@ -53,8 +53,8 @@ return {
 
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data = {
-		typeID       = 1014701, -- int: !!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
-		factionID    = 101, -- int: The faction this unit is associated with in the Databank.
+		typeID       = 3294701, -- int: !!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
+		factionID    = 329, -- int: The faction this unit is associated with in the Databank.
 		macroType    = "AUTO", -- string enum: MacroTarget state: AUTO (is capital or command?) / TRUE / FALSE
 		cost_matter  = 0, -- int: For structures.
 		cost_energy  = 0, -- int: For structures.
@@ -68,7 +68,7 @@ return {
 		{
 			name      = "Turret",	position  = { 0,0, 0 },	rotation  = { 0, 0, 0 },	scale 	= { 1, 1, 1 },
 			weapon    = {
-				weaponID = 1016701, --int: The weaponData id to be used for this weapon.
+				weaponID = 3296701, --int: The weaponData id to be used for this weapon.
 				turnSpeed = 0, 	--float: Degrees per second.
 				turnMode = "Linear", --string enum: Linear / Acceleration
 				turnInstant = true, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -105,7 +105,7 @@ return {
 		{
 			name = "Rift",
 			mesh = "Emplacement/Rift",
-			materials = { "arc_rift_blue"  },
+			materials = { "arc_rift-blue"  },
 			rotation = { 240, 240, 240 },
 			position = { 0, 0, 0},
 			scale = { .1, .1, .1 },

@@ -2,7 +2,7 @@ weaponConst = {
 	size="M",
 };
 return {
-	id = 1015402,
+	id = 3295402,
 	name = "Medium Plasma Launcher",
 	blurb = "Short range hypercompressed nonthermal Plasma Launcher.",
 	metaNote = "Used on Brawlers",
@@ -127,7 +127,7 @@ return {
 		barrelIndexCurrent = 0,            --Controls which barrel (in child order) the weapon will start with.
 
 		--LAUNCHER / TESLA Controls
-		spawnID = 1014402,       --unit typeID
+		spawnID = 3294402,       --unit typeID
 		arrivalData = {
 			type           = "NONE",    --NONE, ARRIVE, DEPART, CONSTRUCT, LAUNCH, WARP
 			arrivalDuration= 1.0,
@@ -199,7 +199,7 @@ return {
 			-- Vital for unit behaviour. -1 = ignore.
 			-- Multiplies the target score by this.
 			classMultMissile = -1,
-			classMultDrone = -1,
+			classMultDrone = .1,
 			classMultLight = 1,
 			classMultMedium = 1,
 			classMultHeavy = 0.8,

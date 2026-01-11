@@ -47,8 +47,8 @@ return {
 
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data                        = {
-		typeID       = 1012012, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
-		factionID    = 101, 	--The faction this unit is associated with in the Databank.
+		typeID       = 3292012, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
+		factionID    = 329, 	--The faction this unit is associated with in the Databank.
 		macroType    = "AUTO", 	--MacroTarget state: AUTO (is capital or command?) / TRUE / FALSE
 		cost_matter  = 25, 		--integer, For structures.
 		cost_energy  = 25, 		--integer, For structures.
@@ -176,7 +176,7 @@ return {
 	-- 🟨 SPAWNER UNITS (units a yard can build)
 	spawnItems = {
 		{
-			id = 1011300, -- typeID of the unit to spawn
+			id = 3291300, -- typeID of the unit to spawn
 			spawnTime = 40, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
@@ -190,7 +190,7 @@ return {
 			techID = 0 -- Required tech to enable.
 		},
 		{
-			id = 1011301, -- typeID of the unit to spawn
+			id = 3291301, -- typeID of the unit to spawn
 			spawnTime = 40, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
@@ -204,7 +204,7 @@ return {
 			techID = 0 -- Required tech to enable.
 		},
 		{
-			id = 1011302, -- typeID of the unit to spawn
+			id = 3291302, -- typeID of the unit to spawn
 			spawnTime = 40, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
@@ -218,7 +218,7 @@ return {
 			techID = 0 -- Required tech to enable.
 		},
 		{
-			id = 1011400, -- typeID of the unit to spawn
+			id = 3291400, -- typeID of the unit to spawn
 			spawnTime = 60, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
@@ -232,7 +232,7 @@ return {
 			techID = 0 -- Required tech to enable.
 		},
 		{
-			id = 1011401, -- typeID of the unit to spawn
+			id = 3291401, -- typeID of the unit to spawn
 			spawnTime = 60, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
@@ -246,7 +246,7 @@ return {
 			techID = 0 -- Required tech to enable.
 		},
 		{
-			id = 1011402, -- typeID of the unit to spawn
+			id = 3291402, -- typeID of the unit to spawn
 			spawnTime = 60, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 

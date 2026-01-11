@@ -1,10 +1,13 @@
+weaponConst = {
+	size="T",
+};
 return {
-     id = 1015601,
-     name = "ARC Quartz Launcher",
-     blurb = "Drone.",
-     metaNote = "Used on Carriers",
+     id = 3296405,
+     name = "Titanic Plasma Warhead",
+     blurb = "BURRRN",
+     metaNote = "Brrrrrr",
      hideInDatabank = false,
-     displayType = "DRONE", -- NORMAL, DRONE
+     displayType = "NORMAL", -- NORMAL, DRONE
 
      weapon = {
 
@@ -19,7 +22,7 @@ return {
           -- Most weapons will create an AOE explosion if isAreaOfEffect is enabled.
           -- All weapons will try to use a childed weaponVisual when firing. If there are multiple weaponVisuals, each shot it will use one in child order. (as a laser beam, or as a muzzle flash depending on how you configure the weaponVisual)
 
-          weaponType = "LAUNCHER",
+          weaponType = "WARHEAD",
           
           -- LASER, raycast forward and damage the first thing you hit. Can do AOE/Damage. Uses weaponVisual as a beam.
           -- PUREHIT, directly damage the target. Can do AOE/Damage. Uses weaponVisual as a beam.
@@ -32,14 +35,14 @@ return {
           -- EXPLODER, creates an AOE and optional explosion visual.
 
           --Fire Control 
-          alwaysfire = true,           -- fire constantly if not disabled (good for SPARKLER effects, constant drones, deploying mines, etc, but can look dumb when there are no enemies)
+          alwaysfire = false,           -- fire constantly if not disabled (good for SPARKLER effects, constant drones, deploying mines, etc, but can look dumb when there are no enemies)
           magdump = true,              -- always expend entire magazine, good for drone launchers to ensure the whole squadron is deployed. DAKKA DAKKA DAKKA DAKKA
           necrofire = false,            -- enable weapon on parent death (good for SPARKLER visual effects, among other things)
           active = true,                -- is the weapon online (for use with necrofire)
-          oneuse = false,               -- destroy root unit when out of ammo, (for bullets, missiles, etc) (fires entire magazine then destroys the unit it's on)
-          rangeInUnits = 0,            -- Target must be within range, for gun to fire.
-          maximumAngleToTarget = 0,   -- Radians, target must be within angle for gun to fire.
-          unitsPerSecond = weaponStats.hangar.velocity*2,           -- projectile velocity for LAUNCHER in 100m/s
+          oneuse = true,               -- destroy root unit when out of ammo, (for bullets, missiles, etc) (fires entire magazine then destroys the unit it's on)
+          rangeInUnits = 1,            -- Target must be within range, for gun to fire.
+          maximumAngleToTarget = 3.14,   -- Radians, target must be within angle for gun to fire.
+          unitsPerSecond = .2,           -- projectile velocity for LAUNCHER in 100m/s
           spreadDegrees = 0,          -- Radians, spread for LAUNCHER (machine guns, etc)
           spreadType = "BELLCURVE",       -- Spread style. BELLCURVE (more in the center), RANDOM 
           forceRaycastDirectlyToTarget = false, -- LASERS, forces the laser to hit it's intended target even if the turret is not looking perfectly at it. (Important for PD weapons, and most laser weapons)
@@ -49,15 +52,15 @@ return {
           --Damage Data
           damageData = {
                isNondamaging = false,             -- false> normal, true> Healing, armour repair, aegis
-               instances = 1,                     -- int: How many times is this damage dealt. For making weapons worse against armour.
-               damage = 10,                       -- float: Raw damage, reduced by armour.
-               piercing = 5,                      -- float: Ignore this much armour. Negative piercing is AEGIS shielding.
-               shred= 0,                      -- float: Destroy this much armour * class shred resistance. Negative heals armour.
-               heat = 5,                          -- float: Apply this much heat. Health is heat capacity.
+               instances = weaponStats.cannon.instances,                     -- int: How many times is this damage dealt. For making weapons worse against armour.
+               damage = (weaponStats.damageMult[weaponConst.size] * weaponStats.cannon.baseDMG / weaponStats.cannon.instances)/weaponStats.cannon.shotsPerBurst[weaponConst.size],                       -- float: Raw damage, reduced by armour.
+               piercing = 0,                      -- float: Ignore this much armour. Negative piercing is AEGIS shielding.
+               shred = 0,                      -- float: Destroy this much armour * class shred resistance. Negative heals armour.
+               heat = (weaponStats.damageMult[weaponConst.size] * weaponStats.cannon.baseHeat / weaponStats.cannon.instances)/weaponStats.cannon.shotsPerBurst[weaponConst.size],                          -- float: Apply this much heat. Health is heat capacity.
                vulnerability = 0,               -- float: Negate this much armour. Negative vulnerability is CAPTURE.
                decloak = 1.0,                     -- float: Reduce target cloak by this amount. Unused.
                targetingPriorityMultiplier = 0,   -- float: Temporarily make the target this much more attractive a target.
-               impulseForce = 0.1                 -- float: Apply this much push force. This is reduced by target mass like normal physics.
+               impulseForce = weaponStats.cannon.impulse * weaponStats.damageMult[weaponConst.size]                 -- float: Apply this much push force. This is reduced by target mass like normal physics.
           },
 
           
@@ -77,11 +80,11 @@ return {
           piercingThreshold = 0,   -- Must have MORE than this much damage remaining after piercing in order to continue piercing. (Prevents scenarios where a super laser murders a capital ship then does 2 damage to a Tolly on the other side)
 
           -- AOE
-          isAreaOfEffect = false;
+          isAreaOfEffect = true;
           aoeData = {
                maximumDegrees = 360,    --Degrees from forward that units can be hit. Weapons spawn AOE's facing the same direction as them.
-               radiusOuter = 1,         --Damage drops off to 0 at outer. Linear scale. A tolly is 0.4 units
-               radiusInner = 0.5          --Full damage to units within inner.
+               radiusOuter = weaponStats.cannon.baseAOE * weaponStats.rangeMult[weaponConst.size],         --Damage drops off to 0 at outer. Linear scale. A tolly is 0.4 units
+               radiusInner = weaponStats.cannon.baseAOE * weaponStats.rangeMult[weaponConst.size] / 2,          --Full damage to units within inner.
           },
 
           --Audio
@@ -100,19 +103,19 @@ return {
           --Laser Visuals defaults.
           --If a laserDescription part is tagged as "use parent laserDescription" then it will use this.
           laserDescription = { 		--"laser" description, but is actually a maleable visual effect.
-                              duration = 1,			--seconds
-                              opacity = 2,			--float, 0-1
-                              diameter = 1,			--relative to turret scale
+                              duration = .2,			--seconds
+                              opacity = 1,			--float, 0-1
+                              diameter = 20,			--relative to turret scale
                               offset = 0,			--relative to the barrel it gets fired from's facing.
                               rotateZ = true,		--Rotate the effect once randomly on the z axis when used.
-                              rotateY = false,		--Rotate the effect once randomly on the y axis when used.
+                              rotateY = true,		--Rotate the effect once randomly on the y axis when used.
                               rotateZUpdate = false,	--Continuously rotate the effect on the z axis when used.
                               rotateYUpdate = false,	--COntinuously rotate the effect on the y axis when used.
-                              noRescaleLength = 0,	--0 means DO rescale like a laser beam. >0 means don't, like a muzzle flashes.
+                              noRescaleLength = 1,	--0 means DO rescale like a laser beam. >0 means don't, like a muzzle flashes.
                               noFade = true,			--prevents the effect from fading to nothing over it's duration.
                               noShrink = false,		--prevents the effect from scaling down to nothing over it's duration.
                               }, 
-          lasersPerShot = 1, --How many "weaponVisualConfig parts" to use at once. For having multiple laser/muzzle effects at the same time. (reminder that each WVC can define it's own laserDescription)
+          lasersPerShot = 5, --How many "weaponVisualConfig parts" to use at once. For having multiple laser/muzzle effects at the same time. (reminder that each WVC can define it's own laserDescription)
 
 
           --"Virtual Barrels : Overriden by real barrels
@@ -123,16 +126,16 @@ return {
           barrelIndexCurrent = 0,            --Controls which barrel (in child order) the weapon will start with.
 
           --LAUNCHER / TESLA Controls
-          spawnID = 1011102,       --unit typeID
+          spawnID = 3291000,       --unit typeID
           arrivalData = {
-               type           = "CONSTRUCT",    --NONE, ARRIVE, DEPART, CONSTRUCT, LAUNCH, WARP
+               type           = "NONE",    --NONE, ARRIVE, DEPART, CONSTRUCT, LAUNCH, WARP
                -- arrivalDuration= 1.0,
                -- approachSpeed  = 5.0,
                keepDisabled   = false,
                },
           checkForWaypoints = false,                    --units spawned from this weapon will follow any waypoint they spawn in.
           ignoreRootVelocity = false,                   --Launched units inherit the velocity of their launcher. You can prevent this here.
-          setAutoWaypointTargetToWeaponTarget = true,  --Useful for drones, missiles, in order to get them to go towards the root unit's target.
+          setAutoWaypointTargetToWeaponTarget = false,  --Useful for drones, missiles, in order to get them to go towards the root unit's target.
 
           --Reload time
           
@@ -141,17 +144,17 @@ return {
           -- > 0 : reload a set amount at a time, cannot be interupted. Starts reloading the moment shotsPerCycleCurrent < shotsPerCycle
           -- < 0 : reload a set amount at a time, interupted when firing. The moment the weapon fires, will reset the secondsPerCycleCurrent to secondsPerCycle.
           reloadAmount = 0,             --Normal weapons use 0, aka full
-          secondsPerCycle = weaponStats.hangar.baseCD,        --Seconds per reload. Negative value prevent reloading (limited ammo weapons).
+          secondsPerCycle = .1,        --Seconds per reload. Negative value prevent reloading (limited ammo weapons).
           secondsPerCycleCurrent = 0,   --Starting delay. Good if you don't want your bomber launching bombs the moment it spawns.
 
           --Magazine Size
-          shotsPerCycle = weaponStats.hangar.shotsPerBurst,            --Shots per reload, ATS will ensure this number is always at least 1.
-          shotsPerCycleCurrent = weaponStats.hangar.shotsPerBurst,     --Starting shots in the clip.
+          shotsPerCycle = 1,            --Shots per reload, ATS will ensure this number is always at least 1.
+          shotsPerCycleCurrent = 1,     --Starting shots in the clip.
           simultaniousShots = 1,        --How many shots we can make at once. (shotgun, cluster bomb)
 
           --Fire Rate
-          secondsPerShot = weaponStats.hangar.secondsPerShot,           --Delay between shots.
-          secondsPerShotCurrent = weaponStats.hangar.secondsPerShot,    --Starting delay.
+          secondsPerShot = 0,           --Delay between shots.
+          secondsPerShotCurrent = 0,    --Starting delay.
 
      },
 
@@ -159,20 +162,20 @@ return {
      targeting = {
           acquisition = {
                -- QUADTREE_AND_MACRO (Local stuff, and MacroTargets), QUADTREE_ONLY (Only local stuff, for turrets), MACRO_ONLY (Only MacroTargets, for Nukes), RAYCAST (by minimumDistance), RAYCAST_VELOCITY (bullets), SPHEREOVERLAP (flak, missiles, by minimumDistance), CAPSULEOVERLAP_VELOCITY, CAPSULEOVERLAP (by minimumDistance, and width as maximumDistance)
-               type = "QUADTREE",
+               type = "SPHEREOVERLAP",
                isFriendly = false, 			--Allowed to target units on the same team/alliance.
                isResourceMiner = false, 		--Allowed to target the Environmental team.
                acceptFirstValidTarget = false, 	--For launchers and things that don't need to actually target something. Shoot at the first thing you see.
                pauseIfHasTarget = false, 		--Don't look for a target again, until you're current one is dead. USE WITH canInvalidateTarget otherwise units WILL get stuck trying to shoot stuff out of their range.
                ignoreUncapturable = false, 		--If the target is uncapturable, ignore it.
-               secondsPerScan = 1.5, 			--How long to wait before reassessing what you're targeting.
+               secondsPerScan = .25, 			--How long to wait before reassessing what you're targeting.
 
                ignoreFullHealth = false, 		--Good for healers.
                minimumHealth = 0, 				--Don't target things with less Max Health than this.
                minimumDistance = 0, 			--Don't target things that are closer than this.
-               maximumDistance = 10, 			--Important. Scan radius. Don't target things further than this. KEEP THIS NUMBER LOW, SERIOUS PERFORMANCE IMPACT. Light ~15, Medium ~20, Heavy ~25, Capital ~25
-               maximumAngle = 0, 				--Good for spinal weapons/missiles.
-               addedPreaimDistance = 1, 		--If you have no target in maximumDistance, you may try to target something this far beyond max distance. (use on turrets, not ships)
+               maximumDistance = weaponStats.cannon.baseAOE * weaponStats.rangeMult[weaponConst.size] / 2, 			--Important. Scan radius. Don't target things further than this. KEEP THIS NUMBER LOW, SERIOUS PERFORMANCE IMPACT. Light ~15, Medium ~20, Heavy ~25, Capital ~25
+               maximumAngle = 360, 				--Good for spinal weapons/missiles.
+               addedPreaimDistance = 0, 		--If you have no target in maximumDistance, you may try to target something this far beyond max distance. (use on turrets, not ships)
                
                -- Scoring can be negative. Will invert behaviour.
                scoreForDistance = 1,    		--Foundational. NOTICE, VALUE IS INVERTED. Keep at 1. 1 unit distance = -1 score, means prioritise closer targets. Negative means prioritise farther targets.
@@ -196,16 +199,16 @@ return {
                -- Multiplies the target score by this.
                classMultMissile = -1,
                classMultDrone = -1,
-               classMultLight = 1,
+               classMultLight = .5,
                classMultMedium = 1,
-               classMultHeavy = 0.9,
-               classMultCapital = 0.8,
-               classMultTitan = 0.7,
+               classMultHeavy = 1,
+               classMultCapital = 0.5,
+               classMultTitan = 0.2,
 
                --Multiplied against score at the end.
                shipMultiplier = 1.0, 			--Priority for ships.
                structureMultiplier = 1.0, 		--Priority for structures.
-               keepTargetMultiplier = 1, 		--Important. Allows the unit to keep it's current target, and not bounce between things.
+               keepTargetMultiplier = 2, 		--Important. Allows the unit to keep it's current target, and not bounce between things.
                scoreBandingSize = 0,			--Allows the targeter to pick a random target within bands. Useful for PD and AOE, but requires a high keep target to prevent schizophrenia.
           },
           tracking = {

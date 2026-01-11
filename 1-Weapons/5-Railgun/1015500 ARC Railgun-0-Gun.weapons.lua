@@ -2,7 +2,7 @@
 		size="D",
 	};
 return {
-	id = 1015500,
+	id = 3295500,
 	name = "Drone Plasma Railgun",
 	blurb = "Long range donut launcher.",
 	metaNote = "Used on Artillery.",
@@ -127,7 +127,7 @@ return {
 		barrelIndexCurrent = 0,            --Controls which barrel (in child order) the weapon will start with.
 
 		--LAUNCHER / TESLA Controls
-		spawnID = 1014500,       --unit typeID
+		spawnID = 3294500,       --unit typeID
 		arrivalData = {
 			type           = "NONE",    --NONE, ARRIVE, DEPART, CONSTRUCT, LAUNCH, WARP
 			arrivalDuration= 1.0,

@@ -2,7 +2,7 @@ prefab.weapon.disruptor = {}
 prefab.weapon_info.disruptor = {}
 
 function prefab.weapon_info.disruptor.S(count)
-	return { 1015201, 1 * count, 1016201 }
+	return { 3295201, 1 * count, 3296201 }
 end
 function prefab.weapon.disruptor.S(pos, rot, sca, isGhost)
 	prefab_part = {
@@ -25,7 +25,7 @@ function prefab.weapon.disruptor.S(pos, rot, sca, isGhost)
 				scale 	= { 1, 1, 1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 
 				weapon    = {
-					weaponID = 1015201, --int: The weaponData id to be used for this weapon.
+					weaponID = 3295201, --int: The weaponData id to be used for this weapon.
 					turnSpeed = weaponStats.baseTracking*weaponStats.disruptor.trackingMult.S, 	--float: Degrees per second.
 					turnMode = "Linear", --string enum: Linear / Acceleration
 					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -91,7 +91,7 @@ function prefab.weapon.disruptor.S(pos, rot, sca, isGhost)
 end
 
 function prefab.weapon_info.disruptor.M(count)
-	return { 1015202, 1 * count, 1016202 }
+	return { 3295202, 1 * count, 3296202 }
 end
 function prefab.weapon.disruptor.M(pos, rot, sca, isGhost)
 	prefab_part = {
@@ -114,7 +114,7 @@ function prefab.weapon.disruptor.M(pos, rot, sca, isGhost)
 				scale 	= { 1, 1, 1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 
 				weapon    = {
-					weaponID = 1015202, --int: The weaponData id to be used for this weapon.
+					weaponID = 3295202, --int: The weaponData id to be used for this weapon.
 					turnSpeed = weaponStats.baseTracking*weaponStats.disruptor.trackingMult.M, 	--float: Degrees per second.
 					turnMode = "Linear", --string enum: Linear / Acceleration
 					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -182,7 +182,7 @@ function prefab.weapon.disruptor.M(pos, rot, sca, isGhost)
 end
 
 function prefab.weapon_info.disruptor.L(count)
-	return { 1015203, 1 * count, 1016203 }
+	return { 3295203, 1 * count, 3296203 }
 end
 function prefab.weapon.disruptor.L(pos, rot, sca, isGhost)
 	prefab_part = {
@@ -205,7 +205,7 @@ function prefab.weapon.disruptor.L(pos, rot, sca, isGhost)
 				scale 	= { 1, 1, 1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 
 				weapon    = {
-					weaponID = 1015203, --int: The weaponData id to be used for this weapon.
+					weaponID = 3295203, --int: The weaponData id to be used for this weapon.
 					turnSpeed = weaponStats.baseTracking*weaponStats.disruptor.trackingMult.L, 	--float: Degrees per second.
 					turnMode = "Linear", --string enum: Linear / Acceleration
 					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)

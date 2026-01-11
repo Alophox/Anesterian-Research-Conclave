@@ -2,10 +2,10 @@ weaponConst = {
 	size = "S",
 };
 return {
-	id = 1015011,
+	id = 3295011,
 	name = "Zerda Missile HLS",
 	blurb = "Zerda Horizontal Launch System.",
-	metaNote = "Used on Missile and Carrer variant ships",
+	metaNote = "Used on Missile and Carrier variant ships",
 	hideInDatabank = false,
 	displayType = "NORMAL", -- NORMAL, DRONE
 
@@ -127,7 +127,7 @@ return {
 		barrelIndexCurrent = 0,            --Controls which barrel (in child order) the weapon will start with.
 
 		--LAUNCHER / TESLA Controls
-		spawnID = 1014001,       --unit typeID
+		spawnID = 3294001,       --unit typeID
 		arrivalData = {
 			type           = "CONSTRUCT",    --NONE, ARRIVE, DEPART, CONSTRUCT, LAUNCH, WARP
 			-- arrivalDuration= 1.0,

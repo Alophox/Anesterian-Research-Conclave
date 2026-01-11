@@ -1,5 +1,5 @@
 return {
-     id = 1013014,
+     id = 3293014,
      name = "ARC Lagopus HLS",
      blurb = "Lagopus Horizontal Launch System.",
      metaNote = "Used on HLS missile platforms",
@@ -123,7 +123,7 @@ return {
           barrelIndexCurrent = 0,            --Controls which barrel (in child order) the weapon will start with.
 
           --LAUNCHER / TESLA Controls
-          spawnID = 1014002,       --unit typeID
+          spawnID = 3294002,       --unit typeID
           arrivalData = {
                type           = "CONSTRUCT",    --NONE, ARRIVE, DEPART, CONSTRUCT, LAUNCH, WARP
                -- arrivalDuration= 1.0,

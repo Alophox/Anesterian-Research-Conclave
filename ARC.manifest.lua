@@ -15,11 +15,11 @@ return {
 	--The modID allows other mods to referance your mod, or the other way around. (using sounds from a Sound Pack mod, for example)
  	--If two mods have the same ID the game will merge them together. You can make mods for mods! (This doesn't work yet 2025/04/22)
  	--It is also saved in Maps, in order to tell users what mods they need to get for the map to work.
-	id             = "101ARC", --Must be unique. Otherwise it will override other mods. Go to https://www.uuidgenerator.net/guid generate a GUID, and set it here.
+	id             = "329ARC", --Must be unique. Otherwise it will override other mods. Go to https://www.uuidgenerator.net/guid generate a GUID, and set it here.
 	
 	--Version helps the game know if the player's local version of the mod is out of date when looking at other mods or maps. 
 	--EG. a map could expect v2.0.0 while the local copy is v1.5.0. Then the map can tell the player "Hey this mod probably needs an update."
-	version        = "0.4.4", -- Major.Minor.Patch
+	version        = "0.5.0", -- Major.Minor.Patch
 
 	description    = "When the stars are few and far between, make your own to light the night",
 	

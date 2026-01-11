@@ -2,7 +2,7 @@ weaponConst = {
 	size="L",
 };
 return {
-	id = 1015403,
+	id = 3295403,
 	name = "Large Plasma Launcher",
 	blurb = "Short range hypercompressed nonthermal Plasma Launcher.",
 	metaNote = "Used on Brawlers.",
@@ -127,7 +127,7 @@ return {
 		barrelIndexCurrent = 0,            --Controls which barrel (in child order) the weapon will start with.
 
 		--LAUNCHER / TESLA Controls
-		spawnID = 1014403,       --unit typeID
+		spawnID = 3294403,       --unit typeID
 		arrivalData = {
 			type           = "NONE",    --NONE, ARRIVE, DEPART, CONSTRUCT, LAUNCH, WARP
 			arrivalDuration= 1.0,

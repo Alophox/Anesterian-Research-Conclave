@@ -47,8 +47,8 @@ return {
 
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data                        = {
-		typeID       = 1012013, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
-		factionID    = 101, 	--The faction this unit is associated with in the Databank.
+		typeID       = 3292013, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
+		factionID    = 329, 	--The faction this unit is associated with in the Databank.
 		macroType    = "AUTO", 	--MacroTarget state: AUTO (is capital or command?) / TRUE / FALSE
 		cost_matter  = 125, 		--integer, For structures.
 		cost_energy  = 125, 		--integer, For structures.
@@ -75,7 +75,7 @@ return {
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "CAPITAL",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = 15000,              --Health, also the unit's heat capacity.
+		health = 10000,              --Health, also the unit's heat capacity.
 		health_regen_per_second = healthStats.regen.C, --Health regen per second. Duh.
 		max_regen_frac = 0,      --The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
 
@@ -176,8 +176,8 @@ return {
 	-- 🟨 SPAWNER UNITS (units a yard can build)
 	spawnItems = {
 		{
-			id = 1011500, -- typeID of the unit to spawn
-			spawnTime = 75, -- How long to build/spawn
+			id = 3291500, -- typeID of the unit to spawn
+			spawnTime = 80, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
@@ -190,8 +190,8 @@ return {
 			techID = 0 -- Required tech to enable.
 		},
 		{
-			id = 1011501, -- typeID of the unit to spawn
-			spawnTime = 75, -- How long to build/spawn
+			id = 3291501, -- typeID of the unit to spawn
+			spawnTime = 80, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
@@ -204,8 +204,8 @@ return {
 			techID = 0 -- Required tech to enable.
 		},
 		{
-			id = 1011502, -- typeID of the unit to spawn
-			spawnTime = 75, -- How long to build/spawn
+			id = 3291502, -- typeID of the unit to spawn
+			spawnTime = 80, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
@@ -218,8 +218,8 @@ return {
 			techID = 0 -- Required tech to enable.
 		},
 		{
-			id = 1011600, -- typeID of the unit to spawn
-			spawnTime = 105, -- How long to build/spawn
+			id = 3291600, -- typeID of the unit to spawn
+			spawnTime = 110, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
@@ -232,8 +232,8 @@ return {
 			techID = 0 -- Required tech to enable.
 		},
 		{
-			id = 1011601, -- typeID of the unit to spawn
-			spawnTime = 105, -- How long to build/spawn
+			id = 3291601, -- typeID of the unit to spawn
+			spawnTime = 110, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
@@ -246,8 +246,8 @@ return {
 			techID = 0 -- Required tech to enable.
 		},
 		{
-			id = 1011602, -- typeID of the unit to spawn
-			spawnTime = 105, -- How long to build/spawn
+			id = 3291602, -- typeID of the unit to spawn
+			spawnTime = 110, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.

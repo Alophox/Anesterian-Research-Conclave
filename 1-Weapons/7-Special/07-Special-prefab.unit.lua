@@ -20,7 +20,7 @@ function prefab.weapon.special.spawn_shield(pos,rot,sca,isGhost) --{float3}, {fl
 			{
 				name      = "Turret",	position  = { 0,0, 0 },	rotation  = { 0, 0, 0 },	scale 	= { 1, 1, 1 },
 				weapon    = {
-					weaponID = 1015701, --int: The weaponData id to be used for this weapon.
+					weaponID = 3295701, --int: The weaponData id to be used for this weapon.
 					turnSpeed = 0, 	--float: Degrees per second.
 					turnMode = "Linear", --string enum: Linear / Acceleration
 					turnInstant = true, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)

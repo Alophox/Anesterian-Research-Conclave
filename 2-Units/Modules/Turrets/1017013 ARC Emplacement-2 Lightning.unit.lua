@@ -12,7 +12,7 @@ return {
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {
-		visibility                  = "VISIBLE", --VISIBLE (always available) / HIDDEN (never visible)/ DISCOVER (visible once required level)
+		visibility                  = "HIDDEN", --VISIBLE (always available) / HIDDEN (never visible)/ DISCOVER (visible once required level)
 		requiredLevelForVisible     = "",
 		requiredLevelForDescription = "",
 		tactical                    = "", --Added to the top of all tooltips and Databank descriptions. Used to quickly explain what a unit is good at doing. Strong against, decent against, weak against.
@@ -21,12 +21,17 @@ return {
 		weaponInfo                  = functions.combineWeaponInfo({
 			prefab.weapon_info.module.emplacement.M(4, "lightning"),
 		}),
-		relatedUnitIDs              = {1012021} --TypeID of other units in the family tree
+		relatedUnitIDs              = {3292021} --TypeID of other units in the family tree
 	},
+
+	controllable = false;
+	unselectable = true;
+	untargetable = true;
+	unhittable 	= true;
 
 	-- BODY SETUP
 	scale                       = scaleConst,                                          -- A Tolly is scale 0.4, all units are a uniform scale. Normalise mesh size to 1 in Blender. (make sure the longest horizontal part (width/length) is 1)
-	mainMesh                    = "Emplacement/Emplacement-2",   -- Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
+	-- mainMesh                    = "Emplacement/Emplacement-2",   -- Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
 	
 	--NOTICE, WORKING WITH MATERIALS AND MESHS:
 	--When making a mesh in Blender, you can assign materials to different surfaces. The number of materials used create 'material slots' for the mesh.
@@ -48,13 +53,13 @@ return {
 
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data                        = {
-		typeID       = 1017013, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
-		factionID    = 101, 	--The faction this unit is associated with in the Databank.
+		typeID       = 3297013, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
+		factionID    = 329, 	--The faction this unit is associated with in the Databank.
 		macroType    = "AUTO", 	--MacroTarget state: AUTO (is capital or command?) / TRUE / FALSE
 		cost_matter  = 100, 		--integer, For structures.
 		cost_energy  = 75, 		--integer, For structures.
 		cost_supply  = 0, 		--integer, For structures. Logistics cost.
-		cost_time    = 9999, 		--integer, For structures, how long in seconds it takes to build.
+		cost_time    = 20, 		--integer, For structures, how long in seconds it takes to build.
 		techRequired = 0
 	},
 
@@ -133,7 +138,7 @@ return {
 	},
 
 	-- 🟦 STRUCTURE
-	isStructure = true,
+	isStructure = false,
 	structure = {
 		type = "NONE", --NONE, ECONOMY, PRODUCTION, DEFENCE, OFFENCE, UTILITY, EXTENDER
 		rectangle = {2,2}, 		-- optional, float2: xz dimensions of the influence, facing ^

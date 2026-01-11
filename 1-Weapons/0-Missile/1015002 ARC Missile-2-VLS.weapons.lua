@@ -2,10 +2,10 @@ weaponConst = {
 	size = "M",
 };
 return {
-	id = 1015002,
+	id = 3295002,
 	name = "Lagopus VLS",
 	blurb = "Lagopus Missile Vertical Launch System.",
-	metaNote = "Used on Missile and Carrer variant ships",
+	metaNote = "Used on Missile and Carrier variant ships",
 	hideInDatabank = false,
 	displayType = "NORMAL", -- NORMAL, DRONE
 
@@ -126,7 +126,7 @@ return {
 		barrelIndexCurrent = 0,            --Controls which barrel (in child order) the weapon will start with.
 
 		--LAUNCHER / TESLA Controls
-		spawnID = 1014002,       --unit typeID
+		spawnID = 3294002,       --unit typeID
 		arrivalData = {
 			type           = "CONSTRUCT",    --NONE, ARRIVE, DEPART, CONSTRUCT, LAUNCH, WARP
 			-- arrivalDuration= 1.0,

@@ -12,16 +12,16 @@ weaponStats = {
 		S = 1,
 		M = 2.5,
 		L = 6,
-		X = 17,
-		T = 93,
+		X = 15,
+		T = 40,
 	},
 	rangeMult = {
 		D = .5,
 		S = 1,
 		M = 1.5,
 		L = 2,
-		X = 3,
-		T = 5,
+		X = 2.5,
+		T = 3,
 	},
 	CDMod = {
 		D = 0, -- -.7
@@ -34,10 +34,10 @@ weaponStats = {
 	CDMult = {
 		D = .85,
 		S = 1,
-		M = 1.15, --.7
-		L = 1.3, --1.35
-		X = 2, --4.35
-		T = 3.35 --14.35
+		M = 1.5, --.7
+		L = 2.25, --1.35
+		X = 3.375, --4.35
+		T = 5.0625 --14.35
 	},
 	baseTracking = 360, --governs turn rate (degrees/second)
 	fireRangeMult=1,
@@ -54,9 +54,9 @@ weaponStats = {
 }
 
 weaponStats.railgun = {
-	baseRange	= 11,
-	baseDMG		= 25,
-	baseHeat	= 12.5,
+	baseRange	= 12,
+	baseDMG		= 40,
+	baseHeat	= 20,
 	instances	= 1,
 	baseCD		= 2.9,
 	secondsPerShot=0,
@@ -64,13 +64,17 @@ weaponStats.railgun = {
 		D = .7,
 		S = .5,
 		M = .3,
-		L = .05
+		L = .05,
+		X = .02,
+		T = .01,
 	},
 	shotsPerBurst = {
 		D = 1,
 		S = 1,
 		M = 2,
-		L = 3
+		L = 3,
+		X = 4,
+		T = 5,
 	},
 	velocity	= 15,
 	accuracy	= .9,
@@ -88,12 +92,16 @@ weaponStats.cannon = {
 	trackingMult = {
 		S = .4,
 		M = .2,
-		L = .05
+		L = .05,
+		X = .02,
+		T = .01,
 	},
 	shotsPerBurst = {
 		S = 1,
 		M = 2,
-		L = 3
+		L = 3,
+		X = 4,
+		T = 5,
 	},
 	velocity	= 9,
 	accuracy	= .9,
@@ -103,8 +111,8 @@ weaponStats.cannon = {
 
 weaponStats.laser = {
 	baseRange	= 10,
-	baseDMG		= 60, --0 makes weapons not hit anything
-	baseHeat	= 6,
+	baseDMG		= 90, --0 makes weapons not hit anything
+	baseHeat	= 9,
 	piercing 	= 2,
 	instances	= 1,
 	baseCD		= 4.25,
@@ -116,15 +124,15 @@ weaponStats.laser = {
 		M = .4,
 		L = .15,
 		X = .05,
-		T = 0
+		T = .01
 	},
 	shotsPerBurst = {
 		D = 1,
 		S = 1,
 		M = 2,
 		L = 3,
-		X = 1,
-		T = 1
+		X = 4,
+		T = 5
 	},
 	accuracy	= 1,
 	sfxID		= 14,
@@ -154,7 +162,7 @@ weaponStats.disruptor = {
 
 weaponStats.lightning = {
 	baseRange	= 7.5,
-	baseDMG		= 45,
+	baseDMG		= 60,
 	baseHeat	= 0,
 	baseShred	= 0,
 	instances	= 1,
@@ -165,8 +173,8 @@ weaponStats.lightning = {
 		S = .8,
 		M = .35,
 		L = .1,
-		X = 0,
-		T = 0
+		X = .05,
+		T = .01
 	},
 	simultaniousShots = {
 		D = 1,
@@ -193,7 +201,7 @@ weaponStats.missile = {
 	baseRange	= 11,
 	baseRetargetRange = 11.5,
 	baseCloakRange = 2,
-	baseDMG		= 20,
+	baseDMG		= 40,
 	baseHeat	= 0,
 	baseAOE		= 1,
 	baseShred	= .5,
@@ -202,18 +210,24 @@ weaponStats.missile = {
 		S = 1,
 		M = 2,
 		L = 3,
+		X = 4,
+		T = 5,
 	},
 	baseCD		= 8.5,
 	secondsPerShot=.1,
 	trackingMult = {
 		S = .25*40,
 		M = .15*40,
-		L = .05*40
+		L = .05*40,
+		X = .02*40,
+		T = .01*40,
 	},
 	shotsPerBurst = {
 		S = 1,
 		M = 1,
-		L = 1
+		L = 1,
+		X = 1,
+		T = 1
 	},
 	velocity	= 4,
 	accuracy	= 1,
@@ -227,6 +241,10 @@ weaponStats.hangar = {
 	baseRange	= 20,
 	instances	= 2, --4; drone capacity
 	baseCD		= 30, --10
+	CD = {
+		ruby = 15,
+		citrine = 25,
+	},
 	secondsPerShot= .5,
 	trackingMult= 1,
 	shotsPerBurst= 2, --how many drones launched at once
@@ -247,26 +265,26 @@ healthStats = {
 	},
 	proportionRegenMax = .25,
 	baseHealth = {
-		L = 100,
-		LM = 200,
-		M = 500,
-		MH = 700,
-		H = 2100,
-		HC = 3000,
+		L = 150,
+		LM = 300,
+		M = 600,
+		MH = 900,
+		H = 2500,
+		HC = 3100,
 		C = 15000,
 		T = 150000,
 	},
 	healthMult = {
 		P = 1,
-		B = 1.5,
+		B = 1.2,
 		M = .9,
 		G = 1,
 		A = .8,
-		C = .8,
-		S = .8,
+		C = .7,
+		S = .7,
 	},
 	baseArmor = { -- Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
-		L = 4,
+		L = 5,
 		LM = 7,
 		M = 10,
 		MH = 15,
@@ -277,9 +295,9 @@ healthStats = {
 	},
 	armorMult = {
 		P = 1,
-		B = 2,
+		B = 1.2,
 		M = .6,
-		G = 1.2,
+		G = 1.4,
 		A = .4,
 		C = .3,
 		S = .4,
@@ -309,57 +327,57 @@ return {
 	factionNameShorthand = "ARC",
 	description = "Prioritizing modularity and efficiency, both things not useful within the Spance.",
 	emblem = "ARC Icon",        -- PNG image used to represent the faction.
-	id = 101,                     -- Unique integer faction ID, has to be greater than 99 (ATS reserve)
+	id = 329,                     -- Unique integer faction ID, has to be greater than 99 (ATS reserve)
 
 	-- Skirmish setup
 	skirmish = true,                     -- Should appear in skirmish mode
 	skirmish_loadout = { 
-		1011000, --dronn (size 0)
-		1011100, 1011101, 1011102, --light size 1
-		1011200, 1011201, 1011202, --light size 2
-		1011300, 1011301, 1011302, --medium size 3
-		1011400, 1011401, 1011402, --medium size 4
-		1011500, 1011501, 1011502, --heavy size 5
-		1011600, 1011601, 1011602, --heavy size 6
-		1011700, --capital size 7
+		3291000, --dronn (size 0)
+		3291100, 3291101, 3291102, --light size 1
+		3291200, 3291201, 3291202, --light size 2
+		3291300, 3291301, 3291302, --medium size 3
+		3291400, 3291401, 3291402, --medium size 4
+		3291500, 3291501, 3291502, --heavy size 5
+		3291600, 3291601, 3291602, --heavy size 6
+		3291700, 3291701, 3291702, 3291703, 3291704, 3291705, --capital size 7
 		------------
-		1012003, -- utility
-		1012011, 1012012, 1012013, --yards
-		1012020, 1012021, 1012022, 1012029, --turrets
-		1017001, 1017003, 1017004, 1017005, --turrets
-		1017011, 1017013, 1017014, 1017015, --turrets
-		1017021, 1017023, 1017024, 1017025, --turrets
-		1012050, --logistics
-		1012051,
-		1012030, 1012031, 1012040, --economy
+		3292003, -- utility
+		3292011, 3292012, 3292013, 3292014, --yards
+		3292020, 3292021, 3292022, 3292029, --turrets
+		3297001, 3297003, 3297004, 3297005, --turrets
+		3297011, 3297013, 3297014, 3297015, --turrets
+		3297021, 3297023, 3297024, 3297025, --turrets
+		3292050, --logistics
+		3292051, 3292052, --storage
+		3292030, 3292031, 3292040, --economy
 	}, -- int array: A list of unit TypeIDs that the player is allowed to build, both structures and ships.
-	skirmish_platforms = { 1012000 },      -- Initial platforms/stationary structures
+	skirmish_platforms = { 3292000 },      -- Initial platforms/stationary structures
 	skirmish_ais = { 1009000 },             --This doesn't work yet, please wait. Luke 2025/04/18
 	
 	-- Content catalog (for editor and databank)
 	ships = { 
-		1011000, --dronn (size 0)
-		1011100, 1011101, 1011102, --light size 1
-		1011200, 1011201, 1011202, --light size 2
-		1011300, 1011301, 1011302, --medium size 3
-		1011400, 1011401, 1011402, --medium size 4
-		1011500, 1011501, 1011502, --heavy size 5
-		1011600, 1011601, 1011602, --heavy size 6
-		1011700, --capital size 7
-		--1017000, --experimental
+		3291000, --dronn (size 0)
+		3291100, 3291101, 3291102, --light size 1
+		3291200, 3291201, 3291202, --light size 2
+		3291300, 3291301, 3291302, --medium size 3
+		3291400, 3291401, 3291402, --medium size 4
+		3291500, 3291501, 3291502, --heavy size 5
+		3291600, 3291601, 3291602, --heavy size 6
+		3291700, 3291701, 3291702, 3291703, 3291704, 3291705, --capital size 7
+		--3297000, --experimental
 	},               -- Ships
 	structures = { 
-		1012000, 1012001, 1012002, --platforms
-		1012003, -- utility
-		1012011, 1012012, 1012013, --yards
-		-- 1012020, 1012021, 1012022, 1012029, --turrets
-		1017001, 1017003, 1017004, 1017005, --turrets
-		1017011, 1017013, 1017014, 1017015, --turrets
-		1017021, 1017023, 1017024, 1017025, --turrets
-		1012050, --logistics
-		1012051,
-		1012030, 1012031, 1012040, --economy
-		1013000, 1013001, --environmental
+		3292000, 3292001, 3292002, --platforms
+		3292003, -- utility
+		3292011, 3292012, 3292013, 3292014, --yards
+		3292020, 3292021, 3292022, 3292029, --turrets
+		-- 3297001, 3297003, 3297004, 3297005, --turrets
+		-- 3297011, 3297013, 3297014, 3297015, --turrets
+		-- 3297021, 3297023, 3297024, 3297025, --turrets
+		3292050, --logistics
+		3292051, 3292052, --storage
+		3292030, 3292031, 3292040, --economy
+		3293000, 3293001, --environmental
 
 	}, -- Structures
 	--munitions = {},                    -- (optional) Bullets, missiles, etc . If you for some reason have munitions that you want to spawn / work when spawned normally.

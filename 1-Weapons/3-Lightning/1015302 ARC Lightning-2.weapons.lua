@@ -2,7 +2,7 @@ weaponConst = {
 	size="M",
 };
 return {
-	id = 1015302,
+	id = 3295302,
 	name = "Medium Breach Cannon",
 	blurb = "Short range reality breaker.",
 	metaNote = "Used on Gunships",
@@ -145,7 +145,7 @@ return {
 		-- > 0 : reload a set amount at a time, cannot be interupted. Starts reloading the moment shotsPerCycleCurrent < shotsPerCycle
 		-- < 0 : reload a set amount at a time, interupted when firing. The moment the weapon fires, will reset the secondsPerCycleCurrent to secondsPerCycle.
 		reloadAmount = 0,             --Normal weapons use 0, aka full
-		secondsPerCycle = weaponStats.lightning.baseCD * weaponStats.CDMult[weaponConst.size] + weaponStats.CDMod[weaponConst.size] - weaponStats.lightning.secondsPerShot*(weaponStats.lightning.shotsPerBurst[weaponConst.size] - 1),        --Seconds per reload. Negative value prevent reloading (limited ammo weapons).
+		secondsPerCycle = weaponStats.lightning.baseCD * weaponStats.CDMult[weaponConst.size] + weaponStats.CDMod[weaponConst.size] - weaponStats.lightning.secondsPerShot*((weaponStats.lightning.shotsPerBurst[weaponConst.size]/weaponStats.lightning.simultaniousShots[weaponConst.size]) - 1),        --Seconds per reload. Negative value prevent reloading (limited ammo weapons).
 		secondsPerCycleCurrent = 0,   --Starting delay. Good if you don't want your bomber launching bombs the moment it spawns.
 
 		--Magazine Size

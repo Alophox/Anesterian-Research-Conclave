@@ -8,7 +8,7 @@ prefab.weapon_info.missile = {
 }
 
 function prefab.weapon_info.missile.vls.S(count)
-	return { 1015001, 1 * count, -2 } -- -2 gets payload information for spawned unit from the launcher
+	return { 3295001, 1 * count, -2 } -- -2 gets payload information for spawned unit from the launcher
 end
 function prefab.weapon.missile.vls.S(pos, rot, sca, isGhost)
 	prefab_part = {
@@ -24,10 +24,11 @@ function prefab.weapon.missile.vls.S(pos, rot, sca, isGhost)
 		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
 	else
 		prefab_part.weapon = {
-			weaponID = 1015001, --int: The weaponData id to be used for this weapon.
+			weaponID = 3295001, --int: The weaponData id to be used for this weapon.
 			turnSpeed = 0, 	--float: Degrees per second.
 			turnMode = "Linear", --string enum: Linear / Acceleration
 			turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
+			
 			mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
 				left = 180, --float:
 				right = 180,--float:
@@ -48,7 +49,7 @@ function prefab.weapon.missile.vls.S(pos, rot, sca, isGhost)
 	return prefab_part
 end
 function prefab.weapon_info.missile.vls.M(count)
-	return { 1015002, 1 * count, -2 }
+	return { 3295002, 1 * count, -2 }
 end
 function prefab.weapon.missile.vls.M(pos, rot, sca, isGhost)
 	prefab_part = {
@@ -64,7 +65,7 @@ function prefab.weapon.missile.vls.M(pos, rot, sca, isGhost)
 		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
 	else
 		prefab_part.weapon = {
-			weaponID = 1015002, --int: The weaponData id to be used for this weapon.
+			weaponID = 3295002, --int: The weaponData id to be used for this weapon.
 			turnSpeed = 0, 	--float: Degrees per second.
 			turnMode = "Linear", --string enum: Linear / Acceleration
 			turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -88,7 +89,7 @@ function prefab.weapon.missile.vls.M(pos, rot, sca, isGhost)
 	return prefab_part
 end
 function prefab.weapon_info.missile.vls.L(count)
-	return { 1015003, 1 * count, -2 }
+	return { 3295003, 1 * count, -2 }
 end
 function prefab.weapon.missile.vls.L(pos, rot, sca, isGhost)
 	prefab_part = {
@@ -104,7 +105,7 @@ function prefab.weapon.missile.vls.L(pos, rot, sca, isGhost)
 		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
 	else
 		prefab_part.weapon = {
-			weaponID = 1015003, --int: The weaponData id to be used for this weapon.
+			weaponID = 3295003, --int: The weaponData id to be used for this weapon.
 			turnSpeed = 0, 	--float: Degrees per second.
 			turnMode = "Linear", --string enum: Linear / Acceleration
 			turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -127,9 +128,89 @@ function prefab.weapon.missile.vls.L(pos, rot, sca, isGhost)
 	end
 	return prefab_part
 end
+function prefab.weapon_info.missile.vls.X(count)
+	return { 3295004, 1 * count, -2 }
+end
+function prefab.weapon.missile.vls.X(pos, rot, sca, isGhost)
+	prefab_part = {
+		name	= "Extra Large VLS",
+		mesh      = "Missiles/Missile-4-VLS",
+		materials = { "arc_hull", "arc_teamGlow", "arc_hull_dark", "arc_teamColour" },
+		position  = pos,
+		rotation  = rot,
+		scale 	= sca,
+	}
+	-- ghosts should NOT have weapons, as it causes a crash.
+	if isGhost then
+		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+	else
+		prefab_part.weapon = {
+			weaponID = 3295004, --int: The weaponData id to be used for this weapon.
+			turnSpeed = 0, 	--float: Degrees per second.
+			turnMode = "Linear", --string enum: Linear / Acceleration
+			turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
+			mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
+				left = 180, --float:
+				right = 180,--float:
+				up = 90,	 --float:
+				down = 90  --float:
+			},
+		}
+		prefab_part.parts = {
+			{
+				name      = "Muzzle",
+				position  = { 0, 0, -1 },
+				rotation  = { 0, 0, 0 },
+				scale 	= { 1, 1, 1 },
+				barrel    = true, --Assigns this part as a barrel to the parent's weapon. Barrels are where lasers, units, and weaponVisuals are placed or fired from.
+			},
+		}
+	end
+	return prefab_part
+end
+function prefab.weapon_info.missile.vls.T(count)
+	return { 3295005, 1 * count, -2 }
+end
+function prefab.weapon.missile.vls.T(pos, rot, sca, isGhost)
+	prefab_part = {
+		name	= "Titanic VLS",
+		mesh      = "Missiles/Missile-5-VLS",
+		materials = { "arc_hull", "arc_teamGlow", "arc_hull_dark", "arc_teamColour" },
+		position  = pos,
+		rotation  = rot,
+		scale 	= sca,
+	}
+	-- ghosts should NOT have weapons, as it causes a crash.
+	if isGhost then
+		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+	else
+		prefab_part.weapon = {
+			weaponID = 3295005, --int: The weaponData id to be used for this weapon.
+			turnSpeed = 0, 	--float: Degrees per second.
+			turnMode = "Linear", --string enum: Linear / Acceleration
+			turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
+			mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
+				left = 180, --float:
+				right = 180,--float:
+				up = 90,	 --float:
+				down = 90  --float:
+			},
+		}
+		prefab_part.parts = {
+			{
+				name      = "Muzzle",
+				position  = { 0, 0, -1.2 },
+				rotation  = { 0, 0, 0 },
+				scale 	= { 1, 1, 1 },
+				barrel    = true, --Assigns this part as a barrel to the parent's weapon. Barrels are where lasers, units, and weaponVisuals are placed or fired from.
+			},
+		}
+	end
+	return prefab_part
+end
 
 function prefab.weapon_info.missile.hls.S(count)
-	return { 1015011, 1 * count, -2 }
+	return { 3295011, 1 * count, -2 }
 end
 function prefab.weapon.missile.hls.S(pos, rot, sca, isGhost)
 	prefab_part = {
@@ -145,7 +226,7 @@ function prefab.weapon.missile.hls.S(pos, rot, sca, isGhost)
 		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
 	else
 		prefab_part.weapon = {
-			weaponID = 1015011, --int: The weaponData id to be used for this weapon.
+			weaponID = 3295011, --int: The weaponData id to be used for this weapon.
 			turnSpeed = 0, 	--float: Degrees per second.
 			turnMode = "Linear", --string enum: Linear / Acceleration
 			turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -170,7 +251,7 @@ function prefab.weapon.missile.hls.S(pos, rot, sca, isGhost)
 end
 
 function prefab.weapon_info.missile.hls.M(count)
-	return { 1015012, 1 * count, -2 }
+	return { 3295012, 1 * count, -2 }
 end
 function prefab.weapon.missile.hls.M(pos, rot, sca, isGhost)
 	prefab_part = {
@@ -186,7 +267,7 @@ function prefab.weapon.missile.hls.M(pos, rot, sca, isGhost)
 		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
 	else
 		prefab_part.weapon = {
-			weaponID = 1015012, --int: The weaponData id to be used for this weapon.
+			weaponID = 3295012, --int: The weaponData id to be used for this weapon.
 			turnSpeed = 0, 	--float: Degrees per second.
 			turnMode = "Linear", --string enum: Linear / Acceleration
 			turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -210,7 +291,7 @@ function prefab.weapon.missile.hls.M(pos, rot, sca, isGhost)
 	return prefab_part
 end
 function prefab.weapon_info.missile.hls.L(count)
-	return { 1015013, 1 * count, -2 }
+	return { 3295013, 1 * count, -2 }
 end
 function prefab.weapon.missile.hls.L(pos, rot, sca, isGhost)
 	prefab_part = {
@@ -226,7 +307,7 @@ function prefab.weapon.missile.hls.L(pos, rot, sca, isGhost)
 		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
 	else
 		prefab_part.weapon = {
-			weaponID = 1015013, --int: The weaponData id to be used for this weapon.
+			weaponID = 3295013, --int: The weaponData id to be used for this weapon.
 			turnSpeed = 0, 	--float: Degrees per second.
 			turnMode = "Linear", --string enum: Linear / Acceleration
 			turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -241,6 +322,86 @@ function prefab.weapon.missile.hls.L(pos, rot, sca, isGhost)
 			{
 				name      = "Muzzle",
 				position  = { 0, -.3, 0 },
+				rotation  = { 0, 0, 0 },
+				scale 	= { 1, 1, 1 },
+				barrel    = true, --Assigns this part as a barrel to the parent's weapon. Barrels are where lasers, units, and weaponVisuals are placed or fired from.
+			},
+		}
+	end
+	return prefab_part
+end
+function prefab.weapon_info.missile.hls.X(count)
+	return { 3295014, 1 * count, -2 }
+end
+function prefab.weapon.missile.hls.X(pos, rot, sca, isGhost)
+	prefab_part = {
+		name	= "Large HLS",
+		mesh      = "Missiles/Missile-4-HLS",
+		materials = { "arc_hull", "arc_teamGlow", "arc_hull_dark", "arc_teamColour" },
+		position  = pos,
+		rotation  = rot,
+		scale 	= sca,
+	}
+	-- ghosts should NOT have weapons, as it causes a crash.
+	if isGhost then
+		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+	else
+		prefab_part.weapon = {
+			weaponID = 3295014, --int: The weaponData id to be used for this weapon.
+			turnSpeed = 0, 	--float: Degrees per second.
+			turnMode = "Linear", --string enum: Linear / Acceleration
+			turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
+			mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
+				left = 180, --float:
+				right = 180,--float:
+				up = 90,	 --float:
+				down = 90  --float:
+			},
+		}
+		prefab_part.parts = {
+			{
+				name      = "Muzzle",
+				position  = { 0, -.4, 0 },
+				rotation  = { 0, 0, 0 },
+				scale 	= { 1, 1, 1 },
+				barrel    = true, --Assigns this part as a barrel to the parent's weapon. Barrels are where lasers, units, and weaponVisuals are placed or fired from.
+			},
+		}
+	end
+	return prefab_part
+end
+function prefab.weapon_info.missile.hls.T(count)
+	return { 3295015, 1 * count, -2 }
+end
+function prefab.weapon.missile.hls.T(pos, rot, sca, isGhost)
+	prefab_part = {
+		name	= "Large HLS",
+		mesh      = "Missiles/Missile-5-HLS",
+		materials = { "arc_hull", "arc_teamGlow", "arc_hull_dark", "arc_teamColour" },
+		position  = pos,
+		rotation  = rot,
+		scale 	= sca,
+	}
+	-- ghosts should NOT have weapons, as it causes a crash.
+	if isGhost then
+		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+	else
+		prefab_part.weapon = {
+			weaponID = 3295015, --int: The weaponData id to be used for this weapon.
+			turnSpeed = 0, 	--float: Degrees per second.
+			turnMode = "Linear", --string enum: Linear / Acceleration
+			turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
+			mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
+				left = 180, --float:
+				right = 180,--float:
+				up = 90,	 --float:
+				down = 90  --float:
+			},
+		}
+		prefab_part.parts = {
+			{
+				name      = "Muzzle",
+				position  = { 0, -.5, 0 },
 				rotation  = { 0, 0, 0 },
 				scale 	= { 1, 1, 1 },
 				barrel    = true, --Assigns this part as a barrel to the parent's weapon. Barrels are where lasers, units, and weaponVisuals are placed or fired from.

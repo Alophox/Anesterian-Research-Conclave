@@ -2,7 +2,7 @@ weaponConst = {
 	size="S",
 };
 return {
-     id = 1016401,
+     id = 3296401,
      name = "Small Plasma Warhead",
      blurb = "BURRRN",
      metaNote = "Brrrrrr",
@@ -126,7 +126,7 @@ return {
           barrelIndexCurrent = 0,            --Controls which barrel (in child order) the weapon will start with.
 
           --LAUNCHER / TESLA Controls
-          spawnID = 1011000,       --unit typeID
+          spawnID = 3291000,       --unit typeID
           arrivalData = {
                type           = "NONE",    --NONE, ARRIVE, DEPART, CONSTRUCT, LAUNCH, WARP
                -- arrivalDuration= 1.0,

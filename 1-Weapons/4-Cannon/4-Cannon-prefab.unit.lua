@@ -2,7 +2,7 @@ prefab.weapon.cannon = {}
 prefab.weapon_info.cannon = {}
 
 function prefab.weapon_info.cannon.S(count)
-	return { 1015401, 1 * count, 1016401 }
+	return { 3295401, 1 * count, 3296401 }
 end
 function prefab.weapon.cannon.S(pos, rot, sca, isGhost)
 	prefab_part = {
@@ -25,7 +25,7 @@ function prefab.weapon.cannon.S(pos, rot, sca, isGhost)
 				scale 	= { 1, 1, 1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 
 				weapon    = {
-					weaponID = 1015401, --int: The weaponData id to be used for this weapon.
+					weaponID = 3295401, --int: The weaponData id to be used for this weapon.
 					turnSpeed = weaponStats.baseTracking*weaponStats.cannon.trackingMult.S, 	--float: Degrees per second.
 					turnMode = "Linear", --string enum: Linear / Acceleration
 					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -92,7 +92,7 @@ end
 
 
 function prefab.weapon_info.cannon.M(count)
-	return { 1015402, 1 * count, 1016402 }
+	return { 3295402, 1 * count, 3296402 }
 end
 function prefab.weapon.cannon.M(pos, rot, sca, isGhost)
 	prefab_part = {
@@ -115,7 +115,7 @@ function prefab.weapon.cannon.M(pos, rot, sca, isGhost)
 				scale 	= { 1, 1, 1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 
 				weapon    = {
-					weaponID = 1015402, --int: The weaponData id to be used for this weapon.
+					weaponID = 3295402, --int: The weaponData id to be used for this weapon.
 					turnSpeed = weaponStats.baseTracking*weaponStats.cannon.trackingMult.M, 	--float: Degrees per second.
 					turnMode = "Linear", --string enum: Linear / Acceleration
 					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -163,7 +163,7 @@ function prefab.weapon.cannon.M(pos, rot, sca, isGhost)
 end
 
 function prefab.weapon_info.cannon.L(count)
-	return { 1015403, 1 * count, 1016403 }
+	return { 3295403, 1 * count, 3296403 }
 end
 function prefab.weapon.cannon.L(pos, rot, sca, isGhost)
 	prefab_part = {
@@ -186,7 +186,7 @@ function prefab.weapon.cannon.L(pos, rot, sca, isGhost)
 				scale 	= { 1, 1, 1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 
 				weapon    = {
-					weaponID = 1015403, --int: The weaponData id to be used for this weapon.
+					weaponID = 3295403, --int: The weaponData id to be used for this weapon.
 					turnSpeed = weaponStats.baseTracking*weaponStats.cannon.trackingMult.L, 	--float: Degrees per second.
 					turnMode = "Linear", --string enum: Linear / Acceleration
 					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -235,6 +235,189 @@ function prefab.weapon.cannon.L(pos, rot, sca, isGhost)
 						scale 	= { 1, 1, 1 },
 					},
 					{	name = "Turret Muzzle",	position = { .375, 0, 1.7125 },	rotation = { 0, 0, 0 },	scale = { 1, 1, 1 },	barrel = true,	},		
+				},
+			},
+		}
+	end
+	return prefab_part
+end
+
+function prefab.weapon_info.cannon.X(count)
+	return { 3295404, 1 * count, 3296404 }
+end
+function prefab.weapon.cannon.X(pos, rot, sca, isGhost)
+	prefab_part = {
+		name	= "Extra Large Cannon Base",
+		mesh      = "Turrets-7/Turret-7-Base",
+		materials = { "arc_hull_dark", "arc_hull", "arc_teamColour", "arc_teamGlow", },
+		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
+		rotation  = rot,        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
+		scale 	= sca,					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
+	}
+	-- ghosts should NOT have weapons, as it causes a crash.
+	if isGhost then
+		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+	else
+		prefab_part.parts={
+			{
+				name      = "Turret-top",
+				position  = { 0, 1.125, 0 },    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
+				rotation  = { 0, 0, 0 },        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
+				scale 	= { 1, 1, 1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
+
+				weapon    = {
+					weaponID = 3295404, --int: The weaponData id to be used for this weapon.
+					turnSpeed = weaponStats.baseTracking*weaponStats.cannon.trackingMult.X, 	--float: Degrees per second.
+					turnMode = "Linear", --string enum: Linear / Acceleration
+					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
+					mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
+						left = 180, --float:
+						right = 180,--float:
+						up = 180,	 --float:
+						down = 10  --float:
+					},
+				},
+
+				parts = {
+					{
+						name		 = "Turret Body",
+						mesh       = "Turrets-7/Turret-7-Body",
+						materials  = { "arc_teamGlow", "arc_hull" },
+						position   = { 0, .5-1.125, 0},
+						rotation   = { 0, 0, 0 },
+						scale 	 = { 1, 1, 1 },
+						turretBody = true, --Assigns this part as a body to the parent turret. Will rotate on a flat plan while the turret moves, giving the illusion of a 2-axis machine.
+					},
+					{
+						name      = "Turret Barrel Left",
+						mesh      = "Turrets-7/Turret-7-Cannon",
+						materials = { "arc_hull", "arc_teamGlow" },
+						position  = { -.735, 0, 0 },
+						rotation  = { 0, 0, 0 },
+						scale 	= { 1, 1, 1 },
+					},
+					{	name = "Turret Muzzle",	position = { -.735, 0, 2.2125 },	rotation = { 0, 0, 0 },	scale = { 1, 1, 1 },	barrel = true,	},		
+					
+					{
+						name      = "Turret Barrel Center Left",
+						mesh      = "Turrets-7/Turret-7-Cannon",
+						materials = { "arc_hull", "arc_teamGlow" },
+						position  = { -.245, 0, 0 },
+						rotation  = { 0, 0, 0 },
+						scale 	= { 1, 1, 1 },
+					},
+					{	name = "Turret Muzzle",	position = { -.245, 0, 2.2125 },	rotation = { 0, 0, 0 },	scale = { 1, 1, 1 },	barrel = true,	},		
+					
+					{
+						name      = "Turret Barrel Center Right",
+						mesh      = "Turrets-7/Turret-7-Cannon",
+						materials = { "arc_hull", "arc_teamGlow" },
+						position  = { .245, 0, 0 },
+						rotation  = { 0, 0, 0 },
+						scale 	= { 1, 1, 1 },
+					},
+					{	name = "Turret Muzzle",	position = { .245, 0, 2.2125 },	rotation = { 0, 0, 0 },	scale = { 1, 1, 1 },	barrel = true,	},		
+					
+					
+					{
+						name      = "Turret Barrel Right",
+						mesh      = "Turrets-7/Turret-7-Cannon",
+						materials = { "arc_hull", "arc_teamGlow" },
+						position  = { .735, 0, 0 },
+						rotation  = { 0, 0, 0 },
+						scale 	= { 1, 1, 1 },
+					},
+					{	name = "Turret Muzzle",	position = { .735, 0, 2.2125 },	rotation = { 0, 0, 0 },	scale = { 1, 1, 1 },	barrel = true,	},		
+				},
+			},
+		}
+	end
+	return prefab_part
+end
+
+function prefab.weapon_info.cannon.XS(count)
+	return { 3295404, 1 * count, 3296404 }
+end
+function prefab.weapon.cannon.XS(pos, rot, sca, isGhost)
+	prefab_part = {
+		name	= "Large Cannon Base",
+		-- mesh      = "Turrets-5/Turret-5-Base",
+		-- materials = { "arc_hull_dark", "arc_hull", "arc_teamColour", "arc_teamGlow", },
+		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
+		rotation  = rot,        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
+		scale 	= sca,					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
+	}
+	-- ghosts should NOT have weapons, as it causes a crash.
+	if isGhost then
+		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+	else
+		prefab_part.parts={
+			{
+				name      = "Turret-top",
+				position  = { 0, 0, 0 },    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
+				rotation  = { 0, 0, 0 },        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
+				scale 	= { 1, 1, 1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
+
+				weapon    = {
+					weaponID = 3295404, --int: The weaponData id to be used for this weapon.
+					turnSpeed = weaponStats.baseTracking*weaponStats.cannon.trackingMult.X, 	--float: Degrees per second.
+					turnMode = "Linear", --string enum: Linear / Acceleration
+					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
+					mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
+						left = 5, --float:
+						right = 5,--float:
+						up = 5,	 --float:
+						down = 5  --float:
+					},
+				},
+
+				parts = {
+					{	name = "Turret Muzzle",	position = { 0, 0, 0 },	rotation = { 0, 0, 0 },	scale = { 1, 1, 1 },	barrel = true,	},
+				},
+			},
+		}
+	end
+	return prefab_part
+end
+
+function prefab.weapon_info.cannon.TS(count)
+	return { 3295405, 1 * count, 3296405 }
+end
+function prefab.weapon.cannon.TS(pos, rot, sca, isGhost)
+	prefab_part = {
+		name	= "Large Cannon Base",
+		-- mesh      = "Turrets-5/Turret-5-Base",
+		-- materials = { "arc_hull_dark", "arc_hull", "arc_teamColour", "arc_teamGlow", },
+		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
+		rotation  = rot,        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
+		scale 	= sca,					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
+	}
+	-- ghosts should NOT have weapons, as it causes a crash.
+	if isGhost then
+		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+	else
+		prefab_part.parts={
+			{
+				name      = "Turret-top",
+				position  = { 0, 0, 0 },    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
+				rotation  = { 0, 0, 0 },        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
+				scale 	= { 1, 1, 1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
+
+				weapon    = {
+					weaponID = 3295405, --int: The weaponData id to be used for this weapon.
+					turnSpeed = weaponStats.baseTracking*weaponStats.cannon.trackingMult.T, 	--float: Degrees per second.
+					turnMode = "Linear", --string enum: Linear / Acceleration
+					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
+					mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
+						left = 5, --float:
+						right = 5,--float:
+						up = 5,	 --float:
+						down = 5  --float:
+					},
+				},
+
+				parts = {
+					{	name = "Turret Muzzle",	position = { 0, 0, 0 },	rotation = { 0, 0, 0 },	scale = { 1, 1, 1 },	barrel = true,	},
 				},
 			},
 		}

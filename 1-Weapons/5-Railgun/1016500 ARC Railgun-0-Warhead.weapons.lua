@@ -2,7 +2,7 @@ weaponConst = {
 	size="D",
 };
 return {
-	id = 1016500,
+	id = 3296500,
 	name = "Drone Railgun Warhead",
 	blurb = "Mmm, plasma...",
 	metaNote = "",
@@ -126,7 +126,7 @@ return {
 		barrelIndexCurrent = 0,            --Controls which barrel (in child order) the weapon will start with.
 
 		--LAUNCHER / TESLA Controls
-		spawnID = 1011000,       --unit typeID
+		spawnID = 3291000,       --unit typeID
 		arrivalData = {
 			type           = "NONE",    --NONE, ARRIVE, DEPART, CONSTRUCT, LAUNCH, WARP
 			-- arrivalDuration= 1.0,

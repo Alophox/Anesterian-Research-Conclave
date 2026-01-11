@@ -22,7 +22,7 @@ return {
 			
 		},
 		relatedUnitIDs              = {
-			-- 1017001, 1017003
+			-- 3297001, 3297003
 		} --TypeID of other units in the family tree
 	},
 
@@ -50,8 +50,8 @@ return {
 
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data                        = {
-		typeID       = 1012020, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
-		factionID    = 101, 	--The faction this unit is associated with in the Databank.
+		typeID       = 3292020, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
+		factionID    = 329, 	--The faction this unit is associated with in the Databank.
 		macroType    = "AUTO", 	--MacroTarget state: AUTO (is capital or command?) / TRUE / FALSE
 		cost_matter  = 10, 		--integer, For structures.
 		cost_energy  = 5, 		--integer, For structures.
@@ -107,15 +107,15 @@ return {
 
 		phaseBlockFraction = 0,               --How much Phase is used to block damage. I don't think this works. 
 		
-		lifetime = 8.1,                         --How long before this unit self-destructs. (drones, missiles, bullets)
+		lifetime = 0,                         --How long before this unit self-destructs. (drones, missiles, bullets)
 		explodeOnTimeout = false,             --Was it a peaceful death?
 
-		explosionType = "NONE",          	-- EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
+		explosionType = "EXPLOSION",          	-- EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
 		explosionVolatility = 0,            	-- 1000 * unit scale * volatility = area damage when a unit of scale 2 or greater dies.
 		explosionSizeOveride = 0,             	-- Size of the visual explosion. A Tolly is 0.4 in size. 0 is automatic.
 		flashSizeOverride = 0,                	-- Size of the white internal flash. 0 is automatic.
 		forceShockwave = false,               	-- Forces a repulsive shockwave to be created, uses explosionSizeOveride or auto if not set.
-		preventShockwave = true,             	-- Prevents a repulsive shockwave from being created automatically on units scale 1+
+		preventShockwave = false,             	-- Prevents a repulsive shockwave from being created automatically on units scale 1+
 		randomiseInAllDirections = false,     	--Let the explosion randomise it's direction.
 		deathUnitSpawnDoNotRandomiseRotation = false, --Randomise the rotation of the unit spawned on death, if any.
 		deathUnitSpawnTypeID = -1,            	--The unit spawned when this dies. -1 is nothing. Used for debris, and Glowfish Blobs.
@@ -149,11 +149,11 @@ return {
 	isSpawner = true,
 	spawner = {
 		spawnOffset = { 0, 0, 0 },      -- XYZ local offset
-		spawnOffsetHeightRandomisation = 0.5, -- Adds +/- Y random variation
+		spawnOffsetHeightRandomisation = 0, -- Adds +/- Y random variation
 		endRotationUseStructureForward = false, -- Align to structure's forward?
 
-		noUnitGhost = false,            -- If true, don't spawn ghost previews
-		usesToSelfdestruct = 1,         -- Number of uses before self-destruct
+		noUnitGhost = true,            -- If true, don't spawn ghost previews
+		usesToSelfdestruct = 0,         -- Number of uses before self-destruct
 		simultaneousUnitLimit = 1,      -- Max spawns at once, (Jerens and Refinery M6 use 1)
 
 		arrivalData = {
@@ -167,8 +167,8 @@ return {
 	-- 🟨 SPAWNER UNITS (units a yard can build)
 	spawnItems = {
 		{
-			id = 1017001, -- typeID of the unit to spawn
-			spawnTime = 1, -- How long to build/spawn
+			id = 3297001, -- typeID of the unit to spawn
+			spawnTime = 0, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
@@ -181,8 +181,8 @@ return {
 			techID = 0 -- Required tech to enable.
 		},
 		{
-			id = 1017003, -- typeID of the unit to spawn
-			spawnTime = 1, -- How long to build/spawn
+			id = 3297003, -- typeID of the unit to spawn
+			spawnTime = 0, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
@@ -195,8 +195,8 @@ return {
 			techID = 0 -- Required tech to enable.
 		},
 		{
-			id = 1017004, -- typeID of the unit to spawn
-			spawnTime = 1, -- How long to build/spawn
+			id = 3297004, -- typeID of the unit to spawn
+			spawnTime = 0, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
@@ -209,8 +209,8 @@ return {
 			techID = 0 -- Required tech to enable.
 		},
 		{
-			id = 1017005, -- typeID of the unit to spawn
-			spawnTime = 1, -- How long to build/spawn
+			id = 3297005, -- typeID of the unit to spawn
+			spawnTime = 0, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.

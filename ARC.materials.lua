@@ -109,7 +109,7 @@ return {
 			baseSkuff = 0,
 		},
 		{
-			id = "arc_aurora_red",
+			id = "arc_aurora-red",
 			behaviour = "TRANSPARENT",
 			colour =   { 1, 0, 0, 0 },
 			emission = { .5, 0, 0, .2 },
@@ -118,7 +118,7 @@ return {
 			baseSkuff = 0,
 		},
 		{
-			id = "arc_aurora_green",
+			id = "arc_aurora-green",
 			behaviour = "TRANSPARENT",
 			colour =   { 0, 1, 0, 0 },
 			emission = { 0, .5, 0, .2 },
@@ -127,7 +127,7 @@ return {
 			baseSkuff = 0,
 		},
 		{
-			id = "arc_aurora_blue",
+			id = "arc_aurora-blue",
 			behaviour = "TRANSPARENT",
 			colour =   { 0, 0, 1, 0 },
 			emission = { 0, 0, .5, .2 },
@@ -136,7 +136,7 @@ return {
 			baseSkuff = 0,
 		},
 		{
-			id = "arc_aurora_pink",
+			id = "arc_aurora-pink",
 			behaviour = "TRANSPARENT",
 			colour =   { 1, .5, .5, 0 },
 			emission = { .25, .125, .125, 0 },
@@ -146,7 +146,7 @@ return {
 		},
 
 		{
-			id = "arc_rift_red",
+			id = "arc_rift-red",
 			behaviour = "TRANSPARENT",
 			colour =   { 1, 0, 0, 0 },
 			emission = { 1, 0, 0, .1 },
@@ -155,7 +155,7 @@ return {
 			baseSkuff = 0,
 		},
 		{
-			id = "arc_rift_green",
+			id = "arc_rift-green",
 			behaviour = "TRANSPARENT",
 			colour =   { 0, 1, 0, 0 },
 			emission = { 0, 1, 0, .1 },
@@ -164,7 +164,7 @@ return {
 			baseSkuff = 0,
 		},
 		{
-			id = "arc_rift_blue",
+			id = "arc_rift-blue",
 			behaviour = "TRANSPARENT",
 			colour =   { 0, 0, 1, 0 },
 			emission = { 0, 0, 1, .1 },

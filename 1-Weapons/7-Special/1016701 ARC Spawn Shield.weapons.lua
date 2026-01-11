@@ -1,5 +1,5 @@
 return {
-	id = 1016701,
+	id = 3296701,
 	name = "Spawn Shield",
 	blurb = "Sets unit to max aegis shields on spawn",
 	metaNote = "Fires once and then never reloads",

@@ -2,7 +2,7 @@ weaponConst = {
 	size="S",
 };
 return {
-	id = 1015201,
+	id = 3295201,
 	name = "Small Disruptor",
 	blurb = "Close range direct damage energy bolts.",
 	metaNote = "Used on Brawlers and Gunships.",
@@ -127,7 +127,7 @@ return {
 		barrelIndexCurrent = 0,            --Controls which barrel (in child order) the weapon will start with.
 
 		--LAUNCHER / TESLA Controls
-		spawnID = 1014201,       --unit typeID
+		spawnID = 3294201,       --unit typeID
 		arrivalData = {
 			type           = "NONE",    --NONE, ARRIVE, DEPART, CONSTRUCT, LAUNCH, WARP
 			arrivalDuration= 1.0,

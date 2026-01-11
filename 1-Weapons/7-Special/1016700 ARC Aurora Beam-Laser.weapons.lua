@@ -1,5 +1,5 @@
 return {
-	id = 1016700,
+	id = 3296700,
 	name = "Aurora Beam",
 	blurb = "Mid range striker laser.",
 	metaNote = "There's a lot of these.",

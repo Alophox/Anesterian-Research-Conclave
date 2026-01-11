@@ -1,5 +1,5 @@
 return {
-     id = 1013016,
+     id = 3293016,
      name = "ARC Vulpes HLS",
      blurb = "Vulpes Horizontal Launch System.",
      metaNote = "Used on HLS missile platforms",
@@ -123,7 +123,7 @@ return {
           barrelIndexCurrent = 0,            --Controls which barrel (in child order) the weapon will start with.
 
           --LAUNCHER / TESLA Controls
-          spawnID = 1014003,       --unit typeID
+          spawnID = 3294003,       --unit typeID
           arrivalData = {
                type           = "CONSTRUCT",    --NONE, ARRIVE, DEPART, CONSTRUCT, LAUNCH, WARP
                -- arrivalDuration= 1.0,

@@ -1,5 +1,5 @@
 return {
-     id = 1015600,
+     id = 3295600,
      name = "ARC Quartz Launcher",
      blurb = "Drone.",
      metaNote = "Used on Carriers",
@@ -123,7 +123,7 @@ return {
           barrelIndexCurrent = 0,            --Controls which barrel (in child order) the weapon will start with.
 
           --LAUNCHER / TESLA Controls
-          spawnID = 1011000,       --unit typeID
+          spawnID = 3291000,       --unit typeID
           arrivalData = {
                type           = "CONSTRUCT",    --NONE, ARRIVE, DEPART, CONSTRUCT, LAUNCH, WARP
                -- arrivalDuration= 1.0,

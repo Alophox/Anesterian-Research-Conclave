@@ -1,5 +1,5 @@
 return {
-	id = 1019003,
+	id = 3299003,
 	name = "ARC Laser",
 	blurb = "Mid range striker laser.",
 	metaNote = "Used on Pickets and Carriers",

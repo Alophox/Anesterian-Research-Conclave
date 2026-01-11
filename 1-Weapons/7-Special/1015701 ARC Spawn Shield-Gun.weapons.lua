@@ -1,5 +1,5 @@
 return {
-	id = 1015701,
+	id = 3295701,
 	name = "Spawn Shield",
 	blurb = "Sets unit to max aegis shields on spawn",
 	metaNote = "Fires once and then never reloads",
@@ -124,7 +124,7 @@ return {
 		barrelIndexCurrent = 0,            --Controls which barrel (in child order) the weapon will start with.
 
 		--LAUNCHER / TESLA Controls
-		spawnID = 1014701,       --unit typeID
+		spawnID = 3294701,       --unit typeID
 		arrivalData = {
 			type           = "NONE",    --NONE, ARRIVE, DEPART, CONSTRUCT, LAUNCH, WARP
 			arrivalDuration= 1.0,

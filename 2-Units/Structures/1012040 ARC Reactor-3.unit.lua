@@ -41,8 +41,8 @@ return {
 
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data                        = {
-		typeID       = 1012040,
-		factionID    = 101,
+		typeID       = 3292040,
+		factionID    = 329,
 		macroType    = "AUTO",
 		cost_matter  = 30, -- Platforms are not buildable, so it does not require a cost.
 		cost_energy  = 45,

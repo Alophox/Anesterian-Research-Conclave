@@ -2,7 +2,7 @@ weaponConst = {
 	size = "D",
 };
 return {
-	id = 1015100,
+	id = 3295100,
 	name = "Quartz Laser",
 	blurb = "Drone Laser.",
 	metaNote = "Used on Pickets and Carriers",
@@ -89,7 +89,7 @@ return {
 
 		--Audio
 		sfxID = weaponStats.laser.sfxID,               --int, id of the audio to play when this weapon fires.
-		SFXIntensity = weaponStats.SFXIntensity[weaponConst.size]*2,      --float, controls how far the sound reaches, and how important it is.
+		SFXIntensity = weaponStats.SFXIntensity[weaponConst.size],      --float, controls how far the sound reaches, and how important it is.
 
 		--Visuals
 		sizeInUnits = .05,         --Controls laser width, 

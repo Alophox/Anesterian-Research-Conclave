@@ -1,5 +1,5 @@
 return {
-	id = 1019001,
+	id = 3299001,
 	name = "ARC Target Thrower",
 	blurb = "Target Practice",
 	metaNote = "Used with jank",
@@ -124,7 +124,7 @@ return {
 		barrelIndexCurrent = 0,            --Controls which barrel (in child order) the weapon will start with.
 
 		--LAUNCHER / TESLA Controls
-		spawnID = 1019701,       --unit typeID
+		spawnID = 3299701,       --unit typeID
 		arrivalData = {
 			type           = "NONE",    --NONE, ARRIVE, DEPART, CONSTRUCT, LAUNCH, WARP
 			arrivalDuration= 1.0,

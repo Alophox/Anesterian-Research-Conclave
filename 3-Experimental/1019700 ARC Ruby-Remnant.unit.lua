@@ -24,7 +24,7 @@ return {
 		description                 =
 		"The smallest of the Picket designated ships, only suitable for smaller munitions and drones.",
 		weaponInfo                  = { 	-- int3 array: Tells the databank which weaponDatas to grab and display for this unit. Not automatic you have to do this, I'm sorry.
-			{ 1015101, 2, 0 }   		-- (int, int, int): weaponID, count, subMunitionWeaponID (bullet, missile, etc, 0 = none) This gets the damage data of the subMunitionWeapon if it has any, important for bullets which themselves do damage via a subweapon.
+			{ 3295101, 2, 0 }   		-- (int, int, int): weaponID, count, subMunitionWeaponID (bullet, missile, etc, 0 = none) This gets the damage data of the subMunitionWeapon if it has any, important for bullets which themselves do damage via a subweapon.
 		},
 		relatedUnitIDs              = {} 	-- int array: TypeID of other units in the family tree
 	},
@@ -53,8 +53,8 @@ return {
 
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data = {
-		typeID       = 1019700, -- int: !!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
-		factionID    = 101, -- int: The faction this unit is associated with in the Databank.
+		typeID       = 3299700, -- int: !!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
+		factionID    = 329, -- int: The faction this unit is associated with in the Databank.
 		macroType    = "AUTO", -- string enum: MacroTarget state: AUTO (is capital or command?) / TRUE / FALSE
 		cost_matter  = 0, -- int: For structures.
 		cost_energy  = 0, -- int: For structures.
@@ -80,7 +80,7 @@ return {
 					scale 	= { 1, 1, 1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 
 					weapon    = {
-						weaponID = 1019001, --int: The weaponData id to be used for this weapon.
+						weaponID = 3299001, --int: The weaponData id to be used for this weapon.
 						turnSpeed = 120, 	--float: Degrees per second.
 						turnMode = "Linear", --string enum: Linear / Acceleration
 						turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -99,7 +99,7 @@ return {
 					scale 	= { .7, .7, .7 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 
 					weapon    = {
-						weaponID = 1019004, --int: The weaponData id to be used for this weapon.
+						weaponID = 3299004, --int: The weaponData id to be used for this weapon.
 						turnSpeed = 120, 	--float: Degrees per second.
 						turnMode = "Linear", --string enum: Linear / Acceleration
 						turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -159,7 +159,7 @@ return {
 					scale 	= { 1, 1, 1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 
 					weapon    = {
-						weaponID = 1019002, --int: The weaponData id to be used for this weapon.
+						weaponID = 3299002, --int: The weaponData id to be used for this weapon.
 						turnSpeed = 120, 	--float: Degrees per second.
 						turnMode = "Linear", --string enum: Linear / Acceleration
 						turnInstant = true, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -188,7 +188,7 @@ return {
 									rotation   = { -90, 0, 0 },
 									scale 	 = { 1, 1, 1 },
 									weapon    = {
-										weaponID = 1019003, --int: The weaponData id to be used for this weapon.
+										weaponID = 3299003, --int: The weaponData id to be used for this weapon.
 										turnSpeed = 120, 	--float: Degrees per second.
 										turnMode = "Linear", --string enum: Linear / Acceleration
 										turnInstant = true, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)

@@ -1,5 +1,5 @@
 return {
-	id = 1015700,
+	id = 3295700,
 	name = "Aurora Beam",
 	blurb = "Turns out, one should never be in the way of an open energy conduit.",
 	metaNote = "Creates everything else.",
@@ -124,7 +124,7 @@ return {
 		barrelIndexCurrent = 0,            --Controls which barrel (in child order) the weapon will start with.
 
 		--LAUNCHER / TESLA Controls
-		spawnID = 1014700,       --unit typeID
+		spawnID = 3294700,       --unit typeID
 		arrivalData = {
 			type           = "NONE",    --NONE, ARRIVE, DEPART, CONSTRUCT, LAUNCH, WARP
 			arrivalDuration= 0,

@@ -16,7 +16,7 @@ function prefab.part.rift(pos, rot, sca, scaCo, isGhost)
 			{
 				name = "Rift",
 				mesh = "Rift/Rift",
-				materials = { "arc_rift_red" },
+				materials = { "arc_rift-red" },
 				rotation = {0,0,0},
 				position = {0,0,0},
 				scale = {1,1,1},
@@ -53,7 +53,7 @@ function prefab.part.rift(pos, rot, sca, scaCo, isGhost)
 					-- {
 					-- 	name = "Rift",
 					-- 	mesh = "Rift/Rift-Wireframe",
-					-- 	materials = { "arc_rift_red" },
+					-- 	materials = { "arc_rift-red" },
 					-- 	rotation = {0,0,0},
 					-- 	position = {0,0,0},
 					-- 	scale = {1,1,1},
@@ -61,7 +61,7 @@ function prefab.part.rift(pos, rot, sca, scaCo, isGhost)
 					{
 						name = "Rift",
 						mesh = "Rift/Rift",
-						materials = { "arc_rift_blue" },
+						materials = { "arc_rift-blue" },
 						rotation = {0,0,0},
 						position = {0,0,0},
 						scale = {1,1,1},
@@ -98,7 +98,7 @@ function prefab.part.rift(pos, rot, sca, scaCo, isGhost)
 							-- {
 							-- 	name = "Rift",
 							-- 	mesh = "Rift/Rift-Wireframe",
-							-- 	materials = { "arc_rift_blue" },
+							-- 	materials = { "arc_rift-blue" },
 							-- 	rotation = {0,0,0},
 							-- 	position = {0,0,0},
 							-- 	scale = {1,1,1},
@@ -106,7 +106,7 @@ function prefab.part.rift(pos, rot, sca, scaCo, isGhost)
 							{
 								name = "Rift",
 								mesh = "Rift/Rift",
-								materials = { "arc_rift_green" },
+								materials = { "arc_rift-green" },
 								rotation = {0,0,0},
 								position = {0,0,0},
 								scale = {1,1,1},
@@ -143,7 +143,7 @@ function prefab.part.rift(pos, rot, sca, scaCo, isGhost)
 									-- {
 									-- 	name = "Rift",
 									-- 	mesh = "Rift/Rift-Wireframe",
-									-- 	materials = { "arc_rift_green" },
+									-- 	materials = { "arc_rift-green" },
 									-- 	rotation = {0,0,0},
 									-- 	position = {0,0,0},
 									-- 	scale = {1,1,1},

@@ -48,8 +48,8 @@ return {
 
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data                        = {
-		typeID       = 1012021, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
-		factionID    = 101, 	--The faction this unit is associated with in the Databank.
+		typeID       = 3292021, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
+		factionID    = 329, 	--The faction this unit is associated with in the Databank.
 		macroType    = "AUTO", 	--MacroTarget state: AUTO (is capital or command?) / TRUE / FALSE
 		cost_matter  = 100, 		--integer, For structures.
 		cost_energy  = 75, 		--integer, For structures.
@@ -60,17 +60,6 @@ return {
 
 	-- 🟦 PARTS
 	parts = {
-		{
-			name     = "Emplacement Node",			
-			position = { .55/.85, 0, 0 },                	
-			rotation = { 0, 0, 90 },              
-			scale 	= { .85, .85, .85 },
-			-- autoModule = {
-			-- 	moduleTypeID = 1012021, -- The TypeID of the unit that will be attached to this unit, as a "module".
-			-- 	reportKillsToParent = true, --Any kills this "module" (unit) makes will be attributed to it's root parent. Yes, even the parent of other modules if this is on a module itself and it's parent module has true also.
-			-- },
-		},
-
 		{
 			name     = "Spawner Spawn and Ghost Point",	
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
@@ -116,10 +105,10 @@ return {
 
 		phaseBlockFraction = 0,               --How much Phase is used to block damage. I don't think this works. 
 		
-		lifetime = 21.1,                         --How long before this unit self-destructs. (drones, missiles, bullets)
+		lifetime = 0,                         --How long before this unit self-destructs. (drones, missiles, bullets)
 		explodeOnTimeout = false,             --Was it a peaceful death?
 
-		explosionType = "NONE",          	-- EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
+		explosionType = "EXPLOSION",          	-- EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
 		explosionVolatility = 0,            	-- 1000 * unit scale * volatility = area damage when a unit of scale 2 or greater dies.
 		explosionSizeOveride = 0,             	-- Size of the visual explosion. A Tolly is 0.4 in size. 0 is automatic.
 		flashSizeOverride = 0,                	-- Size of the white internal flash. 0 is automatic.
@@ -157,12 +146,12 @@ return {
 	-- 🟨 SPAWNER CONFIGURATION (yards)
 	isSpawner = true,
 	spawner = {
-		spawnOffset = { 0, 1, 0 },      -- XYZ local offset
-		spawnOffsetHeightRandomisation = 0.5, -- Adds +/- Y random variation
+		spawnOffset = { 0, 0, 0 },      -- XYZ local offset
+		spawnOffsetHeightRandomisation = 0, -- Adds +/- Y random variation
 		endRotationUseStructureForward = false, -- Align to structure's forward?
 
-		noUnitGhost = false,            -- If true, don't spawn ghost previews
-		usesToSelfdestruct = 1,         -- Number of uses before self-destruct
+		noUnitGhost = true,            -- If true, don't spawn ghost previews
+		usesToSelfdestruct = 0,         -- Number of uses before self-destruct
 		simultaneousUnitLimit = 1,      -- Max spawns at once, (Jerens and Refinery M6 use 1)
 
 		arrivalData = {
@@ -176,57 +165,57 @@ return {
 	-- 🟨 SPAWNER UNITS (units a yard can build)
 	spawnItems = {
 		{
-			id = 1017011, -- typeID of the unit to spawn
-			spawnTime = 1, -- How long to build/spawn
+			id = 3297011, -- typeID of the unit to spawn
+			spawnTime = 0, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
 			spawnPointCode = 0,
 
 			spawnVelocity = 0, -- Ejection speed, eg. Kontaalagrad. Normal yards don't use this.
-			ignoreWaypoints = false, -- EG. Kontaalagrad.
+			ignoreWaypoints = true, -- EG. Kontaalagrad.
 			heatPercentage = 0, -- What fraction of heat the unit spawns with, eg. Tychon units start with 20% (0.2) heat.
 
 			techID = 0 -- Required tech to enable.
 		},
 		{
-			id = 1017013, -- typeID of the unit to spawn
-			spawnTime = 1, -- How long to build/spawn
+			id = 3297013, -- typeID of the unit to spawn
+			spawnTime = 0, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
 			spawnPointCode = 0,
 
 			spawnVelocity = 0, -- Ejection speed, eg. Kontaalagrad. Normal yards don't use this.
-			ignoreWaypoints = false, -- EG. Kontaalagrad.
+			ignoreWaypoints = true, -- EG. Kontaalagrad.
 			heatPercentage = 0, -- What fraction of heat the unit spawns with, eg. Tychon units start with 20% (0.2) heat.
 
 			techID = 0 -- Required tech to enable.
 		},
 		{
-			id = 1017014, -- typeID of the unit to spawn
-			spawnTime = 1, -- How long to build/spawn
+			id = 3297014, -- typeID of the unit to spawn
+			spawnTime = 0, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
 			spawnPointCode = 0,
 
 			spawnVelocity = 0, -- Ejection speed, eg. Kontaalagrad. Normal yards don't use this.
-			ignoreWaypoints = false, -- EG. Kontaalagrad.
+			ignoreWaypoints = true, -- EG. Kontaalagrad.
 			heatPercentage = 0, -- What fraction of heat the unit spawns with, eg. Tychon units start with 20% (0.2) heat.
 
 			techID = 0 -- Required tech to enable.
 		},
 		{
-			id = 1017015, -- typeID of the unit to spawn
-			spawnTime = 1, -- How long to build/spawn
+			id = 3297015, -- typeID of the unit to spawn
+			spawnTime = 0, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
 			spawnPointCode = 0,
 
 			spawnVelocity = 0, -- Ejection speed, eg. Kontaalagrad. Normal yards don't use this.
-			ignoreWaypoints = false, -- EG. Kontaalagrad.
+			ignoreWaypoints = true, -- EG. Kontaalagrad.
 			heatPercentage = 0, -- What fraction of heat the unit spawns with, eg. Tychon units start with 20% (0.2) heat.
 
 			techID = 0 -- Required tech to enable.

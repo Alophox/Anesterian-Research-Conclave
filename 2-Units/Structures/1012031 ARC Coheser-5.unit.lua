@@ -33,8 +33,8 @@ return {
 
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data                        = {
-		typeID       = 1012031,
-		factionID    = 101,
+		typeID       = 3292031,
+		factionID    = 329,
 		macroType    = "AUTO",
 		cost_matter  = 200,
 		cost_energy  = 50,

@@ -2,10 +2,10 @@ weaponConst = {
 	size = "L",
 };
 return {
-	id = 1015013,
+	id = 3295013,
 	name = "Vulpes Missile HLS",
 	blurb = "Vulpes Horizontal Launch System.",
-	metaNote = "Used on Missile and Carrer variant ships",
+	metaNote = "Used on Missile and Carrier variant ships",
 	hideInDatabank = false,
 	displayType = "NORMAL", -- NORMAL, DRONE
 
@@ -127,7 +127,7 @@ return {
 		barrelIndexCurrent = 0,            --Controls which barrel (in child order) the weapon will start with.
 
 		--LAUNCHER / TESLA Controls
-		spawnID = 1014003,       --unit typeID
+		spawnID = 3294003,       --unit typeID
 		arrivalData = {
 			type           = "CONSTRUCT",    --NONE, ARRIVE, DEPART, CONSTRUCT, LAUNCH, WARP
 			-- arrivalDuration= 1.0,

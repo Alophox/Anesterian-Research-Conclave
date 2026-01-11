@@ -2,7 +2,7 @@ weaponConst = {
 	size = "X",
 };
 return {
-	id = 1015104,
+	id = 3295104,
 	name = "Extra Large Laser",
 	blurb = "Mid range hybrid laser.",
 	metaNote = "Used on Pickets and Carriers",
@@ -89,7 +89,7 @@ return {
 
 		--Audio
 		sfxID = weaponStats.laser.sfxID,               --int, id of the audio to play when this weapon fires.
-		SFXIntensity = weaponStats.SFXIntensity[weaponConst.size]*2,      --float, controls how far the sound reaches, and how important it is.
+		SFXIntensity = weaponStats.SFXIntensity[weaponConst.size],      --float, controls how far the sound reaches, and how important it is.
 
 		--Visuals
 		sizeInUnits = .3,         --Controls laser width, 

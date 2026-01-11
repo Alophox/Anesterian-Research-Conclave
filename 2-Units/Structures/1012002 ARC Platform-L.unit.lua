@@ -51,8 +51,8 @@ return {
 
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data                        = {
-		typeID       = 1012002,
-		factionID    = 101,
+		typeID       = 3292002,
+		factionID    = 329,
 		macroType    = "AUTO",
 		cost_matter  = 0, -- Platforms are not buildable, so it does not require a cost.
 		cost_energy  = 0,
@@ -70,7 +70,7 @@ return {
 			scale 	= { .1/scaleConst, .1/scaleConst, .1/scaleConst },
 
 			weapon    = {
-				weaponID = 1015600, --int: The weaponData id to be used for this weapon.
+				weaponID = 3295600, --int: The weaponData id to be used for this weapon.
 				turnSpeed = 0, 	--float: Degrees per second.
 				turnMode = "Linear", --string enum: Linear / Acceleration
 				turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -89,7 +89,7 @@ return {
 			scale 	= { .1/scaleConst, .1/scaleConst, .1/scaleConst },
 
 			weapon    = {
-				weaponID = 1015600, --int: The weaponData id to be used for this weapon.
+				weaponID = 3295600, --int: The weaponData id to be used for this weapon.
 				turnSpeed = 0, 	--float: Degrees per second.
 				turnMode = "Linear", --string enum: Linear / Acceleration
 				turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -108,7 +108,7 @@ return {
 			scale 	= { .1/scaleConst, .1/scaleConst, .1/scaleConst },
 
 			weapon    = {
-				weaponID = 1015600, --int: The weaponData id to be used for this weapon.
+				weaponID = 3295600, --int: The weaponData id to be used for this weapon.
 				turnSpeed = 0, 	--float: Degrees per second.
 				turnMode = "Linear", --string enum: Linear / Acceleration
 				turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -127,7 +127,7 @@ return {
 			scale 	= { .1/scaleConst, .1/scaleConst, .1/scaleConst },
 
 			weapon    = {
-				weaponID = 1015600, --int: The weaponData id to be used for this weapon.
+				weaponID = 3295600, --int: The weaponData id to be used for this weapon.
 				turnSpeed = 0, 	--float: Degrees per second.
 				turnMode = "Linear", --string enum: Linear / Acceleration
 				turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)

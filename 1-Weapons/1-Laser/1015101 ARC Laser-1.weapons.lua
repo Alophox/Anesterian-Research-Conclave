@@ -2,7 +2,7 @@ weaponConst = {
 	size = "S",
 };
 return {
-	id = 1015101,
+	id = 3295101,
 	name = "Small Laser",
 	blurb = "Mid range hybrid laser.",
 	metaNote = "Used on Pickets and Carriers",
@@ -89,7 +89,7 @@ return {
 
 		--Audio
 		sfxID = weaponStats.laser.sfxID,               --int, id of the audio to play when this weapon fires.
-		SFXIntensity = weaponStats.SFXIntensity[weaponConst.size]*2,      --float, controls how far the sound reaches, and how important it is.
+		SFXIntensity = weaponStats.SFXIntensity[weaponConst.size],      --float, controls how far the sound reaches, and how important it is.
 
 		--Visuals
 		sizeInUnits = .05,         --Controls laser width, 
@@ -207,10 +207,10 @@ return {
 			classMultTitan = 0.1,
 
 			--Multiplied against score at the end.
-			shipMultiplier = 1.0, 			--Priority for ships.
-			structureMultiplier = .1, 		--Priority for structures.
-			keepTargetMultiplier = 3, 		--Important. Allows the unit to keep it's current target, and not bounce between things.
-			scoreBandingSize = 3,			--Allows the targeter to pick a random target within bands. Useful for PD and AOE, but requires a high keep target to prevent schizophrenia.
+			shipMultiplier = 1.0,
+			structureMultiplier = .1,
+			keepTargetMultiplier = 3,
+			scoreBandingSize = 3,
 		},
 		tracking = {
 			positionPredictionType = "NONE", --Algorithm for predicting target position. NONE (lasers, most ships), SIMPLE (bad, nothing uses this), TRIGONOMETRIC (spinal ships, turrets, missiles)

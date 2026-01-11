@@ -2,13 +2,13 @@ scaleConst =5.8019;
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "arc_aurora_beam",              	-- Internal name for debugging and errors.
+	unitName                    = "arc_aurora-beam",              	-- Internal name for debugging and errors.
 	unitDisplayName             = "Aurora Beam",                    	-- Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   	-- Shown when moused over in the HUD.
 	unitBlurb                   = "Teleports above you: nothing personal, Junior.", 		-- Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           	-- The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
 	hotkey                      = "F",                             	-- For buildbar. The hotkey for this unit.
-	picture                     = "arc_aurora_beam.png",            -- The name of the image file in this folder to be used for this unit.
+	picture                     = "arc_aurora-beam.png",            -- The name of the image file in this folder to be used for this unit.
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {
@@ -19,7 +19,7 @@ return {
 		description                 =
 		"When a star's worth of power isn't enough, you start to look for ways to transport energy more efficiently... no matter what's in the way.",
 		weaponInfo                  = { --Tells the databank which weaponDatas to grab and display for this unit. Not automatic, you have to do this.
-			{1016700, 28, 0}
+			{3296700, 28, 0}
 		},
 		relatedUnitIDs              = {} --TypeID of other units in the family tree
 	},
@@ -48,13 +48,13 @@ return {
 
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data                        = {
-		typeID       = 1012029, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
-		factionID    = 101, 	--The faction this unit is associated with in the Databank.
+		typeID       = 3292029, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
+		factionID    = 329, 	--The faction this unit is associated with in the Databank.
 		macroType    = "AUTO", 	--MacroTarget state: AUTO (is capital or command?) / TRUE / FALSE
-		cost_matter  = 20, 		--integer, For structures.
-		cost_energy  = 2, 		--integer, For structures.
-		cost_supply  = 2, 		--integer, For structures. Logistics cost.
-		cost_time    = 15, 		--integer, For structures, how long in seconds it takes to build.
+		cost_matter  = 400, 		--integer, For structures.
+		cost_energy  = 600, 		--integer, For structures.
+		cost_supply  = 0, 		--integer, For structures. Logistics cost.
+		cost_time    = 60, 		--integer, For structures, how long in seconds it takes to build.
 		techRequired = 0
 	},
 
@@ -69,7 +69,7 @@ return {
 				{
 					name      = "Turret-top",	position  = { 0,.75, 0 },	rotation  = { 0, 0, 0 },	scale 	= { 1, 1, 1 },
 					weapon    = {
-						weaponID = 1015700, --int: The weaponData id to be used for this weapon.
+						weaponID = 3295700, --int: The weaponData id to be used for this weapon.
 						turnSpeed = 120, 	--float: Degrees per second.
 						turnMode = "Linear", --string enum: Linear / Acceleration
 						turnInstant = true, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -86,7 +86,7 @@ return {
 						{
 							name		 = "Rift",
 							-- mesh       = "Emplacement/Rift",
-							-- materials  = { "arc_rift_red" },
+							-- materials  = { "arc_rift-red" },
 							position   = { 0, 0, 0 },
 							rotation   = { 0, 0, 0 },
 							scale 	 = { 1, 1, 1 },
@@ -100,7 +100,7 @@ return {
 								{
 									name = "Rift",
 									mesh = "Emplacement/Rift",
-									materials = { "arc_rift_red"  },
+									materials = { "arc_rift-red"  },
 									rotation = { 0, 0, 0 },
 									position = { 0, 0, 0},
 									scale = { 1, 1, 1 },
@@ -108,7 +108,7 @@ return {
 								{
 									name = "Rift",
 									mesh = "Emplacement/Rift",
-									materials = { "arc_rift_green"  },
+									materials = { "arc_rift-green"  },
 									rotation = { 120, 120, 120 },
 									position = { 0, 0, 0},
 									scale = { 1, 1, 1 },
@@ -116,7 +116,7 @@ return {
 								{
 									name = "Rift",
 									mesh = "Emplacement/Rift",
-									materials = { "arc_rift_blue"  },
+									materials = { "arc_rift-blue"  },
 									rotation = { 240, 240, 240 },
 									position = { 0, 0, 0},
 									scale = { 1, 1, 1 },
