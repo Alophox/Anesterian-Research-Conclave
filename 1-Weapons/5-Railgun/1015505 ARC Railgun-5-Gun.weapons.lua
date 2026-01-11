@@ -201,10 +201,10 @@ return {
 			classMultMissile = -1,
 			classMultDrone = -1,
 			classMultLight = -1,
-			classMultMedium = .6,
-			classMultHeavy = 1,
+			classMultMedium = .2,
+			classMultHeavy = .6,
 			classMultCapital = 1,
-			classMultTitan = 0.6,
+			classMultTitan = 1,
 
 			--Multiplied against score at the end.
 			shipMultiplier = 1.0, 			--Priority for ships.

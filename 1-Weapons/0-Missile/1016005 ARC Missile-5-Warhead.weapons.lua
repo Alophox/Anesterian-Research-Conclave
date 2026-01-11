@@ -196,7 +196,7 @@ return {
                -- Multiplies the target score by this.
                classMultMissile = -1,
                classMultDrone = -1,
-               classMultLight = 1,
+               classMultLight = -1,
                classMultMedium = 1,
                classMultHeavy = 0.5,
                classMultCapital = 0.2,

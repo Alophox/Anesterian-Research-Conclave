@@ -198,10 +198,10 @@ return {
 			-- Target class priority.
 			-- Vital for unit behaviour. -1 = ignore.
 			-- Multiplies the target score by this.
-			classMultMissile = 0,
-			classMultDrone = 0,
-			classMultLight = .1,
-			classMultMedium = .5,
+			classMultMissile = -1,
+			classMultDrone = -1,
+			classMultLight = 0,
+			classMultMedium = .1,
 			classMultHeavy = 1,
 			classMultCapital = 1,
 			classMultTitan = 1,

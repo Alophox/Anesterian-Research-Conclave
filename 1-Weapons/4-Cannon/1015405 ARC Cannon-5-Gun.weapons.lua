@@ -200,11 +200,11 @@ return {
 			-- Multiplies the target score by this.
 			classMultMissile = -1,
 			classMultDrone = -1,
-			classMultLight = .6,
-			classMultMedium = 1,
-			classMultHeavy = 1,
-			classMultCapital = 0.6,
-			classMultTitan = 0.2,
+			classMultLight = .01,
+			classMultMedium = .2,
+			classMultHeavy = .6,
+			classMultCapital = 1,
+			classMultTitan = 1,
 
 			--Multiplied against score at the end.
 			shipMultiplier = 1.0, 			--Priority for ships.

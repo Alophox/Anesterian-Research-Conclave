@@ -419,8 +419,8 @@ return {
 			-- Multiplies the target score by this.
 			classMultMissile = -1,	-- float: 
 			classMultDrone = -1,	-- float: 
-			classMultLight = .5,		-- float: 
-			classMultMedium = 1,	-- float: 
+			classMultLight = .1,		-- float: 
+			classMultMedium = .5,	-- float: 
 			classMultHeavy = 1,	-- float: 
 			classMultCapital = 0.7,	-- float: 
 			classMultTitan = 0.5,	-- float: 
