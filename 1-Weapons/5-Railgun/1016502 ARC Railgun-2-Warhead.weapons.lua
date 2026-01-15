@@ -76,7 +76,7 @@ return {
 		resumeFireBelowHeatFraction = 0,   -- resume fire if parent heat falls below this threshold
 		isResourceMiner = false,           --Is allowed to target the Environmental team.
 		
-		isPiercing = false,       -- Allows the laser/bullet to pierce through targets they believe they have killed. Weapon will reduce it's damage. Lasers will damage the next target on their raycast. Incompatible with AOE on warheads
+		isPiercing = true,       -- Allows the laser/bullet to pierce through targets they believe they have killed. Weapon will reduce it's damage. Lasers will damage the next target on their raycast. Incompatible with AOE on warheads
 		piercingThreshold = 0,   -- Must have MORE than this much damage remaining after piercing in order to continue piercing. (Prevents scenarios where a super laser murders a capital ship then does 2 damage to a Tolly on the other side)
 
 		-- AOE
