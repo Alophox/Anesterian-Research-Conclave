@@ -3,7 +3,7 @@ return {
     shader = "Shader Graphs/VortexUnlit_SG",
     properties = {
         _Center = { 0.5, 0.5, 0, 0 },
-        _Color = { 0.0, 0.5, 0.5, 1 },
+        _Color = { 0.5, 0.5, 0.5, 1 },
         _Direction = 1,
         _FadeOuter = 0.5,
         _FadeSoftness = 0.12,
