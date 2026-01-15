@@ -302,6 +302,16 @@ healthStats = {
 		C = .3,
 		S = .4,
 	},
+	baseAccel = {
+		L = .35,
+		LM = .27,
+		M = .22,
+		MH = .18,
+		H = .15,
+		HC = .135,
+		C = .075,
+		T = .05,
+	},
 	accelMult = {
 		P = 1,
 		B = 1.1,
@@ -352,7 +362,7 @@ return {
 		3292030, 3292031, 3292040, --economy
 	}, -- int array: A list of unit TypeIDs that the player is allowed to build, both structures and ships.
 	skirmish_platforms = { 3292000 },      -- Initial platforms/stationary structures
-	skirmish_ais = { 1009000 },             --This doesn't work yet, please wait. Luke 2025/04/18
+	skirmish_ais = { 3299000 },             --This doesn't work yet, please wait. Luke 2025/04/18
 	
 	-- Content catalog (for editor and databank)
 	ships = { 

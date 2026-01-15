@@ -1,4 +1,6 @@
--- Glave Assault Frigate Template
+shipConst = {
+	class="H",
+}
 scaleConst = 2.35;
 return {
 
@@ -89,11 +91,11 @@ return {
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "HEAVY",       -- string enum: UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = healthStats.baseHealth.H * functions.averageMultiplier({healthStats.healthMult.B,healthStats.healthMult.B,healthStats.healthMult.B}),
-		health_regen_per_second = healthStats.regen.H,
+		health = healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.B,healthStats.healthMult.B,healthStats.healthMult.B}),
+		health_regen_per_second = healthStats.regen[shipConst.class],
 		max_regen_frac = healthStats.proportionRegenMax,
 
-		armour = functions.floor(healthStats.baseArmor.H * functions.averageMultiplier({healthStats.armorMult.B,healthStats.armorMult.B,healthStats.armorMult.B})),
+		armour = functions.floor(healthStats.baseArmor[shipConst.class] * functions.averageMultiplier({healthStats.armorMult.B,healthStats.armorMult.B,healthStats.armorMult.B})),
 		vulnerability_max = 0,
 		shredMultiplier = 1.0,
 
@@ -158,7 +160,7 @@ return {
 	movement           = {
 		type = "MAPLOCKED",                -- string enum: UNITMOVETYPE: MAPLOCKED / FREE --Does this unit act like a normal ship, and stay within the 0-7y world height. Or like a drone/missile?
 		maximumAngleToTarget = 1, -- .2       -- float: Radians within in which a unit is allowed to accelerate towards a target.
-		acceleration = 0.15 * functions.averageMultiplier({healthStats.accelMult.B,healthStats.accelMult.B,healthStats.accelMult.B}),               -- float: The units per second of the ship's acceleration. A tolly is 0.4 units long, and accelerates at 0.35
+		acceleration = healthStats.baseAccel[shipConst.class] * functions.averageMultiplier({healthStats.accelMult.B,healthStats.accelMult.B,healthStats.accelMult.B}),               -- float: The units per second of the ship's acceleration. A tolly is 0.4 units long, and accelerates at 0.35
 		strafingAccelMultiplier = 0.8,     -- float: Fraction of accel used for strafing
 		reverseAccelMultiplier = functions.averageMultiplier({healthStats.retreatMult.B,healthStats.retreatMult.B,healthStats.retreatMult.B}),      -- float: Fraction of accel used for reverse/breaking
 		inertialCorrection = true,         --Try to cancel out excess velocity in directions you don't want to go.

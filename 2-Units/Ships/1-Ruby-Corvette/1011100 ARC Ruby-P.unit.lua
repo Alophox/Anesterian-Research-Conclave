@@ -1,3 +1,6 @@
+shipConst = {
+	class="L",
+}
 scaleConst = .575;
 return {
 
@@ -83,11 +86,11 @@ return {
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "LIGHT",       -- string enum: UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = healthStats.baseHealth.L * functions.averageMultiplier({healthStats.healthMult.P}),              -- float: Health, also the unit's heat capacity.
-		health_regen_per_second = healthStats.regen.L, -- float: Health regen per second. Duh.
+		health = healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.P}),              -- float: Health, also the unit's heat capacity.
+		health_regen_per_second = healthStats.regen[shipConst.class], -- float: Health regen per second. Duh.
 		max_regen_frac = healthStats.proportionRegenMax,      -- float: The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
 
-		armour = functions.floor(healthStats.baseArmor.L * functions.averageMultiplier({healthStats.armorMult.P})),                -- int: Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
+		armour = functions.floor(healthStats.baseArmor[shipConst.class] * functions.averageMultiplier({healthStats.armorMult.P})),                -- int: Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
 		vulnerability_max = 0,   -- float: Prevent the unit from losing more than X fraction of it's armour.
 		shredMultiplier = 1.0,     -- float: Multiplies incomming shred, pretty self explanatory right?
 
@@ -151,7 +154,7 @@ return {
 	movement           = {
 		type = "MAPLOCKED",                -- string enum: UNITMOVETYPE: MAPLOCKED / FREE --Does this unit act like a normal ship, and stay within the 0-7y world height. Or like a drone/missile?
 		maximumAngleToTarget = 1, -- .2       -- float: Radians within in which a unit is allowed to accelerate towards a target.
-		acceleration = 0.35 * functions.averageMultiplier({healthStats.accelMult.P}),               -- float: The units per second of the ship's acceleration. A tolly is 0.4 units long, and accelerates at 0.35
+		acceleration = healthStats.baseAccel[shipConst.class] * functions.averageMultiplier({healthStats.accelMult.P}),               -- float: The units per second of the ship's acceleration. A tolly is 0.4 units long, and accelerates at 0.35
 		strafingAccelMultiplier = 0.8,     -- float: Fraction of accel used for strafing
 		reverseAccelMultiplier = functions.averageMultiplier({healthStats.retreatMult.P}),      -- float: Fraction of accel used for reverse/breaking
 		inertialCorrection = true,         --Try to cancel out excess velocity in directions you don't want to go.

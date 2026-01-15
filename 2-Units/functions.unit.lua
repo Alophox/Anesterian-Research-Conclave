@@ -30,9 +30,9 @@ end
 function functions.averageMultiplier(struct)
 	return_info = 0;
 	for i=1, #struct do
-		return_info = return_info + (struct[i] / #struct)
+		return_info = return_info + struct[i]
 	end
-	return return_info
+	return return_info / #struct
 end
 
 -- in 22.5 degree steps because I shouldn't need any other values that don't multiply off of that...
