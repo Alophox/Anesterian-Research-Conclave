@@ -25,6 +25,9 @@ return {
 	scale                       = 1.8, -- 0.035714
 	mainMesh                    = "Cargo-Container-2/Container",
 	materials                   = { "arc_hull", "arc_teamGlow", "arc_teamColour", "arc_hull_dark" },
+	inEditor = true,
+    autoColourElements = true,
+    editorDontColour = false,
 	colliderDimensions = {
 		widthMultiplier  = 1,
 		heightMultiplier = .456,

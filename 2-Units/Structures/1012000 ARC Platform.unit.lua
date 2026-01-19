@@ -40,6 +40,9 @@ return {
 	scale                       = scaleConst,
 	mainMesh                    = "Core/Core",
 	materials                   = { "arc_hull", "arc_teamGlow", "arc_teamColour", "arc_hull_dark" },
+	inEditor = true,
+    autoColourElements = true,
+    editorDontColour = false,
 	colliderDimensions = {
 		widthMultiplier  = 1,
 		heightMultiplier = .365,

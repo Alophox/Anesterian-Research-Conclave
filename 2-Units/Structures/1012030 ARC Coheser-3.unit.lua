@@ -25,6 +25,9 @@ return {
 	scale                       = 2.8, -- 0.035714
 	mainMesh                    = "Coheser/Coheser-3",
 	materials                   = { "arc_hull", "arc_teamGlow", "arc_hull_dark", "arc_teamColour" },
+	inEditor = true,
+    autoColourElements = true,
+    editorDontColour = false,
 	colliderDimensions = {
 		widthMultiplier  = 1,
 		heightMultiplier = .246,

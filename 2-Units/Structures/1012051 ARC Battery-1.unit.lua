@@ -25,6 +25,9 @@ return {
 	scale                       = .909, -- 0.035714
 	mainMesh                    = "Battery/Battery-1",
 	materials                   = { "arc_hull", "arc_teamGlow", "arc_teamColour", "arc_hull_dark" },
+	inEditor = true,
+    autoColourElements = true,
+    editorDontColour = false,
 	colliderDimensions = {
 		widthMultiplier  = 1,
 		heightMultiplier = 1,

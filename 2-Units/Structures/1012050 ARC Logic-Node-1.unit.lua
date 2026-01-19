@@ -25,6 +25,9 @@ return {
 	scale                       = .9, -- 0.035714
 	mainMesh                    = "Logic/Logic-Node-1",
 	materials                   = { "arc_hull", "arc_teamGlow", "arc_teamColour" },
+	inEditor = true,
+    autoColourElements = true,
+    editorDontColour = false,
 	colliderDimensions = {
 		widthMultiplier  = 1,
 		heightMultiplier = 1,

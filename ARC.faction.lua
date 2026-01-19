@@ -387,7 +387,7 @@ return {
 		3292050, --logistics
 		3292051, 3292052, --storage
 		3292030, 3292031, 3292040, --economy
-		3293000, 3293001, --environmental
+		3293000,  --environmental
 
 	}, -- Structures
 	--munitions = {},                    -- (optional) Bullets, missiles, etc . If you for some reason have munitions that you want to spawn / work when spawned normally.

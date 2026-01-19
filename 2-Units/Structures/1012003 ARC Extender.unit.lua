@@ -25,6 +25,9 @@ return {
 	scale                       = 1.8, -- 0.055556
 	mainMesh                    = "Extender/Extender-2",
 	materials                   = { "arc_hull", "arc_teamGlow", "arc_teamColour", "arc_hull_dark" },
+	inEditor = true,
+    autoColourElements = true,
+    editorDontColour = false,
 	colliderDimensions = {
 		widthMultiplier  = 1,
 		heightMultiplier = .722,

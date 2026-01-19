@@ -53,6 +53,9 @@ return {
 	-- Units cannot actually "see" anything, so we need to mathematically define how big the unit is for standoff behaviour among other things.
 	-- CONTROLS: standoff, targeting, repulsion distance.
 	-- Better to have the dimensions too small, than too large. Otherwise units will struggle to get in actual firing range of the target's colliders.
+	inEditor = true,
+    autoColourElements = true,
+    editorDontColour = false,
 	colliderDimensions = {
 		widthMultiplier  = 0.361,
 		heightMultiplier = 0.25,

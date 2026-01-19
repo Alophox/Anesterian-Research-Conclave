@@ -63,7 +63,10 @@ return {
 
     -- Body setup
     scale              = 1.0, -- decimal
-    colliderDimensions = { widthMultiplier = 1, heightMultiplier = 1, lengthMultiplier = 1 }, -- decimals
+    inEditor = true,
+    autoColourElements = true,
+    editorDontColour = false,
+	colliderDimensions = { widthMultiplier = 1, heightMultiplier = 1, lengthMultiplier = 1 }, -- decimals
     mainMesh           = "",   -- string "file/object"
     materials          = {},   -- string array; material listed by name. Fills in material slots on models in order.
     parts = {
