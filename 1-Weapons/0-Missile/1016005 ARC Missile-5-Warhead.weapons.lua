@@ -1,3 +1,6 @@
+weaponConst = {
+	size = "T",
+};
 return {
      id = 3296005,
      name = "Titanic Breach Warhead",
