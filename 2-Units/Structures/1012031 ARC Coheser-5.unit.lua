@@ -55,7 +55,7 @@ return {
 		unitClass = "HEAVY",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
 		health = 5000,
 		health_regen_per_second = healthStats.regen.H,
-		max_regen_frac = healthStats.proportionRegenMax,
+		max_regen_frac = 0, -- healthStats.proportionRegenMax,
 
 		armour = 10,
 		vulnerability_max = 0,

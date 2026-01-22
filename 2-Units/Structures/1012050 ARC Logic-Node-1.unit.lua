@@ -55,7 +55,7 @@ return {
 		unitClass = "LIGHT",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
 		health = 600,
 		health_regen_per_second = healthStats.regen.S,
-		max_regen_frac = 1,
+		max_regen_frac = 0,
 
 		armour = 5,
 		vulnerability_max = 0,

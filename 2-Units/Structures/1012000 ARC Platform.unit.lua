@@ -146,7 +146,7 @@ return {
 		unitClass = "CAPITAL",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
 		health = 20000,
 		health_regen_per_second = 50,
-		max_regen_frac = 1,
+		max_regen_frac = 0,
 
 		armour = 20,
 		vulnerability_max = 0,
@@ -198,6 +198,7 @@ return {
 
 	-- 🟦 COMMAND / Platform
 	isCommand = true, -- Allows Platform AIs to be run on this structure.
+	commandType = "CENTRAL",
 
 	-- 🟦 STRUCTURE
 	isStructure = true,

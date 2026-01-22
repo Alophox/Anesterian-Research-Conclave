@@ -55,7 +55,7 @@ return {
 		unitClass = "MEDIUM",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
 		health = 1000,
 		health_regen_per_second = 20,
-		max_regen_frac = 1,
+		max_regen_frac = 0,
 
 		armour = 10,
 		vulnerability_max = 0.2,

@@ -79,7 +79,7 @@ return {
 		unitClass = "Capital",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
 		health = 6000,              --Health, also the unit's heat capacity.
 		health_regen_per_second = 10, --Health regen per second. Duh.
-		max_regen_frac = 0.2,      --The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
+		max_regen_frac = 0,      --The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
 
 		armour = 40,                --Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
 		vulnerability_max = 0.2,   --Prevent the unit from losing more than X fraction of it's armour.

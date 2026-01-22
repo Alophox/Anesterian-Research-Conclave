@@ -142,7 +142,7 @@ return {
 		unitClass = "TITAN",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
 		health = 20000000,
 		health_regen_per_second = 2000,
-		max_regen_frac = 1,
+		max_regen_frac = 0,
 
 		armour = 10,
 		vulnerability_max = 0.2,
