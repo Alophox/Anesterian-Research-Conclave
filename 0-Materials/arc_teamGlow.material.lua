@@ -9,7 +9,7 @@ return {
         _DamageStart = 0.8,
         _Dead = 0,
         _DitherScale = 1,
-        _EmissionColor = { 0.3, 1.5, 1.5, 1 },
+        _EmissionColor = { 0.4, 1, 1, 1 },
         _Intensity = 1,
         _Metallic = 0,
         _Min = 0.5,
