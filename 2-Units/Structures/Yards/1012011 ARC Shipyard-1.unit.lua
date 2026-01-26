@@ -160,8 +160,8 @@ return {
 	-- 🟨 SPAWNER CONFIGURATION (yards)
 	isSpawner = true,
 	spawner = {
-		spawnOffset = { 0, 1, 0 },      -- XYZ local offset
-		spawnOffsetHeightRandomisation = 0.5, -- Adds +/- Y random variation
+		spawnOffset = { 0, 3, 0 },      -- XYZ local offset
+		spawnOffsetHeightRandomisation = 1, -- Adds +/- Y random variation
 		endRotationUseStructureForward = false, -- Align to structure's forward?
 
 		noUnitGhost = false,            -- If true, don't spawn ghost previews
@@ -170,8 +170,8 @@ return {
 
 		arrivalData = {
 			type = "ARRIVE", 		-- ARRIVETYPE: NONE, ARRIVE (appear and rise up), WARP (like a platform, or Petrel)
-			arrivalDuration = 5, 	-- Seconds that the unit will spend moving from the point it is spawned, to the spawnOffset. AKA, makes it rise into place nicely. Distance = speed * duration
-			approachSpeed = 5.0, 	-- Speed of movement, will extend the distance the unit moves. Distance = speed * duration
+			arrivalDuration = 2, 	-- Seconds that the unit will spend moving from the point it is spawned, to the spawnOffset. AKA, makes it rise into place nicely. Distance = speed * duration
+			approachSpeed = .1, 	-- Speed of movement, will extend the distance the unit moves. Distance = speed * duration
 			keepDisabled = false 	-- The unit will be braindead on spawn and ignore repulsion. Not useful for spawners (used by map events and stuff), but exposed here just incase.
 		}
 	},

@@ -170,8 +170,8 @@ return {
 
 		arrivalData = {
 			type = "ARRIVE", 		-- ARRIVETYPE: NONE, ARRIVE (appear and rise up), WARP (like a platform, or Petrel)
-			arrivalDuration = 1.5, 	-- Seconds that the unit will spend moving from the point it is spawned, to the spawnOffset. AKA, makes it rise into place nicely. Distance = speed * duration
-			approachSpeed = 5.0, 	-- Speed of movement, will extend the distance the unit moves. Distance = speed * duration
+			arrivalDuration = 3, 	-- Seconds that the unit will spend moving from the point it is spawned, to the spawnOffset. AKA, makes it rise into place nicely. Distance = speed * duration
+			approachSpeed = .2, 	-- Speed of movement, will extend the distance the unit moves. Distance = speed * duration
 			keepDisabled = false 	-- The unit will be braindead on spawn and ignore repulsion. Not useful for spawners (used by map events and stuff), but exposed here just incase.
 		}
 	},
