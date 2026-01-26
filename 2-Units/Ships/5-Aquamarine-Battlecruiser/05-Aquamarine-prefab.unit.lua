@@ -9,12 +9,15 @@ prefab.weapon_info.aquamarine = {
 	bow = {}
 }
 
-function prefab.ship.aquamarine.thruster(scaleConst, isGhost)
+function prefab.ship.aquamarine.thruster(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name     = "Thruster",
-		position = { 0, 0, -10.5*.1/scaleConst },
+		position = { 0, 0, -10.5 },
 		rotation = { 0, 0, 0 },
-		scale 	= { .1/scaleConst, .1/scaleConst, .1/scaleConst },
+		scale 	= { 1, 1, 1, },
 	}
 	if not isGhost then
 		prefab_part.thruster = {
@@ -28,7 +31,7 @@ function prefab.ship.aquamarine.thruster(scaleConst, isGhost)
 			{
 				name     = "Thruster Plume",
 				mesh     = "Thruster/Thruster-Plume",
-				materials  = { "arc_thruster-inner", "arc_thruster-middle", "arc_thruster-outer" },
+				materials  = { "arc_thruster_teamGlow", "arc_thruster-middle_teamGlow", "arc_thruster-outer_teamGlow" },
 				position = { 0, 0, 0 }, --XYZ, Thruster subparts should all be on the same Y point, as they all scale along the parent's Y axis.
 				rotation = { 0, 0, 0 },
 				scale 	= { 5, 5, 5 },
@@ -36,7 +39,7 @@ function prefab.ship.aquamarine.thruster(scaleConst, isGhost)
 			{
 				name     = "Thruster Plume",
 				mesh     = "Thruster/Thruster-Plume",
-				materials  = { "arc_thruster-inner", "arc_thruster-middle", "arc_thruster-outer" },
+				materials  = { "arc_thruster_teamGlow", "arc_thruster-middle_teamGlow", "arc_thruster-outer_teamGlow" },
 				position = { -2.5, 0, 0 }, --XYZ, Thruster subparts should all be on the same Y point, as they all scale along the parent's Y axis.
 				rotation = { 0, 0, 0 },
 				scale 	= { 3, 3, 3 },
@@ -44,7 +47,7 @@ function prefab.ship.aquamarine.thruster(scaleConst, isGhost)
 			{
 				name     = "Thruster Plume",
 				mesh     = "Thruster/Thruster-Plume",
-				materials  = { "arc_thruster-inner", "arc_thruster-middle", "arc_thruster-outer" },
+				materials  = { "arc_thruster_teamGlow", "arc_thruster-middle_teamGlow", "arc_thruster-outer_teamGlow" },
 				position = { 2.5, 0, 0 }, --XYZ, Thruster subparts should all be on the same Y point, as they all scale along the parent's Y axis.
 				rotation = { 0, 0, 0 },
 				scale 	= { 3, 3, 3 },
@@ -61,58 +64,63 @@ function prefab.weapon_info.aquamarine.stern.P()
 	}
 	return weapon_info
 end
-function prefab.ship.aquamarine.stern.P(scaleConst, isGhost)
+function prefab.ship.aquamarine.stern.P(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Stern-P",
 		mesh = "5-Aquamarine/Aquamarine-Stern-P",
 		materials = {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_engine", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst, .1/scaleConst, .1/scaleConst,},
 		parts={
 			prefab.weapon.laser.M(
-				{ 0, 3.25*.1/scaleConst, -7.5*.1/scaleConst },
+				{ 0, 3.25, -7.5 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.laser.M(
-				{ 0, -3.25*.1/scaleConst, -7.5*.1/scaleConst },
+				{ 0, -3.25, -7.5 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 
 			prefab.weapon.laser.S(
-				{ -4.25*.1/scaleConst, 0, -7.5*.1/scaleConst },
+				{ -4.25, 0, -7.5 },
 				{ 0, 0, 90 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.laser.S(
-				{ 4.25*.1/scaleConst, 0, -7.5*.1/scaleConst },
+				{ 4.25, 0, -7.5 },
 				{ 0, 0, -90 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			
 			prefab.part.emblem(
-				{ 0, 2.75*.1/scaleConst, -10.5*.1/scaleConst},
+				{ 0, 2.75, -10.5},
 				{ -18.4349, 0, 0 },
-				{ 2.5*.1/scaleConst, 2.5*.1/scaleConst, 2.5*.1/scaleConst },
-				isGhost
+				{ 2.5, 2.5, 2.5 },
+				isGhost, ghostIndex
 			),
 			prefab.part.emblem(
-				{ 0, -2.75*.1/scaleConst, -10.5*.1/scaleConst},
+				{ 0, -2.75, -10.5},
 				{ 18.4349, 0, 180 },
-				{ 2.5*.1/scaleConst, 2.5*.1/scaleConst, 2.5*.1/scaleConst },
-				isGhost
+				{ 2.5, 2.5, 2.5 },
+				isGhost, ghostIndex
 			),
-			prefab.ship.aquamarine.thruster(scaleConst, isGhost),
+			prefab.ship.aquamarine.thruster(scaleConst, isGhost, ghostIndex),
+
+			prefab.ship.aquamarine.stern.P(.1, isGhost, ghostIndex+1),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -124,70 +132,76 @@ function prefab.weapon_info.aquamarine.stern.B()
 	}
 	return weapon_info
 end
-function prefab.ship.aquamarine.stern.B(scaleConst, isGhost)
+function prefab.ship.aquamarine.stern.B(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Stern-B",
 		mesh = "5-Aquamarine/Aquamarine-Stern-B",
 		materials = {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_engine", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst, .1/scaleConst, .1/scaleConst,},
 		parts={
 			prefab.weapon.cannon.S(
-				{ -0*.1/scaleConst, 3.25*.1/scaleConst, -7.5*.1/scaleConst },
+				{ -0, 3.25, -7.5 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			-- prefab.weapon.cannon.S(
-			-- 	{ 1.5*.1/scaleConst, 2.75*.1/scaleConst, -7.25*.1/scaleConst },
+			-- 	{ 1.5, 2.75, -7.25 },
 			-- 	{ 0, 0, 0 },
-			-- 	{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
+			-- 	{ 1, 1, 1, },
 			-- 	isGhost
 			-- ),
 			prefab.weapon.cannon.S(
-				{ -0*.1/scaleConst, -3.25*.1/scaleConst, -7.5*.1/scaleConst },
+				{ -0, -3.25, -7.5 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			-- prefab.weapon.cannon.S(
-			-- 	{ 1.5*.1/scaleConst, -2.75*.1/scaleConst, -7.25*.1/scaleConst },
+			-- 	{ 1.5, -2.75, -7.25 },
 			-- 	{ 0, 0, 180 },
-			-- 	{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
+			-- 	{ 1, 1, 1, },
 			-- 	isGhost
 			-- ),
 
 			prefab.weapon.cannon.M(
-				{ -4.25*.1/scaleConst, 0, -7.5*.1/scaleConst },
+				{ -4.25, 0, -7.5 },
 				{ 0, 0, 90 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.cannon.M(
-				{ 4.25*.1/scaleConst, 0, -7.5*.1/scaleConst },
+				{ 4.25, 0, -7.5 },
 				{ 0, 0, -90 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			
 			prefab.part.emblem(
-				{ 0, 2.75*.1/scaleConst, -10.5*.1/scaleConst},
+				{ 0, 2.75, -10.5},
 				{ -18.4349, 0, 0 },
-				{ 2.5*.1/scaleConst, 2.5*.1/scaleConst, 2.5*.1/scaleConst },
-				isGhost
+				{ 2.5, 2.5, 2.5 },
+				isGhost, ghostIndex
 			),
 			prefab.part.emblem(
-				{ 0, -2.75*.1/scaleConst, -10.5*.1/scaleConst},
+				{ 0, -2.75, -10.5},
 				{ 18.4349, 0, 180 },
-				{ 2.5*.1/scaleConst, 2.5*.1/scaleConst, 2.5*.1/scaleConst },
-				isGhost
+				{ 2.5, 2.5, 2.5 },
+				isGhost, ghostIndex
 			),
-			prefab.ship.aquamarine.thruster(scaleConst, isGhost),
+			prefab.ship.aquamarine.thruster(scaleConst, isGhost, ghostIndex),
+
+			prefab.ship.aquamarine.stern.B(.1, isGhost, ghostIndex+1),
+
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -199,57 +213,63 @@ function prefab.weapon_info.aquamarine.stern.M()
 	}
 	return weapon_info
 end
-function prefab.ship.aquamarine.stern.M(scaleConst, isGhost)
+function prefab.ship.aquamarine.stern.M(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Stern-M",
 		mesh = "5-Aquamarine/Aquamarine-Stern-M",
 		materials = {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_engine", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst, .1/scaleConst, .1/scaleConst,},
 		parts={
 			prefab.weapon.missile.vls.L(
-				{ -1.5*.1/scaleConst, 2.75*.1/scaleConst, -7.5*.1/scaleConst },
+				{ -1.5, 2.75, -7.5 },
 				{ -90, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.vls.L(
-				{ 1.5*.1/scaleConst, 2.75*.1/scaleConst, -7.5*.1/scaleConst },
+				{ 1.5, 2.75, -7.5 },
 				{ -90, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.vls.M(
-				{ -1.5*.1/scaleConst, -2.75*.1/scaleConst, -7.5*.1/scaleConst },
+				{ -1.5, -2.75, -7.5 },
 				{ 90, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.vls.M(
-				{ 1.5*.1/scaleConst, -2.75*.1/scaleConst, -7.5*.1/scaleConst },
+				{ 1.5, -2.75, -7.5 },
 				{ 90, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			
 			prefab.part.emblem(
-				{ 0, 2.5*.1/scaleConst, -9*.1/scaleConst},
+				{ 0, 2.5, -9},
 				{ 0, 0, 0 },
-				{ 1.5*.1/scaleConst, 1.5*.1/scaleConst, 1.5*.1/scaleConst },
-				isGhost
+				{ 1.5, 1.5, 1.5 },
+				isGhost, ghostIndex
 			),
 			prefab.part.emblem(
-				{ 0, -2.5*.1/scaleConst, -9*.1/scaleConst},
+				{ 0, -2.5, -9},
 				{ 0, 0, 180 },
-				{ 1.5*.1/scaleConst, 1.5*.1/scaleConst, 1.5*.1/scaleConst },
-				isGhost
+				{ 1.5, 1.5, 1.5 },
+				isGhost, ghostIndex
 			),
-			prefab.ship.aquamarine.thruster(scaleConst, isGhost),
+			prefab.ship.aquamarine.thruster(scaleConst, isGhost, ghostIndex),
+
+			prefab.ship.aquamarine.stern.M(.1, isGhost, ghostIndex+1),
+
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -263,44 +283,50 @@ function prefab.weapon_info.aquamarine.core.P()
 	}
 	return weapon_info
 end
-function prefab.ship.aquamarine.core.P(scaleConst, isGhost)
+function prefab.ship.aquamarine.core.P(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Core-P",
 		mesh = "5-Aquamarine/Aquamarine-Core-P",
-		materials = {"arc_teamGlow", "arc_hull", "arc_teamColour", },
+		materials = {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst, .1/scaleConst, .1/scaleConst,},
 		parts={
 			prefab.weapon.laser.L(
-				{ 0, 2.75*.1/scaleConst, -1.75*.1/scaleConst },
+				{ 0, 2.75, -1.75 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.laser.L(
-				{ 0, -2.75*.1/scaleConst, -1.75*.1/scaleConst },
+				{ 0, -2.75, -1.75 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 
 			prefab.weapon.laser.S(
-				{ 0, 2.25*.1/scaleConst, 2*.1/scaleConst },
+				{ 0, 2.25, 2 },
 				{ 18.4349, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.laser.S(
-				{ 0, -2.25*.1/scaleConst, 2*.1/scaleConst },
+				{ 0, -2.25, 2 },
 				{ -18.4349, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
+
+			prefab.ship.aquamarine.core.P(.1, isGhost, ghostIndex+1),
+
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -312,57 +338,63 @@ function prefab.weapon_info.aquamarine.core.B()
 	}
 	return weapon_info
 end
-function prefab.ship.aquamarine.core.B(scaleConst, isGhost)
+function prefab.ship.aquamarine.core.B(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Core-B",
 		mesh = "5-Aquamarine/Aquamarine-Core-B",
-		materials = {"arc_teamGlow", "arc_hull", "arc_teamColour", },
+		materials = {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst, .1/scaleConst, .1/scaleConst,},
 		parts={
 			prefab.weapon.cannon.L(
-				{ 0, 2.75*.1/scaleConst, -1.75*.1/scaleConst },
+				{ 0, 2.75, -1.75 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.cannon.L(
-				{ 0, -2.75*.1/scaleConst, -1.75*.1/scaleConst },
+				{ 0, -2.75, -1.75 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 
 			prefab.weapon.cannon.S(
-				{ -4.25*.1/scaleConst, 0, -.25*.1/scaleConst },
+				{ -4.25, 0, -.25 },
 				{ 0, 0, 90 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.cannon.S(
-				{ 4.25*.1/scaleConst, 0, -.25*.1/scaleConst },
+				{ 4.25, 0, -.25 },
 				{ 0, 0, -90 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 
 			-- prefab.weapon.cannon.S(
-			-- 	{ 0, 2.25*.1/scaleConst, 2*.1/scaleConst },
+			-- 	{ 0, 2.25, 2 },
 			-- 	{ 18.4349, 0, 0 },
-			-- 	{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
+			-- 	{ 1, 1, 1, },
 			-- 	isGhost
 			-- ),
 			-- prefab.weapon.cannon.S(
-			-- 	{ 0, -2.25*.1/scaleConst, 2*.1/scaleConst },
+			-- 	{ 0, -2.25, 2 },
 			-- 	{ -18.4349, 0, 180 },
-			-- 	{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
+			-- 	{ 1, 1, 1, },
 			-- 	isGhost
 			-- ),
+
+			prefab.ship.aquamarine.core.B(.1, isGhost, ghostIndex+1),
+
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -374,68 +406,74 @@ function prefab.weapon_info.aquamarine.core.M()
 	}
 	return weapon_info
 end
-function prefab.ship.aquamarine.core.M(scaleConst, isGhost)
+function prefab.ship.aquamarine.core.M(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Core-M",
 		mesh = "5-Aquamarine/Aquamarine-Core-M",
 		materials = {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst, .1/scaleConst, .1/scaleConst,},
 		parts={
 			prefab.weapon.missile.hls.L(
-				{ -3.5*.1/scaleConst, 2*.1/scaleConst, -1.75*.1/scaleConst },
+				{ -3.5, 2, -1.75 },
 				{ 0, 0, 45 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.hls.L(
-				{ 3.5*.1/scaleConst, 2*.1/scaleConst, -1.75*.1/scaleConst },
+				{ 3.5, 2, -1.75 },
 				{ 0, 0, -45 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.hls.L(
-				{ -3.5*.1/scaleConst, -2*.1/scaleConst, -1.75*.1/scaleConst },
+				{ -3.5, -2, -1.75 },
 				{ 0, 0, 135 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.hls.L(
-				{ 3.5*.1/scaleConst, -2*.1/scaleConst, -1.75*.1/scaleConst },
+				{ 3.5, -2, -1.75 },
 				{ 0, 0, -135 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 
 			prefab.weapon.missile.vls.S(
-				{ -1.75*.1/scaleConst, 2.25*.1/scaleConst, 2*.1/scaleConst },
+				{ -1.75, 2.25, 2 },
 				{ -90+18.4349, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.vls.S(
-				{ 1.75*.1/scaleConst, 2.25*.1/scaleConst, 2*.1/scaleConst },
+				{ 1.75, 2.25, 2 },
 				{ -90+18.4349, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.vls.S(
-				{ -1.75*.1/scaleConst, -2.25*.1/scaleConst, 2*.1/scaleConst },
+				{ -1.75, -2.25, 2 },
 				{ 90-18.4349, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.vls.S(
-				{ 1.75*.1/scaleConst, -2.25*.1/scaleConst, 2*.1/scaleConst },
+				{ 1.75, -2.25, 2 },
 				{ 90-18.4349, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
+
+			prefab.ship.aquamarine.core.M(.1, isGhost, ghostIndex+1),
+
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -449,57 +487,62 @@ function prefab.weapon_info.aquamarine.bow.P()
 	}
 	return weapon_info
 end
-function prefab.ship.aquamarine.bow.P(scaleConst, isGhost)
+function prefab.ship.aquamarine.bow.P(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Bow-P",
 		mesh = "5-Aquamarine/Aquamarine-Bow-P",
-		materials = {"arc_teamGlow", "arc_hull", "arc_teamColour", },
+		materials = {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst, .1/scaleConst, .1/scaleConst,},
 		parts={
 			prefab.weapon.laser.S(
-				{ -.9999*.1/scaleConst, 1.75*.1/scaleConst, 5.5*.1/scaleConst },
+				{ -.9999, 1.75, 5.5 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.laser.S(
-				{ .9999*.1/scaleConst, 1.75*.1/scaleConst, 5.5*.1/scaleConst },
+				{ .9999, 1.75, 5.5 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.laser.S(
-				{ -.9999*.1/scaleConst, -1.75*.1/scaleConst, 5.5*.1/scaleConst },
+				{ -.9999, -1.75, 5.5 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.laser.S(
-				{ .9999*.1/scaleConst, -1.75*.1/scaleConst, 5.5*.1/scaleConst },
+				{ .9999, -1.75, 5.5 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 
 
 			prefab.weapon.laser.M(
-				{ 0, 1*.1/scaleConst, 9.25*.1/scaleConst },
+				{ 0, 1, 9.25 },
 				{ 18.4349, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.laser.M(
-				{ 0, -1*.1/scaleConst, 9.25*.1/scaleConst },
+				{ 0, -1, 9.25 },
 				{ -18.4349, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
+
+			prefab.ship.aquamarine.bow.P(.1, isGhost, ghostIndex+1),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -511,69 +554,75 @@ function prefab.weapon_info.aquamarine.bow.B()
 	}
 	return weapon_info
 end
-function prefab.ship.aquamarine.bow.B(scaleConst, isGhost)
+function prefab.ship.aquamarine.bow.B(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Bow-B",
 		mesh = "5-Aquamarine/Aquamarine-Bow-B",
-		materials = {"arc_teamGlow", "arc_hull", "arc_teamColour", },
+		materials = {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst, .1/scaleConst, .1/scaleConst,},
 		parts={
 			prefab.weapon.cannon.M(
-				{ -0*.1/scaleConst, 1.75*.1/scaleConst, 5.75*.1/scaleConst },
+				{ -0, 1.75, 5.75 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			-- prefab.weapon.cannon.S(
-			-- 	{ .9999*.1/scaleConst, 1.75*.1/scaleConst, 6.25*.1/scaleConst },
+			-- 	{ .9999, 1.75, 6.25 },
 			-- 	{ 0, 0, 0 },
-			-- 	{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
+			-- 	{ 1, 1, 1, },
 			-- 	isGhost
 			-- ),
 			prefab.weapon.cannon.M(
-				{ -0*.1/scaleConst, -1.75*.1/scaleConst, 5.75*.1/scaleConst },
+				{ -0, -1.75, 5.75 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			-- prefab.weapon.cannon.S(
-			-- 	{ .9999*.1/scaleConst, -1.75*.1/scaleConst, 6.25*.1/scaleConst },
+			-- 	{ .9999, -1.75, 6.25 },
 			-- 	{ 0, 0, 180 },
-			-- 	{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
+			-- 	{ 1, 1, 1, },
 			-- 	isGhost
 			-- ),
 
 
 			prefab.weapon.cannon.S(
-				{ -3*.1/scaleConst, 1*.1/scaleConst, 7*.1/scaleConst },
+				{ -3, 1, 7 },
 				{ 0, 18.4349, 46.5 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.cannon.S(
-				{ 3*.1/scaleConst, 1*.1/scaleConst, 7*.1/scaleConst },
+				{ 3, 1, 7 },
 				{ 0, -18.4349, -46.5 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.cannon.S(
-				{ -3*.1/scaleConst, -1*.1/scaleConst, 7*.1/scaleConst },
+				{ -3, -1, 7 },
 				{ 0, 18.4349, 134.5 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.cannon.S(
-				{ 3*.1/scaleConst, -1*.1/scaleConst, 7*.1/scaleConst },
+				{ 3, -1, 7 },
 				{ 0, -18.4349, -134.5 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
+
+			prefab.ship.aquamarine.bow.B(.1, isGhost, ghostIndex+1),
+
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -584,43 +633,49 @@ function prefab.weapon_info.aquamarine.bow.M()
 	}
 	return weapon_info
 end
-function prefab.ship.aquamarine.bow.M(scaleConst, isGhost)
+function prefab.ship.aquamarine.bow.M(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Bow-M",
 		mesh = "5-Aquamarine/Aquamarine-Bow-M",
 		materials = {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst, .1/scaleConst, .1/scaleConst,},
 		parts={
 			prefab.weapon.missile.hls.L(
-				{ -1.75*.1/scaleConst, 1.75*.1/scaleConst, 5.5*.1/scaleConst },
+				{ -1.75, 1.75, 5.5 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.hls.L(
-				{ 1.75*.1/scaleConst, 1.75*.1/scaleConst, 5.5*.1/scaleConst },
+				{ 1.75, 1.75, 5.5 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.hls.L(
-				{ -1.75*.1/scaleConst, -1.75*.1/scaleConst, 5.5*.1/scaleConst },
+				{ -1.75, -1.75, 5.5 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.hls.L(
-				{ 1.75*.1/scaleConst, -1.75*.1/scaleConst, 5.5*.1/scaleConst },
+				{ 1.75, -1.75, 5.5 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1, },
+				isGhost, ghostIndex
 			),
+
+			prefab.ship.aquamarine.bow.M(.1, isGhost, ghostIndex+1),
+
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end

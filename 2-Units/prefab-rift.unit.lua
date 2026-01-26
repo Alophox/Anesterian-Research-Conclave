@@ -1,8 +1,11 @@
 
-function prefab.part.rift(pos, rot, sca, scaCo, isGhost)
+function prefab.part.rift(pos, rot, sca, scaCo, isGhost, ghostIndex)
 	if isGhost then
 		return {}
 	end
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Rift Base",
 		rotation = rot,
@@ -159,7 +162,7 @@ function prefab.part.rift(pos, rot, sca, scaCo, isGhost)
 		
 	}
 	-- if isGhost then
-	-- 	prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+	-- 	prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	-- end
     return prefab_part
 end

@@ -6,12 +6,15 @@ prefab.weapon_info.topaz = {
 	stern = {},
 	bow = {}
 }
-function prefab.ship.topaz.thruster(scaleConst, isGhost)
+function prefab.ship.topaz.thruster(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name     = "Thruster",
-		position = { 0, 0, -6.5*.1/scaleConst },
+		position = { 0, 0, -6.5 },
 		rotation = { 0, 0, 0 },
-		scale 	= { .1/scaleConst, .1/scaleConst, .1/scaleConst },
+		scale 	= { 1, 1, 1 },
 	}
 	if not isGhost then
 		prefab_part.thruster = {
@@ -25,7 +28,7 @@ function prefab.ship.topaz.thruster(scaleConst, isGhost)
 			{
 				name     = "Thruster Plume",
 				mesh     = "Thruster/Thruster-Plume",
-				materials  = { "arc_thruster-inner", "arc_thruster-middle", "arc_thruster-outer" },
+				materials  = { "arc_thruster_teamGlow", "arc_thruster-middle_teamGlow", "arc_thruster-outer_teamGlow" },
 				position = { 0, 0, 0 }, --XYZ, Thruster subparts should all be on the same Y point, as they all scale along the parent's Y axis.
 				rotation = { 0, 0, 0 },
 				scale 	= { 5, 5, 5 },
@@ -41,45 +44,50 @@ function prefab.weapon_info.topaz.stern.P()
 	}
 	return weapon_info
 end
-function prefab.ship.topaz.stern.P(scaleConst, isGhost)
+function prefab.ship.topaz.stern.P(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Topaz-Stern-P",
 		mesh = "3-Topaz/Topaz-Stern-P",
-		materials = {"arc_teamGlow", "arc_hull", "arc_engine", "arc_teamColour", },
+		materials = { "arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			prefab.weapon.laser.M(
-				{ 0, 1.75*.1/scaleConst, -2.5*.1/scaleConst },
+				{ 0, 1.75, -2.5 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.laser.M(
-				{ 0, -1.75*.1/scaleConst, -2.5*.1/scaleConst },
+				{ 0, -1.75, -2.5 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			
 			prefab.part.emblem(
-				{ 0, 1.75*.1/scaleConst, -5*.1/scaleConst},
+				{ 0, 1.75, -5},
 				{ 0, 0, 0 },
-				{ 1.5*.1/scaleConst, 1.5*.1/scaleConst, 1.5*.1/scaleConst },
-				isGhost
+				{ 1.5, 1.5, 1.5 },
+				isGhost, ghostIndex
 			),
 			prefab.part.emblem(
-				{ 0, -1.75*.1/scaleConst, -5*.1/scaleConst},
+				{ 0, -1.75, -5},
 				{ 0, 0, 180 },
-				{ 1.5*.1/scaleConst, 1.5*.1/scaleConst, 1.5*.1/scaleConst },
-				isGhost
+				{ 1.5, 1.5, 1.5 },
+				isGhost, ghostIndex
 			),
-			prefab.ship.topaz.thruster(scaleConst, isGhost),
+			prefab.ship.topaz.thruster(scaleConst, isGhost, ghostIndex),
+
+			prefab.ship.topaz.stern.P(.1, isGhost, ghostIndex+1),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -91,58 +99,63 @@ function prefab.weapon_info.topaz.stern.B()
 	}
 	return weapon_info
 end
-function prefab.ship.topaz.stern.B(scaleConst, isGhost)
+function prefab.ship.topaz.stern.B(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Topaz-Stern-B",
 		mesh = "3-Topaz/Topaz-Stern-B",
-		materials = {"arc_teamGlow", "arc_hull", "arc_engine", "arc_teamColour", },
+		materials = { "arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			-- prefab.weapon.cannon.S(
-			-- 	{ 0, 1.75*.1/scaleConst, -1.75*.1/scaleConst },
+			-- 	{ 0, 1.75, -1.75 },
 			-- 	{ 0, 0, 0 },
-			-- 	{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
+			-- 	{ 1, 1, 1 },
 			-- 	isGhost
 			-- ),
 			-- prefab.weapon.cannon.S(
-			-- 	{ 0, -1.75*.1/scaleConst, -1.75*.1/scaleConst },
+			-- 	{ 0, -1.75, -1.75 },
 			-- 	{ 0, 0, 180 },
-			-- 	{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
+			-- 	{ 1, 1, 1 },
 			-- 	isGhost
 			-- ),
 			prefab.weapon.cannon.M(
-				{ 2.25*.1/scaleConst, 0, -3.25*.1/scaleConst },
+				{ 2.25, 0, -2 },
 				{ 0, 0, -90 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.cannon.M(
-				{ -2.25*.1/scaleConst, 0, -3.25*.1/scaleConst },
+				{ -2.25, 0, -2 },
 				{ 0, 0, 90 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 
 			prefab.part.emblem(
-				{ 0, 1.75*.1/scaleConst, -4.25*.1/scaleConst},
+				{ 0, 1.75, -4.25},
 				{ 0, 0, 0 },
-				{ 1.5*.1/scaleConst, 1.5*.1/scaleConst, 1.5*.1/scaleConst },
-				isGhost
+				{ 1.5, 1.5, 1.5 },
+				isGhost, ghostIndex
 			),
 			prefab.part.emblem(
-				{ 0, -1.75*.1/scaleConst, -4.25*.1/scaleConst},
+				{ 0, -1.75, -4.25},
 				{ 0, 0, 180 },
-				{ 1.5*.1/scaleConst, 1.5*.1/scaleConst, 1.5*.1/scaleConst },
-				isGhost
+				{ 1.5, 1.5, 1.5 },
+				isGhost, ghostIndex
 			),
 
-			prefab.ship.topaz.thruster(scaleConst, isGhost),
+			prefab.ship.topaz.thruster(scaleConst, isGhost, ghostIndex),
+
+			prefab.ship.topaz.stern.B(.1, isGhost, ghostIndex+1),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -153,58 +166,63 @@ function prefab.weapon_info.topaz.stern.M()
 	}
 	return weapon_info
 end
-function prefab.ship.topaz.stern.M(scaleConst, isGhost)
+function prefab.ship.topaz.stern.M(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Topaz-Stern-M",
 		mesh = "3-Topaz/Topaz-Stern-M",
-		materials = {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_engine", "arc_teamColour", },
+		materials = {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			prefab.weapon.missile.vls.M(
-				{ 2.25*.1/scaleConst, .75*.1/scaleConst, -2*.1/scaleConst },
+				{ 2.25, .75, -2 },
 				{ 0, 90, 90 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.vls.M(
-				{ 2.25*.1/scaleConst, -.75*.1/scaleConst, -2*.1/scaleConst },
+				{ 2.25, -.75, -2 },
 				{ 0, 90, 90 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.vls.M(
-				{ -2.25*.1/scaleConst, .75*.1/scaleConst, -2*.1/scaleConst },
+				{ -2.25, .75, -2 },
 				{ 0, -90, -90 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.vls.M(
-				{ -2.25*.1/scaleConst, -.75*.1/scaleConst, -2*.1/scaleConst },
+				{ -2.25, -.75, -2 },
 				{ 0, -90, -90 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			
 			prefab.part.emblem(
-				{ 0, 1.5*.1/scaleConst, -4.25*.1/scaleConst},
+				{ 0, 1.5, -4.25},
 				{ 0, 0, 0 },
-				{ 1*.1/scaleConst, 1*.1/scaleConst, 1*.1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.part.emblem(
-				{ 0, -1.5*.1/scaleConst, -4.25*.1/scaleConst},
+				{ 0, -1.5, -4.25},
 				{ 0, 0, 180 },
-				{ 1*.1/scaleConst, 1*.1/scaleConst, 1*.1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 
-			prefab.ship.topaz.thruster(scaleConst, isGhost),
+			prefab.ship.topaz.thruster(scaleConst, isGhost, ghostIndex),
+
+			prefab.ship.topaz.stern.M(.1, isGhost, ghostIndex+1),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -216,37 +234,42 @@ function prefab.weapon_info.topaz.bow.P()
 	}
 	return weapon_info
 end
-function prefab.ship.topaz.bow.P(scaleConst, isGhost)
+function prefab.ship.topaz.bow.P(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Topaz-Bow-P",
 		mesh = "3-Topaz/Topaz-Bow-P",
-		materials = {"arc_teamGlow", "arc_hull", "arc_teamColour", },
+		materials = { "arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			prefab.weapon.laser.S(
-				{ 0, 1.25*.1/scaleConst, 3*.1/scaleConst },
+				{ 0, 1.25, 3 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.laser.S(
-				{ 0, .75*.1/scaleConst, 6*.1/scaleConst },
+				{ 0, .75, 6 },
 				{ 18.4349, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.laser.S(
-				{ 0, -.75*.1/scaleConst, 6*.1/scaleConst },
+				{ 0, -.75, 6 },
 				{ -18.4349, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
+
+			prefab.ship.topaz.bow.P(.1, isGhost, ghostIndex+1),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -258,38 +281,43 @@ function prefab.weapon_info.topaz.bow.B()
 	}
 	return weapon_info
 end
-function prefab.ship.topaz.bow.B(scaleConst, isGhost)
+function prefab.ship.topaz.bow.B(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Topaz-Bow-B",
 		mesh = "3-Topaz/Topaz-Bow-B",
-		materials = {"arc_teamGlow", "arc_hull", "arc_teamColour", },
+		materials = { "arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			prefab.weapon.cannon.S(
-				{ 1*.1/scaleConst, 1.25*.1/scaleConst, 2.75*.1/scaleConst },
+				{ 1, 1.25, 2.75 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.cannon.S(
-				{ -1*.1/scaleConst, 1.25*.1/scaleConst, 2.75*.1/scaleConst },
+				{ -1, 1.25, 2.75 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			
 			prefab.weapon.cannon.S(
-				{ 0, -1.25*.1/scaleConst, 2.75*.1/scaleConst },
+				{ 0, -1.25, 2.75 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
+
+			prefab.ship.topaz.bow.B(.1, isGhost, ghostIndex+1),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -301,56 +329,61 @@ function prefab.weapon_info.topaz.bow.M()
 	}
 	return weapon_info
 end
-function prefab.ship.topaz.bow.M(scaleConst, isGhost)
+function prefab.ship.topaz.bow.M(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Topaz-Bow-M",
 		mesh = "3-Topaz/Topaz-Bow-M",
-		materials = {"arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_teamColour", },
+		materials = { "arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			prefab.weapon.missile.hls.S(
-				{ 1*.1/scaleConst, 1.25*.1/scaleConst, 2.5*.1/scaleConst },
+				{ 1, 1.25, 2.5 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.hls.S(
-				{ -1*.1/scaleConst, 1.25*.1/scaleConst, 2.5*.1/scaleConst },
+				{ -1, 1.25, 2.5 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.hls.S(
-				{ 1*.1/scaleConst, -1.25*.1/scaleConst, 2.5*.1/scaleConst },
+				{ 1, -1.25, 2.5 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.hls.S(
-				{ -1*.1/scaleConst, -1.25*.1/scaleConst, 2.5*.1/scaleConst },
+				{ -1, -1.25, 2.5 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			
 			prefab.weapon.missile.vls.S(
-				{ 1*.1/scaleConst, 1.5*.1/scaleConst, .75*.1/scaleConst },
+				{ 1, 1.5, .75 },
 				{ -90+18.4349, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.vls.S(
-				{ -1*.1/scaleConst, 1.5*.1/scaleConst, .75*.1/scaleConst },
+				{ -1, 1.5, .75 },
 				{ -90+18.4349, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
+
+			prefab.ship.topaz.bow.M(.1, isGhost, ghostIndex+1),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end

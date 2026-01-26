@@ -5,7 +5,10 @@ prefab.weapon_info.hangar = {}
 function prefab.weapon_info.hangar.quartz(count)
 	return { 3295600, 1 * count, 3291000 }
 end
-function prefab.weapon.hangar.quartz(pos, rot, sca, isGhost)
+function prefab.weapon.hangar.quartz(pos, rot, sca, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Quartz Hangar",
 		mesh      = "Hangar/Hangar",
@@ -16,7 +19,7 @@ function prefab.weapon.hangar.quartz(pos, rot, sca, isGhost)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -51,7 +54,10 @@ function prefab.weapon_info.hangar.ruby(count)
 		{{ 3295612, 1 * count, 3291102 }},
 	});
 end
-function prefab.weapon.hangar.ruby(pos, rot, sca, isGhost)
+function prefab.weapon.hangar.ruby(pos, rot, sca, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Ruby Hangar",
 		mesh      = "Hangar/Hangar-1",
@@ -62,7 +68,7 @@ function prefab.weapon.hangar.ruby(pos, rot, sca, isGhost)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -131,7 +137,10 @@ function prefab.weapon_info.hangar.citrine(count)
 		{{ 3295622, 1 * count, 3291202 }},
 	});
 end
-function prefab.weapon.hangar.citrine(pos, rot, sca, isGhost)
+function prefab.weapon.hangar.citrine(pos, rot, sca, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Ruby Hangar",
 		mesh      = "Hangar/Hangar-2",
@@ -142,7 +151,7 @@ function prefab.weapon.hangar.citrine(pos, rot, sca, isGhost)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{

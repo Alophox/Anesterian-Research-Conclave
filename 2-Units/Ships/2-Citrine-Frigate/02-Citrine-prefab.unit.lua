@@ -4,12 +4,15 @@ prefab.ship.citrine = {
 prefab.weapon_info.citrine = {
 	core = {}
 }
-function prefab.ship.citrine.thruster(scaleConst, isGhost)
+function prefab.ship.citrine.thruster(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name     = "Thruster",
-		position = { 0, 0, -3.75*.1/scaleConst },
+		position = { 0, 0, -3.75 },
 		rotation = { 0, 0, 0 },
-		scale 	= { .1/scaleConst, .1/scaleConst, .1/scaleConst },
+		scale 	= { 1, 1, 1 },
 	}
 	if not isGhost then
 		prefab_part.thruster = {
@@ -23,7 +26,7 @@ function prefab.ship.citrine.thruster(scaleConst, isGhost)
 			{
 				name     = "Thruster Plume",
 				mesh     = "Thruster/Thruster-Plume",
-				materials  = { "arc_thruster-inner", "arc_thruster-middle", "arc_thruster-outer" },
+				materials  = { "arc_thruster_teamGlow", "arc_thruster-middle_teamGlow", "arc_thruster-outer_teamGlow" },
 				position = { 0, 0, 0 }, --XYZ, Thruster subparts should all be on the same Y point, as they all scale along the parent's Y axis.
 				rotation = { 0, 0, 0 },
 				scale 	= { 3, 3, 3 },
@@ -35,97 +38,142 @@ end
 
 function prefab.weapon_info.citrine.core.G()
 	weapon_info = {
-		prefab.weapon_info.lightning.M(1),
-		prefab.weapon_info.lightning.S(2),
+		-- prefab.weapon_info.lightning.M(1),
+		prefab.weapon_info.lightning.S(4),
 	}
 	return weapon_info
 end
-function prefab.ship.citrine.core.G(scaleConst, isGhost)
+function prefab.ship.citrine.core.G(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Citrine-Core-G",
+		mesh = "2-Citrine/Citrine-Core-G",
+		materials = { "arc_teamGlow", "arc_hull", "arc_hull_dark", "arc_teamColour" },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
-			prefab.weapon.lightning.M(
-				{ 0, 1.25*.1/scaleConst, -.5*.1/scaleConst },
+			prefab.weapon.lightning.S(
+				{ 0, 1.25, -.5 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.lightning.S(
-				{ 0, -1.25*.1/scaleConst, -.5*.1/scaleConst },
+				{ 0, -1.25, -.5 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.lightning.S(
-				{ 0, -0.75*.1/scaleConst, 2.75*.1/scaleConst },
+				{ 0, 0.75, 2.75 },
+				{ 18.4349, 0, 0 },
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
+			),
+			prefab.weapon.lightning.S(
+				{ 0, -0.75, 2.75 },
 				{ -18.4349, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 
 			prefab.part.emblem(
-				{ 0, 1.25*.1/scaleConst, -2.5*.1/scaleConst},
+				{ 0, 1.25, -2.5},
 				{ 0, 0, 0 },
-				{ 1*.1/scaleConst, 1*.1/scaleConst, 1*.1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.part.emblem(
-				{ 0, -1.25*.1/scaleConst, -2.5*.1/scaleConst},
+				{ 0, -1.25, -2.5},
 				{ 0, 0, 180 },
-				{ 1*.1/scaleConst, 1*.1/scaleConst, 1*.1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 
-			prefab.ship.citrine.thruster(scaleConst, isGhost),
+			prefab.ship.citrine.thruster(scaleConst, isGhost, ghostIndex),
+
+			prefab.ship.citrine.core.G(.1, isGhost, ghostIndex+1),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
 
 function prefab.weapon_info.citrine.core.A()
 	weapon_info = {
-		prefab.weapon_info.railgun.L(1),
+		prefab.weapon_info.railgun.S(4),
 	}
 	return weapon_info
 end
-function prefab.ship.citrine.core.A(scaleConst, isGhost)
+function prefab.ship.citrine.core.A(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Citrine-Core-A",
+		mesh = "2-Citrine/Citrine-Core-A",
+		materials = { "arc_teamGlow", "arc_hull", "arc_hull_dark", "arc_teamColour" },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
-			prefab.weapon.railgun.L(
-				{ 0, .75*.1/scaleConst, -.5*.1/scaleConst },
+			-- prefab.weapon.railgun.L(
+			-- 	{ 0, .75, -.5 },
+			-- 	{ 0, 0, 0 },
+			-- 	{ .9999, .9999, .9999 }, --stop z-fighting today!
+			-- 	isGhost, ghostIndex
+			-- ),
+
+			prefab.weapon.railgun.S(
+				{ -.75-.125/4, .5, -.5 },
 				{ 0, 0, 0 },
-				{ .09999/scaleConst, .09999/scaleConst, .09999/scaleConst }, --stop z-fighting today!
-				isGhost
+				{ 1, 1, 1 }, --stop z-fighting today!
+				isGhost, ghostIndex
+			),
+			prefab.weapon.railgun.S(
+				{ .75+.125/4, .5, -.5 },
+				{ 0, 0, 0 },
+				{ 1, 1, 1 }, --stop z-fighting today!
+				isGhost, ghostIndex
+			),
+			prefab.weapon.railgun.S(
+				{ -.75-.125/4, -.5, -.5 },
+				{ 0, 0, 180 },
+				{ 1, 1, 1 }, --stop z-fighting today!
+				isGhost, ghostIndex
+			),
+			prefab.weapon.railgun.S(
+				{ .75+.125/4, -.5, -.5 },
+				{ 0, 0, 180 },
+				{ 1, 1, 1 }, --stop z-fighting today!
+				isGhost, ghostIndex
 			),
 
 			prefab.part.emblem(
-				{ 0, 1*.1/scaleConst, -3*.1/scaleConst},
+				{ 0, 1, -3 },
 				{ 18.4349, 0, 0 },
-				{ .8*.1/scaleConst, .8*.1/scaleConst, 1*.1/scaleConst },
-				isGhost
+				{ .8, .8, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.part.emblem(
-				{ 0, -1*.1/scaleConst, -3*.1/scaleConst},
+				{ 0, -1, -3 },
 				{ -18.4349, 0, 180 },
-				{ .8*.1/scaleConst, .8*.1/scaleConst, .8*.1/scaleConst },
-				isGhost
+				{ .8, .8, 1 },
+				isGhost, ghostIndex
 			),
 
-			prefab.ship.citrine.thruster(scaleConst, isGhost),
+			prefab.ship.citrine.thruster(scaleConst, isGhost, ghostIndex),
+
+			prefab.ship.citrine.core.A(.1, isGhost, ghostIndex+1),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -138,58 +186,65 @@ function prefab.weapon_info.citrine.core.C()
 	}
 	return weapon_info
 end
-function prefab.ship.citrine.core.C(scaleConst, isGhost)
+function prefab.ship.citrine.core.C(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Citrine-Core-C",
+		mesh = "2-Citrine/Citrine-Core-C",
+		materials = { "arc_teamGlow", "arc_hull", "arc_hull_dark", "arc_teamColour" },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			prefab.weapon.laser.S(
-				{ 0, 1*.1/scaleConst, .5*.1/scaleConst },
+				{ 0, 1, .5 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst }, --stop z-fighting today!
-				isGhost
+				{ 1, 1, 1 }, --stop z-fighting today!
+				isGhost, ghostIndex
 			),
 
 			prefab.weapon.hangar.quartz(
-				{ 0, 0, 2.75*.1/scaleConst },
+				{ 0, 0, 2.75 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 
 			prefab.weapon.missile.hls.S(
-				{ -.75*.1/scaleConst, 1*.1/scaleConst, -.5*.1/scaleConst },
+				{ -.75, 1, -.5 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.hls.S(
-				{ .75*.1/scaleConst, 1*.1/scaleConst, -.5*.1/scaleConst },
+				{ .75, 1, -.5 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 
 			prefab.part.emblem(
-				{ 0, 1.25*.1/scaleConst, -2.75*.1/scaleConst},
+				{ 0, 1.25, -2.75},
 				{ 0, 0, 0 },
-				{ 1*.1/scaleConst, 1*.1/scaleConst, 1*.1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.part.emblem(
-				{ 0, 1.25*.1/scaleConst, -2.75*.1/scaleConst},
+				{ 0, 1.25, -2.75},
 				{ 0, 0, 180 },
-				{ 1*.1/scaleConst, 1*.1/scaleConst, 1*.1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 
-			prefab.ship.citrine.thruster(scaleConst, isGhost),
+			prefab.ship.citrine.thruster(scaleConst, isGhost, ghostIndex),
+
+			prefab.ship.citrine.core.C(.1, isGhost, ghostIndex+1),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end

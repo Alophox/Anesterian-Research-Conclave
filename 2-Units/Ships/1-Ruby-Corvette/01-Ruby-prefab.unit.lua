@@ -5,12 +5,15 @@ prefab.weapon_info.ruby = {
 	core = {}
 }
 
-function prefab.ship.ruby.thruster(scaleConst, isGhost)
+function prefab.ship.ruby.thruster(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name     = "Thruster",
-		position = { 0, 0, -2.25*.1/scaleConst },
+		position = { 0, 0, -2.25 },
 		rotation = { 0, 0, 0 },
-		scale 	= { .1/scaleConst, .1/scaleConst, .1/scaleConst },
+		scale 	= { 1, 1, 1 },
 	}
 	if not isGhost then
 		prefab_part.thruster = {
@@ -24,7 +27,7 @@ function prefab.ship.ruby.thruster(scaleConst, isGhost)
 			{
 				name     = "Thruster Plume",
 				mesh     = "Thruster/Thruster-Plume",
-				materials  = { "arc_thruster-inner", "arc_thruster-middle", "arc_thruster-outer" },
+				materials  = { "arc_thruster_teamGlow", "arc_thruster-middle_teamGlow", "arc_thruster-outer_teamGlow" },
 				position = { 0, 0, 0 }, --XYZ, Thruster subparts should all be on the same Y point, as they all scale along the parent's Y axis.
 				rotation = { 0, 0, 0 },
 				scale 	= { 2, 2, 2 },
@@ -40,55 +43,53 @@ function prefab.weapon_info.ruby.core.P()
 	}
 	return weapon_info
 end
-function prefab.ship.ruby.core.P(scaleConst, isGhost)
+function prefab.ship.ruby.core.P(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Ruby-Core-P",
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		mesh = "1-Ruby/Ruby-Core-P",
+		materials = { "arc_teamGlow", "arc_hull", "arc_hull_dark", "arc_engine", "arc_teamColour" },
+
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			prefab.weapon.laser.S(
-				{ 0, 0.75*.1/scaleConst, -.5*.1/scaleConst },
+				{ 0, 0.75, -.5 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.laser.S(
-				{ 0, -0.75*.1/scaleConst, -.5*.1/scaleConst },
+				{ 0, -0.75, -.5 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 
 			prefab.part.emblem(
-				{ 0, .75*.1/scaleConst, -2*.1/scaleConst},
+				{ 0, .75, -2},
 				{ 0, 0, 0 },
-				{ .5*.1/scaleConst, .5*.1/scaleConst, .5*.1/scaleConst },
-				isGhost
+				{ .5, .5, .5 },
+				isGhost, ghostIndex
 			),
 			prefab.part.emblem(
-				{ 0, -.75*.1/scaleConst, -2*.1/scaleConst},
+				{ 0, -.75, -2},
 				{ 0, 0, 180 },
-				{ .5*.1/scaleConst, .5*.1/scaleConst, .5*.1/scaleConst },
-				isGhost
+				{ .5, .5, .5 },
+				isGhost, ghostIndex
 			),
 
-			prefab.ship.ruby.thruster(scaleConst, isGhost),
+			prefab.ship.ruby.thruster(scaleConst, isGhost, ghostIndex),
 
-		-- {
-		-- 	name     = "Module Example",			
-		-- 	position = { 1, 0, 0 },                	
-		-- 	rotation = { 0, 0, 0 },              
-		-- 	scale 	= { 1, 1, 1 },
-		-- 	autoModule = {
-		-- 		moduleTypeID = 1007000, -- The TypeID of the unit that will be attached to this unit, as a "module".
-		-- 		reportKillsToParent = true, --Any kills this "module" (unit) makes will be attributed to it's root parent. Yes, even the parent of other modules if this is on a module itself and it's parent module has true also.
-		-- 	},
-		-- },
+			prefab.ship.ruby.core.P(.1, isGhost, ghostIndex+1),
+	
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -100,44 +101,52 @@ function prefab.weapon_info.ruby.core.B()
 	}
 	return weapon_info
 end
-function prefab.ship.ruby.core.B(scaleConst, isGhost)
+function prefab.ship.ruby.core.B(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Ruby-Core-B",
+		mesh = "1-Ruby/Ruby-Core-B",
+		materials = { "arc_teamGlow", "arc_hull", "arc_hull_dark", "arc_teamColour" },
+
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			prefab.weapon.cannon.S(
-				{ 0, 0.75*.1/scaleConst, -.5*.1/scaleConst },
+				{ 0, 0.75, -.5 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.cannon.S(
-				{ 0, -0.75*.1/scaleConst, -.5*.1/scaleConst },
+				{ 0, -0.75, -.5 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 
 			prefab.part.emblem(
-				{ 0, .75*.1/scaleConst, -2*.1/scaleConst},
+				{ 0, .75, -2},
 				{ 0, 0, 0 },
-				{ .5*.1/scaleConst, .5*.1/scaleConst, .5*.1/scaleConst },
-				isGhost
+				{ .5, .5, .5 },
+				isGhost, ghostIndex
 			),
 			prefab.part.emblem(
-				{ 0, -.75*.1/scaleConst, -2*.1/scaleConst},
+				{ 0, -.75, -2},
 				{ 0, 0, 180 },
-				{ .5*.1/scaleConst, .5*.1/scaleConst, .5*.1/scaleConst },
-				isGhost
+				{ .5, .5, .5 },
+				isGhost, ghostIndex
 			),
 
-			prefab.ship.ruby.thruster(scaleConst, isGhost),
+			prefab.ship.ruby.thruster(scaleConst, isGhost, ghostIndex),
+
+			prefab.ship.ruby.core.B(.1, isGhost, ghostIndex+1),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -148,57 +157,64 @@ function prefab.weapon_info.ruby.core.M()
 	}
 	return weapon_info
 end
-function prefab.ship.ruby.core.M(scaleConst, isGhost)
+function prefab.ship.ruby.core.M(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Ruby-Core-M",
+		mesh = "1-Ruby/Ruby-Core-M",
+		materials = { "arc_teamGlow", "arc_hull", "arc_hull_dark", "arc_teamColour" },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			prefab.weapon.missile.hls.S(
-				{ 1*.1/scaleConst, 0.5*.1/scaleConst, -.5*.1/scaleConst },
+				{ 1, 0.5, -.5 },
 				{ 0, 0, -45 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.hls.S(
-				{ -1*.1/scaleConst, 0.5*.1/scaleConst, -.5*.1/scaleConst },
+				{ -1, 0.5, -.5 },
 				{ 0, 0, 45 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.hls.S(
-				{ 1*.1/scaleConst, -0.5*.1/scaleConst, -.5*.1/scaleConst },
+				{ 1, -0.5, -.5 },
 				{ 0, 0, -135 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.hls.S(
-				{ -1*.1/scaleConst, -0.5*.1/scaleConst, -.5*.1/scaleConst },
+				{ -1, -0.5, -.5 },
 				{ 0, 0, 135 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			
 
 			prefab.part.emblem(
-				{ 0, .5*.1/scaleConst, -1.5*.1/scaleConst},
+				{ 0, .5, -1.5},
 				{ 0, 0, 0 },
-				{ .5*.1/scaleConst, .5*.1/scaleConst, .5*.1/scaleConst },
-				isGhost
+				{ .5, .5, .5 },
+				isGhost, ghostIndex
 			),
 			prefab.part.emblem(
-				{ 0, -.5*.1/scaleConst, -1.5*.1/scaleConst},
+				{ 0, -.5, -1.5},
 				{ 0, 0, 180 },
-				{ .5*.1/scaleConst, .5*.1/scaleConst, .5*.1/scaleConst },
-				isGhost
+				{ .5, .5, .5 },
+				isGhost, ghostIndex
 			),
 
-			prefab.ship.ruby.thruster(scaleConst, isGhost),
+			prefab.ship.ruby.thruster(scaleConst, isGhost, ghostIndex),
+
+			prefab.ship.ruby.core.M(.1, isGhost, ghostIndex+1),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end

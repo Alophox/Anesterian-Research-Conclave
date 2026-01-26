@@ -5,7 +5,10 @@ prefab.weapon_info.special = {}
 function prefab.weapon_info.special.spawn_shield(count)
 -- ...don't want stats for this showing
 end
-function prefab.weapon.special.spawn_shield(pos,rot,sca,isGhost) --{float3}, {float3}, {float3}, bool
+function prefab.weapon.special.spawn_shield(pos,rot,sca,isGhost, ghostIndex) --{float3}, {float3}, {float3}, bool
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Spawn Shield",
 		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
@@ -14,7 +17,7 @@ function prefab.weapon.special.spawn_shield(pos,rot,sca,isGhost) --{float3}, {fl
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{

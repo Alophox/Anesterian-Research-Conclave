@@ -4,7 +4,10 @@ prefab.weapon_info.disruptor = {}
 function prefab.weapon_info.disruptor.S(count)
 	return { 3295201, 1 * count, 3296201 }
 end
-function prefab.weapon.disruptor.S(pos, rot, sca, isGhost)
+function prefab.weapon.disruptor.S(pos, rot, sca, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Small Disruptor Base",
 		mesh      = "Turrets-1/Turret-1-Base",
@@ -15,7 +18,7 @@ function prefab.weapon.disruptor.S(pos, rot, sca, isGhost)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -93,7 +96,10 @@ end
 function prefab.weapon_info.disruptor.M(count)
 	return { 3295202, 1 * count, 3296202 }
 end
-function prefab.weapon.disruptor.M(pos, rot, sca, isGhost)
+function prefab.weapon.disruptor.M(pos, rot, sca, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Medium Disruptor Base",
 		mesh      = "Turrets-3/Turret-3-Base",
@@ -104,7 +110,7 @@ function prefab.weapon.disruptor.M(pos, rot, sca, isGhost)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -184,7 +190,10 @@ end
 function prefab.weapon_info.disruptor.L(count)
 	return { 3295203, 1 * count, 3296203 }
 end
-function prefab.weapon.disruptor.L(pos, rot, sca, isGhost)
+function prefab.weapon.disruptor.L(pos, rot, sca, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Large Disruptor Base",
 		mesh      = "Turrets-5/Turret-5-Base",
@@ -195,7 +204,7 @@ function prefab.weapon.disruptor.L(pos, rot, sca, isGhost)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{

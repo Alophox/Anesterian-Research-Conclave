@@ -114,7 +114,7 @@ return {
 				{
 					name     = "Thruster Plume",
 					mesh     = "Thruster/Thruster-Plume",
-					materials  = { "arc_thruster-inner", "arc_thruster-middle", "arc_thruster-outer" },
+					materials  = { "arc_thruster_teamGlow", "arc_thruster-middle_teamGlow", "arc_thruster-outer_teamGlow" },
 					position = { 0, 0, 0 }, --XYZ, Thruster subparts should all be on the same Y point, as they all scale along the parent's Y axis.
 					rotation = { 0, 0, 0 },
 					scale 	= { 1, 1, 1 },

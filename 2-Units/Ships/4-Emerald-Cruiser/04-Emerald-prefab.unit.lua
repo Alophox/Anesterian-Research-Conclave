@@ -6,12 +6,15 @@ prefab.weapon_info.emerald = {
 	stern = {},
 	bow = {}
 }
-function prefab.ship.emerald.thruster(scaleConst, isGhost)
+function prefab.ship.emerald.thruster(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name     = "Thruster",
-		position = { 0, 0, -8*.1/scaleConst },
+		position = { 0, 0, -8 },
 		rotation = { 0, 0, 0 },
-		scale 	= { .1/scaleConst, .1/scaleConst, .1/scaleConst },
+		scale 	= { 1, 1, 1 },
 	}
 	if not isGhost then
 		prefab_part.thruster = {
@@ -25,7 +28,7 @@ function prefab.ship.emerald.thruster(scaleConst, isGhost)
 			{
 				name     = "Thruster Plume",
 				mesh     = "Thruster/Thruster-Plume",
-				materials  = { "arc_thruster-inner", "arc_thruster-middle", "arc_thruster-outer" },
+				materials  = { "arc_thruster_teamGlow", "arc_thruster-middle_teamGlow", "arc_thruster-outer_teamGlow" },
 				position = { 0, 0, 0 }, --XYZ, Thruster subparts should all be on the same Y point, as they all scale along the parent's Y axis.
 				rotation = { 0, 0, 0 },
 				scale 	= { 7, 7, 7 },
@@ -42,109 +45,132 @@ function prefab.weapon_info.emerald.stern.G()
 	}
 	return weapon_info
 end
-function prefab.ship.emerald.stern.G(scaleConst, isGhost)
+function prefab.ship.emerald.stern.G(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Emerald-Stern-G",
 		mesh = "4-Emerald/Emerald-Stern-G",
 		materials = {"arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_engine", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			prefab.weapon.lightning.M(
-				{ 0, 2.25*.1/scaleConst, -2.75*.1/scaleConst },
+				{ 0, 2.25, -2.75 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.lightning.M(
-				{ 0, -2.25*.1/scaleConst, -2.75*.1/scaleConst },
+				{ 0, -2.25, -2.75 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.lightning.S(
-				{ 3*.1/scaleConst, 0, -4.25*.1/scaleConst },
+				{ 3, 0, -4.25 },
 				{ 0, 0, -90 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.lightning.S(
-				{ -3*.1/scaleConst, 0, -4.25*.1/scaleConst },
+				{ -3, 0, -4.25 },
 				{ 0, 0, 90 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 
 
 			prefab.part.emblem(
-				{ 0, 2.25*.1/scaleConst, -5.75*.1/scaleConst},
+				{ 0, 2.25, -5.75},
 				{ 0, 0, 0 },
-				{ 1.5*.1/scaleConst, 1.5*.1/scaleConst, 1.5*.1/scaleConst },
-				isGhost
+				{ 1.5, 1.5, 1.5 },
+				isGhost, ghostIndex
 			),
 			prefab.part.emblem(
-				{ 0, -2.25*.1/scaleConst, -5.75*.1/scaleConst},
+				{ 0, -2.25, -5.75},
 				{ 0, 0, 180 },
-				{ 1.5*.1/scaleConst, 1.5*.1/scaleConst, 1.5*.1/scaleConst },
-				isGhost
+				{ 1.5, 1.5, 1.5 },
+				isGhost, ghostIndex
 			),
-			prefab.ship.emerald.thruster(scaleConst, isGhost),
+			prefab.ship.emerald.thruster(scaleConst, isGhost, ghostIndex),
+
+			prefab.ship.emerald.stern.G(.1, isGhost, ghostIndex+1),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
 
 function prefab.weapon_info.emerald.stern.A()
 	weapon_info = {
-		prefab.weapon_info.railgun.L(1),
-		prefab.weapon_info.railgun.M(1),
+		prefab.weapon_info.railgun.M(2),
+		prefab.weapon_info.railgun.S(2),
 	}
 	return weapon_info
 end
-function prefab.ship.emerald.stern.A(scaleConst, isGhost)
+function prefab.ship.emerald.stern.A(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Emerald-Stern-A",
 		mesh = "4-Emerald/Emerald-Stern-A",
 		materials = {"arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_engine", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
-			prefab.weapon.railgun.L(
-				{0, 2.5*.1/scaleConst, -3.75*.1/scaleConst},
+			prefab.weapon.railgun.M(
+				{0, 2.5, -4.75},
 				{0, 0, 0},
-				{.1/scaleConst,.1/scaleConst,.1/scaleConst},
-				isGhost
+				{1,1,1},
+				isGhost, ghostIndex
 			),
 			prefab.weapon.railgun.M(
-				{0, -2.5*.1/scaleConst, -3.75*.1/scaleConst},
+				{0, -2.5, -4.75},
 				{0, 0, 180},
-				{.1/scaleConst,.1/scaleConst,.1/scaleConst},
-				isGhost
+				{1,1,1},
+				isGhost, ghostIndex
 			),
 			
-			prefab.part.emblem(
-				{ 0, 2.5*.1/scaleConst, -7.25*.1/scaleConst},
-				{ -18.4349, 0, 0 },
-				{ 1.5*.1/scaleConst, 1.5*.1/scaleConst, 1.5*.1/scaleConst },
-				isGhost
+			prefab.weapon.railgun.S(
+				{-1, 2.5, -2.75},
+				{0, 0, 0},
+				{1,1,1},
+				isGhost, ghostIndex
 			),
-			prefab.part.emblem(
-				{ 0, -2.5*.1/scaleConst, -7.25*.1/scaleConst},
-				{ 18.4349, 0, 180 },
-				{ 1.5*.1/scaleConst, 1.5*.1/scaleConst, 1.5*.1/scaleConst },
-				isGhost
+			prefab.weapon.railgun.S(
+				{1, 2.5, -2.75},
+				{0, 0, 0},
+				{1,1,1},
+				isGhost, ghostIndex
 			),
 
-			prefab.ship.emerald.thruster(scaleConst, isGhost),
+			prefab.part.emblem(
+				{ 0, 2.5, -7.25},
+				{ -18.4349, 0, 0 },
+				{ 1.5, 1.5, 1.5 },
+				isGhost, ghostIndex
+			),
+			prefab.part.emblem(
+				{ 0, -2.5, -7.25},
+				{ 18.4349, 0, 180 },
+				{ 1.5, 1.5, 1.5 },
+				isGhost, ghostIndex
+			),
+
+			prefab.ship.emerald.thruster(scaleConst, isGhost, ghostIndex),
+
+			prefab.ship.emerald.stern.A(.1, isGhost, ghostIndex+1),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -155,58 +181,63 @@ function prefab.weapon_info.emerald.stern.C()
 	}
 	return weapon_info
 end
-function prefab.ship.emerald.stern.C(scaleConst, isGhost)
+function prefab.ship.emerald.stern.C(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Emerald-Stern-C",
 		mesh = "4-Emerald/Emerald-Stern-C",
 		materials = {"arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_engine", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			prefab.weapon.hangar.quartz(
-				{ -3*.1/scaleConst, 0, -1.25*.1/scaleConst },
+				{ -3, 0, -1.25 },
 				{ 0, -90, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.hangar.quartz(
-				{ 3*.1/scaleConst, 0, -1.25*.1/scaleConst },
+				{ 3, 0, -1.25 },
 				{ 0, 90, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.laser.S(
-				{ 0, 2.25*.1/scaleConst, -2*.1/scaleConst },
+				{ 0, 2.25, -2 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.laser.S(
-				{ 0, -2.25*.1/scaleConst, -2*.1/scaleConst },
+				{ 0, -2.25, -2 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 
 			prefab.part.emblem(
-				{ 0, 2.25*.1/scaleConst, -7.25*.1/scaleConst},
+				{ 0, 2.25, -7.25},
 				{ 0, 0, 0 },
-				{ 1.5*.1/scaleConst, 1.5*.1/scaleConst, 1.5*.1/scaleConst },
-				isGhost
+				{ 1.5, 1.5, 1.5 },
+				isGhost, ghostIndex
 			),
 			prefab.part.emblem(
-				{ 0, -2.25*.1/scaleConst, -7.25*.1/scaleConst},
+				{ 0, -2.25, -7.25},
 				{ 0, 0, 180 },
-				{ 1.5*.1/scaleConst, 1.5*.1/scaleConst, 1.5*.1/scaleConst },
-				isGhost
+				{ 1.5, 1.5, 1.5 },
+				isGhost, ghostIndex
 			),
 
-			prefab.ship.emerald.thruster(scaleConst, isGhost),
+			prefab.ship.emerald.thruster(scaleConst, isGhost, ghostIndex),
+
+			prefab.ship.emerald.stern.C(.1, isGhost, ghostIndex+1),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -221,73 +252,90 @@ function prefab.weapon_info.emerald.bow.G()
 	}
 	return weapon_info
 end
-function prefab.ship.emerald.bow.G(scaleConst, isGhost)
+function prefab.ship.emerald.bow.G(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Emerald-Bow-G",
 		mesh = "4-Emerald/Emerald-Bow-G",
 		materials = {"arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			prefab.weapon.lightning.M(
-				{ 0, 1.75*.1/scaleConst, 3*.1/scaleConst },
+				{ 0, 1.75, 3 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.lightning.M(
-				{ 0, -1.75*.1/scaleConst, 3*.1/scaleConst },
+				{ 0, -1.75, 3 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.lightning.S(
-				{ 0, 1*.1/scaleConst, 6.75*.1/scaleConst },
+				{ 0, 1, 6.75 },
 				{ 18.4349, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
+
+			prefab.ship.emerald.bow.G(.1, isGhost, ghostIndex+1),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
 
 function prefab.weapon_info.emerald.bow.A()
 	weapon_info = {
-		prefab.weapon_info.railgun.L(1),
+		prefab.weapon_info.railgun.M(2),
 		prefab.weapon_info.railgun.S(1),
 	}
 	return weapon_info
 end
-function prefab.ship.emerald.bow.A(scaleConst, isGhost)
+function prefab.ship.emerald.bow.A(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Emerald-Bow-A",
 		mesh = "4-Emerald/Emerald-Bow-A",
 		materials = {"arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
-			prefab.weapon.railgun.L(
-				{ 0, 1.5*.1/scaleConst, 2.75*.1/scaleConst },
+			prefab.weapon.railgun.M(
+				{ 0, 1.5, 3.25 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
-			prefab.weapon.railgun.S(
-				{ 0, -1.5*.1/scaleConst, 2.75*.1/scaleConst },
+			prefab.weapon.railgun.M(
+				{ 0, -1.5, 3.25 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
+
+			prefab.weapon.railgun.S(
+				{ 0, -1, 6.75 },
+				{ -18.4349, 0, 180 },
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
+			),
+
+			prefab.ship.emerald.bow.A(.1, isGhost, ghostIndex+1),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -299,44 +347,49 @@ function prefab.weapon_info.emerald.bow.C()
 	}
 	return weapon_info
 end
-function prefab.ship.emerald.bow.C(scaleConst, isGhost)
+function prefab.ship.emerald.bow.C(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Emerald-Bow-C",
 		mesh = "4-Emerald/Emerald-Bow-C",
 		materials = {"arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			prefab.weapon.hangar.quartz(
-				{ -3*.1/scaleConst, 0, .75*.1/scaleConst },
+				{ -3, 0, .75 },
 				{ 0, -90, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.hangar.quartz(
-				{ 3*.1/scaleConst, 0, .75*.1/scaleConst },
+				{ 3, 0, .75 },
 				{ 0, 90, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 
 			prefab.weapon.missile.hls.S(
-				{ -1.25*.1/scaleConst, 1.5*.1/scaleConst, 3.75*.1/scaleConst },
+				{ -1.25, 1.5, 3.75 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.hls.S(
-				{ 1.25*.1/scaleConst, 1.5*.1/scaleConst, 3.75*.1/scaleConst },
+				{ 1.25, 1.5, 3.75 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
+
+			prefab.ship.emerald.bow.C(.1, isGhost, ghostIndex+1),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end

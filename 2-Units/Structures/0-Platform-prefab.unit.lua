@@ -10,11 +10,14 @@ function prefab.weapon_info.platform.L.A(count)
 	}
 	return weapon_info
 end
-function prefab.part.platform.L.A(scaleConst, angleCount, isGhost)
+function prefab.part.platform.L.A(scaleConst, angleCount, isGhost, ghostIndex)
 	newPos1 = functions.rotateRecursive({x=0,z=36.5*.1/scaleConst},{x=0,z=0},angleCount)
 	newPos2 = functions.rotateRecursive({x=-1.25*.1/scaleConst,z=35*.1/scaleConst},{x=0,z=0},angleCount)
 	newPos3 = functions.rotateRecursive({x=0,z=33.75*.1/scaleConst},{x=0,z=0},angleCount)
 	newPos4 = functions.rotateRecursive({x=1.25*.1/scaleConst,z=35*.1/scaleConst},{x=0,z=0},angleCount)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Platform Segment Large A",
 		-- mesh = "3-Topaz/Topaz-Stern-P",
@@ -27,30 +30,30 @@ function prefab.part.platform.L.A(scaleConst, angleCount, isGhost)
 				{newPos1.x, 3.5*.1/scaleConst,newPos1.z},
 				{ 0, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				isGhost, ghostIndex
 			),
 			prefab.weapon.laser.S(
 				{newPos2.x, 3.5*.1/scaleConst,newPos2.z},
 				{ 0, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				isGhost, ghostIndex
 			),
 			prefab.weapon.laser.S(
 				{newPos3.x, 3.5*.1/scaleConst,newPos3.z},
 				{ 0, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				isGhost, ghostIndex
 			),
 			prefab.weapon.laser.S(
 				{newPos4.x, 3.5*.1/scaleConst,newPos4.z},
 				{ 0, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				isGhost, ghostIndex
 			),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -61,9 +64,12 @@ function prefab.weapon_info.platform.L.B(count)
 	}
 	return weapon_info
 end
-function prefab.part.platform.L.B(scaleConst, angleCount, isGhost)
+function prefab.part.platform.L.B(scaleConst, angleCount, isGhost, ghostIndex)
 	newPos1 = functions.rotateRecursive({x=1.45*.1/scaleConst,z=35*.1/scaleConst},{x=0,z=0},angleCount)
 	newPos2 = functions.rotateRecursive({x=-1.45*.1/scaleConst,z=35*.1/scaleConst},{x=0,z=0},angleCount)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Platform Segment Large B",
 		-- mesh = "3-Topaz/Topaz-Stern-P",
@@ -76,19 +82,19 @@ function prefab.part.platform.L.B(scaleConst, angleCount, isGhost)
 				{newPos1.x, 4.25*.1/scaleConst,newPos1.z},
 				{ 0, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				isGhost, ghostIndex
 			),
 			prefab.weapon.cannon.M(
 				{newPos2.x, 4.25*.1/scaleConst,newPos2.z},
 				{ 0, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				isGhost, ghostIndex
 			),
 
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -98,8 +104,11 @@ function prefab.weapon_info.platform.L.C1(count)
 	}
 	return weapon_info
 end
-function prefab.part.platform.L.C1(scaleConst, angleCount, isGhost)
+function prefab.part.platform.L.C1(scaleConst, angleCount, isGhost, ghostIndex)
 	newPos1 = functions.rotateRecursive({x=0,z=16*.1/scaleConst},{x=0,z=0},angleCount)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Platform Segment Large C",
 		-- mesh = "3-Topaz/Topaz-Stern-P",
@@ -112,13 +121,13 @@ function prefab.part.platform.L.C1(scaleConst, angleCount, isGhost)
 				{newPos1.x, 4.75*.1/scaleConst,newPos1.z},
 				{ 0, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				isGhost, ghostIndex
 			),
 
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -128,8 +137,11 @@ function prefab.weapon_info.platform.L.C2(count)
 	}
 	return weapon_info
 end
-function prefab.part.platform.L.C2(scaleConst, angleCount, isGhost)
+function prefab.part.platform.L.C2(scaleConst, angleCount, isGhost, ghostIndex)
 	newPos1 = functions.rotateRecursive({x=0,z=16*.1/scaleConst},{x=0,z=0},angleCount)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Platform Segment Large C",
 		-- mesh = "3-Topaz/Topaz-Stern-P",
@@ -142,13 +154,13 @@ function prefab.part.platform.L.C2(scaleConst, angleCount, isGhost)
 				{newPos1.x, 4.75*.1/scaleConst,newPos1.z},
 				{ 0, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				isGhost, ghostIndex
 			),
 
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end

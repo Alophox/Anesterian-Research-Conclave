@@ -4,7 +4,10 @@ prefab.weapon_info.lightning = {}
 function prefab.weapon_info.lightning.D(count)
 	return { 3295300, 1 * count, 0 }
 end
-function prefab.weapon.lightning.D(pos, rot, sca, isGhost)
+function prefab.weapon.lightning.D(pos, rot, sca, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Small Turret Base",
 		-- mesh      = "Turrets-1/Turret-1-Base",
@@ -15,7 +18,7 @@ function prefab.weapon.lightning.D(pos, rot, sca, isGhost)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -92,7 +95,10 @@ end
 function prefab.weapon_info.lightning.S(count)
 	return { 3295301, 1 * count, 0 }
 end
-function prefab.weapon.lightning.S(pos, rot, sca, isGhost)
+function prefab.weapon.lightning.S(pos, rot, sca, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Small Turret Base",
 		mesh      = "Turrets-1/Turret-1-Base",
@@ -103,7 +109,7 @@ function prefab.weapon.lightning.S(pos, rot, sca, isGhost)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -205,7 +211,10 @@ end
 function prefab.weapon_info.lightning.M(count)
 	return { 3295302, 1 * count, 0 }
 end
-function prefab.weapon.lightning.M(pos, rot, sca, isGhost)
+function prefab.weapon.lightning.M(pos, rot, sca, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Medium Turret Base",
 		mesh      = "Turrets-3/Turret-3-Base",
@@ -216,7 +225,7 @@ function prefab.weapon.lightning.M(pos, rot, sca, isGhost)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -363,7 +372,10 @@ end
 function prefab.weapon_info.lightning.L(count)
 	return { 3295303, 1 * count, 0 }
 end
-function prefab.weapon.lightning.L(pos, rot, sca, isGhost)
+function prefab.weapon.lightning.L(pos, rot, sca, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Turret-top-base",
 		mesh      = "Turrets-5/Turret-5-Base",
@@ -374,7 +386,7 @@ function prefab.weapon.lightning.L(pos, rot, sca, isGhost)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -620,7 +632,10 @@ end
 function prefab.weapon_info.lightning.X(count)
 	return { 3295304, 1 * count, 0 }
 end
-function prefab.weapon.lightning.X(pos, rot, sca, isGhost)
+function prefab.weapon.lightning.X(pos, rot, sca, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Turret-top-base",
 		mesh      = "Turrets-7/Turret-7-Base",
@@ -631,7 +646,7 @@ function prefab.weapon.lightning.X(pos, rot, sca, isGhost)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -983,7 +998,10 @@ end
 function prefab.weapon_info.lightning.XS(count)
 	return { 3295304, 1 * count, 0 }
 end
-function prefab.weapon.lightning.XS(pos, rot, sca, isGhost)
+function prefab.weapon.lightning.XS(pos, rot, sca, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Turret-top-base",
 		-- mesh      = "Turrets-5/Turret-5-Base",
@@ -994,7 +1012,7 @@ function prefab.weapon.lightning.XS(pos, rot, sca, isGhost)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -1278,7 +1296,10 @@ end
 function prefab.weapon_info.lightning.TS(count)
 	return { 3295305, 1 * count, 0 }
 end
-function prefab.weapon.lightning.TS(pos, rot, sca, isGhost)
+function prefab.weapon.lightning.TS(pos, rot, sca, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Turret-top-base",
 		-- mesh      = "Turrets-5/Turret-5-Base",
@@ -1289,7 +1310,7 @@ function prefab.weapon.lightning.TS(pos, rot, sca, isGhost)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{

@@ -39,7 +39,7 @@ return {
 
 	-- BODY SETUP
 	scale                       	= scaleConst,                                          -- float: A Tolly is scale 0.4, all units are a uniform scale. Normalise XY mesh size to 1 in Blender. (controls selection ring, among other things. the longest horizontal part (width/length) is 1)
-	mainMesh                    	= "1-Ruby/Ruby-Core-B",   -- string: Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
+	-- mainMesh                    	= "1-Ruby/Ruby-Core-B",   -- string: Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
 	
 	--NOTICE, WORKING WITH MATERIALS AND MESHS:
 	--When making a mesh in Blender, you can assign materials to different surfaces. The number of materials used create 'material slots' for the mesh.
@@ -47,7 +47,7 @@ return {
 	--Inorder for ATS to know which material goes to which material slot on a mesh, we must define the ordering.
 	--Assign materials here in the same order as they are defined on the object in your Blender file. 
 	--(Can only get materials from .materials.lua files in this mod folder.)
-	materials                   = { "arc_teamGlow", "arc_hull",  "arc_engine", "arc_teamColour" },
+	-- materials                   = { "arc_teamGlow", "arc_hull",  "arc_engine", "arc_teamColour" },
 
 	-- Percieved dimensions of the unit. Multiplied against scale. Controls how big the unit is percieved by other units. 
 	-- Units cannot actually "see" anything, so we need to mathematically define how big the unit is for standoff behaviour among other things.
@@ -80,8 +80,8 @@ return {
 	},
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).
-	ghostMesh		= "1-Ruby/Ruby-Core-B",   -- Used for build ghosts on spawners (yards).
-	ghostMaterials = { "arc_build", "arc_build", "arc_build","arc_build" }, -- Used for the ghostMesh for build ghosts on spawners (yards).
+	-- ghostMesh		= "1-Ruby/Ruby-Core-B",   -- Used for build ghosts on spawners (yards).
+	-- ghostMaterials = { "arc_build", "arc_build", "arc_build","arc_build" }, -- Used for the ghostMesh for build ghosts on spawners (yards).
 	ghostParts 	= {
 		prefab.ship.ruby.core.B(scaleConst, true),
 	},

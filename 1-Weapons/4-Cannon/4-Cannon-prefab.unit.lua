@@ -4,7 +4,10 @@ prefab.weapon_info.cannon = {}
 function prefab.weapon_info.cannon.S(count)
 	return { 3295401, 1 * count, 3296401 }
 end
-function prefab.weapon.cannon.S(pos, rot, sca, isGhost)
+function prefab.weapon.cannon.S(pos, rot, sca, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Small Turret Base",
 		mesh      = "Turrets-1/Turret-1-Base",
@@ -15,7 +18,7 @@ function prefab.weapon.cannon.S(pos, rot, sca, isGhost)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts = {
 			{
@@ -94,7 +97,10 @@ end
 function prefab.weapon_info.cannon.M(count)
 	return { 3295402, 1 * count, 3296402 }
 end
-function prefab.weapon.cannon.M(pos, rot, sca, isGhost)
+function prefab.weapon.cannon.M(pos, rot, sca, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Medium Cannon Base",
 		mesh      = "Turrets-3/Turret-3-Base",
@@ -105,7 +111,7 @@ function prefab.weapon.cannon.M(pos, rot, sca, isGhost)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -165,7 +171,10 @@ end
 function prefab.weapon_info.cannon.L(count)
 	return { 3295403, 1 * count, 3296403 }
 end
-function prefab.weapon.cannon.L(pos, rot, sca, isGhost)
+function prefab.weapon.cannon.L(pos, rot, sca, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Large Cannon Base",
 		mesh      = "Turrets-5/Turret-5-Base",
@@ -176,7 +185,7 @@ function prefab.weapon.cannon.L(pos, rot, sca, isGhost)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -245,7 +254,10 @@ end
 function prefab.weapon_info.cannon.X(count)
 	return { 3295404, 1 * count, 3296404 }
 end
-function prefab.weapon.cannon.X(pos, rot, sca, isGhost)
+function prefab.weapon.cannon.X(pos, rot, sca, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Extra Large Cannon Base",
 		mesh      = "Turrets-7/Turret-7-Base",
@@ -256,7 +268,7 @@ function prefab.weapon.cannon.X(pos, rot, sca, isGhost)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -338,7 +350,10 @@ end
 function prefab.weapon_info.cannon.XS(count)
 	return { 3295404, 1 * count, 3296404 }
 end
-function prefab.weapon.cannon.XS(pos, rot, sca, isGhost)
+function prefab.weapon.cannon.XS(pos, rot, sca, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Large Cannon Base",
 		-- mesh      = "Turrets-5/Turret-5-Base",
@@ -349,7 +364,7 @@ function prefab.weapon.cannon.XS(pos, rot, sca, isGhost)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -383,7 +398,10 @@ end
 function prefab.weapon_info.cannon.TS(count)
 	return { 3295405, 1 * count, 3296405 }
 end
-function prefab.weapon.cannon.TS(pos, rot, sca, isGhost)
+function prefab.weapon.cannon.TS(pos, rot, sca, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Large Cannon Base",
 		-- mesh      = "Turrets-5/Turret-5-Base",
@@ -394,7 +412,7 @@ function prefab.weapon.cannon.TS(pos, rot, sca, isGhost)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{

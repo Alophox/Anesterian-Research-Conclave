@@ -4,7 +4,10 @@ prefab.weapon_info.laser = {}
 function prefab.weapon_info.laser.D(count)
 	return { 3295100, 1 * count, 0 }
 end
-function prefab.weapon.laser.D(pos,rot,sca,isGhost) --{float3}, {float3}, {float3}, bool
+function prefab.weapon.laser.D(pos,rot,sca,isGhost, ghostIndex) --{float3}, {float3}, {float3}, bool
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Drone Laser",
 		-- mesh      = "Turrets-1/Turret-1-Base",
@@ -15,7 +18,7 @@ function prefab.weapon.laser.D(pos,rot,sca,isGhost) --{float3}, {float3}, {float
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -64,7 +67,10 @@ end
 function prefab.weapon_info.laser.S(count)
 	return { 3295101, 1 * count, 0 }
 end
-function prefab.weapon.laser.S(pos,rot,sca,isGhost) --{float3}, {float3}, {float3}, bool
+function prefab.weapon.laser.S(pos,rot,sca,isGhost, ghostIndex) --{float3}, {float3}, {float3}, bool
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Small Turret Base",
 		mesh      = "Turrets-1/Turret-1-Base",
@@ -75,7 +81,7 @@ function prefab.weapon.laser.S(pos,rot,sca,isGhost) --{float3}, {float3}, {float
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -160,7 +166,10 @@ end
 function prefab.weapon_info.laser.M(count)
 	return { 3295102, 1 * count, 0 }
 end
-function prefab.weapon.laser.M(pos,rot,sca,isGhost) --{float3}, {float3}, {float3}, bool
+function prefab.weapon.laser.M(pos,rot,sca,isGhost, ghostIndex) --{float3}, {float3}, {float3}, bool
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Medium Laser Base",
 		mesh      = "Turrets-3/Turret-3-Base",
@@ -171,7 +180,7 @@ function prefab.weapon.laser.M(pos,rot,sca,isGhost) --{float3}, {float3}, {float
 		
 	}
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -294,7 +303,10 @@ end
 function prefab.weapon_info.laser.L(count)
 	return { 3295103, 1 * count, 0 }
 end
-function prefab.weapon.laser.L(pos,rot,sca,isGhost) --{float3}, {float3}, {float3}, bool
+function prefab.weapon.laser.L(pos,rot,sca,isGhost, ghostIndex) --{float3}, {float3}, {float3}, bool
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Large Laser Base",
 		mesh      = "Turrets-5/Turret-5-Base",
@@ -305,7 +317,7 @@ function prefab.weapon.laser.L(pos,rot,sca,isGhost) --{float3}, {float3}, {float
 		
 	}
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -424,7 +436,10 @@ end
 function prefab.weapon_info.laser.X(count)
 	return { 3295104, 1 * count, 0 }
 end
-function prefab.weapon.laser.X(pos,rot,sca,isGhost) --{float3}, {float3}, {float3}, bool
+function prefab.weapon.laser.X(pos,rot,sca,isGhost, ghostIndex) --{float3}, {float3}, {float3}, bool
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Extra Large Laser Base",
 		mesh      = "Turrets-7/Turret-7-Base",
@@ -435,7 +450,7 @@ function prefab.weapon.laser.X(pos,rot,sca,isGhost) --{float3}, {float3}, {float
 		
 	}
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -583,7 +598,10 @@ end
 function prefab.weapon_info.laser.XS(count)
 	return { 3295104, 1 * count, 0 }
 end
-function prefab.weapon.laser.XS(pos,rot,sca,isGhost) --{float3}, {float3}, {float3}, bool
+function prefab.weapon.laser.XS(pos,rot,sca,isGhost, ghostIndex) --{float3}, {float3}, {float3}, bool
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Extra Large Laser Base",
 		-- mesh      = "Turrets-5/Turret-5-Base",
@@ -594,7 +612,7 @@ function prefab.weapon.laser.XS(pos,rot,sca,isGhost) --{float3}, {float3}, {floa
 		
 	}
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -644,7 +662,10 @@ end
 function prefab.weapon_info.laser.TS(count)
 	return { 3295105, 1 * count, 0 }
 end
-function prefab.weapon.laser.TS(pos,rot,sca,isGhost) --{float3}, {float3}, {float3}, bool
+function prefab.weapon.laser.TS(pos,rot,sca,isGhost, ghostIndex) --{float3}, {float3}, {float3}, bool
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Titanic Laser Base",
 		-- mesh      = "Turrets-5/Turret-5-Base",
@@ -655,7 +676,7 @@ function prefab.weapon.laser.TS(pos,rot,sca,isGhost) --{float3}, {float3}, {floa
 		
 	}
 	if isGhost then
-		prefab_part.materials = {"arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	else
 		prefab_part.parts={
 			{

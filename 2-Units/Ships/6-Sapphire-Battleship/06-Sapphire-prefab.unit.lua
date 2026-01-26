@@ -9,12 +9,15 @@ prefab.weapon_info.sapphire = {
 	bow = {}
 }
 
-function prefab.ship.sapphire.thruster(scaleConst, isGhost)
+function prefab.ship.sapphire.thruster(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name     = "Thruster",
-		position = { 0, 0, -12.5*.1/scaleConst },
+		position = { 0, 0, -12.5 },
 		rotation = { 0, 0, 0 },
-		scale 	= { .1/scaleConst, .1/scaleConst, .1/scaleConst },
+		scale 	= { 1, 1, 1 },
 	}
 	if not isGhost then
 		prefab_part.thruster = {
@@ -28,7 +31,7 @@ function prefab.ship.sapphire.thruster(scaleConst, isGhost)
 			{
 				name     = "Thruster Plume",
 				mesh     = "Thruster/Thruster-Plume",
-				materials  = { "arc_thruster-inner", "arc_thruster-middle", "arc_thruster-outer" },
+				materials  = { "arc_thruster_teamGlow", "arc_thruster-middle_teamGlow", "arc_thruster-outer_teamGlow" },
 				position = { 0, 0, 0 }, --XYZ, Thruster subparts should all be on the same Y point, as they all scale along the parent's Y axis.
 				rotation = { 0, 0, 0 },
 				scale 	= { 7, 7, 7 },
@@ -36,7 +39,7 @@ function prefab.ship.sapphire.thruster(scaleConst, isGhost)
 			{
 				name     = "Thruster Plume",
 				mesh     = "Thruster/Thruster-Plume",
-				materials  = { "arc_thruster-inner", "arc_thruster-middle", "arc_thruster-outer" },
+				materials  = { "arc_thruster_teamGlow", "arc_thruster-middle_teamGlow", "arc_thruster-outer_teamGlow" },
 				position = { -3.25, 0, 0 }, --XYZ, Thruster subparts should all be on the same Y point, as they all scale along the parent's Y axis.
 				rotation = { 0, 0, 0 },
 				scale 	= { 4, 4, 4 },
@@ -44,7 +47,7 @@ function prefab.ship.sapphire.thruster(scaleConst, isGhost)
 			{
 				name     = "Thruster Plume",
 				mesh     = "Thruster/Thruster-Plume",
-				materials  = { "arc_thruster-inner", "arc_thruster-middle", "arc_thruster-outer" },
+				materials  = { "arc_thruster_teamGlow", "arc_thruster-middle_teamGlow", "arc_thruster-outer_teamGlow" },
 				position = { 3.25, 0, 0 }, --XYZ, Thruster subparts should all be on the same Y point, as they all scale along the parent's Y axis.
 				rotation = { 0, 0, 0 },
 				scale 	= { 4, 4, 4 },
@@ -61,72 +64,77 @@ function prefab.weapon_info.sapphire.stern.G()
 	}
 	return weapon_info
 end
-function prefab.ship.sapphire.stern.G(scaleConst, isGhost)
+function prefab.ship.sapphire.stern.G(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Stern-G",
 		mesh = "6-Sapphire/Sapphire-Stern-G",
 		materials = {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_engine", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			prefab.weapon.lightning.M(
-				{ 0, 3.75*.1/scaleConst, -9.5*.1/scaleConst },
+				{ 0, 3.75, -9.5 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.lightning.M(
-				{ 0, -3.75*.1/scaleConst, -9.5*.1/scaleConst },
+				{ 0, -3.75, -9.5 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 
 
 			prefab.weapon.lightning.S(
-				{ -1*.1/scaleConst, 3.25*.1/scaleConst, -5.75*.1/scaleConst },
+				{ -1, 3.25, -5.75 },
 				{ 0, 0, 0 },
-				{ .1001/scaleConst, .1001/scaleConst, .1001/scaleConst },
-				isGhost
+				{ 1.001, 1.001, 1.001 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.lightning.S(
-				{ 1*.1/scaleConst, 3.25*.1/scaleConst, -5.75*.1/scaleConst },
+				{ 1, 3.25, -5.75 },
 				{ 0, 0, 0 },
-				{ .1001/scaleConst, .1001/scaleConst, .1001/scaleConst },
-				isGhost
+				{ 1.001, 1.001, 1.001 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.lightning.S(
-				{ -1*.1/scaleConst, -3.25*.1/scaleConst, -5.75*.1/scaleConst },
+				{ -1, -3.25, -5.75 },
 				{ 0, 0, 180 },
-				{ .1001/scaleConst, .1001/scaleConst, .1001/scaleConst },
-				isGhost
+				{ 1.001, 1.001, 1.001 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.lightning.S(
-				{ 1*.1/scaleConst, -3.25*.1/scaleConst, -5.75*.1/scaleConst },
+				{ 1, -3.25, -5.75 },
 				{ 0, 0, 180 },
-				{ .1001/scaleConst, .1001/scaleConst, .1001/scaleConst },
-				isGhost
+				{ 1.001, 1.001, 1.001 },
+				isGhost, ghostIndex
 			),
 
 			
 			prefab.part.emblem(
-				{ 0, 3.25*.1/scaleConst, -12.5*.1/scaleConst},
+				{ 0, 3.25, -12.5},
 				{ -18.4349, 0, 0 },
-				{ 3*.1/scaleConst, 3*.1/scaleConst, 3*.1/scaleConst },
-				isGhost
+				{ 3, 3, 3 },
+				isGhost, ghostIndex
 			),
 			prefab.part.emblem(
-				{ 0, -3.25*.1/scaleConst, -12.5*.1/scaleConst},
+				{ 0, -3.25, -12.5},
 				{ 18.4349, 0, 180 },
-				{ 3*.1/scaleConst, 3*.1/scaleConst, 3*.1/scaleConst },
-				isGhost
+				{ 3, 3, 3 },
+				isGhost, ghostIndex
 			),
-			prefab.ship.sapphire.thruster(scaleConst, isGhost),
+			prefab.ship.sapphire.thruster(scaleConst, isGhost, ghostIndex),
+
+			prefab.ship.sapphire.stern.G(.1, isGhost, ghostIndex+1),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -137,45 +145,51 @@ function prefab.weapon_info.sapphire.stern.A()
 	}
 	return weapon_info
 end
-function prefab.ship.sapphire.stern.A(scaleConst, isGhost)
+function prefab.ship.sapphire.stern.A(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Stern-A",
 		mesh = "6-Sapphire/Sapphire-Stern-A",
 		materials = {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_engine", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			prefab.weapon.railgun.L(
-				{ 0, 3.5*.1/scaleConst, -8.75*.1/scaleConst },
+				{ 0, 3.5, -8.75 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.railgun.L(
-				{ 0, -3.5*.1/scaleConst, -8.75*.1/scaleConst },
+				{ 0, -3.5, -8.75 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			
 			prefab.part.emblem(
-				{ 0, 3.25*.1/scaleConst, -12.5*.1/scaleConst},
+				{ 0, 3.25, -12.5},
 				{ -18.4349, 0, 0 },
-				{ 3*.1/scaleConst, 3*.1/scaleConst, 3*.1/scaleConst },
-				isGhost
+				{ 3, 3, 3 },
+				isGhost, ghostIndex
 			),
 			prefab.part.emblem(
-				{ 0, -3.25*.1/scaleConst, -12.5*.1/scaleConst},
+				{ 0, -3.25, -12.5},
 				{ 18.4349, 0, 180 },
-				{ 3*.1/scaleConst, 3*.1/scaleConst, 3*.1/scaleConst },
-				isGhost
+				{ 3, 3, 3 },
+				isGhost, ghostIndex
 			),
-			prefab.ship.sapphire.thruster(scaleConst, isGhost),
+			prefab.ship.sapphire.thruster(scaleConst, isGhost, ghostIndex),
+
+			prefab.ship.sapphire.stern.A(.1, isGhost, ghostIndex+1),
+
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -188,84 +202,90 @@ function prefab.weapon_info.sapphire.stern.C()
 	}
 	return weapon_info
 end
-function prefab.ship.sapphire.stern.C(scaleConst, isGhost)
+function prefab.ship.sapphire.stern.C(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Stern-C",
 		mesh = "6-Sapphire/Sapphire-Stern-C",
 		materials = {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_engine", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			prefab.weapon.hangar.quartz(
-				{ -5*.1/scaleConst, 0, -5.75*.1/scaleConst },
+				{ -5, 0, -5.75 },
 				{ 0, -90, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.hangar.quartz(
-				{ 5*.1/scaleConst, 0, -5.75*.1/scaleConst },
+				{ 5, 0, -5.75 },
 				{ 0, 90, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 
 			prefab.weapon.laser.S(
-				{ 0, 3.25*.1/scaleConst, -6.5*.1/scaleConst },
+				{ 0, 3.25, -6.5 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.laser.S(
-				{ 0, -3.25*.1/scaleConst, -6.5*.1/scaleConst },
+				{ 0, -3.25, -6.5 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 
 			prefab.weapon.missile.hls.S(
-				{ -2*.1/scaleConst, 3*.1/scaleConst, -9.75*.1/scaleConst },
+				{ -2, 3, -9.75 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.hls.S(
-				{ 2*.1/scaleConst, 3*.1/scaleConst, -9.75*.1/scaleConst },
+				{ 2, 3, -9.75 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.hls.S(
-				{ -2*.1/scaleConst, -3*.1/scaleConst, -9.75*.1/scaleConst },
+				{ -2, -3, -9.75 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.hls.S(
-				{ 2*.1/scaleConst, -3*.1/scaleConst, -9.75*.1/scaleConst },
+				{ 2, -3, -9.75 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 
 			
 			prefab.part.emblem(
-				{ 0, 3.95*.1/scaleConst, -9.5*.1/scaleConst},
+				{ 0, 3.95, -9.5},
 				{ 0, 0, 0 },
-				{ 1.5*.1/scaleConst, 1.5*.1/scaleConst, 1.5*.1/scaleConst },
-				isGhost
+				{ 1.5, 1.5, 1.5 },
+				isGhost, ghostIndex
 			),
 			prefab.part.emblem(
-				{ 0, -3.95*.1/scaleConst, -9.5*.1/scaleConst},
+				{ 0, -3.95, -9.5},
 				{ 0, 0, 180 },
-				{ 1.5*.1/scaleConst, 1.5*.1/scaleConst, 1.5*.1/scaleConst },
-				isGhost
+				{ 1.5, 1.5, 1.5 },
+				isGhost, ghostIndex
 			),
-			prefab.ship.sapphire.thruster(scaleConst, isGhost),
+			prefab.ship.sapphire.thruster(scaleConst, isGhost, ghostIndex),
+
+			prefab.ship.sapphire.stern.C(.1, isGhost, ghostIndex+1),
+
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -281,57 +301,63 @@ function prefab.weapon_info.sapphire.core.G()
 	}
 	return weapon_info
 end
-function prefab.ship.sapphire.core.G(scaleConst, isGhost)
+function prefab.ship.sapphire.core.G(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Core-G",
 		mesh = "6-Sapphire/Sapphire-Core-G",
 		materials = {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			prefab.weapon.lightning.L(
-				{ 0, 2.75*.1/scaleConst, -.75*.1/scaleConst },
+				{ 0, 2.75, -.75 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.lightning.L(
-				{ 0, -2.75*.1/scaleConst, -.75*.1/scaleConst },
+				{ 0, -2.75, -.75 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 
 
 			prefab.weapon.lightning.M(
-				{ -4.75*.1/scaleConst, 1.75*.1/scaleConst, -.75*.1/scaleConst },
+				{ -4.75, 1.75, -.75 },
 				{ 0, 0, 45 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.lightning.M(
-				{ 4.75*.1/scaleConst, 1.75*.1/scaleConst, -.75*.1/scaleConst },
+				{ 4.75, 1.75, -.75 },
 				{ 0, 0, -45 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.lightning.S(
-				{ -4.75*.1/scaleConst, -1.75*.1/scaleConst, -.75*.1/scaleConst },
+				{ -4.75, -1.75, -.75 },
 				{ 0, 0, 135 },
 				{ .100/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				isGhost, ghostIndex
 			),
 			prefab.weapon.lightning.S(
-				{ 4.75*.1/scaleConst, -1.75*.1/scaleConst, -.75*.1/scaleConst },
+				{ 4.75, -1.75, -.75 },
 				{ 0, 0, -135 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
+
+			prefab.ship.sapphire.core.G(.1, isGhost, ghostIndex+1),
+
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -344,44 +370,50 @@ function prefab.weapon_info.sapphire.core.A()
 	}
 	return weapon_info
 end
-function prefab.ship.sapphire.core.A(scaleConst, isGhost)
+function prefab.ship.sapphire.core.A(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Core-A",
 		mesh = "6-Sapphire/Sapphire-Core-A",
 		materials = {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			prefab.weapon.railgun.L(
-				{ -2*.1/scaleConst, 2.5*.1/scaleConst, -.75*.1/scaleConst },
+				{ -2, 2.5, -.75 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.railgun.L(
-				{ 2*.1/scaleConst, 2.5*.1/scaleConst, -.75*.1/scaleConst },
+				{ 2, 2.5, -.75 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.railgun.L(
-				{ 0, -2.5*.1/scaleConst, -.75*.1/scaleConst },
+				{ 0, -2.5, -.75 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 
 			prefab.weapon.railgun.M(
-				{ 0, -2*.1/scaleConst, 3*.1/scaleConst },
+				{ 0, -2, 3 },
 				{ -18.4349, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
+
+			prefab.ship.sapphire.core.A(.1, isGhost, ghostIndex+1),
+
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -393,68 +425,74 @@ function prefab.weapon_info.sapphire.core.C()
 	}
 	return weapon_info
 end
-function prefab.ship.sapphire.core.C(scaleConst, isGhost)
+function prefab.ship.sapphire.core.C(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Core-C",
 		mesh = "6-Sapphire/Sapphire-Core-C",
 		materials = {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			prefab.weapon.hangar.quartz(
-				{ -5*.1/scaleConst, 0, -3.75*.1/scaleConst },
+				{ -5, 0, -3.75 },
 				{ 0, -90, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.hangar.quartz(
-				{ -5*.1/scaleConst, 0, -2.25*.1/scaleConst },
+				{ -5, 0, -2.25 },
 				{ 0, -90, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.hangar.quartz(
-				{ -5*.1/scaleConst, 0, -.75*.1/scaleConst },
+				{ -5, 0, -.75 },
 				{ 0, -90, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.hangar.quartz(
-				{ 5*.1/scaleConst, 0, -3.75*.1/scaleConst },
+				{ 5, 0, -3.75 },
 				{ 0, 90, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.hangar.quartz(
-				{ 5*.1/scaleConst, 0, -2.25*.1/scaleConst },
+				{ 5, 0, -2.25 },
 				{ 0, 90, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.hangar.quartz(
-				{ 5*.1/scaleConst, 0, -.75*.1/scaleConst },
+				{ 5, 0, -.75 },
 				{ 0, 90, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 
 			prefab.weapon.missile.hls.M(
-				{ -5*.1/scaleConst, 0, 1.375*.1/scaleConst },
+				{ -5, 0, 1.375 },
 				{ 0, 0, 90 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.missile.hls.M(
-				{ 5*.1/scaleConst, 0, 1.375*.1/scaleConst },
+				{ 5, 0, 1.375 },
 				{ 0, 0, -90 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
+
+			prefab.ship.sapphire.core.C(.1, isGhost, ghostIndex+1),
+
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -469,44 +507,49 @@ function prefab.weapon_info.sapphire.bow.G()
 	}
 	return weapon_info
 end
-function prefab.ship.sapphire.bow.G(scaleConst, isGhost)
+function prefab.ship.sapphire.bow.G(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Bow-G",
 		mesh = "6-Sapphire/Sapphire-Bow-G",
-		materials = {"arc_teamGlow", "arc_hull", "arc_teamColour", },
+		materials = {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			prefab.weapon.lightning.M(
-				{ -2*.1/scaleConst, 1.75*.1/scaleConst, 6.75*.1/scaleConst },
+				{ -2, 1.75, 6.75 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.lightning.M(
-				{ 2*.1/scaleConst, 1.75*.1/scaleConst, 6.75*.1/scaleConst },
+				{ 2, 1.75, 6.75 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.lightning.M(
-				{ -2*.1/scaleConst, -1.75*.1/scaleConst, 6.75*.1/scaleConst },
+				{ -2, -1.75, 6.75 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.lightning.M(
-				{ 2*.1/scaleConst, -1.75*.1/scaleConst, 6.75*.1/scaleConst },
+				{ 2, -1.75, 6.75 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
+
+			prefab.ship.sapphire.bow.G(.1, isGhost, ghostIndex+1),
 
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -517,32 +560,38 @@ function prefab.weapon_info.sapphire.bow.A()
 	}
 	return weapon_info
 end
-function prefab.ship.sapphire.bow.A(scaleConst, isGhost)
+function prefab.ship.sapphire.bow.A(scaleConst, isGhost, ghostIndex)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Bow-A",
 		mesh = "6-Sapphire/Sapphire-Bow-A",
 		materials = {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			prefab.weapon.railgun.L(
-				{ 0, 1.5*.1/scaleConst, 7.25*.1/scaleConst },
+				{ 0, 1.5, 7.25 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			prefab.weapon.railgun.L(
-				{ 0, -1.5*.1/scaleConst, 7.25*.1/scaleConst },
+				{ 0, -1.5, 7.25 },
 				{ 0, 0, 180 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
+
+			prefab.ship.sapphire.bow.A(.1, isGhost, ghostIndex+1),
+
 
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -553,27 +602,30 @@ function prefab.weapon_info.sapphire.bow.S()
 	}
 	return weapon_info
 end
-function prefab.ship.sapphire.bow.S(scaleConst, isGhost)
+function prefab.ship.sapphire.bow.S(scaleConst, isGhost, ghostIndex)
 	spinal_mats = isGhost and {"arc_build", "arc_build", "arc_build",} or {"arc_teamGlow", "arc_hull", "arc_teamColour", };
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostIndex > 5) then return {}; end
+	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Bow-S",
 		mesh = "6-Sapphire/Sapphire-Bow-S",
-		materials = {"arc_teamGlow", "arc_hull", "arc_teamColour", },
+		materials = {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
-		scale = {1,1,1},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
 			prefab.weapon.lightning.XS(
-				{ 0, 0, 6.5*.1/scaleConst },
+				{ 0, 0, 6.5 },
 				{ 0, 0, 0 },
-				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost
+				{ 1, 1, 1 },
+				isGhost, ghostIndex
 			),
 			{
 				name = "Spinal",
 				position = {0,0,0},
 				rotation = {0,0,0},
-				scale = {.1/scaleConst, .1/scaleConst, .1/scaleConst},
+				scale = {1, 1, 1},
 				parts={
 					{
 						name = "Spinal Barrel",
@@ -581,7 +633,7 @@ function prefab.ship.sapphire.bow.S(scaleConst, isGhost)
 						materials = isGhost and {"arc_build", "arc_build", "arc_build", "arc_build",} or {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
 						position = {0,0,7},
 						rotation = {0,90,0},
-						scale = {1,1,1},
+						scale = {1, 1, 1},
 					},
 					{
 						name = "Spinal Ring",
@@ -589,7 +641,7 @@ function prefab.ship.sapphire.bow.S(scaleConst, isGhost)
 						materials = spinal_mats,
 						position = {0,0,13.25},
 						rotation = {0,90,0},
-						scale = {1,1,1},
+						scale = {1, 1, 1},
 					},
 					{
 						name = "Spinal Ring",
@@ -597,7 +649,7 @@ function prefab.ship.sapphire.bow.S(scaleConst, isGhost)
 						materials = spinal_mats,
 						position = {0,0,13.25-2.5},
 						rotation = {0,90,0},
-						scale = {1,1,1},
+						scale = {1, 1, 1},
 					},
 					{
 						name = "Spinal Ring",
@@ -605,15 +657,18 @@ function prefab.ship.sapphire.bow.S(scaleConst, isGhost)
 						materials = spinal_mats,
 						position = {0,0,13.25-5},
 						rotation = {0,90,0},
-						scale = {1,1,1},
+						scale = {1, 1, 1},
 					},
 				}
-			}
+			},
+
+			prefab.ship.sapphire.bow.S(.1, isGhost, ghostIndex+1),
+
 			
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build","arc_build","arc_build","arc_build","arc_build",}
+		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
 	end
 	return prefab_part
 end
