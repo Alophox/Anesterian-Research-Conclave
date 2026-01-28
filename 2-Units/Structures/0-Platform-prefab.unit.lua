@@ -11,7 +11,7 @@ function prefab.weapon_info.platform.L.A(count)
 	return weapon_info
 end
 function prefab.part.platform.L.A(scaleConst, angleCount, isGhost, ghostIndex)
-	newPos1 = functions.rotateRecursive({x=0,z=36.5*.1/scaleConst},{x=0,z=0},angleCount)
+	newPos1 = functions.rotateRecursive({x=0,z=36.25*.1/scaleConst},{x=0,z=0},angleCount)
 	newPos2 = functions.rotateRecursive({x=-1.25*.1/scaleConst,z=35*.1/scaleConst},{x=0,z=0},angleCount)
 	newPos3 = functions.rotateRecursive({x=0,z=33.75*.1/scaleConst},{x=0,z=0},angleCount)
 	newPos4 = functions.rotateRecursive({x=1.25*.1/scaleConst,z=35*.1/scaleConst},{x=0,z=0},angleCount)

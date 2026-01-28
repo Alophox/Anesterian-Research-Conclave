@@ -22,7 +22,7 @@ return {
 	},
 
 	-- BODY SETUP
-	scale                       = .909, -- 0.035714
+	scale                       = .91, -- 0.10989
 	mainMesh                    = "Battery/Battery-1",
 	materials                   = { "arc_hull", "arc_teamGlow", "arc_teamColour", "arc_hull_dark" },
 	inEditor = true,
