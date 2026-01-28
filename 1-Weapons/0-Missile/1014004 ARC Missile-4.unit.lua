@@ -162,123 +162,123 @@ return {
 			
 		},
 
-		{
-			name     = "Suck Particles",
-			position = { 0, 0, 0.0001 },
-			rotation = { 0, 0, 0 },
-			scale 	= { 1, 1, 1 },
+		-- {
+		-- 	name     = "Suck Particles",
+		-- 	position = { 0, 0, 0.0001 },
+		-- 	rotation = { 0, 0, 0 },
+		-- 	scale 	= { 1, 1, 1 },
 
-			particleEmitter = {
-				particleType = "PULSE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
-				distancePerParticle = .01,       -- decimal
-				minSecondsPerParticle = 9999,     -- decimal
-				ejectionVelocity = 0,             -- decimal
-				ejectionVelocityAwayFromEmitter = true, -- bool
-				randomRadius = 0,                 -- decimal
-				randomScaleMinFraction = 1,       -- decimal
-				startDisabled = true,            -- bool
-				stateToggleTrigger = "OnDeath",      -- enum EMITTERSTATETRIGGER
-				colourStart = {1,1,1},            -- decimals
-				colourEnd   = {1,1,1},            -- decimals
-				opacity     = .5,                  -- decimal
-				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size],                  -- decimal
-				scaleEnd    = 0,                  -- decimal
-				lifetime    = .5,                  -- decimal
-			},
+		-- 	particleEmitter = {
+		-- 		particleType = "PULSE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
+		-- 		distancePerParticle = .01,       -- decimal
+		-- 		minSecondsPerParticle = 9999,     -- decimal
+		-- 		ejectionVelocity = 0,             -- decimal
+		-- 		ejectionVelocityAwayFromEmitter = true, -- bool
+		-- 		randomRadius = 0,                 -- decimal
+		-- 		randomScaleMinFraction = 1,       -- decimal
+		-- 		startDisabled = true,            -- bool
+		-- 		stateToggleTrigger = "OnDeath",      -- enum EMITTERSTATETRIGGER
+		-- 		colourStart = {1,1,1},            -- decimals
+		-- 		colourEnd   = {1,1,1},            -- decimals
+		-- 		opacity     = .5,                  -- decimal
+		-- 		scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size],                  -- decimal
+		-- 		scaleEnd    = 0,                  -- decimal
+		-- 		lifetime    = .5,                  -- decimal
+		-- 	},
 			
-		},
-		{
-			name     = "Suck Particles",
-			position = { 0, 0, 0.0001 },
-			rotation = { 0, 0, 0 },
-			scale 	= { 1, 1, 1 },
-			particleEmitter = {
-				particleType = "PARTICLE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
-				distancePerParticle = 1,       -- decimal
-				minSecondsPerParticle = 0.006,     -- decimal
-				ejectionVelocity = 0,             -- decimal
-				ejectionVelocityAwayFromEmitter = true, -- bool
-				randomRadius = 0,                 -- decimal
-				randomScaleMinFraction = 1,       -- decimal
-				startDisabled = true,            -- bool
-				stateToggleTrigger = "OnDeath",      -- enum EMITTERSTATETRIGGER
-				colourStart = {.6,0,.6},            -- decimals
-				colourEnd   = {.6,0,.6},            -- decimals
-				opacity     = .5,                  -- decimal
-				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*1,                  -- decimal
-				scaleEnd    = 0,                  -- decimal
-				lifetime    = 1,                  -- decimal
-			},
-		},
-		{
-			name     = "Suck Particles",
-			position = { 0, 0, 0.0001 },
-			rotation = { 0, 0, 0 },
-			scale 	= { 1, 1, 1 },
-			particleEmitter = {
-				particleType = "PARTICLE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
-				distancePerParticle = 1,       -- decimal
-				minSecondsPerParticle = 0.006,     -- decimal
-				ejectionVelocity = 0,             -- decimal
-				ejectionVelocityAwayFromEmitter = true, -- bool
-				randomRadius = 0,                 -- decimal
-				randomScaleMinFraction = 1,       -- decimal
-				startDisabled = true,            -- bool
-				stateToggleTrigger = "OnDeath",      -- enum EMITTERSTATETRIGGER
-				colourStart = {.7,0,.7},            -- decimals
-				colourEnd   = {.7,0,.7},            -- decimals
-				opacity     = .6,                  -- decimal
-				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.8,                  -- decimal
-				scaleEnd    = 0,                  -- decimal
-				lifetime    = 1,                  -- decimal
-			},
-		},
-		{
-			name     = "Suck Particles",
-			position = { 0, 0, 0.0001 },
-			rotation = { 0, 0, 0 },
-			scale 	= { 1, 1, 1 },
-			particleEmitter = {
-				particleType = "PARTICLE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
-				distancePerParticle = 1,       -- decimal
-				minSecondsPerParticle = 0.006,     -- decimal
-				ejectionVelocity = 0,             -- decimal
-				ejectionVelocityAwayFromEmitter = true, -- bool
-				randomRadius = 0,                 -- decimal
-				randomScaleMinFraction = 1,       -- decimal
-				startDisabled = true,            -- bool
-				stateToggleTrigger = "OnDeath",      -- enum EMITTERSTATETRIGGER
-				colourStart = {.8,.1,.8},            -- decimals
-				colourEnd   = {.8,.1,.8},            -- decimals
-				opacity     = .7,                  -- decimal
-				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.6,                  -- decimal
-				scaleEnd    = 0,                  -- decimal
-				lifetime    = 1,                  -- decimal
-			},
-		},
-		{
-			name     = "Suck Particles",
-			position = { 0, 0, 0.0001 },
-			rotation = { 0, 0, 0 },
-			scale 	= { 1, 1, 1 },
-			particleEmitter = {
-				particleType = "PARTICLE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
-				distancePerParticle = 1,       -- decimal
-				minSecondsPerParticle = 0.006,     -- decimal
-				ejectionVelocity = 0,             -- decimal
-				ejectionVelocityAwayFromEmitter = true, -- bool
-				randomRadius = 0,                 -- decimal
-				randomScaleMinFraction = 1,       -- decimal
-				startDisabled = true,            -- bool
-				stateToggleTrigger = "OnDeath",      -- enum EMITTERSTATETRIGGER
-				colourStart = {1,.5,1},            -- decimals
-				colourEnd   = {1,.5,1},            -- decimals
-				opacity     = .9,                  -- decimal
-				scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.4,                  -- decimal
-				scaleEnd    = 0,                  -- decimal
-				lifetime    = 1,                  -- decimal
-			},
-		},
+		-- },
+		-- {
+		-- 	name     = "Suck Particles",
+		-- 	position = { 0, 0, 0.0001 },
+		-- 	rotation = { 0, 0, 0 },
+		-- 	scale 	= { 1, 1, 1 },
+		-- 	particleEmitter = {
+		-- 		particleType = "PARTICLE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
+		-- 		distancePerParticle = 1,       -- decimal
+		-- 		minSecondsPerParticle = 0.006,     -- decimal
+		-- 		ejectionVelocity = 0,             -- decimal
+		-- 		ejectionVelocityAwayFromEmitter = true, -- bool
+		-- 		randomRadius = 0,                 -- decimal
+		-- 		randomScaleMinFraction = 1,       -- decimal
+		-- 		startDisabled = true,            -- bool
+		-- 		stateToggleTrigger = "OnDeath",      -- enum EMITTERSTATETRIGGER
+		-- 		colourStart = {.6,0,.6},            -- decimals
+		-- 		colourEnd   = {.6,0,.6},            -- decimals
+		-- 		opacity     = .5,                  -- decimal
+		-- 		scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*1,                  -- decimal
+		-- 		scaleEnd    = 0,                  -- decimal
+		-- 		lifetime    = 1,                  -- decimal
+		-- 	},
+		-- },
+		-- {
+		-- 	name     = "Suck Particles",
+		-- 	position = { 0, 0, 0.0001 },
+		-- 	rotation = { 0, 0, 0 },
+		-- 	scale 	= { 1, 1, 1 },
+		-- 	particleEmitter = {
+		-- 		particleType = "PARTICLE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
+		-- 		distancePerParticle = 1,       -- decimal
+		-- 		minSecondsPerParticle = 0.006,     -- decimal
+		-- 		ejectionVelocity = 0,             -- decimal
+		-- 		ejectionVelocityAwayFromEmitter = true, -- bool
+		-- 		randomRadius = 0,                 -- decimal
+		-- 		randomScaleMinFraction = 1,       -- decimal
+		-- 		startDisabled = true,            -- bool
+		-- 		stateToggleTrigger = "OnDeath",      -- enum EMITTERSTATETRIGGER
+		-- 		colourStart = {.7,0,.7},            -- decimals
+		-- 		colourEnd   = {.7,0,.7},            -- decimals
+		-- 		opacity     = .6,                  -- decimal
+		-- 		scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.8,                  -- decimal
+		-- 		scaleEnd    = 0,                  -- decimal
+		-- 		lifetime    = 1,                  -- decimal
+		-- 	},
+		-- },
+		-- {
+		-- 	name     = "Suck Particles",
+		-- 	position = { 0, 0, 0.0001 },
+		-- 	rotation = { 0, 0, 0 },
+		-- 	scale 	= { 1, 1, 1 },
+		-- 	particleEmitter = {
+		-- 		particleType = "PARTICLE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
+		-- 		distancePerParticle = 1,       -- decimal
+		-- 		minSecondsPerParticle = 0.006,     -- decimal
+		-- 		ejectionVelocity = 0,             -- decimal
+		-- 		ejectionVelocityAwayFromEmitter = true, -- bool
+		-- 		randomRadius = 0,                 -- decimal
+		-- 		randomScaleMinFraction = 1,       -- decimal
+		-- 		startDisabled = true,            -- bool
+		-- 		stateToggleTrigger = "OnDeath",      -- enum EMITTERSTATETRIGGER
+		-- 		colourStart = {.8,.1,.8},            -- decimals
+		-- 		colourEnd   = {.8,.1,.8},            -- decimals
+		-- 		opacity     = .7,                  -- decimal
+		-- 		scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.6,                  -- decimal
+		-- 		scaleEnd    = 0,                  -- decimal
+		-- 		lifetime    = 1,                  -- decimal
+		-- 	},
+		-- },
+		-- {
+		-- 	name     = "Suck Particles",
+		-- 	position = { 0, 0, 0.0001 },
+		-- 	rotation = { 0, 0, 0 },
+		-- 	scale 	= { 1, 1, 1 },
+		-- 	particleEmitter = {
+		-- 		particleType = "PARTICLE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
+		-- 		distancePerParticle = 1,       -- decimal
+		-- 		minSecondsPerParticle = 0.006,     -- decimal
+		-- 		ejectionVelocity = 0,             -- decimal
+		-- 		ejectionVelocityAwayFromEmitter = true, -- bool
+		-- 		randomRadius = 0,                 -- decimal
+		-- 		randomScaleMinFraction = 1,       -- decimal
+		-- 		startDisabled = true,            -- bool
+		-- 		stateToggleTrigger = "OnDeath",      -- enum EMITTERSTATETRIGGER
+		-- 		colourStart = {1,.5,1},            -- decimals
+		-- 		colourEnd   = {1,.5,1},            -- decimals
+		-- 		opacity     = .9,                  -- decimal
+		-- 		scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.4,                  -- decimal
+		-- 		scaleEnd    = 0,                  -- decimal
+		-- 		lifetime    = 1,                  -- decimal
+		-- 	},
+		-- },
 	},
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).
@@ -334,20 +334,20 @@ return {
 
 		explosionType = "NONE",          	-- string enum: EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
 		explosionVolatility = 0,            	-- float: 1000 * unit scale * volatility = area damage when a unit of scale 2 or greater dies.
-		explosionSizeOveride = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size],             	-- float: Size of the visual explosion. A Tolly is 0.4 in size. 0 is automatic.
-		flashSizeOverride = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size] / 2,                	-- float: Size of the white internal flash. 0 is automatic.
+		explosionSizeOveride = 0.001, -- weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size],             	-- float: Size of the visual explosion. A Tolly is 0.4 in size. 0 is automatic.
+		flashSizeOverride = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size] / 20,                	-- float: Size of the white internal flash. 0 is automatic.
 		forceShockwave = false,               	-- bool: Forces a repulsive shockwave to be created, uses explosionSizeOveride or auto if not set.
 		preventShockwave = false,             	-- Prevents a repulsive shockwave from being created automatically on units scale 1+
 		randomiseInAllDirections = false,     	--Let the explosion randomise it's direction.
 		deathUnitSpawnDoNotRandomiseRotation = false, --Randomise the rotation of the unit spawned on death, if any.
-		deathUnitSpawnTypeID = -1,            	-- int: The unit spawned when this dies. -1 is nothing. Used for debris, and Glowfish Blobs.
+		deathUnitSpawnTypeID = 3294014,            	-- int: The unit spawned when this dies. -1 is nothing. Used for debris, and Glowfish Blobs.
 		invulnerable = false,                 	-- You can't hurt me, little man.
 		unkillable = false,                   	-- Even in death, I am eternal.
-		death_countdown = 0.01,                  	-- float: If the unit dies, but has not taken enough damage for InstaDeath, count down this long then blowup.
+		death_countdown = 0,                  	-- float: If the unit dies, but has not taken enough damage for InstaDeath, count down this long then blowup.
 		mass = 0,                             	-- float: Mass override, leave 0 for automatic (calculated from health, armour, and densityMult). Affects repulsion and impulse from damage.
 		densityMult = 1.0,                    	-- float: Multiplied agains the automatic mass calculation.
 		tonnage = 40,                         	-- float: Visual display value, does nothing.
-		ignoreInstaDeath = true,             	-- If a unit takes more than 150% damage (it's at negative health) it will explode instantly. True prevents that.
+		ignoreInstaDeath = false,             	-- If a unit takes more than 150% damage (it's at negative health) it will explode instantly. True prevents that.
 		alertPlayerOnDeath = false,           	-- If on the player's team, log an Alert that this unit has died. Should make it true on all buildings, and hero units (Hemedall).
 	},
 
@@ -446,7 +446,7 @@ return {
 	},
 
 	-- 🟥 PAYLOAD (AOE, for missiles, flak, etc.)
-	hasPayload = true,
+	hasPayload = false,
 	payload = {
 		damage = {
 			isNondamaging = false,

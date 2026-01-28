@@ -162,7 +162,7 @@ return {
      targeting = {
           acquisition = {
                -- QUADTREE_AND_MACRO (Local stuff, and MacroTargets), QUADTREE_ONLY (Only local stuff, for turrets), MACRO_ONLY (Only MacroTargets, for Nukes), RAYCAST (by minimumDistance), RAYCAST_VELOCITY (bullets), SPHEREOVERLAP (flak, missiles, by minimumDistance), CAPSULEOVERLAP_VELOCITY, CAPSULEOVERLAP (by minimumDistance, and width as maximumDistance)
-               type = "SPHEREOVERLAP",
+               type = "CAPSULEOVERLAP_VELOCITY",
                isFriendly = false, 			--Allowed to target units on the same team/alliance.
                isResourceMiner = false, 		--Allowed to target the Environmental team.
                acceptFirstValidTarget = false, 	--For launchers and things that don't need to actually target something. Shoot at the first thing you see.
