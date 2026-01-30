@@ -54,9 +54,9 @@ return {
 	health = {
 		unitClass = "LIGHT",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
 		health = (1 - healthStats.proportionRegenMax) * 600,
-		health_regen_per_second = healthStats.regen.S,
+		health_regen_per_second = healthStats.regen.L,
 		max_regen_frac = 0,
-		aegis_regen_per_second = healthStats.aegisRegen.S * healthStats.structAegisRegenMult,
+		aegis_regen_per_second = healthStats.aegisRegen.L * healthStats.structAegisRegenMult,
 		aegisMaximum = healthStats.proportionRegenMax * 600,
 
 		armour = 5,
