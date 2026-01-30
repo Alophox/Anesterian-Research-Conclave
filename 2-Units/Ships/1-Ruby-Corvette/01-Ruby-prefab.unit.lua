@@ -5,10 +5,11 @@ prefab.weapon_info.ruby = {
 	core = {}
 }
 
-function prefab.ship.ruby.thruster(scaleConst, isGhost, ghostIndex)
+function prefab.ship.ruby.thruster(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name     = "Thruster",
 		position = { 0, 0, -2.25 },
@@ -43,10 +44,11 @@ function prefab.weapon_info.ruby.core.P()
 	}
 	return weapon_info
 end
-function prefab.ship.ruby.core.P(scaleConst, isGhost, ghostIndex)
+function prefab.ship.ruby.core.P(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Ruby-Core-P",
 		position = {0,0,0},
@@ -60,36 +62,39 @@ function prefab.ship.ruby.core.P(scaleConst, isGhost, ghostIndex)
 				{ 0, 0.75, -.5 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.laser.S(
 				{ 0, -0.75, -.5 },
 				{ 0, 0, 180 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 
 			prefab.part.emblem(
 				{ 0, .75, -2},
 				{ 0, 0, 0 },
 				{ .5, .5, .5 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.part.emblem(
 				{ 0, -.75, -2},
 				{ 0, 0, 180 },
 				{ .5, .5, .5 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 
 			prefab.ship.ruby.thruster(scaleConst, isGhost, ghostIndex),
 
-			prefab.ship.ruby.core.P(.1, isGhost, ghostIndex+1),
+			prefab.ship.ruby.core.P(.1, isGhost, ghostIndex-1, ghostMat),
 	
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -101,10 +106,11 @@ function prefab.weapon_info.ruby.core.B()
 	}
 	return weapon_info
 end
-function prefab.ship.ruby.core.B(scaleConst, isGhost, ghostIndex)
+function prefab.ship.ruby.core.B(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Ruby-Core-B",
 		mesh = "1-Ruby/Ruby-Core-B",
@@ -118,35 +124,38 @@ function prefab.ship.ruby.core.B(scaleConst, isGhost, ghostIndex)
 				{ 0, 0.75, -.5 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.cannon.S(
 				{ 0, -0.75, -.5 },
 				{ 0, 0, 180 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 
 			prefab.part.emblem(
 				{ 0, .75, -2},
 				{ 0, 0, 0 },
 				{ .5, .5, .5 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.part.emblem(
 				{ 0, -.75, -2},
 				{ 0, 0, 180 },
 				{ .5, .5, .5 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 
 			prefab.ship.ruby.thruster(scaleConst, isGhost, ghostIndex),
 
-			prefab.ship.ruby.core.B(.1, isGhost, ghostIndex+1),
+			prefab.ship.ruby.core.B(.1, isGhost, ghostIndex-1, ghostMat),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -157,10 +166,11 @@ function prefab.weapon_info.ruby.core.M()
 	}
 	return weapon_info
 end
-function prefab.ship.ruby.core.M(scaleConst, isGhost, ghostIndex)
+function prefab.ship.ruby.core.M(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Ruby-Core-M",
 		mesh = "1-Ruby/Ruby-Core-M",
@@ -173,25 +183,25 @@ function prefab.ship.ruby.core.M(scaleConst, isGhost, ghostIndex)
 				{ 1, 0.5, -.5 },
 				{ 0, 0, -45 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.missile.hls.S(
 				{ -1, 0.5, -.5 },
 				{ 0, 0, 45 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.missile.hls.S(
 				{ 1, -0.5, -.5 },
 				{ 0, 0, -135 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.missile.hls.S(
 				{ -1, -0.5, -.5 },
 				{ 0, 0, 135 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			
 
@@ -199,22 +209,25 @@ function prefab.ship.ruby.core.M(scaleConst, isGhost, ghostIndex)
 				{ 0, .5, -1.5},
 				{ 0, 0, 0 },
 				{ .5, .5, .5 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.part.emblem(
 				{ 0, -.5, -1.5},
 				{ 0, 0, 180 },
 				{ .5, .5, .5 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 
 			prefab.ship.ruby.thruster(scaleConst, isGhost, ghostIndex),
 
-			prefab.ship.ruby.core.M(.1, isGhost, ghostIndex+1),
+			prefab.ship.ruby.core.M(.1, isGhost, ghostIndex-1, ghostMat),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	end
 	return prefab_part
 end

@@ -5,10 +5,11 @@ prefab.weapon_info.railgun = {}
 function prefab.weapon_info.railgun.D(count)
 	return { 3295500, 1 * count, 3296500 }
 end
-function prefab.weapon.railgun.D(pos, rot, sca, isGhost, ghostIndex)
+function prefab.weapon.railgun.D(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Small Turret Base",
 		-- mesh      = "Turrets-1/Turret-1-Base",
@@ -19,7 +20,10 @@ function prefab.weapon.railgun.D(pos, rot, sca, isGhost, ghostIndex)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -49,10 +53,11 @@ end
 function prefab.weapon_info.railgun.S(count)
 	return { 3295501, 1 * count, 3296501 }
 end
-function prefab.weapon.railgun.S(pos, rot, sca, isGhost, ghostIndex)
+function prefab.weapon.railgun.S(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Small Disruptor Base",
 		mesh      = "Turrets-1/Turret-1-Base",
@@ -63,7 +68,10 @@ function prefab.weapon.railgun.S(pos, rot, sca, isGhost, ghostIndex)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -121,10 +129,11 @@ end
 function prefab.weapon_info.railgun.M(count)
 	return { 3295502, 1 * count, 3296502 }
 end
-function prefab.weapon.railgun.M(pos, rot, sca, isGhost, ghostIndex)
+function prefab.weapon.railgun.M(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Medium Railgun Base",
 		mesh      = "Turrets-3/Turret-3-Base",
@@ -135,7 +144,10 @@ function prefab.weapon.railgun.M(pos, rot, sca, isGhost, ghostIndex)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -197,10 +209,11 @@ end
 function prefab.weapon_info.railgun.L(count)
 	return { 3295503, 1 * count, 3296503 }
 end
-function prefab.weapon.railgun.L(pos,rot,sca,isGhost, ghostIndex) --{float3}, {float3}, {float3}, bool
+function prefab.weapon.railgun.L(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{float3}, {float3}, {float3}, bool
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Large Turret Base",
 		mesh      = "Turrets-5/Turret-5-Base",
@@ -211,7 +224,10 @@ function prefab.weapon.railgun.L(pos,rot,sca,isGhost, ghostIndex) --{float3}, {f
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.parts = {
 			{
@@ -299,10 +315,11 @@ end
 function prefab.weapon_info.railgun.X(count)
 	return { 3295504, 1 * count, 3296504 }
 end
-function prefab.weapon.railgun.X(pos,rot,sca,isGhost, ghostIndex) --{float3}, {float3}, {float3}, bool
+function prefab.weapon.railgun.X(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{float3}, {float3}, {float3}, bool
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Large Turret Base",
 		mesh      = "Turrets-7/Turret-7-Base",
@@ -313,7 +330,10 @@ function prefab.weapon.railgun.X(pos,rot,sca,isGhost, ghostIndex) --{float3}, {f
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.parts = {
 			{
@@ -395,10 +415,11 @@ end
 function prefab.weapon_info.railgun.XS(count)
 	return { 3295504, 1 * count, 3296504 }
 end
-function prefab.weapon.railgun.XS(pos,rot,sca,isGhost, ghostIndex) --{float3}, {float3}, {float3}, bool
+function prefab.weapon.railgun.XS(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{float3}, {float3}, {float3}, bool
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Large Turret Base",
 		-- mesh      = "Turrets-5/Turret-5-Base",
@@ -409,7 +430,10 @@ function prefab.weapon.railgun.XS(pos,rot,sca,isGhost, ghostIndex) --{float3}, {
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.parts = {
 			{
@@ -449,10 +473,11 @@ end
 function prefab.weapon_info.railgun.TS(count)
 	return { 3295505, 1 * count, 3296505 }
 end
-function prefab.weapon.railgun.TS(pos,rot,sca,isGhost, ghostIndex) --{float3}, {float3}, {float3}, bool
+function prefab.weapon.railgun.TS(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{float3}, {float3}, {float3}, bool
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Large Turret Base",
 		-- mesh      = "Turrets-5/Turret-5-Base",
@@ -463,7 +488,10 @@ function prefab.weapon.railgun.TS(pos,rot,sca,isGhost, ghostIndex) --{float3}, {
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.parts = {
 			{

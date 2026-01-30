@@ -5,9 +5,9 @@ prefab.weapon_info.special = {}
 function prefab.weapon_info.special.spawn_shield(count)
 -- ...don't want stats for this showing
 end
-function prefab.weapon.special.spawn_shield(pos,rot,sca,isGhost, ghostIndex) --{float3}, {float3}, {float3}, bool
+function prefab.weapon.special.spawn_shield(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{float3}, {float3}, {float3}, bool
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
+	if(ghostIndex > 2) then return {}; end
 	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name	= "Spawn Shield",
@@ -17,7 +17,10 @@ function prefab.weapon.special.spawn_shield(pos,rot,sca,isGhost, ghostIndex) --{
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.parts={
 			{

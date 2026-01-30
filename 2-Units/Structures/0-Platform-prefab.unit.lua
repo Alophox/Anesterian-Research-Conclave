@@ -16,7 +16,7 @@ function prefab.part.platform.L.A(scaleConst, angleCount, isGhost, ghostIndex)
 	newPos3 = functions.rotateRecursive({x=0,z=33.75*.1/scaleConst},{x=0,z=0},angleCount)
 	newPos4 = functions.rotateRecursive({x=1.25*.1/scaleConst,z=35*.1/scaleConst},{x=0,z=0},angleCount)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
+	if(ghostIndex > 2) then return {}; end
 	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Platform Segment Large A",
@@ -30,30 +30,34 @@ function prefab.part.platform.L.A(scaleConst, angleCount, isGhost, ghostIndex)
 				{newPos1.x, 3.5*.1/scaleConst,newPos1.z},
 				{ 0, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.laser.S(
 				{newPos2.x, 3.5*.1/scaleConst,newPos2.z},
 				{ 0, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.laser.S(
 				{newPos3.x, 3.5*.1/scaleConst,newPos3.z},
 				{ 0, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.laser.S(
 				{newPos4.x, 3.5*.1/scaleConst,newPos4.z},
 				{ 0, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+			prefab_part.scale = {.11/scaleConst,.11/scaleConst,.11/scaleConst};
+		end
+		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -68,7 +72,7 @@ function prefab.part.platform.L.B(scaleConst, angleCount, isGhost, ghostIndex)
 	newPos1 = functions.rotateRecursive({x=1.45*.1/scaleConst,z=35*.1/scaleConst},{x=0,z=0},angleCount)
 	newPos2 = functions.rotateRecursive({x=-1.45*.1/scaleConst,z=35*.1/scaleConst},{x=0,z=0},angleCount)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
+	if(ghostIndex > 2) then return {}; end
 	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Platform Segment Large B",
@@ -82,19 +86,23 @@ function prefab.part.platform.L.B(scaleConst, angleCount, isGhost, ghostIndex)
 				{newPos1.x, 4.25*.1/scaleConst,newPos1.z},
 				{ 0, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.cannon.M(
 				{newPos2.x, 4.25*.1/scaleConst,newPos2.z},
 				{ 0, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+			prefab_part.scale = {.11/scaleConst,.11/scaleConst,.11/scaleConst};
+		end
+		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -107,7 +115,7 @@ end
 function prefab.part.platform.L.C1(scaleConst, angleCount, isGhost, ghostIndex)
 	newPos1 = functions.rotateRecursive({x=0,z=16*.1/scaleConst},{x=0,z=0},angleCount)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
+	if(ghostIndex > 2) then return {}; end
 	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Platform Segment Large C",
@@ -121,13 +129,17 @@ function prefab.part.platform.L.C1(scaleConst, angleCount, isGhost, ghostIndex)
 				{newPos1.x, 4.75*.1/scaleConst,newPos1.z},
 				{ 0, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+			prefab_part.scale = {.11/scaleConst,.11/scaleConst,.11/scaleConst};
+		end
+		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -140,7 +152,7 @@ end
 function prefab.part.platform.L.C2(scaleConst, angleCount, isGhost, ghostIndex)
 	newPos1 = functions.rotateRecursive({x=0,z=16*.1/scaleConst},{x=0,z=0},angleCount)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
+	if(ghostIndex > 2) then return {}; end
 	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Platform Segment Large C",
@@ -154,13 +166,17 @@ function prefab.part.platform.L.C2(scaleConst, angleCount, isGhost, ghostIndex)
 				{newPos1.x, 4.75*.1/scaleConst,newPos1.z},
 				{ 0, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+			prefab_part.scale = {.11/scaleConst,.11/scaleConst,.11/scaleConst};
+		end
+		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	end
 	return prefab_part
 end

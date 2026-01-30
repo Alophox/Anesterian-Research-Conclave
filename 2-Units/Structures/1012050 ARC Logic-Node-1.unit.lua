@@ -53,20 +53,21 @@ return {
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "LIGHT",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = 600,
+		health = (1 - healthStats.proportionRegenMax) * 600,
 		health_regen_per_second = healthStats.regen.S,
 		max_regen_frac = 0,
+		aegis_regen_per_second = healthStats.aegisRegen.S * healthStats.structAegisRegenMult,
+		aegisMaximum = healthStats.proportionRegenMax * 600,
 
 		armour = 5,
 		vulnerability_max = 0,
-		shredMultiplier = 1.0,
+		shredMultiplier = 0,
 
 		explosionSFX = 0,
 		explosionSFXIntensity = 1,		-- Platforms blowing up is very important.
 
 		heatResistancePercentage = 0,
 		shredResistancePercentage = 0,
-		aegisMaximum = 0,
 		isResourceMatter = false,
 		isResourceEnergy = false,
 		isUncapturable = false,

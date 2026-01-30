@@ -263,6 +263,17 @@ healthStats = {
 		C = 15,
 		T = 150,
 	},
+	aegisRegen = {
+		L = 3,
+		LM = 4,
+		M = 6,
+		MH = 10,
+		H = 15,
+		HC = 20,
+		C = 30,
+		T = 300,
+	},
+	structAegisRegenMult = .25,
 	proportionRegenMax = .25,
 	baseHealth = {
 		L = 150,
@@ -362,7 +373,7 @@ return {
 		3292030, 3292031, 3292040, --economy
 	}, -- int array: A list of unit TypeIDs that the player is allowed to build, both structures and ships.
 	skirmish_platforms = { 3292000 },      -- Initial platforms/stationary structures
-	skirmish_ais = { 3299000 },             --This doesn't work yet, please wait. Luke 2025/04/18
+	skirmish_ais = { "287ab6d5-f7d6-4eeb-8413-0f16da465efc" },             --This doesn't work yet, please wait. Luke 2025/04/18
 	
 	-- Content catalog (for editor and databank)
 	ships = { 

@@ -40,7 +40,7 @@ return {
 		necrofire = false,            -- enable weapon on parent death (good for SPARKLER visual effects, among other things)
 		active = true,                -- is the weapon online (for use with necrofire)
 		oneuse = false,               -- destroy root unit when out of ammo, (for bullets, missiles, etc) (fires entire magazine then destroys the unit it's on)
-		rangeInUnits = weaponStats.rangeMult[weaponConst.size] * weaponStats.laser.baseRange * weaponStats.overShootMult,            -- Target must be within range, for gun to fire.
+		rangeInUnits = weaponStats.rangeMult[weaponConst.size] * weaponStats.laser.baseRange ,            -- Target must be within range, for gun to fire.
 		maximumAngleToTarget = 0.01,   -- Radians, target must be within angle for gun to fire.
 		unitsPerSecond = 0,           -- projectile velocity for LAUNCHER in 100m/s
 		spreadDegrees = 0,          -- Radians, spread for LAUNCHER (machine guns, etc)
@@ -104,7 +104,7 @@ return {
 		--If a laserDescription part is tagged as "use parent laserDescription" then it will use this.
 		laserDescription = { 		--"laser" description, but is actually a maleable visual effect.
 						duration = .2,			--seconds
-						opacity = 1,			--float, 0-1
+						opacity = .3,			--float, 0-1
 						diameter = .4,			--relative to turret scale
 						offset = 0,			--relative to the barrel it gets fired from's facing.
 						rotateZ = true,		--Rotate the effect once randomly on the z axis when used.

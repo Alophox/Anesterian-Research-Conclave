@@ -77,32 +77,33 @@ return {
 	-- 🟦 PARTS
 	parts = {
 		prefab.ship.ruby.core.P(scaleConst, false),
+		prefab.ship.ruby.core.P(scaleConst, true, 0, "arc_aegis"),
 	},
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).
 	-- ghostMesh		= "1-Ruby/Ruby-Core-P",   -- Used for build ghosts on spawners (yards).
-	-- ghostMaterials = { "arc_build", "arc_build", "arc_build","arc_build" }, -- Used for the ghostMesh for build ghosts on spawners (yards).
+	-- ghostMaterials = { ghostMat, ghostMat, ghostMat,ghostMat }, -- Used for the ghostMesh for build ghosts on spawners (yards).
 	ghostParts 	= {
-		prefab.ship.ruby.core.P(scaleConst, true),
+		prefab.ship.ruby.core.P(scaleConst, true, 2),
 	},
 
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "LIGHT",       -- string enum: UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.P}),              -- float: Health, also the unit's heat capacity.
-		health_regen_per_second = healthStats.regen[shipConst.class], -- float: Health regen per second. Duh.
-		max_regen_frac = healthStats.proportionRegenMax,      -- float: The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
-
+		health = (1 - healthStats.proportionRegenMax) * (1 - healthStats.proportionRegenMax) * healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.P}),              -- float: Health, also the unit's heat capacity.
+		health_regen_per_second = 0,
+		aegis_regen_per_second = healthStats.aegisRegen[shipConst.class],
+		max_regen_frac = healthStats.proportionRegenMax,
 		armour = functions.floor(healthStats.baseArmor[shipConst.class] * functions.averageMultiplier({healthStats.armorMult.P})),                -- int: Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
 		vulnerability_max = 0,   -- float: Prevent the unit from losing more than X fraction of it's armour.
-		shredMultiplier = 1.0,     -- float: Multiplies incomming shred, pretty self explanatory right?
+		shredMultiplier = 0,     -- float: Multiplies incomming shred, pretty self explanatory right?
 
 		explosionSFX = 0,          -- int: will write a table for inbuilt game SFX. If I have, ask me for it. Otherwise wait. :)
 		explosionSFXIntensity = 0.8, -- float: The importance of a sound, affects how far away it is heard and what other sounds it can override as there can only be 255 sounds at a time. Platform Death/Nuke = 10, Ekudon cannon = 4, Tolly gun = 0.2, Otorell gun = 0.4,
 
 		heatResistancePercentage = 0, -- float: Fraction of heat resistance. (0-1) Normally 0
 		shredResistancePercentage = 0, -- float: Fraction of shred resistance. (0-1) Normally 0. If 0 game automatically assigns shredResistance based on unit class (as is done for the entire vanilla game).
-		aegisMaximum = 0, 			-- float: Game will automatically determine, but can be manually set here.
+		aegisMaximum = healthStats.proportionRegenMax *  healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.P}), 			-- float: Game will automatically determine, but can be manually set here.
 		isResourceMatter = false,  	-- bool: For Matter Deposits. When damaged, gives the damage back to the attacking team as Matter.
 		isResourceEnergy = false,  	-- bool: For Energy Deposits. When damaged, gives the damage back to the attacking team as Energy.
 		isUncapturable = false,    	-- bool: Prevents capture, such as from Glowfish.
@@ -162,8 +163,8 @@ return {
 		reverseAccelMultiplier = functions.averageMultiplier({healthStats.retreatMult.P}),      -- float: Fraction of accel used for reverse/breaking
 		inertialCorrection = true,         --Try to cancel out excess velocity in directions you don't want to go.
 		isStrafing = false,                 --Should this unit strafe around? (Partell, Skua)
-		standoffDistance = weaponStats.fireRangeMult * weaponStats.rangeMult["S"] * weaponStats.laser.baseRange-1,              -- float: How far away from a target's ColliderDimensions should a unit hold position?
-		retreatDistance = weaponStats.fireRangeMult * weaponStats.rangeMult["S"] * weaponStats.laser.baseRange - 2,               -- float: How far away from a target's ColliderDimensions should a unit begin to retreat?
+		standoffDistance = weaponStats.fireRangeMult * weaponStats.rangeMult["S"] * weaponStats.laser.baseRange-2,              -- float: How far away from a target's ColliderDimensions should a unit hold position?
+		retreatDistance = weaponStats.fireRangeMult * weaponStats.rangeMult["S"] * weaponStats.laser.baseRange - 3,               -- float: How far away from a target's ColliderDimensions should a unit begin to retreat?
 		strafeMargin = 1.5,                -- float: How far away from standoffDistance strafe thrust is allowed to start. Default = 1
 		useMinimumWorldYPosition = false,
 		minimumWorldYPosition = 0,         -- float: What does this unit consider the lowest it can go? Capitals and Heavies often use 3~4 to stop them sinking into bases, and keep them looking imposing.

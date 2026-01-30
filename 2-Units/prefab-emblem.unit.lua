@@ -1,8 +1,9 @@
 
-function prefab.part.emblem(pos, rot, sca, isGhost, ghostIndex)
+function prefab.part.emblem(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Emblem",
 		mesh = "Emblem/Emblem",
@@ -11,7 +12,10 @@ function prefab.part.emblem(pos, rot, sca, isGhost, ghostIndex)
 		position = pos,
 		scale = sca,}
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	end
     return prefab_part
 end

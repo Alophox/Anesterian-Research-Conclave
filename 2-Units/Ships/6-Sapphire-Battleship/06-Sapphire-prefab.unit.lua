@@ -9,10 +9,11 @@ prefab.weapon_info.sapphire = {
 	bow = {}
 }
 
-function prefab.ship.sapphire.thruster(scaleConst, isGhost, ghostIndex)
+function prefab.ship.sapphire.thruster(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name     = "Thruster",
 		position = { 0, 0, -12.5 },
@@ -64,10 +65,11 @@ function prefab.weapon_info.sapphire.stern.G()
 	}
 	return weapon_info
 end
-function prefab.ship.sapphire.stern.G(scaleConst, isGhost, ghostIndex)
+function prefab.ship.sapphire.stern.G(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Stern-G",
 		mesh = "6-Sapphire/Sapphire-Stern-G",
@@ -80,13 +82,13 @@ function prefab.ship.sapphire.stern.G(scaleConst, isGhost, ghostIndex)
 				{ 0, 3.75, -9.5 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.lightning.M(
 				{ 0, -3.75, -9.5 },
 				{ 0, 0, 180 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 
 
@@ -94,25 +96,25 @@ function prefab.ship.sapphire.stern.G(scaleConst, isGhost, ghostIndex)
 				{ -1, 3.25, -5.75 },
 				{ 0, 0, 0 },
 				{ 1.001, 1.001, 1.001 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.lightning.S(
 				{ 1, 3.25, -5.75 },
 				{ 0, 0, 0 },
 				{ 1.001, 1.001, 1.001 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.lightning.S(
 				{ -1, -3.25, -5.75 },
 				{ 0, 0, 180 },
 				{ 1.001, 1.001, 1.001 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.lightning.S(
 				{ 1, -3.25, -5.75 },
 				{ 0, 0, 180 },
 				{ 1.001, 1.001, 1.001 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 
 			
@@ -120,21 +122,24 @@ function prefab.ship.sapphire.stern.G(scaleConst, isGhost, ghostIndex)
 				{ 0, 3.25, -12.5},
 				{ -18.4349, 0, 0 },
 				{ 3, 3, 3 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.part.emblem(
 				{ 0, -3.25, -12.5},
 				{ 18.4349, 0, 180 },
 				{ 3, 3, 3 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.ship.sapphire.thruster(scaleConst, isGhost, ghostIndex),
 
-			prefab.ship.sapphire.stern.G(.1, isGhost, ghostIndex+1),
+			prefab.ship.sapphire.stern.G(.1, isGhost, ghostIndex-1, ghostMat),
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -145,10 +150,11 @@ function prefab.weapon_info.sapphire.stern.A()
 	}
 	return weapon_info
 end
-function prefab.ship.sapphire.stern.A(scaleConst, isGhost, ghostIndex)
+function prefab.ship.sapphire.stern.A(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Stern-A",
 		mesh = "6-Sapphire/Sapphire-Stern-A",
@@ -161,35 +167,38 @@ function prefab.ship.sapphire.stern.A(scaleConst, isGhost, ghostIndex)
 				{ 0, 3.5, -8.75 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.railgun.L(
 				{ 0, -3.5, -8.75 },
 				{ 0, 0, 180 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			
 			prefab.part.emblem(
 				{ 0, 3.25, -12.5},
 				{ -18.4349, 0, 0 },
 				{ 3, 3, 3 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.part.emblem(
 				{ 0, -3.25, -12.5},
 				{ 18.4349, 0, 180 },
 				{ 3, 3, 3 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.ship.sapphire.thruster(scaleConst, isGhost, ghostIndex),
 
-			prefab.ship.sapphire.stern.A(.1, isGhost, ghostIndex+1),
+			prefab.ship.sapphire.stern.A(.1, isGhost, ghostIndex-1, ghostMat),
 
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -202,10 +211,11 @@ function prefab.weapon_info.sapphire.stern.C()
 	}
 	return weapon_info
 end
-function prefab.ship.sapphire.stern.C(scaleConst, isGhost, ghostIndex)
+function prefab.ship.sapphire.stern.C(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Stern-C",
 		mesh = "6-Sapphire/Sapphire-Stern-C",
@@ -218,51 +228,51 @@ function prefab.ship.sapphire.stern.C(scaleConst, isGhost, ghostIndex)
 				{ -5, 0, -5.75 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.hangar.quartz(
 				{ 5, 0, -5.75 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 
 			prefab.weapon.laser.S(
 				{ 0, 3.25, -6.5 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.laser.S(
 				{ 0, -3.25, -6.5 },
 				{ 0, 0, 180 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 
 			prefab.weapon.missile.hls.S(
 				{ -2, 3, -9.75 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.missile.hls.S(
 				{ 2, 3, -9.75 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.missile.hls.S(
 				{ -2, -3, -9.75 },
 				{ 0, 0, 180 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.missile.hls.S(
 				{ 2, -3, -9.75 },
 				{ 0, 0, 180 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 
 			
@@ -270,22 +280,25 @@ function prefab.ship.sapphire.stern.C(scaleConst, isGhost, ghostIndex)
 				{ 0, 3.95, -9.5},
 				{ 0, 0, 0 },
 				{ 1.5, 1.5, 1.5 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.part.emblem(
 				{ 0, -3.95, -9.5},
 				{ 0, 0, 180 },
 				{ 1.5, 1.5, 1.5 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.ship.sapphire.thruster(scaleConst, isGhost, ghostIndex),
 
-			prefab.ship.sapphire.stern.C(.1, isGhost, ghostIndex+1),
+			prefab.ship.sapphire.stern.C(.1, isGhost, ghostIndex-1, ghostMat),
 
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -301,10 +314,11 @@ function prefab.weapon_info.sapphire.core.G()
 	}
 	return weapon_info
 end
-function prefab.ship.sapphire.core.G(scaleConst, isGhost, ghostIndex)
+function prefab.ship.sapphire.core.G(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Core-G",
 		mesh = "6-Sapphire/Sapphire-Core-G",
@@ -317,13 +331,13 @@ function prefab.ship.sapphire.core.G(scaleConst, isGhost, ghostIndex)
 				{ 0, 2.75, -.75 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.lightning.L(
 				{ 0, -2.75, -.75 },
 				{ 0, 0, 180 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 
 
@@ -331,33 +345,36 @@ function prefab.ship.sapphire.core.G(scaleConst, isGhost, ghostIndex)
 				{ -4.75, 1.75, -.75 },
 				{ 0, 0, 45 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.lightning.M(
 				{ 4.75, 1.75, -.75 },
 				{ 0, 0, -45 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.lightning.S(
 				{ -4.75, -1.75, -.75 },
 				{ 0, 0, 135 },
 				{ .100/scaleConst, .1/scaleConst, .1/scaleConst },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.lightning.S(
 				{ 4.75, -1.75, -.75 },
 				{ 0, 0, -135 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 
-			prefab.ship.sapphire.core.G(.1, isGhost, ghostIndex+1),
+			prefab.ship.sapphire.core.G(.1, isGhost, ghostIndex-1, ghostMat),
 
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -370,10 +387,11 @@ function prefab.weapon_info.sapphire.core.A()
 	}
 	return weapon_info
 end
-function prefab.ship.sapphire.core.A(scaleConst, isGhost, ghostIndex)
+function prefab.ship.sapphire.core.A(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Core-A",
 		mesh = "6-Sapphire/Sapphire-Core-A",
@@ -386,34 +404,37 @@ function prefab.ship.sapphire.core.A(scaleConst, isGhost, ghostIndex)
 				{ -2, 2.5, -.75 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.railgun.L(
 				{ 2, 2.5, -.75 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.railgun.L(
 				{ 0, -2.5, -.75 },
 				{ 0, 0, 180 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 
 			prefab.weapon.railgun.M(
 				{ 0, -2, 3 },
 				{ -18.4349, 0, 180 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 
-			prefab.ship.sapphire.core.A(.1, isGhost, ghostIndex+1),
+			prefab.ship.sapphire.core.A(.1, isGhost, ghostIndex-1, ghostMat),
 
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -425,10 +446,11 @@ function prefab.weapon_info.sapphire.core.C()
 	}
 	return weapon_info
 end
-function prefab.ship.sapphire.core.C(scaleConst, isGhost, ghostIndex)
+function prefab.ship.sapphire.core.C(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Core-C",
 		mesh = "6-Sapphire/Sapphire-Core-C",
@@ -441,58 +463,61 @@ function prefab.ship.sapphire.core.C(scaleConst, isGhost, ghostIndex)
 				{ -5, 0, -3.75 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.hangar.quartz(
 				{ -5, 0, -2.25 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.hangar.quartz(
 				{ -5, 0, -.75 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.hangar.quartz(
 				{ 5, 0, -3.75 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.hangar.quartz(
 				{ 5, 0, -2.25 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.hangar.quartz(
 				{ 5, 0, -.75 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 
 			prefab.weapon.missile.hls.M(
 				{ -5, 0, 1.375 },
 				{ 0, 0, 90 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.missile.hls.M(
 				{ 5, 0, 1.375 },
 				{ 0, 0, -90 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 
-			prefab.ship.sapphire.core.C(.1, isGhost, ghostIndex+1),
+			prefab.ship.sapphire.core.C(.1, isGhost, ghostIndex-1, ghostMat),
 
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -507,10 +532,11 @@ function prefab.weapon_info.sapphire.bow.G()
 	}
 	return weapon_info
 end
-function prefab.ship.sapphire.bow.G(scaleConst, isGhost, ghostIndex)
+function prefab.ship.sapphire.bow.G(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Bow-G",
 		mesh = "6-Sapphire/Sapphire-Bow-G",
@@ -523,33 +549,36 @@ function prefab.ship.sapphire.bow.G(scaleConst, isGhost, ghostIndex)
 				{ -2, 1.75, 6.75 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.lightning.M(
 				{ 2, 1.75, 6.75 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.lightning.M(
 				{ -2, -1.75, 6.75 },
 				{ 0, 0, 180 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.lightning.M(
 				{ 2, -1.75, 6.75 },
 				{ 0, 0, 180 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 
-			prefab.ship.sapphire.bow.G(.1, isGhost, ghostIndex+1),
+			prefab.ship.sapphire.bow.G(.1, isGhost, ghostIndex-1, ghostMat),
 
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -560,10 +589,11 @@ function prefab.weapon_info.sapphire.bow.A()
 	}
 	return weapon_info
 end
-function prefab.ship.sapphire.bow.A(scaleConst, isGhost, ghostIndex)
+function prefab.ship.sapphire.bow.A(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Bow-A",
 		mesh = "6-Sapphire/Sapphire-Bow-A",
@@ -576,22 +606,25 @@ function prefab.ship.sapphire.bow.A(scaleConst, isGhost, ghostIndex)
 				{ 0, 1.5, 7.25 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.railgun.L(
 				{ 0, -1.5, 7.25 },
 				{ 0, 0, 180 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 
-			prefab.ship.sapphire.bow.A(.1, isGhost, ghostIndex+1),
+			prefab.ship.sapphire.bow.A(.1, isGhost, ghostIndex-1, ghostMat),
 
 
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	end
 	return prefab_part
 end
@@ -602,11 +635,12 @@ function prefab.weapon_info.sapphire.bow.S()
 	}
 	return weapon_info
 end
-function prefab.ship.sapphire.bow.S(scaleConst, isGhost, ghostIndex)
-	spinal_mats = isGhost and {"arc_build", "arc_build", "arc_build",} or {"arc_teamGlow", "arc_hull", "arc_teamColour", };
+function prefab.ship.sapphire.bow.S(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
+	spinal_mats = isGhost and {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,} or {"arc_teamGlow", "arc_hull", "arc_teamColour", };
 	prefab_part = {
 		name = "Sapphire-Bow-S",
 		mesh = "6-Sapphire/Sapphire-Bow-S",
@@ -619,7 +653,7 @@ function prefab.ship.sapphire.bow.S(scaleConst, isGhost, ghostIndex)
 				{ 0, 0, 6.5 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
-				isGhost, ghostIndex
+				isGhost, ghostIndex, ghostMat
 			),
 			{
 				name = "Spinal",
@@ -630,7 +664,7 @@ function prefab.ship.sapphire.bow.S(scaleConst, isGhost, ghostIndex)
 					{
 						name = "Spinal Barrel",
 						mesh = "6-Sapphire/Spinal-Barrel",
-						materials = isGhost and {"arc_build", "arc_build", "arc_build", "arc_build",} or {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
+						materials = isGhost and {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,} or {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
 						position = {0,0,7},
 						rotation = {0,90,0},
 						scale = {1, 1, 1},
@@ -662,13 +696,16 @@ function prefab.ship.sapphire.bow.S(scaleConst, isGhost, ghostIndex)
 				}
 			},
 
-			prefab.ship.sapphire.bow.S(.1, isGhost, ghostIndex+1),
+			prefab.ship.sapphire.bow.S(.1, isGhost, ghostIndex-1, ghostMat),
 
 			
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	end
 	return prefab_part
 end

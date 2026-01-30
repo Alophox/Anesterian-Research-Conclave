@@ -160,7 +160,7 @@ return {
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).
 	ghostMesh		= "0-Quartz/Quartz",   -- Used for build ghosts on spawners (yards).
-	ghostMaterials = { "arc_build", "arc_build", "arc_build", "arc_build","arc_build" }, -- Used for the ghostMesh for build ghosts on spawners (yards).
+	ghostMaterials = { ghostMat, ghostMat, ghostMat, ghostMat,ghostMat }, -- Used for the ghostMesh for build ghosts on spawners (yards).
 	ghostParts 	= {
 	},
 
@@ -173,7 +173,7 @@ return {
 
 		armour = 0,                -- int: Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
 		vulnerability_max = 0,   -- float: Prevent the unit from losing more than X fraction of it's armour.
-		shredMultiplier = 1.0,     -- float: Multiplies incomming shred, pretty self explanatory right?
+		shredMultiplier = 0,     -- float: Multiplies incomming shred, pretty self explanatory right?
 
 		explosionSFX = 0,          -- int: will write a table for inbuilt game SFX. If I have, ask me for it. Otherwise wait. :)
 		explosionSFXIntensity = 0.1, -- float: The importance of a sound, affects how far away it is heard and what other sounds it can override as there can only be 255 sounds at a time. Platform Death/Nuke = 10, Ekudon cannon = 4, Tolly gun = 0.2, Otorell gun = 0.4,

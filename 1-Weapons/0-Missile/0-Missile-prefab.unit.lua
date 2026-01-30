@@ -10,10 +10,11 @@ prefab.weapon_info.missile = {
 function prefab.weapon_info.missile.vls.S(count)
 	return { 3295001, 1 * count, -2 } -- -2 gets payload information for spawned unit from the launcher
 end
-function prefab.weapon.missile.vls.S(pos, rot, sca, isGhost, ghostIndex)
+function prefab.weapon.missile.vls.S(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Small VLS",
 		mesh      = "Missiles/Missile-1-VLS",
@@ -24,7 +25,10 @@ function prefab.weapon.missile.vls.S(pos, rot, sca, isGhost, ghostIndex)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.weapon = {
 			weaponID = 3295001, --int: The weaponData id to be used for this weapon.
@@ -54,10 +58,11 @@ end
 function prefab.weapon_info.missile.vls.M(count)
 	return { 3295002, 1 * count, -2 }
 end
-function prefab.weapon.missile.vls.M(pos, rot, sca, isGhost, ghostIndex)
+function prefab.weapon.missile.vls.M(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Medium VLS",
 		mesh      = "Missiles/Missile-2-VLS",
@@ -68,7 +73,10 @@ function prefab.weapon.missile.vls.M(pos, rot, sca, isGhost, ghostIndex)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.weapon = {
 			weaponID = 3295002, --int: The weaponData id to be used for this weapon.
@@ -97,10 +105,11 @@ end
 function prefab.weapon_info.missile.vls.L(count)
 	return { 3295003, 1 * count, -2 }
 end
-function prefab.weapon.missile.vls.L(pos, rot, sca, isGhost, ghostIndex)
+function prefab.weapon.missile.vls.L(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Large VLS",
 		mesh      = "Missiles/Missile-3-VLS",
@@ -111,7 +120,10 @@ function prefab.weapon.missile.vls.L(pos, rot, sca, isGhost, ghostIndex)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.weapon = {
 			weaponID = 3295003, --int: The weaponData id to be used for this weapon.
@@ -140,10 +152,11 @@ end
 function prefab.weapon_info.missile.vls.X(count)
 	return { 3295004, 1 * count, -2 }
 end
-function prefab.weapon.missile.vls.X(pos, rot, sca, isGhost, ghostIndex)
+function prefab.weapon.missile.vls.X(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Extra Large VLS",
 		mesh      = "Missiles/Missile-4-VLS",
@@ -154,7 +167,10 @@ function prefab.weapon.missile.vls.X(pos, rot, sca, isGhost, ghostIndex)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.weapon = {
 			weaponID = 3295004, --int: The weaponData id to be used for this weapon.
@@ -183,10 +199,11 @@ end
 function prefab.weapon_info.missile.vls.T(count)
 	return { 3295005, 1 * count, -2 }
 end
-function prefab.weapon.missile.vls.T(pos, rot, sca, isGhost, ghostIndex)
+function prefab.weapon.missile.vls.T(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Titanic VLS",
 		mesh      = "Missiles/Missile-5-VLS",
@@ -197,7 +214,10 @@ function prefab.weapon.missile.vls.T(pos, rot, sca, isGhost, ghostIndex)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.weapon = {
 			weaponID = 3295005, --int: The weaponData id to be used for this weapon.
@@ -227,10 +247,11 @@ end
 function prefab.weapon_info.missile.hls.S(count)
 	return { 3295011, 1 * count, -2 }
 end
-function prefab.weapon.missile.hls.S(pos, rot, sca, isGhost, ghostIndex)
+function prefab.weapon.missile.hls.S(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Small HLS",
 		mesh      = "Missiles/Missile-1-HLS",
@@ -241,7 +262,10 @@ function prefab.weapon.missile.hls.S(pos, rot, sca, isGhost, ghostIndex)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.weapon = {
 			weaponID = 3295011, --int: The weaponData id to be used for this weapon.
@@ -271,10 +295,11 @@ end
 function prefab.weapon_info.missile.hls.M(count)
 	return { 3295012, 1 * count, -2 }
 end
-function prefab.weapon.missile.hls.M(pos, rot, sca, isGhost, ghostIndex)
+function prefab.weapon.missile.hls.M(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Medium HLS",
 		mesh      = "Missiles/Missile-2-HLS",
@@ -285,7 +310,10 @@ function prefab.weapon.missile.hls.M(pos, rot, sca, isGhost, ghostIndex)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.weapon = {
 			weaponID = 3295012, --int: The weaponData id to be used for this weapon.
@@ -314,10 +342,11 @@ end
 function prefab.weapon_info.missile.hls.L(count)
 	return { 3295013, 1 * count, -2 }
 end
-function prefab.weapon.missile.hls.L(pos, rot, sca, isGhost, ghostIndex)
+function prefab.weapon.missile.hls.L(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Large HLS",
 		mesh      = "Missiles/Missile-3-HLS",
@@ -328,7 +357,10 @@ function prefab.weapon.missile.hls.L(pos, rot, sca, isGhost, ghostIndex)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.weapon = {
 			weaponID = 3295013, --int: The weaponData id to be used for this weapon.
@@ -357,10 +389,11 @@ end
 function prefab.weapon_info.missile.hls.X(count)
 	return { 3295014, 1 * count, -2 }
 end
-function prefab.weapon.missile.hls.X(pos, rot, sca, isGhost, ghostIndex)
+function prefab.weapon.missile.hls.X(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Large HLS",
 		mesh      = "Missiles/Missile-4-HLS",
@@ -371,7 +404,10 @@ function prefab.weapon.missile.hls.X(pos, rot, sca, isGhost, ghostIndex)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.weapon = {
 			weaponID = 3295014, --int: The weaponData id to be used for this weapon.
@@ -400,10 +436,11 @@ end
 function prefab.weapon_info.missile.hls.T(count)
 	return { 3295015, 1 * count, -2 }
 end
-function prefab.weapon.missile.hls.T(pos, rot, sca, isGhost, ghostIndex)
+function prefab.weapon.missile.hls.T(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Large HLS",
 		mesh      = "Missiles/Missile-5-HLS",
@@ -414,7 +451,10 @@ function prefab.weapon.missile.hls.T(pos, rot, sca, isGhost, ghostIndex)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.weapon = {
 			weaponID = 3295015, --int: The weaponData id to be used for this weapon.

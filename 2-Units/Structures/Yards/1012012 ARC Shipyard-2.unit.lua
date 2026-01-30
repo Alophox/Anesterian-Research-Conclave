@@ -84,7 +84,7 @@ return {
 
 		armour = 7,                --Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
 		vulnerability_max = 0,   --Prevent the unit from losing more than X fraction of it's armour.
-		shredMultiplier = 1.0,     --Multiplies incomming shred, pretty self explanatory right?
+		shredMultiplier = 0,     --Multiplies incomming shred, pretty self explanatory right?
 
 		explosionSFX = 0,          --Sorry don't have a table for this. Just use 0.
 		explosionSFXIntensity = 0.8, --The importance of a sound, affects how far away it is heard and what other sounds it can override as there can only be 255 sounds at a time. Platform Death/Nuke = 10, Ekudon cannon = 4, Tolly gun = 0.2, Otorell gun = 0.4,

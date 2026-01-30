@@ -1,13 +1,36 @@
 prefab.weapon.laser = {}
 prefab.weapon_info.laser = {}
 
+function prefab.weapon.laser_effect()
+	return {
+		name		 = "Turret Laser",
+		mesh       = "Turrets-1/Turret-1-Laser-Effect",
+		materials  = { "arc_weapon_teamGlow", "arc_teamGlow" },
+		position   = { 0, 0, 0 },
+		rotation   = { 0, 0, 0 },
+		scale 	 = { .1, .1, .1 },
+		
+		--Assigns this part as a weaponVisual to the parent part's weapon, that we will use as a muzzle flash.
+		--Muzzle flashes are secretly laser beams. WOW
+		weaponVisualConfig = { --Controls how the visual effect behaves.
+			-- Yes I know it says laser, all weapon visuals in the game are derived from the original laser effect. So even muzzle flashes are secretly "lasers".
+			laserColour = {1,1,1}, 	-- RGB, 0 to 1, colour of the weaponVisual.
+			intensity = 3;			-- The brightness of the laser colour.
+			useWeaponLaserDescription = true, --If true, will ignore it's own laserDescription and use the weapon's defined one.
+			laserDescription = { 		--"laser" description, but is actually a maleable visual effect.
+			}, 
+		}
+	}
+end
+
 function prefab.weapon_info.laser.D(count)
 	return { 3295100, 1 * count, 0 }
 end
-function prefab.weapon.laser.D(pos,rot,sca,isGhost, ghostIndex) --{float3}, {float3}, {float3}, bool
+function prefab.weapon.laser.D(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{float3}, {float3}, {float3}, bool
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Drone Laser",
 		-- mesh      = "Turrets-1/Turret-1-Base",
@@ -18,7 +41,10 @@ function prefab.weapon.laser.D(pos,rot,sca,isGhost, ghostIndex) --{float3}, {flo
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -37,26 +63,7 @@ function prefab.weapon.laser.D(pos,rot,sca,isGhost, ghostIndex) --{float3}, {flo
 				},
 
 				parts = {
-					{
-						name		 = "Turret Laser",
-						mesh       = "Turrets-1/Turret-1-Laser-Effect",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						--Assigns this part as a weaponVisual to the parent part's weapon, that we will use as a muzzle flash.
-						--Muzzle flashes are secretly laser beams. WOW
-						weaponVisualConfig = { --Controls how the visual effect behaves.
-							-- Yes I know it says laser, all weapon visuals in the game are derived from the original laser effect. So even muzzle flashes are secretly "lasers".
-							laserColour = {.5,1,1}, 	-- RGB, 0 to 1, colour of the weaponVisual.
-							intensity = 3;			-- The brightness of the laser colour.
-							useWeaponLaserDescription = true, --If true, will ignore it's own laserDescription and use the weapon's defined one.
-							laserDescription = { 		--"laser" description, but is actually a maleable visual effect.
-							}, 
-						}
-						
-					},
+					prefab.weapon.laser_effect(),
 				},
 			},
 		}
@@ -67,10 +74,11 @@ end
 function prefab.weapon_info.laser.S(count)
 	return { 3295101, 1 * count, 0 }
 end
-function prefab.weapon.laser.S(pos,rot,sca,isGhost, ghostIndex) --{float3}, {float3}, {float3}, bool
+function prefab.weapon.laser.S(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{float3}, {float3}, {float3}, bool
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Small Turret Base",
 		mesh      = "Turrets-1/Turret-1-Base",
@@ -81,7 +89,10 @@ function prefab.weapon.laser.S(pos,rot,sca,isGhost, ghostIndex) --{float3}, {flo
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -125,37 +136,7 @@ function prefab.weapon.laser.S(pos,rot,sca,isGhost, ghostIndex) --{float3}, {flo
 						barrel    = true, --Assigns this part as a barrel to the parent's weapon. Barrels are where lasers, units, and weaponVisuals are placed or fired from.
 					},
 
-					{
-						name		 = "Turret Laser",
-						mesh       = "Turrets-1/Turret-1-Laser-Effect",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						--Assigns this part as a weaponVisual to the parent part's weapon, that we will use as a muzzle flash.
-						--Muzzle flashes are secretly laser beams. WOW
-						weaponVisualConfig = { --Controls how the visual effect behaves.
-							-- Yes I know it says laser, all weapon visuals in the game are derived from the original laser effect. So even muzzle flashes are secretly "lasers".
-							laserColour = {.5,1,1}, 	-- RGB, 0 to 1, colour of the weaponVisual.
-							intensity = 3;			-- The brightness of the laser colour.
-							useWeaponLaserDescription = true, --If true, will ignore it's own laserDescription and use the weapon's defined one.
-							laserDescription = { 		--"laser" description, but is actually a maleable visual effect.
-								duration = 1,			--seconds
-								opacity = 1,			--float, 0-1
-								diameter = .5,			--relative to turret scale
-								offset = 0,			--relative to the barrel it gets fired from's facing.
-								rotateZ = true,		--Rotate the effect once randomly on the z axis when used.
-								rotateY = false,		--Rotate the effect once randomly on the y axis when used.
-								rotateZUpdate = false,	--Continuously rotate the effect on the z axis when used.
-								rotateYUpdate = false,	--COntinuously rotate the effect on the y axis when used.
-								noRescaleLength = 0,	--0 means DO rescale like a laser beam. >0 means don't, like a muzzle flashes.
-								noFade = true,			--prevents the effect from fading to nothing over it's duration.
-								noShrink = false,		--prevents the effect from scaling down to nothing over it's duration.
-							}, 
-						}
-						
-					},
+					prefab.weapon.laser_effect(),
 				},
 			},
 		}
@@ -166,10 +147,11 @@ end
 function prefab.weapon_info.laser.M(count)
 	return { 3295102, 1 * count, 0 }
 end
-function prefab.weapon.laser.M(pos,rot,sca,isGhost, ghostIndex) --{float3}, {float3}, {float3}, bool
+function prefab.weapon.laser.M(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{float3}, {float3}, {float3}, bool
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Medium Laser Base",
 		mesh      = "Turrets-3/Turret-3-Base",
@@ -180,7 +162,10 @@ function prefab.weapon.laser.M(pos,rot,sca,isGhost, ghostIndex) --{float3}, {flo
 		
 	}
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -230,68 +215,8 @@ function prefab.weapon.laser.M(pos,rot,sca,isGhost, ghostIndex) --{float3}, {flo
 						scale 	= { 1, 1, 1 },
 					},
 					{	name = "Turret Muzzle",	position = { -.15, 0, 1.35 },	rotation = { 0, 0, 0 },	scale = { 1, 1, 1 },	barrel = true,	},
-					{
-						name		 = "Turret Laser",
-						mesh       = "Turrets-1/Turret-1-Laser-Effect",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						--Assigns this part as a weaponVisual to the parent part's weapon, that we will use as a muzzle flash.
-						--Muzzle flashes are secretly laser beams. WOW
-						weaponVisualConfig = { --Controls how the visual effect behaves.
-							-- Yes I know it says laser, all weapon visuals in the game are derived from the original laser effect. So even muzzle flashes are secretly "lasers".
-							laserColour = {.5,1,1}, 	-- RGB, 0 to 1, colour of the weaponVisual.
-							intensity = 3;			-- The brightness of the laser colour.
-							useWeaponLaserDescription = true, --If true, will ignore it's own laserDescription and use the weapon's defined one.
-							laserDescription = { 		--"laser" description, but is actually a maleable visual effect.
-								duration = 1,			--seconds
-								opacity = 1,			--float, 0-1
-								diameter = .5,			--relative to turret scale
-								offset = 0,			--relative to the barrel it gets fired from's facing.
-								rotateZ = true,		--Rotate the effect once randomly on the z axis when used.
-								rotateY = false,		--Rotate the effect once randomly on the y axis when used.
-								rotateZUpdate = false,	--Continuously rotate the effect on the z axis when used.
-								rotateYUpdate = false,	--COntinuously rotate the effect on the y axis when used.
-								noRescaleLength = 0,	--0 means DO rescale like a laser beam. >0 means don't, like a muzzle flashes.
-								noFade = true,			--prevents the effect from fading to nothing over it's duration.
-								noShrink = false,		--prevents the effect from scaling down to nothing over it's duration.
-							}, 
-						}
-						
-					},
-					{
-						name		 = "Turret Laser",
-						mesh       = "Turrets-1/Turret-1-Laser-Effect",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						--Assigns this part as a weaponVisual to the parent part's weapon, that we will use as a muzzle flash.
-						--Muzzle flashes are secretly laser beams. WOW
-						weaponVisualConfig = { --Controls how the visual effect behaves.
-							-- Yes I know it says laser, all weapon visuals in the game are derived from the original laser effect. So even muzzle flashes are secretly "lasers".
-							laserColour = {1,.5,1}, 	-- RGB, 0 to 1, colour of the weaponVisual.
-							intensity = 3;			-- The brightness of the laser colour.
-							useWeaponLaserDescription = true, --If true, will ignore it's own laserDescription and use the weapon's defined one.
-							laserDescription = { 		--"laser" description, but is actually a maleable visual effect.
-								duration = 1,			--seconds
-								opacity = 1,			--float, 0-1
-								diameter = .5,			--relative to turret scale
-								offset = 0,			--relative to the barrel it gets fired from's facing.
-								rotateZ = true,		--Rotate the effect once randomly on the z axis when used.
-								rotateY = false,		--Rotate the effect once randomly on the y axis when used.
-								rotateZUpdate = false,	--Continuously rotate the effect on the z axis when used.
-								rotateYUpdate = false,	--COntinuously rotate the effect on the y axis when used.
-								noRescaleLength = 0,	--0 means DO rescale like a laser beam. >0 means don't, like a muzzle flashes.
-								noFade = true,			--prevents the effect from fading to nothing over it's duration.
-								noShrink = false,		--prevents the effect from scaling down to nothing over it's duration.
-							}, 
-						}
-						
-					},
+					prefab.weapon.laser_effect(),
+					prefab.weapon.laser_effect(),
 				},
 			},
 		}
@@ -303,10 +228,11 @@ end
 function prefab.weapon_info.laser.L(count)
 	return { 3295103, 1 * count, 0 }
 end
-function prefab.weapon.laser.L(pos,rot,sca,isGhost, ghostIndex) --{float3}, {float3}, {float3}, bool
+function prefab.weapon.laser.L(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{float3}, {float3}, {float3}, bool
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Large Laser Base",
 		mesh      = "Turrets-5/Turret-5-Base",
@@ -317,7 +243,10 @@ function prefab.weapon.laser.L(pos,rot,sca,isGhost, ghostIndex) --{float3}, {flo
 		
 	}
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -376,55 +305,9 @@ function prefab.weapon.laser.L(pos,rot,sca,isGhost, ghostIndex) --{float3}, {flo
 						scale 	= { 1, 1, 1 },
 					},
 					{	name = "Turret Muzzle",	position = { .375, 0, 1.7125 },	rotation = { 0, 0, 0 },	scale = { 1, 1, 1 },	barrel = true,	},
-					{
-						name		 = "Turret Laser",
-						mesh       = "Turrets-1/Turret-1-Laser-Effect",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = { --Controls how the visual effect behaves.
-							laserColour = {.5,1,1}, 	-- RGB, 0 to 1, colour of the weaponVisual.
-							intensity = 3;			-- The brightness of the laser colour.
-							useWeaponLaserDescription = true, --If true, will ignore it's own laserDescription and use the weapon's defined one.
-							laserDescription = { 		--"laser" description, but is actually a maleable visual effect.
-							}, 
-						}
-						
-					},
-					{
-						name		 = "Turret Laser",
-						mesh       = "Turrets-1/Turret-1-Laser-Effect",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = { --Controls how the visual effect behaves.
-							laserColour = {.5,1,1}, 	-- RGB, 0 to 1, colour of the weaponVisual.
-							intensity = 3;			-- The brightness of the laser colour.
-							useWeaponLaserDescription = true, --If true, will ignore it's own laserDescription and use the weapon's defined one.
-							laserDescription = { 		--"laser" description, but is actually a maleable visual effect.
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Laser",
-						mesh       = "Turrets-1/Turret-1-Laser-Effect",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = { --Controls how the visual effect behaves.
-							laserColour = {.5,1,1}, 	-- RGB, 0 to 1, colour of the weaponVisual.
-							intensity = 3;			-- The brightness of the laser colour.
-							useWeaponLaserDescription = true, --If true, will ignore it's own laserDescription and use the weapon's defined one.
-							laserDescription = { 		--"laser" description, but is actually a maleable visual effect.
-							}, 
-						}
-					},
+					prefab.weapon.laser_effect(),
+					prefab.weapon.laser_effect(),
+					prefab.weapon.laser_effect(),
 				},
 			},
 		}
@@ -436,10 +319,11 @@ end
 function prefab.weapon_info.laser.X(count)
 	return { 3295104, 1 * count, 0 }
 end
-function prefab.weapon.laser.X(pos,rot,sca,isGhost, ghostIndex) --{float3}, {float3}, {float3}, bool
+function prefab.weapon.laser.X(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{float3}, {float3}, {float3}, bool
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Extra Large Laser Base",
 		mesh      = "Turrets-7/Turret-7-Base",
@@ -450,7 +334,10 @@ function prefab.weapon.laser.X(pos,rot,sca,isGhost, ghostIndex) --{float3}, {flo
 		
 	}
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -521,72 +408,10 @@ function prefab.weapon.laser.X(pos,rot,sca,isGhost, ghostIndex) --{float3}, {flo
 					{	name = "Turret Muzzle",	position = { .735, 0, 2.2125 },	rotation = { 0, 0, 0 },	scale = { 1, 1, 1 },	barrel = true,	},
 					
 					
-					{
-						name		 = "Turret Laser",
-						mesh       = "Turrets-1/Turret-1-Laser-Effect",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = { --Controls how the visual effect behaves.
-							laserColour = {.5,1,1}, 	-- RGB, 0 to 1, colour of the weaponVisual.
-							intensity = 3;			-- The brightness of the laser colour.
-							useWeaponLaserDescription = true, --If true, will ignore it's own laserDescription and use the weapon's defined one.
-							laserDescription = { 		--"laser" description, but is actually a maleable visual effect.
-							}, 
-						}
-						
-					},
-					{
-						name		 = "Turret Laser",
-						mesh       = "Turrets-1/Turret-1-Laser-Effect",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = { --Controls how the visual effect behaves.
-							laserColour = {.5,1,1}, 	-- RGB, 0 to 1, colour of the weaponVisual.
-							intensity = 3;			-- The brightness of the laser colour.
-							useWeaponLaserDescription = true, --If true, will ignore it's own laserDescription and use the weapon's defined one.
-							laserDescription = { 		--"laser" description, but is actually a maleable visual effect.
-							}, 
-						}
-						
-					},
-					{
-						name		 = "Turret Laser",
-						mesh       = "Turrets-1/Turret-1-Laser-Effect",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = { --Controls how the visual effect behaves.
-							laserColour = {.5,1,1}, 	-- RGB, 0 to 1, colour of the weaponVisual.
-							intensity = 3;			-- The brightness of the laser colour.
-							useWeaponLaserDescription = true, --If true, will ignore it's own laserDescription and use the weapon's defined one.
-							laserDescription = { 		--"laser" description, but is actually a maleable visual effect.
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Laser",
-						mesh       = "Turrets-1/Turret-1-Laser-Effect",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = { --Controls how the visual effect behaves.
-							laserColour = {.5,1,1}, 	-- RGB, 0 to 1, colour of the weaponVisual.
-							intensity = 3;			-- The brightness of the laser colour.
-							useWeaponLaserDescription = true, --If true, will ignore it's own laserDescription and use the weapon's defined one.
-							laserDescription = { 		--"laser" description, but is actually a maleable visual effect.
-							}, 
-						}
-					},
+					prefab.weapon.laser_effect(),
+					prefab.weapon.laser_effect(),
+					prefab.weapon.laser_effect(),
+					prefab.weapon.laser_effect(),
 				},
 			},
 		}
@@ -598,10 +423,11 @@ end
 function prefab.weapon_info.laser.XS(count)
 	return { 3295104, 1 * count, 0 }
 end
-function prefab.weapon.laser.XS(pos,rot,sca,isGhost, ghostIndex) --{float3}, {float3}, {float3}, bool
+function prefab.weapon.laser.XS(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{float3}, {float3}, {float3}, bool
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Extra Large Laser Base",
 		-- mesh      = "Turrets-5/Turret-5-Base",
@@ -612,7 +438,10 @@ function prefab.weapon.laser.XS(pos,rot,sca,isGhost, ghostIndex) --{float3}, {fl
 		
 	}
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -635,22 +464,7 @@ function prefab.weapon.laser.XS(pos,rot,sca,isGhost, ghostIndex) --{float3}, {fl
 				},
 
 				parts = {
-					{
-						name		 = "Turret Laser",
-						mesh       = "Turrets-1/Turret-1-Laser-Effect",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = { --Controls how the visual effect behaves.
-							laserColour = {.5,1,1}, 	-- RGB, 0 to 1, colour of the weaponVisual.
-							intensity = 3;			-- The brightness of the laser colour.
-							useWeaponLaserDescription = true, --If true, will ignore it's own laserDescription and use the weapon's defined one.
-							laserDescription = { 		--"laser" description, but is actually a maleable visual effect.
-							}, 
-						}
-					},
+					prefab.weapon.laser_effect(),
 				},
 			},
 		}
@@ -662,10 +476,11 @@ end
 function prefab.weapon_info.laser.TS(count)
 	return { 3295105, 1 * count, 0 }
 end
-function prefab.weapon.laser.TS(pos,rot,sca,isGhost, ghostIndex) --{float3}, {float3}, {float3}, bool
+function prefab.weapon.laser.TS(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{float3}, {float3}, {float3}, bool
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
-	if(not isGhost and ghostIndex > 0) then return {}; end
+	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Titanic Laser Base",
 		-- mesh      = "Turrets-5/Turret-5-Base",
@@ -676,7 +491,10 @@ function prefab.weapon.laser.TS(pos,rot,sca,isGhost, ghostIndex) --{float3}, {fl
 		
 	}
 	if isGhost then
-		prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.parts={
 			{
@@ -699,22 +517,7 @@ function prefab.weapon.laser.TS(pos,rot,sca,isGhost, ghostIndex) --{float3}, {fl
 				},
 
 				parts = {
-					{
-						name		 = "Turret Laser",
-						mesh       = "Turrets-1/Turret-1-Laser-Effect",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = { --Controls how the visual effect behaves.
-							laserColour = {.5,1,1}, 	-- RGB, 0 to 1, colour of the weaponVisual.
-							intensity = 3;			-- The brightness of the laser colour.
-							useWeaponLaserDescription = true, --If true, will ignore it's own laserDescription and use the weapon's defined one.
-							laserDescription = { 		--"laser" description, but is actually a maleable visual effect.
-							}, 
-						}
-					},
+					prefab.weapon.laser_effect(),
 				},
 			},
 		}

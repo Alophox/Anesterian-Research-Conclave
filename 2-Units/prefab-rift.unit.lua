@@ -1,10 +1,14 @@
 
 function prefab.part.rift(pos, rot, sca, scaCo, isGhost, ghostIndex)
 	if isGhost then
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+			prefab_part.scale = {.11/scaleConst,.11/scaleConst,.11/scaleConst};
+		end
 		return {}
 	end
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostIndex > 5) then return {}; end
+	if(ghostIndex > 2) then return {}; end
 	if(not isGhost and ghostIndex > 0) then return {}; end
 	prefab_part = {
 		name = "Rift Base",
@@ -162,7 +166,11 @@ function prefab.part.rift(pos, rot, sca, scaCo, isGhost, ghostIndex)
 		
 	}
 	-- if isGhost then
-	-- 	prefab_part.materials = {"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,"arc_build"..ghostIndex,}
+		if (ghostMat == "arc_aegis") then
+			prefab_part.aegisVisual = true;
+			prefab_part.scale = {.11/scaleConst,.11/scaleConst,.11/scaleConst};
+		end
+	-- 	prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	-- end
     return prefab_part
 end

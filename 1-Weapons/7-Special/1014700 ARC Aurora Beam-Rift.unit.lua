@@ -152,8 +152,8 @@ return {
 		max_regen_frac = 0.2,      -- float: The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
 
 		armour = 5,                -- int: Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
-		vulnerability_max = 0.2,   -- float: Prevent the unit from losing more than X fraction of it's armour.
-		shredMultiplier = 1.0,     -- float: Multiplies incomming shred, pretty self explanatory right?
+		vulnerability_max = 0,   -- float: Prevent the unit from losing more than X fraction of it's armour.
+		shredMultiplier = 0,     -- float: Multiplies incomming shred, pretty self explanatory right?
 
 		explosionSFX = 0,          -- int: will write a table for inbuilt game SFX. If I have, ask me for it. Otherwise wait. :)
 		explosionSFXIntensity = 0.8, -- float: The importance of a sound, affects how far away it is heard and what other sounds it can override as there can only be 255 sounds at a time. Platform Death/Nuke = 10, Ekudon cannon = 4, Tolly gun = 0.2, Otorell gun = 0.4,

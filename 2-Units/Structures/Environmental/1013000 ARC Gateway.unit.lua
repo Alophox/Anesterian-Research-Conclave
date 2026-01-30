@@ -145,8 +145,8 @@ return {
 		max_regen_frac = 0,
 
 		armour = 10,
-		vulnerability_max = 0.2,
-		shredMultiplier = 1.0,
+		vulnerability_max = 0,
+		shredMultiplier = 0,
 
 		explosionSFX = 0,
 		explosionSFXIntensity = 10,		-- Platforms blowing up is very important.

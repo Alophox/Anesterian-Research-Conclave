@@ -76,34 +76,38 @@ return {
 		prefab.ship.amethyst.stern.G(scaleConst, false),
 		prefab.ship.amethyst.core.G(scaleConst, false),
 		prefab.ship.amethyst.bow.G(scaleConst, false),
+		prefab.ship.amethyst.stern.G(scaleConst, true, 0, "arc_aegis"),
+		prefab.ship.amethyst.core.G(scaleConst, true, 0, "arc_aegis"),
+		prefab.ship.amethyst.bow.G(scaleConst, true, 0, "arc_aegis"),
 	},
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).
 	-- ghostMesh		= "1-Ruby/Ruby-Core-G",   -- Used for build ghosts on spawners (yards).
 	ghostMaterials = { "arc_teamGlow", "arc_hull", "arc_engine","arc_teamColour" }, -- Used for the ghostMesh for build ghosts on spawners (yards).
 	ghostParts 	= {
-		prefab.ship.amethyst.stern.G(scaleConst, true),
-		prefab.ship.amethyst.core.G(scaleConst, true),
-		prefab.ship.amethyst.bow.G(scaleConst, true),
+		prefab.ship.amethyst.stern.G(scaleConst, true, 2),
+		prefab.ship.amethyst.core.G(scaleConst, true, 2),
+		prefab.ship.amethyst.bow.G(scaleConst, true, 2),
 	},
 
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "CAPITAL",       -- string enum: UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health =  healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.G,healthStats.healthMult.G,healthStats.healthMult.G,healthStats.healthMult.G}),              -- float: Health, also the unit's heat capacity.
-		health_regen_per_second =  healthStats.regen[shipConst.class], -- float: Health regen per second. Duh.
-		max_regen_frac = healthStats.proportionRegenMax,      -- float: The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
+		health =  (1 - healthStats.proportionRegenMax) * healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.G,healthStats.healthMult.G,healthStats.healthMult.G,healthStats.healthMult.G}),              -- float: Health, also the unit's heat capacity.
+		health_regen_per_second = 0,
+		aegis_regen_per_second = healthStats.aegisRegen[shipConst.class],
+		max_regen_frac = healthStats.proportionRegenMax,
 
 		armour = functions.floor(healthStats.baseArmor[shipConst.class] * functions.averageMultiplier({healthStats.armorMult.G,healthStats.healthMult.G,healthStats.healthMult.G,healthStats.healthMult.G})),
 		vulnerability_max = 0,   -- float: Prevent the unit from losing more than X fraction of it's armour.
-		shredMultiplier = 1.0,     -- float: Multiplies incomming shred, pretty self explanatory right?
+		shredMultiplier = 0,     -- float: Multiplies incomming shred, pretty self explanatory right?
 
 		explosionSFX = 0,          -- int: will write a table for inbuilt game SFX. If I have, ask me for it. Otherwise wait. :)
 		explosionSFXIntensity = 8, -- float: The importance of a sound, affects how far away it is heard and what other sounds it can override as there can only be 255 sounds at a time. Platform Death/Nuke = 10, Ekudon cannon = 4, Tolly gun = 0.2, Otorell gun = 0.4,
 
 		heatResistancePercentage = 0, -- float: Fraction of heat resistance. (0-1) Normally 0
 		shredResistancePercentage = 0, -- float: Fraction of shred resistance. (0-1) Normally 0. If 0 game automatically assigns shredResistance based on unit class (as is done for the entire vanilla game).
-		aegisMaximum = 0, 			-- float: Game will automatically determine, but can be manually set here.
+		aegisMaximum = healthStats.proportionRegenMax *  healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.G,healthStats.healthMult.G,healthStats.healthMult.G,healthStats.healthMult.G}), 			-- float: Game will automatically determine, but can be manually set here.
 		isResourceMatter = false,  	-- bool: For Matter Deposits. When damaged, gives the damage back to the attacking team as Matter.
 		isResourceEnergy = false,  	-- bool: For Energy Deposits. When damaged, gives the damage back to the attacking team as Energy.
 		isUncapturable = false,    	-- bool: Prevents capture, such as from Glowfish.
