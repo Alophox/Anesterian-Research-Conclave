@@ -74,6 +74,19 @@ return {
 
 	-- 🟦 PARTS
 	parts = {
+		{
+			name = "Aegis spawner",
+			autoModule = {
+				moduleTypeID = 3297100,            -- int
+				reportKillsToParent = false, -- bool
+				doDamageToEntityOnDeath = true, -- bool
+				damageToEntityOnDeath = {       -- damage table
+					isNondamaging = true, instances = 1, damage = 0.00001, piercing = -9999999999,
+					shred = 0, heat = 0, vulnerability = 0, decloak = 0,
+					targetingPriorityMultiplier = 0, impulseForce = 0,
+				},
+			},
+		}
 		-- prefab.weapon.laser.D(
 		-- 	{ 0, 0, .825*.1/scaleConst },
 		-- 	{ 0, 0, 0 },
@@ -111,6 +124,19 @@ return {
 
 			-- For thruster visuals, if you want more than one plume for our thruster build it out of multiple subparts.
 			parts = {
+		{
+			name = "Aegis spawner",
+			autoModule = {
+				moduleTypeID = 3297100,            -- int
+				reportKillsToParent = false, -- bool
+				doDamageToEntityOnDeath = true, -- bool
+				damageToEntityOnDeath = {       -- damage table
+					isNondamaging = true, instances = 1, damage = 0.00001, piercing = -9999999999,
+					shred = 0, heat = 0, vulnerability = 0, decloak = 0,
+					targetingPriorityMultiplier = 0, impulseForce = 0,
+				},
+			},
+		}
 				{
 					name     = "Thruster Plume",
 					mesh     = "Thruster/Thruster-Plume",

@@ -76,6 +76,19 @@ return {
 
 	-- 🟦 PARTS
 	parts = {
+		{
+			name = "Aegis spawner",
+			autoModule = {
+				moduleTypeID = 3297100,            -- int
+				reportKillsToParent = false, -- bool
+				doDamageToEntityOnDeath = true, -- bool
+				damageToEntityOnDeath = {       -- damage table
+					isNondamaging = true, instances = 1, damage = 0.00001, piercing = -9999999999,
+					shred = 0, heat = 0, vulnerability = 0, decloak = 0,
+					targetingPriorityMultiplier = 0, impulseForce = 0,
+				},
+			},
+		}
 		prefab.ship.topaz.stern.B(scaleConst, false),
 		prefab.ship.topaz.bow.B(scaleConst, false),
 		prefab.ship.topaz.stern.B(scaleConst, true, 0, "arc_aegis"),

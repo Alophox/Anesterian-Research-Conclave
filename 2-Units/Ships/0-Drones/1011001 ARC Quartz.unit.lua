@@ -74,6 +74,19 @@ return {
 
 	-- 🟦 PARTS
 	parts = {
+		{
+			name = "Aegis spawner",
+			autoModule = {
+				moduleTypeID = 3297100,            -- int
+				reportKillsToParent = false, -- bool
+				doDamageToEntityOnDeath = true, -- bool
+				damageToEntityOnDeath = {       -- damage table
+					isNondamaging = true, instances = 1, damage = 0.00001, piercing = -9999999999,
+					shred = 0, heat = 0, vulnerability = 0, decloak = 0,
+					targetingPriorityMultiplier = 0, impulseForce = 0,
+				},
+			},
+		}
 		prefab.weapon.railgun.D(
 			{ 0, 0, .825*.1/scaleConst },
 			{ 0, 0, 0 },
@@ -111,6 +124,19 @@ return {
 
 			-- For thruster visuals, if you want more than one plume for our thruster build it out of multiple subparts.
 			parts = {
+		{
+			name = "Aegis spawner",
+			autoModule = {
+				moduleTypeID = 3297100,            -- int
+				reportKillsToParent = false, -- bool
+				doDamageToEntityOnDeath = true, -- bool
+				damageToEntityOnDeath = {       -- damage table
+					isNondamaging = true, instances = 1, damage = 0.00001, piercing = -9999999999,
+					shred = 0, heat = 0, vulnerability = 0, decloak = 0,
+					targetingPriorityMultiplier = 0, impulseForce = 0,
+				},
+			},
+		}
 				{
 					name     = "Thruster Plume",
 					mesh     = "Thruster/Thruster-Plume",
@@ -175,6 +201,19 @@ return {
 			},
 
 			parts = {
+		{
+			name = "Aegis spawner",
+			autoModule = {
+				moduleTypeID = 3297100,            -- int
+				reportKillsToParent = false, -- bool
+				doDamageToEntityOnDeath = true, -- bool
+				damageToEntityOnDeath = {       -- damage table
+					isNondamaging = true, instances = 1, damage = 0.00001, piercing = -9999999999,
+					shred = 0, heat = 0, vulnerability = 0, decloak = 0,
+					targetingPriorityMultiplier = 0, impulseForce = 0,
+				},
+			},
+		}
 				{
 					name		 = "Turret Body",
 					mesh       = "Turrets-1/Turret-1-Body",
@@ -205,6 +244,19 @@ return {
 							},
 		
 							parts = {
+		{
+			name = "Aegis spawner",
+			autoModule = {
+				moduleTypeID = 3297100,            -- int
+				reportKillsToParent = false, -- bool
+				doDamageToEntityOnDeath = true, -- bool
+				damageToEntityOnDeath = {       -- damage table
+					isNondamaging = true, instances = 1, damage = 0.00001, piercing = -9999999999,
+					shred = 0, heat = 0, vulnerability = 0, decloak = 0,
+					targetingPriorityMultiplier = 0, impulseForce = 0,
+				},
+			},
+		}
 								{
 									name		 = "Turret Body",
 									mesh       = "Turrets-1/Turret-1-Laser",
@@ -214,6 +266,19 @@ return {
 									scale 	 = { 1, 1, 1 },
 									turretBody = true, --Assigns this part as a body to the parent turret. Will rotate on a flat plan while the turret moves, giving the illusion of a 2-axis machine.
 									parts = {
+		{
+			name = "Aegis spawner",
+			autoModule = {
+				moduleTypeID = 3297100,            -- int
+				reportKillsToParent = false, -- bool
+				doDamageToEntityOnDeath = true, -- bool
+				damageToEntityOnDeath = {       -- damage table
+					isNondamaging = true, instances = 1, damage = 0.00001, piercing = -9999999999,
+					shred = 0, heat = 0, vulnerability = 0, decloak = 0,
+					targetingPriorityMultiplier = 0, impulseForce = 0,
+				},
+			},
+		}
 										{
 											name		 = "Turret Body",
 											mesh       = "Rift/Rift",
