@@ -187,7 +187,7 @@ return {
 		shredMultiplier = 0,
 
 		explosionSFX = 0,
-		explosionSFXIntensity = 10,		-- Platforms blowing up is very important.
+		explosionSFXIntensity = 5,		-- Platforms blowing up is very important.
 
 		heatResistancePercentage = 0,
 		shredResistancePercentage = 0,
@@ -212,12 +212,13 @@ return {
 
 		explosionType = "EXPLOSION",          	-- EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
 		explosionVolatility = 1.0,
-		explosionSizeOveride = 20,			-- Give it a hearty platform saildrive critical BOOM!!!
-		flashSizeOverride = 0,
+		explosionSizeOveride = 15,
+        flashSizeOverride = 14,
 		forceShockwave = false,
 		preventShockwave = false,
 		randomiseInAllDirections = false,
 		deathUnitSpawnDoNotRandomiseRotation = false,
+		deathExplosionFriendlyFire = true,
 		deathUnitSpawnTypeID = -1,
 		invulnerable = false,
 		unkillable = false,

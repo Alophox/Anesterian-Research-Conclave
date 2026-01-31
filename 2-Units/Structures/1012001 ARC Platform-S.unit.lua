@@ -186,6 +186,7 @@ return {
 		preventShockwave = false,
 		randomiseInAllDirections = false,
 		deathUnitSpawnDoNotRandomiseRotation = false,
+		deathExplosionFriendlyFire = true,
 		deathUnitSpawnTypeID = -1,
 		invulnerable = false,
 		unkillable = false,

@@ -155,7 +155,7 @@ return {
 		shredMultiplier = 0,
 
 		explosionSFX = 0,
-		explosionSFXIntensity = 10,		-- Platforms blowing up is very important.
+		explosionSFXIntensity = 5,		-- Platforms blowing up is very important.
 
 		heatResistancePercentage = 0,
 		shredResistancePercentage = 0,
@@ -187,6 +187,7 @@ return {
 		preventShockwave = false,
 		randomiseInAllDirections = false,
 		deathUnitSpawnDoNotRandomiseRotation = false,
+		deathExplosionFriendlyFire = true,
 		deathUnitSpawnTypeID = -1,
 		invulnerable = false,
 		unkillable = false,
