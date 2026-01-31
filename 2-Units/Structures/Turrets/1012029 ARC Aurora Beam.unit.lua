@@ -191,7 +191,7 @@ return {
 	-- 🟦 STRUCTURE
 	isStructure = true,
 	structure = {
-		type = "DEFENSE", --NONE, ECONOMY, PRODUCTION, DEFENCE, OFFENCE, UTILITY, EXTENDER
+		type = "DEFENCE", --NONE, ECONOMY, PRODUCTION, DEFENCE, OFFENCE, UTILITY, EXTENDER
 		--rectangle = {2,1}, 		-- optional, float2: xz dimensions of the influence, facing ^
 		--ring = {0, 2.5},			-- optional, float2: Inner and outer ring radius. Inner > 0 lets you make donuts. If structure footprint is odd, add +0.5 for a cleaner circle.
 		matrixDimensions = {6,6},
