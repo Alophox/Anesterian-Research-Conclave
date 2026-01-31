@@ -78,9 +78,11 @@ return {
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "TITAN",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = 32500,              --Health, also the unit's heat capacity.
-		health_regen_per_second = healthStats.regen.C, --Health regen per second. Duh.
-		max_regen_frac = 0,      --The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
+		health = (1 - healthStats.proportionRegenMax) * 325000,
+		health_regen_per_second = healthStats.regen.C,
+		max_regen_frac = 0,
+		aegis_regen_per_second = healthStats.aegisRegen.C * healthStats.structAegisRegenMult,
+		aegisMaximum = healthStats.proportionRegenMax * 325000,
 
 		armour = 10,                --Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
 		vulnerability_max = 0,   --Prevent the unit from losing more than X fraction of it's armour.
@@ -89,9 +91,8 @@ return {
 		explosionSFX = 0,          --Sorry don't have a table for this. Just use 0.
 		explosionSFXIntensity = 0.8, --The importance of a sound, affects how far away it is heard and what other sounds it can override as there can only be 255 sounds at a time. Platform Death/Nuke = 10, Ekudon cannon = 4, Tolly gun = 0.2, Otorell gun = 0.4,
 
-		heatResistancePercentage = 0, --Fraction of heat resistance. (0-1) Normally 0
+		heatResistancePercentage = healthStats.proportionRegenMax, --Fraction of heat resistance. (0-1) Normally 0
 		shredResistancePercentage = 0, --Fraction of shred resistance. (0-1) Normally 0. If 0 game automatically assigns shredResistance based on unit class (as is done for the entire vanilla game).
-		aegisMaximum = 0, 			--Game will automatically determine, but can be manually set here.
 		isResourceMatter = false,  	--For Matter Deposits. When damaged, gives the damage back to the attacking team as Matter.
 		isResourceEnergy = false,  	--For Energy Deposits. When damaged, gives the damage back to the attacking team as Energy.
 		isUncapturable = false,    	--Prevents capture, such as from Glowfish.
@@ -131,14 +132,13 @@ return {
 		alertPlayerOnDeath = false,           	--If on the player's team, log an Alert that this unit has died. Should make it true on all buildings, and hero units (Hemedall).
 	},
 
-	-- 🟪 STATUS EFFECT EMITTER (AEGIS SHIELD)
-	-- isStatusEffecter = true,
-	-- isAegisEmitter = true,
-	-- aegisEmitter = {
-	-- 	secondsPerPulse = .2, 	-- float: strength will be applied to allies in range as Aegis Shielding.
-	-- 	radius          = 3, 	-- float: Area of effect. The center of a unit must be within this range to be affected.
-	-- 	strength        = .2*healthStats.regen.H 	-- float: Aegis strength applied per pulse.
-	-- },
+	isStatusEffecter = true,
+    isAegisEmitter = true,
+    aegisEmitter = {
+        secondsPerPulse = 5,
+        radius = .0001,
+        strength = .00001,
+    },
 
 	-- 🟦 STRUCTURE
 	isStructure = true,

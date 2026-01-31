@@ -147,7 +147,7 @@ return {
 		explosionSFX = 0,
 		explosionSFXIntensity = 10,		-- Platforms blowing up is very important.
 
-		heatResistancePercentage = 0,
+		heatResistancePercentage = healthStats.proportionRegenMax,
 		shredResistancePercentage = 0,
 		aegisMaximum = 0,
 		isResourceMatter = false,
@@ -187,6 +187,14 @@ return {
 		ignoreInstaDeath = false,
 		alertPlayerOnDeath = false,
 	},
+
+	isStatusEffecter = true,
+    isAegisEmitter = true,
+    aegisEmitter = {
+        secondsPerPulse = 5,
+        radius = .0001,
+        strength = .00001,
+    },
 
 	-- 🟦 COMMAND / Platform
 	isCommand = false, -- Allows Platform AIs to be run on this structure.

@@ -151,7 +151,7 @@ return {
 		explosionSFX = 0,
 		explosionSFXIntensity = 10,		-- Platforms blowing up is very important.
 
-		heatResistancePercentage = 0,
+		heatResistancePercentage = healthStats.proportionRegenMax,
 		shredResistancePercentage = 0,
 		aegisMaximum = 0,
 		isResourceMatter = false,

@@ -106,7 +106,7 @@ return {
 		explosionSFX = 0,          --Sorry don't have a table for this. Just use 0.
 		explosionSFXIntensity = 0.8, --The importance of a sound, affects how far away it is heard and what other sounds it can override as there can only be 255 sounds at a time. Platform Death/Nuke = 10, Ekudon cannon = 4, Tolly gun = 0.2, Otorell gun = 0.4,
 
-		heatResistancePercentage = 0, --Fraction of heat resistance. (0-1) Normally 0
+		heatResistancePercentage = healthStats.proportionRegenMax, --Fraction of heat resistance. (0-1) Normally 0
 		shredResistancePercentage = 0, --Fraction of shred resistance. (0-1) Normally 0. If 0 game automatically assigns shredResistance based on unit class (as is done for the entire vanilla game).
 		aegisMaximum = 0, 			--Game will automatically determine, but can be manually set here.
 		isResourceMatter = false,  	--For Matter Deposits. When damaged, gives the damage back to the attacking team as Matter.
