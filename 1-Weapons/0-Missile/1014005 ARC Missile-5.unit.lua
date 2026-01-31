@@ -283,7 +283,7 @@ return {
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).
 	ghostMesh		= "Missiles/Missile-1-Zerda",   -- Used for build ghosts on spawners (yards).
-	ghostMaterials                   = { "arc_hull","arc_teamColour","arc_engine","arc_hull_dark","arc_teamGlow"   }, -- Used for the ghostMesh for build ghosts on spawners (yards).
+	ghostMaterials                   = { "arc_hull","arc_teamColour","arc_teamGlow","arc_hull_dark","arc_teamGlow"   }, -- Used for the ghostMesh for build ghosts on spawners (yards).
 	ghostParts 	= {
 		-- {
 		-- 	name      = "Turret",
