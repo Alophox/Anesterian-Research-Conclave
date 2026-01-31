@@ -88,7 +88,7 @@ return {
 					targetingPriorityMultiplier = 0, impulseForce = 0,
 				},
 			},
-		}
+		},
 		prefab.ship.emerald.stern.G(scaleConst, false),
 		prefab.ship.emerald.bow.G(scaleConst, false),
 		prefab.ship.emerald.stern.G(scaleConst, true, 0, "arc_aegis"),

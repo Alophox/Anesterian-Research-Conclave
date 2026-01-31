@@ -89,7 +89,7 @@ return {
 					targetingPriorityMultiplier = 0, impulseForce = 0,
 				},
 			},
-		}
+		},
 		prefab.ship.aquamarine.stern.B(scaleConst, false),
 		prefab.ship.aquamarine.core.B(scaleConst, false),
 		prefab.ship.aquamarine.bow.B(scaleConst, false),

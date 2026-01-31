@@ -88,7 +88,7 @@ return {
 					targetingPriorityMultiplier = 0, impulseForce = 0,
 				},
 			},
-		}
+		},
 		prefab.ship.topaz.stern.P(scaleConst, false),
 		prefab.ship.topaz.bow.P(scaleConst, false),
 		prefab.ship.topaz.stern.P(scaleConst, true, 0, "arc_aegis"),

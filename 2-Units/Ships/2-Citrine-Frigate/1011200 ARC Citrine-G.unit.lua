@@ -86,7 +86,7 @@ return {
 					targetingPriorityMultiplier = 0, impulseForce = 0,
 				},
 			},
-		}
+		},
 		prefab.ship.citrine.core.G(scaleConst, false),
 		prefab.ship.citrine.core.G(scaleConst, true, 0, "arc_aegis"),
 

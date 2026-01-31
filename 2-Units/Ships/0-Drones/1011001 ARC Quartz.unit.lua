@@ -86,7 +86,7 @@ return {
 					targetingPriorityMultiplier = 0, impulseForce = 0,
 				},
 			},
-		}
+		},
 		prefab.weapon.railgun.D(
 			{ 0, 0, .825*.1/scaleConst },
 			{ 0, 0, 0 },
@@ -136,7 +136,7 @@ return {
 					targetingPriorityMultiplier = 0, impulseForce = 0,
 				},
 			},
-		}
+		},
 				{
 					name     = "Thruster Plume",
 					mesh     = "Thruster/Thruster-Plume",
@@ -213,7 +213,7 @@ return {
 					targetingPriorityMultiplier = 0, impulseForce = 0,
 				},
 			},
-		}
+		},
 				{
 					name		 = "Turret Body",
 					mesh       = "Turrets-1/Turret-1-Body",
@@ -256,7 +256,7 @@ return {
 					targetingPriorityMultiplier = 0, impulseForce = 0,
 				},
 			},
-		}
+		},
 								{
 									name		 = "Turret Body",
 									mesh       = "Turrets-1/Turret-1-Laser",
@@ -278,7 +278,7 @@ return {
 					targetingPriorityMultiplier = 0, impulseForce = 0,
 				},
 			},
-		}
+		},
 										{
 											name		 = "Turret Body",
 											mesh       = "Rift/Rift",

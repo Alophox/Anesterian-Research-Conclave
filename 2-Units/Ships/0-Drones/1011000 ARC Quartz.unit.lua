@@ -86,7 +86,7 @@ return {
 					targetingPriorityMultiplier = 0, impulseForce = 0,
 				},
 			},
-		}
+		},
 		-- prefab.weapon.laser.D(
 		-- 	{ 0, 0, .825*.1/scaleConst },
 		-- 	{ 0, 0, 0 },
@@ -136,7 +136,7 @@ return {
 					targetingPriorityMultiplier = 0, impulseForce = 0,
 				},
 			},
-		}
+		},
 				{
 					name     = "Thruster Plume",
 					mesh     = "Thruster/Thruster-Plume",

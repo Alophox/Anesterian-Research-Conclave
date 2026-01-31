@@ -88,7 +88,7 @@ return {
 					targetingPriorityMultiplier = 0, impulseForce = 0,
 				},
 			},
-		}
+		},
 		prefab.ship.sapphire.stern.G(scaleConst, false),
 		prefab.ship.sapphire.core.G(scaleConst, false),
 		prefab.ship.sapphire.bow.G(scaleConst, false),

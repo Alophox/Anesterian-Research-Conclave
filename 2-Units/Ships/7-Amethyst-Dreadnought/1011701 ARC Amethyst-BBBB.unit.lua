@@ -85,7 +85,7 @@ return {
 					targetingPriorityMultiplier = 0, impulseForce = 0,
 				},
 			},
-		}
+		},
 		prefab.ship.amethyst.stern.B(scaleConst, false),
 		prefab.ship.amethyst.core.B(scaleConst, false),
 		prefab.ship.amethyst.bow.B(scaleConst, false),

@@ -86,7 +86,7 @@ return {
 					targetingPriorityMultiplier = 0, impulseForce = 0,
 				},
 			},
-		}
+		},
 		prefab.ship.ruby.core.M(scaleConst, false),
 		prefab.ship.ruby.core.M(scaleConst, true, 0, "arc_aegis"),
 
