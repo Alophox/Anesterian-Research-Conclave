@@ -27,7 +27,7 @@ return {
 		description                 =
 		".",
 		weaponInfo                  = { 	-- int3 array: Tells the databank which weaponDatas to grab and display for this unit. Not automatic you have to do this, I'm sorry.
-			-- { 3296003, 1, 0 }   		-- (int, int, int): weaponID, count, subMunitionWeaponID (bullet, missile, etc, 0 = none) This gets the damage data of the subMunitionWeapon if it has any, important for bullets which themselves do damage via a subweapon.
+			{ 3296005, 1, 0 }   		-- (int, int, int): weaponID, count, subMunitionWeaponID (bullet, missile, etc, 0 = none) This gets the damage data of the subMunitionWeapon if it has any, important for bullets which themselves do damage via a subweapon.
 		},
 		relatedUnitIDs              = {} 	-- int array: TypeID of other units in the family tree
 	},
@@ -340,7 +340,7 @@ return {
 		preventShockwave = false,             	-- Prevents a repulsive shockwave from being created automatically on units scale 1+
 		randomiseInAllDirections = false,     	--Let the explosion randomise it's direction.
 		deathUnitSpawnDoNotRandomiseRotation = false, --Randomise the rotation of the unit spawned on death, if any.
-		deathUnitSpawnTypeID = 3294015,            	-- int: The unit spawned when this dies. -1 is nothing. Used for debris, and Glowfish Blobs.
+		deathUnitSpawnTypeID = -1,            	-- int: The unit spawned when this dies. -1 is nothing. Used for debris, and Glowfish Blobs.
 		invulnerable = false,                 	-- You can't hurt me, little man.
 		unkillable = false,                   	-- Even in death, I am eternal.
 		death_countdown = 0,                  	-- float: If the unit dies, but has not taken enough damage for InstaDeath, count down this long then blowup.

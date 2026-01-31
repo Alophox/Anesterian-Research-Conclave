@@ -22,7 +22,7 @@ return {
           -- Most weapons will create an AOE explosion if isAreaOfEffect is enabled.
           -- All weapons will try to use a childed weaponVisual when firing. If there are multiple weaponVisuals, each shot it will use one in child order. (as a laser beam, or as a muzzle flash depending on how you configure the weaponVisual)
 
-          weaponType = "WARHEAD_TRIGGER",
+          weaponType = "LAUNCHER",
           
           -- LASER, raycast forward and damage the first thing you hit. Can do AOE/Damage. Uses weaponVisual as a beam.
           -- PUREHIT, directly damage the target. Can do AOE/Damage. Uses weaponVisual as a beam.
@@ -42,7 +42,7 @@ return {
           oneuse = true,               -- destroy root unit when out of ammo, (for bullets, missiles, etc) (fires entire magazine then destroys the unit it's on)
           rangeInUnits = 1,            -- Target must be within range, for gun to fire.
           maximumAngleToTarget = 3.14,   -- Radians, target must be within angle for gun to fire.
-          unitsPerSecond = .2,           -- projectile velocity for LAUNCHER in 100m/s
+          unitsPerSecond = 0,           -- projectile velocity for LAUNCHER in 100m/s
           spreadDegrees = 0,          -- Radians, spread for LAUNCHER (machine guns, etc)
           spreadType = "BELLCURVE",       -- Spread style. BELLCURVE (more in the center), RANDOM 
           forceRaycastDirectlyToTarget = false, -- LASERS, forces the laser to hit it's intended target even if the turret is not looking perfectly at it. (Important for PD weapons, and most laser weapons)
@@ -53,14 +53,14 @@ return {
           damageData = {
                isNondamaging = false,             -- false> normal, true> Healing, armour repair, aegis
                instances = 1,                     -- int: How many times is this damage dealt. For making weapons worse against armour.
-               damage = 10,                       -- float: Raw damage, reduced by armour.
+               damage = 0,                       -- float: Raw damage, reduced by armour.
                piercing = 5,                      -- float: Ignore this much armour. Negative piercing is AEGIS shielding.
                shred= 0,                      -- float: Destroy this much armour * class shred resistance. Negative heals armour.
-               heat = 5,                          -- float: Apply this much heat. Health is heat capacity.
+               heat = 0,                          -- float: Apply this much heat. Health is heat capacity.
                vulnerability = 0,               -- float: Negate this much armour. Negative vulnerability is CAPTURE.
                decloak = 1.0,                     -- float: Reduce target cloak by this amount. Unused.
                targetingPriorityMultiplier = 0,   -- float: Temporarily make the target this much more attractive a target.
-               impulseForce = 21                 -- float: Apply this much push force. This is reduced by target mass like normal physics.
+               impulseForce = 0                 -- float: Apply this much push force. This is reduced by target mass like normal physics.
           },
 
           
@@ -126,7 +126,7 @@ return {
           barrelIndexCurrent = 0,            --Controls which barrel (in child order) the weapon will start with.
 
           --LAUNCHER / TESLA Controls
-          spawnID = 3291000,       --unit typeID
+          spawnID = 3294011,       --unit typeID
           arrivalData = {
                type           = "NONE",    --NONE, ARRIVE, DEPART, CONSTRUCT, LAUNCH, WARP
                -- arrivalDuration= 1.0,
@@ -134,7 +134,7 @@ return {
                keepDisabled   = false,
                },
           checkForWaypoints = false,                    --units spawned from this weapon will follow any waypoint they spawn in.
-          ignoreRootVelocity = false,                   --Launched units inherit the velocity of their launcher. You can prevent this here.
+          ignoreRootVelocity = true,                   --Launched units inherit the velocity of their launcher. You can prevent this here.
           setAutoWaypointTargetToWeaponTarget = false,  --Useful for drones, missiles, in order to get them to go towards the root unit's target.
 
           --Reload time
@@ -144,17 +144,17 @@ return {
           -- > 0 : reload a set amount at a time, cannot be interupted. Starts reloading the moment shotsPerCycleCurrent < shotsPerCycle
           -- < 0 : reload a set amount at a time, interupted when firing. The moment the weapon fires, will reset the secondsPerCycleCurrent to secondsPerCycle.
           reloadAmount = 0,             --Normal weapons use 0, aka full
-          secondsPerCycle = 5,        --Seconds per reload. Negative value prevent reloading (limited ammo weapons).
-          secondsPerCycleCurrent = 0,   --Starting delay. Good if you don't want your bomber launching bombs the moment it spawns.
+		secondsPerCycle = weaponStats.missile.baseCD * weaponStats.CDMult[weaponConst.size] + weaponStats.CDMod[weaponConst.size] - weaponStats.missile.secondsPerShot*(weaponStats.missile.shotsPerBurst[weaponConst.size] - 1),        --Seconds per reload. Negative value prevent reloading (limited ammo weapons).
+		secondsPerCycleCurrent = 0,   --Starting delay. Good if you don't want your bomber launching bombs the moment it spawns.
 
-          --Magazine Size
-          shotsPerCycle = 1,            --Shots per reload, ATS will ensure this number is always at least 1.
-          shotsPerCycleCurrent = 1,     --Starting shots in the clip.
-          simultaniousShots = 1,        --How many shots we can make at once. (shotgun, cluster bomb)
+		--Magazine Size
+		shotsPerCycle = weaponStats.missile.shotsPerBurst[weaponConst.size],            --Shots per reload, ATS will ensure this number is always at least 1.
+		shotsPerCycleCurrent = weaponStats.missile.shotsPerBurst[weaponConst.size],     --Starting shots in the clip.
+		simultaniousShots = 1,        --How many shots we can make at once. (shotgun, cluster bomb)
 
-          --Fire Rate
-          secondsPerShot = 1,           --Delay between shots.
-          secondsPerShotCurrent = 0,    --Starting delay.
+		--Fire Rate
+		secondsPerShot = weaponStats.missile.secondsPerShot,           --Delay between shots.
+		secondsPerShotCurrent = 0,    --Starting delay.
 
      },
 

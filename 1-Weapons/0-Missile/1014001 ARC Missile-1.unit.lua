@@ -27,7 +27,7 @@ return {
 		description                 =
 		".",
 		weaponInfo                  = {
-			{ -1, -1, -2 }
+			{ 3296001, 1, 0 }
 		},
 		relatedUnitIDs              = {} 	-- int array: TypeID of other units in the family tree
 	},
