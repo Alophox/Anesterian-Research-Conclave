@@ -51,7 +51,7 @@ function prefab.ship.citrine.core.G(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Citrine-Core-G",
-		mesh = "2-Citrine/Citrine-Core-G",
+		mesh = "329-2-Citrine/Citrine-Core-G",
 		materials = { "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamColour" },
 		position = {0,0,0},
 		rotation = {0,0,0},
@@ -122,7 +122,7 @@ function prefab.ship.citrine.core.A(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Citrine-Core-A",
-		mesh = "2-Citrine/Citrine-Core-A",
+		mesh = "329-2-Citrine/Citrine-Core-A",
 		materials = { "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamColour" },
 		position = {0,0,0},
 		rotation = {0,0,0},
@@ -202,7 +202,7 @@ function prefab.ship.citrine.core.C(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Citrine-Core-C",
-		mesh = "2-Citrine/Citrine-Core-C",
+		mesh = "329-2-Citrine/Citrine-Core-C",
 		materials = { "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamColour" },
 		position = {0,0,0},
 		rotation = {0,0,0},

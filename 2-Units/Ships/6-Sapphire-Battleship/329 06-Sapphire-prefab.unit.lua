@@ -72,7 +72,7 @@ function prefab.ship.sapphire.stern.G(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Stern-G",
-		mesh = "6-Sapphire/Sapphire-Stern-G",
+		mesh = "329-6-Sapphire/Sapphire-Stern-G",
 		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
@@ -157,7 +157,7 @@ function prefab.ship.sapphire.stern.A(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Stern-A",
-		mesh = "6-Sapphire/Sapphire-Stern-A",
+		mesh = "329-6-Sapphire/Sapphire-Stern-A",
 		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
@@ -218,7 +218,7 @@ function prefab.ship.sapphire.stern.C(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Stern-C",
-		mesh = "6-Sapphire/Sapphire-Stern-C",
+		mesh = "329-6-Sapphire/Sapphire-Stern-C",
 		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
@@ -663,7 +663,7 @@ function prefab.ship.sapphire.bow.S(scaleConst, isGhost, ghostIndex, ghostMat)
 				parts={
 					{
 						name = "Spinal Barrel",
-						mesh = "6-Sapphire/Spinal-Barrel",
+						mesh = "329-6-Sapphire/Spinal-Barrel",
 						materials = isGhost and {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,} or {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 						position = {0,0,7},
 						rotation = {0,90,0},
@@ -671,7 +671,7 @@ function prefab.ship.sapphire.bow.S(scaleConst, isGhost, ghostIndex, ghostMat)
 					},
 					{
 						name = "Spinal Ring",
-						mesh = "6-Sapphire/Spinal-Ring",
+						mesh = "329-6-Sapphire/Spinal-Ring",
 						materials = spinal_mats,
 						position = {0,0,13.25},
 						rotation = {0,90,0},
@@ -679,7 +679,7 @@ function prefab.ship.sapphire.bow.S(scaleConst, isGhost, ghostIndex, ghostMat)
 					},
 					{
 						name = "Spinal Ring",
-						mesh = "6-Sapphire/Spinal-Ring",
+						mesh = "329-6-Sapphire/Spinal-Ring",
 						materials = spinal_mats,
 						position = {0,0,13.25-2.5},
 						rotation = {0,90,0},
@@ -687,7 +687,7 @@ function prefab.ship.sapphire.bow.S(scaleConst, isGhost, ghostIndex, ghostMat)
 					},
 					{
 						name = "Spinal Ring",
-						mesh = "6-Sapphire/Spinal-Ring",
+						mesh = "329-6-Sapphire/Spinal-Ring",
 						materials = spinal_mats,
 						position = {0,0,13.25-5},
 						rotation = {0,90,0},

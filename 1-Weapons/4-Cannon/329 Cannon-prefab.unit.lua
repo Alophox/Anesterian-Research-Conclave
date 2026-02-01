@@ -90,7 +90,7 @@ function prefab.weapon.cannon.S(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					},
 					{
 						name      = "Turret Barrel",
-						mesh      = "Turrets-1/Turret-1-Cannon", --The mesh to be used for this part, works the same as mainMesh.
+						mesh      = "329-Turrets-1/Turret-1-Cannon", --The mesh to be used for this part, works the same as mainMesh.
 						materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow" },
 						position  = { 0, 0, 0 },
 						rotation  = { 0, 0, 0 },
@@ -168,7 +168,7 @@ function prefab.weapon.cannon.M(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					},
 					{
 						name      = "Turret Barrel",
-						mesh      = "Turrets-3/Turret-3-Cannon",
+						mesh      = "329-Turrets-3/Turret-3-Cannon",
 						materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow" },
 						position  = { .15, 0, 0 },
 						rotation  = { 0, 0, 0 },
@@ -177,7 +177,7 @@ function prefab.weapon.cannon.M(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					{	name = "Turret Muzzle",	position = { .15, 0, 1.35 },	rotation = { 0, 0, 0 },	scale = { 1, 1, 1 },	barrel = true,	},		
 					{
 						name      = "Turret Barrel",
-						mesh      = "Turrets-3/Turret-3-Cannon",
+						mesh      = "329-Turrets-3/Turret-3-Cannon",
 						materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow" },
 						position  = { -.15, 0, 0 },
 						rotation  = { 0, 0, 0 },
@@ -248,7 +248,7 @@ function prefab.weapon.cannon.L(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					},
 					{
 						name      = "Turret Barrel Left",
-						mesh      = "Turrets-5/Turret-5-Cannon",
+						mesh      = "329-Turrets-5/Turret-5-Cannon",
 						materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow" },
 						position  = { -.375, 0, 0 },
 						rotation  = { 0, 0, 0 },
@@ -257,7 +257,7 @@ function prefab.weapon.cannon.L(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					{	name = "Turret Muzzle",	position = { -.375, 0, 1.7125 },	rotation = { 0, 0, 0 },	scale = { 1, 1, 1 },	barrel = true,	},		
 					{
 						name      = "Turret Barrel Center",
-						mesh      = "Turrets-5/Turret-5-Cannon",
+						mesh      = "329-Turrets-5/Turret-5-Cannon",
 						materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow" },
 						position  = { 0, 0, 0 },
 						rotation  = { 0, 0, 0 },
@@ -266,7 +266,7 @@ function prefab.weapon.cannon.L(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					{	name = "Turret Muzzle",	position = { 0, 0, 1.7125 },	rotation = { 0, 0, 0 },	scale = { 1, 1, 1 },	barrel = true,	},
 					{
 						name      = "Turret Barrel Right",
-						mesh      = "Turrets-5/Turret-5-Cannon",
+						mesh      = "329-Turrets-5/Turret-5-Cannon",
 						materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow" },
 						position  = { .375, 0, 0 },
 						rotation  = { 0, 0, 0 },
@@ -338,7 +338,7 @@ function prefab.weapon.cannon.X(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					},
 					{
 						name      = "Turret Barrel Left",
-						mesh      = "Turrets-7/Turret-7-Cannon",
+						mesh      = "329-Turrets-7/Turret-7-Cannon",
 						materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow" },
 						position  = { -.735, 0, 0 },
 						rotation  = { 0, 0, 0 },
@@ -348,7 +348,7 @@ function prefab.weapon.cannon.X(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					
 					{
 						name      = "Turret Barrel Center Left",
-						mesh      = "Turrets-7/Turret-7-Cannon",
+						mesh      = "329-Turrets-7/Turret-7-Cannon",
 						materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow" },
 						position  = { -.245, 0, 0 },
 						rotation  = { 0, 0, 0 },
@@ -358,7 +358,7 @@ function prefab.weapon.cannon.X(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					
 					{
 						name      = "Turret Barrel Center Right",
-						mesh      = "Turrets-7/Turret-7-Cannon",
+						mesh      = "329-Turrets-7/Turret-7-Cannon",
 						materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow" },
 						position  = { .245, 0, 0 },
 						rotation  = { 0, 0, 0 },
@@ -369,7 +369,7 @@ function prefab.weapon.cannon.X(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					
 					{
 						name      = "Turret Barrel Right",
-						mesh      = "Turrets-7/Turret-7-Cannon",
+						mesh      = "329-Turrets-7/Turret-7-Cannon",
 						materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow" },
 						position  = { .735, 0, 0 },
 						rotation  = { 0, 0, 0 },

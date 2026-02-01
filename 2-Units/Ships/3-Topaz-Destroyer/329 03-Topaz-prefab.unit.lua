@@ -52,7 +52,7 @@ function prefab.ship.topaz.stern.P(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Topaz-Stern-P",
-		mesh = "3-Topaz/Topaz-Stern-P",
+		mesh = "329-3-Topaz/Topaz-Stern-P",
 		materials = { "329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
@@ -111,7 +111,7 @@ function prefab.ship.topaz.stern.B(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Topaz-Stern-B",
-		mesh = "3-Topaz/Topaz-Stern-B",
+		mesh = "329-3-Topaz/Topaz-Stern-B",
 		materials = { "329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
@@ -182,7 +182,7 @@ function prefab.ship.topaz.stern.M(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Topaz-Stern-M",
-		mesh = "3-Topaz/Topaz-Stern-M",
+		mesh = "329-3-Topaz/Topaz-Stern-M",
 		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},

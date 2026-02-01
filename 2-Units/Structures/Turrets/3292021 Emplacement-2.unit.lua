@@ -26,7 +26,7 @@ return {
 
 	-- BODY SETUP
 	scale                       = scaleConst,                                          -- A Tolly is scale 0.4, all units are a uniform scale. Normalise mesh size to 1 in Blender. (make sure the longest horizontal part (width/length) is 1)
-	mainMesh                    = "Emplacement/Emplacement-2",   -- Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
+	mainMesh                    = "329-Emplacement/Emplacement-2",   -- Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
 	
 	--NOTICE, WORKING WITH MATERIALS AND MESHS:
 	--When making a mesh in Blender, you can assign materials to different surfaces. The number of materials used create 'material slots' for the mesh.
@@ -78,7 +78,7 @@ return {
 		},
 		{
 			name     = "Build",
-			mesh    = "Emplacement/Emplacement-2",
+			mesh    = "329-Emplacement/Emplacement-2",
 			materials = { "329_MT_arc_0_aegis", "329_MT_arc_0_aegis", "329_MT_arc_0_aegis", "329_MT_arc_0_aegis" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
@@ -87,7 +87,7 @@ return {
 		},
 		{
 			name     = "Build",
-			mesh    = "Emplacement/Emplacement-2",
+			mesh    = "329-Emplacement/Emplacement-2",
 			materials = { "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
@@ -96,7 +96,7 @@ return {
 		},
 		{
 			name     = "Build",
-			mesh    = "Emplacement/Emplacement-2",
+			mesh    = "329-Emplacement/Emplacement-2",
 			materials = { "329_MT_arc_1_build", "329_MT_arc_1_build", "329_MT_arc_1_build", "329_MT_arc_1_build" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
@@ -105,7 +105,7 @@ return {
 		},
 		{
 			name     = "Build",
-			mesh    = "Emplacement/Emplacement-2",
+			mesh    = "329-Emplacement/Emplacement-2",
 			materials = { "329_MT_arc_2_build", "329_MT_arc_2_build", "329_MT_arc_2_build", "329_MT_arc_2_build" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.

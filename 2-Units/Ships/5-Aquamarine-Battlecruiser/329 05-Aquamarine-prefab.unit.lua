@@ -72,7 +72,7 @@ function prefab.ship.aquamarine.stern.P(scaleConst, isGhost, ghostIndex, ghostMa
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Stern-P",
-		mesh = "5-Aquamarine/Aquamarine-Stern-P",
+		mesh = "329-5-Aquamarine/Aquamarine-Stern-P",
 		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
@@ -144,7 +144,7 @@ function prefab.ship.aquamarine.stern.B(scaleConst, isGhost, ghostIndex, ghostMa
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Stern-B",
-		mesh = "5-Aquamarine/Aquamarine-Stern-B",
+		mesh = "329-5-Aquamarine/Aquamarine-Stern-B",
 		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
@@ -229,7 +229,7 @@ function prefab.ship.aquamarine.stern.M(scaleConst, isGhost, ghostIndex, ghostMa
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Stern-M",
-		mesh = "5-Aquamarine/Aquamarine-Stern-M",
+		mesh = "329-5-Aquamarine/Aquamarine-Stern-M",
 		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
@@ -303,7 +303,7 @@ function prefab.ship.aquamarine.core.P(scaleConst, isGhost, ghostIndex, ghostMat
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Core-P",
-		mesh = "5-Aquamarine/Aquamarine-Core-P",
+		mesh = "329-5-Aquamarine/Aquamarine-Core-P",
 		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
@@ -362,7 +362,7 @@ function prefab.ship.aquamarine.core.B(scaleConst, isGhost, ghostIndex, ghostMat
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Core-B",
-		mesh = "5-Aquamarine/Aquamarine-Core-B",
+		mesh = "329-5-Aquamarine/Aquamarine-Core-B",
 		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
@@ -434,7 +434,7 @@ function prefab.ship.aquamarine.core.M(scaleConst, isGhost, ghostIndex, ghostMat
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Core-M",
-		mesh = "5-Aquamarine/Aquamarine-Core-M",
+		mesh = "329-5-Aquamarine/Aquamarine-Core-M",
 		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
@@ -519,7 +519,7 @@ function prefab.ship.aquamarine.bow.P(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Bow-P",
-		mesh = "5-Aquamarine/Aquamarine-Bow-P",
+		mesh = "329-5-Aquamarine/Aquamarine-Bow-P",
 		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
@@ -590,7 +590,7 @@ function prefab.ship.aquamarine.bow.B(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Bow-B",
-		mesh = "5-Aquamarine/Aquamarine-Bow-B",
+		mesh = "329-5-Aquamarine/Aquamarine-Bow-B",
 		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
@@ -673,7 +673,7 @@ function prefab.ship.aquamarine.bow.M(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Bow-M",
-		mesh = "5-Aquamarine/Aquamarine-Bow-M",
+		mesh = "329-5-Aquamarine/Aquamarine-Bow-M",
 		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},

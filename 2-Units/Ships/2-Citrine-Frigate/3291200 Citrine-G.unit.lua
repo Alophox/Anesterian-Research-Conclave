@@ -37,7 +37,7 @@ return {
 
 	-- BODY SETUP
 	scale                       	= scaleConst,                                          -- float: A Tolly is scale 0.4, all units are a uniform scale. Normalise XY mesh size to 1 in Blender. (controls selection ring, among other things. the longest horizontal part (width/length) is 1)
-	-- mainMesh                    	= "2-Citrine/Citrine-Core-G",   -- string: Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
+	-- mainMesh                    	= "329-2-Citrine/Citrine-Core-G",   -- string: Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
 	
 	--NOTICE, WORKING WITH MATERIALS AND MESHS:
 	--When making a mesh in Blender, you can assign materials to different surfaces. The number of materials used create 'material slots' for the mesh.
@@ -93,7 +93,7 @@ return {
 	},
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).
-	-- ghostMesh		= "2-Citrine/Citrine-Core-G",   -- Used for build ghosts on spawners (yards).
+	-- ghostMesh		= "329-2-Citrine/Citrine-Core-G",   -- Used for build ghosts on spawners (yards).
 	-- ghostMaterials = { ghostMat, ghostMat, ghostMat, ghostMat,ghostMat }, -- Used for the ghostMesh for build ghosts on spawners (yards).
 	ghostParts 	= {
 		prefab.ship.citrine.core.G(scaleConst, true, 2),

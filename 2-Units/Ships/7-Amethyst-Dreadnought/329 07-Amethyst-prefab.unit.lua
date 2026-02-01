@@ -95,7 +95,7 @@ function prefab.ship.amethyst.stern.P(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Stern-P",
-		mesh = "7-Amethyst/Amethyst-Stern-P",
+		mesh = "329-7-Amethyst/Amethyst-Stern-P",
 		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
@@ -155,7 +155,7 @@ function prefab.ship.amethyst.stern.B(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Stern-B",
-		mesh = "7-Amethyst/Amethyst-Stern-B",
+		mesh = "329-7-Amethyst/Amethyst-Stern-B",
 		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
@@ -215,7 +215,7 @@ function prefab.ship.amethyst.stern.M(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Stern-M",
-		mesh = "7-Amethyst/Amethyst-Stern-M",
+		mesh = "329-7-Amethyst/Amethyst-Stern-M",
 		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
@@ -287,7 +287,7 @@ function prefab.ship.amethyst.stern.G(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Stern-G",
-		mesh = "7-Amethyst/Amethyst-Stern-G",
+		mesh = "329-7-Amethyst/Amethyst-Stern-G",
 		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
@@ -346,7 +346,7 @@ function prefab.ship.amethyst.stern.A(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Stern-A",
-		mesh = "7-Amethyst/Amethyst-Stern-A",
+		mesh = "329-7-Amethyst/Amethyst-Stern-A",
 		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
@@ -409,7 +409,7 @@ function prefab.ship.amethyst.stern.C(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Stern-C",
-		mesh = "7-Amethyst/Amethyst-Stern-C",
+		mesh = "329-7-Amethyst/Amethyst-Stern-C",
 		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
@@ -1678,7 +1678,7 @@ function prefab.ship.amethyst.bow.P(scaleConst, isGhost, ghostIndex, ghostMat)
 				parts={
 			{
 				name = "Spinal Barrel",
-				mesh = "6-Sapphire/Spinal-Barrel",
+				mesh = "329-6-Sapphire/Spinal-Barrel",
 				materials = isGhost and {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,} or {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 				position = {0,0,14.5},
 				rotation = {0,90,0},
@@ -1733,7 +1733,7 @@ function prefab.ship.amethyst.bow.B(scaleConst, isGhost, ghostIndex, ghostMat)
 				parts={
 			{
 				name = "Spinal Barrel",
-				mesh = "6-Sapphire/Spinal-Barrel",
+				mesh = "329-6-Sapphire/Spinal-Barrel",
 				materials = isGhost and {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,} or {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 				position = {0,0,14.5001},
 				rotation = {0,90,0},
@@ -1830,7 +1830,7 @@ function prefab.ship.amethyst.bow.G(scaleConst, isGhost, ghostIndex, ghostMat)
 				parts={
 			{
 				name = "Spinal Barrel",
-				mesh = "6-Sapphire/Spinal-Barrel",
+				mesh = "329-6-Sapphire/Spinal-Barrel",
 				materials = isGhost and {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,} or {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 				position = {0,0,14.5},
 				rotation = {0,90,0},
@@ -1884,7 +1884,7 @@ function prefab.ship.amethyst.bow.A(scaleConst, isGhost, ghostIndex, ghostMat)
 				parts={
 			{
 				name = "Spinal Barrel",
-				mesh = "6-Sapphire/Spinal-Barrel",
+				mesh = "329-6-Sapphire/Spinal-Barrel",
 				materials = isGhost and {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,} or {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 				position = {0,0,14.5},
 				rotation = {0,90,0},

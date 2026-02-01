@@ -23,7 +23,7 @@ return {
 
 	-- BODY SETUP
 	scale                       = 1.8, -- 0.055556
-	mainMesh                    = "Extender/Extender-2",
+	mainMesh                    = "329-Extender/Extender-2",
 	materials                   = { "329_MT_arc_hull", "329_MT_arc_teamGlow", "329_MT_arc_teamColour", "329_MT_arc_hull_dark" },
 	inEditor = true,
     autoColourElements = true,
@@ -63,7 +63,7 @@ return {
 		},
 		{
 			name     = "Aegis",
-			mesh    = "Extender/Extender-2",
+			mesh    = "329-Extender/Extender-2",
 			materials = { "329_MT_arc_0_aegis", "329_MT_arc_0_aegis", "329_MT_arc_0_aegis", "329_MT_arc_0_aegis" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
@@ -72,7 +72,7 @@ return {
 		},
 		{
 			name     = "Build",
-			mesh    = "Extender/Extender-2",
+			mesh    = "329-Extender/Extender-2",
 			materials = { "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
@@ -81,7 +81,7 @@ return {
 		},
 		{
 			name     = "Build",
-			mesh    = "Extender/Extender-2",
+			mesh    = "329-Extender/Extender-2",
 			materials = { "329_MT_arc_1_build", "329_MT_arc_1_build", "329_MT_arc_1_build", "329_MT_arc_1_build" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
@@ -90,7 +90,7 @@ return {
 		},
 		{
 			name     = "Build",
-			mesh    = "Extender/Extender-2",
+			mesh    = "329-Extender/Extender-2",
 			materials = { "329_MT_arc_2_build", "329_MT_arc_2_build", "329_MT_arc_2_build", "329_MT_arc_2_build" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.

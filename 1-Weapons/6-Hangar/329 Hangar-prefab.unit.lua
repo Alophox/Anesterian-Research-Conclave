@@ -12,7 +12,7 @@ function prefab.weapon.hangar.quartz(pos, rot, sca, isGhost, ghostIndex, ghostMa
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Quartz Hangar",
-		mesh      = "Hangar/Hangar",
+		mesh      = "329-Hangar/Hangar",
 		materials = { "329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_teamColour", },
 		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
 		rotation  = rot,        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
@@ -65,7 +65,7 @@ function prefab.weapon.hangar.ruby(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Ruby Hangar",
-		mesh      = "Hangar/Hangar-1",
+		mesh      = "329-Hangar/Hangar-1",
 		materials = { "329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_teamColour", },
 		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
 		rotation  = rot,        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
@@ -152,7 +152,7 @@ function prefab.weapon.hangar.citrine(pos, rot, sca, isGhost, ghostIndex, ghostM
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Ruby Hangar",
-		mesh      = "Hangar/Hangar-2",
+		mesh      = "329-Hangar/Hangar-2",
 		materials = { "329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_teamColour", },
 		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
 		rotation  = rot,        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.

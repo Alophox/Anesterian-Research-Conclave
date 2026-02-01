@@ -23,7 +23,7 @@ return {
 
 	-- BODY SETUP
 	scale                       = 1.8, -- 0.035714
-	mainMesh                    = "Cargo-Container-2/Container",
+	mainMesh                    = "329-Cargo-Container-2/Container",
 	materials                   = { "329_MT_arc_hull", "329_MT_arc_teamGlow", "329_MT_arc_teamColour", "329_MT_arc_hull_dark" },
 	inEditor = true,
     autoColourElements = true,
@@ -63,7 +63,7 @@ return {
 		},
 		{
 			name     = "Aegis",
-			mesh    = "Cargo-Container-2/Container",
+			mesh    = "329-Cargo-Container-2/Container",
 			materials = { "329_MT_arc_0_aegis", "329_MT_arc_0_aegis", "329_MT_arc_0_aegis", "329_MT_arc_0_aegis" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
@@ -72,7 +72,7 @@ return {
 		},
 		{
 			name     = "Build",
-			mesh    = "Cargo-Container-2/Container",
+			mesh    = "329-Cargo-Container-2/Container",
 			materials = { "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
@@ -81,7 +81,7 @@ return {
 		},
 		{
 			name     = "Build",
-			mesh    = "Cargo-Container-2/Container",
+			mesh    = "329-Cargo-Container-2/Container",
 			materials = { "329_MT_arc_1_build", "329_MT_arc_1_build", "329_MT_arc_1_build", "329_MT_arc_1_build" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
@@ -90,7 +90,7 @@ return {
 		},
 		{
 			name     = "Build",
-			mesh    = "Cargo-Container-2/Container",
+			mesh    = "329-Cargo-Container-2/Container",
 			materials = { "329_MT_arc_2_build", "329_MT_arc_2_build", "329_MT_arc_2_build", "329_MT_arc_2_build" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.

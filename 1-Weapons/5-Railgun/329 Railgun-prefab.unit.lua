@@ -105,7 +105,7 @@ function prefab.weapon.railgun.S(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					},
 					{
 						name      = "Turret Barrel",
-						mesh      = "Turrets-1/Turret-1-Railgun", --The mesh to be used for this part, works the same as mainMesh.
+						mesh      = "329-Turrets-1/Turret-1-Railgun", --The mesh to be used for this part, works the same as mainMesh.
 						materials = { "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamGlow" },
 						position  = { 0, 0, 0 },
 						rotation  = { 0, 0, 0 },
@@ -181,7 +181,7 @@ function prefab.weapon.railgun.M(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					},
 					{
 						name      = "Turret Barrel",
-						mesh      = "Turrets-3/Turret-3-Railgun",
+						mesh      = "329-Turrets-3/Turret-3-Railgun",
 						materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow", "329_MT_arc_hull_dark" },
 						position  = { .15, 0, 0 },
 						rotation  = { 0, 0, 0 },
@@ -190,7 +190,7 @@ function prefab.weapon.railgun.M(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					{	name = "Turret Muzzle",	position = { .15, 0, .6 },	rotation = { 0, 0, 0 },	scale = { 1, 1, 1 },	barrel = true,	},		
 					{
 						name      = "Turret Barrel",
-						mesh      = "Turrets-3/Turret-3-Railgun",
+						mesh      = "329-Turrets-3/Turret-3-Railgun",
 						materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow", "329_MT_arc_hull_dark" },
 						position  = { -.15, 0, 0 },
 						rotation  = { 0, 0, 0 },
@@ -261,7 +261,7 @@ function prefab.weapon.railgun.L(pos, rot, sca, isGhost, ghostIndex, ghostMat) -
 					},
 					{
 						name      = "Turret Barrel Left",
-						mesh      = "Turrets-5/Turret-5-Railgun", --The mesh to be used for this part, works the same as mainMesh.
+						mesh      = "329-Turrets-5/Turret-5-Railgun", --The mesh to be used for this part, works the same as mainMesh.
 						materials = { "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamGlow" },
 						position  = { -.375, 0, 0 },
 						rotation  = { 0, 0, 0 },
@@ -276,7 +276,7 @@ function prefab.weapon.railgun.L(pos, rot, sca, isGhost, ghostIndex, ghostMat) -
 					},	
 					{
 						name      = "Turret Barrel Center",
-						mesh      = "Turrets-5/Turret-5-Railgun", --The mesh to be used for this part, works the same as mainMesh.
+						mesh      = "329-Turrets-5/Turret-5-Railgun", --The mesh to be used for this part, works the same as mainMesh.
 						materials = { "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamGlow" },
 						position  = { 0, 0, 0 },
 						rotation  = { 0, 0, 0 },
@@ -291,7 +291,7 @@ function prefab.weapon.railgun.L(pos, rot, sca, isGhost, ghostIndex, ghostMat) -
 					},	
 					{
 						name      = "Turret Barrel Right",
-						mesh      = "Turrets-5/Turret-5-Railgun", --The mesh to be used for this part, works the same as mainMesh.
+						mesh      = "329-Turrets-5/Turret-5-Railgun", --The mesh to be used for this part, works the same as mainMesh.
 						materials = { "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamGlow" },
 						position  = { .375, 0, 0 },
 						rotation  = { 0, 0, 0 },
@@ -367,7 +367,7 @@ function prefab.weapon.railgun.X(pos, rot, sca, isGhost, ghostIndex, ghostMat) -
 					},
 					{
 						name      = "Turret Barrel Left",
-						mesh      = "Turrets-7/Turret-7-Railgun", --The mesh to be used for this part, works the same as mainMesh.
+						mesh      = "329-Turrets-7/Turret-7-Railgun", --The mesh to be used for this part, works the same as mainMesh.
 						materials = { "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamGlow" },
 						position  = { -.735, 0, 0 },
 						rotation  = { 0, 0, 0 },
@@ -376,7 +376,7 @@ function prefab.weapon.railgun.X(pos, rot, sca, isGhost, ghostIndex, ghostMat) -
 					{	name      = "Turret Muzzle",	position  = { -.735, 0, .5875 },	rotation  = { 0, 0, 0 },	scale 	= { 1, 1, 1 },	barrel    = true,},	
 					{
 						name      = "Turret Barrel Center Left",
-						mesh      = "Turrets-7/Turret-7-Railgun", --The mesh to be used for this part, works the same as mainMesh.
+						mesh      = "329-Turrets-7/Turret-7-Railgun", --The mesh to be used for this part, works the same as mainMesh.
 						materials = { "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamGlow" },
 						position  = { -.245, 0, 0 },
 						rotation  = { 0, 0, 0 },
@@ -386,7 +386,7 @@ function prefab.weapon.railgun.X(pos, rot, sca, isGhost, ghostIndex, ghostMat) -
 					
 					{
 						name      = "Turret Barrel Center Right",
-						mesh      = "Turrets-7/Turret-7-Railgun", --The mesh to be used for this part, works the same as mainMesh.
+						mesh      = "329-Turrets-7/Turret-7-Railgun", --The mesh to be used for this part, works the same as mainMesh.
 						materials = { "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamGlow" },
 						position  = { .245, 0, 0 },
 						rotation  = { 0, 0, 0 },
@@ -396,7 +396,7 @@ function prefab.weapon.railgun.X(pos, rot, sca, isGhost, ghostIndex, ghostMat) -
 					
 					{
 						name      = "Turret Barrel Right",
-						mesh      = "Turrets-7/Turret-7-Railgun", --The mesh to be used for this part, works the same as mainMesh.
+						mesh      = "329-Turrets-7/Turret-7-Railgun", --The mesh to be used for this part, works the same as mainMesh.
 						materials = { "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamGlow" },
 						position  = { .735, 0, 0 },
 						rotation  = { 0, 0, 0 },
