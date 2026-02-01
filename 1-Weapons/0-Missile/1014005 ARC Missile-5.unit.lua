@@ -78,7 +78,7 @@ return {
 			scale 	= { .1, .1, .1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 
 			weapon    = {
-				weaponID = 3296003, --int: The weaponData id to be used for this weapon.
+				weaponID = 3296005, --int: The weaponData id to be used for this weapon.
 				turnSpeed = 0, 	--float: Degrees per second.
 				turnMode = "Linear", --string enum: Linear / Acceleration
 				turnInstant = true, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -161,124 +161,6 @@ return {
 			},
 			
 		},
-
-		-- {
-		-- 	name     = "Suck Particles",
-		-- 	position = { 0, 0, 0.0001 },
-		-- 	rotation = { 0, 0, 0 },
-		-- 	scale 	= { 1, 1, 1 },
-
-		-- 	particleEmitter = {
-		-- 		particleType = "PULSE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
-		-- 		distancePerParticle = .01,       -- decimal
-		-- 		minSecondsPerParticle = 9999,     -- decimal
-		-- 		ejectionVelocity = 0,             -- decimal
-		-- 		ejectionVelocityAwayFromEmitter = true, -- bool
-		-- 		randomRadius = 0,                 -- decimal
-		-- 		randomScaleMinFraction = 1,       -- decimal
-		-- 		startDisabled = true,            -- bool
-		-- 		stateToggleTrigger = "OnDeath",      -- enum EMITTERSTATETRIGGER
-		-- 		colourStart = {1,1,1},            -- decimals
-		-- 		colourEnd   = {1,1,1},            -- decimals
-		-- 		opacity     = .5,                  -- decimal
-		-- 		scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size],                  -- decimal
-		-- 		scaleEnd    = 0,                  -- decimal
-		-- 		lifetime    = .5,                  -- decimal
-		-- 	},
-			
-		-- },
-		-- {
-		-- 	name     = "Suck Particles",
-		-- 	position = { 0, 0, 0.0001 },
-		-- 	rotation = { 0, 0, 0 },
-		-- 	scale 	= { 1, 1, 1 },
-		-- 	particleEmitter = {
-		-- 		particleType = "PARTICLE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
-		-- 		distancePerParticle = 1,       -- decimal
-		-- 		minSecondsPerParticle = 0.006,     -- decimal
-		-- 		ejectionVelocity = 0,             -- decimal
-		-- 		ejectionVelocityAwayFromEmitter = true, -- bool
-		-- 		randomRadius = 0,                 -- decimal
-		-- 		randomScaleMinFraction = 1,       -- decimal
-		-- 		startDisabled = true,            -- bool
-		-- 		stateToggleTrigger = "OnDeath",      -- enum EMITTERSTATETRIGGER
-		-- 		colourStart = {.6,0,.6},            -- decimals
-		-- 		colourEnd   = {.6,0,.6},            -- decimals
-		-- 		opacity     = .5,                  -- decimal
-		-- 		scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*1,                  -- decimal
-		-- 		scaleEnd    = 0,                  -- decimal
-		-- 		lifetime    = 1,                  -- decimal
-		-- 	},
-		-- },
-		-- {
-		-- 	name     = "Suck Particles",
-		-- 	position = { 0, 0, 0.0001 },
-		-- 	rotation = { 0, 0, 0 },
-		-- 	scale 	= { 1, 1, 1 },
-		-- 	particleEmitter = {
-		-- 		particleType = "PARTICLE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
-		-- 		distancePerParticle = 1,       -- decimal
-		-- 		minSecondsPerParticle = 0.006,     -- decimal
-		-- 		ejectionVelocity = 0,             -- decimal
-		-- 		ejectionVelocityAwayFromEmitter = true, -- bool
-		-- 		randomRadius = 0,                 -- decimal
-		-- 		randomScaleMinFraction = 1,       -- decimal
-		-- 		startDisabled = true,            -- bool
-		-- 		stateToggleTrigger = "OnDeath",      -- enum EMITTERSTATETRIGGER
-		-- 		colourStart = {.7,0,.7},            -- decimals
-		-- 		colourEnd   = {.7,0,.7},            -- decimals
-		-- 		opacity     = .6,                  -- decimal
-		-- 		scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.8,                  -- decimal
-		-- 		scaleEnd    = 0,                  -- decimal
-		-- 		lifetime    = 1,                  -- decimal
-		-- 	},
-		-- },
-		-- {
-		-- 	name     = "Suck Particles",
-		-- 	position = { 0, 0, 0.0001 },
-		-- 	rotation = { 0, 0, 0 },
-		-- 	scale 	= { 1, 1, 1 },
-		-- 	particleEmitter = {
-		-- 		particleType = "PARTICLE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
-		-- 		distancePerParticle = 1,       -- decimal
-		-- 		minSecondsPerParticle = 0.006,     -- decimal
-		-- 		ejectionVelocity = 0,             -- decimal
-		-- 		ejectionVelocityAwayFromEmitter = true, -- bool
-		-- 		randomRadius = 0,                 -- decimal
-		-- 		randomScaleMinFraction = 1,       -- decimal
-		-- 		startDisabled = true,            -- bool
-		-- 		stateToggleTrigger = "OnDeath",      -- enum EMITTERSTATETRIGGER
-		-- 		colourStart = {.8,.1,.8},            -- decimals
-		-- 		colourEnd   = {.8,.1,.8},            -- decimals
-		-- 		opacity     = .7,                  -- decimal
-		-- 		scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.6,                  -- decimal
-		-- 		scaleEnd    = 0,                  -- decimal
-		-- 		lifetime    = 1,                  -- decimal
-		-- 	},
-		-- },
-		-- {
-		-- 	name     = "Suck Particles",
-		-- 	position = { 0, 0, 0.0001 },
-		-- 	rotation = { 0, 0, 0 },
-		-- 	scale 	= { 1, 1, 1 },
-		-- 	particleEmitter = {
-		-- 		particleType = "PARTICLE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
-		-- 		distancePerParticle = 1,       -- decimal
-		-- 		minSecondsPerParticle = 0.006,     -- decimal
-		-- 		ejectionVelocity = 0,             -- decimal
-		-- 		ejectionVelocityAwayFromEmitter = true, -- bool
-		-- 		randomRadius = 0,                 -- decimal
-		-- 		randomScaleMinFraction = 1,       -- decimal
-		-- 		startDisabled = true,            -- bool
-		-- 		stateToggleTrigger = "OnDeath",      -- enum EMITTERSTATETRIGGER
-		-- 		colourStart = {1,.5,1},            -- decimals
-		-- 		colourEnd   = {1,.5,1},            -- decimals
-		-- 		opacity     = .9,                  -- decimal
-		-- 		scaleStart  = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]*.4,                  -- decimal
-		-- 		scaleEnd    = 0,                  -- decimal
-		-- 		lifetime    = 1,                  -- decimal
-		-- 	},
-		-- },
 	},
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).

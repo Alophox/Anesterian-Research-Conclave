@@ -42,7 +42,7 @@ return {
           oneuse = true,               -- destroy root unit when out of ammo, (for bullets, missiles, etc) (fires entire magazine then destroys the unit it's on)
           rangeInUnits = 1,            -- Target must be within range, for gun to fire.
           maximumAngleToTarget = 3.14,   -- Radians, target must be within angle for gun to fire.
-          unitsPerSecond = .2,           -- projectile velocity for LAUNCHER in 100m/s
+          unitsPerSecond = 0,           -- projectile velocity for LAUNCHER in 100m/s
           spreadDegrees = 0,          -- Radians, spread for LAUNCHER (machine guns, etc)
           spreadType = "BELLCURVE",       -- Spread style. BELLCURVE (more in the center), RANDOM 
           forceRaycastDirectlyToTarget = false, -- LASERS, forces the laser to hit it's intended target even if the turret is not looking perfectly at it. (Important for PD weapons, and most laser weapons)
@@ -134,7 +134,7 @@ return {
                keepDisabled   = false,
                },
           checkForWaypoints = false,                    --units spawned from this weapon will follow any waypoint they spawn in.
-          ignoreRootVelocity = false,                   --Launched units inherit the velocity of their launcher. You can prevent this here.
+          ignoreRootVelocity = true,                   --Launched units inherit the velocity of their launcher. You can prevent this here.
           setAutoWaypointTargetToWeaponTarget = false,  --Useful for drones, missiles, in order to get them to go towards the root unit's target.
 
           --Reload time
@@ -148,8 +148,8 @@ return {
 		secondsPerCycleCurrent = 0,   --Starting delay. Good if you don't want your bomber launching bombs the moment it spawns.
 
 		--Magazine Size
-		shotsPerCycle = weaponStats.missile.shotsPerBurst[weaponConst.size],            --Shots per reload, ATS will ensure this number is always at least 1.
-		shotsPerCycleCurrent = weaponStats.missile.shotsPerBurst[weaponConst.size],     --Starting shots in the clip.
+		shotsPerCycle = 1,            --Shots per reload, ATS will ensure this number is always at least 1.
+		shotsPerCycleCurrent = 1,     --Starting shots in the clip.
 		simultaniousShots = 1,        --How many shots we can make at once. (shotgun, cluster bomb)
 
 		--Fire Rate

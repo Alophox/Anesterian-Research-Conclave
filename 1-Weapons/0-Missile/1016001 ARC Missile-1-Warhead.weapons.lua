@@ -148,8 +148,8 @@ return {
 		secondsPerCycleCurrent = 0,   --Starting delay. Good if you don't want your bomber launching bombs the moment it spawns.
 
 		--Magazine Size
-		shotsPerCycle = weaponStats.missile.shotsPerBurst[weaponConst.size],            --Shots per reload, ATS will ensure this number is always at least 1.
-		shotsPerCycleCurrent = weaponStats.missile.shotsPerBurst[weaponConst.size],     --Starting shots in the clip.
+		shotsPerCycle = 1,            --Shots per reload, ATS will ensure this number is always at least 1.
+		shotsPerCycleCurrent = 1,     --Starting shots in the clip.
 		simultaniousShots = 1,        --How many shots we can make at once. (shotgun, cluster bomb)
 
 		--Fire Rate
