@@ -92,7 +92,7 @@ function prefab.ship.topaz.stern.P(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -164,7 +164,7 @@ function prefab.ship.topaz.stern.B(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -235,7 +235,7 @@ function prefab.ship.topaz.stern.M(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -286,7 +286,7 @@ function prefab.ship.topaz.bow.P(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -338,7 +338,7 @@ function prefab.ship.topaz.bow.B(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -408,7 +408,7 @@ function prefab.ship.topaz.bow.M(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end

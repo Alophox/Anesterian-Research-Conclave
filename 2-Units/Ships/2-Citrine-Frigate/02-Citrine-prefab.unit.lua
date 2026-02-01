@@ -104,7 +104,7 @@ function prefab.ship.citrine.core.G(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -182,7 +182,7 @@ function prefab.ship.citrine.core.A(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -257,7 +257,7 @@ function prefab.ship.citrine.core.C(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end

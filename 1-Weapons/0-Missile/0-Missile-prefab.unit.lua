@@ -28,7 +28,7 @@ function prefab.weapon.missile.vls.S(pos, rot, sca, isGhost, ghostIndex, ghostMa
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.weapon = {
 			weaponID = 3295001, --int: The weaponData id to be used for this weapon.
@@ -76,7 +76,7 @@ function prefab.weapon.missile.vls.M(pos, rot, sca, isGhost, ghostIndex, ghostMa
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.weapon = {
 			weaponID = 3295002, --int: The weaponData id to be used for this weapon.
@@ -123,7 +123,7 @@ function prefab.weapon.missile.vls.L(pos, rot, sca, isGhost, ghostIndex, ghostMa
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.weapon = {
 			weaponID = 3295003, --int: The weaponData id to be used for this weapon.
@@ -170,7 +170,7 @@ function prefab.weapon.missile.vls.X(pos, rot, sca, isGhost, ghostIndex, ghostMa
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.weapon = {
 			weaponID = 3295004, --int: The weaponData id to be used for this weapon.
@@ -217,7 +217,7 @@ function prefab.weapon.missile.vls.T(pos, rot, sca, isGhost, ghostIndex, ghostMa
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.weapon = {
 			weaponID = 3295005, --int: The weaponData id to be used for this weapon.
@@ -265,7 +265,7 @@ function prefab.weapon.missile.hls.S(pos, rot, sca, isGhost, ghostIndex, ghostMa
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.weapon = {
 			weaponID = 3295011, --int: The weaponData id to be used for this weapon.
@@ -313,7 +313,7 @@ function prefab.weapon.missile.hls.M(pos, rot, sca, isGhost, ghostIndex, ghostMa
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.weapon = {
 			weaponID = 3295012, --int: The weaponData id to be used for this weapon.
@@ -360,7 +360,7 @@ function prefab.weapon.missile.hls.L(pos, rot, sca, isGhost, ghostIndex, ghostMa
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.weapon = {
 			weaponID = 3295013, --int: The weaponData id to be used for this weapon.
@@ -407,7 +407,7 @@ function prefab.weapon.missile.hls.X(pos, rot, sca, isGhost, ghostIndex, ghostMa
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.weapon = {
 			weaponID = 3295014, --int: The weaponData id to be used for this weapon.
@@ -454,7 +454,7 @@ function prefab.weapon.missile.hls.T(pos, rot, sca, isGhost, ghostIndex, ghostMa
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.weapon = {
 			weaponID = 3295015, --int: The weaponData id to be used for this weapon.

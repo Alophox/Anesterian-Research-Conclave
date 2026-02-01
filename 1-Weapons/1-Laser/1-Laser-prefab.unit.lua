@@ -44,7 +44,7 @@ function prefab.weapon.laser.D(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts={
 			{
@@ -92,7 +92,7 @@ function prefab.weapon.laser.S(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts={
 			{
@@ -165,7 +165,7 @@ function prefab.weapon.laser.M(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts={
 			{
@@ -246,7 +246,7 @@ function prefab.weapon.laser.L(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts={
 			{
@@ -337,7 +337,7 @@ function prefab.weapon.laser.X(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts={
 			{
@@ -441,7 +441,7 @@ function prefab.weapon.laser.XS(pos, rot, sca, isGhost, ghostIndex, ghostMat) --
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts={
 			{
@@ -494,7 +494,7 @@ function prefab.weapon.laser.TS(pos, rot, sca, isGhost, ghostIndex, ghostMat) --
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts={
 			{

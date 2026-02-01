@@ -94,7 +94,7 @@ function prefab.ship.ruby.core.P(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -155,7 +155,7 @@ function prefab.ship.ruby.core.B(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -227,7 +227,7 @@ function prefab.ship.ruby.core.M(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end

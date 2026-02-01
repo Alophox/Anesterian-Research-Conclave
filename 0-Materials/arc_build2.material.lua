@@ -1,8 +1,8 @@
 return {
-    id = "arc_build2",
+    id = "2_arc_build",
     shader = "Shader Graphs/buildGlowShader",
     keywords = { "_EMISSION" },
-    renderQueue = 3001,
+    renderQueue = 4001,
     properties = {
         _Min = 1.3,
         _QueueControl = 1,

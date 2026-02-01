@@ -51,11 +51,7 @@ function prefab.part.module.emplacement.S(scaleConst, angleCount, type, isGhost,
 		}
 	}
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
-			prefab_part.aegisVisual = true;
-			prefab_part.scale = {.11/scaleConst,.11/scaleConst,.11/scaleConst};
-		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -97,11 +93,7 @@ function prefab.part.module.emplacement.M(scaleConst, angleCount, type, isGhost,
 		}
 	}
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
-			prefab_part.aegisVisual = true;
-			prefab_part.scale = {.11/scaleConst,.11/scaleConst,.11/scaleConst};
-		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -136,11 +128,7 @@ function prefab.part.module.emplacement.L(scaleConst, angleCount, type, isGhost,
 		}
 	}
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
-			prefab_part.aegisVisual = true;
-			prefab_part.scale = {.11/scaleConst,.11/scaleConst,.11/scaleConst};
-		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end

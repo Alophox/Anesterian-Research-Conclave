@@ -137,7 +137,7 @@ function prefab.ship.amethyst.stern.P(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -197,7 +197,7 @@ function prefab.ship.amethyst.stern.B(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -270,7 +270,7 @@ function prefab.ship.amethyst.stern.M(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -329,7 +329,7 @@ function prefab.ship.amethyst.stern.G(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -388,7 +388,7 @@ function prefab.ship.amethyst.stern.A(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -510,7 +510,7 @@ function prefab.ship.amethyst.stern.C(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -584,7 +584,7 @@ function prefab.ship.amethyst.core_aft.P(scaleConst, isGhost, ghostIndex, ghostM
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -670,7 +670,7 @@ function prefab.ship.amethyst.core_aft.B(scaleConst, isGhost, ghostIndex, ghostM
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -751,7 +751,7 @@ function prefab.ship.amethyst.core_aft.M(scaleConst, isGhost, ghostIndex, ghostM
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -830,7 +830,7 @@ function prefab.ship.amethyst.core_aft.G(scaleConst, isGhost, ghostIndex, ghostM
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -889,7 +889,7 @@ function prefab.ship.amethyst.core_aft.A(scaleConst, isGhost, ghostIndex, ghostM
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -999,7 +999,7 @@ function prefab.ship.amethyst.core_aft.C(scaleConst, isGhost, ghostIndex, ghostM
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -1097,7 +1097,7 @@ function prefab.ship.amethyst.core_fore.P(scaleConst, isGhost, ghostIndex, ghost
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -1168,7 +1168,7 @@ function prefab.ship.amethyst.core_fore.B(scaleConst, isGhost, ghostIndex, ghost
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -1239,7 +1239,7 @@ function prefab.ship.amethyst.core_fore.M(scaleConst, isGhost, ghostIndex, ghost
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -1297,7 +1297,7 @@ function prefab.ship.amethyst.core_fore.G(scaleConst, isGhost, ghostIndex, ghost
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -1349,7 +1349,7 @@ function prefab.ship.amethyst.core_fore.A(scaleConst, isGhost, ghostIndex, ghost
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -1448,7 +1448,7 @@ function prefab.ship.amethyst.core_fore.C(scaleConst, isGhost, ghostIndex, ghost
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -1472,15 +1472,15 @@ function prefab.ship.amethyst.core.P(scaleConst, isGhost, ghostIndex, ghostMat)
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
-			prefab.ship.amethyst.core_aft.P(.1,isGhost, ghostIndex),
-			prefab.ship.amethyst.core_fore.P(.1,isGhost, ghostIndex),
+			prefab.ship.amethyst.core_aft.P(.1,isGhost, ghostIndex, ghostMat),
+			prefab.ship.amethyst.core_fore.P(.1,isGhost, ghostIndex, ghostMat),
 		}
 	}
 	if isGhost then
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -1504,15 +1504,15 @@ function prefab.ship.amethyst.core.B(scaleConst, isGhost, ghostIndex, ghostMat)
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
-			prefab.ship.amethyst.core_aft.B(.1,isGhost, ghostIndex),
-			prefab.ship.amethyst.core_fore.B(.1,isGhost, ghostIndex),
+			prefab.ship.amethyst.core_aft.B(.1,isGhost, ghostIndex, ghostMat),
+			prefab.ship.amethyst.core_fore.B(.1,isGhost, ghostIndex, ghostMat),
 		}
 	}
 	if isGhost then
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -1536,15 +1536,15 @@ function prefab.ship.amethyst.core.M(scaleConst, isGhost, ghostIndex, ghostMat)
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
-			prefab.ship.amethyst.core_aft.M(.1,isGhost, ghostIndex),
-			prefab.ship.amethyst.core_fore.M(.1,isGhost, ghostIndex),
+			prefab.ship.amethyst.core_aft.M(.1,isGhost, ghostIndex, ghostMat),
+			prefab.ship.amethyst.core_fore.M(.1,isGhost, ghostIndex, ghostMat),
 		}
 	}
 	if isGhost then
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -1568,15 +1568,15 @@ function prefab.ship.amethyst.core.G(scaleConst, isGhost, ghostIndex, ghostMat)
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
-			prefab.ship.amethyst.core_aft.G(.1,isGhost, ghostIndex),
-			prefab.ship.amethyst.core_fore.G(.1,isGhost, ghostIndex),
+			prefab.ship.amethyst.core_aft.G(.1,isGhost, ghostIndex, ghostMat),
+			prefab.ship.amethyst.core_fore.G(.1,isGhost, ghostIndex, ghostMat),
 		}
 	}
 	if isGhost then
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -1600,15 +1600,15 @@ function prefab.ship.amethyst.core.A(scaleConst, isGhost, ghostIndex, ghostMat)
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
-			prefab.ship.amethyst.core_aft.A(.1,isGhost, ghostIndex),
-			prefab.ship.amethyst.core_fore.A(.1,isGhost, ghostIndex),
+			prefab.ship.amethyst.core_aft.A(.1,isGhost, ghostIndex, ghostMat),
+			prefab.ship.amethyst.core_fore.A(.1,isGhost, ghostIndex, ghostMat),
 		}
 	}
 	if isGhost then
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -1631,15 +1631,15 @@ function prefab.ship.amethyst.core.C(scaleConst, isGhost, ghostIndex, ghostMat)
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
-			prefab.ship.amethyst.core_aft.C(.1,isGhost, ghostIndex),
-			prefab.ship.amethyst.core_fore.C(.1,isGhost, ghostIndex),
+			prefab.ship.amethyst.core_aft.C(.1,isGhost, ghostIndex, ghostMat),
+			prefab.ship.amethyst.core_fore.C(.1,isGhost, ghostIndex, ghostMat),
 		}
 	}
 	if isGhost then
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -1679,7 +1679,7 @@ function prefab.ship.amethyst.bow.P(scaleConst, isGhost, ghostIndex, ghostMat)
 			{
 				name = "Spinal Barrel",
 				mesh = "6-Sapphire/Spinal-Barrel",
-				materials = isGhost and {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,} or {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
+				materials = isGhost and {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,} or {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
 				position = {0,0,14.5},
 				rotation = {0,90,0},
 				scale = {1, 1, 1},
@@ -1695,7 +1695,7 @@ function prefab.ship.amethyst.bow.P(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -1734,7 +1734,7 @@ function prefab.ship.amethyst.bow.B(scaleConst, isGhost, ghostIndex, ghostMat)
 			{
 				name = "Spinal Barrel",
 				mesh = "6-Sapphire/Spinal-Barrel",
-				materials = isGhost and {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,} or {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
+				materials = isGhost and {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,} or {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
 				position = {0,0,14.5001},
 				rotation = {0,90,0},
 				scale = {1, 1, 1},
@@ -1748,7 +1748,7 @@ function prefab.ship.amethyst.bow.B(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -1792,7 +1792,7 @@ function prefab.ship.amethyst.bow.M(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -1831,7 +1831,7 @@ function prefab.ship.amethyst.bow.G(scaleConst, isGhost, ghostIndex, ghostMat)
 			{
 				name = "Spinal Barrel",
 				mesh = "6-Sapphire/Spinal-Barrel",
-				materials = isGhost and {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,} or {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
+				materials = isGhost and {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,} or {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
 				position = {0,0,14.5},
 				rotation = {0,90,0},
 				scale = {1, 1, 1},
@@ -1845,7 +1845,7 @@ function prefab.ship.amethyst.bow.G(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -1885,7 +1885,7 @@ function prefab.ship.amethyst.bow.A(scaleConst, isGhost, ghostIndex, ghostMat)
 			{
 				name = "Spinal Barrel",
 				mesh = "6-Sapphire/Spinal-Barrel",
-				materials = isGhost and {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,} or {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
+				materials = isGhost and {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,} or {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
 				position = {0,0,14.5},
 				rotation = {0,90,0},
 				scale = {1, 1, 1},
@@ -1900,7 +1900,7 @@ function prefab.ship.amethyst.bow.A(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -1996,7 +1996,7 @@ function prefab.ship.amethyst.bow.C(scaleConst, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end

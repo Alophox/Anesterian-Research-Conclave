@@ -1,5 +1,5 @@
 return {
-    id = "arc_build0",
+    id = "0_arc_build",
     -- shader = "Shader Graphs/buildGlowShader",
     -- keywords = { "_EMISSION" },
     -- renderQueue = 3001,

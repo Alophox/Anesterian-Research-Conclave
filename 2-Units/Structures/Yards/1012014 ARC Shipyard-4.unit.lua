@@ -62,7 +62,15 @@ return {
 
 	-- 🟦 PARTS
 	parts = {
-			
+		{
+			name     = "Aegis",
+			mesh    = "Shipyard/Shipyard-4",
+			materials = { "0_arc_aegis", "0_arc_aegis", "0_arc_aegis", "0_arc_aegis" },
+			pos       = { 0, 0, 0 },        --Relative local position of this object.
+			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
+			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
+			aegisVisual = true,
+		},
 		{
 			name     = "Spawner Spawn and Ghost Point",	
 			pos       = { 0, 0, 0 },        --Relative local position of this object.

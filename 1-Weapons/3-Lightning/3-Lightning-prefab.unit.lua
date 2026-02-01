@@ -1,6 +1,25 @@
 prefab.weapon.lightning = {}
 prefab.weapon_info.lightning = {}
 
+function prefab.weapon.lightning_effect(num)
+	return {
+		name		 = "Turret Lightning",
+		mesh       = "Turrets-1/Turret-1-Lightning-Effect-"..num,
+		materials  = { "arc_weapon_teamGlow" },
+		position   = { 0, 0, 0 },
+		rotation   = { 0, 0, 0 },
+		scale 	 = { .1, .1, .1 },
+		
+		weaponVisualConfig = {
+			laserColour = {1,1,1},
+			intensity = 3;
+			useWeaponLaserDescription = true,
+			laserDescription = {
+			}, 
+		}
+	}
+end
+
 function prefab.weapon_info.lightning.D(count)
 	return { 3295300, 1 * count, 0 }
 end
@@ -22,7 +41,7 @@ function prefab.weapon.lightning.D(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts={
 			{
@@ -41,54 +60,9 @@ function prefab.weapon.lightning.D(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 				},
 
 				parts = {
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-1",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-2",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-3",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-							}, 
-						}
-					},
+					prefab.weapon.lightning_effect(1),
+					prefab.weapon.lightning_effect(2),
+					prefab.weapon.lightning_effect(3),
 				},
 			},
 		}
@@ -117,7 +91,7 @@ function prefab.weapon.lightning.S(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts={
 			{
@@ -161,54 +135,9 @@ function prefab.weapon.lightning.S(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 						barrel    = true, --Assigns this part as a barrel to the parent's weapon. Barrels are where lasers, units, and weaponVisuals are placed or fired from.
 					},
 
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-1",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-2",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-3",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-							}, 
-						}
-					},
+					prefab.weapon.lightning_effect(1),
+					prefab.weapon.lightning_effect(2),
+					prefab.weapon.lightning_effect(3),
 				},
 			},
 		}
@@ -237,7 +166,7 @@ function prefab.weapon.lightning.M(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts={
 			{
@@ -293,87 +222,9 @@ function prefab.weapon.lightning.M(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					{	name = "Turret Muzzle",	position = { -.15, 0, 1.35 },	rotation = { 0, 0, 120 },	scale = { 1, 1, 1 },	barrel = true,	},
 					{	name = "Turret Muzzle",	position = { -.15, 0, 1.35 },	rotation = { 0, 0, 240 },	scale = { 1, 1, 1 },	barrel = true,	},
 
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-1",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-2",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = true,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-3",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
+					prefab.weapon.lightning_effect(1),
+					prefab.weapon.lightning_effect(2),
+					prefab.weapon.lightning_effect(3),
 				},
 			},
 		}
@@ -402,7 +253,7 @@ function prefab.weapon.lightning.L(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts={
 			{
@@ -476,168 +327,12 @@ function prefab.weapon.lightning.L(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					{	name = "Turret Muzzle",	position = { .375, 0, 1.7125 },	rotation = { 0, 0, 288 },	scale = { 1, 1, 1 },	barrel = true,	},
 					
 
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-1",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-2",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = true,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-3",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-1",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-2",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = true,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-3",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
+					prefab.weapon.lightning_effect(1),
+					prefab.weapon.lightning_effect(2),
+					prefab.weapon.lightning_effect(3),
+					prefab.weapon.lightning_effect(1),
+					prefab.weapon.lightning_effect(2),
+					prefab.weapon.lightning_effect(3),
 				},
 			},
 		}
@@ -666,7 +361,7 @@ function prefab.weapon.lightning.X(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts={
 			{
@@ -765,249 +460,15 @@ function prefab.weapon.lightning.X(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					{	name = "Turret Muzzle",	position = { .735, 0, 2.2125 },	rotation = { 0, 0, 309 },	scale = { 1, 1, 1 },	barrel = true,	},
 					
 
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-1",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-2",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = true,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-3",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-1",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-2",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = true,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-3",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-1",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-2",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = true,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-3",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
+					prefab.weapon.lightning_effect(1),
+					prefab.weapon.lightning_effect(2),
+					prefab.weapon.lightning_effect(3),
+					prefab.weapon.lightning_effect(1),
+					prefab.weapon.lightning_effect(2),
+					prefab.weapon.lightning_effect(3),
+					prefab.weapon.lightning_effect(1),
+					prefab.weapon.lightning_effect(2),
+					prefab.weapon.lightning_effect(3),
 				},
 			},
 		}
@@ -1036,7 +497,7 @@ function prefab.weapon.lightning.XS(pos, rot, sca, isGhost, ghostIndex, ghostMat
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts={
 			{
@@ -1067,249 +528,15 @@ function prefab.weapon.lightning.XS(pos, rot, sca, isGhost, ghostIndex, ghostMat
 					{	name = "Turret Muzzle",	position = { 0, 0, 0 },	rotation = { 0, 0, 257 },	scale = { 1, 1, 1 },	barrel = true,	},
 					{	name = "Turret Muzzle",	position = { 0, 0, 0 },	rotation = { 0, 0, 309 },	scale = { 1, 1, 1 },	barrel = true,	},
 					
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-1",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-2",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = true,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-3",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-1",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-2",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = true,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-3",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-1",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-2",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = true,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-3",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
+					prefab.weapon.lightning_effect(1),
+					prefab.weapon.lightning_effect(2),
+					prefab.weapon.lightning_effect(3),
+					prefab.weapon.lightning_effect(1),
+					prefab.weapon.lightning_effect(2),
+					prefab.weapon.lightning_effect(3),
+					prefab.weapon.lightning_effect(1),
+					prefab.weapon.lightning_effect(2),
+					prefab.weapon.lightning_effect(3),
 				},
 			},
 		}
@@ -1338,7 +565,7 @@ function prefab.weapon.lightning.TS(pos, rot, sca, isGhost, ghostIndex, ghostMat
 		if (ghostMat == "arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts={
 			{
@@ -1369,249 +596,15 @@ function prefab.weapon.lightning.TS(pos, rot, sca, isGhost, ghostIndex, ghostMat
 					{	name = "Turret Muzzle",	position = { 0, 0, 0 },	rotation = { 0, 0, 257 },	scale = { 1, 1, 1 },	barrel = true,	},
 					{	name = "Turret Muzzle",	position = { 0, 0, 0 },	rotation = { 0, 0, 309 },	scale = { 1, 1, 1 },	barrel = true,	},
 					
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-1",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-2",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = true,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-3",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-1",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-2",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = true,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-3",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-1",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-2",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = true,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
-					{
-						name		 = "Turret Lightning",
-						mesh       = "Turrets-1/Turret-1-Lightning-Effect-3",
-						materials  = { "arc_teamGlow" },
-						position   = { 0, 0, 0 },
-						rotation   = { 0, 0, 0 },
-						scale 	 = { .1, .1, .1 },
-						
-						weaponVisualConfig = {
-							laserColour = {.5,1,1},
-							intensity = 3;
-							useWeaponLaserDescription = true,
-							laserDescription = {
-								duration = 1,
-								opacity = 1,
-								diameter = .5,
-								offset = 0,
-								rotateZ = true,	
-								rotateY = false,
-								rotateZUpdate = false,
-								rotateYUpdate = false,
-								noRescaleLength = 0,
-								noFade = true,
-								noShrink = false,
-							}, 
-						}
-					},
+					prefab.weapon.lightning_effect(1),
+					prefab.weapon.lightning_effect(2),
+					prefab.weapon.lightning_effect(3),
+					prefab.weapon.lightning_effect(1),
+					prefab.weapon.lightning_effect(2),
+					prefab.weapon.lightning_effect(3),
+					prefab.weapon.lightning_effect(1),
+					prefab.weapon.lightning_effect(2),
+					prefab.weapon.lightning_effect(3),
 				},
 			},
 		}

@@ -10,7 +10,7 @@ function prefab.weapon_info.platform.L.A(count)
 	}
 	return weapon_info
 end
-function prefab.part.platform.L.A(scaleConst, angleCount, isGhost, ghostIndex)
+function prefab.part.platform.L.A(scaleConst, angleCount, isGhost, ghostIndex, ghostMat)
 	newPos1 = functions.rotateRecursive({x=0,z=36.25*.1/scaleConst},{x=0,z=0},angleCount)
 	newPos2 = functions.rotateRecursive({x=-1.25*.1/scaleConst,z=35*.1/scaleConst},{x=0,z=0},angleCount)
 	newPos3 = functions.rotateRecursive({x=0,z=33.75*.1/scaleConst},{x=0,z=0},angleCount)
@@ -53,11 +53,7 @@ function prefab.part.platform.L.A(scaleConst, angleCount, isGhost, ghostIndex)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
-			prefab_part.aegisVisual = true;
-			prefab_part.scale = {.11/scaleConst,.11/scaleConst,.11/scaleConst};
-		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -68,7 +64,7 @@ function prefab.weapon_info.platform.L.B(count)
 	}
 	return weapon_info
 end
-function prefab.part.platform.L.B(scaleConst, angleCount, isGhost, ghostIndex)
+function prefab.part.platform.L.B(scaleConst, angleCount, isGhost, ghostIndex, ghostMat)
 	newPos1 = functions.rotateRecursive({x=1.45*.1/scaleConst,z=35*.1/scaleConst},{x=0,z=0},angleCount)
 	newPos2 = functions.rotateRecursive({x=-1.45*.1/scaleConst,z=35*.1/scaleConst},{x=0,z=0},angleCount)
 	if(ghostIndex==nil) then ghostIndex=0 end
@@ -98,11 +94,7 @@ function prefab.part.platform.L.B(scaleConst, angleCount, isGhost, ghostIndex)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
-			prefab_part.aegisVisual = true;
-			prefab_part.scale = {.11/scaleConst,.11/scaleConst,.11/scaleConst};
-		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -112,7 +104,7 @@ function prefab.weapon_info.platform.L.C1(count)
 	}
 	return weapon_info
 end
-function prefab.part.platform.L.C1(scaleConst, angleCount, isGhost, ghostIndex)
+function prefab.part.platform.L.C1(scaleConst, angleCount, isGhost, ghostIndex, ghostMat)
 	newPos1 = functions.rotateRecursive({x=0,z=16*.1/scaleConst},{x=0,z=0},angleCount)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostIndex > 2) then return {}; end
@@ -135,11 +127,7 @@ function prefab.part.platform.L.C1(scaleConst, angleCount, isGhost, ghostIndex)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
-			prefab_part.aegisVisual = true;
-			prefab_part.scale = {.11/scaleConst,.11/scaleConst,.11/scaleConst};
-		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -149,7 +137,7 @@ function prefab.weapon_info.platform.L.C2(count)
 	}
 	return weapon_info
 end
-function prefab.part.platform.L.C2(scaleConst, angleCount, isGhost, ghostIndex)
+function prefab.part.platform.L.C2(scaleConst, angleCount, isGhost, ghostIndex, ghostMat)
 	newPos1 = functions.rotateRecursive({x=0,z=16*.1/scaleConst},{x=0,z=0},angleCount)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostIndex > 2) then return {}; end
@@ -172,11 +160,7 @@ function prefab.part.platform.L.C2(scaleConst, angleCount, isGhost, ghostIndex)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
-			prefab_part.aegisVisual = true;
-			prefab_part.scale = {.11/scaleConst,.11/scaleConst,.11/scaleConst};
-		end
-		prefab_part.materials= {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
+		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
