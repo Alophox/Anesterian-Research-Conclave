@@ -5,13 +5,13 @@ scaleConst = .2;
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "arc_cannon-shot-1",                 -- string: Internal name for debugging and errors.
+	unitName                    = "329_MT_arc_cannon-shot-1",                 -- string: Internal name for debugging and errors.
 	unitDisplayName             = "Plasma Shot",                         -- string: Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   -- string: Shown when moused over in the HUD.
 	unitBlurb                   = "Don't stick your hand in it.", -- string: Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           -- bool: The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
 	hotkey                      = "",                             -- Unity KeyCode: For buildbar. The hotkey for this unit.
-	picture                     = "arc_cannon-shot.png",             -- string filename: The name of the image file in this folder to be used for this unit.
+	picture                     = "329_MT_arc_cannon-shot.png",             -- string filename: The name of the image file in this folder to be used for this unit.
 
 	controllable 	= false;	-- bool: Can this unit be given move orders with right click?
 	unselectable = true;	-- Cannot be selected.
@@ -42,7 +42,7 @@ return {
 	--Inorder for ATS to know which material goes to which material slot on a mesh, we must define the ordering.
 	--Assign materials here in the same order as they are defined on the object in your Blender file. 
 	--(Can only get materials from .materials.lua files in this mod folder.)
-	materials                   = { "arc_weapon_teamGlow" },
+	materials                   = { "329_MT_arc_weapon_teamGlow" },
 
 	-- Percieved dimensions of the unit. Multiplied against scale. Controls how big the unit is percieved by other units. 
 	-- Units cannot actually "see" anything, so we need to mathematically define how big the unit is for standoff behaviour among other things.
@@ -123,7 +123,7 @@ return {
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).
 	ghostMesh		= "Turrets-1/Turret-1-Cannon-Effect",   -- Used for build ghosts on spawners (yards).
-	ghostMaterials                   = { "arc_teamGlow" }, -- Used for the ghostMesh for build ghosts on spawners (yards).
+	ghostMaterials                   = { "329_MT_arc_teamGlow" }, -- Used for the ghostMesh for build ghosts on spawners (yards).
 	ghostParts 	= {
 	},
 

@@ -5,7 +5,7 @@ scaleConst = .044921;
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "arc_self_destruct",                 -- string: Internal name for debugging and errors.
+	unitName                    = "329_MT_arc_self_destruct",                 -- string: Internal name for debugging and errors.
 	unitDisplayName             = "Module that self destructs",                         -- string: Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   -- string: Shown when moused over in the HUD.
 	unitBlurb                   = "Deleted", -- string: Shown just below the unit name in tooltips and databank.
@@ -42,7 +42,7 @@ return {
 	--Inorder for ATS to know which material goes to which material slot on a mesh, we must define the ordering.
 	--Assign materials here in the same order as they are defined on the object in your Blender file. 
 	--(Can only get materials from .materials.lua files in this mod folder.)
-	-- materials                   = { "arc_hull","arc_teamColour","arc_engine","arc_hull_dark","arc_teamGlow" },
+	-- materials                   = { "329_MT_arc_hull","329_MT_arc_teamColour","329_MT_arc_engine","329_MT_arc_hull_dark","329_MT_arc_teamGlow" },
 
 	-- Percieved dimensions of the unit. Multiplied against scale. Controls how big the unit is percieved by other units. 
 	-- Units cannot actually "see" anything, so we need to mathematically define how big the unit is for standoff behaviour among other things.
@@ -94,7 +94,7 @@ return {
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).
 	-- ghostMesh		= "Missiles/Missile-1-Zerda",   -- Used for build ghosts on spawners (yards).
-	-- ghostMaterials                   = { "arc_hull","arc_teamColour","arc_engine","arc_hull_dark","arc_teamGlow"   }, -- Used for the ghostMesh for build ghosts on spawners (yards).
+	-- ghostMaterials                   = { "329_MT_arc_hull","329_MT_arc_teamColour","329_MT_arc_engine","329_MT_arc_hull_dark","329_MT_arc_teamGlow"   }, -- Used for the ghostMesh for build ghosts on spawners (yards).
 	ghostParts 	= {
 	},
 

@@ -2,13 +2,13 @@
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "arc_coheser-3",
+	unitName                    = "329_MT_arc_coheser-3",
 	unitDisplayName             = "Coheser",
 	unitTooltip                 = "",
 	unitBlurb                   = "What an awful shape, who designed this?!",
 	unitBlurbExcludeFromTooltip = false,
 	hotkey                      = "c",
-	picture                     = "arc_coheser-3.png",
+	picture                     = "329_MT_arc_coheser-3.png",
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {
@@ -24,7 +24,7 @@ return {
 	-- BODY SETUP
 	scale                       = 2.8, -- 0.035714
 	mainMesh                    = "Coheser/Coheser-3",
-	materials                   = { "arc_hull", "arc_teamGlow", "arc_hull_dark", "arc_teamColour" },
+	materials                   = { "329_MT_arc_hull", "329_MT_arc_teamGlow", "329_MT_arc_hull_dark", "329_MT_arc_teamColour" },
 	inEditor = true,
     autoColourElements = true,
     editorDontColour = false,
@@ -64,7 +64,7 @@ return {
 		{
 			name     = "Aegis",
 			mesh    = "Coheser/Coheser-3",
-			materials = { "0_arc_aegis", "0_arc_aegis", "0_arc_aegis", "0_arc_aegis" },
+			materials = { "329_MT_arc_0_aegis", "329_MT_arc_0_aegis", "329_MT_arc_0_aegis", "329_MT_arc_0_aegis" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
@@ -73,7 +73,7 @@ return {
 		{
 			name     = "Build",
 			mesh    = "Coheser/Coheser-3",
-			materials = { "0_arc_build", "0_arc_build", "0_arc_build", "0_arc_build" },
+			materials = { "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
@@ -82,7 +82,7 @@ return {
 		{
 			name     = "Build",
 			mesh    = "Coheser/Coheser-3",
-			materials = { "1_arc_build", "1_arc_build", "1_arc_build", "1_arc_build" },
+			materials = { "329_MT_arc_1_build", "329_MT_arc_1_build", "329_MT_arc_1_build", "329_MT_arc_1_build" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
@@ -91,7 +91,7 @@ return {
 		{
 			name     = "Build",
 			mesh    = "Coheser/Coheser-3",
-			materials = { "2_arc_build", "2_arc_build", "2_arc_build", "2_arc_build" },
+			materials = { "329_MT_arc_2_build", "329_MT_arc_2_build", "329_MT_arc_2_build", "329_MT_arc_2_build" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.

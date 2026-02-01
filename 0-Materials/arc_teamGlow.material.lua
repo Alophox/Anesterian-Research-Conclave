@@ -1,5 +1,5 @@
 return {
-    id = "arc_teamGlow",
+    id = "329_MT_arc_teamGlow",
     shader = "Shader Graphs/Ship Glow Shader",
     keywords = { "_EMISSION" },
     properties = {

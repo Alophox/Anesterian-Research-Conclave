@@ -8,7 +8,7 @@ prefab.weapon_info.topaz = {
 }
 function prefab.ship.topaz.thruster(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
@@ -29,7 +29,7 @@ function prefab.ship.topaz.thruster(scaleConst, isGhost, ghostIndex, ghostMat)
 			{
 				name     = "Thruster Plume",
 				mesh     = "Thruster/Thruster-Plume",
-				materials  = { "arc_thruster_teamGlow", "arc_thruster-middle_teamGlow", "arc_thruster-outer_teamGlow" },
+				materials  = { "329_MT_arc_thruster_teamGlow", "329_MT_arc_thruster-middle_teamGlow", "329_MT_arc_thruster-outer_teamGlow" },
 				position = { 0, 0, 0 }, --XYZ, Thruster subparts should all be on the same Y point, as they all scale along the parent's Y axis.
 				rotation = { 0, 0, 0 },
 				scale 	= { 5, 5, 5 },
@@ -47,13 +47,13 @@ function prefab.weapon_info.topaz.stern.P()
 end
 function prefab.ship.topaz.stern.P(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Topaz-Stern-P",
 		mesh = "3-Topaz/Topaz-Stern-P",
-		materials = { "arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_teamColour", },
+		materials = { "329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
@@ -89,10 +89,10 @@ function prefab.ship.topaz.stern.P(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -106,13 +106,13 @@ function prefab.weapon_info.topaz.stern.B()
 end
 function prefab.ship.topaz.stern.B(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Topaz-Stern-B",
 		mesh = "3-Topaz/Topaz-Stern-B",
-		materials = { "arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_teamColour", },
+		materials = { "329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
@@ -161,10 +161,10 @@ function prefab.ship.topaz.stern.B(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -177,13 +177,13 @@ function prefab.weapon_info.topaz.stern.M()
 end
 function prefab.ship.topaz.stern.M(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Topaz-Stern-M",
 		mesh = "3-Topaz/Topaz-Stern-M",
-		materials = {"arc_hull_dark","arc_teamGlow", "arc_hull", "arc_teamColour", },
+		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
@@ -232,10 +232,10 @@ function prefab.ship.topaz.stern.M(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -249,13 +249,13 @@ function prefab.weapon_info.topaz.bow.P()
 end
 function prefab.ship.topaz.bow.P(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Topaz-Bow-P",
 		mesh = "3-Topaz/Topaz-Bow-P",
-		materials = { "arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_teamColour", },
+		materials = { "329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
@@ -283,10 +283,10 @@ function prefab.ship.topaz.bow.P(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -300,13 +300,13 @@ function prefab.weapon_info.topaz.bow.B()
 end
 function prefab.ship.topaz.bow.B(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Topaz-Bow-B",
 		mesh = "3-Topaz/Topaz-Bow-B",
-		materials = { "arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_teamColour", },
+		materials = { "329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
@@ -335,10 +335,10 @@ function prefab.ship.topaz.bow.B(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -352,13 +352,13 @@ function prefab.weapon_info.topaz.bow.M()
 end
 function prefab.ship.topaz.bow.M(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Topaz-Bow-M",
 		mesh = "3-Topaz/Topaz-Bow-M",
-		materials = { "arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_teamColour", },
+		materials = { "329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
@@ -405,10 +405,10 @@ function prefab.ship.topaz.bow.M(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end

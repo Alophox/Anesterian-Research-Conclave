@@ -1,5 +1,5 @@
 return {
-    id = "arc_hull",
+    id = "329_MT_arc_hull",
     shader = "Shader Graphs/Ship Hull Shader",
     properties = {
         _CloakOpacity = 1,

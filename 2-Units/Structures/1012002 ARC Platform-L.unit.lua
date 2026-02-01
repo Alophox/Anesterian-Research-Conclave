@@ -2,13 +2,13 @@ scaleConst = 7.7596;
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "arc_platform",
+	unitName                    = "329_MT_arc_platform",
 	unitDisplayName             = "Starhold",
 	unitTooltip                 = "",
 	unitBlurb                   = "Super Command Platform",
 	unitBlurbExcludeFromTooltip = false,
 	hotkey                      = "",
-	picture                     = "arc_platform-l.png",
+	picture                     = "329_MT_arc_platform-l.png",
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {
@@ -42,7 +42,7 @@ return {
 	-- BODY SETUP
 	scale                       = scaleConst,
 	mainMesh                    = "Core/Core-Large",
-	materials                   = { "arc_hull", "arc_teamGlow", "arc_teamColour", "arc_hull_dark" },
+	materials                   = { "329_MT_arc_hull", "329_MT_arc_teamGlow", "329_MT_arc_teamColour", "329_MT_arc_hull_dark" },
 	inEditor = true,
     autoColourElements = true,
     editorDontColour = false,
@@ -82,7 +82,7 @@ return {
 		{
 			name     = "Aegis",
 			mesh    = "Core/Core-Large",
-			materials = { "0_arc_aegis", "0_arc_aegis", "0_arc_aegis", "0_arc_aegis" },
+			materials = { "329_MT_arc_0_aegis", "329_MT_arc_0_aegis", "329_MT_arc_0_aegis", "329_MT_arc_0_aegis" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
@@ -91,7 +91,7 @@ return {
 		-- {
 		-- 	name     = "Build",
 		-- 	mesh    = "Core/Core-Large",
-		-- 	materials = { "0_arc_build", "0_arc_build", "0_arc_build", "0_arc_build" },
+		-- 	materials = { "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build" },
 		-- 	pos       = { 0, 0, 0 },        --Relative local position of this object.
 		-- 	rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 		-- 	scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
@@ -100,7 +100,7 @@ return {
 		-- {
 		-- 	name     = "Build",
 		-- 	mesh    = "Core/Core-Large",
-		-- 	materials = { "1_arc_build", "1_arc_build", "1_arc_build", "1_arc_build" },
+		-- 	materials = { "329_MT_arc_1_build", "329_MT_arc_1_build", "329_MT_arc_1_build", "329_MT_arc_1_build" },
 		-- 	pos       = { 0, 0, 0 },        --Relative local position of this object.
 		-- 	rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 		-- 	scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
@@ -109,7 +109,7 @@ return {
 		-- {
 		-- 	name     = "Build",
 		-- 	mesh    = "Core/Core-Large",
-		-- 	materials = { "2_arc_build", "2_arc_build", "2_arc_build", "2_arc_build" },
+		-- 	materials = { "329_MT_arc_2_build", "329_MT_arc_2_build", "329_MT_arc_2_build", "329_MT_arc_2_build" },
 		-- 	pos       = { 0, 0, 0 },        --Relative local position of this object.
 		-- 	rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 		-- 	scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
@@ -223,33 +223,33 @@ return {
 
 
 
-		prefab.part.platform.L.A(scaleConst, 1, true, 0, "arc_aegis"),
-		prefab.part.platform.L.A(scaleConst, 3, true, 0, "arc_aegis"),
-		prefab.part.platform.L.A(scaleConst, 5, true, 0, "arc_aegis"),
-		prefab.part.platform.L.A(scaleConst, 7, true, 0, "arc_aegis"),
-		prefab.part.platform.L.A(scaleConst, 9, true, 0, "arc_aegis"),
-		prefab.part.platform.L.A(scaleConst, 11, true, 0, "arc_aegis"),
-		prefab.part.platform.L.A(scaleConst, 13, true, 0, "arc_aegis"),
-		prefab.part.platform.L.A(scaleConst, 15, true, 0, "arc_aegis"),
+		prefab.part.platform.L.A(scaleConst, 1,true, 0, "aegis"),
+		prefab.part.platform.L.A(scaleConst, 3,true, 0, "aegis"),
+		prefab.part.platform.L.A(scaleConst, 5,true, 0, "aegis"),
+		prefab.part.platform.L.A(scaleConst, 7,true, 0, "aegis"),
+		prefab.part.platform.L.A(scaleConst, 9,true, 0, "aegis"),
+		prefab.part.platform.L.A(scaleConst, 11,true, 0, "aegis"),
+		prefab.part.platform.L.A(scaleConst, 13,true, 0, "aegis"),
+		prefab.part.platform.L.A(scaleConst, 15,true, 0, "aegis"),
 
-		prefab.part.platform.L.B(scaleConst, 0, true, 0, "arc_aegis"),
-		prefab.part.platform.L.B(scaleConst, 2, true, 0, "arc_aegis"),
-		prefab.part.platform.L.B(scaleConst, 4, true, 0, "arc_aegis"),
-		prefab.part.platform.L.B(scaleConst, 6, true, 0, "arc_aegis"),
-		prefab.part.platform.L.B(scaleConst, 8, true, 0, "arc_aegis"),
-		prefab.part.platform.L.B(scaleConst, 10, true, 0, "arc_aegis"),
-		prefab.part.platform.L.B(scaleConst, 12, true, 0, "arc_aegis"),
-		prefab.part.platform.L.B(scaleConst, 14, true, 0, "arc_aegis"),
+		prefab.part.platform.L.B(scaleConst, 0,true, 0, "aegis"),
+		prefab.part.platform.L.B(scaleConst, 2,true, 0, "aegis"),
+		prefab.part.platform.L.B(scaleConst, 4,true, 0, "aegis"),
+		prefab.part.platform.L.B(scaleConst, 6,true, 0, "aegis"),
+		prefab.part.platform.L.B(scaleConst, 8,true, 0, "aegis"),
+		prefab.part.platform.L.B(scaleConst, 10,true, 0, "aegis"),
+		prefab.part.platform.L.B(scaleConst, 12,true, 0, "aegis"),
+		prefab.part.platform.L.B(scaleConst, 14,true, 0, "aegis"),
 
-		prefab.part.platform.L.C1(scaleConst, 0, true, 0, "arc_aegis"),
-		prefab.part.platform.L.C1(scaleConst, 4, true, 0, "arc_aegis"),
-		prefab.part.platform.L.C1(scaleConst, 8, true, 0, "arc_aegis"),
-		prefab.part.platform.L.C1(scaleConst, 12, true, 0, "arc_aegis"),
+		prefab.part.platform.L.C1(scaleConst, 0,true, 0, "aegis"),
+		prefab.part.platform.L.C1(scaleConst, 4,true, 0, "aegis"),
+		prefab.part.platform.L.C1(scaleConst, 8,true, 0, "aegis"),
+		prefab.part.platform.L.C1(scaleConst, 12,true, 0, "aegis"),
 		
-		prefab.part.platform.L.C2(scaleConst, 2, true, 0, "arc_aegis"),
-		prefab.part.platform.L.C2(scaleConst, 6, true, 0, "arc_aegis"),
-		prefab.part.platform.L.C2(scaleConst, 10, true, 0, "arc_aegis"),
-		prefab.part.platform.L.C2(scaleConst, 14, true, 0, "arc_aegis"),
+		prefab.part.platform.L.C2(scaleConst, 2,true, 0, "aegis"),
+		prefab.part.platform.L.C2(scaleConst, 6,true, 0, "aegis"),
+		prefab.part.platform.L.C2(scaleConst, 10,true, 0, "aegis"),
+		prefab.part.platform.L.C2(scaleConst, 14,true, 0, "aegis"),
 
 	},
 

@@ -1,5 +1,5 @@
 return {
-    id = "arc_aurora-red",
+    id = "329_MT_arc_aurora-red",
     shader = "Universal Render Pipeline/Complex Lit",
     keywords = { "_EMISSION", "_ENVIRONMENTREFLECTIONS_OFF", "_RECEIVE_SHADOWS_OFF", "_SPECULARHIGHLIGHTS_OFF", "_SURFACE_TYPE_TRANSPARENT" },
     renderQueue = 3001,

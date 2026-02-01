@@ -1,5 +1,5 @@
 return {
-    id = "arc_thruster-middle_teamGlow",
+    id = "329_MT_arc_thruster-middle_teamGlow",
     shader = "Universal Render Pipeline/Complex Lit",
     keywords = { "_EMISSION", "_ENVIRONMENTREFLECTIONS_OFF", "_RECEIVE_SHADOWS_OFF", "_SPECULARHIGHLIGHTS_OFF", "_SURFACE_TYPE_TRANSPARENT" },
     renderQueue = 3001,

@@ -2,13 +2,13 @@ scaleConst = 50;
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "arc_gateway",
+	unitName                    = "329_MT_arc_gateway",
 	unitDisplayName             = "Gateway",
 	unitTooltip                 = "",
 	unitBlurb                   = "Who said gates need to be planes?",
 	unitBlurbExcludeFromTooltip = false,
 	hotkey                      = "",
-	picture                     = "arc_gateway.png",
+	picture                     = "329_MT_arc_gateway.png",
 
 	controllable = false;	-- bool: Can this unit be given move orders with right click?
 	unselectable = true;	-- Cannot be selected.
@@ -30,7 +30,7 @@ return {
 	-- BODY SETUP
 	scale                       = scaleConst, 
 	-- mainMesh                    = "Gateway/Gateway",
-	-- materials                   = { "arc_hull", "arc_teamGlow", "arc_teamColour", "arc_hull_dark", },
+	-- materials                   = { "329_MT_arc_hull", "329_MT_arc_teamGlow", "329_MT_arc_teamColour", "329_MT_arc_hull_dark", },
 	inEditor = true,
     autoColourElements = true,
     editorDontColour = false,
@@ -57,7 +57,7 @@ return {
 		{
 			name = "Gateway Top",
 			mesh = "Gateway/Gateway",
-			materials = { "arc_hull", "arc_teamGlow", "arc_teamColour", "arc_hull_dark", },
+			materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow", "329_MT_arc_teamColour", "329_MT_arc_hull_dark", },
 			rotation = {0,0,0},
 			position = {0,0,0},
 			scale = {1,1,1},
@@ -75,7 +75,7 @@ return {
 				{
 					name = "Gateway Vortex",
 					mesh = "Gateway/Swirl",
-					materials = { "arc_vortex" },
+					materials = { "329_MT_arc_vortex" },
 					rotation = {0,0,0},
 					position = {0,0,0},
 					scale = {1,1,1},
@@ -83,7 +83,7 @@ return {
 				{
 					name = "Gateway Vortex",
 					mesh = "Gateway/Swirl-R",
-					materials = { "arc_vortex" },
+					materials = { "329_MT_arc_vortex" },
 					rotation = {0,0,0},
 					position = {0,0,0},
 					scale = {1,1,1},
@@ -101,7 +101,7 @@ return {
 		{
 			name = "Gateway Bot",
 			mesh = "Gateway/Gateway",
-			materials = { "arc_hull", "arc_teamGlow", "arc_teamColour", "arc_hull_dark", },
+			materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow", "329_MT_arc_teamColour", "329_MT_arc_hull_dark", },
 			rotation = {0,0,180},
 			position = {0,0,0},
 			scale = {1,1,1},
@@ -119,7 +119,7 @@ return {
 				{
 					name = "Gateway Vortex",
 					mesh = "Gateway/Swirl",
-					materials = { "arc_vortex" },
+					materials = { "329_MT_arc_vortex" },
 					rotation = {0,0,0},
 					position = {0,0,0},
 					scale = {1,1,1},
@@ -127,7 +127,7 @@ return {
 				{
 					name = "Gateway Vortex",
 					mesh = "Gateway/Swirl-R",
-					materials = { "arc_vortex" },
+					materials = { "329_MT_arc_vortex" },
 					rotation = {0,0,0},
 					position = {0,0,0},
 					scale = {1,1,1},

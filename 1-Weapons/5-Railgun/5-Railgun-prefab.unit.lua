@@ -7,23 +7,23 @@ function prefab.weapon_info.railgun.D(count)
 end
 function prefab.weapon.railgun.D(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Small Turret Base",
 		-- mesh      = "Turrets-1/Turret-1-Base",
-		-- materials = { "arc_hull",  "arc_teamColour", "arc_teamGlow", "arc_hull_dark" },
+		-- materials = { "329_MT_arc_hull",  "329_MT_arc_teamColour", "329_MT_arc_teamGlow", "329_MT_arc_hull_dark" },
 		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
 		rotation  = rot,        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
 		scale 	= sca,					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "329_MT_arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts={
 			{
@@ -55,23 +55,23 @@ function prefab.weapon_info.railgun.S(count)
 end
 function prefab.weapon.railgun.S(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Small Disruptor Base",
 		mesh      = "Turrets-1/Turret-1-Base",
-		materials = { "arc_hull",  "arc_teamColour", "arc_teamGlow", "arc_hull_dark" },
+		materials = { "329_MT_arc_hull",  "329_MT_arc_teamColour", "329_MT_arc_teamGlow", "329_MT_arc_hull_dark" },
 		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
 		rotation  = rot,        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
 		scale 	= sca,					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "329_MT_arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts={
 			{
@@ -97,7 +97,7 @@ function prefab.weapon.railgun.S(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					{
 						name		 = "Turret Body",
 						mesh       = "Turrets-1/Turret-1-Body",
-						materials  = { "arc_hull" },
+						materials  = { "329_MT_arc_hull" },
 						position   = { 0, -.25, 0},
 						rotation   = { 0, 0, 0 },
 						scale 	 = { 1, 1, 1 },
@@ -106,7 +106,7 @@ function prefab.weapon.railgun.S(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					{
 						name      = "Turret Barrel",
 						mesh      = "Turrets-1/Turret-1-Railgun", --The mesh to be used for this part, works the same as mainMesh.
-						materials = { "arc_hull", "arc_hull_dark", "arc_teamGlow" },
+						materials = { "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamGlow" },
 						position  = { 0, 0, 0 },
 						rotation  = { 0, 0, 0 },
 						scale 	= { 1, 1, 1 },
@@ -131,23 +131,23 @@ function prefab.weapon_info.railgun.M(count)
 end
 function prefab.weapon.railgun.M(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Medium Railgun Base",
 		mesh      = "Turrets-3/Turret-3-Base",
-		materials = { "arc_hull", "arc_teamGlow", "arc_hull_dark", "arc_teamColour", },
+		materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow", "329_MT_arc_hull_dark", "329_MT_arc_teamColour", },
 		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
 		rotation  = rot,        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
 		scale 	= sca,					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "329_MT_arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts={
 			{
@@ -173,7 +173,7 @@ function prefab.weapon.railgun.M(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					{
 						name		 = "Turret Body",
 						mesh       = "Turrets-3/Turret-3-Body",
-						materials  = { "arc_teamGlow", "arc_hull" },
+						materials  = { "329_MT_arc_teamGlow", "329_MT_arc_hull" },
 						position   = { 0, .5-.875, 0},
 						rotation   = { 0, 0, 0 },
 						scale 	 = { 1, 1, 1 },
@@ -182,7 +182,7 @@ function prefab.weapon.railgun.M(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					{
 						name      = "Turret Barrel",
 						mesh      = "Turrets-3/Turret-3-Railgun",
-						materials = { "arc_hull", "arc_teamGlow", "arc_hull_dark" },
+						materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow", "329_MT_arc_hull_dark" },
 						position  = { .15, 0, 0 },
 						rotation  = { 0, 0, 0 },
 						scale 	= { 1, 1, 1 },
@@ -191,7 +191,7 @@ function prefab.weapon.railgun.M(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					{
 						name      = "Turret Barrel",
 						mesh      = "Turrets-3/Turret-3-Railgun",
-						materials = { "arc_hull", "arc_teamGlow", "arc_hull_dark" },
+						materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow", "329_MT_arc_hull_dark" },
 						position  = { -.15, 0, 0 },
 						rotation  = { 0, 0, 0 },
 						scale 	= { 1, 1, 1 },
@@ -211,23 +211,23 @@ function prefab.weapon_info.railgun.L(count)
 end
 function prefab.weapon.railgun.L(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{float3}, {float3}, {float3}, bool
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Large Turret Base",
 		mesh      = "Turrets-5/Turret-5-Base",
-		materials = { "arc_hull_dark", "arc_hull", "arc_teamColour", "arc_teamGlow", },
+		materials = { "329_MT_arc_hull_dark", "329_MT_arc_hull", "329_MT_arc_teamColour", "329_MT_arc_teamGlow", },
 		position  = pos,
 		rotation  = rot,
 		scale 	= sca,
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "329_MT_arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts = {
 			{
@@ -253,7 +253,7 @@ function prefab.weapon.railgun.L(pos, rot, sca, isGhost, ghostIndex, ghostMat) -
 					{
 						name		 = "Turret Body",
 						mesh       = "Turrets-5/Turret-5-Body",
-						materials  = { "arc_teamGlow", "arc_hull" },
+						materials  = { "329_MT_arc_teamGlow", "329_MT_arc_hull" },
 						position   = { 0, .5-.925, 0},
 						rotation   = { 0, 0, 0 },
 						scale 	 = { 1, 1, 1 },
@@ -262,7 +262,7 @@ function prefab.weapon.railgun.L(pos, rot, sca, isGhost, ghostIndex, ghostMat) -
 					{
 						name      = "Turret Barrel Left",
 						mesh      = "Turrets-5/Turret-5-Railgun", --The mesh to be used for this part, works the same as mainMesh.
-						materials = { "arc_hull", "arc_hull_dark", "arc_teamGlow" },
+						materials = { "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamGlow" },
 						position  = { -.375, 0, 0 },
 						rotation  = { 0, 0, 0 },
 						scale 	= { 1, 1, 1 },
@@ -277,7 +277,7 @@ function prefab.weapon.railgun.L(pos, rot, sca, isGhost, ghostIndex, ghostMat) -
 					{
 						name      = "Turret Barrel Center",
 						mesh      = "Turrets-5/Turret-5-Railgun", --The mesh to be used for this part, works the same as mainMesh.
-						materials = { "arc_hull", "arc_hull_dark", "arc_teamGlow" },
+						materials = { "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamGlow" },
 						position  = { 0, 0, 0 },
 						rotation  = { 0, 0, 0 },
 						scale 	= { 1, 1, 1 },
@@ -292,7 +292,7 @@ function prefab.weapon.railgun.L(pos, rot, sca, isGhost, ghostIndex, ghostMat) -
 					{
 						name      = "Turret Barrel Right",
 						mesh      = "Turrets-5/Turret-5-Railgun", --The mesh to be used for this part, works the same as mainMesh.
-						materials = { "arc_hull", "arc_hull_dark", "arc_teamGlow" },
+						materials = { "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamGlow" },
 						position  = { .375, 0, 0 },
 						rotation  = { 0, 0, 0 },
 						scale 	= { 1, 1, 1 },
@@ -317,23 +317,23 @@ function prefab.weapon_info.railgun.X(count)
 end
 function prefab.weapon.railgun.X(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{float3}, {float3}, {float3}, bool
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Large Turret Base",
 		mesh      = "Turrets-7/Turret-7-Base",
-		materials = { "arc_hull_dark", "arc_hull", "arc_teamColour", "arc_teamGlow", },
+		materials = { "329_MT_arc_hull_dark", "329_MT_arc_hull", "329_MT_arc_teamColour", "329_MT_arc_teamGlow", },
 		position  = pos,
 		rotation  = rot,
 		scale 	= sca,
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "329_MT_arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts = {
 			{
@@ -359,7 +359,7 @@ function prefab.weapon.railgun.X(pos, rot, sca, isGhost, ghostIndex, ghostMat) -
 					{
 						name		 = "Turret Body",
 						mesh       = "Turrets-7/Turret-7-Body",
-						materials  = { "arc_teamGlow", "arc_hull" },
+						materials  = { "329_MT_arc_teamGlow", "329_MT_arc_hull" },
 						position   = { 0, .5-1.125, 0},
 						rotation   = { 0, 0, 0 },
 						scale 	 = { 1, 1, 1 },
@@ -368,7 +368,7 @@ function prefab.weapon.railgun.X(pos, rot, sca, isGhost, ghostIndex, ghostMat) -
 					{
 						name      = "Turret Barrel Left",
 						mesh      = "Turrets-7/Turret-7-Railgun", --The mesh to be used for this part, works the same as mainMesh.
-						materials = { "arc_hull", "arc_hull_dark", "arc_teamGlow" },
+						materials = { "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamGlow" },
 						position  = { -.735, 0, 0 },
 						rotation  = { 0, 0, 0 },
 						scale 	= { 1, 1, 1 },
@@ -377,7 +377,7 @@ function prefab.weapon.railgun.X(pos, rot, sca, isGhost, ghostIndex, ghostMat) -
 					{
 						name      = "Turret Barrel Center Left",
 						mesh      = "Turrets-7/Turret-7-Railgun", --The mesh to be used for this part, works the same as mainMesh.
-						materials = { "arc_hull", "arc_hull_dark", "arc_teamGlow" },
+						materials = { "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamGlow" },
 						position  = { -.245, 0, 0 },
 						rotation  = { 0, 0, 0 },
 						scale 	= { 1, 1, 1 },
@@ -387,7 +387,7 @@ function prefab.weapon.railgun.X(pos, rot, sca, isGhost, ghostIndex, ghostMat) -
 					{
 						name      = "Turret Barrel Center Right",
 						mesh      = "Turrets-7/Turret-7-Railgun", --The mesh to be used for this part, works the same as mainMesh.
-						materials = { "arc_hull", "arc_hull_dark", "arc_teamGlow" },
+						materials = { "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamGlow" },
 						position  = { .245, 0, 0 },
 						rotation  = { 0, 0, 0 },
 						scale 	= { 1, 1, 1 },
@@ -397,7 +397,7 @@ function prefab.weapon.railgun.X(pos, rot, sca, isGhost, ghostIndex, ghostMat) -
 					{
 						name      = "Turret Barrel Right",
 						mesh      = "Turrets-7/Turret-7-Railgun", --The mesh to be used for this part, works the same as mainMesh.
-						materials = { "arc_hull", "arc_hull_dark", "arc_teamGlow" },
+						materials = { "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamGlow" },
 						position  = { .735, 0, 0 },
 						rotation  = { 0, 0, 0 },
 						scale 	= { 1, 1, 1 },
@@ -417,23 +417,23 @@ function prefab.weapon_info.railgun.XS(count)
 end
 function prefab.weapon.railgun.XS(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{float3}, {float3}, {float3}, bool
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Large Turret Base",
 		-- mesh      = "Turrets-5/Turret-5-Base",
-		-- materials = { "arc_hull_dark", "arc_hull", "arc_teamColour", "arc_teamGlow", },
+		-- materials = { "329_MT_arc_hull_dark", "329_MT_arc_hull", "329_MT_arc_teamColour", "329_MT_arc_teamGlow", },
 		position  = pos,
 		rotation  = rot,
 		scale 	= sca,
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "329_MT_arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts = {
 			{
@@ -475,23 +475,23 @@ function prefab.weapon_info.railgun.TS(count)
 end
 function prefab.weapon.railgun.TS(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{float3}, {float3}, {float3}, bool
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Large Turret Base",
 		-- mesh      = "Turrets-5/Turret-5-Base",
-		-- materials = { "arc_hull_dark", "arc_hull", "arc_teamColour", "arc_teamGlow", },
+		-- materials = { "329_MT_arc_hull_dark", "329_MT_arc_hull", "329_MT_arc_teamColour", "329_MT_arc_teamGlow", },
 		position  = pos,
 		rotation  = rot,
 		scale 	= sca,
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "329_MT_arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts = {
 			{

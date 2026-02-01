@@ -2,13 +2,13 @@ scaleConst = 3.8442;
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "arc_platform_s",
+	unitName                    = "329_MT_arc_platform_s",
 	unitDisplayName             = "Starpost",
 	unitTooltip                 = "",
 	unitBlurb                   = "Light Command Platform",
 	unitBlurbExcludeFromTooltip = false,
 	hotkey                      = "",
-	picture                     = "arc_platform-s.png",
+	picture                     = "329_MT_arc_platform-s.png",
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {
@@ -39,7 +39,7 @@ return {
 	-- BODY SETUP
 	scale                       = scaleConst,
 	mainMesh                    = "Core/Core-Small",
-	materials                   = { "arc_hull", "arc_teamGlow", "arc_teamColour", "arc_hull_dark" },
+	materials                   = { "329_MT_arc_hull", "329_MT_arc_teamGlow", "329_MT_arc_teamColour", "329_MT_arc_hull_dark" },
 	inEditor = true,
     autoColourElements = true,
     editorDontColour = false,
@@ -79,7 +79,7 @@ return {
 		{
 			name     = "Aegis",
 			mesh    = "Core/Core-Small",
-			materials = { "0_arc_aegis", "0_arc_aegis", "0_arc_aegis", "0_arc_aegis" },
+			materials = { "329_MT_arc_0_aegis", "329_MT_arc_0_aegis", "329_MT_arc_0_aegis", "329_MT_arc_0_aegis" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
@@ -88,7 +88,7 @@ return {
 		-- {
 		-- 	name     = "Build",
 		-- 	mesh    = "Core/Core-Small",
-		-- 	materials = { "0_arc_build", "0_arc_build", "0_arc_build", "0_arc_build" },
+		-- 	materials = { "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build" },
 		-- 	pos       = { 0, 0, 0 },        --Relative local position of this object.
 		-- 	rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 		-- 	scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
@@ -97,7 +97,7 @@ return {
 		-- {
 		-- 	name     = "Build",
 		-- 	mesh    = "Core/Core-Small",
-		-- 	materials = { "1_arc_build", "1_arc_build", "1_arc_build", "1_arc_build" },
+		-- 	materials = { "329_MT_arc_1_build", "329_MT_arc_1_build", "329_MT_arc_1_build", "329_MT_arc_1_build" },
 		-- 	pos       = { 0, 0, 0 },        --Relative local position of this object.
 		-- 	rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 		-- 	scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
@@ -106,7 +106,7 @@ return {
 		-- {
 		-- 	name     = "Build",
 		-- 	mesh    = "Core/Core-Small",
-		-- 	materials = { "2_arc_build", "2_arc_build", "2_arc_build", "2_arc_build" },
+		-- 	materials = { "329_MT_arc_2_build", "329_MT_arc_2_build", "329_MT_arc_2_build", "329_MT_arc_2_build" },
 		-- 	pos       = { 0, 0, 0 },        --Relative local position of this object.
 		-- 	rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 		-- 	scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.

@@ -2,13 +2,13 @@ scaleConst = .15;
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "arc_quartz",                 -- string: Internal name for debugging and errors.
+	unitName                    = "329_MT_arc_quartz",                 -- string: Internal name for debugging and errors.
 	unitDisplayName             = "Quartz",                         -- string: Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   -- string: Shown when moused over in the HUD.
 	unitBlurb                   = "Fighter", -- string: Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           -- bool: The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
 	hotkey                      = "G",                             -- Unity KeyCode: For buildbar. The hotkey for this unit.
-	picture                     = "arc_quartz.png",             -- string filename: The name of the image file in this folder to be used for this unit.
+	picture                     = "329_MT_arc_quartz.png",             -- string filename: The name of the image file in this folder to be used for this unit.
 
 	controllable 	= false;	-- bool: Can this unit be given move orders with right click?
 	unselectable = false;	-- Cannot be selected.
@@ -45,7 +45,7 @@ return {
 	--Inorder for ATS to know which material goes to which material slot on a mesh, we must define the ordering.
 	--Assign materials here in the same order as they are defined on the object in your Blender file. 
 	--(Can only get materials from .materials.lua files in this mod folder.)
-	materials                   = { "arc_teamGlow", "arc_hull_dark", "arc_teamGlow","arc_teamColour", "arc_hull" },
+	materials                   = { "329_MT_arc_teamGlow", "329_MT_arc_hull_dark", "329_MT_arc_teamGlow","329_MT_arc_teamColour", "329_MT_arc_hull" },
 
 	-- Percieved dimensions of the unit. Multiplied against scale. Controls how big the unit is percieved by other units. 
 	-- Units cannot actually "see" anything, so we need to mathematically define how big the unit is for standoff behaviour among other things.
@@ -124,23 +124,10 @@ return {
 
 			-- For thruster visuals, if you want more than one plume for our thruster build it out of multiple subparts.
 			parts = {
-		{
-			name = "Aegis spawner",
-			autoModule = {
-				moduleTypeID = 3297100,            -- int
-				reportKillsToParent = false, -- bool
-				doDamageToEntityOnDeath = true, -- bool
-				damageToEntityOnDeath = {       -- damage table
-					isNondamaging = true, instances = 1, damage = 0.00001, piercing = -9999999999,
-					shred = 0, heat = 0, vulnerability = 0, decloak = 0,
-					targetingPriorityMultiplier = 0, impulseForce = 0,
-				},
-			},
-		},
 				{
 					name     = "Thruster Plume",
 					mesh     = "Thruster/Thruster-Plume",
-					materials  = { "arc_thruster_teamGlow", "arc_thruster-middle_teamGlow", "arc_thruster-outer_teamGlow" },
+					materials  = { "329_MT_arc_thruster_teamGlow", "329_MT_arc_thruster-middle_teamGlow", "329_MT_arc_thruster-outer_teamGlow" },
 					position = { 0, 0, 0 }, --XYZ, Thruster subparts should all be on the same Y point, as they all scale along the parent's Y axis.
 					rotation = { 0, 0, 0 },
 					scale 	= { 1, 1, 1 },
@@ -150,7 +137,7 @@ return {
 		-- {
 		-- 	name     = "Aegis",
 		-- 	mesh     = "0-Quartz/Quartz",
-		-- 	materials  = { "arc_teamGlow", "arc_hull_dark", "arc_engine","arc_teamColour", "arc_hull" },
+		-- 	materials  = { "329_MT_arc_teamGlow", "329_MT_arc_hull_dark", "329_MT_arc_engine","329_MT_arc_teamColour", "329_MT_arc_hull" },
 		-- 	position = { 0, 0, 0 },
 		-- 	rotation = { 0, 0, 0 },
 		-- 	scale 	= { 1.1, 1.1, 1.1 },
@@ -186,7 +173,7 @@ return {
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).
 	ghostMesh		= "0-Quartz/Quartz",   -- Used for build ghosts on spawners (yards).
-	ghostMaterials = { ghostMat, ghostMat, ghostMat, ghostMat,ghostMat }, -- Used for the ghostMesh for build ghosts on spawners (yards).
+	ghostMaterials = { "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build" }, -- Used for the ghostMesh for build ghosts on spawners (yards).
 	ghostParts 	= {
 	},
 

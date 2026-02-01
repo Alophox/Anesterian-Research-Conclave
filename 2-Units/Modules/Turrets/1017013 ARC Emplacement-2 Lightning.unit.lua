@@ -2,13 +2,13 @@ scaleConst = 1.944;
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "arc_emplacement_2-lightning",              	-- Internal name for debugging and errors.
+	unitName                    = "329_MT_arc_emplacement_2-lightning",              	-- Internal name for debugging and errors.
 	unitDisplayName             = "Medium Emplacement-Breach Cannon",                    	-- Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   	-- Shown when moused over in the HUD.
 	unitBlurb                   = "Fully modular turret base!", 		-- Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           	-- The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
 	hotkey                      = "F",                             	-- For buildbar. The hotkey for this unit.
-	picture                     = "arc_emplacement_2-lightning.png",            -- The name of the image file in this folder to be used for this unit.
+	picture                     = "329_MT_arc_emplacement_2-lightning.png",            -- The name of the image file in this folder to be used for this unit.
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {
@@ -39,7 +39,7 @@ return {
 	--Inorder for ATS to know which material goes to which material slot on a mesh, we must define the ordering.
 	--Assign materials here in the same order as they are defined on the object in your Blender file. 
 	--(Can only get materials from .materials.lua files in this mod folder.)
-	materials                   = { "arc_hull", "arc_teamGlow", "arc_teamColour", "arc_hull_dark" },
+	materials                   = { "329_MT_arc_hull", "329_MT_arc_teamGlow", "329_MT_arc_teamColour", "329_MT_arc_hull_dark" },
 
 	-- Percieved dimensions of the unit. Multiplied against scale. Controls how big the unit is percieved by other units. 
 	-- Units cannot actually "see" anything, so we need to mathematically define how big the unit is for standoff behaviour among other things.

@@ -1,5 +1,5 @@
 return {
-    id = "arc_muzzleFlash_teamGlow",
+    id = "329_MT_arc_muzzleFlash_teamGlow",
     shader = "Shader Graphs/Ship Glow Shader",
     keywords = { "_EMISSION" },
     properties = {

@@ -8,7 +8,7 @@ prefab.weapon_info.emerald = {
 }
 function prefab.ship.emerald.thruster(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
@@ -29,7 +29,7 @@ function prefab.ship.emerald.thruster(scaleConst, isGhost, ghostIndex, ghostMat)
 			{
 				name     = "Thruster Plume",
 				mesh     = "Thruster/Thruster-Plume",
-				materials  = { "arc_thruster_teamGlow", "arc_thruster-middle_teamGlow", "arc_thruster-outer_teamGlow" },
+				materials  = { "329_MT_arc_thruster_teamGlow", "329_MT_arc_thruster-middle_teamGlow", "329_MT_arc_thruster-outer_teamGlow" },
 				position = { 0, 0, 0 }, --XYZ, Thruster subparts should all be on the same Y point, as they all scale along the parent's Y axis.
 				rotation = { 0, 0, 0 },
 				scale 	= { 7, 7, 7 },
@@ -48,13 +48,13 @@ function prefab.weapon_info.emerald.stern.G()
 end
 function prefab.ship.emerald.stern.G(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Emerald-Stern-G",
 		mesh = "4-Emerald/Emerald-Stern-G",
-		materials = {"arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_engine", "arc_teamColour", },
+		materials = {"329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
@@ -103,10 +103,10 @@ function prefab.ship.emerald.stern.G(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -120,13 +120,13 @@ function prefab.weapon_info.emerald.stern.A()
 end
 function prefab.ship.emerald.stern.A(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Emerald-Stern-A",
 		mesh = "4-Emerald/Emerald-Stern-A",
-		materials = {"arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_engine", "arc_teamColour", },
+		materials = {"329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
@@ -182,10 +182,10 @@ function prefab.ship.emerald.stern.A(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -198,13 +198,13 @@ function prefab.weapon_info.emerald.stern.C()
 end
 function prefab.ship.emerald.stern.C(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Emerald-Stern-C",
 		mesh = "4-Emerald/Emerald-Stern-C",
-		materials = {"arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_engine", "arc_teamColour", },
+		materials = {"329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
@@ -253,10 +253,10 @@ function prefab.ship.emerald.stern.C(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -273,13 +273,13 @@ function prefab.weapon_info.emerald.bow.G()
 end
 function prefab.ship.emerald.bow.G(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Emerald-Bow-G",
 		mesh = "4-Emerald/Emerald-Bow-G",
-		materials = {"arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_teamColour", },
+		materials = {"329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
@@ -307,10 +307,10 @@ function prefab.ship.emerald.bow.G(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -324,13 +324,13 @@ function prefab.weapon_info.emerald.bow.A()
 end
 function prefab.ship.emerald.bow.A(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Emerald-Bow-A",
 		mesh = "4-Emerald/Emerald-Bow-A",
-		materials = {"arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_teamColour", },
+		materials = {"329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
@@ -359,10 +359,10 @@ function prefab.ship.emerald.bow.A(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -376,13 +376,13 @@ function prefab.weapon_info.emerald.bow.C()
 end
 function prefab.ship.emerald.bow.C(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Emerald-Bow-C",
 		mesh = "4-Emerald/Emerald-Bow-C",
-		materials = {"arc_hull_dark", "arc_teamGlow", "arc_hull", "arc_teamColour", },
+		materials = {"329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
@@ -417,10 +417,10 @@ function prefab.ship.emerald.bow.C(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end

@@ -7,23 +7,23 @@ function prefab.weapon_info.hangar.quartz(count)
 end
 function prefab.weapon.hangar.quartz(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Quartz Hangar",
 		mesh      = "Hangar/Hangar",
-		materials = { "arc_hull_dark", "arc_teamGlow", "arc_teamColour", },
+		materials = { "329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_teamColour", },
 		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
 		rotation  = rot,        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
 		scale 	= sca,					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "329_MT_arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts={
 			{
@@ -60,23 +60,23 @@ function prefab.weapon_info.hangar.ruby(count)
 end
 function prefab.weapon.hangar.ruby(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Ruby Hangar",
 		mesh      = "Hangar/Hangar-1",
-		materials = { "arc_hull_dark", "arc_teamGlow", "arc_teamColour", },
+		materials = { "329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_teamColour", },
 		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
 		rotation  = rot,        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
 		scale 	= sca,					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "329_MT_arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts={
 			{
@@ -147,23 +147,23 @@ function prefab.weapon_info.hangar.citrine(count)
 end
 function prefab.weapon.hangar.citrine(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Ruby Hangar",
 		mesh      = "Hangar/Hangar-2",
-		materials = { "arc_hull_dark", "arc_teamGlow", "arc_teamColour", },
+		materials = { "329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_teamColour", },
 		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
 		rotation  = rot,        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
 		scale 	= sca,					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "329_MT_arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts={
 			{

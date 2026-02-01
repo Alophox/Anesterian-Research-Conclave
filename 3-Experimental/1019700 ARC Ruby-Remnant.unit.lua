@@ -2,13 +2,13 @@
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "arc_lancier-budget",                 -- string: Internal name for debugging and errors.
+	unitName                    = "329_MT_arc_lancier-budget",                 -- string: Internal name for debugging and errors.
 	unitDisplayName             = "Lancier-Budget",                         -- string: Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   -- string: Shown when moused over in the HUD.
 	unitBlurb                   = "Picket Corvette", -- string: Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           -- bool: The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
 	hotkey                      = "G",                             -- Unity KeyCode: For buildbar. The hotkey for this unit.
-	picture                     = "arc_ruby-p.png",             -- string filename: The name of the image file in this folder to be used for this unit.
+	picture                     = "329_MT_arc_ruby-p.png",             -- string filename: The name of the image file in this folder to be used for this unit.
 
 	controllable 	= false;	-- bool: Can this unit be given move orders with right click?
 	unselectable = false;	-- Cannot be selected.
@@ -39,7 +39,7 @@ return {
 	--Inorder for ATS to know which material goes to which material slot on a mesh, we must define the ordering.
 	--Assign materials here in the same order as they are defined on the object in your Blender file. 
 	--(Can only get materials from .materials.lua files in this mod folder.)
-	materials                   = { "arc_teamGlow", "arc_hull",  "arc_engine", "arc_teamColour" },
+	materials                   = { "329_MT_arc_teamGlow", "329_MT_arc_hull",  "329_MT_arc_engine", "329_MT_arc_teamColour" },
 
 	-- Percieved dimensions of the unit. Multiplied against scale. Controls how big the unit is percieved by other units. 
 	-- Units cannot actually "see" anything, so we need to mathematically define how big the unit is for standoff behaviour among other things.
@@ -71,7 +71,7 @@ return {
 		{
 			name = "circle",
 			mesh = "Turrets-Experimental/TwistedTorus",
-			materials = {"arc_teamGlow"},
+			materials = {"329_MT_arc_teamGlow"},
 			position = {0,0,0},
 			rotation = {0,0,0},
 			scale = {.7,.7,.7},
@@ -125,7 +125,7 @@ return {
 						{
 							name		 = "Turret Laser",
 							mesh       = "Turrets-Experimental/TwistedTorus",
-							materials  = { "arc_weapon_teamGlow" },
+							materials  = { "329_MT_arc_weapon_teamGlow" },
 							position   = { 0, 0, 0 },
 							rotation   = { 0, 0, 0 },
 							scale 	 = { 1, 1, 1 },
@@ -186,7 +186,7 @@ return {
 								{
 									name="shooty bit",
 								--	mesh      = "Turrets-1/Turret-1-Laser", --The mesh to be used for this part, works the same as mainMesh.
-									--materials = { "arc_hull", "arc_teamGlow" },
+									--materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow" },
 									position   = { 0, 0, .9},
 									rotation   = { -90, 0, 0 },
 									scale 	 = { 1, 1, 1 },
@@ -215,7 +215,7 @@ return {
 										{
 											name		 = "Turret Laser",
 											mesh       = "Turrets-1/Turret-1-Laser-Effect",
-											materials  = { "arc_teamGlow" },
+											materials  = { "329_MT_arc_teamGlow" },
 											position   = { 0, 0, 0 },
 											rotation   = { 0, 0, 0 },
 											scale 	 = { .1, .1, .1 },
@@ -244,7 +244,7 @@ return {
 											
 										},
 										{
-											name = "Turret Laser",mesh = "Turrets-1/Muzzle-Flash",	materials = { "arc_teamGlow" },	position   = { 0, 0, 0 }, rotation   = { 0, 0, 0 },	scale 	 = { 1, 1, 1 },
+											name = "Turret Laser",mesh = "Turrets-1/Muzzle-Flash",	materials = { "329_MT_arc_teamGlow" },	position   = { 0, 0, 0 }, rotation   = { 0, 0, 0 },	scale 	 = { 1, 1, 1 },
 											weaponVisualConfig = {	laserColour = {0,.5,1},	intensity = 3;	useWeaponLaserDescription = false,	laserDescription = {	duration = .2,	opacity = 1,	diameter = 1,	offset = 0,	rotateZ = true,	rotateY = false,	rotateZUpdate = false,	rotateYUpdate = false,	noRescaleLength = 1,	noFade = false,	noShrink = false,}, }
 										},
 									}
@@ -259,7 +259,7 @@ return {
 		{
 			name = "Emblem",
 			mesh = "Emblem/Emblem",
-			materials = { "arc_hull", "arc_teamGlow", "arc_hull_dark", "arc_teamColour",  },
+			materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow", "329_MT_arc_hull_dark", "329_MT_arc_teamColour",  },
 			rotation = { 0, 0, 0 },
 			position = { 0, .75*.1/.575, -2*.1/.575},
 			scale = { .5*.1/.575, .5*.1/.575, .5*.1/.575 },
@@ -267,7 +267,7 @@ return {
 		{
 			name = "Emblem",
 			mesh = "Emblem/Emblem",
-			materials = { "arc_hull", "arc_teamGlow", "arc_hull_dark", "arc_teamColour",  },
+			materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow", "329_MT_arc_hull_dark", "329_MT_arc_teamColour",  },
 			rotation = { 0, 0, 180 },
 			position = { 0, -.75*.1/.575, -2*.1/.575},
 			scale = { .5*.1/.575, .5*.1/.575, .5*.1/.575 },
@@ -289,7 +289,7 @@ return {
 				{
 					name     = "Thruster Plume",
 					mesh     = "Thruster/Thruster-Plume",
-					materials  = { "arc_thruster_teamGlow", "arc_thruster-middle_teamGlow", "arc_thruster-outer_teamGlow" },
+					materials  = { "329_MT_arc_thruster_teamGlow", "329_MT_arc_thruster-middle_teamGlow", "329_MT_arc_thruster-outer_teamGlow" },
 					position = { 0, 0, 0 }, --XYZ, Thruster subparts should all be on the same Y point, as they all scale along the parent's Y axis.
 					rotation = { 0, 0, 0 },
 					scale 	= { .575, .575, .575 },
@@ -322,12 +322,12 @@ return {
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).
 	ghostMesh		= "1-Ruby/Ruby-Core-P",   -- Used for build ghosts on spawners (yards).
-	ghostMaterials = { "arc_teamGlow", "arc_hull", "arc_engine","arc_teamColour" }, -- Used for the ghostMesh for build ghosts on spawners (yards).
+	ghostMaterials = { "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine","329_MT_arc_teamColour" }, -- Used for the ghostMesh for build ghosts on spawners (yards).
 	ghostParts 	= {
 		-- {
 		-- 	name      = "Turret",
 		--     mesh      = "Turrets-1/Turret-1-Base",
-		--     materials = { "arc_hull", "arc_teamGlow", "arc_hull_dark", "arc_teamColour" },
+		--     materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow", "329_MT_arc_hull_dark", "329_MT_arc_teamColour" },
 		-- 	position  = { 0, 0.75, -0.5 },    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
 		-- 	rotation  = { 0, 0, 0 },        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
 		-- 	scale 	= { .1, .1, .1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.

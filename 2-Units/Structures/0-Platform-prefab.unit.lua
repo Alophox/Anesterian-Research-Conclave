@@ -21,7 +21,7 @@ function prefab.part.platform.L.A(scaleConst, angleCount, isGhost, ghostIndex, g
 	prefab_part = {
 		name = "Platform Segment Large A",
 		-- mesh = "3-Topaz/Topaz-Stern-P",
-		-- materials = {"arc_teamGlow", "arc_hull", "arc_engine", "arc_teamColour", },
+		-- materials = {"329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {1,1,1},
@@ -53,7 +53,7 @@ function prefab.part.platform.L.A(scaleConst, angleCount, isGhost, ghostIndex, g
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -73,7 +73,7 @@ function prefab.part.platform.L.B(scaleConst, angleCount, isGhost, ghostIndex, g
 	prefab_part = {
 		name = "Platform Segment Large B",
 		-- mesh = "3-Topaz/Topaz-Stern-P",
-		-- materials = {"arc_teamGlow", "arc_hull", "arc_engine", "arc_teamColour", },
+		-- materials = {"329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {1,1,1},
@@ -94,7 +94,7 @@ function prefab.part.platform.L.B(scaleConst, angleCount, isGhost, ghostIndex, g
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -112,7 +112,7 @@ function prefab.part.platform.L.C1(scaleConst, angleCount, isGhost, ghostIndex, 
 	prefab_part = {
 		name = "Platform Segment Large C",
 		-- mesh = "3-Topaz/Topaz-Stern-P",
-		-- materials = {"arc_teamGlow", "arc_hull", "arc_engine", "arc_teamColour", },
+		-- materials = {"329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {1,1,1},
@@ -127,7 +127,7 @@ function prefab.part.platform.L.C1(scaleConst, angleCount, isGhost, ghostIndex, 
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -145,7 +145,7 @@ function prefab.part.platform.L.C2(scaleConst, angleCount, isGhost, ghostIndex, 
 	prefab_part = {
 		name = "Platform Segment Large C",
 		-- mesh = "3-Topaz/Topaz-Stern-P",
-		-- materials = {"arc_teamGlow", "arc_hull", "arc_engine", "arc_teamColour", },
+		-- materials = {"329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {1,1,1},
@@ -160,7 +160,7 @@ function prefab.part.platform.L.C2(scaleConst, angleCount, isGhost, ghostIndex, 
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end

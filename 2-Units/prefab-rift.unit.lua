@@ -19,7 +19,7 @@ function prefab.part.rift(pos, rot, sca, scaCo, isGhost, ghostIndex)
 			{
 				name = "Rift",
 				mesh = "Rift/Rift",
-				materials = { "arc_rift-red" },
+				materials = { "329_MT_arc_rift-red" },
 				rotation = {0,0,0},
 				position = {0,0,0},
 				scale = {1,1,1},
@@ -56,7 +56,7 @@ function prefab.part.rift(pos, rot, sca, scaCo, isGhost, ghostIndex)
 					-- {
 					-- 	name = "Rift",
 					-- 	mesh = "Rift/Rift-Wireframe",
-					-- 	materials = { "arc_rift-red" },
+					-- 	materials = { "329_MT_arc_rift-red" },
 					-- 	rotation = {0,0,0},
 					-- 	position = {0,0,0},
 					-- 	scale = {1,1,1},
@@ -64,7 +64,7 @@ function prefab.part.rift(pos, rot, sca, scaCo, isGhost, ghostIndex)
 					{
 						name = "Rift",
 						mesh = "Rift/Rift",
-						materials = { "arc_rift-blue" },
+						materials = { "329_MT_arc_rift-blue" },
 						rotation = {0,0,0},
 						position = {0,0,0},
 						scale = {1,1,1},
@@ -101,7 +101,7 @@ function prefab.part.rift(pos, rot, sca, scaCo, isGhost, ghostIndex)
 							-- {
 							-- 	name = "Rift",
 							-- 	mesh = "Rift/Rift-Wireframe",
-							-- 	materials = { "arc_rift-blue" },
+							-- 	materials = { "329_MT_arc_rift-blue" },
 							-- 	rotation = {0,0,0},
 							-- 	position = {0,0,0},
 							-- 	scale = {1,1,1},
@@ -109,7 +109,7 @@ function prefab.part.rift(pos, rot, sca, scaCo, isGhost, ghostIndex)
 							{
 								name = "Rift",
 								mesh = "Rift/Rift",
-								materials = { "arc_rift-green" },
+								materials = { "329_MT_arc_rift-green" },
 								rotation = {0,0,0},
 								position = {0,0,0},
 								scale = {1,1,1},
@@ -146,7 +146,7 @@ function prefab.part.rift(pos, rot, sca, scaCo, isGhost, ghostIndex)
 									-- {
 									-- 	name = "Rift",
 									-- 	mesh = "Rift/Rift-Wireframe",
-									-- 	materials = { "arc_rift-green" },
+									-- 	materials = { "329_MT_arc_rift-green" },
 									-- 	rotation = {0,0,0},
 									-- 	position = {0,0,0},
 									-- 	scale = {1,1,1},
@@ -162,7 +162,7 @@ function prefab.part.rift(pos, rot, sca, scaCo, isGhost, ghostIndex)
 		
 	}
 	-- if isGhost then
-	-- 	prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+	-- 	prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	-- end
     return prefab_part
 end

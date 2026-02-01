@@ -2,13 +2,13 @@ scaleConst = 2.6671;
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "arc_emplacement-l",              	-- Internal name for debugging and errors.
+	unitName                    = "329_MT_arc_emplacement-l",              	-- Internal name for debugging and errors.
 	unitDisplayName             = "Large Emplacement",                    	-- Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   	-- Shown when moused over in the HUD.
 	unitBlurb                   = "Fully modular turret base!", 		-- Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           	-- The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
 	hotkey                      = "r",                             	-- For buildbar. The hotkey for this unit.
-	picture                     = "arc_emplacement-l.png",            -- The name of the image file in this folder to be used for this unit.
+	picture                     = "329_MT_arc_emplacement-l.png",            -- The name of the image file in this folder to be used for this unit.
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {
@@ -34,7 +34,7 @@ return {
 	--Inorder for ATS to know which material goes to which material slot on a mesh, we must define the ordering.
 	--Assign materials here in the same order as they are defined on the object in your Blender file. 
 	--(Can only get materials from .materials.lua files in this mod folder.)
-	materials                   = { "arc_hull", "arc_teamGlow", "arc_teamColour", "arc_hull_dark" },
+	materials                   = { "329_MT_arc_hull", "329_MT_arc_teamGlow", "329_MT_arc_teamColour", "329_MT_arc_hull_dark" },
 
 	-- Percieved dimensions of the unit. Multiplied against scale. Controls how big the unit is percieved by other units. 
 	-- Units cannot actually "see" anything, so we need to mathematically define how big the unit is for standoff behaviour among other things.
@@ -79,7 +79,7 @@ return {
 		{
 			name     = "Aegis",
 			mesh    = "Emplacement/Emplacement-3",
-			materials = { "0_arc_aegis", "0_arc_aegis", "0_arc_aegis", "0_arc_aegis" },
+			materials = { "329_MT_arc_0_aegis", "329_MT_arc_0_aegis", "329_MT_arc_0_aegis", "329_MT_arc_0_aegis" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
@@ -88,7 +88,7 @@ return {
 		{
 			name     = "Build",
 			mesh    = "Emplacement/Emplacement-3",
-			materials = { "0_arc_build", "0_arc_build", "0_arc_build", "0_arc_build" },
+			materials = { "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
@@ -97,7 +97,7 @@ return {
 		{
 			name     = "Build",
 			mesh    = "Emplacement/Emplacement-3",
-			materials = { "1_arc_build", "1_arc_build", "1_arc_build", "1_arc_build" },
+			materials = { "329_MT_arc_1_build", "329_MT_arc_1_build", "329_MT_arc_1_build", "329_MT_arc_1_build" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
@@ -106,7 +106,7 @@ return {
 		{
 			name     = "Build",
 			mesh    = "Emplacement/Emplacement-3",
-			materials = { "2_arc_build", "2_arc_build", "2_arc_build", "2_arc_build" },
+			materials = { "329_MT_arc_2_build", "329_MT_arc_2_build", "329_MT_arc_2_build", "329_MT_arc_2_build" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.

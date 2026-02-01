@@ -13,13 +13,13 @@ function prefab.part.module.emplacement.S(scaleConst, angleCount, type, isGhost,
 	newPos3 = functions.rotateRecursive({x=0,z=-1.25*.1/scaleConst},{x=0,z=0},angleCount)
 	newPos4 = functions.rotateRecursive({x=1.25*.1/scaleConst,z=0*.1/scaleConst},{x=0,z=0},angleCount)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Small Emplacement Cluster",
 		-- mesh = "3-Topaz/Topaz-Stern-P",
-		-- materials = {"arc_teamGlow", "arc_hull", "arc_engine", "arc_teamColour", },
+		-- materials = {"329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {1,1,1},
@@ -51,7 +51,7 @@ function prefab.part.module.emplacement.S(scaleConst, angleCount, type, isGhost,
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -66,13 +66,13 @@ function prefab.part.module.emplacement.M(scaleConst, angleCount, type, isGhost,
 	newPos1 = functions.rotateRecursive({x=1.45*.1/scaleConst,z=6.5*.1/scaleConst},{x=0,z=0},angleCount)
 	newPos2 = functions.rotateRecursive({x=-1.45*.1/scaleConst,z=6.5*.1/scaleConst},{x=0,z=0},angleCount)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Medium Emplacement Cluster",
 		-- mesh = "3-Topaz/Topaz-Stern-P",
-		-- materials = {"arc_teamGlow", "arc_hull", "arc_engine", "arc_teamColour", },
+		-- materials = {"329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {1,1,1},
@@ -93,7 +93,7 @@ function prefab.part.module.emplacement.M(scaleConst, angleCount, type, isGhost,
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end
@@ -107,13 +107,13 @@ end
 function prefab.part.module.emplacement.L(scaleConst, angleCount, type, isGhost, ghostIndex)
 	newPos1 = functions.rotateRecursive({x=0,z=10*.1/scaleConst},{x=0,z=0},angleCount)
 	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
+	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Large Emplacement Cluster",
 		-- mesh = "3-Topaz/Topaz-Stern-P",
-		-- materials = {"arc_teamGlow", "arc_hull", "arc_engine", "arc_teamColour", },
+		-- materials = {"329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {1,1,1},
@@ -128,7 +128,7 @@ function prefab.part.module.emplacement.L(scaleConst, angleCount, type, isGhost,
 		}
 	}
 	if isGhost then
-		prefab_part.materials= {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	end
 	return prefab_part
 end

@@ -1,5 +1,5 @@
 return {
-    id = "arc_engine",
+    id = "329_MT_arc_engine",
     shader = "Shader Graphs/Ship Glow Shader",
     keywords = { "_EMISSION" },
     properties = {

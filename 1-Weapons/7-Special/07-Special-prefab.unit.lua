@@ -17,10 +17,10 @@ function prefab.weapon.special.spawn_shield(pos, rot, sca, isGhost, ghostIndex, 
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "arc_aegis") then
+		if (ghostMat == "329_MT_arc_aegis") then
 			prefab_part.aegisVisual = true;
 		end
-		prefab_part.materials = {ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,ghostIndex.."_"..ghostMat,}
+		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	else
 		prefab_part.parts={
 			{

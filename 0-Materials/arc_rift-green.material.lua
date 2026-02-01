@@ -1,5 +1,5 @@
 return {
-    id = "arc_rift-green",
+    id = "329_MT_arc_rift-green",
     -- shader = "Shader Graphs/buildGlowShader",
     -- keywords = { "_EMISSION" },
     -- renderQueue = 3002,

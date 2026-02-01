@@ -1,5 +1,5 @@
 return {
-    id = "0_arc_aegis",
+    id = "329_MT_arc_0_aegis",
     -- shader = "Shader Graphs/shieldShader",
     -- keywords = { "_EMISSION" },
     -- properties = {
