@@ -85,6 +85,33 @@ return {
 			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
 			aegisVisual = true,
 		},
+		-- {
+		-- 	name     = "Build",
+		-- 	mesh    = "Core/Core",
+		-- 	materials = { "0_arc_build", "0_arc_build", "0_arc_build", "0_arc_build" },
+		-- 	pos       = { 0, 0, 0 },        --Relative local position of this object.
+		-- 	rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
+		-- 	scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
+		-- 	destroyOnConstructionComplete = true,
+		-- },
+		-- {
+		-- 	name     = "Build",
+		-- 	mesh    = "Core/Core",
+		-- 	materials = { "1_arc_build", "1_arc_build", "1_arc_build", "1_arc_build" },
+		-- 	pos       = { 0, 0, 0 },        --Relative local position of this object.
+		-- 	rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
+		-- 	scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
+		-- 	destroyOnConstructionComplete = true,
+		-- },
+		-- {
+		-- 	name     = "Build",
+		-- 	mesh    = "Core/Core",
+		-- 	materials = { "2_arc_build", "2_arc_build", "2_arc_build", "2_arc_build" },
+		-- 	pos       = { 0, 0, 0 },        --Relative local position of this object.
+		-- 	rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
+		-- 	scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
+		-- 	destroyOnConstructionComplete = true,
+		-- },
 		{
 			name      = "Drone Bay N",
 			position  = { 0, 8*.1/scaleConst, .75*.1/scaleConst },
