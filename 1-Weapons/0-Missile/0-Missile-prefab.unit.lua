@@ -31,7 +31,7 @@ function prefab.weapon.missile.vls.S(pos, rot, sca, isGhost, ghostIndex, ghostMa
 		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.weapon = {
-			weaponID = 3296001, --int: The weaponData id to be used for this weapon.
+			weaponID = 3295001, --int: The weaponData id to be used for this weapon.
 			turnSpeed = 0, 	--float: Degrees per second.
 			turnMode = "Linear", --string enum: Linear / Acceleration
 			turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -79,7 +79,7 @@ function prefab.weapon.missile.vls.M(pos, rot, sca, isGhost, ghostIndex, ghostMa
 		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.weapon = {
-			weaponID = 3296002, --int: The weaponData id to be used for this weapon.
+			weaponID = 3295002, --int: The weaponData id to be used for this weapon.
 			turnSpeed = 0, 	--float: Degrees per second.
 			turnMode = "Linear", --string enum: Linear / Acceleration
 			turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -126,7 +126,7 @@ function prefab.weapon.missile.vls.L(pos, rot, sca, isGhost, ghostIndex, ghostMa
 		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.weapon = {
-			weaponID = 3296003, --int: The weaponData id to be used for this weapon.
+			weaponID = 3295003, --int: The weaponData id to be used for this weapon.
 			turnSpeed = 0, 	--float: Degrees per second.
 			turnMode = "Linear", --string enum: Linear / Acceleration
 			turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -173,7 +173,7 @@ function prefab.weapon.missile.vls.X(pos, rot, sca, isGhost, ghostIndex, ghostMa
 		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.weapon = {
-			weaponID = 3296004, --int: The weaponData id to be used for this weapon.
+			weaponID = 3295004, --int: The weaponData id to be used for this weapon.
 			turnSpeed = 0, 	--float: Degrees per second.
 			turnMode = "Linear", --string enum: Linear / Acceleration
 			turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -220,7 +220,7 @@ function prefab.weapon.missile.vls.T(pos, rot, sca, isGhost, ghostIndex, ghostMa
 		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.weapon = {
-			weaponID = 3296005, --int: The weaponData id to be used for this weapon.
+			weaponID = 3295005, --int: The weaponData id to be used for this weapon.
 			turnSpeed = 0, 	--float: Degrees per second.
 			turnMode = "Linear", --string enum: Linear / Acceleration
 			turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -248,10 +248,10 @@ function prefab.weapon_info.missile.hls.S(count)
 	return { 3296001, 1 * count, -2 }
 end
 function prefab.weapon.missile.hls.S(pos, rot, sca, isGhost, ghostIndex, ghostMat)
-	if(ghostIndex==nil) then ghostIndex=0 end
-	if(ghostMat==nil) then ghostMat="arc_build" end
-	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
+	-- if(ghostIndex==nil) then ghostIndex=0 end
+	-- if(ghostMat==nil) then ghostMat="arc_build" end
+	-- if(ghostIndex < 0) then return {}; end
+	-- if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Small HLS",
 		mesh      = "Missiles/Missile-1-HLS",
@@ -268,7 +268,7 @@ function prefab.weapon.missile.hls.S(pos, rot, sca, isGhost, ghostIndex, ghostMa
 		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.weapon = {
-			weaponID = 3296001, --int: The weaponData id to be used for this weapon.
+			weaponID = 3295011, --int: The weaponData id to be used for this weapon.
 			turnSpeed = 0, 	--float: Degrees per second.
 			turnMode = "Linear", --string enum: Linear / Acceleration
 			turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -316,7 +316,7 @@ function prefab.weapon.missile.hls.M(pos, rot, sca, isGhost, ghostIndex, ghostMa
 		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.weapon = {
-			weaponID = 3296002, --int: The weaponData id to be used for this weapon.
+			weaponID = 3295012, --int: The weaponData id to be used for this weapon.
 			turnSpeed = 0, 	--float: Degrees per second.
 			turnMode = "Linear", --string enum: Linear / Acceleration
 			turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -363,7 +363,7 @@ function prefab.weapon.missile.hls.L(pos, rot, sca, isGhost, ghostIndex, ghostMa
 		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.weapon = {
-			weaponID = 3296003, --int: The weaponData id to be used for this weapon.
+			weaponID = 3295013, --int: The weaponData id to be used for this weapon.
 			turnSpeed = 0, 	--float: Degrees per second.
 			turnMode = "Linear", --string enum: Linear / Acceleration
 			turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -410,7 +410,7 @@ function prefab.weapon.missile.hls.X(pos, rot, sca, isGhost, ghostIndex, ghostMa
 		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.weapon = {
-			weaponID = 3296004, --int: The weaponData id to be used for this weapon.
+			weaponID = 3295014, --int: The weaponData id to be used for this weapon.
 			turnSpeed = 0, 	--float: Degrees per second.
 			turnMode = "Linear", --string enum: Linear / Acceleration
 			turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -457,7 +457,7 @@ function prefab.weapon.missile.hls.T(pos, rot, sca, isGhost, ghostIndex, ghostMa
 		prefab_part.materials = {ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,ghostMat..ghostIndex,}
 	else
 		prefab_part.weapon = {
-			weaponID = 3296005, --int: The weaponData id to be used for this weapon.
+			weaponID = 3295015, --int: The weaponData id to be used for this weapon.
 			turnSpeed = 0, 	--float: Degrees per second.
 			turnMode = "Linear", --string enum: Linear / Acceleration
 			turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
