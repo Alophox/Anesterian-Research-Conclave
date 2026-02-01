@@ -211,7 +211,7 @@ return {
 
 		phaseBlockFraction = 0,               -- float: How much Phase is used to block damage. I don't think this works. 
 		
-		lifetime = (((weaponStats.missile.baseRange * weaponStats.overShootMult * weaponStats.rangeMult[weaponConst.size]) / weaponStats.missile.velocity)^(0.5))*2.5,                         -- float: How long in seconds before this unit self-destructs. (drones, missiles, bullets)
+		lifetime = (((weaponStats.missile.baseRange * weaponStats.overShootMult * weaponStats.rangeMult[weaponConst.size]) / weaponStats.missile.velocity)^(0.5))*2.6,                         -- float: How long in seconds before this unit self-destructs. (drones, missiles, bullets)
 		explodeOnTimeout = true,             -- Was it a peaceful death?
 
 		explosionType = "NONE",          	-- string enum: EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
