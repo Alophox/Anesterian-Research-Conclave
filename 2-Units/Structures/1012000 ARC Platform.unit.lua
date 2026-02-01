@@ -199,13 +199,7 @@ return {
 		alertPlayerOnDeath = false,
 	},
 
-	isStatusEffecter = true,
-    isAegisEmitter = true,
-    aegisEmitter = {
-        secondsPerPulse = 5,
-        radius = .0001,
-        strength = .00001,
-    },
+	
 
 	-- 🟦 COMMAND / Platform
 	isCommand = true, -- Allows Platform AIs to be run on this structure.

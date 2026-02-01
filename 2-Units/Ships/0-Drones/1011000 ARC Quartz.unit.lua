@@ -247,13 +247,7 @@ return {
 	},
 
 
-	isStatusEffecter = true,
-    isAegisEmitter = true,
-    aegisEmitter = {
-        secondsPerPulse = 5,
-        radius = .0001,
-        strength = .00001,
-    },
+	
 
 	isRepulsor            = true,
 	isNotRepulsed        = false,

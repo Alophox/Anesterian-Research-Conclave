@@ -158,13 +158,7 @@ return {
 		alertPlayerOnDeath = false,           	-- If on the player's team, log an Alert that this unit has died. Should make it true on all buildings, and hero units (Hemedall).
 	},
 
-	isStatusEffecter = true,
-    isAegisEmitter = true,
-    aegisEmitter = {
-        secondsPerPulse = 5,
-        radius = .0001,
-        strength = .00001,
-    },
+	
 
 	isRepulsor            = true,
 	isNotRepulsed        = false,
