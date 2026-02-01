@@ -64,6 +64,19 @@ return {
 	-- 🟦 PARTS
 	parts = {
 		{
+			name = "Aegis spawner",
+			autoModule = {
+				moduleTypeID = 3297100,
+				reportKillsToParent = false,
+				doDamageToEntityOnDeath = true,
+				damageToEntityOnDeath = {
+					isNondamaging = true, instances = 1, damage = 0.00001, piercing = -9999999999,
+					shred = 0, heat = 0, vulnerability = 0, decloak = 0,
+					targetingPriorityMultiplier = 0, impulseForce = 0,
+				},
+			},
+		},
+		{
 			name     = "Aegis",
 			mesh    = "Core/Core-Small",
 			materials = { "0_arc_aegis", "0_arc_aegis", "0_arc_aegis", "0_arc_aegis" },
