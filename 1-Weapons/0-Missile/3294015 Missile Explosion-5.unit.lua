@@ -96,7 +96,7 @@ return {
 			rotation = {0,0,0},
 			rotate = {
 				timeStepSeconds = .051,             -- decimal
-				degreeRotationPerSecond = { 1,0,0 }, -- decimals (x,y,z)
+				degreeRotationPerSecond = { 100,0,0 }, -- decimals (x,y,z)
 			},
 			parts={
 				{

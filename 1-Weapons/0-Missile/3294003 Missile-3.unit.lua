@@ -5,13 +5,13 @@ scaleConst = .135;
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "329-vulpes",                 -- string: Internal name for debugging and errors.
-	unitDisplayName             = "Vulpes",                         -- string: Actual display name of the unit in the Databank, HUD, etc.
+	unitName                    = "329-chama",                 -- string: Internal name for debugging and errors.
+	unitDisplayName             = "Chama",                         -- string: Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   -- string: Shown when moused over in the HUD.
 	unitBlurb                   = "Missile", -- string: Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           -- bool: The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
 	hotkey                      = "",                             -- Unity KeyCode: For buildbar. The hotkey for this unit.
-	picture                     = "329-vulpes.png",             -- string filename: The name of the image file in this folder to be used for this unit.
+	picture                     = "329-chama.png",             -- string filename: The name of the image file in this folder to be used for this unit.
 
 	controllable 	= false;	-- bool: Can this unit be given move orders with right click?
 	unselectable = true;	-- Cannot be selected.
@@ -214,7 +214,7 @@ return {
 		lifetime = (((weaponStats.missile.baseRange * weaponStats.overShootMult * weaponStats.rangeMult[weaponConst.size]) / weaponStats.missile.velocity)^(0.5))*2.6,                         -- float: How long in seconds before this unit self-destructs. (drones, missiles, bullets)
 		explodeOnTimeout = true,             -- Was it a peaceful death?
 
-		explosionType = "NONE",          	-- string enum: EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
+		explosionType = "FLASH",          	-- string enum: EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
 		explosionVolatility = 0,            	-- float: 1000 * unit scale * volatility = area damage when a unit of scale 2 or greater dies.
 		explosionSizeOveride = 0.001, -- weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size],             	-- float: Size of the visual explosion. A Tolly is 0.4 in size. 0 is automatic.
 		flashSizeOverride = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size] / 20,                	-- float: Size of the white internal flash. 0 is automatic.
@@ -222,14 +222,14 @@ return {
 		preventShockwave = false,             	-- Prevents a repulsive shockwave from being created automatically on units scale 1+
 		randomiseInAllDirections = false,     	--Let the explosion randomise it's direction.
 		deathUnitSpawnDoNotRandomiseRotation = false, --Randomise the rotation of the unit spawned on death, if any.
-		deathUnitSpawnTypeID = -1,            	-- int: The unit spawned when this dies. -1 is nothing. Used for debris, and Glowfish Blobs.
+		deathUnitSpawnTypeID = 3294013,            	-- int: The unit spawned when this dies. -1 is nothing. Used for debris, and Glowfish Blobs.
 		invulnerable = false,                 	-- You can't hurt me, little man.
 		unkillable = false,                   	-- Even in death, I am eternal.
 		death_countdown = 0,                  	-- float: If the unit dies, but has not taken enough damage for InstaDeath, count down this long then blowup.
 		mass = 0,                             	-- float: Mass override, leave 0 for automatic (calculated from health, armour, and densityMult). Affects repulsion and impulse from damage.
 		densityMult = 1.0,                    	-- float: Multiplied agains the automatic mass calculation.
 		tonnage = 40,                         	-- float: Visual display value, does nothing.
-		ignoreInstaDeath = false,             	-- If a unit takes more than 150% damage (it's at negative health) it will explode instantly. True prevents that.
+		ignoreInstaDeath = true,             	-- If a unit takes more than 150% damage (it's at negative health) it will explode instantly. True prevents that.
 		alertPlayerOnDeath = false,           	-- If on the player's team, log an Alert that this unit has died. Should make it true on all buildings, and hero units (Hemedall).
 	},
 

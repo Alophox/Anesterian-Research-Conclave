@@ -2,9 +2,9 @@ weaponConst = {
 	size = "T",
 };
 return {
-     id = 3296005,
-     name = "Titanic Breach Warhead",
-     blurb = "The brightest stars burn the shortest.",
+     id = 3296015,
+     name = "Titanic Missile <i>Vulpes</i>",
+     blurb = "The brightest stars burn the shortest, before violently imploding.",
      metaNote = "Who needs tractor beams anyways",
      hideInDatabank = false,
      displayType = "NORMAL", -- NORMAL, DRONE
@@ -22,7 +22,7 @@ return {
           -- Most weapons will create an AOE explosion if isAreaOfEffect is enabled.
           -- All weapons will try to use a childed weaponVisual when firing. If there are multiple weaponVisuals, each shot it will use one in child order. (as a laser beam, or as a muzzle flash depending on how you configure the weaponVisual)
 
-          weaponType = "WARHEAD_TRIGGER",
+          weaponType = "LAUNCHER",
           
           -- LASER, raycast forward and damage the first thing you hit. Can do AOE/Damage. Uses weaponVisual as a beam.
           -- PUREHIT, directly damage the target. Can do AOE/Damage. Uses weaponVisual as a beam.
@@ -40,7 +40,7 @@ return {
           necrofire = false,            -- enable weapon on parent death (good for SPARKLER visual effects, among other things)
           active = true,                -- is the weapon online (for use with necrofire)
           oneuse = true,               -- destroy root unit when out of ammo, (for bullets, missiles, etc) (fires entire magazine then destroys the unit it's on)
-          rangeInUnits = 1,            -- Target must be within range, for gun to fire.
+          rangeInUnits = weaponStats.rangeMult[weaponConst.size] * weaponStats.missile.baseRange,            -- Target must be within range, for gun to fire.
           maximumAngleToTarget = 3.14,   -- Radians, target must be within angle for gun to fire.
           unitsPerSecond = 0,           -- projectile velocity for LAUNCHER in 100m/s
           spreadDegrees = 0,          -- Radians, spread for LAUNCHER (machine guns, etc)

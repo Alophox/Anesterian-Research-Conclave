@@ -96,7 +96,7 @@ return {
 			rotation = {0,0,0},
 			rotate = {
 				timeStepSeconds = .051,             -- decimal
-				degreeRotationPerSecond = { 1,0,0 }, -- decimals (x,y,z)
+				degreeRotationPerSecond = { 100,0,0 }, -- decimals (x,y,z)
 			},
 			parts={
 				{
@@ -271,11 +271,6 @@ return {
 		forceShockwave = false,               	-- bool: Forces a repulsive shockwave to be created, uses explosionSizeOveride or auto if not set.
 		preventShockwave = true,             	-- Prevents a repulsive shockwave from being created automatically on units scale 1+
 		randomiseInAllDirections = false,     	--Let the explosion randomise it's direction.
-		
-		deathExplosionVisual = {
-			startColour = {.1, .1, .1}
-		},
-		
 		deathUnitSpawnDoNotRandomiseRotation = false, --Randomise the rotation of the unit spawned on death, if any.
 		deathUnitSpawnTypeID = -1,            	-- int: The unit spawned when this dies. -1 is nothing. Used for debris, and Glowfish Blobs.
 		invulnerable = false,                 	-- You can't hurt me, little man.

@@ -1,10 +1,10 @@
 weaponConst = {
-	size = "T",
+	size = "X",
 };
 return {
-     id = 3296005,
-     name = "Titanic Breach Warhead",
-     blurb = "The brightest stars burn the shortest.",
+     id = 3296014,
+     name = "Extra Large Missile <i>Lagopus</i>",
+     blurb = "The brightest stars burn the shortest, before violently imploding.",
      metaNote = "Who needs tractor beams anyways",
      hideInDatabank = false,
      displayType = "NORMAL", -- NORMAL, DRONE
@@ -22,7 +22,7 @@ return {
           -- Most weapons will create an AOE explosion if isAreaOfEffect is enabled.
           -- All weapons will try to use a childed weaponVisual when firing. If there are multiple weaponVisuals, each shot it will use one in child order. (as a laser beam, or as a muzzle flash depending on how you configure the weaponVisual)
 
-          weaponType = "WARHEAD_TRIGGER",
+          weaponType = "LAUNCHER",
           
           -- LASER, raycast forward and damage the first thing you hit. Can do AOE/Damage. Uses weaponVisual as a beam.
           -- PUREHIT, directly damage the target. Can do AOE/Damage. Uses weaponVisual as a beam.
@@ -40,7 +40,7 @@ return {
           necrofire = false,            -- enable weapon on parent death (good for SPARKLER visual effects, among other things)
           active = true,                -- is the weapon online (for use with necrofire)
           oneuse = true,               -- destroy root unit when out of ammo, (for bullets, missiles, etc) (fires entire magazine then destroys the unit it's on)
-          rangeInUnits = 1,            -- Target must be within range, for gun to fire.
+          rangeInUnits = weaponStats.rangeMult[weaponConst.size] * weaponStats.missile.baseRange,            -- Target must be within range, for gun to fire.
           maximumAngleToTarget = 3.14,   -- Radians, target must be within angle for gun to fire.
           unitsPerSecond = 0,           -- projectile velocity for LAUNCHER in 100m/s
           spreadDegrees = 0,          -- Radians, spread for LAUNCHER (machine guns, etc)
@@ -67,7 +67,7 @@ return {
 
           --Self Effects
           selfHealRatio = 0,       -- heal parent by this fraction of damage dealt. // I don't know why this is like this.
-          selfDamage = 0,          -- damage done to root unit per shot.
+          selfDamage = 999999999,          -- damage done to root unit per shot.
           selfHeat = 0,            -- heat done to root unit per shot.
           selfImpulseForce = 0,              -- Force applied opposite the firing direction.
           dontFireBelowHealthFraction = 0,   -- hold fire if parent health falls below this threshold
@@ -126,7 +126,7 @@ return {
           barrelIndexCurrent = 0,            --Controls which barrel (in child order) the weapon will start with.
 
           --LAUNCHER / TESLA Controls
-          spawnID = 3294015,       --unit typeID
+          spawnID = 3294014,       --unit typeID
           arrivalData = {
                type           = "NONE",    --NONE, ARRIVE, DEPART, CONSTRUCT, LAUNCH, WARP
                -- arrivalDuration= 1.0,
@@ -199,7 +199,7 @@ return {
                -- Multiplies the target score by this.
                classMultMissile = -1,
                classMultDrone = -1,
-               classMultLight = -1,
+               classMultLight = 1,
                classMultMedium = 1,
                classMultHeavy = 0.5,
                classMultCapital = 0.2,
