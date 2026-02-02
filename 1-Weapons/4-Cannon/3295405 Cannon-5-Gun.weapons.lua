@@ -3,8 +3,8 @@ weaponConst = {
 };
 return {
 	id = 3295405,
-	name = "Titanic Plasma Launcher",
-	blurb = "Short range hypercompressed nonthermal Plasma Launcher.",
+	name = "Titanic Neutron Launcher <i>Colorata</i>",
+	blurb = "Launches explosive neutron packets.",
 	metaNote = "Used on Brawlers.",
 	hideInDatabank = false,
 	displayType = "NORMAL", -- NORMAL, DRONE

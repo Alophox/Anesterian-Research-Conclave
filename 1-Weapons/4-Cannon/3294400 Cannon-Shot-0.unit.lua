@@ -1,11 +1,11 @@
 weaponConst = {
-	size="S",
+	size="D",
 };
-scaleConst = .2;
+scaleConst = .1;
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "329-cannon-shot-1",                 -- string: Internal name for debugging and errors.
+	unitName                    = "329-cannon-shot-0",                 -- string: Internal name for debugging and errors.
 	unitDisplayName             = "Plasma Shot",                         -- string: Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   -- string: Shown when moused over in the HUD.
 	unitBlurb                   = "Don't stick your hand in it.", -- string: Shown just below the unit name in tooltips and databank.
@@ -27,7 +27,7 @@ return {
 		description                 =
 		".",
 		weaponInfo                  = { 	-- int3 array: Tells the databank which weaponDatas to grab and display for this unit. Not automatic you have to do this, I'm sorry.
-			{ 3296401, 1, 0 }   		-- (int, int, int): weaponID, count, subMunitionWeaponID (bullet, missile, etc, 0 = none) This gets the damage data of the subMunitionWeapon if it has any, important for bullets which themselves do damage via a subweapon.
+			{ 3296400, 1, 0 }   		-- (int, int, int): weaponID, count, subMunitionWeaponID (bullet, missile, etc, 0 = none) This gets the damage data of the subMunitionWeapon if it has any, important for bullets which themselves do damage via a subweapon.
 		},
 		relatedUnitIDs              = {} 	-- int array: TypeID of other units in the family tree
 	},
@@ -59,7 +59,7 @@ return {
 
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data = {
-		typeID       = 3294401, -- int: !!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
+		typeID       = 3294400, -- int: !!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
 		factionID    = 329, -- int: The faction this unit is associated with in the Databank.
 		macroType    = "AUTO", -- string enum: MacroTarget state: AUTO (is capital or command?) / TRUE / FALSE
 		cost_matter  = 0, -- int: For structures.

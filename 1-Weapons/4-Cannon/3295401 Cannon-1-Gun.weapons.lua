@@ -3,8 +3,8 @@ weaponConst = {
 };
 return {
 	id = 3295401,
-	name = "Small Plasma Launcher",
-	blurb = "Short range hypercompressed nonthermal Plasma Launcher.",
+	name = "Small Neutron Launcher <i>Aestivalis</i>",
+	blurb = "Launches explosive neutron packets.",
 	metaNote = "Used on Brawlers.",
 	hideInDatabank = false,
 	displayType = "NORMAL", -- NORMAL, DRONE

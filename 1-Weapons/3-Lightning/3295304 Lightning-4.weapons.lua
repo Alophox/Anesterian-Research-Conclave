@@ -3,8 +3,8 @@ weaponConst = {
 };
 return {
 	id = 3295304,
-	name = "Extra-Large Breach Cannon",
-	blurb = "Short range reality breaker.",
+	name = "Extra Large Breach Cannon <i>Sceptrum</i>",
+	blurb = "Armor ignoring reality breaker.",
 	metaNote = "Used on spinal components",
 	hideInDatabank = false,
 	displayType = "NORMAL", -- NORMAL, DRONE

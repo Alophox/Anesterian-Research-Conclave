@@ -3,8 +3,8 @@ weaponConst = {
 };
 return {
 	id = 3295102,
-	name = "Medium Laser",
-	blurb = "Mid range hybrid laser.",
+	name = "Medium Laser <i>Aequalis</i>",
+	blurb = "PD and Anti-light laser.",
 	metaNote = "Used on Pickets and Carriers",
 	hideInDatabank = false,
 	displayType = "NORMAL", -- NORMAL, DRONE

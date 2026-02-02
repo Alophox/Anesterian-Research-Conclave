@@ -3,8 +3,8 @@ weaponConst = {
 };
 return {
 	id = 3295402,
-	name = "Medium Plasma Launcher",
-	blurb = "Short range hypercompressed nonthermal Plasma Launcher.",
+	name = "Medium Neutron Launcher <i>Plumbea</i>",
+	blurb = "Launches explosive neutron packets.",
 	metaNote = "Used on Brawlers",
 	hideInDatabank = false,
 	displayType = "NORMAL", -- NORMAL, DRONE

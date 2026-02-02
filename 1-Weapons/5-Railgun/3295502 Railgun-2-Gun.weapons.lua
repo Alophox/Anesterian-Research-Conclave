@@ -3,7 +3,7 @@ weaponConst = {
 };
 return {
 	id = 3295502,
-	name = "Medium Plasma Railgun",
+	name = "Medium Plasma Railgun <i>Strobiliformis</i>",
 	blurb = "Long range donut launcher.",
 	metaNote = "Used on Artillery.",
 	hideInDatabank = false,

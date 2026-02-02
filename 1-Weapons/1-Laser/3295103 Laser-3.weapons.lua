@@ -3,8 +3,8 @@ weaponConst = {
 };
 return {
 	id = 3295103,
-	name = "Large Laser",
-	blurb = "Mid range hybrid laser.",
+	name = "Large Laser <i>Myosuroides</i>",
+	blurb = "Anti-light and medium laser",
 	metaNote = "Used on Pickets and Carriers",
 	hideInDatabank = false,
 	displayType = "NORMAL", -- NORMAL, DRONE

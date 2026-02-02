@@ -3,7 +3,7 @@
 	};
 return {
 	id = 3295503,
-	name = "Large Plasma Railgun",
+	name = "Large Plasma Railgun <i>Vivipara</i>",
 	blurb = "Long range donut launcher.",
 	metaNote = "Used on Artillery.",
 	hideInDatabank = false,

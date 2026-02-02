@@ -3,8 +3,8 @@ weaponConst = {
 };
 return {
 	id = 3295100,
-	name = "Quartz Laser",
-	blurb = "Drone Laser.",
+	name = "Dimunitive Laser <i>Saccatus</i>",
+	blurb = "PD Laser.",
 	metaNote = "Used on Pickets and Carriers",
 	hideInDatabank = false,
 	displayType = "NORMAL", -- NORMAL, DRONE

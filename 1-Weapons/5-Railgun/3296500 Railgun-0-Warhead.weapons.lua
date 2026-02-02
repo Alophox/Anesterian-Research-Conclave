@@ -3,7 +3,7 @@ weaponConst = {
 };
 return {
 	id = 3296500,
-	name = "Drone Railgun Warhead",
+	name = "Dimunitive Railgun Warhead",
 	blurb = "Mmm, plasma...",
 	metaNote = "",
 	hideInDatabank = false,

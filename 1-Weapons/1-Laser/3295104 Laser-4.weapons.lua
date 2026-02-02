@@ -3,8 +3,8 @@ weaponConst = {
 };
 return {
 	id = 3295104,
-	name = "Extra Large Laser",
-	blurb = "Mid range hybrid laser.",
+	name = "Extra Large Laser <i>Pratensis</i>",
+	blurb = "Anti-medium laser.",
 	metaNote = "Used on Pickets and Carriers",
 	hideInDatabank = false,
 	displayType = "NORMAL", -- NORMAL, DRONE

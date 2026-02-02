@@ -3,8 +3,8 @@ weaponConst = {
 };
 return {
      id = 3296405,
-     name = "Titanic Plasma Warhead",
-     blurb = "BURRRN",
+     name = "Titanic Neutron Warhead",
+     blurb = "<i>Boom</i>",
      metaNote = "Brrrrrr",
      hideInDatabank = false,
      displayType = "NORMAL", -- NORMAL, DRONE

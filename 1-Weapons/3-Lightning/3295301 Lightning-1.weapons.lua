@@ -3,8 +3,8 @@ weaponConst = {
 };
 return {
 	id = 3295301,
-	name = "Small Breach Cannon",
-	blurb = "Short range reality breaker.",
+	name = "Small Breach Cannon <i>Parviflora</i>",
+	blurb = "Armor ignoring reality breaker.",
 	metaNote = "Used on Gunships",
 	hideInDatabank = false,
 	displayType = "NORMAL", -- NORMAL, DRONE

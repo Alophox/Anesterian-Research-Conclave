@@ -3,8 +3,8 @@ weaponConst = {
 };
 return {
 	id = 3295101,
-	name = "Small Laser",
-	blurb = "Mid range hybrid laser.",
+	name = "Small Laser <i>Geniculatus</i>",
+	blurb = "PD Laser.",
 	metaNote = "Used on Pickets and Carriers",
 	hideInDatabank = false,
 	displayType = "NORMAL", -- NORMAL, DRONE

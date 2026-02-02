@@ -3,8 +3,8 @@ weaponConst = {
 };
 return {
 	id = 3295300,
-	name = "Quartz Breach Cannon",
-	blurb = "Short range reality breaker.",
+	name = "Dimunitive Breach Cannon <i>Ciliata</i>",
+	blurb = "Armor ignoring reality breaker.",
 	metaNote = "Used on Drones",
 	hideInDatabank = false,
 	displayType = "NORMAL", -- NORMAL, DRONE

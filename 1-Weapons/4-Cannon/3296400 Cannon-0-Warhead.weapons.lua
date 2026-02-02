@@ -1,9 +1,9 @@
 weaponConst = {
-	size="M",
+	size="D",
 };
 return {
-     id = 3296402,
-     name = "Medium Neutron Warhead",
+     id = 3296400,
+     name = "Dimunitive Neutron Warhead",
      blurb = "<i>Boom</i>",
      metaNote = "Brrrrrr",
      hideInDatabank = false,
@@ -41,7 +41,7 @@ return {
           active = true,                -- is the weapon online (for use with necrofire)
           oneuse = true,               -- destroy root unit when out of ammo, (for bullets, missiles, etc) (fires entire magazine then destroys the unit it's on)
           rangeInUnits = .5,            -- Target must be within range, for gun to fire.
-          maximumAngleToTarget = 3.14,   -- Radians, target must be within angle for gun to fire.
+          maximumAngleToTarget = 0,   -- Radians, target must be within angle for gun to fire.
           unitsPerSecond = .2,           -- projectile velocity for LAUNCHER in 100m/s
           spreadDegrees = 0,          -- Radians, spread for LAUNCHER (machine guns, etc)
           spreadType = "BELLCURVE",       -- Spread style. BELLCURVE (more in the center), RANDOM 
@@ -82,7 +82,7 @@ return {
           -- AOE
           isAreaOfEffect = true;
           aoeData = {
-               maximumDegrees = 360,    --Degrees from forward that units can be hit. Weapons spawn AOE's facing the same direction as them.
+               maximumDegrees = 180,    --Degrees from forward that units can be hit. Weapons spawn AOE's facing the same direction as them.
                radiusOuter = weaponStats.cannon.baseAOE * weaponStats.rangeMult[weaponConst.size],         --Damage drops off to 0 at outer. Linear scale. A tolly is 0.4 units
                radiusInner = weaponStats.cannon.baseAOE * weaponStats.rangeMult[weaponConst.size] / 2,          --Full damage to units within inner.
           },
@@ -162,7 +162,7 @@ return {
      targeting = {
           acquisition = {
                -- QUADTREE_AND_MACRO (Local stuff, and MacroTargets), QUADTREE_ONLY (Only local stuff, for turrets), MACRO_ONLY (Only MacroTargets, for Nukes), RAYCAST (by minimumDistance), RAYCAST_VELOCITY (bullets), SPHEREOVERLAP (flak, missiles, by minimumDistance), CAPSULEOVERLAP_VELOCITY, CAPSULEOVERLAP (by minimumDistance, and width as maximumDistance)
-               type = "SPHEREOVERLAP",
+               type = "RAYCAST_VELOCITY",
                isFriendly = false, 			--Allowed to target units on the same team/alliance.
                isResourceMiner = false, 		--Allowed to target the Environmental team.
                acceptFirstValidTarget = false, 	--For launchers and things that don't need to actually target something. Shoot at the first thing you see.
@@ -174,7 +174,7 @@ return {
                minimumHealth = 0, 				--Don't target things with less Max Health than this.
                minimumDistance = 0, 			--Don't target things that are closer than this.
                maximumDistance = weaponStats.cannon.baseAOE * weaponStats.rangeMult[weaponConst.size] / 2, 			--Important. Scan radius. Don't target things further than this. KEEP THIS NUMBER LOW, SERIOUS PERFORMANCE IMPACT. Light ~15, Medium ~20, Heavy ~25, Capital ~25
-               maximumAngle = 360, 				--Good for spinal weapons/missiles.
+               maximumAngle = 0, 				--Good for spinal weapons/missiles.
                addedPreaimDistance = 0, 		--If you have no target in maximumDistance, you may try to target something this far beyond max distance. (use on turrets, not ships)
                
                -- Scoring can be negative. Will invert behaviour.
@@ -197,13 +197,13 @@ return {
                -- Target class priority.
                -- Vital for unit behaviour. -1 = ignore.
                -- Multiplies the target score by this.
-               classMultMissile = .1,
-               classMultDrone = .1,
+               classMultMissile = 1,
+               classMultDrone = 1,
                classMultLight = 1,
                classMultMedium = 1,
-               classMultHeavy = .8,
-               classMultCapital = 0.6,
-               classMultTitan = 0.2,
+               classMultHeavy = 0.5,
+               classMultCapital = 0.2,
+               classMultTitan = 0.1,
 
                --Multiplied against score at the end.
                shipMultiplier = 1.0, 			--Priority for ships.

@@ -3,7 +3,7 @@
 	};
 return {
 	id = 3295505,
-	name = "Titanic Plasma Railgun",
+	name = "Titanic Plasma Railgun <i>Macromeris</i>",
 	blurb = "Long range donut launcher.",
 	metaNote = "Used on Artillery.",
 	hideInDatabank = false,

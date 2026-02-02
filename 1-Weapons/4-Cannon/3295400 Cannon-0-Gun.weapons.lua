@@ -1,11 +1,11 @@
 weaponConst = {
-	size="T",
+	size="D",
 };
 return {
-	id = 3295305,
-	name = "Titanic Breach Cannon <i>Purpurea</i>",
-	blurb = "Armor ignoring reality breaker.",
-	metaNote = "Used on spinal components",
+	id = 3295400,
+	name = "Dimunitive Neutron Launcher <i>Dermoxantha</i>",
+	blurb = "Launches explosive neutron packets.",
+	metaNote = "Used on Brawlers.",
 	hideInDatabank = false,
 	displayType = "NORMAL", -- NORMAL, DRONE
 
@@ -22,7 +22,7 @@ return {
 		-- Most weapons will create an AOE explosion if isAreaOfEffect is enabled.
 		-- All weapons will try to use a childed weaponVisual when firing. If there are multiple weaponVisuals, each shot it will use one in child order. (as a laser beam, or as a muzzle flash depending on how you configure the weaponVisual)
 
-		weaponType = "LASER",
+		weaponType = "LAUNCHER",
 		
 		-- LASER, raycast forward and damage the first thing you hit. Can do AOE/Damage. Uses weaponVisual as a beam.
 		-- PUREHIT, directly damage the target. Can do AOE/Damage. Uses weaponVisual as a beam.
@@ -36,14 +36,14 @@ return {
 
 		--Fire Control 
 		alwaysfire = false,           -- fire constantly if not disabled (good for SPARKLER effects, constant drones, deploying mines, etc, but can look dumb when there are no enemies)
-		magdump = true,              -- always expend entire magazine, good for drone launchers to ensure the whole squadron is deployed. DAKKA DAKKA DAKKA DAKKA
+		magdump = false,              -- always expend entire magazine, good for drone launchers to ensure the whole squadron is deployed. DAKKA DAKKA DAKKA DAKKA
 		necrofire = false,            -- enable weapon on parent death (good for SPARKLER visual effects, among other things)
 		active = true,                -- is the weapon online (for use with necrofire)
 		oneuse = false,               -- destroy root unit when out of ammo, (for bullets, missiles, etc) (fires entire magazine then destroys the unit it's on)
-		rangeInUnits = weaponStats.rangeMult[weaponConst.size] * weaponStats.lightning.baseRange * weaponStats.overShootMult,            -- Target must be within range, for gun to fire.
+		rangeInUnits = weaponStats.fireRangeMult * weaponStats.rangeMult[weaponConst.size] * weaponStats.cannon.baseRange,            -- Target must be within range, for gun to fire.
 		maximumAngleToTarget = 0.01,   -- Radians, target must be within angle for gun to fire.
-		unitsPerSecond = 0,           -- projectile velocity for LAUNCHER in 100m/s
-		spreadDegrees = 0,          -- Radians, spread for LAUNCHER (machine guns, etc)
+		unitsPerSecond = weaponStats.cannon.velocity,           -- projectile velocity for LAUNCHER in 100m/s
+		spreadDegrees = weaponStats.accuracySpread * ((1 - weaponStats.cannon.accuracy)/(weaponStats.fireRangeMult * weaponStats.rangeMult[weaponConst.size] * weaponStats.cannon.baseRange)),           -- Radians, spread for LAUNCHER (machine guns, etc)
 		spreadType = "BELLCURVE",       -- Spread style. BELLCURVE (more in the center), RANDOM 
 		forceRaycastDirectlyToTarget = false, -- LASERS, forces the laser to hit it's intended target even if the turret is not looking perfectly at it. (Important for PD weapons, and most laser weapons)
 		lockTime = 0,                 -- Seconds this weapon must have the same target before it can fire.
@@ -52,11 +52,11 @@ return {
 		--Damage Data
 		damageData = {
 			isNondamaging = false,             -- false> normal, true> Healing, armour repair, aegis
-			instances = weaponStats.lightning.instances,                     -- int: How many times is this damage dealt. For making weapons worse against armour.
-			damage = (weaponStats.damageMult[weaponConst.size] * weaponStats.lightning.baseDMG / (weaponStats.lightning.shotsPerBurst[weaponConst.size]))/weaponStats.lightning.instances,                       -- float: Raw damage, reduced by armour.
-			piercing = 1000,                      -- float: Ignore this much armour. Negative piercing is AEGIS shielding.
-			shred = (weaponStats.damageMult[weaponConst.size] * weaponStats.lightning.baseShred / (weaponStats.lightning.shotsPerBurst[weaponConst.size]))/weaponStats.lightning.instances,                      -- float: Destroy this much armour * class shred resistance. Negative heals armour.
-			heat = (weaponStats.damageMult[weaponConst.size] * weaponStats.lightning.baseHeat / (weaponStats.lightning.shotsPerBurst[weaponConst.size]))/weaponStats.lightning.instances,                          -- float: Apply this much heat. Health is heat capacity.
+			instances = 1,                     -- int: How many times is this damage dealt. For making weapons worse against armour.
+			damage = 5,                       -- float: Raw damage, reduced by armour.
+			piercing = 0,                      -- float: Ignore this much armour. Negative piercing is AEGIS shielding.
+			shred = 0.1,                      -- float: Destroy this much armour * class shred resistance. Negative heals armour.
+			heat = 10,                          -- float: Apply this much heat. Health is heat capacity.
 			vulnerability = 0,               -- float: Negate this much armour. Negative vulnerability is CAPTURE.
 			decloak = 1.0,                     -- float: Reduce target cloak by this amount. Unused.
 			targetingPriorityMultiplier = 0,   -- float: Temporarily make the target this much more attractive a target.
@@ -88,7 +88,7 @@ return {
 		},
 
 		--Audio
-		sfxID = weaponStats.lightning.sfxID,               --int, id of the audio to play when this weapon fires.
+		sfxID = weaponStats.cannon.sfxID,               --int, id of the audio to play when this weapon fires.
 		SFXIntensity = weaponStats.SFXIntensity[weaponConst.size],      --float, controls how far the sound reaches, and how important it is.
 
 		--Visuals
@@ -105,7 +105,7 @@ return {
 		laserDescription = { 		--"laser" description, but is actually a maleable visual effect.
 						duration = .1,			--seconds
 						opacity = 1,			--float, 0-1
-						diameter = .7,			--relative to turret scale
+						diameter = .1,			--relative to turret scale
 						offset = 0,			--relative to the barrel it gets fired from's facing.
 						rotateZ = true,		--Rotate the effect once randomly on the z axis when used.
 						rotateY = false,		--Rotate the effect once randomly on the y axis when used.
@@ -127,7 +127,7 @@ return {
 		barrelIndexCurrent = 0,            --Controls which barrel (in child order) the weapon will start with.
 
 		--LAUNCHER / TESLA Controls
-		spawnID = 0,       --unit typeID
+		spawnID = 3294400,       --unit typeID
 		arrivalData = {
 			type           = "NONE",    --NONE, ARRIVE, DEPART, CONSTRUCT, LAUNCH, WARP
 			arrivalDuration= 1.0,
@@ -145,16 +145,16 @@ return {
 		-- > 0 : reload a set amount at a time, cannot be interupted. Starts reloading the moment shotsPerCycleCurrent < shotsPerCycle
 		-- < 0 : reload a set amount at a time, interupted when firing. The moment the weapon fires, will reset the secondsPerCycleCurrent to secondsPerCycle.
 		reloadAmount = 0,             --Normal weapons use 0, aka full
-		secondsPerCycle = weaponStats.lightning.baseCD * weaponStats.CDMult[weaponConst.size] + weaponStats.CDMod[weaponConst.size] - weaponStats.lightning.secondsPerShot*(weaponStats.lightning.shotsPerBurst[weaponConst.size]/weaponStats.lightning.simultaniousShots[weaponConst.size] - 1),        --Seconds per reload. Negative value prevent reloading (limited ammo weapons).
+		secondsPerCycle = weaponStats.cannon.baseCD * weaponStats.CDMult[weaponConst.size] + weaponStats.CDMod[weaponConst.size] - weaponStats.cannon.secondsPerShot*(weaponStats.cannon.shotsPerBurst[weaponConst.size] - 1),        --Seconds per reload. Negative value prevent reloading (limited ammo weapons).
 		secondsPerCycleCurrent = 0,   --Starting delay. Good if you don't want your bomber launching bombs the moment it spawns.
 
 		--Magazine Size
-		shotsPerCycle = weaponStats.lightning.shotsPerBurst[weaponConst.size],            --Shots per reload, ATS will ensure this number is always at least 1.
-		shotsPerCycleCurrent = weaponStats.lightning.shotsPerBurst[weaponConst.size],     --Starting shots in the clip.
-		simultaniousShots = weaponStats.lightning.simultaniousShots[weaponConst.size],        --How many shots we can make at once. (shotgun, cluster bomb)
+		shotsPerCycle = weaponStats.cannon.shotsPerBurst[weaponConst.size],            --Shots per reload, ATS will ensure this number is always at least 1.
+		shotsPerCycleCurrent = weaponStats.cannon.shotsPerBurst[weaponConst.size],     --Starting shots in the clip.
+		simultaniousShots = 1,        --How many shots we can make at once. (shotgun, cluster bomb)
 
 		--Fire Rate
-		secondsPerShot = weaponStats.lightning.secondsPerShot,           --Delay between shots.
+		secondsPerShot = weaponStats.cannon.secondsPerShot,           --Delay between shots.
 		secondsPerShotCurrent = 0,    --Starting delay.
 
 	},
@@ -169,12 +169,12 @@ return {
 			acceptFirstValidTarget = false, 	--For launchers and things that don't need to actually target something. Shoot at the first thing you see.
 			pauseIfHasTarget = false, 		--Don't look for a target again, until you're current one is dead. USE WITH canInvalidateTarget otherwise units WILL get stuck trying to shoot stuff out of their range.
 			ignoreUncapturable = false, 		--If the target is uncapturable, ignore it.
-			secondsPerScan = 2, 			--How long to wait before reassessing what you're targeting.
+			secondsPerScan = .5, 			--How long to wait before reassessing what you're targeting.
 
 			ignoreFullHealth = false, 		--Good for healers.
 			minimumHealth = 0, 				--Don't target things with less Max Health than this.
 			minimumDistance = 0, 			--Don't target things that are closer than this.
-			maximumDistance = weaponStats.fireRangeMult * weaponStats.rangeMult[weaponConst.size] * weaponStats.lightning.baseRange, 			--Important. Scan radius. Don't target things further than this. KEEP THIS NUMBER LOW, SERIOUS PERFORMANCE IMPACT. Light ~15, Medium ~20, Heavy ~25, Capital ~25
+			maximumDistance = weaponStats.fireRangeMult * weaponStats.rangeMult[weaponConst.size] * weaponStats.cannon.baseRange, 			--Important. Scan radius. Don't target things further than this. KEEP THIS NUMBER LOW, SERIOUS PERFORMANCE IMPACT. Light ~15, Medium ~20, Heavy ~25, Capital ~25
 			maximumAngle = 0, 				--Good for spinal weapons/missiles.
 			addedPreaimDistance = 1, 		--If you have no target in maximumDistance, you may try to target something this far beyond max distance. (use on turrets, not ships)
 			
@@ -184,7 +184,7 @@ return {
 			scoreForHealthCurrent = 0, 		--Good for healers.
 			scoreForHealthCurrentMissing = 0, 	--Good for healers. 1 missing hp = 1 score.
 			scoreForHealthCurrentPercentage = 0, --Good for healers, good for spreading healing between units regardless of total health.
-			scoreForArmour = 2,      		--Good for anti-armour, if negative good for units with weapons that are better against raw hull. But can be misleading on it's own (*cough cough* GLADIATOR)
+			scoreForArmour = 0,      		--Good for anti-armour, if negative good for units with weapons that are better against raw hull. But can be misleading on it's own (*cough cough* GLADIATOR)
 			scoreForArmourCurrent = 0, 		--Good for anti-armour, if negative good for units with weapons that are better spent against raw hull.
 			scoreForAngle = 0,       		--Good for slow units and turrets that need to shoot things infront of them to minimise traverse.
 
@@ -198,26 +198,26 @@ return {
 			-- Target class priority.
 			-- Vital for unit behaviour. -1 = ignore.
 			-- Multiplies the target score by this.
-			classMultMissile = -1,
-			classMultDrone = -1,
-			classMultLight = 0,
-			classMultMedium = .1,
-			classMultHeavy = 1,
-			classMultCapital = 1,
-			classMultTitan = 1,
+			classMultMissile = .2,
+			classMultDrone = .3,
+			classMultLight = 1,
+			classMultMedium = 1,
+			classMultHeavy = 0.1,
+			classMultCapital = 0.1,
+			classMultTitan = 0.1,
 
 			--Multiplied against score at the end.
 			shipMultiplier = 1.0, 			--Priority for ships.
 			structureMultiplier = .1, 		--Priority for structures.
-			keepTargetMultiplier = 1, 		--Important. Allows the unit to keep it's current target, and not bounce between things.
-			scoreBandingSize = 1,			--Allows the targeter to pick a random target within bands. Useful for PD and AOE, but requires a high keep target to prevent schizophrenia.
+			keepTargetMultiplier = 2, 		--Important. Allows the unit to keep it's current target, and not bounce between things.
+			scoreBandingSize = 3,			--Allows the targeter to pick a random target within bands. Useful for PD and AOE, but requires a high keep target to prevent schizophrenia.
 		},
 		tracking = {
-			positionPredictionType = "NONE", --Algorithm for predicting target position. NONE (lasers, most ships), SIMPLE (bad, nothing uses this), TRIGONOMETRIC (spinal ships, turrets, missiles)
-			predictionVelocityOveride = 0, 	--The speed of the thing we want to hit our target with. For bullets use unitsPerSecond. EG. An Untresnafol has this set to the launch velocity of it's bullet.
+			positionPredictionType = "TRIGONOMETRIC", --Algorithm for predicting target position. NONE (lasers, most ships), SIMPLE (bad, nothing uses this), TRIGONOMETRIC (spinal ships, turrets, missiles)
+			predictionVelocityOveride = weaponStats.cannon.velocity, 	--The speed of the thing we want to hit our target with. For bullets use unitsPerSecond. EG. An Untresnafol has this set to the launch velocity of it's bullet.
 			doAimingComputation = true,   	--For weapons.
-			canInvalidateTarget = true,  	--For units using pauseIfHasTarget.
-			invalidationDistance = weaponStats.fireRangeMult * weaponStats.rangeMult[weaponConst.size] * weaponStats.lightning.baseRange,
+			canInvalidateTarget = false,  	--For units using pauseIfHasTarget.
+			invalidationDistance = 0,
 			invalidationAngle = 0,        	--Radians
 			invalidationVelocityHeadOn = 0 	--For tractor ships,
 		}

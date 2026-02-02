@@ -3,7 +3,7 @@
 	};
 return {
 	id = 3295501,
-	name = "Small Plasma Railgun",
+	name = "Small Plasma Railgun <i>Laredoi</i>",
 	blurb = "Long range donut launcher.",
 	metaNote = "Used on Artillery.",
 	hideInDatabank = false,

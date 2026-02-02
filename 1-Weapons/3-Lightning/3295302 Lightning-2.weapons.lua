@@ -3,8 +3,8 @@ weaponConst = {
 };
 return {
 	id = 3295302,
-	name = "Medium Breach Cannon",
-	blurb = "Short range reality breaker.",
+	name = "Medium Breach Cannon <i>Lutea</i>",
+	blurb = "Armor ignoring reality breaker.",
 	metaNote = "Used on Gunships",
 	hideInDatabank = false,
 	displayType = "NORMAL", -- NORMAL, DRONE

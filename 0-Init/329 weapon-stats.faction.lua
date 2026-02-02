@@ -90,6 +90,7 @@ weaponStats.cannon = {
 	baseCD		= 2,
 	secondsPerShot=1,
 	trackingMult = {
+		D = 1,
 		S = .5,
 		M = .3,
 		L = .075,
@@ -97,6 +98,7 @@ weaponStats.cannon = {
 		T = .015,
 	},
 	shotsPerBurst = {
+		D = 1,
 		S = 1,
 		M = 2,
 		L = 3,

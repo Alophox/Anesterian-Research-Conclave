@@ -3,8 +3,8 @@ weaponConst = {
 };
 return {
 	id = 3295105,
-	name = "Titanic Laser",
-	blurb = "Mid range hybrid laser.",
+	name = "Titanic Laser <i>Arundinaceus</i>",
+	blurb = "Titanic laser.",
 	metaNote = "Used on Pickets and Carriers",
 	hideInDatabank = false,
 	displayType = "NORMAL", -- NORMAL, DRONE

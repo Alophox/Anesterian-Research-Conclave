@@ -3,8 +3,8 @@ weaponConst = {
 };
 return {
 	id = 3295303,
-	name = "Large Breach Cannon",
-	blurb = "Short range reality breaker.",
+	name = "Large Breach Cannon <i>Obscura</i>",
+	blurb = "Armor ignoring reality breaker.",
 	metaNote = "Used on Gunships",
 	hideInDatabank = false,
 	displayType = "NORMAL", -- NORMAL, DRONE

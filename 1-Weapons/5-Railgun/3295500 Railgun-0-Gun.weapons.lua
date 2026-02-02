@@ -1,9 +1,9 @@
-	weaponConst = {
-		size="D",
-	};
+weaponConst = {
+	size="D",
+};
 return {
 	id = 3295500,
-	name = "Drone Plasma Railgun",
+	name = "Dimunitive Plasma Railgun <i>Hesteri</i>",
 	blurb = "Long range donut launcher.",
 	metaNote = "Used on Artillery.",
 	hideInDatabank = false,

@@ -3,8 +3,8 @@ weaponConst = {
 };
 return {
 	id = 3295404,
-	name = "Extra Large Plasma Launcher",
-	blurb = "Short range hypercompressed nonthermal Plasma Launcher.",
+	name = "Extra Large Neutron Launcher <i>Pila</i>",
+	blurb = "Launches explosive neutron packets.",
 	metaNote = "Used on Brawlers.",
 	hideInDatabank = false,
 	displayType = "NORMAL", -- NORMAL, DRONE
