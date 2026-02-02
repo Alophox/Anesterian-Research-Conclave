@@ -1,14 +1,13 @@
--- Glave Assault Frigate Template
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "329_MT_arc_cannon-shot-1",                 -- string: Internal name for debugging and errors.
+	unitName                    = "329-rift",                 -- string: Internal name for debugging and errors.
 	unitDisplayName             = "Plasma Shot",                         -- string: Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   -- string: Shown when moused over in the HUD.
 	unitBlurb                   = "Don't stick your hand in it.", -- string: Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           -- bool: The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
 	hotkey                      = "",                             -- Unity KeyCode: For buildbar. The hotkey for this unit.
-	picture                     = "329_MT_arc_cannon-shot.png",             -- string filename: The name of the image file in this folder to be used for this unit.
+	picture                     = "329-rift.png",             -- string filename: The name of the image file in this folder to be used for this unit.
 
 	controllable 	= false;	-- bool: Can this unit be given move orders with right click?
 	unselectable = true;	-- Cannot be selected.

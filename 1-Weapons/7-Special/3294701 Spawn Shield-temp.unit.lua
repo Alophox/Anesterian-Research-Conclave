@@ -2,13 +2,13 @@
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "329_MT_arc_spawn_shield",                 -- string: Internal name for debugging and errors.
+	unitName                    = "329-shield",                 -- string: Internal name for debugging and errors.
 	unitDisplayName             = "Spawn Shield",                         -- string: Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   -- string: Shown when moused over in the HUD.
 	unitBlurb                   = "You shouldn't be seeing this", -- string: Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           -- bool: The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
 	hotkey                      = "",                             -- Unity KeyCode: For buildbar. The hotkey for this unit.
-	picture                     = "329_MT_arc_cannon-shot.png",             -- string filename: The name of the image file in this folder to be used for this unit.
+	picture                     = "329-shield.png",             -- string filename: The name of the image file in this folder to be used for this unit.
 
 	controllable 	= false;	-- bool: Can this unit be given move orders with right click?
 	unselectable = true;	-- Cannot be selected.

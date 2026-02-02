@@ -5,13 +5,13 @@ scaleConst = 4.95; --0.020202
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "329_MT_arc_amethyst-gggg",                 -- string: Internal name for debugging and errors.
+	unitName                    = "329-amethyst-gggg",                 -- string: Internal name for debugging and errors.
 	unitDisplayName             = "Amethyst-GGGG",                         -- string: Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   -- string: Shown when moused over in the HUD.
 	unitBlurb                   = "Dreadnought", -- string: Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           -- bool: The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
 	hotkey                      = "G",                             -- Unity KeyCode: For buildbar. The hotkey for this unit.
-	picture                     = "329_MT_arc_amethyst-gggg.png",             -- string filename: The name of the image file in this folder to be used for this unit.
+	picture                     = "329-amethyst-gggg.png",             -- string filename: The name of the image file in this folder to be used for this unit.
 
 	controllable 	= false;	-- bool: Can this unit be given move orders with right click?
 	unselectable = false;	-- Cannot be selected.
