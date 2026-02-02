@@ -15,8 +15,8 @@ return {
     shader = "Shader Graphs/Aegis Shader",
     keywords = { "_EMISSION" },
     properties = {
-        _Color = { 0.7, 1, 1, 1 },
-        _Opacity = 0.1,
+        _Color = { 0.5, 1, 1, 1 },
+        _Opacity = 0.05,
         _QueueControl = 0,
         _QueueOffset = 0,
         Aegis = 1,
