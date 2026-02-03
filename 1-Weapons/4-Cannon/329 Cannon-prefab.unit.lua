@@ -53,7 +53,7 @@ function prefab.weapon.cannon.S(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "329_MT_arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -131,7 +131,7 @@ function prefab.weapon.cannon.M(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "329_MT_arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -211,7 +211,7 @@ function prefab.weapon.cannon.L(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "329_MT_arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -301,7 +301,7 @@ function prefab.weapon.cannon.X(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "329_MT_arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -405,7 +405,7 @@ function prefab.weapon.cannon.XS(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "329_MT_arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -461,7 +461,7 @@ function prefab.weapon.cannon.TS(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "329_MT_arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}

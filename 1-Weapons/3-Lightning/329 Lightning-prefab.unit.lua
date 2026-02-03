@@ -38,7 +38,7 @@ function prefab.weapon.lightning.D(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "329_MT_arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -88,7 +88,7 @@ function prefab.weapon.lightning.S(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "329_MT_arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -163,7 +163,7 @@ function prefab.weapon.lightning.M(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "329_MT_arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -250,7 +250,7 @@ function prefab.weapon.lightning.L(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "329_MT_arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -358,7 +358,7 @@ function prefab.weapon.lightning.X(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "329_MT_arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -494,7 +494,7 @@ function prefab.weapon.lightning.XS(pos, rot, sca, isGhost, ghostIndex, ghostMat
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "329_MT_arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -562,7 +562,7 @@ function prefab.weapon.lightning.TS(pos, rot, sca, isGhost, ghostIndex, ghostMat
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "329_MT_arc_aegis") then
+		if (ghostMat == "aegis") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
