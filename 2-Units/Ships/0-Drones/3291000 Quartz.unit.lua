@@ -1,3 +1,6 @@
+shipConst = {
+	class="D",
+}
 scaleConst = .15;
 return {
 
@@ -105,12 +108,6 @@ return {
 			{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 			isGhost
 		),
-		-- prefab.weapon.special.spawn_shield(
-		-- 	{ 0, 0, 0 },
-		-- 	{ 0, 0, 0 },
-		-- 	{ 1, 1, 1 },
-		-- 	isGhost
-		-- ),
 		{
 			name     = "Thruster",
 			position = { 0, 0, -.4125*.1/scaleConst },
@@ -134,15 +131,15 @@ return {
 				},
 			},
 		},
-		-- {
-		-- 	name     = "Aegis",
-		-- 	mesh     = "329-0-Quartz/Quartz",
-		-- 	materials  = { "329_MT_arc_teamGlow", "329_MT_arc_hull_dark", "329_MT_arc_engine","329_MT_arc_teamColour", "329_MT_arc_hull" },
-		-- 	position = { 0, 0, 0 },
-		-- 	rotation = { 0, 0, 0 },
-		-- 	scale 	= { 1.1, 1.1, 1.1 },
-		-- 	aegisVisual = true,
-		-- },
+		{
+			name     = "Aegis",
+			mesh     = "329-0-Quartz/Quartz",
+			materials  = { "329_MT_arc_0_aegis", "329_MT_arc_0_aegis", "329_MT_arc_0_aegis","329_MT_arc_0_aegis", "329_MT_arc_0_aegis" },
+			position = { 0, 0, 0 },
+			rotation = { 0, 0, 0 },
+			scale 	= { 1, 1, 1 },
+			aegisVisual = true,
+		},
 
 		{
 			name     = "Trail Examplee",
@@ -160,8 +157,8 @@ return {
 				randomScaleMinFraction = 1,       -- decimal
 				startDisabled = false,            -- bool
 				stateToggleTrigger = "None",      -- enum EMITTERSTATETRIGGER
-				colourStart = {.5,1,1},            -- decimals
-				colourEnd   = {1,1,1},            -- decimals
+				colourStart = {1,1,1},            -- decimals
+				colourEnd   = {0,0,0},            -- decimals
 				opacity     = .5,                  -- decimal
 				scaleStart  = scaleConst/8,                  -- decimal
 				scaleEnd    = scaleConst,                  -- decimal
@@ -180,11 +177,12 @@ return {
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "DRONE",       -- string enum: UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = 35,              -- float: Health, also the unit's heat capacity.
-		health_regen_per_second = 0, -- float: Health regen per second. Duh.
-		max_regen_frac = 0,      -- float: The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
-
-		armour = 0,                -- int: Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
+		health = functions.floor((1 - healthStats.proportionRegenMax) * healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.P})),              -- float: Health, also the unit's heat capacity.
+		health_regen_per_second = 0,
+		aegisMaximum = functions.ceil(healthStats.proportionRegenMax *  healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.P})), 			-- float: Game will automatically determine, but can be manually set here.
+		aegis_regen_per_second = healthStats.aegisRegen[shipConst.class],
+		max_regen_frac = healthStats.proportionRegenMax,
+		armour = 1,                -- int: Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
 		vulnerability_max = 0,   -- float: Prevent the unit from losing more than X fraction of it's armour.
 		shredMultiplier = 0,     -- float: Multiplies incomming shred, pretty self explanatory right?
 
@@ -193,7 +191,6 @@ return {
 
 		heatResistancePercentage = healthStats.proportionRegenMax, -- float: Fraction of heat resistance. (0-1) Normally 0
 		shredResistancePercentage = 0, -- float: Fraction of shred resistance. (0-1) Normally 0. If 0 game automatically assigns shredResistance based on unit class (as is done for the entire vanilla game).
-		aegisMaximum = 0, 			-- float: Game will automatically determine, but can be manually set here.
 		isResourceMatter = false,  	-- bool: For Matter Deposits. When damaged, gives the damage back to the attacking team as Matter.
 		isResourceEnergy = false,  	-- bool: For Energy Deposits. When damaged, gives the damage back to the attacking team as Energy.
 		isUncapturable = false,    	-- bool: Prevents capture, such as from Glowfish.
