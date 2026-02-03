@@ -2,6 +2,16 @@ functions = {}
 
 function functions.floor(number)
 	roundNumber = number - number % 1
+	if number % 1 < 0 then
+		roundNumber = roundNumber - 1
+	end
+	return roundNumber
+end
+function functions.ceil(number)
+	roundNumber = number - number % 1
+	if number % 1 > 0 then
+		roundNumber = roundNumber + 1
+	end
 	return roundNumber
 end
 

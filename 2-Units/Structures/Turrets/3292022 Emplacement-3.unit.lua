@@ -126,11 +126,11 @@ return {
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "Capital",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = (1 - healthStats.proportionRegenMax) * 6000,
+		health = functions.floor((1 - healthStats.proportionRegenMax) * 6000),
 		health_regen_per_second = healthStats.regen.C,
 		max_regen_frac = 0,
 		aegis_regen_per_second = healthStats.aegisRegen.C * healthStats.structAegisRegenMult,
-		aegisMaximum = healthStats.proportionRegenMax * 6000,
+		aegisMaximum = functions.ceil(healthStats.proportionRegenMax * 6000),
 
 		armour = 40,                --Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
 		vulnerability_max = 0,   --Prevent the unit from losing more than X fraction of it's armour.

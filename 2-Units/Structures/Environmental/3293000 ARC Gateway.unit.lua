@@ -140,7 +140,7 @@ return {
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "TITAN",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = 20000000,
+		health = functions.floor(20000000),
 		health_regen_per_second = 2000,
 		max_regen_frac = 0,
 
@@ -153,7 +153,7 @@ return {
 
 		heatResistancePercentage = healthStats.proportionRegenMax,
 		shredResistancePercentage = 0,
-		aegisMaximum = 0,
+		aegisMaximum = functions.ceil(0),
 		isResourceMatter = false,
 		isResourceEnergy = false,
 		isUncapturable = false,

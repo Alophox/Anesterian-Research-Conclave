@@ -135,7 +135,7 @@ return {
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "TITAN",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = 50000,              --Health, also the unit's heat capacity.
+		health = functions.floor(50000),              --Health, also the unit's heat capacity.
 		health_regen_per_second = 5, --Health regen per second. Duh.
 		max_regen_frac = 0,      --The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
 
@@ -148,7 +148,7 @@ return {
 
 		heatResistancePercentage = healthStats.proportionRegenMax, --Fraction of heat resistance. (0-1) Normally 0
 		shredResistancePercentage = 0, --Fraction of shred resistance. (0-1) Normally 0. If 0 game automatically assigns shredResistance based on unit class (as is done for the entire vanilla game).
-		aegisMaximum = 0, 			--Game will automatically determine, but can be manually set here.
+		aegisMaximum = functions.ceil(0), 			--Game will automatically determine, but can be manually set here.
 		isResourceMatter = false,  	--For Matter Deposits. When damaged, gives the damage back to the attacking team as Matter.
 		isResourceEnergy = false,  	--For Energy Deposits. When damaged, gives the damage back to the attacking team as Energy.
 		isUncapturable = false,    	--Prevents capture, such as from Glowfish.

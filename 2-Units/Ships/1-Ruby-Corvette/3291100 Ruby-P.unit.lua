@@ -103,8 +103,9 @@ return {
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "LIGHT",       -- string enum: UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = (1 - healthStats.proportionRegenMax) * (1 - healthStats.proportionRegenMax) * healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.P}),              -- float: Health, also the unit's heat capacity.
+		health = functions.floor((1 - healthStats.proportionRegenMax) * healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.P})),              -- float: Health, also the unit's heat capacity.
 		health_regen_per_second = 0,
+		aegisMaximum = functions.ceil(healthStats.proportionRegenMax *  healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.P})), 			-- float: Game will automatically determine, but can be manually set here.
 		aegis_regen_per_second = healthStats.aegisRegen[shipConst.class],
 		max_regen_frac = healthStats.proportionRegenMax,
 		armour = functions.floor(healthStats.baseArmor[shipConst.class] * functions.averageMultiplier({healthStats.armorMult.P})),                -- int: Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
@@ -116,7 +117,6 @@ return {
 
 		heatResistancePercentage = healthStats.proportionRegenMax, -- float: Fraction of heat resistance. (0-1) Normally 0
 		shredResistancePercentage = 0, -- float: Fraction of shred resistance. (0-1) Normally 0. If 0 game automatically assigns shredResistance based on unit class (as is done for the entire vanilla game).
-		aegisMaximum = healthStats.proportionRegenMax *  healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.P}), 			-- float: Game will automatically determine, but can be manually set here.
 		isResourceMatter = false,  	-- bool: For Matter Deposits. When damaged, gives the damage back to the attacking team as Matter.
 		isResourceEnergy = false,  	-- bool: For Energy Deposits. When damaged, gives the damage back to the attacking team as Energy.
 		isUncapturable = false,    	-- bool: Prevents capture, such as from Glowfish.

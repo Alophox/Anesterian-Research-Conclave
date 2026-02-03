@@ -256,6 +256,7 @@ weaponStats.hangar = {
 
 healthStats = {
 	regen = {
+		D = 0,
 		L = 1.5,
 		LM = 2,
 		M = 3,
@@ -266,6 +267,7 @@ healthStats = {
 		T = 150,
 	},
 	aegisRegen = {
+		D = 3,
 		L = 6,
 		LM = 8,
 		M = 12,
@@ -278,6 +280,7 @@ healthStats = {
 	structAegisRegenMult = 1,
 	proportionRegenMax = .25,
 	baseHealth = {
+		D = 35,
 		L = 150,
 		LM = 300,
 		M = 600,
@@ -297,6 +300,7 @@ healthStats = {
 		S = .7,
 	},
 	baseArmor = { -- Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
+		D = 1,
 		L = 5,
 		LM = 7,
 		M = 10,

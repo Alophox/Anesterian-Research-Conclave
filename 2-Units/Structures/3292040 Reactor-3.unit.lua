@@ -179,15 +179,11 @@ return {
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "HEAVY",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = 3000,
+		health = functions.floor((1 - healthStats.proportionRegenMax) * 3000),
 		health_regen_per_second = healthStats.regen.H,
 		max_regen_frac = 0,
-
-		health = (1 - healthStats.proportionRegenMax) * 2000,
-		health_regen_per_second = healthStats.regen.M,
-		max_regen_frac = 0,
-		aegis_regen_per_second = healthStats.aegisRegen.M * healthStats.structAegisRegenMult,
-		aegisMaximum = healthStats.proportionRegenMax * 2000,
+		aegis_regen_per_second = healthStats.aegisRegen.H * healthStats.structAegisRegenMult,
+		aegisMaximum = functions.ceil(healthStats.proportionRegenMax * 3000),
 
 		armour = 10,
 		vulnerability_max = 0,
@@ -198,7 +194,6 @@ return {
 
 		heatResistancePercentage = healthStats.proportionRegenMax,
 		shredResistancePercentage = 0,
-		aegisMaximum = 0,
 		isResourceMatter = false,
 		isResourceEnergy = false,
 		isUncapturable = false,
