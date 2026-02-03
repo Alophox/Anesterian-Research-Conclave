@@ -200,7 +200,7 @@ weaponStats.lightning = {
 
 -- missiles have two turrets per 'slot', so damage is half
 weaponStats.missile = {
-	baseRange	= 12,
+	baseRange	= 13,
 	baseRetargetRange = 11.5,
 	baseCloakRange = 2,
 	baseDMG		= 40,
