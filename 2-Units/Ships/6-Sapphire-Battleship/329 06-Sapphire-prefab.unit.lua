@@ -342,13 +342,13 @@ function prefab.ship.sapphire.core.G(scaleConst, isGhost, ghostIndex, ghostMat)
 
 
 			prefab.weapon.lightning.M(
-				{ -4.75, 1.75, -.75 },
+				{ -4.74, 1.76, -.75 },
 				{ 0, 0, 45 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.lightning.M(
-				{ 4.75, 1.75, -.75 },
+				{ 4.74, 1.76, -.75 },
 				{ 0, 0, -45 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
