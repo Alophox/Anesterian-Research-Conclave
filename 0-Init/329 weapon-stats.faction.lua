@@ -107,7 +107,7 @@ weaponStats.cannon = {
 	},
 	velocity	= 9,
 	accuracy	= .9,
-	impulse		= .01,
+	impulse		= .005,
 	sfxID		= 15,
 }
 
