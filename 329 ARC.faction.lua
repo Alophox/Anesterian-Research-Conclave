@@ -28,7 +28,7 @@ return {
 		3292030, 3292031, 3292040, --economy
 	}, -- int array: A list of unit TypeIDs that the player is allowed to build, both structures and ships.
 	skirmish_platforms = { 3292000 },      -- Initial platforms/stationary structures
-	skirmish_ais = { "287ab6d5-f7d6-4eeb-8413-0f16da465efc" },             --This doesn't work yet, please wait. Luke 2025/04/18
+	skirmish_ais = { "287ab6d5-f7d6-4eeb-8413-0f16da465efc", "7d4441ad-42b5-474f-aa13-f4a5b0efc660", "a5d1c7c4-1396-4122-b64a-59ac44ec5b08", "bb6bb183-b65e-4558-b899-40d74ab5f168", "38a6aad6-4186-438d-8ebc-017e5b15ab22" },
 	
 	-- Content catalog (for editor and databank)
 	ships = { 
