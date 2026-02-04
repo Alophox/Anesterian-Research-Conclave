@@ -167,7 +167,7 @@ return {
 		explosionType = "FLAK",          	-- string enum: EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
 		explosionVolatility = 0,            	-- float: 1000 * unit scale * volatility = area damage when a unit of scale 2 or greater dies.
 		explosionSizeOveride = weaponStats.cannon.baseAOE * weaponStats.rangeMult[weaponConst.size],             	-- float: Size of the visual explosion. A Tolly is 0.4 in size. 0 is automatic.
-		flashSizeOverride = weaponStats.cannon.baseAOE * weaponStats.rangeMult[weaponConst.size] / 2,                	-- float: Size of the white internal flash. 0 is automatic.
+		flashSizeOverride = weaponStats.cannon.baseAOE * weaponStats.rangeMult[weaponConst.size] * weaponStats.cannon.minAOEMult,                	-- float: Size of the white internal flash. 0 is automatic.
 		forceShockwave = false,               	-- bool: Forces a repulsive shockwave to be created, uses explosionSizeOveride or auto if not set.
 		preventShockwave = false,             	-- Prevents a repulsive shockwave from being created automatically on units scale 1+
 		randomiseInAllDirections = false,     	--Let the explosion randomise it's direction.

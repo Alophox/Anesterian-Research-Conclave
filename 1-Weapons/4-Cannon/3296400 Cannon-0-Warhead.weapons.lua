@@ -84,7 +84,7 @@ return {
           aoeData = {
                maximumDegrees = 180,    --Degrees from forward that units can be hit. Weapons spawn AOE's facing the same direction as them.
                radiusOuter = weaponStats.cannon.baseAOE * weaponStats.rangeMult[weaponConst.size],         --Damage drops off to 0 at outer. Linear scale. A tolly is 0.4 units
-               radiusInner = weaponStats.cannon.baseAOE * weaponStats.rangeMult[weaponConst.size] / 2,          --Full damage to units within inner.
+               radiusInner = weaponStats.cannon.baseAOE * weaponStats.rangeMult[weaponConst.size] * weaponStats.cannon.minAOEMult,          --Full damage to units within inner.
           },
 
           --Audio
