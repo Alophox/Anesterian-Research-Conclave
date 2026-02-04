@@ -1,0 +1,153 @@
+scaleConst = .78;
+return {
+
+	-- 🟦 DEFINITIONS
+	unitName                    = "329-emplacement_1-missile",              	-- Internal name for debugging and errors.
+	unitDisplayName             = "Small Emplacement-Missile",                    	-- Actual display name of the unit in the Databank, HUD, etc.
+	unitTooltip                 = "", 						   	-- Shown when moused over in the HUD.
+	unitBlurb                   = "Fully modular turret base!", 		-- Shown just below the unit name in tooltips and databank.
+	unitBlurbExcludeFromTooltip = false,                           	-- The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
+	hotkey                      = "F",                             	-- For buildbar. The hotkey for this unit.
+	picture                     = "329-emplacement_1-missile.png",            -- The name of the image file in this folder to be used for this unit.
+
+	-- 📘 DATABANK ENTRY
+	databankEntry               = {
+		visibility                  = "HIDDEN", --VISIBLE (always available) / HIDDEN (never visible)/ DISCOVER (visible once required level)
+		requiredLevelForVisible     = "",
+		requiredLevelForDescription = "",
+		tactical                    = "", --Added to the top of all tooltips and Databank descriptions. Used to quickly explain what a unit is good at doing. Strong against, decent against, weak against.
+		description                 =
+		"WOW",
+		weaponInfo                  = functions.combineWeaponInfo({
+			prefab.weapon_info.module.emplacement.missile.S(1, "vls"),
+		}),
+		relatedUnitIDs              = {3292020} --TypeID of other units in the family tree
+	},
+
+	controllable 	= false;
+	unselectable = true;
+	untargetable = true;
+	unhittable 	= true;
+
+
+	-- BODY SETUP
+	scale                       = scaleConst,                                          -- A Tolly is scale 0.4, all units are a uniform scale. Normalise mesh size to 1 in Blender. (make sure the longest horizontal part (width/length) is 1)
+	-- mainMesh                    = "329-Emplacement/Emplacement-1",   -- Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
+	
+	--NOTICE, WORKING WITH MATERIALS AND MESHS:
+	--When making a mesh in Blender, you can assign materials to different surfaces. The number of materials used create 'material slots' for the mesh.
+	--ATS cannot use the Blender materials, and so we must define them in a .materials.lua file within the same mod folder.
+	--Inorder for ATS to know which material goes to which material slot on a mesh, we must define the ordering.
+	--Assign materials here in the same order as they are defined on the object in your Blender file. 
+	--(Can only get materials from .materials.lua files in this mod folder.)
+	materials                   = { "329_MT_arc_hull", "329_MT_arc_teamGlow", "329_MT_arc_teamColour", "329_MT_arc_hull_dark" },
+
+	-- Percieved dimensions of the unit. Multiplied against scale. Controls how big the unit is percieved by other units. 
+	-- Units cannot actually "see" anything, so we need to mathematically define how big the unit is for standoff behaviour among other things.
+	-- CONTROLS: standoff, targeting, repulsion distance.
+	-- Better to have the dimensions too small, than too large. Otherwise units will struggle to get in actual firing range of the target's colliders.
+	inEditor = true,
+    autoColourElements = true,
+    editorDontColour = false,
+	colliderDimensions = {
+		widthMultiplier  = .97, --Multiplied by scale to determine the percieved width of the unit. Long units (Vaalkorei) have this at about 0.5~0.6, aka we're only half as wide as we are long.
+		heightMultiplier = 1, --Multiplied by scale to determine the percieved height of the unit, flat units (Kontaalen) have this at about 0.6, aka we're shorter than we are long.
+		lengthMultiplier = .97, --Multiplied by scale to determine the percieved length of the unit. wide units (Soul Warden Fore section) have this at about 0.5, aka we're only half as long as we are wide.
+	},
+
+	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
+	data                        = {
+		typeID       = 3297000, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
+		factionID    = 329, 	--The faction this unit is associated with in the Databank.
+		macroType    = "AUTO", 	--MacroTarget state: AUTO (is capital or command?) / TRUE / FALSE
+		cost_matter  = 10, 		--integer, For structures.
+		cost_energy  = 5, 		--integer, For structures.
+		cost_supply  = 0, 		--integer, For structures. Logistics cost.
+		cost_time    = 7, 		--integer, For structures, how long in seconds it takes to build.
+		techRequired = 0
+	},
+
+	displayAreaRadius        = weaponStats.missile.baseRange * weaponStats.rangeMult.S,            -- decimal
+	displayAreaColour        = { 1,0,0,.2 },  -- decimals
+
+	-- 🟦 PARTS
+	parts = {
+		prefab.part.module.emplacement.missile.S(scaleConst, 0, "vls", false),
+	},
+
+	ghostParts = {
+		prefab.part.module.emplacement.missile.S(scaleConst, 0, "vls", true),
+	},
+
+	-- 🟦 HEALTH & ARMOR
+	health = {
+		unitClass = "MEDIUM",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
+		health = functions.floor(500),              --Health, also the unit's heat capacity.
+		health_regen_per_second = 3, --Health regen per second. Duh.
+		max_regen_frac = 0,      --The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
+
+		armour = 10,                --Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
+		vulnerability_max = 0,   --Prevent the unit from losing more than X fraction of it's armour.
+		shredMultiplier = 0,     --Multiplies incomming shred, pretty self explanatory right?
+
+		explosionSFX = 0,          --Sorry don't have a table for this. Just use 0.
+		explosionSFXIntensity = 0.8, --The importance of a sound, affects how far away it is heard and what other sounds it can override as there can only be 255 sounds at a time. Platform Death/Nuke = 10, Ekudon cannon = 4, Tolly gun = 0.2, Otorell gun = 0.4,
+
+		heatResistancePercentage = healthStats.proportionRegenMax, --Fraction of heat resistance. (0-1) Normally 0
+		shredResistancePercentage = 0, --Fraction of shred resistance. (0-1) Normally 0. If 0 game automatically assigns shredResistance based on unit class (as is done for the entire vanilla game).
+		aegisMaximum = functions.ceil(0), 			--Game will automatically determine, but can be manually set here.
+		isResourceMatter = false,  	--For Matter Deposits. When damaged, gives the damage back to the attacking team as Matter.
+		isResourceEnergy = false,  	--For Energy Deposits. When damaged, gives the damage back to the attacking team as Energy.
+		isUncapturable = false,    	--Prevents capture, such as from Glowfish.
+		ignoreImpulse = false,     	--Prevents getting pushed around by attacks. Such as Untresnafol bullets, or Heron railgun rounds.
+
+		targetingPriorityMultiplier = 1.0, --Useful on torpedos. How important is this unit to attack? Strix torpedos = ~2
+		untargetableTime = 0,    --Useful on drones/missiles. How long after spawning is this unit untargetable? (0 for everything, except missiles and drones)
+
+		--###################### CLOAK DOES NOT WORK, DON'T USE IT YET. - Luke 2025/04/16
+		doesCloaking = false,                 --Can cloak, and become untargetable.
+		isCloaked = false,                    --Current state of cloak.
+		cloakFrac = 0,
+		cloakTime = 1.0,                      --How long it takes to cloak.
+		decloakDistance = 0,                --How close it can get to something before being visible. Used by Glowfish blobs to let them get close enough to targets.
+
+		phaseBlockFraction = 0,               --How much Phase is used to block damage. I don't think this works. 
+		
+		lifetime = 0,                         --How long before this unit self-destructs. (drones, missiles, bullets)
+		explodeOnTimeout = false,             --Was it a peaceful death?
+
+		explosionType = "EXPLOSION",          	-- EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
+		explosionVolatility = 0,            	-- 1000 * unit scale * volatility = area damage when a unit of scale 2 or greater dies.
+		explosionSizeOveride = 0,             	-- Size of the visual explosion. A Tolly is 0.4 in size. 0 is automatic.
+		flashSizeOverride = 0,                	-- Size of the white internal flash. 0 is automatic.
+		forceShockwave = false,               	-- Forces a repulsive shockwave to be created, uses explosionSizeOveride or auto if not set.
+		preventShockwave = false,             	-- Prevents a repulsive shockwave from being created automatically on units scale 1+
+		randomiseInAllDirections = false,     	--Let the explosion randomise it's direction.
+		deathUnitSpawnDoNotRandomiseRotation = false, --Randomise the rotation of the unit spawned on death, if any.
+		deathUnitSpawnTypeID = -1,            	--The unit spawned when this dies. -1 is nothing. Used for debris, and Glowfish Blobs.
+		invulnerable = false,                 	--You can't hurt me, little man.
+		unkillable = false,                   	--Even in death, I am eternal.
+		death_countdown = 0,                  	--If the unit dies, but has not taken enough damage for InstaDeath, count down this long then blowup.
+		mass = 0,                             	--Mass override, leave 0 for automatic (calculated from health, armour, and densityMult). Affects repulsion and impulse from damage.
+		densityMult = 1.0,                    	--Multiplied agains the automatic mass calculation.
+		tonnage = 40,                         	--Visual display value, does nothing.
+		ignoreInstaDeath = false,             	--If a unit takes more than 150% damage (it's at negative health) it will explode instantly. True prevents that.
+		alertPlayerOnDeath = false,           	--If on the player's team, log an Alert that this unit has died. Should make it true on all buildings, and hero units (Hemedall).
+	},
+
+	-- 🟦 STRUCTURE
+	isStructure = false,
+	structure = {
+		type = "NONE", --NONE, ECONOMY, PRODUCTION, DEFENCE, OFFENCE, UTILITY, EXTENDER
+		rectangle = {1,1}, 		-- optional, float2: xz dimensions of the influence, facing ^
+		--ring = {0, 2.5},			-- optional, float2: Inner and outer ring radius. Inner > 0 lets you make donuts. If structure footprint is odd, add +0.5 for a cleaner circle.
+		--matrixDimensions = {5,5},
+		--matrix = {				-- optional, int bool: matrix for detailed footprints. 0 = empty space, 1 = occupied space
+		--	0, 1, 1, 1, 0,
+		--	1, 1, 1, 1, 1,
+		--	1, 1, 1, 1, 1,
+		--	1, 1, 1, 1, 1,
+		--	0, 1, 1, 1, 0,
+		-- },
+	},
+}
