@@ -77,22 +77,13 @@ return {
 			},
 		},
 		{
-			name     = "Build",
+			name     = "Aegis",
 			mesh    = "329-Emplacement/Emplacement-2",
 			materials = { "329_MT_arc_0_aegis", "329_MT_arc_0_aegis", "329_MT_arc_0_aegis", "329_MT_arc_0_aegis" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
 			aegisVisual = true,
-		},
-		{
-			name     = "Build",
-			mesh    = "329-Emplacement/Emplacement-2",
-			materials = { "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build" },
-			pos       = { 0, 0, 0 },        --Relative local position of this object.
-			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
-			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
-			destroyOnConstructionComplete = true,
 		},
 		{
 			name     = "Build",

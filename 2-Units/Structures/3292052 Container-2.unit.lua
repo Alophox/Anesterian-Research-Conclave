@@ -73,15 +73,6 @@ return {
 		{
 			name     = "Build",
 			mesh    = "329-Cargo-Container-2/Container",
-			materials = { "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build" },
-			pos       = { 0, 0, 0 },        --Relative local position of this object.
-			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
-			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
-			destroyOnConstructionComplete = true,
-		},
-		{
-			name     = "Build",
-			mesh    = "329-Cargo-Container-2/Container",
 			materials = { "329_MT_arc_1_build", "329_MT_arc_1_build", "329_MT_arc_1_build", "329_MT_arc_1_build" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
