@@ -643,7 +643,7 @@ end
 
 function prefab.weapon_info.sapphire.bow.S()
 	weapon_info = {
-		prefab.weapon_info.lightning.XS(1),
+		prefab.weapon_info.laser.XS(1),
 	}
 	return weapon_info
 end
@@ -661,7 +661,7 @@ function prefab.ship.sapphire.bow.S(scaleConst, isGhost, ghostIndex, ghostMat)
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
-			prefab.weapon.lightning.XS(
+			prefab.weapon.laser.XS(
 				{ 0, 0, 6.5 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
