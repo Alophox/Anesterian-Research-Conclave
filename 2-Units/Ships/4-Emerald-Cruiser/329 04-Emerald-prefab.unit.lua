@@ -191,7 +191,7 @@ function prefab.ship.emerald.stern.A(scaleConst, isGhost, ghostIndex, ghostMat)
 end
 function prefab.weapon_info.emerald.stern.C()
 	weapon_info = {
-		prefab.weapon_info.hangar.quartz.A(2),
+		prefab.weapon_info.hangar.quartz.B(2),
 		prefab.weapon_info.laser.S(2),
 	}
 	return weapon_info
@@ -209,13 +209,13 @@ function prefab.ship.emerald.stern.C(scaleConst, isGhost, ghostIndex, ghostMat)
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
-			prefab.weapon.hangar.quartz.A(
+			prefab.weapon.hangar.quartz.B(
 				{ -3, 0, -1.25 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz.A(
+			prefab.weapon.hangar.quartz.B(
 				{ 3, 0, -1.25 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },
