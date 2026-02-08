@@ -30,7 +30,7 @@ return {
 										" - Vulnerable to Artillery\n"
 										,
 		description                 =
-		"The smallest of the Brawler designated ships, excels against its own weight class. While its weaponry utlizises plasma, it is of the nonthermal variety- and therefore not that good at imparting heat.",
+		"The smallest of the Brawler designated ships, excels against its own weight class.",
 		weaponInfo                  = functions.combineWeaponInfo({
 				prefab.weapon_info.ruby.core.B(),
 		}),

@@ -29,7 +29,7 @@ return {
 										" - Poor against 30+ armor\n"..
 										" - Vulnerable to Artillery\n",
 		description                 =
-		"The heaviest brawler designated ship, this is meant to run through blockades- or in the Spance, run through heavy Katalosteer fire. It is one of the ships of all time at this role. While its weaponry utlizises plasma, it is of the nonthermal variety- and therefore not that good at imparting heat.",
+		"The heaviest brawler designated ship, this is meant to run through blockades- or in the Spance, run through heavy Katalosteer fire. It is one of the ships of all time at this role.",
 		weaponInfo                  = functions.combineWeaponInfo({
 			prefab.weapon_info.aquamarine.stern.B(),
 			prefab.weapon_info.aquamarine.core.B(),

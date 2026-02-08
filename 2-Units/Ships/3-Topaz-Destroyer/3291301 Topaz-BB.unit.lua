@@ -29,7 +29,7 @@ return {
 										" - Poor against 30+ armor\n"..
 										" - Vulnerable to Artillery\n",
 		description                 =
-		"Suitable anti-light. While its weaponry utlizises plasma, it is of the nonthermal variety- and therefore not that good at imparting heat.",
+		"Suitable anti-light.",
 		weaponInfo                  = functions.combineWeaponInfo({
 			prefab.weapon_info.topaz.stern.B(),
 			prefab.weapon_info.topaz.bow.B(),
