@@ -5,9 +5,9 @@
 
 MOD INFO:
 
-ID: 329ARC v0.5.3
+ID: 329ARC v0.6.0
 
-ATS: v0.92
+ATS: v0.91
 
 Faction IDs used: 329
 
