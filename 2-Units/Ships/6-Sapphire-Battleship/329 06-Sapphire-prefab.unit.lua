@@ -237,13 +237,13 @@ function prefab.ship.sapphire.stern.C(scaleConst, isGhost, ghostIndex, ghostMat)
 				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.hangar.quartz.A(
-				{ -5, 0, -5.75 },
+				{ -5, 0, -7.25 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.hangar.quartz.A(
-				{ 5, 0, -5.75 },
+				{ 5, 0, -7.25 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat

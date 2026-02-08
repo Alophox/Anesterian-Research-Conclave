@@ -17,7 +17,7 @@ function prefab.weapon.hangar.quartz.P(pos, rot, sca, isGhost, ghostIndex, ghost
 	prefab_part = {
 		name	= "Quartz Hangar",
 		mesh      = "329-Hangar/Hangar",
-		materials = { "329_MT_arc_teamGlow",  "329_MT_arc_teamColour", "329_MT_arc_hull" },
+		materials = { "329_MT_arc_hull_dark", "329_MT_arc_teamGlow",  "329_MT_arc_teamColour",  },
 		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
 		rotation  = rot,        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
 		scale 	= sca,					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
@@ -66,7 +66,7 @@ function prefab.weapon.hangar.quartz.B(pos, rot, sca, isGhost, ghostIndex, ghost
 	prefab_part = {
 		name	= "Quartz Hangar",
 		mesh      = "329-Hangar/Hangar",
-		materials = { "329_MT_arc_teamGlow",  "329_MT_arc_teamColour", "329_MT_arc_hull" },
+		materials = { "329_MT_arc_hull_dark", "329_MT_arc_teamGlow",  "329_MT_arc_teamColour" },
 		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
 		rotation  = rot,        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
 		scale 	= sca,					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
@@ -115,7 +115,7 @@ function prefab.weapon.hangar.quartz.G(pos, rot, sca, isGhost, ghostIndex, ghost
 	prefab_part = {
 		name	= "Quartz Hangar",
 		mesh      = "329-Hangar/Hangar",
-		materials = { "329_MT_arc_teamGlow", "329_MT_arc_hull_dark",  "329_MT_arc_teamColour", "329_MT_arc_hull" },
+		materials = { "329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_teamColour" },
 		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
 		rotation  = rot,        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
 		scale 	= sca,					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
@@ -164,7 +164,7 @@ function prefab.weapon.hangar.quartz.A(pos, rot, sca, isGhost, ghostIndex, ghost
 	prefab_part = {
 		name	= "Quartz Hangar",
 		mesh      = "329-Hangar/Hangar",
-		materials = { "329_MT_arc_teamGlow", "329_MT_arc_hull_dark",  "329_MT_arc_teamColour", "329_MT_arc_hull" },
+		materials = { "329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_teamColour" },
 		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
 		rotation  = rot,        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
 		scale 	= sca,					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
