@@ -55,8 +55,8 @@ weaponStats = {
 
 weaponStats.railgun = {
 	baseRange	= 12,
-	baseDMG		= 30,
-	baseHeat	= 15,
+	baseDMG		= 40,
+	baseHeat	= 10,
 	instances	= 2,
 	baseCD		= 2.9,
 	secondsPerShot=0,
