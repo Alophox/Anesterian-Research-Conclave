@@ -8,7 +8,7 @@ return {
 	-- Skirmish setup
 	skirmish = true,                     -- Should appear in skirmish mode
 	skirmish_loadout = { 
-		3291000, --dronn (size 0)
+		3291001, 3291002, 3291004, 3291005, --dronn (size 0)
 		3291100, 3291101, 3291102, --light size 1
 		3291200, 3291201, 3291202, --light size 2
 		3291300, 3291301, 3291302, --medium size 3
@@ -32,7 +32,7 @@ return {
 	
 	-- Content catalog (for editor and databank)
 	ships = { 
-		3291000, --dronn (size 0)
+		3291001, 3291002, 3291004, 3291005, --dronn (size 0)
 		3291100, 3291101, 3291102, --light size 1
 		3291200, 3291201, 3291202, --light size 2
 		3291300, 3291301, 3291302, --medium size 3

@@ -34,10 +34,10 @@ function prefab.weapon.railgun.D(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					turnMode = "Linear", --string enum: Linear / Acceleration
 					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
 					mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
-						left = 25, --float:
-						right = 25,--float:
-						up = 15,	 --float:
-						down = 15  --float:
+						left = 1, --float:
+						right = 1,--float:
+						up = 1,	 --float:
+						down = 1  --float:
 					},
 				},
 

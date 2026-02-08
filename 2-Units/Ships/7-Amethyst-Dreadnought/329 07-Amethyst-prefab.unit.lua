@@ -398,7 +398,7 @@ end
 
 function prefab.weapon_info.amethyst.stern.C()
 	weapon_info = {
-		prefab.weapon_info.hangar.quartz(12),
+		prefab.weapon_info.hangar.quartz.A(12),
 	}
 	return weapon_info
 end
@@ -415,74 +415,74 @@ function prefab.ship.amethyst.stern.C(scaleConst, isGhost, ghostIndex, ghostMat)
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.A(
 				{ -7, 0, -21 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.A(
 				{ -7, 0, -19.5 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.A(
 				{ -7, 0, -18 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.A(
 				{ -7, 0, -16.5 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.A(
 				{ -7, 0, -15 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.A(
 				{ -7, 0, -13.5 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
 
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.A(
 				{ 7, 0, -21 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.A(
 				{ 7, 0, -19.5 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.A(
 				{ 7, 0, -18 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.A(
 				{ 7, 0, -16.5 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.A(
 				{ 7, 0, -15 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.A(
 				{ 7, 0, -13.5 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },
@@ -897,7 +897,7 @@ end
 function prefab.weapon_info.amethyst.core_aft.C()
 	weapon_info = functions.combineWeaponInfo({
 		prefab.weapon_info.hangar.citrine(2),
-		{prefab.weapon_info.hangar.quartz(8)},
+		{prefab.weapon_info.hangar.quartz.G(8)},
 		{prefab.weapon_info.laser.M(2)},
 		-- prefab.weapon_info.missile.hls.S(4),
 	});
@@ -929,50 +929,50 @@ function prefab.ship.amethyst.core_aft.C(scaleConst, isGhost, ghostIndex, ghostM
 				isGhost, ghostIndex, ghostMat
 			),
 
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.G(
 				{ -7, 0, -11.5 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.G(
 				{ -7, 0, -4 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.G(
 				{ -7, 0, -2.5 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.G(
 				{ -7, 0, -1 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
 
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.G(
 				{ 7, 0, -11.5 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.G(
 				{ 7, 0, -4 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.G(
 				{ 7, 0, -2.5 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.G(
 				{ 7, 0, -1 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },
@@ -1357,7 +1357,7 @@ end
 function prefab.weapon_info.amethyst.core_fore.C()
 	weapon_info = functions.combineWeaponInfo({
 		prefab.weapon_info.hangar.ruby(2),
-		{prefab.weapon_info.hangar.quartz(6)},
+		{prefab.weapon_info.hangar.quartz.B(6)},
 		{prefab.weapon_info.laser.M(2)},
 		-- prefab.weapon_info.missile.hls.S(4),
 	})
@@ -1390,38 +1390,38 @@ function prefab.ship.amethyst.core_fore.C(scaleConst, isGhost, ghostIndex, ghost
 			),
 
 
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.B(
 				{ -7, 0, 1 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.B(
 				{ -7, 0, 2.5 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.B(
 				{ -7, 0, 8.5 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
 
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.B(
 				{ 7, 0, 1 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.B(
 				{ 7, 0, 2.5 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.B(
 				{ 7, 0, 8.5 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },
@@ -1907,7 +1907,7 @@ end
 
 function prefab.weapon_info.amethyst.bow.C()
 	weapon_info = {
-		prefab.weapon_info.hangar.quartz(10),
+		prefab.weapon_info.hangar.quartz.P(10),
 		-- prefab.weapon_info.laser.S(2),
 		-- prefab.weapon_info.missile.hls.S(4),
 	}
@@ -1926,63 +1926,63 @@ function prefab.ship.amethyst.bow.C(scaleConst, isGhost, ghostIndex, ghostMat)
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.P(
 				{ -3, 1, 17 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.P(
 				{ -1.5, 1, 17 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.P(
 				{ -3, -1, 17 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.P(
 				{ -1.5, -1, 17 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
 
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.P(
 				{ 0, 1, 17 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.P(
 				{ 0, -1, 17 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
 
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.P(
 				{ 3, 1, 17 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.P(
 				{ 1.5, 1, 17 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.P(
 				{ 3, -1, 17 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.P(
 				{ 1.5, -1, 17 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },

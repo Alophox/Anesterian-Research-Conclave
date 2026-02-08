@@ -180,7 +180,7 @@ return {
 		reverseAccelMultiplier = functions.averageMultiplier({healthStats.retreatMult.B}),      -- float: Fraction of accel used for reverse/breaking
 		inertialCorrection = true,         --Try to cancel out excess velocity in directions you don't want to go.
 		isStrafing = false,                 --Should this unit strafe around? (Partell, Skua)
-		standoffDistance = weaponStats.fireRangeMult * weaponStats.rangeMult["S"] * weaponStats.cannon.baseRange-1,              -- float: How far away from a target's ColliderDimensions should a unit hold position?
+		standoffDistance = weaponStats.fireRangeMult * weaponStats.rangeMult["S"] * weaponStats.cannon.baseRange-2,              -- float: How far away from a target's ColliderDimensions should a unit hold position?
 		retreatDistance = (weaponStats.fireRangeMult * weaponStats.rangeMult["S"] * weaponStats.cannon.baseRange)/2,               -- float: How far away from a target's ColliderDimensions should a unit begin to retreat?
 		strafeMargin = 1.5,                -- float: How far away from standoffDistance strafe thrust is allowed to start. Default = 1
 		useMinimumWorldYPosition = false,

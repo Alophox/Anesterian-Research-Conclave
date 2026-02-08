@@ -190,7 +190,7 @@ end
 function prefab.weapon_info.citrine.core.C()
 	weapon_info = {
 		prefab.weapon_info.laser.S(1),
-		prefab.weapon_info.hangar.quartz(1),
+		prefab.weapon_info.hangar.quartz.P(1),
 		prefab.weapon_info.missile.hls.S(2),
 	}
 	return weapon_info
@@ -215,7 +215,7 @@ function prefab.ship.citrine.core.C(scaleConst, isGhost, ghostIndex, ghostMat)
 				isGhost, ghostIndex, ghostMat
 			),
 
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.P(
 				{ 0, 0, 2.75 },
 				{ 0, 0, 0 },
 				{ 1, 1, 1 },

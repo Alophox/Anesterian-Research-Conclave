@@ -1,7 +1,7 @@
 return {
-     id = 3295600,
-     name = "ARC Quartz Launcher",
-     blurb = "Drone.",
+     id = 3295605,
+     name = "ARC Zircon Launcher",
+     blurb = "Plasma Railgun Drone.",
      metaNote = "Used on Carriers",
      hideInDatabank = false,
      displayType = "DRONE", -- NORMAL, DRONE
@@ -123,7 +123,7 @@ return {
           barrelIndexCurrent = 0,            --Controls which barrel (in child order) the weapon will start with.
 
           --LAUNCHER / TESLA Controls
-          spawnID = 3291000,       --unit typeID
+          spawnID = 3291005,       --unit typeID
           arrivalData = {
                type           = "CONSTRUCT",    --NONE, ARRIVE, DEPART, CONSTRUCT, LAUNCH, WARP
                -- arrivalDuration= 1.0,

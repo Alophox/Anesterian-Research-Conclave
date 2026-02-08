@@ -1,5 +1,6 @@
 shipConst = {
 	class="D",
+	typeCore="P",
 }
 scaleConst = .15;
 return {
@@ -8,7 +9,7 @@ return {
 	unitName                    = "329-quartz",                 -- string: Internal name for debugging and errors.
 	unitDisplayName             = "Quartz",                         -- string: Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   -- string: Shown when moused over in the HUD.
-	unitBlurb                   = "Fighter", -- string: Shown just below the unit name in tooltips and databank.
+	unitBlurb                   = "Fighter Drone", -- string: Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           -- bool: The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
 	hotkey                      = "G",                             -- Unity KeyCode: For buildbar. The hotkey for this unit.
 	picture                     = "329-quartz.png",             -- string filename: The name of the image file in this folder to be used for this unit.
@@ -23,24 +24,24 @@ return {
 		visibility                  = "VISIBLE", -- string enum: VISIBLE (always available) / HIDDEN (never visible)/ DISCOVER (visible once required level)
 		requiredLevelForVisible     = "", 			-- string;
 		requiredLevelForDescription = "", 			-- string;
-		tactical                    = 	"<color=yellow>Drone Assault</color>\n"..
-										" - Decent against Everything\n"..
-										" - Poor against Point Defense\n"
-										,
+		tactical                    = 	"<color=yellow>Drone Point Defense</color>\n"..
+										" - Good against Drones / Missiles\n"..
+										" - Decent against Lights\n"..
+										" - Poor against 2+ Armour \n"..
+										"",
 		description                 =
 		"Once upon a time, the Quartz' ancestors once prowled the skies of foreign planets. Nowadays this ancestory can be seen in the immobile wings of the craft.\n"..
 		"\n"..
-		"This fighter was the very first to receive a capacitor capable of not exploding when faced with a Breach Core, utilized in powering up a sizable shield. Unfortunately, it is unable to supply enough power to regenerate the shield, and the capacitor has reduced structual integrity significantly. In the Spance, its cockpit has replaced by a remote control suite, converting it into a drone.",
-		weaponInfo                  = { 	-- int3 array: Tells the databank which weaponDatas to grab and display for this unit. Not automatic you have to do this, I'm sorry.
-			prefab.weapon_info.laser.D(2),  		-- (int, int, int): weaponID, count, subMunitionWeaponID (bullet, missile, etc, 0 = none) This gets the damage data of the subMunitionWeapon if it has any, important for bullets which themselves do damage via a subweapon.
-			-- prefab.weapon_info.lightning.D(2)
-		},
+		"This fighter was the very first to receive a capacitor capable of not exploding when faced with a Breach Core, utilized in powering up a sizable, regenerating shield. In the Spance, its cockpit has replaced by a remote control suite, converting it into a drone.",
+		weaponInfo                  = functions.combineWeaponInfo({
+				prefab.weapon_info.quartz.core[shipConst.typeCore](),
+		}),
 		relatedUnitIDs              = {} 	-- int array: TypeID of other units in the family tree
 	},
 
 	-- BODY SETUP
 	scale                       	= scaleConst,                                          -- float: A Tolly is scale 0.4, all units are a uniform scale. Normalise XY mesh size to 1 in Blender. (controls selection ring, among other things. the longest horizontal part (width/length) is 1)
-	mainMesh                    	= "329-0-Quartz/Quartz",   -- string: Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
+	-- mainMesh                    	= "329-0-Quartz/Quartz",   -- string: Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
 	
 	--NOTICE, WORKING WITH MATERIALS AND MESHS:
 	--When making a mesh in Blender, you can assign materials to different surfaces. The number of materials used create 'material slots' for the mesh.
@@ -48,7 +49,7 @@ return {
 	--Inorder for ATS to know which material goes to which material slot on a mesh, we must define the ordering.
 	--Assign materials here in the same order as they are defined on the object in your Blender file. 
 	--(Can only get materials from .materials.lua files in this mod folder.)
-	materials                   = { "329_MT_arc_teamGlow", "329_MT_arc_hull_dark", "329_MT_arc_teamGlow","329_MT_arc_teamColour", "329_MT_arc_hull" },
+	-- materials                   = { "329_MT_arc_teamGlow", "329_MT_arc_hull_dark", "329_MT_arc_teamGlow","329_MT_arc_teamColour", "329_MT_arc_hull" },
 
 	-- Percieved dimensions of the unit. Multiplied against scale. Controls how big the unit is percieved by other units. 
 	-- Units cannot actually "see" anything, so we need to mathematically define how big the unit is for standoff behaviour among other things.
@@ -65,7 +66,7 @@ return {
 
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data = {
-		typeID       = 3291000, -- int: !!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
+		typeID       = 3291001, -- int: !!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
 		factionID    = 329, -- int: The faction this unit is associated with in the Databank.
 		macroType    = "AUTO", -- string enum: MacroTarget state: AUTO (is capital or command?) / TRUE / FALSE
 		cost_matter  = 0, -- int: For structures.
@@ -90,96 +91,23 @@ return {
 				},
 			},
 		},
-		-- prefab.weapon.laser.D(
-		-- 	{ 0, 0, .825*.1/scaleConst },
-		-- 	{ 0, 0, 0 },
-		-- 	{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-		-- 	isGhost
-		-- ),
-		prefab.weapon.laser.D(
-			{ -.2625*.1/scaleConst, 0, .373*.1/scaleConst },
-			{ 0, 0, 0 },
-			{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-			isGhost
-		),
-		prefab.weapon.laser.D(
-			{ .2625*.1/scaleConst, 0, .373*.1/scaleConst },
-			{ 0, 0, 0 },
-			{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
-			isGhost
-		),
-		{
-			name     = "Thruster",
-			position = { 0, 0, -.4125*.1/scaleConst },
-			rotation = { 0, 0, 0 },
-			scale 	= { scaleConst*2, scaleConst*1.5, scaleConst*1.5 },
-			thruster = {
-				-- This part will respond to how the ship tries to move. It will scale along the Z axis (XYZ) starting from 0 (invisible), and return up to it's starting scale.
-				decayTime = 1,	--float: Seconds, how long it takes for the thruster to shrink to 0, or return to full scale.
-				workWhenThrustWithinAngleDegrees = 60, --float: Thrusters are purely visual. For them to know when to visually "thrust" they check the direction that the parent ship is thrusting. How many degrees off can the thrust direction be before the thruster ignores it.
-			},
-
-			-- For thruster visuals, if you want more than one plume for our thruster build it out of multiple subparts.
-			parts = {
-				{
-					name     = "Thruster Plume",
-					mesh     = "329-Thruster/Thruster-Plume",
-					materials  = { "329_MT_arc_thruster_teamGlow", "329_MT_arc_thruster-middle_teamGlow", "329_MT_arc_thruster-outer_teamGlow" },
-					position = { 0, 0, 0 }, --XYZ, Thruster subparts should all be on the same Y point, as they all scale along the parent's Y axis.
-					rotation = { 0, 0, 0 },
-					scale 	= { 1, 1, 1 },
-				},
-			},
-		},
-		{
-			name     = "Aegis",
-			mesh     = "329-0-Quartz/Quartz",
-			materials  = { "329_MT_arc_0_aegis", "329_MT_arc_0_aegis", "329_MT_arc_0_aegis","329_MT_arc_0_aegis", "329_MT_arc_0_aegis" },
-			position = { 0, 0, 0 },
-			rotation = { 0, 0, 0 },
-			scale 	= { 1, 1, 1 },
-			aegisVisual = true,
-		},
-
-		{
-			name     = "Trail Examplee",
-			position = { 0, 0, .0125+-.4125*.1/scaleConst },
-			rotation = { 0, 0, 0 },
-			scale 	= { 1, 1, 1 },
-
-			particleEmitter = {
-				particleType = "RIBBON",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
-				distancePerParticle = .2,       -- decimal
-				minSecondsPerParticle = 0,     -- decimal
-				ejectionVelocity = 2,             -- decimal
-				ejectionVelocityAwayFromEmitter = false, -- bool
-				randomRadius = 0,                 -- decimal
-				randomScaleMinFraction = 1,       -- decimal
-				startDisabled = false,            -- bool
-				stateToggleTrigger = "None",      -- enum EMITTERSTATETRIGGER
-				colourStart = {1,1,1},            -- decimals
-				colourEnd   = {0,0,0},            -- decimals
-				opacity     = .5,                  -- decimal
-				scaleStart  = scaleConst/8,                  -- decimal
-				scaleEnd    = scaleConst,                  -- decimal
-				lifetime    = .1,                  -- decimal
-			},
-			
-		},
+		prefab.ship.quartz.core[shipConst.typeCore](scaleConst, false),
+		prefab.ship.quartz.core[shipConst.typeCore](scaleConst,true, 0, "aegis"),
 	},
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).
-	ghostMesh		= "329-0-Quartz/Quartz",   -- Used for build ghosts on spawners (yards).
-	ghostMaterials = { "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build" }, -- Used for the ghostMesh for build ghosts on spawners (yards).
+	-- ghostMesh		= "329-0-Quartz/Quartz",   -- Used for build ghosts on spawners (yards).
+	-- ghostMaterials = { "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build" }, -- Used for the ghostMesh for build ghosts on spawners (yards).
 	ghostParts 	= {
+		prefab.ship.quartz.core[shipConst.typeCore](scaleConst, true, 2),
 	},
 
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "DRONE",       -- string enum: UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = functions.floor((1 - healthStats.proportionRegenMax) * healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.P})),              -- float: Health, also the unit's heat capacity.
+		health = functions.floor((1 - healthStats.proportionRegenMax) * healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult[shipConst.typeCore]})),              -- float: Health, also the unit's heat capacity.
 		health_regen_per_second = 0,
-		aegisMaximum = functions.ceil(healthStats.proportionRegenMax *  healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.P})), 			-- float: Game will automatically determine, but can be manually set here.
+		aegisMaximum = functions.ceil(healthStats.proportionRegenMax *  healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult[shipConst.typeCore]})), 			-- float: Game will automatically determine, but can be manually set here.
 		aegis_regen_per_second = healthStats.aegisRegen[shipConst.class],
 		max_regen_frac = healthStats.proportionRegenMax,
 		armour = 1,                -- int: Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
@@ -248,13 +176,13 @@ return {
 	movement           = {
 		type = "FREE",                -- string enum: UNITMOVETYPE: MAPLOCKED / FREE --Does this unit act like a normal ship, and stay within the 0-7y world height. Or like a drone/missile?
 		maximumAngleToTarget = 1.57,        -- float: Radians within in which a unit is allowed to accelerate towards a target.
-		acceleration = weaponStats.hangar.velocity,               -- float: The units per second of the ship's acceleration. A tolly is 0.4 units long, and accelerates at 0.35
+		acceleration = weaponStats.hangar.velocity * functions.averageMultiplier({healthStats.accelMult[shipConst.typeCore]}),               -- float: The units per second of the ship's acceleration. A tolly is 0.4 units long, and accelerates at 0.35
 		strafingAccelMultiplier = 0.8,     -- float: Fraction of accel used for strafing
 		reverseAccelMultiplier = 0.6,      -- float: Fraction of accel used for reverse/breaking
 		inertialCorrection = true,         --Try to cancel out excess velocity in directions you don't want to go.
 		isStrafing = true,                 --Should this unit strafe around? (Partell, Skua)
-		standoffDistance = weaponStats.fireRangeMult * weaponStats.rangeMult.D * weaponStats.lightning.baseRange,              -- float: How far away from a target's ColliderDimensions should a unit hold position?
-		retreatDistance = weaponStats.fireRangeMult * weaponStats.rangeMult.D * weaponStats.lightning.baseRange-1,               -- float: How far away from a target's ColliderDimensions should a unit begin to retreat?
+		standoffDistance = weaponStats.fireRangeMult * weaponStats.rangeMult.D * weaponStats.laser.baseRange-1,              -- float: How far away from a target's ColliderDimensions should a unit hold position?
+		retreatDistance = weaponStats.fireRangeMult * weaponStats.rangeMult.D * weaponStats.laser.baseRange-2,               -- float: How far away from a target's ColliderDimensions should a unit begin to retreat?
 		strafeMargin = .5,                -- float: How far away from standoffDistance strafe thrust is allowed to start. Default = 1
 		useMinimumWorldYPosition = false,
 		minimumWorldYPosition = 0,         -- float: What does this unit consider the lowest it can go? Capitals and Heavies often use 3~4 to stop them sinking into bases, and keep them looking imposing.

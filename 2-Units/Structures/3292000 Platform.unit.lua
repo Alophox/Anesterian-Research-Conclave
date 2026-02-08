@@ -31,7 +31,7 @@ return {
 										"The Breach Nodes surrounding the Starbase enable it to punch through the strange distortions present within the Spance, providing auxiliary power in addition to strengthened communications.\n"..
 										"\n",
 		weaponInfo                  = functions.combineWeaponInfo({
-			{prefab.weapon_info.hangar.quartz(4),},
+			{prefab.weapon_info.hangar.quartz.P(4),},
 		}),
 		relatedUnitIDs              = {}
 	},
@@ -110,7 +110,7 @@ return {
 			scale 	= { .1/scaleConst, .1/scaleConst, .1/scaleConst },
 
 			weapon    = {
-				weaponID = 3295600, --int: The weaponData id to be used for this weapon.
+				weaponID = 3295601, --int: The weaponData id to be used for this weapon.
 				turnSpeed = 0, 	--float: Degrees per second.
 				turnMode = "Linear", --string enum: Linear / Acceleration
 				turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -129,7 +129,7 @@ return {
 			scale 	= { .1/scaleConst, .1/scaleConst, .1/scaleConst },
 
 			weapon    = {
-				weaponID = 3295600, --int: The weaponData id to be used for this weapon.
+				weaponID = 3295601, --int: The weaponData id to be used for this weapon.
 				turnSpeed = 0, 	--float: Degrees per second.
 				turnMode = "Linear", --string enum: Linear / Acceleration
 				turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -148,7 +148,7 @@ return {
 			scale 	= { .1/scaleConst, .1/scaleConst, .1/scaleConst },
 
 			weapon    = {
-				weaponID = 3295600, --int: The weaponData id to be used for this weapon.
+				weaponID = 3295601, --int: The weaponData id to be used for this weapon.
 				turnSpeed = 0, 	--float: Degrees per second.
 				turnMode = "Linear", --string enum: Linear / Acceleration
 				turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -167,7 +167,7 @@ return {
 			scale 	= { .1/scaleConst, .1/scaleConst, .1/scaleConst },
 
 			weapon    = {
-				weaponID = 3295600, --int: The weaponData id to be used for this weapon.
+				weaponID = 3295601, --int: The weaponData id to be used for this weapon.
 				turnSpeed = 0, 	--float: Degrees per second.
 				turnMode = "Linear", --string enum: Linear / Acceleration
 				turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)

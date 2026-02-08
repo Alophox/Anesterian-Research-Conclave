@@ -54,7 +54,7 @@ function prefab.ship.ruby.core.P(scaleConst, isGhost, ghostIndex, ghostMat)
 		position = {0,0,0},
 		rotation = {0,0,0},
 		mesh = "329-1-Ruby/Ruby-Core-P",
-		materials = { "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_engine", "329_MT_arc_teamColour" },
+		materials = { "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamColour" },
 
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={

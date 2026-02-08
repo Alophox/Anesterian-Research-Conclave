@@ -35,6 +35,56 @@ function prefab.weapon.cannon_effect(diameter)
 	}
 end
 
+function prefab.weapon_info.cannon.D(count)
+	return { 3295400, 1 * count, 3296400 }
+end
+function prefab.weapon.cannon.D(pos, rot, sca, isGhost, ghostIndex, ghostMat)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostMat==nil) then ghostMat="build" end
+	if(ghostIndex < 0) then return {}; end
+	if(not isGhost and ghostIndex < 0) then return {}; end
+	prefab_part = {
+		name	= "Small Turret Base",
+		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
+		rotation  = rot,        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
+		scale 	= sca,					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
+	}
+	-- ghosts should NOT have weapons, as it causes a crash.
+	if isGhost then
+		if (ghostMat == "aegis") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
+	else
+		prefab_part.parts = {
+			{
+				name      = "Turret-top",
+				position  = { 0, 0, 0 },    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
+				rotation  = { 0, 0, 0 },        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
+				scale 	= { 1, 1, 1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
+
+				weapon    = {
+					weaponID = 3295400, --int: The weaponData id to be used for this weapon.
+					turnSpeed = weaponStats.baseTracking*weaponStats.cannon.trackingMult.D, 	--float: Degrees per second.
+					turnMode = "Linear", --string enum: Linear / Acceleration
+					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
+					mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
+						left = 5, --float:
+						right = 5,--float:
+						up = 5,	 --float:
+						down = 5  --float:
+					},
+				},
+
+				parts = {
+					prefab.weapon.cannon_effect(.05),
+				},
+			},
+		}
+	end
+	return prefab_part
+end
+
 function prefab.weapon_info.cannon.S(count)
 	return { 3295401, 1 * count, 3296401 }
 end

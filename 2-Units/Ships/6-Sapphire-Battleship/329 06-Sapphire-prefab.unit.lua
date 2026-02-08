@@ -205,9 +205,9 @@ end
 
 function prefab.weapon_info.sapphire.stern.C()
 	weapon_info = {
-		prefab.weapon_info.hangar.quartz(2),
+		prefab.weapon_info.hangar.quartz.G(4),
 		prefab.weapon_info.laser.S(2),
-		prefab.weapon_info.missile.hls.S(4),
+		-- prefab.weapon_info.missile.hls.S(4),
 	}
 	return weapon_info
 end
@@ -224,13 +224,13 @@ function prefab.ship.sapphire.stern.C(scaleConst, isGhost, ghostIndex, ghostMat)
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.G(
 				{ -5, 0, -5.75 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.G(
 				{ 5, 0, -5.75 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },
@@ -250,30 +250,30 @@ function prefab.ship.sapphire.stern.C(scaleConst, isGhost, ghostIndex, ghostMat)
 				isGhost, ghostIndex, ghostMat
 			),
 
-			prefab.weapon.missile.hls.S(
-				{ -2, 3, -9.75 },
-				{ 0, 0, 0 },
-				{ 1, 1, 1 },
-				isGhost, ghostIndex, ghostMat
-			),
-			prefab.weapon.missile.hls.S(
-				{ 2, 3, -9.75 },
-				{ 0, 0, 0 },
-				{ 1, 1, 1 },
-				isGhost, ghostIndex, ghostMat
-			),
-			prefab.weapon.missile.hls.S(
-				{ -2, -3, -9.75 },
-				{ 0, 0, 180 },
-				{ 1, 1, 1 },
-				isGhost, ghostIndex, ghostMat
-			),
-			prefab.weapon.missile.hls.S(
-				{ 2, -3, -9.75 },
-				{ 0, 0, 180 },
-				{ 1, 1, 1 },
-				isGhost, ghostIndex, ghostMat
-			),
+			-- prefab.weapon.missile.hls.S(
+			-- 	{ -2, 3, -9.75 },
+			-- 	{ 0, 0, 0 },
+			-- 	{ 1, 1, 1 },
+			-- 	isGhost, ghostIndex, ghostMat
+			-- ),
+			-- prefab.weapon.missile.hls.S(
+			-- 	{ 2, 3, -9.75 },
+			-- 	{ 0, 0, 0 },
+			-- 	{ 1, 1, 1 },
+			-- 	isGhost, ghostIndex, ghostMat
+			-- ),
+			-- prefab.weapon.missile.hls.S(
+			-- 	{ -2, -3, -9.75 },
+			-- 	{ 0, 0, 180 },
+			-- 	{ 1, 1, 1 },
+			-- 	isGhost, ghostIndex, ghostMat
+			-- ),
+			-- prefab.weapon.missile.hls.S(
+			-- 	{ 2, -3, -9.75 },
+			-- 	{ 0, 0, 180 },
+			-- 	{ 1, 1, 1 },
+			-- 	isGhost, ghostIndex, ghostMat
+			-- ),
 
 			
 			prefab.part.emblem(
@@ -441,7 +441,7 @@ end
 
 function prefab.weapon_info.sapphire.core.C()
 	weapon_info = {
-		prefab.weapon_info.hangar.quartz(6),
+		prefab.weapon_info.hangar.quartz.B(6),
 		prefab.weapon_info.missile.hls.M(2),
 	}
 	return weapon_info
@@ -459,37 +459,37 @@ function prefab.ship.sapphire.core.C(scaleConst, isGhost, ghostIndex, ghostMat)
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
 		parts={
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.B(
 				{ -5, 0, -3.75 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.B(
 				{ -5, 0, -2.25 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.B(
 				{ -5, 0, -.75 },
 				{ 0, -90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.B(
 				{ 5, 0, -3.75 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.B(
 				{ 5, 0, -2.25 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },
 				isGhost, ghostIndex, ghostMat
 			),
-			prefab.weapon.hangar.quartz(
+			prefab.weapon.hangar.quartz.B(
 				{ 5, 0, -.75 },
 				{ 0, 90, 0 },
 				{ 1, 1, 1 },

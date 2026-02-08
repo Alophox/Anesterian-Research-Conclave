@@ -16,7 +16,7 @@ weaponStats = {
 		T = 40,
 	},
 	rangeMult = {
-		D = .5,
+		D = .6667,
 		S = 1,
 		M = 1.5,
 		L = 2,

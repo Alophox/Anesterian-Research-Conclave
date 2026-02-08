@@ -52,10 +52,10 @@ function prefab.weapon.lightning.D(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 					turnMode = "Linear", --string enum: Linear / Acceleration
 					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
 					mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
-						left = 25, --float:
-						right = 25,--float:
-						up = 15,	 --float:
-						down = 15  --float:
+						left = 5, --float:
+						right = 5,--float:
+						up = 5,	 --float:
+						down = 5  --float:
 					},
 				},
 

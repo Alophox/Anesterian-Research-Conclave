@@ -1,17 +1,18 @@
 shipConst = {
-	class="LM",
+	class="D",
+	typeCore="A",
 }
-scaleConst = .85;
+scaleConst = .15;
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "329-citrine-g",                 -- string: Internal name for debugging and errors.
-	unitDisplayName             = "Citrine-G",                         -- string: Actual display name of the unit in the Databank, HUD, etc.
+	unitName                    = "329-zircon",                 -- string: Internal name for debugging and errors.
+	unitDisplayName             = "Zircon",                         -- string: Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   -- string: Shown when moused over in the HUD.
-	unitBlurb                   = "Gunship Frigate", -- string: Shown just below the unit name in tooltips and databank.
+	unitBlurb                   = "Artillery Drone", -- string: Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           -- bool: The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
 	hotkey                      = "G",                             -- Unity KeyCode: For buildbar. The hotkey for this unit.
-	picture                     = "329-citrine-g.png",             -- string filename: The name of the image file in this folder to be used for this unit.
+	picture                     = "329-zircon.png",             -- string filename: The name of the image file in this folder to be used for this unit.
 
 	controllable 	= false;	-- bool: Can this unit be given move orders with right click?
 	unselectable = false;	-- Cannot be selected.
@@ -23,21 +24,23 @@ return {
 		visibility                  = "VISIBLE", -- string enum: VISIBLE (always available) / HIDDEN (never visible)/ DISCOVER (visible once required level)
 		requiredLevelForVisible     = "", 			-- string;
 		requiredLevelForDescription = "", 			-- string;
-		tactical                    = 	"<color=yellow>Armoured Anti-Armour Assault</color>\n"..
-										" - Strong against Armour\n"..
-										" - Weak against high Health\n"..
-										" - Vulnerable to Artillery\n",
+		tactical                    = 	"<color=yellow>Drone Heat Artillery</color>\n"..
+										" - Strong against Mediums / Heavies / Capitals\n"..
+										" - Weak to Drones / Missiles\n"..
+										"",
 		description                 =
-		"The smallest of the Gunship designated ships, excels against armor and falters against health.",
+		"A long range drone capable of shooting other drones, but it excels against heavier ships.\n"..
+		"\n"..
+		"",
 		weaponInfo                  = functions.combineWeaponInfo({
-			prefab.weapon_info.citrine.core.G(),
+				prefab.weapon_info.quartz.core[shipConst.typeCore](),
 		}),
 		relatedUnitIDs              = {} 	-- int array: TypeID of other units in the family tree
 	},
 
 	-- BODY SETUP
 	scale                       	= scaleConst,                                          -- float: A Tolly is scale 0.4, all units are a uniform scale. Normalise XY mesh size to 1 in Blender. (controls selection ring, among other things. the longest horizontal part (width/length) is 1)
-	-- mainMesh                    	= "329-2-Citrine/Citrine-Core-G",   -- string: Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
+	-- mainMesh                    	= "329-0-Quartz/Quartz",   -- string: Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
 	
 	--NOTICE, WORKING WITH MATERIALS AND MESHS:
 	--When making a mesh in Blender, you can assign materials to different surfaces. The number of materials used create 'material slots' for the mesh.
@@ -45,7 +48,7 @@ return {
 	--Inorder for ATS to know which material goes to which material slot on a mesh, we must define the ordering.
 	--Assign materials here in the same order as they are defined on the object in your Blender file. 
 	--(Can only get materials from .materials.lua files in this mod folder.)
-	-- materials                   = { "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_engine", "329_MT_arc_teamColour" },
+	-- materials                   = { "329_MT_arc_teamGlow", "329_MT_arc_hull_dark", "329_MT_arc_teamGlow","329_MT_arc_teamColour", "329_MT_arc_hull" },
 
 	-- Percieved dimensions of the unit. Multiplied against scale. Controls how big the unit is percieved by other units. 
 	-- Units cannot actually "see" anything, so we need to mathematically define how big the unit is for standoff behaviour among other things.
@@ -55,14 +58,14 @@ return {
     autoColourElements = true,
     editorDontColour = false,
 	colliderDimensions = {
-		widthMultiplier  = 0.412, -- float: Multiplied by scale to determine the percieved width of the unit. Long units (Vaalkorei) have this at about 0.5~0.6, aka we're only half as wide as we are long.
-		heightMultiplier = 0.294, -- float: Multiplied by scale to determine the percieved height of the unit, flat units (Kontaalen) have this at about 0.6, aka we're shorter than we are long.
+		widthMultiplier  = 0.6, -- float: Multiplied by scale to determine the percieved width of the unit. Long units (Vaalkorei) have this at about 0.5~0.6, aka we're only half as wide as we are long.
+		heightMultiplier = 0.5, -- float: Multiplied by scale to determine the percieved height of the unit, flat units (Kontaalen) have this at about 0.6, aka we're shorter than we are long.
 		lengthMultiplier = 1.0, -- float: Multiplied by scale to determine the percieved length of the unit. wide units (Soul Warden Fore section) have this at about 0.5, aka we're only half as long as we are wide.
 	},
 
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data = {
-		typeID       = 3291200, -- int: !!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
+		typeID       = 3291005, -- int: !!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
 		factionID    = 329, -- int: The faction this unit is associated with in the Databank.
 		macroType    = "AUTO", -- string enum: MacroTarget state: AUTO (is capital or command?) / TRUE / FALSE
 		cost_matter  = 0, -- int: For structures.
@@ -87,33 +90,31 @@ return {
 				},
 			},
 		},
-		prefab.ship.citrine.core.G(scaleConst, false),
-		prefab.ship.citrine.core.G(scaleConst,true, 0, "aegis"),
-
+		prefab.ship.quartz.core[shipConst.typeCore](scaleConst, false),
+		prefab.ship.quartz.core[shipConst.typeCore](scaleConst,true, 0, "aegis"),
 	},
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).
-	-- ghostMesh		= "329-2-Citrine/Citrine-Core-G",   -- Used for build ghosts on spawners (yards).
-	-- ghostMaterials = { ghostMat, ghostMat, ghostMat, ghostMat,ghostMat }, -- Used for the ghostMesh for build ghosts on spawners (yards).
+	-- ghostMesh		= "329-0-Quartz/Quartz",   -- Used for build ghosts on spawners (yards).
+	-- ghostMaterials = { "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build", "329_MT_arc_0_build" }, -- Used for the ghostMesh for build ghosts on spawners (yards).
 	ghostParts 	= {
-		prefab.ship.citrine.core.G(scaleConst, true, 2),
+		prefab.ship.quartz.core[shipConst.typeCore](scaleConst, true, 2),
 	},
 
 	-- 🟦 HEALTH & ARMOR
 	health = {
-		unitClass = "LIGHT",       -- string enum: UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = functions.floor((1 - healthStats.proportionRegenMax) * healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.G})),
-		aegisMaximum = functions.ceil(healthStats.proportionRegenMax *  healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.G})), 			-- float: Game will automatically determine, but can be manually set here.
+		unitClass = "DRONE",       -- string enum: UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
+		health = functions.floor((1 - healthStats.proportionRegenMax) * healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult[shipConst.typeCore]})),              -- float: Health, also the unit's heat capacity.
 		health_regen_per_second = 0,
+		aegisMaximum = functions.ceil(healthStats.proportionRegenMax *  healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult[shipConst.typeCore]})), 			-- float: Game will automatically determine, but can be manually set here.
 		aegis_regen_per_second = healthStats.aegisRegen[shipConst.class],
 		max_regen_frac = healthStats.proportionRegenMax,
-
-		armour = functions.floor(healthStats.baseArmor[shipConst.class] * functions.averageMultiplier({healthStats.armorMult.G})),
-		vulnerability_max = 0,
-		shredMultiplier = 0,
+		armour = 1,                -- int: Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
+		vulnerability_max = 0,   -- float: Prevent the unit from losing more than X fraction of it's armour.
+		shredMultiplier = 0,     -- float: Multiplies incomming shred, pretty self explanatory right?
 
 		explosionSFX = 0,          -- int: will write a table for inbuilt game SFX. If I have, ask me for it. Otherwise wait. :)
-		explosionSFXIntensity = 0.8, -- float: The importance of a sound, affects how far away it is heard and what other sounds it can override as there can only be 255 sounds at a time. Platform Death/Nuke = 10, Ekudon cannon = 4, Tolly gun = 0.2, Otorell gun = 0.4,
+		explosionSFXIntensity = 0.1, -- float: The importance of a sound, affects how far away it is heard and what other sounds it can override as there can only be 255 sounds at a time. Platform Death/Nuke = 10, Ekudon cannon = 4, Tolly gun = 0.2, Otorell gun = 0.4,
 
 		heatResistancePercentage = healthStats.proportionRegenMax, -- float: Fraction of heat resistance. (0-1) Normally 0
 		shredResistancePercentage = 0, -- float: Fraction of shred resistance. (0-1) Normally 0. If 0 game automatically assigns shredResistance based on unit class (as is done for the entire vanilla game).
@@ -123,7 +124,7 @@ return {
 		ignoreImpulse = false,     	-- bool: Prevents getting pushed around by attacks. Such as Untresnafol bullets, or Heron railgun rounds.
 
 		targetingPriorityMultiplier = 1.0, -- float: Useful on torpedos. How important is this unit to attack? Strix torpedos = ~2
-		untargetableTime = 0.5,    -- float: Useful on drones/missiles. How long after spawning is this unit untargetable? (0 for everything, except missiles and drones)
+		untargetableTime = 0,    -- float: Useful on drones/missiles. How long after spawning is this unit untargetable? (0 for everything, except missiles and drones)
 
 		--###################### CLOAK DOES NOT WORK, DON'T USE IT YET. - Luke 2025/04/16
 		doesCloaking = false,                 --Can cloak, and become untargetable.
@@ -156,12 +157,13 @@ return {
 		alertPlayerOnDeath = false,           	-- If on the player's team, log an Alert that this unit has died. Should make it true on all buildings, and hero units (Hemedall).
 	},
 
+
 	
 
 	isRepulsor            = true,
 	isNotRepulsed        = false,
 	repulsion            = {
-		interactionLayer = 0,    -- Units will only repulse if they use the same layer. Ships 0, Drones 1
+		interactionLayer = 1,    -- Units will only repulse if they use the same layer. Ships 0, Drones 1
 		weightOveride    = 0,        -- Override the raw percieved mass of this object. 0 means ignore
 		colliderDimensionsOverride = {
 			0, 0, 0            -- Overrides ColliderDimensions for the purposes of repulsion. 0,0,0 means ignore 
@@ -171,16 +173,16 @@ return {
 	-- 🟦 MOVEMENT
 	isMobile           = true,
 	movement           = {
-		type = "MAPLOCKED",                -- string enum: UNITMOVETYPE: MAPLOCKED / FREE --Does this unit act like a normal ship, and stay within the 0-7y world height. Or like a drone/missile?
-		maximumAngleToTarget = 1, -- .2       -- float: Radians within in which a unit is allowed to accelerate towards a target.
-		acceleration = healthStats.baseAccel[shipConst.class] * functions.averageMultiplier({healthStats.accelMult.G}),               -- float: The units per second of the ship's acceleration. A tolly is 0.4 units long, and accelerates at 0.35
+		type = "FREE",                -- string enum: UNITMOVETYPE: MAPLOCKED / FREE --Does this unit act like a normal ship, and stay within the 0-7y world height. Or like a drone/missile?
+		maximumAngleToTarget = 1.57,        -- float: Radians within in which a unit is allowed to accelerate towards a target.
+		acceleration = weaponStats.hangar.velocity * functions.averageMultiplier({healthStats.accelMult[shipConst.typeCore]}),               -- float: The units per second of the ship's acceleration. A tolly is 0.4 units long, and accelerates at 0.35
 		strafingAccelMultiplier = 0.8,     -- float: Fraction of accel used for strafing
-		reverseAccelMultiplier = functions.averageMultiplier({healthStats.retreatMult.G}),      -- float: Fraction of accel used for reverse/breaking
+		reverseAccelMultiplier = 0.6,      -- float: Fraction of accel used for reverse/breaking
 		inertialCorrection = true,         --Try to cancel out excess velocity in directions you don't want to go.
-		isStrafing = false,                 --Should this unit strafe around? (Partell, Skua)
-		standoffDistance = weaponStats.fireRangeMult * weaponStats.rangeMult["S"] * weaponStats.lightning.baseRange-2,              -- float: How far away from a target's ColliderDimensions should a unit hold position?
-		retreatDistance = weaponStats.fireRangeMult * weaponStats.rangeMult["S"] * weaponStats.lightning.baseRange /2,               -- float: How far away from a target's ColliderDimensions should a unit begin to retreat?
-		strafeMargin = 1.5,                -- float: How far away from standoffDistance strafe thrust is allowed to start. Default = 1
+		isStrafing = true,                 --Should this unit strafe around? (Partell, Skua)
+		standoffDistance = weaponStats.fireRangeMult * weaponStats.rangeMult.D * weaponStats.railgun.baseRange-1,              -- float: How far away from a target's ColliderDimensions should a unit hold position?
+		retreatDistance = weaponStats.fireRangeMult * weaponStats.rangeMult.D * weaponStats.railgun.baseRange-2,               -- float: How far away from a target's ColliderDimensions should a unit begin to retreat?
+		strafeMargin = .5,                -- float: How far away from standoffDistance strafe thrust is allowed to start. Default = 1
 		useMinimumWorldYPosition = false,
 		minimumWorldYPosition = 0,         -- float: What does this unit consider the lowest it can go? Capitals and Heavies often use 3~4 to stop them sinking into bases, and keep them looking imposing.
 		alwaysFaceCombatTarget = false,     -- Important for things like Hemedalls.
@@ -191,10 +193,10 @@ return {
 	isRotating         = true,
 	rotation           = {
 		turnMode = "Acceleration", 	-- string enum: SHIPTURNMODE: Acceleration / Linear
-		baseRotationSpeed = 30, 		-- float: Degrees/second
+		baseRotationSpeed = 200, 		-- float: Degrees/second
 		maxSpeedMultiplier = 0, 		-- float: For mode Acceleration, baseRotationSpeed becomes acceleration. This is the maximum rotation speed that may be reached.
 		preferredAngle = 0, 		-- float: Degrees. Prefered facing angle from target. Useful for thinks like Skua's (90) and Herons (30) that want to face away from their target for broadsides and cool stuff like strafing.
-		ignoreWorldUp = false 		-- bool: Good for Lights/Drones/Missiles. Allows this unit to turn upside down, sideways, etc. Looks stupid on most large ships such as Heavies and Capitals.
+		ignoreWorldUp = true 		-- bool: Good for Lights/Drones/Missiles. Allows this unit to turn upside down, sideways, etc. Looks stupid on most large ships such as Heavies and Capitals.
 	},
 	
 	-- 🟦 TARGETING
@@ -208,12 +210,12 @@ return {
 			acceptFirstValidTarget = false, 	--For launchers and things that don't need to actually target something. Shoot at the first thing you see.
 			pauseIfHasTarget = false, 		--Don't look for a target again, until you're current one is dead. USE WITH canInvalidateTarget otherwise units WILL get stuck trying to shoot stuff out of their range.
 			ignoreUncapturable = false, 		--If the target is uncapturable, ignore it.
-			secondsPerScan = 1.5, 			-- float: How long to wait before reassessing what you're targeting.
+			secondsPerScan = .5, 			-- float: How long to wait before reassessing what you're targeting.
 
 			ignoreFullHealth = false, 		--Good for healers.
 			minimumHealth = 0, 				-- float: Don't target things with less Max Health than this.
 			minimumDistance = 0, 			-- float: Don't target things that are closer than this.
-			maximumDistance = 15, 			-- float: Important. Scan radius. Don't target things further than this. KEEP THIS NUMBER LOW, SERIOUS PERFORMANCE IMPACT. Light ~15, Medium ~20, Heavy ~25, Capital ~25
+			maximumDistance = 10, 			-- float: Important. Scan radius. Don't target things further than this. KEEP THIS NUMBER LOW, SERIOUS PERFORMANCE IMPACT. Light ~15, Medium ~20, Heavy ~25, Capital ~25
 			maximumAngle = 0, 				-- float: Good for spinal weapons/missiles.
 			addedPreaimDistance = 0, 		-- float: If you have no target in maximumDistance, you may try to target something this far beyond max distance. (use on turrets, not ships)
 			
@@ -232,18 +234,18 @@ return {
 			perceivedHealthMin = 0,			-- float: 
 			perceivedArmourMax = 0, 			-- float: Good for most units with scoreForArmour. If you have 20 damage don't worry if the target has more than 20 armour because it makes no difference you're doing no damage anyway.
 			perceivedArmourMin = 0, 			-- float: Good for most units with scoreForArmour. If you have 20 piercing, you don't care if a target has less armour than that because you pierce it, only it if has more.
-			perceivedDistanceMin = 5, 		-- float: Clamps the score for distance. Good in general. Keep at a fraction of your maximumDistance. Once a target is within normal firing range it's good to keep the target and not prioritise other things just because they're closer.
+			perceivedDistanceMin = 1, 		-- float: Clamps the score for distance. Good in general. Keep at a fraction of your maximumDistance. Once a target is within normal firing range it's good to keep the target and not prioritise other things just because they're closer.
 
 			-- Target class priority.
 			-- Vital for unit behaviour. -1 = ignore.
 			-- Multiplies the target score by this.
 			classMultMissile = -1,	-- float: 
-			classMultDrone = -1,	-- float: 
+			classMultDrone = .2,	-- float: 
 			classMultLight = 1,		-- float: 
 			classMultMedium = 1,	-- float: 
-			classMultHeavy = 1,	-- float: 
-			classMultCapital = 1,	-- float: 
-			classMultTitan = 1,	-- float: 
+			classMultHeavy = 0.9,	-- float: 
+			classMultCapital = 0.8,	-- float: 
+			classMultTitan = 0.7,	-- float: 
 
 			--Multiplied against score at the end.
 			shipMultiplier = 1.0, 			-- float: Priority for ships.
