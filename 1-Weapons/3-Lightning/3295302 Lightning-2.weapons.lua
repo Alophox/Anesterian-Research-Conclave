@@ -40,7 +40,7 @@ return {
 		necrofire = false,            -- enable weapon on parent death (good for SPARKLER visual effects, among other things)
 		active = true,                -- is the weapon online (for use with necrofire)
 		oneuse = false,               -- destroy root unit when out of ammo, (for bullets, missiles, etc) (fires entire magazine then destroys the unit it's on)
-		rangeInUnits = weaponStats.rangeMult[weaponConst.size] * weaponStats.lightning.baseRange * weaponStats.overShootMult,            -- Target must be within range, for gun to fire.
+		rangeInUnits = weaponStats.rangeMult[weaponConst.size] * weaponStats.lightning.baseRange, -- * weaponStats.overShootMult,            -- Target must be within range, for gun to fire.
 		maximumAngleToTarget = 0.01,   -- Radians, target must be within angle for gun to fire.
 		unitsPerSecond = 0,           -- projectile velocity for LAUNCHER in 100m/s
 		spreadDegrees = 0,          -- Radians, spread for LAUNCHER (machine guns, etc)
@@ -198,8 +198,8 @@ return {
 			-- Target class priority.
 			-- Vital for unit behaviour. -1 = ignore.
 			-- Multiplies the target score by this.
-			classMultMissile = 0,
-			classMultDrone = 0,
+			classMultMissile = -1,
+			classMultDrone = -1,
 			classMultLight = .8,
 			classMultMedium = 1,
 			classMultHeavy = 1,
