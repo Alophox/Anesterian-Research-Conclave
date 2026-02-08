@@ -7,7 +7,7 @@ return {
 	unitTooltip                 = "",
 	unitBlurb                   = "",
 	unitBlurbExcludeFromTooltip = false,
-	hotkey                      = "",
+	hotkey                      = "n",
 	picture                     = "329-storage-e.png",
 
 	-- 📘 DATABANK ENTRY
