@@ -122,7 +122,7 @@ return {
 		health = functions.floor((1 - healthStats.proportionRegenMax) * 500),
 		health_regen_per_second = healthStats.regen.M,
 		max_regen_frac = 0,
-		aegis_regen_per_second = healthStats.aegisRegen.M * healthStats.structAegisRegenMult,
+		aegis_regen_per_second = 1.5*healthStats.aegisRegen.M * healthStats.structAegisRegenMult,
 		aegisMaximum = functions.ceil(healthStats.proportionRegenMax * 500),
 
 		armour = 10,                --Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
