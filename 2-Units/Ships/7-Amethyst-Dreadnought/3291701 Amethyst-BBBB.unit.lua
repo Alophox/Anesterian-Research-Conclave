@@ -112,7 +112,7 @@ return {
 		aegis_regen_per_second = healthStats.aegisRegen[shipConst.class],
 		max_regen_frac = healthStats.proportionRegenMax,
 
-		armour = functions.floor(healthStats.baseArmor[shipConst.class] * functions.averageMultiplier({healthStats.armorMult.B,healthStats.healthMult.B,healthStats.healthMult.B,healthStats.healthMult.B})),
+		armour = functions.floor(healthStats.baseArmor[shipConst.class] * functions.averageMultiplier({healthStats.armorMult.B,healthStats.armorMult.B,healthStats.armorMult.B,healthStats.armorMult.B})),
 		vulnerability_max = 0,   -- float: Prevent the unit from losing more than X fraction of it's armour.
 		shredMultiplier = 0,     -- float: Multiplies incomming shred, pretty self explanatory right?
 
