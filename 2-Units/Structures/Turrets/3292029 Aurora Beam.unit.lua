@@ -135,10 +135,12 @@ return {
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "TITAN",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = functions.floor(50000),              --Health, also the unit's heat capacity.
-		health_regen_per_second = 5, --Health regen per second. Duh.
-		max_regen_frac = 0,      --The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
-
+		health = functions.floor((1 - healthStats.proportionRegenMax) * 50000),
+		health_regen_per_second = healthStats.regen[shipConst.class],
+		max_regen_frac = 0,
+		aegis_regen_per_second = 1.5*healthStats.aegisRegen[shipConst.class] * healthStats.structAegisRegenMult,
+		aegisMaximum = functions.ceil(healthStats.proportionRegenMax * 50000),
+		
 		armour = 5,                --Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
 		vulnerability_max = 0,   --Prevent the unit from losing more than X fraction of it's armour.
 		shredMultiplier = 0,     --Multiplies incomming shred, pretty self explanatory right?
@@ -148,7 +150,6 @@ return {
 
 		heatResistancePercentage = healthStats.proportionRegenMax, --Fraction of heat resistance. (0-1) Normally 0
 		shredResistancePercentage = 0, --Fraction of shred resistance. (0-1) Normally 0. If 0 game automatically assigns shredResistance based on unit class (as is done for the entire vanilla game).
-		aegisMaximum = functions.ceil(0), 			--Game will automatically determine, but can be manually set here.
 		isResourceMatter = false,  	--For Matter Deposits. When damaged, gives the damage back to the attacking team as Matter.
 		isResourceEnergy = false,  	--For Energy Deposits. When damaged, gives the damage back to the attacking team as Energy.
 		isUncapturable = false,    	--Prevents capture, such as from Glowfish.

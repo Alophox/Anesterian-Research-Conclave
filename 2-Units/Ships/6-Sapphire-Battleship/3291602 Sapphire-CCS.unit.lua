@@ -26,7 +26,9 @@ return {
 		tactical                    = 	"<color=yellow>Carrier Artillery</color>\n"..
 										" - Strong against Mediums / Lights / Drones\n"..
 										" - Decent against Heavies / Capitals\n"..
-										" - Poor against Point Defense\n",
+										" - Poor against Point Defense\n"..
+										" - <color=#80ffff>"..healthStats.aegisRegen[shipConst.class].." Aegis/s</color>\n"..
+										"",
 		description                 =
 		"A Heavy Carrier equipped with a spinal Breach Cannon to siege against even the most heavily armored base. Some will question the designation for CCS, rather than CCC- simply put, the bow mounted spinal weapon is not a carrier segment, as it has no fighter bays.",
 		weaponInfo                  = functions.combineWeaponInfo({

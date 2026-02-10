@@ -27,7 +27,9 @@ return {
 										" - Strong against Drones\n"..
 										" - Decent against Lights\n"..
 										" - Poor against Point Defense\n"..
-										" - Vulnerable in close combat\n",
+										" - Vulnerable in close combat\n"..
+										" - <color=#80ffff>"..healthStats.aegisRegen[shipConst.class].." Aegis/s</color>\n"..
+										"",
 		description                 =
 		"The smallest carrier designated ships, these were originally utilized as exploration craft, equipped with a variety of shuttles for different purposes. In the spance, the shuttle bays have been replaced with Quartz fighter bays.",
 		weaponInfo                  = functions.combineWeaponInfo({

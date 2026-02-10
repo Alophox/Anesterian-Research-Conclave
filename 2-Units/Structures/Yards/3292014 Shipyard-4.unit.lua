@@ -1,3 +1,6 @@
+shipConst = {
+	class = "T",
+}
 return {
 
 	-- 🟦 DEFINITIONS
@@ -14,7 +17,9 @@ return {
 		visibility                  = "VISIBLE", --VISIBLE (always available) / HIDDEN (never visible)/ DISCOVER (visible once required level)
 		requiredLevelForVisible     = "",
 		requiredLevelForDescription = "",
-		tactical                    = "", --Added to the top of all tooltips and Databank descriptions. Used to quickly explain what a unit is good at doing. Strong against, decent against, weak against.
+		tactical                    = ""..
+										" - <color=#80ffff>"..(healthStats.aegisRegen[shipConst.class]*healthStats.structAegisRegenMult).." Aegis/s</color>\n"..
+										"", --Added to the top of all tooltips and Databank descriptions. Used to quickly explain what a unit is good at doing. Strong against, decent against, weak against.
 		description                 =
 		"Every need covered by a single yard.",
 		weaponInfo                  = { --Tells the databank which weaponDatas to grab and display for this unit. Not automatic, you have to do this.

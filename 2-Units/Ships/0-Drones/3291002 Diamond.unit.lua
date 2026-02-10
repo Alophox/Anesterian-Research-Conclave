@@ -28,6 +28,7 @@ return {
 										" - Good against Drones / Missiles\n"..
 										" - Decent against Lights\n"..
 										" - Poor against 2+ Armour \n"..
+										" - <color=#80ffff>"..healthStats.aegisRegen[shipConst.class].." Aegis/s</color>\n"..
 										"",
 		description                 =
 		"This variant of the fighter is a refined version of the Quartz. Instead of lasers, it utilizes two Neutron Launchers, making it capable of dealing significant damage to enemy swarms.\n"..

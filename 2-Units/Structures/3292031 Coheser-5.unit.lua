@@ -1,4 +1,6 @@
-
+shipConst = {
+	class = "H",
+}
 return {
 
 	-- 🟦 DEFINITIONS
@@ -15,7 +17,9 @@ return {
 		visibility                  = "VISIBLE", --VISIBLE (always available) / HIDDEN (never visible)/ DISCOVER (visible once required level)
 		requiredLevelForVisible     = "",
 		requiredLevelForDescription = "",
-		tactical                    = "",
+		tactical                    = ""..
+										" - <color=#80ffff>"..(healthStats.aegisRegen[shipConst.class]*healthStats.structAegisRegenMult).." Aegis/s</color>\n"..
+										"",
 		description                 =	"Four minuses don't make a plus, no matter what mathemagicians may say!",
 		weaponInfo                  = {},
 		relatedUnitIDs              = {}
@@ -94,9 +98,9 @@ return {
 	health = {
 		unitClass = "HEAVY",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
 		health = functions.floor((1 - healthStats.proportionRegenMax) * 5000),
-		health_regen_per_second = healthStats.regen.H,
+		health_regen_per_second = healthStats.regen[shipConst.class],
 		max_regen_frac = 0,
-		aegis_regen_per_second = healthStats.aegisRegen.H * healthStats.structAegisRegenMult,
+		aegis_regen_per_second = healthStats.aegisRegen[shipConst.class] * healthStats.structAegisRegenMult,
 		aegisMaximum = functions.ceil(healthStats.proportionRegenMax * 5000),
 
 		armour = 10,

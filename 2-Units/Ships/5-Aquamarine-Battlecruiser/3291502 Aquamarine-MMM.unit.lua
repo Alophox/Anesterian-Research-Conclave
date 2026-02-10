@@ -26,7 +26,9 @@ return {
 		tactical                    = 	"<color=yellow>Missile Artillery</color>\n"..
 										" - Strong against Lights\n"..
 										" - Decent against Mediums\n"..
-										" - Poor against 40+ armor / Point Defense\n",
+										" - Poor against 40+ armor / Point Defense\n"..
+										" - <color=#80ffff>"..healthStats.aegisRegen[shipConst.class].." Aegis/s</color>\n"..
+										"",
 		description                 =
 		"I heard you like missiles, so I installed all of the missiles.",
 		weaponInfo                  = functions.combineWeaponInfo({

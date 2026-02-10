@@ -28,6 +28,7 @@ return {
 										" - Good against Drones / Missiles\n"..
 										" - Decent against Lights\n"..
 										" - Poor against 2+ Armour \n"..
+										" - <color=#80ffff>"..healthStats.aegisRegen[shipConst.class].." Aegis/s</color>\n"..
 										"",
 		description                 =
 		"Once upon a time, the Quartz' ancestors once prowled the skies of foreign planets. Nowadays this ancestory can be seen in the immobile wings of the craft.\n"..

@@ -25,8 +25,9 @@ return {
 		requiredLevelForDescription = "", 			-- string;
 		tactical                    = 	"<color=yellow>Point Defense</color>\n"..
 										" - Strong against Drones / Missiles\n"..
-										" - Poor against 3+ armor\n"
-										,
+										" - Poor against 3+ armor\n"..
+										" - <color=#80ffff>"..healthStats.aegisRegen[shipConst.class].." Aegis/s</color>\n"..
+										"",
 		description                 =
 		"The smallest of the Picket designated ships, only suitable for smaller munitions and drones.",
 		weaponInfo                  = functions.combineWeaponInfo({

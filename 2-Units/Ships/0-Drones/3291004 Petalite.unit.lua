@@ -26,6 +26,7 @@ return {
 		requiredLevelForDescription = "", 			-- string;
 		tactical                    = 	"<color=yellow>Drone Anti-Armour</color>\n"..
 										" - Decent against everything\n"..
+										" - <color=#80ffff>"..healthStats.aegisRegen[shipConst.class].." Aegis/s</color>\n"..
 										"",
 		description                 =
 		"With Breach Cannons, this drone is capable of contending with anything- as long as they don't shoot it down.\n"..

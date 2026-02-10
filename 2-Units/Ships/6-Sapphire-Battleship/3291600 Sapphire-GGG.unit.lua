@@ -26,7 +26,9 @@ return {
 		tactical                    = 	"<color=yellow>Armoured Anti-Armour Assault</color>\n"..
 										" - Strong against Armour\n"..
 										" - Weak against high Health\n"..
-										" - Vulnerable to Artillery\n",
+										" - Vulnerable to Artillery\n"..
+										" - <color=#80ffff>"..healthStats.aegisRegen[shipConst.class].." Aegis/s</color>\n"..
+										"",
 		description                 =
 		"Excels against armor and falters against health.",
 		weaponInfo                  = functions.combineWeaponInfo({

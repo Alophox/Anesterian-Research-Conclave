@@ -27,6 +27,7 @@ return {
 		tactical                    = 	"<color=yellow>Drone Heat Artillery</color>\n"..
 										" - Strong against Mediums / Heavies / Capitals\n"..
 										" - Weak to Drones / Missiles\n"..
+										" - <color=#80ffff>"..healthStats.aegisRegen[shipConst.class].." Aegis/s</color>\n"..
 										"",
 		description                 =
 		"A long range drone capable of shooting other drones, but it excels against heavier ships.\n"..

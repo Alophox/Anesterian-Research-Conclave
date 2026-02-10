@@ -27,8 +27,9 @@ return {
 										" - Strong against Lights\n"..
 										" - Decent against Mediums\n"..
 										" - Poor against 30+ armor\n"..
-										" - Vulnerable to Artillery\n"
-										,
+										" - Vulnerable to Artillery\n"..
+										" - <color=#80ffff>"..healthStats.aegisRegen[shipConst.class].." Aegis/s</color>\n"..
+										"",
 		description                 =
 		"The smallest of the Brawler designated ships, excels against its own weight class.",
 		weaponInfo                  = functions.combineWeaponInfo({

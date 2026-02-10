@@ -19,7 +19,9 @@ return {
 										" - Poor defense against Missiles / Drones / Lights\n"..
 										" - Produces Matter, Energy, and Logistics\n"..
 										" - Breach Communications Suite\n"..
-										" - Breach Core\n",
+										" - Breach Core\n"..
+										" - <color=#80ffff>20 Aegis/s</color>\n"..
+										"",
 		description                 =	"Powered by a Breach Core, these multipurpose structures are utilized in light Research and Reconnaissance missions.\n"..
 										"\n"..
 										"Long ago, an expedition found itself in a lonely system, surrounded by the darkness only found between galactic arms. With a desire to light their night sky as their lost homes were, they build a great constellation out of the very first models of Starposts, powered by fusion reactors. Years have passed since such humble beginnings along with many refits, but the core design remains the same.\n"..

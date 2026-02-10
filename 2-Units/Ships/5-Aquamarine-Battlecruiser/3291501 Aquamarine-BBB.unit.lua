@@ -27,7 +27,9 @@ return {
 										" - Strong against Lights\n"..
 										" - Decent against Mediums\n"..
 										" - Poor against 30+ armor\n"..
-										" - Vulnerable to Artillery\n",
+										" - Vulnerable to Artillery\n"..
+										" - <color=#80ffff>"..healthStats.aegisRegen[shipConst.class].." Aegis/s</color>\n"..
+										"",
 		description                 =
 		"The heaviest brawler designated ship, this is meant to run through blockades- or in the Spance, run through heavy Katalosteer fire. It is one of the ships of all time at this role.",
 		weaponInfo                  = functions.combineWeaponInfo({

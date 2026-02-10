@@ -1,3 +1,6 @@
+shipConst = {
+	class = "H",
+}
 scaleConst = 2.8;
 return {
 
@@ -17,8 +20,9 @@ return {
 		requiredLevelForDescription = "",
 		tactical                    = 	"<color=yellow>Tactical:</color>\n"..
 										" - Efficient Energy Generation\n"..
-										" - Poor space usage\n"
-										,
+										" - Poor space usage\n"..
+										" - <color=#80ffff>"..(healthStats.aegisRegen[shipConst.class]*healthStats.structAegisRegenMult).." Aegis/s</color>\n"..
+										"",
 		description                 = 	"Utilizing their Breach technology, the Zero-Point Inductor invests energy into a singular point to produce more energy. The laws of reality temporarily break down at that point, expanding the singularity into a moderately volatile vacuum zone that could then have energy extracted from.\n"..
 										"\n"..
 										"While the name implies certain methods of collection, attempts to engineer similar reactors have left rival groups with fancy, but useless, examples of failure.\n"..
@@ -171,9 +175,9 @@ return {
 	health = {
 		unitClass = "HEAVY",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
 		health = functions.floor((1 - healthStats.proportionRegenMax) * 3000),
-		health_regen_per_second = healthStats.regen.H,
+		health_regen_per_second = healthStats.regen[shipConst.class],
 		max_regen_frac = 0,
-		aegis_regen_per_second = healthStats.aegisRegen.H * healthStats.structAegisRegenMult,
+		aegis_regen_per_second = healthStats.aegisRegen[shipConst.class] * healthStats.structAegisRegenMult,
 		aegisMaximum = functions.ceil(healthStats.proportionRegenMax * 3000),
 
 		armour = 10,

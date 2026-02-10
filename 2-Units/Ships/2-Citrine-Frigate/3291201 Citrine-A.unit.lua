@@ -27,7 +27,9 @@ return {
 										" - Strong against Mediums\n"..
 										" - Decent against Heavies\n"..
 										" - Poor against Lights\n"..
-										" - Vulnerable to Drones\n",
+										" - Vulnerable to Drones\n"..
+										" - <color=#80ffff>"..healthStats.aegisRegen[shipConst.class].." Aegis/s</color>\n"..
+										"",
 		description                 =
 		"The smallest of the Artillery designated ships, these were originally intended for artillery bombardment. Many smaller ships equipped with the heaviest weapons they could power could hit a far wider range of targets than a single battleship- though their weak targeting suite makes them vulnerable to longer range defenses."
 		.."\n\n"

@@ -26,8 +26,9 @@ return {
 		tactical                    = 	"<color=yellow>Point Defense Anti-Light</color>\n"..
 										" - Strong against Drones / Missiles\n"..
 										" - Decent against Lights\n"..
-										" - Poor against 10+ armor\n"
-										,
+										" - Poor against 10+ armor\n"..
+										" - <color=#80ffff>"..healthStats.aegisRegen[shipConst.class].." Aegis/s</color>\n"..
+										"",
 		description                 =
 		"Suitable for AMS and anti-light",
 		weaponInfo                  = functions.combineWeaponInfo({

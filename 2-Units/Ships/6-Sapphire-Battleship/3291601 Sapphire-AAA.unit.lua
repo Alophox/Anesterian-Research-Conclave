@@ -27,7 +27,9 @@ return {
 										" - Strong against Mediums / Turrets\n"..
 										" - Decent against Heavies\n"..
 										" - Poor against Lights\n"..
-										" - Vulnerable to Drones\n",
+										" - Vulnerable to Drones\n"..
+										" - <color=#80ffff>"..healthStats.aegisRegen[shipConst.class].." Aegis/s</color>\n"..
+										"",
 		description                 =
 		"Artillery with far too much range.",
 		weaponInfo                  = functions.combineWeaponInfo({

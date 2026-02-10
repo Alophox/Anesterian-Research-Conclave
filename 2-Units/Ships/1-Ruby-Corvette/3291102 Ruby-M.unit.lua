@@ -26,7 +26,9 @@ return {
 		tactical                    = 	"<color=yellow>Missile Artillery</color>\n"..
 										" - Strong against Lights\n"..
 										" - Decent against Mediums\n"..
-										" - Poor against 20+ armour / Point Defense\n",
+										" - Poor against 20+ armour / Point Defense\n"..
+										" - <color=#80ffff>"..healthStats.aegisRegen[shipConst.class].." Aegis/s</color>\n"..
+										"",
 		description                 =
 		"The smallest of the Missile designated ships, equipped with armour shredding singularity missiles.",
 		weaponInfo                  = functions.combineWeaponInfo({

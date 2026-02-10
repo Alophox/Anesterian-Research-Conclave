@@ -26,7 +26,9 @@ return {
 		tactical                    = 	"<color=yellow>Carrier</color>\n"..
 										" - Strong against Lights / Drones\n"..
 										" - Poor against Point Defense\n"..
-										" - Vulnerable in close combat\n",
+										" - Vulnerable in close combat\n"..
+										" - <color=#80ffff>"..healthStats.aegisRegen[shipConst.class].." Aegis/s</color>\n"..
+										"",
 		description                 =
 		"The medium carrier of ARC is used predominantly as an escort carrier within fleets, providing some screening capabilities at long range.",
 		weaponInfo                  = functions.combineWeaponInfo({

@@ -27,8 +27,9 @@ return {
 										" - Strong against Drones / Missiles\n"..
 										" - Strong against Lights\n"..
 										" - Decent against Mediums\n"..
-										" - Poor against 15+ armor\n"
-										,
+										" - Poor against 15+ armor\n"..
+										" - <color=#80ffff>"..healthStats.aegisRegen[shipConst.class].." Aegis/s</color>\n"..
+										"",
 		description                 =
 		"Suitable for AMS and anti-light. Some people say it resembles an Abrundolaser. Some people are fools.",
 		weaponInfo                  = functions.combineWeaponInfo({

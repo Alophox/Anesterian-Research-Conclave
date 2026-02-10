@@ -1,4 +1,6 @@
-
+shipConst = {
+	class = "MH",
+}
 return {
 
 	-- 🟦 DEFINITIONS
@@ -15,7 +17,9 @@ return {
 		visibility                  = "VISIBLE", --VISIBLE (always available) / HIDDEN (never visible)/ DISCOVER (visible once required level)
 		requiredLevelForVisible     = "",
 		requiredLevelForDescription = "",
-		tactical                    = "",
+		tactical                    = ""..
+										" - <color=#80ffff>"..(healthStats.aegisRegen[shipConst.class]*healthStats.structAegisRegenMult).." Aegis/s</color>\n"..
+										"",
 		description                 =	"Containing a miniature rift, these extend the effective range of a platform by providing a 0 ping connection.",
 		weaponInfo                  = {},
 		relatedUnitIDs              = {}
@@ -94,9 +98,9 @@ return {
 	health = {
 		unitClass = "MEDIUM",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
 		health = functions.floor((1 - healthStats.proportionRegenMax) * 1000),
-		health_regen_per_second = healthStats.regen.MH,
+		health_regen_per_second = healthStats.regen[shipConst.class],
 		max_regen_frac = 0,
-		aegis_regen_per_second = healthStats.aegisRegen.MH * healthStats.structAegisRegenMult,
+		aegis_regen_per_second = healthStats.aegisRegen[shipConst.class] * healthStats.structAegisRegenMult,
 		aegisMaximum = functions.ceil(healthStats.proportionRegenMax * 1000),
 
 		armour = 10,

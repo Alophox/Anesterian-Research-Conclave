@@ -18,7 +18,9 @@ return {
 		tactical                    = "<color=yellow>Tactical:</color>\n"..
 										" - Produces Matter, Energy, and Logistics\n"..
 										" - Breach Communications Suite\n"..
-										" - Breach Core\n",
+										" - Breach Core\n"..
+										" - <color=#80ffff>100 Aegis/s</color>\n"..
+										"",
 		description                 =	"Powered by a Breach Core, these multipurpose structures are utilized in highly dangerous Research and Reconnaissance missions.\n"..
 										"\n"..
 										"Following the eventual colonization of 'nearby' star systems, it was determined that a central, fortified communications station would be required in each system. This turned into the Starhold- a stronghold that would orbit stars, providing a heavy duty node in the now interestellar constellation of stations.\n"..

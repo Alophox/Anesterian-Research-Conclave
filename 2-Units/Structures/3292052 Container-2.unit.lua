@@ -1,4 +1,6 @@
-
+shipConst = {
+	class = "L",
+}
 return {
 
 	-- 🟦 DEFINITIONS
@@ -15,7 +17,9 @@ return {
 		visibility                  = "VISIBLE", --VISIBLE (always available) / HIDDEN (never visible)/ DISCOVER (visible once required level)
 		requiredLevelForVisible     = "",
 		requiredLevelForDescription = "",
-		tactical                    = "",
+		tactical                    = ""..
+										" - <color=#80ffff>"..(healthStats.aegisRegen[shipConst.class]*healthStats.structAegisRegenMult).." Aegis/s</color>\n"..
+										"",
 		description                 =	"",
 		weaponInfo                  = {},
 		relatedUnitIDs              = {}

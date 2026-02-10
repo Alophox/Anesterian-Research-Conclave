@@ -19,7 +19,9 @@ return {
 										" - Poor defense against Missiles / Drones / Lights\n"..
 										" - Produces Matter, Energy, and Logistics\n"..
 										" - Breach Communications Suite\n"..
-										" - Breach Core\n",
+										" - Breach Core\n"..
+										" - <color=#80ffff>100 Aegis/s</color>\n"..
+										"",
 		description                 =	"Powered by a Breach Core, these multipurpose structures are utilized in standard Research and Reconnaissance missions.\n"..
 										"\n"..
 										"The Starbase was born when it was realized that the Starpost could not hope to power all the equipment necessary to study local systems.\n"..
