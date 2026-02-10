@@ -5,7 +5,7 @@
 
 MOD INFO:
 
-ID: 329ARC v0.6.0
+ID: 329ARC v0.6.1
 
 ATS: v0.91
 
