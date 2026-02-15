@@ -1,7 +1,7 @@
 return {
      id = 3295621,
-     name = "ARC Citrine-A Launcher",
-     blurb = "Drone.",
+     name = "Citrine-A Hangar",
+     blurb = "Plasma Railgun Frigate",
      metaNote = "Used on Carriers",
      hideInDatabank = false,
      displayType = "DRONE", -- NORMAL, DRONE

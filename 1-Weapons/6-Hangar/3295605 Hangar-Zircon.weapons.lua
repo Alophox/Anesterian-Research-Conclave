@@ -1,6 +1,6 @@
 return {
      id = 3295605,
-     name = "ARC Zircon Launcher",
+     name = "Zircon Hangar",
      blurb = "Plasma Railgun Drone.",
      metaNote = "Used on Carriers",
      hideInDatabank = false,

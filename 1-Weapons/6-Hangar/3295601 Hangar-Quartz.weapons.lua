@@ -1,6 +1,6 @@
 return {
      id = 3295601,
-     name = "ARC Quartz Launcher",
+     name = "Quartz Hangar",
      blurb = "Laser Drone.",
      metaNote = "Used on Carriers",
      hideInDatabank = false,

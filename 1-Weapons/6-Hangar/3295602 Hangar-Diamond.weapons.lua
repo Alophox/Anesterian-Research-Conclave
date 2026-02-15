@@ -1,6 +1,6 @@
 return {
      id = 3295602,
-     name = "ARC Diamond Launcher",
+     name = "Diamond Hangar",
      blurb = "Neutron Launcher Drone.",
      metaNote = "Used on Carriers",
      hideInDatabank = false,

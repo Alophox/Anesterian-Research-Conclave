@@ -1,6 +1,6 @@
 return {
      id = 3295604,
-     name = "ARC Petalite Launcher",
+     name = "Petalite Hangar",
      blurb = "Breach Cannon Drone.",
      metaNote = "Used on Carriers",
      hideInDatabank = false,

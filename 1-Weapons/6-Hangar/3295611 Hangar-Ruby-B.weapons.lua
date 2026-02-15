@@ -1,7 +1,7 @@
 return {
      id = 3295611,
-     name = "ARC Ruby-B Launcher",
-     blurb = "Drone.",
+     name = "Ruby-B Hangar",
+     blurb = "Neutron Launcher Corvette",
      metaNote = "Used on Carriers",
      hideInDatabank = false,
      displayType = "DRONE", -- NORMAL, DRONE
