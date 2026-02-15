@@ -8,7 +8,7 @@ return {
 	unitName                    = "329-amethyst-cccc",                 -- string: Internal name for debugging and errors.
 	unitDisplayName             = "Amethyst-CCCC",                         -- string: Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   -- string: Shown when moused over in the HUD.
-	unitBlurb                   = "Dreadnought", -- string: Shown just below the unit name in tooltips and databank.
+	unitBlurb                   = "Carrier Dreadnought", -- string: Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           -- bool: The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
 	hotkey                      = "G",                             -- Unity KeyCode: For buildbar. The hotkey for this unit.
 	picture                     = "329-amethyst-cccc.png",             -- string filename: The name of the image file in this folder to be used for this unit.
