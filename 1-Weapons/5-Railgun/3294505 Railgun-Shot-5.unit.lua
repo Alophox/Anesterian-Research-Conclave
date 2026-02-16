@@ -135,7 +135,7 @@ return {
 				opacity     = .1,                  -- decimal
 				scaleStart  = scaleConst*.1,                  -- decimal
 				scaleEnd    = 0,                  -- decimal
-				lifetime    = .2,                  -- decimal
+				lifetime    = .3,                  -- decimal
 			},
 			
 		},
