@@ -165,11 +165,11 @@ weaponStats.disruptor = {
 
 weaponStats.lightning = {
 	baseRange	= 8,
-	baseDMG		= 60,
+	baseDMG		= 75,
 	baseHeat	= 0,
 	baseShred	= 0,
 	instances	= 1,
-	baseCD		= 5,
+	baseCD		= 6.5,
 	secondsPerShot=.1,
 	trackingMult = {
 		D = 1,
