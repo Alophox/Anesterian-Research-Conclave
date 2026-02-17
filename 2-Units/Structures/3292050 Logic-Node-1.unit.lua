@@ -28,7 +28,7 @@ return {
 	-- BODY SETUP
 	scale                       = .9, -- 0.035714
 	mainMesh                    = "329-Logic/Logic-Node-1",
-	materials                   = { "329_MT_arc_hull", "329_MT_arc_teamGlow", "329_MT_arc_teamColour" },
+	materials                   = { "329_MT_arc_hull", "329_MT_arc_teamGlow", "329_MT_arc_teamColour", "329_MT_arc_hull_dark" },
 	inEditor = true,
     autoColourElements = true,
     editorDontColour = false,
