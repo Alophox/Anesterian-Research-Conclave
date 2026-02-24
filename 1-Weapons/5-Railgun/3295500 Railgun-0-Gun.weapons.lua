@@ -179,7 +179,7 @@ return {
 			addedPreaimDistance = 1, 		--If you have no target in maximumDistance, you may try to target something this far beyond max distance. (use on turrets, not ships)
 			
 			-- Scoring can be negative. Will invert behaviour.
-			scoreForDistance = 1,    		--Foundational. NOTICE, VALUE IS INVERTED. Keep at 1. 1 unit distance = -1 score, means prioritise closer targets. Negative means prioritise farther targets.
+			scoreForDistance = .01,    		--Foundational. NOTICE, VALUE IS INVERTED. Keep at 1. 1 unit distance = -1 score, means prioritise closer targets. Negative means prioritise farther targets.
 			scoreForHealth = 0,      		--Niche parameter, prioritise the biggest things, or smallest if negative.
 			scoreForHealthCurrent = 0, 		--Good for healers.
 			scoreForHealthCurrentMissing = 0, 	--Good for healers. 1 missing hp = 1 score.
