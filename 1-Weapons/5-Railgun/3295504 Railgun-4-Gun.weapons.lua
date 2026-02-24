@@ -186,7 +186,7 @@ return {
 			scoreForHealthCurrentPercentage = 0, --Good for healers, good for spreading healing between units regardless of total health.
 			scoreForArmour = 0,      		--Good for anti-armour, if negative good for units with weapons that are better against raw hull. But can be misleading on it's own (*cough cough* GLADIATOR)
 			scoreForArmourCurrent = 0, 		--Good for anti-armour, if negative good for units with weapons that are better spent against raw hull.
-			scoreForAngle = 0,       		--Good for slow units and turrets that need to shoot things infront of them to minimise traverse.
+			scoreForAngle = -1,       		--Good for slow units and turrets that need to shoot things infront of them to minimise traverse.
 
 			-- If scoreForX is not 0, clamp the X (eg. the enemy's health) to this perceived value. Useful for helping units put a floor and ceiling to how much they care about different stats.
 			perceivedHealthMax = 0,

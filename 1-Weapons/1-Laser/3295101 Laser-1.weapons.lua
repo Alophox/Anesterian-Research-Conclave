@@ -185,14 +185,14 @@ return {
 			scoreForHealthCurrentMissing = 0, 	--Good for healers. 1 missing hp = 1 score.
 			scoreForHealthCurrentPercentage = 0, --Good for healers, good for spreading healing between units regardless of total health.
 			scoreForArmour = 0,      		--Good for anti-armour, if negative good for units with weapons that are better against raw hull. But can be misleading on it's own (*cough cough* GLADIATOR)
-			scoreForArmourCurrent = 0, 		--Good for anti-armour, if negative good for units with weapons that are better spent against raw hull.
+			scoreForArmourCurrent = -1, 		--Good for anti-armour, if negative good for units with weapons that are better spent against raw hull.
 			scoreForAngle = 0,       		--Good for slow units and turrets that need to shoot things infront of them to minimise traverse.
 
 			-- If scoreForX is not 0, clamp the X (eg. the enemy's health) to this perceived value. Useful for helping units put a floor and ceiling to how much they care about different stats.
 			perceivedHealthMax = 0,
 			perceivedHealthMin = 0,
 			perceivedArmourMax = 0, 			--Good for most units with scoreForArmour. If you have 20 damage don't worry if the target has more than 20 armour because it makes no difference you're doing no damage anyway.
-			perceivedArmourMin = 0, 			--Good for most units with scoreForArmour. If you have 20 piercing, you don't care if a target has less armour than that because you pierce it, only it if has more.
+			perceivedArmourMin = weaponStats.laser.piercing * weaponStats.damageMult[weaponConst.size], 			--Good for most units with scoreForArmour. If you have 20 piercing, you don't care if a target has less armour than that because you pierce it, only it if has more.
 			perceivedDistanceMin = 5, 		--Clamps the score for distance. Good in general. Keep at a fraction of your maximumDistance. Once a target is within normal firing range it's good to keep the target and not prioritise other things just because they're closer.
 
 			-- Target class priority.
