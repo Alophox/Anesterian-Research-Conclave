@@ -50,7 +50,7 @@ return {
 		damageData = {
 			isNondamaging = false,             -- false> normal, true> Healing, armour repair, aegis
 			instances = 1,                     -- int: How many times is this damage dealt. For making weapons worse against armour.
-			damage = 0.001 ,                       -- float: Raw damage, reduced by armour.
+			damage = 0 ,                       -- float: Raw damage, reduced by armour.
 			piercing = 0,                      -- float: Ignore this much armour. Negative piercing is AEGIS shielding.
 			shred = 0,                      -- float: Destroy this much armour * class shred resistance. Negative heals armour.
 			heat = 5,                          -- float: Apply this much heat. Health is heat capacity.
@@ -73,7 +73,7 @@ return {
 		resumeFireBelowHeatFraction = 0,   -- resume fire if parent heat falls below this threshold
 		isResourceMiner = false,           --Is allowed to target the Environmental team.
 		
-		isPiercing = true,       -- Allows the laser/bullet to pierce through targets they believe they have killed. Weapon will reduce it's damage. Lasers will damage the next target on their raycast. Incompatible with AOE on warheads
+		isPiercing = false,       -- Allows the laser/bullet to pierce through targets they believe they have killed. Weapon will reduce it's damage. Lasers will damage the next target on their raycast. Incompatible with AOE on warheads
 		piercingThreshold = 0,   -- Must have MORE than this much damage remaining after piercing in order to continue piercing. (Prevents scenarios where a super laser murders a capital ship then does 2 damage to a Tolly on the other side)
 
 		-- AOE
@@ -93,9 +93,9 @@ return {
 		lifetime = .2,            --Controls how long the laser lasts,
 		impactSize = 1,          --For LASERS, TESLA, controls the size of the impact effect.
 		impactDuration = 0.2,    --Seconds, controls how long the impact effect lasts.
-		disableImpactEffect = false,  --As on the tin.
+		disableImpactEffect = true,  --As on the tin.
 		disableImpactFlash = false,    --Prevents the bright white explosion core.
-		impactEffectType = "EXPLOSION"; --EXPLOSION, EXPLOSION_LOWPOLY, SHOCKWAVE, FLASH, FLAK, SPARKS, FISHEXPLOSION, WARP
+		impactEffectType = "NONE"; --EXPLOSION, EXPLOSION_LOWPOLY, SHOCKWAVE, FLASH, FLAK, SPARKS, FISHEXPLOSION, WARP
 
 		--Laser Visuals defaults.
 		--If a laserDescription part is tagged as "use parent laserDescription" then it will use this.
