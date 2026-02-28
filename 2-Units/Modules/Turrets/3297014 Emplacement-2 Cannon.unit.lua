@@ -3,7 +3,7 @@ return {
 
 	-- 🟦 DEFINITIONS
 	unitName                    = "329-emplacement_2-cannon",              	-- Internal name for debugging and errors.
-	unitDisplayName             = "Medium Emplacement-Plasma Launcher",                    	-- Actual display name of the unit in the Databank, HUD, etc.
+	unitDisplayName             = "Medium Emplacement-Neutron Launcher",                    	-- Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   	-- Shown when moused over in the HUD.
 	unitBlurb                   = "Fully modular turret base!", 		-- Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           	-- The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
