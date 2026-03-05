@@ -40,10 +40,10 @@ I *do* have ideas for lore, I just haven't written most of it down. Most, as in 
 
 
 ## Installation
-Check for the zip under the release you want to download <a href="https://github.com/Alophox/Anesterian-Research-Conclave/releases">here</a>, and move it into the Local Mods folder(Foreign does not currently work); you might need to unzip it, I haven't tried. The Main menu in ATS has a button on the bottom right that will open your local file explorer directly there. From there, Start (or restart) ATS.
-There will be mod warnings about mesh "" being missing; these are expected and can be ignored. Eventually I'll clean them up but for now they are harmless.
+Check for the zip under the release you want to download <a href="https://github.com/Alophox/Anesterian-Research-Conclave/releases">here</a>, and move it into the Local Mods folder(Foreign does not currently work); you need to unzip it, make sure the top most folder of the mod is the folder with the manifest present. The Main menu in ATS has a button on the bottom right that will open your local file explorer directly there. From there, Start (or restart) ATS.
+There will be mod warnings about some images being missing; these are expected and can be ignored. Eventually I'll clean them up but for now they are harmless.
 
 ## Using the mod
 To play with the mod in Skirmish, ensure you check the "Included Modded Factions" on the bottom right of the Skirmish menu. ~~Mods do not currently have access to AI, so ensure to disable any modded factions from being used by AI.~~
 
-As of 92.0, ATS now has AI; I am currently working on getting that up and running for this mod; the next big release for this mod will include several Skirmish AI, assuming everything goes well. If you want to experience it early, let me know on Discord and I can help get it setup for custom AI; it will need a little bit of technical know-how.
+As of 91.0, ATS now has AI; If you want to experience it early, let me know on Discord and I can help get it setup for custom AI; it will also need a little bit of technical know-how for making your own custom AI work with this faction. Until the dveelopers implement AI being bundled with the mod, this is the best I can do.
