@@ -238,6 +238,21 @@ weaponStats.missile = {
 	sfxID		= 17,
 }
 
+weaponStats.stardust = {
+	baseRange	= 1,
+	baseDMG		= -2, --negative damage means healing
+	basePierce	= -1,  --negative piercing means aegis shielding
+	baseHeat	= 0,
+	baseAOE		= 1,
+	baseShred	= -.05,
+	instances	= 1,
+	baseCD		= .1,
+	secondsPerShot=.1,
+	shotsPerBurst = 1,
+	accuracy	= 1,
+	sfxID		= -1,
+}
+
 --1 hangar, for vaalk, is approximately one L turret worth of points, and comes with a capacity of 6 units every 30s
 --hangars have two hangars per 'slot'(aka one per M turret), so capacity is half, and respawn doubled
 weaponStats.hangar = {
