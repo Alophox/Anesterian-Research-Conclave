@@ -179,7 +179,7 @@ return {
 			addedPreaimDistance = 1, 		--If you have no target in maximumDistance, you may try to target something this far beyond max distance. (use on turrets, not ships)
 			
 			-- Scoring can be negative. Will invert behaviour.
-			scoreForDistance = .01,    		--Foundational. NOTICE, VALUE IS INVERTED. Keep at 1. 1 unit distance = -1 score, means prioritise closer targets. Negative means prioritise farther targets.
+			scoreForDistance = 1,    		--Foundational. NOTICE, VALUE IS INVERTED. Keep at 1. 1 unit distance = -1 score, means prioritise closer targets. Negative means prioritise farther targets.
 			scoreForHealth = 0,      		--Niche parameter, prioritise the biggest things, or smallest if negative.
 			scoreForHealthCurrent = 0, 		--Good for healers.
 			scoreForHealthCurrentMissing = 0, 	--Good for healers. 1 missing hp = 1 score.
@@ -213,7 +213,7 @@ return {
 			scoreBandingSize = 1,			--Allows the targeter to pick a random target within bands. Useful for PD and AOE, but requires a high keep target to prevent schizophrenia.
 		},
 		tracking = {
-			positionPredictionType = "TRIGONOMETRIC", --Algorithm for predicting target position. NONE (lasers, most ships), SIMPLE (bad, nothing uses this), TRIGONOMETRIC (spinal ships, turrets, missiles)
+			positionPredictionType = "MISSILE", --Algorithm for predicting target position. NONE (lasers, most ships), SIMPLE (bad, nothing uses this), TRIGONOMETRIC (spinal ships, turrets, missiles)
 			predictionVelocityOveride = weaponStats.railgun.velocity, 	--The speed of the thing we want to hit our target with. For bullets use unitsPerSecond. EG. An Untresnafol has this set to the launch velocity of it's bullet.
 			doAimingComputation = true,   	--For weapons.
 			canInvalidateTarget = false,  	--For units using pauseIfHasTarget.
