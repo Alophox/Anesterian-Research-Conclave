@@ -54,7 +54,7 @@ return {
 			isNondamaging = false,             -- false> normal, true> Healing, armour repair, aegis
 			instances = weaponStats.laser.instances,                     -- int: How many times is this damage dealt. For making weapons worse against armour.
 			damage = (weaponStats.damageMult[weaponConst.size] * weaponStats.laser.baseDMG / (weaponStats.laser.baseDuration / weaponStats.laser.secondsPerShot))/weaponStats.laser.instances/weaponStats.laser.shotsPerBurst[weaponConst.size],                      -- float: Raw damage, reduced by armour.
-			piercing = weaponStats.laser.piercing * weaponStats.damageMult[weaponConst.size],                      -- float: Ignore this much armour. Negative piercing is AEGIS shielding.
+			piercing = weaponStats.laser.basePierce * weaponStats.damageMult[weaponConst.size],                      -- float: Ignore this much armour. Negative piercing is AEGIS shielding.
 			shred = 0,                      -- float: Destroy this much armour * class shred resistance. Negative heals armour.
 			heat = (weaponStats.damageMult[weaponConst.size] * weaponStats.laser.baseHeat / (weaponStats.laser.baseDuration / weaponStats.laser.secondsPerShot))/weaponStats.laser.instances/weaponStats.laser.shotsPerBurst[weaponConst.size],                          -- float: Apply this much heat. Health is heat capacity.
 			vulnerability = 0,               -- float: Negate this much armour. Negative vulnerability is CAPTURE.
@@ -193,7 +193,7 @@ return {
 			perceivedHealthMax = 0,
 			perceivedHealthMin = 0,
 			perceivedArmourMax = 0, 			--Good for most units with scoreForArmour. If you have 20 damage don't worry if the target has more than 20 armour because it makes no difference you're doing no damage anyway.
-			perceivedArmourMin = weaponStats.laser.piercing * weaponStats.damageMult[weaponConst.size], 			--Good for most units with scoreForArmour. If you have 20 piercing, you don't care if a target has less armour than that because you pierce it, only it if has more.
+			perceivedArmourMin = weaponStats.laser.basePierce * weaponStats.damageMult[weaponConst.size], 			--Good for most units with scoreForArmour. If you have 20 piercing, you don't care if a target has less armour than that because you pierce it, only it if has more.
 			perceivedDistanceMin = 5, 		--Clamps the score for distance. Good in general. Keep at a fraction of your maximumDistance. Once a target is within normal firing range it's good to keep the target and not prioritise other things just because they're closer.
 
 			-- Target class priority.

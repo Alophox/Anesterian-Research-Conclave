@@ -54,7 +54,7 @@ return {
                isNondamaging = false,             -- false> normal, true> Healing, armour repair, aegis
                instances = weaponStats.cannon.instances,                     -- int: How many times is this damage dealt. For making weapons worse against armour.
                damage = (weaponStats.damageMult[weaponConst.size] * weaponStats.cannon.baseDMG / weaponStats.cannon.instances)/weaponStats.cannon.shotsPerBurst[weaponConst.size],                       -- float: Raw damage, reduced by armour.
-               piercing = 0,                      -- float: Ignore this much armour. Negative piercing is AEGIS shielding.
+               piercing = weaponStats.damageMult[weaponConst.size] * weaponStats.cannon.basePierce,                      -- float: Ignore this much armour. Negative piercing is AEGIS shielding.
                shred = 0,                      -- float: Destroy this much armour * class shred resistance. Negative heals armour.
                heat = (weaponStats.damageMult[weaponConst.size] * weaponStats.cannon.baseHeat / weaponStats.cannon.instances)/weaponStats.cannon.shotsPerBurst[weaponConst.size],                          -- float: Apply this much heat. Health is heat capacity.
                vulnerability = 0,               -- float: Negate this much armour. Negative vulnerability is CAPTURE.
