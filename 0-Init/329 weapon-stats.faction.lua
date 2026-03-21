@@ -205,11 +205,11 @@ weaponStats.missile = {
 	baseRange	= 13,
 	baseRetargetRange = 14,
 	baseCloakRange = 2,
-	baseDMG		= 30,
+	baseDMG		= 15,
 	baseHeat	= 0,
 	baseAOE		= 1,
-	baseShred	= .5,
-	baseHP		= 4,
+	baseShred	= .25,
+	baseHP		= 2,
 	instances	= {
 		S = 1,
 		M = 2,
@@ -217,7 +217,7 @@ weaponStats.missile = {
 		X = 4,
 		T = 5,
 	},
-	baseCD		= 8.5,
+	baseCD		= 4.25,
 	secondsPerShot=.1,
 	trackingMult = {
 		S = .25*40,
@@ -235,7 +235,7 @@ weaponStats.missile = {
 	},
 	velocity	= 4,
 	accuracy	= 1,
-	impulse		=-.1,
+	impulse		=-.05,
 	sfxID		= 17,
 }
 
