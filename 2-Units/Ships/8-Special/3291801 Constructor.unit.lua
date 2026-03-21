@@ -119,6 +119,7 @@ return {
 
 		heatResistancePercentage = healthStats.proportionRegenMax, -- float: Fraction of heat resistance. (0-1) Normally 0
 		shredResistancePercentage = 0, -- float: Fraction of shred resistance. (0-1) Normally 0. If 0 game automatically assigns shredResistance based on unit class (as is done for the entire vanilla game).
+		isNonHealRequester = true,
 		isResourceMatter = false,  	-- bool: For Matter Deposits. When damaged, gives the damage back to the attacking team as Matter.
 		isResourceEnergy = false,  	-- bool: For Energy Deposits. When damaged, gives the damage back to the attacking team as Energy.
 		isUncapturable = false,    	-- bool: Prevents capture, such as from Glowfish.
@@ -213,6 +214,7 @@ return {
 			secondsPerScan = 1, 			-- float: How long to wait before reassessing what you're targeting.
 
 			ignoreFullHealth = false, 		--Good for healers.
+			ignoreNonHealRequester = true,
 			minimumHealth = 0, 				-- float: Don't target things with less Max Health than this.
 			minimumDistance = 0, 			-- float: Don't target things that are closer than this.
 			maximumDistance = 20, 			-- float: Important. Scan radius. Don't target things further than this. KEEP THIS NUMBER LOW, SERIOUS PERFORMANCE IMPACT. Light ~15, Medium ~20, Heavy ~25, Capital ~25
@@ -241,7 +243,7 @@ return {
 			-- Multiplies the target score by this.
 			classMultMissile = -1,
 			classMultDrone = -1,
-			classMultLight = .01,
+			classMultLight = .025,
 			classMultMedium = .1,
 			classMultHeavy = 1,
 			classMultCapital = 1,
@@ -249,9 +251,9 @@ return {
 
 			--Multiplied against score at the end.
 			shipMultiplier = 1.0, 			-- float: Priority for ships.
-			structureMultiplier = 1.0, 		-- float: Priority for structures.
+			structureMultiplier = .01, 		-- float: Priority for structures.
 			keepTargetMultiplier = 2, 		-- float: Important. Allows the unit to keep it's current target, and not bounce between things.
-			scoreBandingSize = 0,			-- float: Allows the targeter to pick a random target within bands. Useful for PD and AOE, but requires a high keep target to prevent schizophrenia.
+			scoreBandingSize = 2,			-- float: Allows the targeter to pick a random target within bands. Useful for PD and AOE, but requires a high keep target to prevent schizophrenia.
 		},
 		tracking = {
 			positionPredictionType = "NONE", --Algorithm for predicting target position. NONE (lasers, most ships), SIMPLE (bad, nothing uses this), TRIGONOMETRIC (spinal ships, turrets, missiles)

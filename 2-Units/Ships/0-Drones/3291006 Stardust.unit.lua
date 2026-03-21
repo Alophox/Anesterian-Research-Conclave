@@ -218,7 +218,7 @@ return {
 
 		phaseBlockFraction = 0,               -- float: How much Phase is used to block damage. I don't think this works. 
 		
-		lifetime = 5,                         -- float: How long in seconds before this unit self-destructs. (drones, missiles, bullets)
+		lifetime = weaponStats.hangar.baseCD+5,                         -- float: How long in seconds before this unit self-destructs. (drones, missiles, bullets)
 		explodeOnTimeout = false,             -- Was it a peaceful death?
 
 		explosionType = "EXPLOSION",          	-- string enum: EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
@@ -263,9 +263,9 @@ return {
 		reverseAccelMultiplier = 0.6,      -- float: Fraction of accel used for reverse/breaking
 		inertialCorrection = true,         --Try to cancel out excess velocity in directions you don't want to go.
 		isStrafing = true,                 --Should this unit strafe around? (Partell, Skua)
-		standoffDistance = 0,              -- float: How far away from a target's ColliderDimensions should a unit hold position?
+		standoffDistance = 0.01,              -- float: How far away from a target's ColliderDimensions should a unit hold position?
 		retreatDistance = 0,               -- float: How far away from a target's ColliderDimensions should a unit begin to retreat?
-		strafeMargin = 0,                -- float: How far away from standoffDistance strafe thrust is allowed to start. Default = 1
+		strafeMargin = 0.01,                -- float: How far away from standoffDistance strafe thrust is allowed to start. Default = 1
 		useMinimumWorldYPosition = false,
 		minimumWorldYPosition = 0,         -- float: What does this unit consider the lowest it can go? Capitals and Heavies often use 3~4 to stop them sinking into bases, and keep them looking imposing.
 		alwaysFaceCombatTarget = false,     -- Important for things like Hemedalls.
@@ -276,7 +276,7 @@ return {
 	isRotating         = true,
 	rotation           = {
 		turnMode = "Acceleration", 	-- string enum: SHIPTURNMODE: Acceleration / Linear
-		baseRotationSpeed = 200, 		-- float: Degrees/second
+		baseRotationSpeed = 600, 		-- float: Degrees/second
 		maxSpeedMultiplier = 0, 		-- float: For mode Acceleration, baseRotationSpeed becomes acceleration. This is the maximum rotation speed that may be reached.
 		preferredAngle = 0, 		-- float: Degrees. Prefered facing angle from target. Useful for thinks like Skua's (90) and Herons (30) that want to face away from their target for broadsides and cool stuff like strafing.
 		ignoreWorldUp = true 		-- bool: Good for Lights/Drones/Missiles. Allows this unit to turn upside down, sideways, etc. Looks stupid on most large ships such as Heavies and Capitals.

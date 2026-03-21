@@ -32,7 +32,7 @@ return {
           -- EXPLODER, creates an AOE and optional explosion visual.
 
           --Fire Control 
-          alwaysfire = true,           -- fire constantly if not disabled (good for SPARKLER effects, constant drones, deploying mines, etc, but can look dumb when there are no enemies)
+          alwaysfire = false,           -- fire constantly if not disabled (good for SPARKLER effects, constant drones, deploying mines, etc, but can look dumb when there are no enemies)
           magdump = true,              -- always expend entire magazine, good for drone launchers to ensure the whole squadron is deployed. DAKKA DAKKA DAKKA DAKKA
           necrofire = false,            -- enable weapon on parent death (good for SPARKLER visual effects, among other things)
           active = true,                -- is the weapon online (for use with necrofire)
@@ -140,9 +140,9 @@ return {
           -- 0 = normal behaviour. Try to reload the entire shotsPerCycle when not firing.
           -- > 0 : reload a set amount at a time, cannot be interupted. Starts reloading the moment shotsPerCycleCurrent < shotsPerCycle
           -- < 0 : reload a set amount at a time, interupted when firing. The moment the weapon fires, will reset the secondsPerCycleCurrent to secondsPerCycle.
-          reloadAmount = 0,             --Normal weapons use 0, aka full
+          reloadAmount = 1,             --Normal weapons use 0, aka full
           secondsPerCycle = weaponStats.hangar.baseCD,        --Seconds per reload. Negative value prevent reloading (limited ammo weapons).
-          secondsPerCycleCurrent = 0,   --Starting delay. Good if you don't want your bomber launching bombs the moment it spawns.
+          secondsPerCycleCurrent = weaponStats.hangar.baseCD,   --Starting delay. Good if you don't want your bomber launching bombs the moment it spawns.
 
           --Magazine Size
           shotsPerCycle = weaponStats.hangar.shotsPerBurst,            --Shots per reload, ATS will ensure this number is always at least 1.
