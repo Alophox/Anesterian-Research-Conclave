@@ -209,8 +209,8 @@ return {
 			--Multiplied against score at the end.
 			shipMultiplier = 1.0, 			--Priority for ships.
 			structureMultiplier = .1, 		--Priority for structures.
-			keepTargetMultiplier = 5, 		--Important. Allows the unit to keep it's current target, and not bounce between things.
-			scoreBandingSize = 1,			--Allows the targeter to pick a random target within bands. Useful for PD and AOE, but requires a high keep target to prevent schizophrenia.
+			keepTargetMultiplier = 2, 		--Important. Allows the unit to keep it's current target, and not bounce between things.
+			scoreBandingSize = 0,			--Allows the targeter to pick a random target within bands. Useful for PD and AOE, but requires a high keep target to prevent schizophrenia.
 		},
 		tracking = {
 			positionPredictionType = "MISSILE", --Algorithm for predicting target position. NONE (lasers, most ships), SIMPLE (bad, nothing uses this), TRIGONOMETRIC (spinal ships, turrets, missiles)
