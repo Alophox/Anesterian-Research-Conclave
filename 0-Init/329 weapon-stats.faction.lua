@@ -83,13 +83,13 @@ weaponStats.railgun = {
 
 weaponStats.cannon = {
 	baseRange	= 7.5,
-	baseDMG		= 40,
-	baseHeat	= 4,
+	baseDMG		= 20,
+	baseHeat	= 2,
 	basePierce 	= 2,
 	baseAOE		= .75,
 	minAOEMult	= .5,
-	instances	= 2,
-	baseCD		= 2,
+	instances	= 1,
+	baseCD		= 1,
 	secondsPerShot=1,
 	trackingMult = {
 		D = 1,
