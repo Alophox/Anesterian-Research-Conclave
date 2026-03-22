@@ -153,7 +153,7 @@ return {
 		unkillable = false,                   	-- Even in death, I am eternal.
 		death_countdown = 1,                  	-- float: If the unit dies, but has not taken enough damage for InstaDeath, count down this long then blowup.
 		mass = 0,                             	-- float: Mass override, leave 0 for automatic (calculated from health, armour, and densityMult). Affects repulsion and impulse from damage.
-		densityMult = 1.0,                    	-- float: Multiplied agains the automatic mass calculation.
+		densityMult = 1 / (1-healthStats.proportionRegenMax),                    	-- float: Multiplied agains the automatic mass calculation.
 		tonnage = 40,                         	-- float: Visual display value, does nothing.
 		ignoreInstaDeath = false,             	-- If a unit takes more than 150% damage (it's at negative health) it will explode instantly. True prevents that.
 		alertPlayerOnDeath = false,           	-- If on the player's team, log an Alert that this unit has died. Should make it true on all buildings, and hero units (Hemedall).
