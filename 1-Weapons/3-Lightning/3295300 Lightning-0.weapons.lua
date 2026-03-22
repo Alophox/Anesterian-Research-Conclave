@@ -103,7 +103,7 @@ return {
 		--Laser Visuals defaults.
 		--If a laserDescription part is tagged as "use parent laserDescription" then it will use this.
 		laserDescription = { 		--"laser" description, but is actually a maleable visual effect.
-						duration = .1,			--seconds
+						duration = .2,			--seconds
 						opacity = 1,			--float, 0-1
 						diameter = .05,			--relative to turret scale
 						offset = 0,			--relative to the barrel it gets fired from's facing.
