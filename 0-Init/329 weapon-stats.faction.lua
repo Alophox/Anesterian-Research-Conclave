@@ -10,10 +10,10 @@ weaponStats = {
 	damageMult = {
 		D = .5,
 		S = 1,
-		M = 2.5,
-		L = 6,
-		X = 15,
-		T = 40,
+		M = 3, --2.5
+		L = 9, --6
+		X = 18, --15
+		T = 54, --40
 	},
 	rangeMult = {
 		D = .6667,
