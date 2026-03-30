@@ -13,7 +13,7 @@ weaponStats = {
 		M = 3, --2.5
 		L = 9, --6
 		X = 18, --15
-		T = 54, --40
+		T = 30, --40
 	},
 	rangeMult = {
 		D = .6667,
@@ -36,8 +36,8 @@ weaponStats = {
 		S = 1,
 		M = 1.5, --.7
 		L = 2.25, --1.35
-		X = 3.375, --4.35
-		T = 5.0625 --14.35
+		X = 2.75, --4.35
+		T = 2.75 --14.35
 	},
 	baseTracking = 360, --governs turn rate (degrees/second)
 	fireRangeMult=1,
