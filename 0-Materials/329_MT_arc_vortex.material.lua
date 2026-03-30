@@ -11,7 +11,7 @@ return {
         _FalloffOuter = 1,
         _InvRStrength = 0.1,
         _MainTex = { texture = "Textures/noise_vortex.png" },
-        _NoiseSpeed = { 0, 0, 0, 0 },
+        _NoiseSpeed = { 0.02, .02, 0, 0 },
         _NoiseTiling = { 2, 2, 0, 0 },
         _Opacity = 0.32,
         _QueueControl = 0,

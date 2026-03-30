@@ -41,7 +41,7 @@ return {
 		3291500, 3291501, 3291502, --heavy size 5
 		3291600, 3291601, 3291602, --heavy size 6
 		3291700, 3291701, 3291702, 3291703, 3291704, 3291705, --capital size 7
-		3291801, --special
+		3291801, 3291804, --special
 		--3297000, --experimental
 	},               -- Ships
 	structures = { 

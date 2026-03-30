@@ -1,0 +1,23 @@
+return {
+    id = "329_MT_arc_vortex_gwe",
+    shader = "Shader Graphs/VortexUnlit_SG",
+    properties = {
+        _Center = { 0, 0, 0, 0 },
+        _Color = { 1, 1, 1, 1 },
+        _Direction = 1,
+        _FadeOuter = 10,
+        _FadeSoftness = 0.12,
+        _FalloffInner = 10,
+        _FalloffOuter = 10,
+        _InvRStrength = 0.1,
+        _MainTex = { texture = "Textures/gwe_vortex.png" },
+        _NoiseSpeed = { -1, 0, 0, 0 },
+        _NoiseTiling = { 2, 0, 0, 0 },
+        _Opacity = 0.64,
+        _QueueControl = 0,
+        _QueueOffset = 0,
+        _SpinSpeed = 0,
+        _Twist = 0,
+        Opacity = 1,
+    },
+}

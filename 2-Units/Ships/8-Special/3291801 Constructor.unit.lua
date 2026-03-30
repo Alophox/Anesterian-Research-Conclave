@@ -33,7 +33,7 @@ return {
 		description                 =
 		"The Constructor. It constructs things. Well, it's also useful for repairing as cohesing things is a much better way to make things in the Spance.",
 		weaponInfo                  = functions.combineWeaponInfo({
-			prefab.weapon_info.special.constructor.core()
+			prefab.weapon_info.unique.constructor.core()
 		}),
 		relatedUnitIDs              = {} 	-- int array: TypeID of other units in the family tree
 	},
@@ -84,21 +84,21 @@ return {
 				reportKillsToParent = false, -- bool
 				doDamageToEntityOnDeath = true, -- bool
 				damageToEntityOnDeath = {       -- damage table
-					isNondamaging = true, instances = 1, damage = 0.00001, piercing = -9999999999,
+					isNondamaging = true, instances = 1, damage = 0, piercing = -9999999999,
 					shred = 0, heat = 0, vulnerability = 0, decloak = 0,
 					targetingPriorityMultiplier = 0, impulseForce = 0,
 				},
 			},
 		},
-		prefab.ship.special.constructor.core(scaleConst, false),
-		prefab.ship.special.constructor.core(scaleConst,true, 0, "aegis"),
+		prefab.ship.unique.constructor.core(scaleConst, false),
+		prefab.ship.unique.constructor.core(scaleConst,true, 0, "aegis_teamColour"),
 	},
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).
 	-- ghostMesh		= "329-2-Citrine/Citrine-Core-C",   -- Used for build ghosts on spawners (yards).
 	-- ghostMaterials = { ghostMat, ghostMat, ghostMat, ghostMat,ghostMat }, -- Used for the ghostMesh for build ghosts on spawners (yards).
 	ghostParts 	= {
-		prefab.ship.special.constructor.core(scaleConst, true, 2),
+		prefab.ship.unique.constructor.core(scaleConst, true, 2),
 	},
 
 	-- 🟦 HEALTH & ARMOR

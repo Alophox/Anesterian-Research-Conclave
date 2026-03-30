@@ -1,17 +1,17 @@
 shipConst = {
-	class="HM",
+	class="H",
 }
 scaleConst = 2.35;
 return {
 
 	-- 🟦 DEFINITIONS
-	unitName                    = "329-constructor",                 -- string: Internal name for debugging and errors.
-	unitDisplayName             = "Constructor",                         -- string: Actual display name of the unit in the Databank, HUD, etc.
+	unitName                    = "329-orifice",                 -- string: Internal name for debugging and errors.
+	unitDisplayName             = "Orifice",                         -- string: Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   -- string: Shown when moused over in the HUD.
 	unitBlurb                   = "Tractor Battlecruiser", -- string: Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           -- bool: The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
 	hotkey                      = "G",                             -- Unity KeyCode: For buildbar. The hotkey for this unit.
-	picture                     = "329-constructor.png",             -- string filename: The name of the image file in this folder to be used for this unit.
+	picture                     = "329-orifice.png",             -- string filename: The name of the image file in this folder to be used for this unit.
 
 	controllable 	= false;	-- bool: Can this unit be given move orders with right click?
 	unselectable = false;	-- Cannot be selected.
@@ -30,7 +30,7 @@ return {
 		description                 =
 		"The Constructor. It constructs things. Well, it's also useful for repairing as cohesing things is a much better way to make things in the Spance.",
 		weaponInfo                  = functions.combineWeaponInfo({
-			prefab.weapon_info.special.constructor.core()
+			prefab.weapon_info.unique.orifice.core()
 		}),
 		relatedUnitIDs              = {} 	-- int array: TypeID of other units in the family tree
 	},
@@ -62,7 +62,7 @@ return {
 
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data = {
-		typeID       = 3291801, -- int: !!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
+		typeID       = 3291804, -- int: !!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
 		factionID    = 329, -- int: The faction this unit is associated with in the Databank.
 		macroType    = "AUTO", -- string enum: MacroTarget state: AUTO (is capital or command?) / TRUE / FALSE
 		cost_matter  = 0, -- int: For structures.
@@ -81,26 +81,26 @@ return {
 				reportKillsToParent = false, -- bool
 				doDamageToEntityOnDeath = true, -- bool
 				damageToEntityOnDeath = {       -- damage table
-					isNondamaging = true, instances = 1, damage = 0.00001, piercing = -9999999999,
+					isNondamaging = true, instances = 1, damage = 0, piercing = -9999999999,
 					shred = 0, heat = 0, vulnerability = 0, decloak = 0,
 					targetingPriorityMultiplier = 0, impulseForce = 0,
 				},
 			},
 		},
-		prefab.ship.special.constructor.core(scaleConst, false),
-		prefab.ship.special.constructor.core(scaleConst,true, 0, "aegis"),
+		prefab.ship.unique.orifice.core(scaleConst, false),
+		prefab.ship.unique.orifice.core(scaleConst,true, 0, "aegis_teamColour"),
 	},
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).
 	-- ghostMesh		= "329-2-Citrine/Citrine-Core-C",   -- Used for build ghosts on spawners (yards).
 	-- ghostMaterials = { ghostMat, ghostMat, ghostMat, ghostMat,ghostMat }, -- Used for the ghostMesh for build ghosts on spawners (yards).
 	ghostParts 	= {
-		prefab.ship.special.constructor.core(scaleConst, true, 2),
+		prefab.ship.unique.orifice.core(scaleConst, true, 2),
 	},
 
 	-- 🟦 HEALTH & ARMOR
 	health = {
-		unitClass = "LIGHT",       -- string enum: UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
+		unitClass = "HEAVY",       -- string enum: UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
 		health = functions.floor((1 - healthStats.proportionRegenMax) * healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.C})),
 		health_regen_per_second = 0,
 		aegisMaximum = functions.ceil(healthStats.proportionRegenMax *  healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.C})), 			-- float: Game will automatically determine, but can be manually set here.
@@ -178,8 +178,8 @@ return {
 		reverseAccelMultiplier = functions.averageMultiplier({healthStats.retreatMult.C}),      -- float: Fraction of accel used for reverse/breaking
 		inertialCorrection = true,         --Try to cancel out excess velocity in directions you don't want to go.
 		isStrafing = false,                 --Should this unit strafe around? (Partell, Skua)
-		standoffDistance = 5,              -- float: How far away from a target's ColliderDimensions should a unit hold position?
-		retreatDistance = 2,               -- float: How far away from a target's ColliderDimensions should a unit begin to retreat?
+		standoffDistance = weaponStats.gwe.baseRange - 10,              -- float: How far away from a target's ColliderDimensions should a unit hold position?
+		retreatDistance = weaponStats.gwe.baseRange - 14,               -- float: How far away from a target's ColliderDimensions should a unit begin to retreat?
 		strafeMargin = 1.5,                -- float: How far away from standoffDistance strafe thrust is allowed to start. Default = 1
 		useMinimumWorldYPosition = false,
 		minimumWorldYPosition = 0,         -- float: What does this unit consider the lowest it can go? Capitals and Heavies often use 3~4 to stop them sinking into bases, and keep them looking imposing.
@@ -203,7 +203,7 @@ return {
 		acquisition = {
 			-- QUADTREE_AND_MACRO (Local stuff, and MacroTargets), QUADTREE_ONLY (Only local stuff, for turrets), MACRO_ONLY (Only MacroTargets, for Nukes), RAYCAST (by minimumDistance), RAYCAST_VELOCITY (bullets), SPHEREOVERLAP (flak, missiles, by minimumDistance), CAPSULEOVERLAP_VELOCITY, CAPSULEOVERLAP (by minimumDistance, and width as maximumDistance)
 			type = "QUADTREE_AND_MACRO",
-			isFriendly = true, 			--Allowed to target units on the same team/alliance.
+			isFriendly = false, 			--Allowed to target units on the same team/alliance.
 			isResourceMiner = false, 		--Allowed to target the Environmental team.
 			acceptFirstValidTarget = false, 	--For launchers and things that don't need to actually target something. Shoot at the first thing you see.
 			pauseIfHasTarget = false, 		--Don't look for a target again, until you're current one is dead. USE WITH canInvalidateTarget otherwise units WILL get stuck trying to shoot stuff out of their range.
@@ -219,14 +219,14 @@ return {
 			addedPreaimDistance = 0, 		-- float: If you have no target in maximumDistance, you may try to target something this far beyond max distance. (use on turrets, not ships)
 			
 			-- Scoring can be negative. Will invert behaviour.
-			scoreForDistance = 1,    		-- float: (keep it at 1 change other score values). 1 unit distance = -1 score, means prioritise closer targets. Negative means prioritise farther targets.
+			scoreForDistance = -1,    		-- float: (keep it at 1 change other score values). 1 unit distance = -1 score, means prioritise closer targets. Negative means prioritise farther targets.
 			scoreForHealth = 0,      		-- float: Niche parameter, prioritise the biggest things, or smallest if negative.
 			scoreForHealthCurrent = 0, 		-- float: Good for healers. 1 hp = 1 score
 			scoreForHealthCurrentMissing = .01, 	-- float: Good for healers. 1 missing hp = 1 score.
 			scoreForHealthCurrentPercentage = .1, -- float: Good for healers, good for spreading healing between units regardless of total health.
 			scoreForArmour = 0,      		-- float: Good for anti-armour, if negative good for units with weapons that are better against raw hull. But can be misleading on it's own (*cough cough* GLADIATOR)
 			scoreForArmourCurrent = 0, 		-- float: Good for anti-armour, if negative good for units with weapons that are better spent against raw hull.
-			scoreForAngle = 0,       		-- float: Good for slow units and turrets that need to shoot things infront of them to minimise traverse.
+			scoreForAngle = -.1,       		-- float: Good for slow units and turrets that need to shoot things infront of them to minimise traverse.
 
 			-- If scoreForX is not 0, clamp the X (eg. the enemy's health) to this perceived value. Useful for helping units put a floor and ceiling to how much they care about different stats.
 			perceivedHealthMax = 0,			-- float: 
@@ -259,7 +259,7 @@ return {
 			canInvalidateTarget = false,  	-- For units using pauseIfHasTarget.
 			invalidationDistance = 0,		-- float: 
 			invalidationAngle = 0,        	-- float: Radians
-			invalidationVelocityHeadOn = 0 	-- float: For tractor ships,
+			invalidationVelocityHeadOn = 2 	-- float: For tractor ships,
 		}
 	},
 
