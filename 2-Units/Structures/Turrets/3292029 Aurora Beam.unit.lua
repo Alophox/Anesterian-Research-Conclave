@@ -61,6 +61,9 @@ return {
 		techRequired = 0
 	},
 
+	displayAreaRadius        = 40,            -- decimal
+	displayAreaColour        = { 1,0,0,.2 },  -- decimals
+
 	-- 🟦 PARTS
 	parts = {
 		{
