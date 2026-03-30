@@ -67,7 +67,7 @@ return {
 				reportKillsToParent = false,
 				doDamageToEntityOnDeath = true,
 				damageToEntityOnDeath = {
-					isNondamaging = true, instances = 1, damage = 0.00001, piercing = -9999999999,
+					isNondamaging = true, instances = 1, damage = 0, piercing = -9999999999,
 					shred = 0, heat = 0, vulnerability = 0, decloak = 0,
 					targetingPriorityMultiplier = 0, impulseForce = 0,
 				},
