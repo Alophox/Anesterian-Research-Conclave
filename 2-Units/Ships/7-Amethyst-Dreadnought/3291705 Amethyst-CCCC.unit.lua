@@ -91,9 +91,9 @@ return {
 		prefab.ship.amethyst.stern.C(scaleConst, false),
 		prefab.ship.amethyst.core.C(scaleConst, false),
 		prefab.ship.amethyst.bow.C(scaleConst, false),
-		prefab.ship.amethyst.stern.C(scaleConst,true, 0, "aegis"),
-		prefab.ship.amethyst.core.C(scaleConst,true, 0, "aegis"),
-		prefab.ship.amethyst.bow.C(scaleConst,true, 0, "aegis"),
+		prefab.ship.amethyst.stern.C(scaleConst,true, 0, "aegis_teamColour"),
+		prefab.ship.amethyst.core.C(scaleConst,true, 0, "aegis_teamColour"),
+		prefab.ship.amethyst.bow.C(scaleConst,true, 0, "aegis_teamColour"),
 	},
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).

@@ -134,7 +134,7 @@ function prefab.ship.amethyst.stern.P(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -194,7 +194,7 @@ function prefab.ship.amethyst.stern.B(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -267,7 +267,7 @@ function prefab.ship.amethyst.stern.M(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -326,7 +326,7 @@ function prefab.ship.amethyst.stern.G(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -385,7 +385,7 @@ function prefab.ship.amethyst.stern.A(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -507,7 +507,7 @@ function prefab.ship.amethyst.stern.C(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -581,7 +581,7 @@ function prefab.ship.amethyst.core_aft.P(scaleConst, isGhost, ghostIndex, ghostM
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -667,7 +667,7 @@ function prefab.ship.amethyst.core_aft.B(scaleConst, isGhost, ghostIndex, ghostM
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -748,7 +748,7 @@ function prefab.ship.amethyst.core_aft.M(scaleConst, isGhost, ghostIndex, ghostM
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -827,7 +827,7 @@ function prefab.ship.amethyst.core_aft.G(scaleConst, isGhost, ghostIndex, ghostM
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -886,7 +886,7 @@ function prefab.ship.amethyst.core_aft.A(scaleConst, isGhost, ghostIndex, ghostM
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -996,7 +996,7 @@ function prefab.ship.amethyst.core_aft.C(scaleConst, isGhost, ghostIndex, ghostM
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -1094,7 +1094,7 @@ function prefab.ship.amethyst.core_fore.P(scaleConst, isGhost, ghostIndex, ghost
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -1165,7 +1165,7 @@ function prefab.ship.amethyst.core_fore.B(scaleConst, isGhost, ghostIndex, ghost
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -1236,7 +1236,7 @@ function prefab.ship.amethyst.core_fore.M(scaleConst, isGhost, ghostIndex, ghost
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -1294,7 +1294,7 @@ function prefab.ship.amethyst.core_fore.G(scaleConst, isGhost, ghostIndex, ghost
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -1346,7 +1346,7 @@ function prefab.ship.amethyst.core_fore.A(scaleConst, isGhost, ghostIndex, ghost
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -1445,7 +1445,7 @@ function prefab.ship.amethyst.core_fore.C(scaleConst, isGhost, ghostIndex, ghost
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -1477,7 +1477,7 @@ function prefab.ship.amethyst.core.P(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -1509,7 +1509,7 @@ function prefab.ship.amethyst.core.B(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -1541,7 +1541,7 @@ function prefab.ship.amethyst.core.M(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -1573,7 +1573,7 @@ function prefab.ship.amethyst.core.G(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -1605,7 +1605,7 @@ function prefab.ship.amethyst.core.A(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -1636,7 +1636,7 @@ function prefab.ship.amethyst.core.C(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -1692,7 +1692,7 @@ function prefab.ship.amethyst.bow.P(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -1745,7 +1745,7 @@ function prefab.ship.amethyst.bow.B(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -1789,7 +1789,7 @@ function prefab.ship.amethyst.bow.M(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -1842,7 +1842,7 @@ function prefab.ship.amethyst.bow.G(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -1897,7 +1897,7 @@ function prefab.ship.amethyst.bow.A(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -1993,7 +1993,7 @@ function prefab.ship.amethyst.bow.C(scaleConst, isGhost, ghostIndex, ghostMat)
 		}
 	}
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}

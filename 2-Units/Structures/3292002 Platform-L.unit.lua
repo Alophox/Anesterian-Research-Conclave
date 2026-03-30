@@ -84,7 +84,7 @@ return {
 		{
 			name     = "Aegis",
 			mesh    = "329-Core/Core-Large",
-			materials = { "329_MT_arc_0_aegis", "329_MT_arc_0_aegis", "329_MT_arc_0_aegis", "329_MT_arc_0_aegis" },
+			materials = { "329_MT_arc_0_aegis_teamColour", "329_MT_arc_0_aegis_teamColour", "329_MT_arc_0_aegis_teamColour", "329_MT_arc_0_aegis_teamColour" },
 			pos       = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
@@ -216,33 +216,33 @@ return {
 
 
 
-		prefab.part.platform.L.A(scaleConst, 1,true, 0, "aegis"),
-		prefab.part.platform.L.A(scaleConst, 3,true, 0, "aegis"),
-		prefab.part.platform.L.A(scaleConst, 5,true, 0, "aegis"),
-		prefab.part.platform.L.A(scaleConst, 7,true, 0, "aegis"),
-		prefab.part.platform.L.A(scaleConst, 9,true, 0, "aegis"),
-		prefab.part.platform.L.A(scaleConst, 11,true, 0, "aegis"),
-		prefab.part.platform.L.A(scaleConst, 13,true, 0, "aegis"),
-		prefab.part.platform.L.A(scaleConst, 15,true, 0, "aegis"),
+		prefab.part.platform.L.A(scaleConst, 1,true, 0, "aegis_teamColour"),
+		prefab.part.platform.L.A(scaleConst, 3,true, 0, "aegis_teamColour"),
+		prefab.part.platform.L.A(scaleConst, 5,true, 0, "aegis_teamColour"),
+		prefab.part.platform.L.A(scaleConst, 7,true, 0, "aegis_teamColour"),
+		prefab.part.platform.L.A(scaleConst, 9,true, 0, "aegis_teamColour"),
+		prefab.part.platform.L.A(scaleConst, 11,true, 0, "aegis_teamColour"),
+		prefab.part.platform.L.A(scaleConst, 13,true, 0, "aegis_teamColour"),
+		prefab.part.platform.L.A(scaleConst, 15,true, 0, "aegis_teamColour"),
 
-		prefab.part.platform.L.B(scaleConst, 0,true, 0, "aegis"),
-		prefab.part.platform.L.B(scaleConst, 2,true, 0, "aegis"),
-		prefab.part.platform.L.B(scaleConst, 4,true, 0, "aegis"),
-		prefab.part.platform.L.B(scaleConst, 6,true, 0, "aegis"),
-		prefab.part.platform.L.B(scaleConst, 8,true, 0, "aegis"),
-		prefab.part.platform.L.B(scaleConst, 10,true, 0, "aegis"),
-		prefab.part.platform.L.B(scaleConst, 12,true, 0, "aegis"),
-		prefab.part.platform.L.B(scaleConst, 14,true, 0, "aegis"),
+		prefab.part.platform.L.B(scaleConst, 0,true, 0, "aegis_teamColour"),
+		prefab.part.platform.L.B(scaleConst, 2,true, 0, "aegis_teamColour"),
+		prefab.part.platform.L.B(scaleConst, 4,true, 0, "aegis_teamColour"),
+		prefab.part.platform.L.B(scaleConst, 6,true, 0, "aegis_teamColour"),
+		prefab.part.platform.L.B(scaleConst, 8,true, 0, "aegis_teamColour"),
+		prefab.part.platform.L.B(scaleConst, 10,true, 0, "aegis_teamColour"),
+		prefab.part.platform.L.B(scaleConst, 12,true, 0, "aegis_teamColour"),
+		prefab.part.platform.L.B(scaleConst, 14,true, 0, "aegis_teamColour"),
 
-		prefab.part.platform.L.C1(scaleConst, 0,true, 0, "aegis"),
-		prefab.part.platform.L.C1(scaleConst, 4,true, 0, "aegis"),
-		prefab.part.platform.L.C1(scaleConst, 8,true, 0, "aegis"),
-		prefab.part.platform.L.C1(scaleConst, 12,true, 0, "aegis"),
+		prefab.part.platform.L.C1(scaleConst, 0,true, 0, "aegis_teamColour"),
+		prefab.part.platform.L.C1(scaleConst, 4,true, 0, "aegis_teamColour"),
+		prefab.part.platform.L.C1(scaleConst, 8,true, 0, "aegis_teamColour"),
+		prefab.part.platform.L.C1(scaleConst, 12,true, 0, "aegis_teamColour"),
 		
-		prefab.part.platform.L.C2(scaleConst, 2,true, 0, "aegis"),
-		prefab.part.platform.L.C2(scaleConst, 6,true, 0, "aegis"),
-		prefab.part.platform.L.C2(scaleConst, 10,true, 0, "aegis"),
-		prefab.part.platform.L.C2(scaleConst, 14,true, 0, "aegis"),
+		prefab.part.platform.L.C2(scaleConst, 2,true, 0, "aegis_teamColour"),
+		prefab.part.platform.L.C2(scaleConst, 6,true, 0, "aegis_teamColour"),
+		prefab.part.platform.L.C2(scaleConst, 10,true, 0, "aegis_teamColour"),
+		prefab.part.platform.L.C2(scaleConst, 14,true, 0, "aegis_teamColour"),
 
 	},
 

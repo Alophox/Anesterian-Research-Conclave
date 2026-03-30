@@ -95,9 +95,9 @@ return {
 		prefab.ship.aquamarine.stern.B(scaleConst, false),
 		prefab.ship.aquamarine.core.B(scaleConst, false),
 		prefab.ship.aquamarine.bow.B(scaleConst, false),
-		prefab.ship.aquamarine.stern.B(scaleConst,true, 0, "aegis"),
-		prefab.ship.aquamarine.core.B(scaleConst,true, 0, "aegis"),
-		prefab.ship.aquamarine.bow.B(scaleConst,true, 0, "aegis"),
+		prefab.ship.aquamarine.stern.B(scaleConst,true, 0, "aegis_teamColour"),
+		prefab.ship.aquamarine.core.B(scaleConst,true, 0, "aegis_teamColour"),
+		prefab.ship.aquamarine.bow.B(scaleConst,true, 0, "aegis_teamColour"),
 	},
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).

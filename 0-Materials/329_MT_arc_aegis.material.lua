@@ -1,5 +1,5 @@
 return {
-    id = "329_MT_arc_0_aegis",
+    id = "329_MT_arc_0_aegis_teamColour",
     -- shader = "Shader Graphs/shieldShader",
     -- keywords = { "_EMISSION" },
     -- properties = {
@@ -16,9 +16,10 @@ return {
     keywords = { "_EMISSION" },
     properties = {
         _Color = { 0.5, 1, 1, 1 },
-        _Opacity = 0.05,
+        _Opacity = 0.02,
         _QueueControl = 0,
         _QueueOffset = 0,
         Aegis = 1,
     },
+
 }

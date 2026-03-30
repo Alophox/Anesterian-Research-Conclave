@@ -98,7 +98,7 @@ return {
 		-- 	},
 		-- },
 		-- prefab.ship.quartz.core[shipConst.typeCore](scaleConst, false),
-		-- prefab.ship.quartz.core[shipConst.typeCore](scaleConst,true, 0, "aegis"),
+		-- prefab.ship.quartz.core[shipConst.typeCore](scaleConst,true, 0, "aegis_teamColour"),
 
 		{
 			name = "Particle Source",

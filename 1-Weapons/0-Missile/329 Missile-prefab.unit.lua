@@ -25,7 +25,7 @@ function prefab.weapon.missile.vls.S(pos, rot, sca, isGhost, ghostIndex, ghostMa
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -73,7 +73,7 @@ function prefab.weapon.missile.vls.M(pos, rot, sca, isGhost, ghostIndex, ghostMa
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -120,7 +120,7 @@ function prefab.weapon.missile.vls.L(pos, rot, sca, isGhost, ghostIndex, ghostMa
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -167,7 +167,7 @@ function prefab.weapon.missile.vls.X(pos, rot, sca, isGhost, ghostIndex, ghostMa
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -214,7 +214,7 @@ function prefab.weapon.missile.vls.T(pos, rot, sca, isGhost, ghostIndex, ghostMa
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -262,7 +262,7 @@ function prefab.weapon.missile.hls.S(pos, rot, sca, isGhost, ghostIndex, ghostMa
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -310,7 +310,7 @@ function prefab.weapon.missile.hls.M(pos, rot, sca, isGhost, ghostIndex, ghostMa
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -357,7 +357,7 @@ function prefab.weapon.missile.hls.L(pos, rot, sca, isGhost, ghostIndex, ghostMa
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -404,7 +404,7 @@ function prefab.weapon.missile.hls.X(pos, rot, sca, isGhost, ghostIndex, ghostMa
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
@@ -451,7 +451,7 @@ function prefab.weapon.missile.hls.T(pos, rot, sca, isGhost, ghostIndex, ghostMa
 	}
 	-- ghosts should NOT have weapons, as it causes a crash.
 	if isGhost then
-		if (ghostMat == "aegis") then
+		if (ghostMat == "aegis_teamColour") then
 			prefab_part.aegisVisual = true;
 		end
 		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}

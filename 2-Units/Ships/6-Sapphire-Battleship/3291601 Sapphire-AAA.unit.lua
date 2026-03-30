@@ -95,9 +95,9 @@ return {
 		prefab.ship.sapphire.stern.A(scaleConst, false),
 		prefab.ship.sapphire.core.A(scaleConst, false),
 		prefab.ship.sapphire.bow.A(scaleConst, false),
-		prefab.ship.sapphire.stern.A(scaleConst,true, 0, "aegis"),
-		prefab.ship.sapphire.core.A(scaleConst,true, 0, "aegis"),
-		prefab.ship.sapphire.bow.A(scaleConst,true, 0, "aegis"),
+		prefab.ship.sapphire.stern.A(scaleConst,true, 0, "aegis_teamColour"),
+		prefab.ship.sapphire.core.A(scaleConst,true, 0, "aegis_teamColour"),
+		prefab.ship.sapphire.bow.A(scaleConst,true, 0, "aegis_teamColour"),
 	},
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).

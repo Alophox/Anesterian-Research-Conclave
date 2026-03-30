@@ -90,7 +90,7 @@ return {
 			},
 		},
 		prefab.ship.ruby.core.M(scaleConst, false),
-		prefab.ship.ruby.core.M(scaleConst,true, 0, "aegis"),
+		prefab.ship.ruby.core.M(scaleConst,true, 0, "aegis_teamColour"),
 
 	},
 

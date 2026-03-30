@@ -90,7 +90,7 @@ return {
 			},
 		},
 		prefab.ship.citrine.core.G(scaleConst, false),
-		prefab.ship.citrine.core.G(scaleConst,true, 0, "aegis"),
+		prefab.ship.citrine.core.G(scaleConst,true, 0, "aegis_teamColour"),
 
 	},
 

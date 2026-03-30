@@ -93,7 +93,7 @@ return {
 			},
 		},
 		prefab.ship.citrine.core.A(scaleConst, false),
-		prefab.ship.citrine.core.A(scaleConst,true, 0, "aegis"),
+		prefab.ship.citrine.core.A(scaleConst,true, 0, "aegis_teamColour"),
 	},
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).
