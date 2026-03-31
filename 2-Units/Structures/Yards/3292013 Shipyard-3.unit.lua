@@ -300,6 +300,19 @@ return {
 
 			techID = 0 -- Required tech to enable.
 		},
-		
+		{
+			id = 3291804, -- typeID of the unit to spawn
+			spawnTime = 80, -- How long to build/spawn
+			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
+
+			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
+			spawnPointCode = 0,
+
+			spawnVelocity = 0, -- Ejection speed, eg. Kontaalagrad. Normal yards don't use this.
+			ignoreWaypoints = false, -- EG. Kontaalagrad.
+			heatPercentage = 0, -- What fraction of heat the unit spawns with, eg. Tychon units start with 20% (0.2) heat.
+
+			techID = 0 -- Required tech to enable.
+		},
 	},
 }

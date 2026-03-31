@@ -257,16 +257,19 @@ weaponStats.stardust = {
 weaponStats.gwe = {
 	baseRange	= 25,
 	baseAOE		= 25,
+	aoeAngle	= 3, --angle of cone from center
+	coneWidth	= 10*1.31019, -- the scale applied to the cone visual so that it matches the aoe. 10* (height of right triangle where base is baseAOE). The scaling is dependant on the model.
 	minAOEMult	= .1,
-	baseDMG		= .25,
+	baseDMG		= .5,
 	baseHeat	= .5,
+	basePierce	= 50,
 	instances	= 1,
 	baseCD		= .1,
 	secondsPerShot=.1,
 	trackingMult = 0,
 	shotsPerBurst = 1,
 	sfxID		= 25,
-	impulse		= -.25,
+	impulse		= -.05,
 }
 
 --1 hangar, for vaalk, is approximately one L turret worth of points, and comes with a capacity of 6 units every 30s

@@ -132,7 +132,7 @@ function prefab.weapon.special.gwe(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 						materials  = { "329_MT_arc_vortex_gwe" },
 						position   = { 0, 0, 0 },
 						rotation   = { 0, 0, 0 },
-						scale 	 = { 2.6449, 2.6449, .1 },
+						scale 	 = { .1, .1, .1 },
 						
 						--Assigns this part as a weaponVisual to the parent part's weapon, that we will use as a muzzle flash.
 						--Muzzle flashes are secretly laser beams. WOW
@@ -144,13 +144,13 @@ function prefab.weapon.special.gwe(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 							laserDescription = { 		--"laser" description, but is actually a maleable visual effect.
 								duration = 5,			--seconds
 								opacity = .1,			--float, 0-1
-								diameter = 26.449,			--relative to turret scale
+								diameter = weaponStats.gwe.coneWidth,			--relative to turret scale
 								offset = 0,			--relative to the barrel it gets fired from's facing.
 								rotateZ = true,		--Rotate the effect once randomly on the z axis when used.
 								rotateY = false,		--Rotate the effect once randomly on the y axis when used.
 								rotateZUpdate = false,	--Continuously rotate the effect on the z axis when used.
 								rotateYUpdate = false,	--COntinuously rotate the effect on the y axis when used.
-								noRescaleLength = 15,	--0 means DO rescale like a laser beam. >0 means don't, like a muzzle flashes.
+								noRescaleLength = weaponStats.gwe.baseAOE,	--0 means DO rescale like a laser beam. >0 means don't, like a muzzle flashes.
 								noFade = false,			--prevents the effect from fading to nothing over it's duration.
 								noShrink = true,		--prevents the effect from scaling down to nothing over it's duration.
 							}, 	

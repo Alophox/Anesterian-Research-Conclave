@@ -51,7 +51,7 @@ return {
 			isNondamaging = false,             -- false> normal, true> Healing, armour repair, aegis
 			instances = weaponStats.gwe.instances,                     -- int: How many times is this damage dealt. For making weapons worse against armour.
 			damage = weaponStats.gwe.baseDMG,                       -- float: Raw damage, reduced by armour.
-			piercing = 0,                      -- float: Ignore this much armour. Negative piercing is AEGIS shielding.
+			piercing = weaponStats.gwe.basePierce,                      -- float: Ignore this much armour. Negative piercing is AEGIS shielding.
 			shred = 0,                      -- float: Destroy this much armour * class shred resistance. Negative heals armour.
 			heat = 0,                          -- float: Apply this much heat. Health is heat capacity.
 			vulnerability = 0,               -- float: Negate this much armour. Negative vulnerability is CAPTURE.
@@ -79,7 +79,7 @@ return {
 		-- AOE
 		isAreaOfEffect = true;
 		aoeData = {
-			maximumDegrees = 10,    --Degrees from forward that units can be hit. Weapons spawn AOE's facing the same direction as them.
+			maximumDegrees = weaponStats.gwe.aoeAngle,    --Degrees from forward that units can be hit. Weapons spawn AOE's facing the same direction as them.
 			radiusOuter = weaponStats.gwe.baseAOE,         --Damage drops off to 0 at outer. Linear scale. A tolly is 0.4 units
 			radiusInner = weaponStats.gwe.baseAOE * weaponStats.gwe.minAOEMult,          --Full damage to units within inner.
 		},
