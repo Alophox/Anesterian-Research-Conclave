@@ -114,9 +114,9 @@ function prefab.weapon.special.gwe(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 				name      = "Turret",	position  = { 0,0, 0 },	rotation  = { 0, 0, 0 },	scale 	= { 1, 1, 1 },
 				weapon    = {
 					weaponID = 3295704, --int: The weaponData id to be used for this weapon.
-					turnSpeed = 0, 	--float: Degrees per second.
+					turnSpeed = 5, 	--float: Degrees per second.
 					turnMode = "Linear", --string enum: Linear / Acceleration
-					turnInstant = true, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
+					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
 					mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
 						left = 5, --float:
 						right = 5,--float:
@@ -146,7 +146,7 @@ function prefab.weapon.special.gwe(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 								opacity = .1,			--float, 0-1
 								diameter = weaponStats.gwe.coneWidth,			--relative to turret scale
 								offset = 0,			--relative to the barrel it gets fired from's facing.
-								rotateZ = true,		--Rotate the effect once randomly on the z axis when used.
+								rotateZ = false,		--Rotate the effect once randomly on the z axis when used.
 								rotateY = false,		--Rotate the effect once randomly on the y axis when used.
 								rotateZUpdate = false,	--Continuously rotate the effect on the z axis when used.
 								rotateYUpdate = false,	--COntinuously rotate the effect on the y axis when used.
