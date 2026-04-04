@@ -1,5 +1,7 @@
 shipConst = {
 	class="C",
+	standoff=weaponStats.fireRangeMult * weaponStats.rangeMult["L"] * weaponStats.laser.baseRange-2,
+	retreat=weaponStats.fireRangeMult * weaponStats.rangeMult["L"] * weaponStats.laser.baseRange-5,
 }
 scaleConst = 4.95; --0.020202
 return {
@@ -184,8 +186,8 @@ return {
 		reverseAccelMultiplier = functions.averageMultiplier({healthStats.retreatMult.P,healthStats.retreatMult.P,healthStats.retreatMult.P,healthStats.retreatMult.P}),      -- float: Fraction of accel used for reverse/breaking
 		inertialCorrection = true,         --Try to cancel out excess velocity in directions you don't want to go.
 		isStrafing = false,                 --Should this unit strafe around? (Partell, Skua)
-		standoffDistance = weaponStats.fireRangeMult * weaponStats.rangeMult["L"] * weaponStats.laser.baseRange-2,              -- float: How far away from a target's ColliderDimensions should a unit hold position?
-		retreatDistance = weaponStats.fireRangeMult * weaponStats.rangeMult["L"] * weaponStats.laser.baseRange-5,               -- float: How far away from a target's ColliderDimensions should a unit begin to retreat?
+		standoffDistance = shipConst.standoff,              -- float: How far away from a target's ColliderDimensions should a unit hold position?
+		retreatDistance = shipConst.retreat,               -- float: How far away from a target's ColliderDimensions should a unit begin to retreat?
 		strafeMargin = 1.5,                -- float: How far away from standoffDistance strafe thrust is allowed to start. Default = 1
 		useMinimumWorldYPosition = false,
 		minimumWorldYPosition = 0,         -- float: What does this unit consider the lowest it can go? Capitals and Heavies often use 3~4 to stop them sinking into bases, and keep them looking imposing.
@@ -202,6 +204,25 @@ return {
 		preferredAngle = 0, 		-- float: Degrees. Prefered facing angle from target. Useful for thinks like Skua's (90) and Herons (30) that want to face away from their target for broadsides and cool stuff like strafing.
 		ignoreWorldUp = false 		-- bool: Good for Lights/Drones/Missiles. Allows this unit to turn upside down, sideways, etc. Looks stupid on most large ships such as Heavies and Capitals.
 	},
+
+	doAvoidance = true,
+    avoidance = {
+        considerationRadius = shipConst.standoff,
+        considerStructures = false,
+        considerMacroTargetStructures = false,
+        drone = 0,
+        missile = 0,
+        light = 0.2,
+        medium = 1,
+        heavy = 4,
+        capital = 10,
+        titan = 100,
+        avoidOnlyClosest = false,
+        minimumThreatValue = 10,
+        minimumThreatCount = 0,
+        panicDistance = 0,
+        unpanicDistance = 0,
+    },
 	
 	-- 🟦 TARGETING
 	isTargeting        = true,
