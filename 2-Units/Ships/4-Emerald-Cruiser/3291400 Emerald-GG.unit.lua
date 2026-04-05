@@ -208,7 +208,7 @@ return {
 
 	doAvoidance = true,
     avoidance = {
-        considerationRadius = shipConst.standoff,,
+        considerationRadius = shipConst.standoff,
         considerStructures = false,
         considerMacroTargetStructures = false,
         drone = 0,
