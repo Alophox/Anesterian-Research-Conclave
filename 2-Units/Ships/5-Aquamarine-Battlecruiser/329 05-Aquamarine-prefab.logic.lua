@@ -73,7 +73,7 @@ function prefab.ship.aquamarine.stern.P(scaleConst, isGhost, ghostIndex, ghostMa
 	prefab_part = {
 		name = "Aquamarine-Stern-P",
 		mesh = "329-5-Aquamarine/Aquamarine-Stern-P",
-		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
+		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {.1/scaleConst, .1/scaleConst, .1/scaleConst,},
@@ -145,7 +145,7 @@ function prefab.ship.aquamarine.stern.B(scaleConst, isGhost, ghostIndex, ghostMa
 	prefab_part = {
 		name = "Aquamarine-Stern-B",
 		mesh = "329-5-Aquamarine/Aquamarine-Stern-B",
-		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
+		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {.1/scaleConst, .1/scaleConst, .1/scaleConst,},
@@ -230,7 +230,7 @@ function prefab.ship.aquamarine.stern.M(scaleConst, isGhost, ghostIndex, ghostMa
 	prefab_part = {
 		name = "Aquamarine-Stern-M",
 		mesh = "329-5-Aquamarine/Aquamarine-Stern-M",
-		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
+		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {.1/scaleConst, .1/scaleConst, .1/scaleConst,},

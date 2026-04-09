@@ -93,7 +93,7 @@ function prefab.ship.unique.orifice.core(scaleConst, isGhost, ghostIndex, ghostM
 			{
 				name = "Aquamarine-Stern",
 				mesh = "329-5-Aquamarine/Aquamarine-Stern",
-				materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
+				materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 				position = {0,0,0},
 				rotation = {0,0,0},
 				scale = {1, 1, 1},
@@ -101,7 +101,7 @@ function prefab.ship.unique.orifice.core(scaleConst, isGhost, ghostIndex, ghostM
 			{
 				name = "Aquamarine-Core",
 				mesh = "329-5-Aquamarine/Aquamarine-Core",
-				materials = {"329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
+				materials = {"329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 				position = {0,0,0},
 				rotation = {0,0,0},
 				scale = {1, 1, 1},
@@ -109,7 +109,7 @@ function prefab.ship.unique.orifice.core(scaleConst, isGhost, ghostIndex, ghostM
 			{
 				name = "Aquamarine-Bow",
 				mesh = "329-5-Aquamarine/Aquamarine-Bow",
-				materials = {"329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
+				materials = {"329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 				position = {0,0,0},
 				rotation = {0,0,0},
 				scale = {1, 1, 1},

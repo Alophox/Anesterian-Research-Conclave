@@ -104,7 +104,7 @@ return {
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).
 	-- ghostMesh		= "329-1-Ruby/Ruby-Core-P",   -- Used for build ghosts on spawners (yards).
-	ghostMaterials = { "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine","329_MT_arc_teamColour" }, -- Used for the ghostMesh for build ghosts on spawners (yards).
+	-- ghostMaterials = { "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine","329_MT_arc_teamColour" }, -- Used for the ghostMesh for build ghosts on spawners (yards).
 	ghostParts 	= {
 		prefab.ship.aquamarine.stern.P(scaleConst, true, 2),
 		prefab.ship.aquamarine.core.P(scaleConst, true, 2),

@@ -73,7 +73,7 @@ function prefab.ship.sapphire.stern.G(scaleConst, isGhost, ghostIndex, ghostMat)
 	prefab_part = {
 		name = "Sapphire-Stern-G",
 		mesh = "329-6-Sapphire/Sapphire-Stern-G",
-		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
+		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
@@ -158,7 +158,7 @@ function prefab.ship.sapphire.stern.A(scaleConst, isGhost, ghostIndex, ghostMat)
 	prefab_part = {
 		name = "Sapphire-Stern-A",
 		mesh = "329-6-Sapphire/Sapphire-Stern-A",
-		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
+		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
@@ -219,7 +219,7 @@ function prefab.ship.sapphire.stern.C(scaleConst, isGhost, ghostIndex, ghostMat)
 	prefab_part = {
 		name = "Sapphire-Stern-C",
 		mesh = "329-6-Sapphire/Sapphire-Stern-C",
-		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
+		materials = {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},

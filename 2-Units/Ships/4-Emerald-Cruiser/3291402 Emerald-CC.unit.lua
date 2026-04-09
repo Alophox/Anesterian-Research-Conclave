@@ -51,7 +51,7 @@ return {
 	--Inorder for ATS to know which material goes to which material slot on a mesh, we must define the ordering.
 	--Assign materials here in the same order as they are defined on the object in your Blender file. 
 	--(Can only get materials from .materials.lua files in this mod folder.)
-	materials                   = { "329_MT_arc_teamGlow", "329_MT_arc_hull",  "329_MT_arc_engine", "329_MT_arc_teamColour" },
+	-- materials                   = { "329_MT_arc_teamGlow", "329_MT_arc_hull",  "329_MT_arc_engine", "329_MT_arc_teamColour" },
 
 	-- Percieved dimensions of the unit. Multiplied against scale. Controls how big the unit is percieved by other units. 
 	-- Units cannot actually "see" anything, so we need to mathematically define how big the unit is for standoff behaviour among other things.
@@ -101,7 +101,7 @@ return {
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).
 	-- ghostMesh		= "329-1-Ruby/Ruby-Core-P",   -- Used for build ghosts on spawners (yards).
-	ghostMaterials = { "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine","329_MT_arc_teamColour" }, -- Used for the ghostMesh for build ghosts on spawners (yards).
+	-- ghostMaterials = { "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine","329_MT_arc_teamColour" }, -- Used for the ghostMesh for build ghosts on spawners (yards).
 	ghostParts 	= {
 		prefab.ship.emerald.stern.C(scaleConst, true, 2),
 		prefab.ship.emerald.bow.C(scaleConst, true, 2),

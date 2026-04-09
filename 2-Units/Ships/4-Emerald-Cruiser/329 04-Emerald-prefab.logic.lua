@@ -54,7 +54,7 @@ function prefab.ship.emerald.stern.G(scaleConst, isGhost, ghostIndex, ghostMat)
 	prefab_part = {
 		name = "Emerald-Stern-G",
 		mesh = "329-4-Emerald/Emerald-Stern-G",
-		materials = {"329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
+		materials = {"329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
@@ -126,7 +126,7 @@ function prefab.ship.emerald.stern.A(scaleConst, isGhost, ghostIndex, ghostMat)
 	prefab_part = {
 		name = "Emerald-Stern-A",
 		mesh = "329-4-Emerald/Emerald-Stern-A",
-		materials = {"329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
+		materials = {"329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
@@ -204,7 +204,7 @@ function prefab.ship.emerald.stern.C(scaleConst, isGhost, ghostIndex, ghostMat)
 	prefab_part = {
 		name = "Emerald-Stern-C",
 		mesh = "329-4-Emerald/Emerald-Stern-C",
-		materials = {"329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
+		materials = {"329_MT_arc_hull_dark", "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", },
 		position = {0,0,0},
 		rotation = {0,0,0},
 		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
