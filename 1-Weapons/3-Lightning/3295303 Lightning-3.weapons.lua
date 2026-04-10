@@ -104,7 +104,7 @@ return {
 		--If a laserDescription part is tagged as "use parent laserDescription" then it will use this.
 		laserDescription = { 		--"laser" description, but is actually a maleable visual effect.
 						duration = .2,			--seconds
-						opacity = 1,			--float, 0-1
+						opacity = .7,			--float, 0-1
 						diameter = .5,			--relative to turret scale
 						offset = 0,			--relative to the barrel it gets fired from's facing.
 						rotateZ = true,		--Rotate the effect once randomly on the z axis when used.
@@ -112,7 +112,7 @@ return {
 						rotateZUpdate = false,	--Continuously rotate the effect on the z axis when used.
 						rotateYUpdate = false,	--COntinuously rotate the effect on the y axis when used.
 						noRescaleLength = 0,	--0 means DO rescale like a laser beam. >0 means don't, like a muzzle flashes.
-						noFade = true,			--prevents the effect from fading to nothing over it's duration.
+						noFade = false,			--prevents the effect from fading to nothing over it's duration.
 						noShrink = false,		--prevents the effect from scaling down to nothing over it's duration.
 						}, 
 

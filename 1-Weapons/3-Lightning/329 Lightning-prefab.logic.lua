@@ -12,7 +12,7 @@ function prefab.weapon.lightning_effect(num)
 		
 		weaponVisualConfig = {
 			laserColour = {1,1,1},
-			intensity = 3;
+			intensity = 1;
 			useWeaponLaserDescription = true,
 			laserDescription = {
 			}, 
