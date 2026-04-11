@@ -213,7 +213,7 @@ return {
 			scoreBandingSize = 1,			--Allows the targeter to pick a random target within bands. Useful for PD and AOE, but requires a high keep target to prevent schizophrenia.
 		},
 		tracking = {
-			positionPredictionType = "ACCELERATED", --Algorithm for predicting target position. NONE (lasers, most ships), SIMPLE (bad, nothing uses this), TRIGONOMETRIC (spinal ships, turrets, missiles)
+			positionPredictionType = "TRIGONOMETRIC", --Algorithm for predicting target position. NONE (lasers, most ships), SIMPLE (bad, nothing uses this), TRIGONOMETRIC (spinal ships, turrets, missiles)
 			predictionVelocityOveride = weaponStats.cannon.velocity, 	--The speed of the thing we want to hit our target with. For bullets use unitsPerSecond. EG. An Untresnafol has this set to the launch velocity of it's bullet.
 			doAimingComputation = true,   	--For weapons.
 			canInvalidateTarget = false,  	--For units using pauseIfHasTarget.
