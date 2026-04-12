@@ -46,7 +46,7 @@ function prefab.weapon.special.spawn_shield(pos, rot, sca, isGhost, ghostIndex, 
 end
 
 function prefab.weapon_info.special.stardust_repair(count)
-	return { 3295703, 1 * count, -1 }
+	return { 3295703, 1 * count, 0 }
 end
 function prefab.weapon.special.stardust_repair(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{float3}, {float3}, {float3}, bool
 	if(ghostIndex==nil) then ghostIndex=0 end

@@ -27,7 +27,7 @@ This faction's themes: Energy and Modularity.
 All weapons, in normal sci-fi shenanigans, would be considered energy weapons(laser/plasma/exotic).
 
 Weaponry:
-- Plasma Launcher: Explosive bullets
+- Neutron Launcher: Explosive bullets
 - Laser: Rapid fire PD/Anti-Light beam
 - Missile: Extremely fast, low HP singularity missiles with a bit of shred.
 - Breach Cannon: Effectively infinite piercing burst beam. Low DPS for its range. (Fryhart beware)

@@ -145,7 +145,7 @@ return {
           secondsPerCycleCurrent = weaponStats.hangar.baseCD,   --Starting delay. Good if you don't want your bomber launching bombs the moment it spawns.
 
           --Magazine Size
-          shotsPerCycle = weaponStats.hangar.shotsPerBurst,            --Shots per reload, ATS will ensure this number is always at least 1.
+          shotsPerCycle = 1,            --Shots per reload, ATS will ensure this number is always at least 1.
           shotsPerCycleCurrent = weaponStats.hangar.shotsPerBurst,     --Starting shots in the clip.
           simultaniousShots = 1,        --How many shots we can make at once. (shotgun, cluster bomb)
 

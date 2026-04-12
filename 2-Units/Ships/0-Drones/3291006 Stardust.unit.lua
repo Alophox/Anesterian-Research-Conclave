@@ -37,11 +37,10 @@ return {
 		"ARC would like to remind you that repairing materials that are heated beyond standard temperatures achieved through operational use will not be as effective.\n"..
 		"\n"..
 		"",
-		weaponInfo                  = {
-		-- 	functions.combineWeaponInfo({
-		-- 		prefab.weapon_info.special.stardust_repair(1),
-		-- })
-	},
+		weaponInfo                  = 
+		functions.combineWeaponInfo({
+				{prefab.weapon_info.special.stardust_repair(1)},
+		}),
 		relatedUnitIDs              = {} 	-- int array: TypeID of other units in the family tree
 	},
 
@@ -186,7 +185,7 @@ return {
 
 	-- 🟦 HEALTH & ARMOR
 	health = {
-		unitClass = "NONE",       -- string enum: UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
+		unitClass = "DRONE",       -- string enum: UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
 		health = functions.floor((1 - healthStats.proportionRegenMax) * healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult[shipConst.typeCore]})),              -- float: Health, also the unit's heat capacity.
 		health_regen_per_second = 0,
 		aegisMaximum = functions.ceil(healthStats.proportionRegenMax *  healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult[shipConst.typeCore]})), 			-- float: Game will automatically determine, but can be manually set here.

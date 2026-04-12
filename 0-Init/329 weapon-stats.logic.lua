@@ -241,7 +241,7 @@ weaponStats.missile = {
 
 weaponStats.stardust = {
 	baseRange	= 1,
-	baseDMG		= -2, --negative damage means healing
+	baseDMG		= -1, --negative damage means healing
 	basePierce	= -1,  --negative piercing means aegis shielding
 	baseHeat	= 0,
 	baseAOE		= 1,
