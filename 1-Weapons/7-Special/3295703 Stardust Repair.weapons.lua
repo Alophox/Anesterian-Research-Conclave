@@ -22,7 +22,7 @@ return {
 		-- Most weapons will create an AOE explosion if isAreaOfEffect is enabled.
 		-- All weapons will try to use a childed weaponVisual when firing. If there are multiple weaponVisuals, each shot it will use one in child order. (as a laser beam, or as a muzzle flash depending on how you configure the weaponVisual)
 
-		weaponType = "EXPLODER",
+		weaponType = "PUREHIT",
 		
 		-- LASER, raycast forward and damage the first thing you hit. Can do AOE/Damage. Uses weaponVisual as a beam.
 		-- PUREHIT, directly damage the target. Can do AOE/Damage. Uses weaponVisual as a beam.
@@ -35,7 +35,7 @@ return {
 		-- EXPLODER, creates an AOE and optional explosion visual.
 
 		--Fire Control 
-		alwaysfire = true,           -- fire constantly if not disabled (good for SPARKLER effects, constant drones, deploying mines, etc, but can look dumb when there are no enemies)
+		alwaysfire = false,           -- fire constantly if not disabled (good for SPARKLER effects, constant drones, deploying mines, etc, but can look dumb when there are no enemies)
 		magdump = false,              -- always expend entire magazine, good for drone launchers to ensure the whole squadron is deployed. DAKKA DAKKA DAKKA DAKKA
 		necrofire = false,            -- enable weapon on parent death (good for SPARKLER visual effects, among other things)
 		active = true,                -- is the weapon online (for use with necrofire)
@@ -80,7 +80,7 @@ return {
 		piercingThreshold = 0,   -- Must have MORE than this much damage remaining after piercing in order to continue piercing. (Prevents scenarios where a super laser murders a capital ship then does 2 damage to a Tolly on the other side)
 
 		-- AOE
-		isAreaOfEffect = true;
+		isAreaOfEffect = false;
 		aoeData = {
 			maximumDegrees = 360,    --Degrees from forward that units can be hit. Weapons spawn AOE's facing the same direction as them.
 			radiusOuter = weaponStats.stardust.baseAOE,         --Damage drops off to 0 at outer. Linear scale. A tolly is 0.4 units
@@ -193,13 +193,13 @@ return {
 			perceivedHealthMin = 0,
 			perceivedArmourMax = 0, 			--Good for most units with scoreForArmour. If you have 20 damage don't worry if the target has more than 20 armour because it makes no difference you're doing no damage anyway.
 			perceivedArmourMin = 0, 			--Good for most units with scoreForArmour. If you have 20 piercing, you don't care if a target has less armour than that because you pierce it, only it if has more.
-			perceivedDistanceMin = 5, 		--Clamps the score for distance. Good in general. Keep at a fraction of your maximumDistance. Once a target is within normal firing range it's good to keep the target and not prioritise other things just because they're closer.
+			perceivedDistanceMin = 0, 		--Clamps the score for distance. Good in general. Keep at a fraction of your maximumDistance. Once a target is within normal firing range it's good to keep the target and not prioritise other things just because they're closer.
 
 			-- Target class priority.
 			-- Vital for unit behaviour. -1 = ignore.
 			-- Multiplies the target score by this.
-			classMultMissile = 1,
-			classMultDrone = 1,
+			classMultMissile = -1,
+			classMultDrone = -1,
 			classMultLight = 1,
 			classMultMedium = 1,
 			classMultHeavy = 1,
