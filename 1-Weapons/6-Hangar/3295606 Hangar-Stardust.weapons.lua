@@ -159,20 +159,20 @@ return {
      targeting = {
           acquisition = {
                -- QUADTREE_AND_MACRO (Local stuff, and MacroTargets), QUADTREE_ONLY (Only local stuff, for turrets), MACRO_ONLY (Only MacroTargets, for Nukes), RAYCAST (by minimumDistance), RAYCAST_VELOCITY (bullets), SPHEREOVERLAP (flak, missiles, by minimumDistance), CAPSULEOVERLAP_VELOCITY, CAPSULEOVERLAP (by minimumDistance, and width as maximumDistance)
-               type = "QUADTREE",
+               type = "QUADTREE_ONLY",
                isFriendly = true, 			--Allowed to target units on the same team/alliance.
                isResourceMiner = false, 		--Allowed to target the Environmental team.
                acceptFirstValidTarget = false, 	--For launchers and things that don't need to actually target something. Shoot at the first thing you see.
                pauseIfHasTarget = false, 		--Don't look for a target again, until you're current one is dead. USE WITH canInvalidateTarget otherwise units WILL get stuck trying to shoot stuff out of their range.
                ignoreUncapturable = false, 		--If the target is uncapturable, ignore it.
-               secondsPerScan = 1.5, 			--How long to wait before reassessing what you're targeting.
+               secondsPerScan = 2, 			--How long to wait before reassessing what you're targeting.
 
-               ignoreFullHealth = false, 		--Good for healers.
+               ignoreFullHealth = true, 		--Good for healers.
                minimumHealth = 0, 				--Don't target things with less Max Health than this.
                minimumDistance = 0, 			--Don't target things that are closer than this.
                maximumDistance = weaponStats.hangar.baseRange, 			--Important. Scan radius. Don't target things further than this. KEEP THIS NUMBER LOW, SERIOUS PERFORMANCE IMPACT. Light ~15, Medium ~20, Heavy ~25, Capital ~25
                maximumAngle = 0, 				--Good for spinal weapons/missiles.
-               addedPreaimDistance = 5, 		--If you have no target in maximumDistance, you may try to target something this far beyond max distance. (use on turrets, not ships)
+               addedPreaimDistance = 0, 		--If you have no target in maximumDistance, you may try to target something this far beyond max distance. (use on turrets, not ships)
                
                -- Scoring can be negative. Will invert behaviour.
                scoreForDistance = 1,    		--Foundational. NOTICE, VALUE IS INVERTED. Keep at 1. 1 unit distance = -1 score, means prioritise closer targets. Negative means prioritise farther targets.
