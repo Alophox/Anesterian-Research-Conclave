@@ -44,12 +44,12 @@ weaponStats = {
 	overShootMult=1.1,
 	accuracySpread=45, --0% accuracy would be this; 100% is 0
 	SFXIntensity={
-		D=.1,
-		S=.2,
-		M=.4,
-		L=.8,
-		X=1.6,
-		T=3.2,
+		D=.05,
+		S=.1,
+		M=.2,
+		L=.4,
+		X=.8,
+		T=1.6,
 	},
 }
 
