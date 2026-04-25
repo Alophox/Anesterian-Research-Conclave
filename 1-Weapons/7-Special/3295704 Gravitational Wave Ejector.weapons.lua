@@ -19,7 +19,7 @@ return {
 		-- Most weapons will create an AOE explosion if isAreaOfEffect is enabled.
 		-- All weapons will try to use a childed weaponVisual when firing. If there are multiple weaponVisuals, each shot it will use one in child order. (as a laser beam, or as a muzzle flash depending on how you configure the weaponVisual)
 
-		weaponType = "CONE_INSTANT",
+		weaponType = "TRACTOR",
 		
 		-- LASER, raycast forward and damage the first thing you hit. Can do AOE/Damage. Uses weaponVisual as a beam.
 		-- PUREHIT, directly damage the target. Can do AOE/Damage. Uses weaponVisual as a beam.
@@ -75,6 +75,11 @@ return {
 		
 		isPiercing = false,       -- Allows the laser/bullet to pierce through targets they believe they have killed. Weapon will reduce it's damage. Lasers will damage the next target on their raycast. Incompatible with AOE on warheads
 		piercingThreshold = 0,   -- Must have MORE than this much damage remaining after piercing in order to continue piercing. (Prevents scenarios where a super laser murders a capital ship then does 2 damage to a Tolly on the other side)
+
+		tractorHoldDistance = 9.5,
+        tractorPullPushFraction = 0.5,
+        tractorLateralPowerFraction = 0.5,
+        tractorSelfImpulseFraction = 1,
 
 		-- AOE
 		isAreaOfEffect = true;
@@ -198,8 +203,8 @@ return {
 			classMultMissile = -1,
 			classMultDrone = -1,
 			classMultLight = .01,
-			classMultMedium = .1,
-			classMultHeavy = 1,
+			classMultMedium = 1,
+			classMultHeavy = .9,
 			classMultCapital = .8,
 			classMultTitan = .6,
 
