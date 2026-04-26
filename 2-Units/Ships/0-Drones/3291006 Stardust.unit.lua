@@ -29,7 +29,7 @@ return {
 										" - Vulnerable to AOE\n"..
 										" - Repairs Health\n"..
 										" - Gives Aegis\n"..
-										" - <color=#80ffff>"..healthStats.aegisRegen[shipConst.class].." Aegis/s</color>\n"..
+										-- " - <color=#80ffff>"..healthStats.aegisRegen[shipConst.class].." Aegis/s</color>\n"..
 										"",
 		description                 =
 		"Nanites are primarily used for civilian construction, but do well enough to repair in a pinch. These nanites are also equipped with a sensor system, enabling them to optimize shields against nearby dust- rather than brute forcing it.\n"..
@@ -116,10 +116,10 @@ return {
 					scale 	= { 1, 1, 1 },
 
 					particleEmitter = {
-						particleType = "PARTICLE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
-						distancePerParticle = .000001,       -- decimal
+						particleType = "PULSE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
+						distancePerParticle = .01,       -- decimal
 						minSecondsPerParticle = 999999,     -- decimal
-						ejectionVelocity = .1,             -- decimal
+						ejectionVelocity = 0,             -- decimal
 						ejectionVelocityAwayFromEmitter = true, -- bool
 						randomRadius = .1,                 -- decimal
 						randomScaleMinFraction = 1,       -- decimal
@@ -127,38 +127,63 @@ return {
 						stateToggleTrigger = "None",      -- enum EMITTERSTATETRIGGER
 						colourStart = {.5,1,1,1},            -- decimals
 						colourEnd   = {.5,1,1,0},            -- decimals
-						opacity     = .01,                  -- decimal
+						opacity     = .1,                  -- decimal
 						scaleStart  = weaponStats.stardust.baseAOE*0.9,                  -- decimal
 						scaleEnd    = weaponStats.stardust.baseAOE*0.9,                  -- decimal
 						lifetime    = .4,                  -- decimal
 					},
 					
 				},
-				{
-					name     = "Foreground Particles",
-					position = { 0, weaponStats.stardust.baseAOE*0.9, 0 },
-					rotation = { 0, 0, 0 },
-					scale 	= { 1, 1, 1 },
+				-- {
+				-- 	name     = "Background Particles",
+				-- 	position = { 0.001, .001, .001 },
+				-- 	rotation = { 0, 0, 0 },
+				-- 	scale 	= { 1, 1, 1 },
 
-					particleEmitter = {
-						particleType = "PARTICLE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
-						distancePerParticle = .000001,       -- decimal
-						minSecondsPerParticle = 999999,     -- decimal
-						ejectionVelocity = 0,             -- decimal
-						ejectionVelocityAwayFromEmitter = true, -- bool
-						randomRadius = weaponStats.stardust.baseAOE*.25,                 -- decimal
-						randomScaleMinFraction = 1,       -- decimal
-						startDisabled = false,            -- bool
-						stateToggleTrigger = "None",      -- enum EMITTERSTATETRIGGER
-						colourStart = {.5,1,1},            -- decimals
-						colourEnd   = {.5,1,1},            -- decimals
-						opacity     = .8,                  -- decimal
-						scaleStart  = .04,                  -- decimal
-						scaleEnd    = .04,                  -- decimal
-						lifetime    = .2,                  -- decimal
-					},
+				-- 	particleEmitter = {
+				-- 		particleType = "PARTICLE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
+				-- 		distancePerParticle = .000001,       -- decimal
+				-- 		minSecondsPerParticle = 999999,     -- decimal
+				-- 		ejectionVelocity = .1,             -- decimal
+				-- 		ejectionVelocityAwayFromEmitter = true, -- bool
+				-- 		randomRadius = .1,                 -- decimal
+				-- 		randomScaleMinFraction = 1,       -- decimal
+				-- 		startDisabled = false,            -- bool
+				-- 		stateToggleTrigger = "None",      -- enum EMITTERSTATETRIGGER
+				-- 		colourStart = {.5,1,1,1},            -- decimals
+				-- 		colourEnd   = {.5,1,1,0},            -- decimals
+				-- 		opacity     = .01,                  -- decimal
+				-- 		scaleStart  = weaponStats.stardust.baseAOE*0.9,                  -- decimal
+				-- 		scaleEnd    = weaponStats.stardust.baseAOE*0.9,                  -- decimal
+				-- 		lifetime    = .4,                  -- decimal
+				-- 	},
 					
-				},
+				-- },
+				-- {
+				-- 	name     = "Foreground Particles",
+				-- 	position = { 0, weaponStats.stardust.baseAOE*0.9, 0 },
+				-- 	rotation = { 0, 0, 0 },
+				-- 	scale 	= { 1, 1, 1 },
+
+				-- 	particleEmitter = {
+				-- 		particleType = "PARTICLE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
+				-- 		distancePerParticle = .000001,       -- decimal
+				-- 		minSecondsPerParticle = 999999,     -- decimal
+				-- 		ejectionVelocity = 0,             -- decimal
+				-- 		ejectionVelocityAwayFromEmitter = true, -- bool
+				-- 		randomRadius = weaponStats.stardust.baseAOE*.25,                 -- decimal
+				-- 		randomScaleMinFraction = 1,       -- decimal
+				-- 		startDisabled = false,            -- bool
+				-- 		stateToggleTrigger = "None",      -- enum EMITTERSTATETRIGGER
+				-- 		colourStart = {.5,1,1},            -- decimals
+				-- 		colourEnd   = {.5,1,1},            -- decimals
+				-- 		opacity     = .8,                  -- decimal
+				-- 		scaleStart  = .04,                  -- decimal
+				-- 		scaleEnd    = .04,                  -- decimal
+				-- 		lifetime    = .2,                  -- decimal
+				-- 	},
+					
+				-- },
 			},
 		},
 
