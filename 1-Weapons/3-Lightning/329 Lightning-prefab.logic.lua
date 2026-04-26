@@ -57,6 +57,7 @@ function prefab.weapon.lightning.D(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 						up = 5,	 --float:
 						down = 5  --float:
 					},
+					useRootTarget = true,
 				},
 
 				parts = {

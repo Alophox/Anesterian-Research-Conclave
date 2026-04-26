@@ -180,8 +180,8 @@ return {
 		reverseAccelMultiplier = 0.6,      -- float: Fraction of accel used for reverse/breaking
 		inertialCorrection = true,         --Try to cancel out excess velocity in directions you don't want to go.
 		isStrafing = true,                 --Should this unit strafe around? (Partell, Skua)
-		standoffDistance = weaponStats.fireRangeMult * weaponStats.rangeMult.D * weaponStats.lightning.baseRange-1,              -- float: How far away from a target's ColliderDimensions should a unit hold position?
-		retreatDistance = weaponStats.fireRangeMult * weaponStats.rangeMult.D * weaponStats.lightning.baseRange-2,               -- float: How far away from a target's ColliderDimensions should a unit begin to retreat?
+		standoffDistance = math.floor(.5+weaponStats.fireRangeMult * weaponStats.rangeMult.D * weaponStats.lightning.baseRange-1),              -- float: How far away from a target's ColliderDimensions should a unit hold position?
+		retreatDistance = math.floor(.5+weaponStats.fireRangeMult * weaponStats.rangeMult.D * weaponStats.lightning.baseRange-2),               -- float: How far away from a target's ColliderDimensions should a unit begin to retreat?
 		strafeMargin = .5,                -- float: How far away from standoffDistance strafe thrust is allowed to start. Default = 1
 		useMinimumWorldYPosition = false,
 		minimumWorldYPosition = 0,         -- float: What does this unit consider the lowest it can go? Capitals and Heavies often use 3~4 to stop them sinking into bases, and keep them looking imposing.

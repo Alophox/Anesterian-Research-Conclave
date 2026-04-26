@@ -74,6 +74,7 @@ function prefab.weapon.cannon.D(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 						up = 5,	 --float:
 						down = 5  --float:
 					},
+					useRootTarget = true,
 				},
 
 				parts = {

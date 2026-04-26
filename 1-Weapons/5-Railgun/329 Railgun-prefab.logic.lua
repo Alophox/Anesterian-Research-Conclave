@@ -39,6 +39,7 @@ function prefab.weapon.railgun.D(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 						up = 1,	 --float:
 						down = 1  --float:
 					},
+					useRootTarget = true,
 				},
 
 				parts = {

@@ -60,6 +60,7 @@ function prefab.weapon.laser.D(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{
 						up = 15,	 --float:
 						down = 15  --float:
 					},
+					useRootTarget = true,
 				},
 
 				parts = {
