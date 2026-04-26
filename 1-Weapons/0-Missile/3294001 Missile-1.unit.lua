@@ -14,7 +14,7 @@ return {
 	picture                     = "329-zerda.png",             -- string filename: The name of the image file in this folder to be used for this unit.
 
 	controllable 	= false;	-- bool: Can this unit be given move orders with right click?
-	unselectable = true;	-- Cannot be selected.
+	unselectable = false;	-- Cannot be selected.
 	untargetable = false;	-- Cannot be targeted.
 	unhittable 	= false;  -- Will be ignored by any RAYCAST or CAST based aquisition types (as are used for bullets). Also cannot be hit by explosions or incidental weapon raycasts (lasers). But can still be hit by PureHit weapons.
 
