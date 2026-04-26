@@ -78,7 +78,7 @@ return {
 			scale 	= { 1, 1, .1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 
 			weapon    = {
-				weaponID = 3296401, --int: The weaponData id to be used for this weapon.
+				weaponID = 3296400, --int: The weaponData id to be used for this weapon.
 				turnSpeed = 0, 	--float: Degrees per second.
 				turnMode = "Linear", --string enum: Linear / Acceleration
 				turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
