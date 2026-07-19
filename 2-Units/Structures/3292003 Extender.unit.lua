@@ -10,7 +10,8 @@ return {
 	unitBlurb                   = "FTL Relay Node",
 	unitBlurbExcludeFromTooltip = false,
 	hotkey                      = "x",
-	picture                     = "329-extender.png",
+	generatePicture = true;
+	-- picture                     = "329-extender.png",
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {

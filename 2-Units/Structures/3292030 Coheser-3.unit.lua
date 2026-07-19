@@ -10,7 +10,8 @@ return {
 	unitBlurb                   = "What an awful shape, who designed this?!",
 	unitBlurbExcludeFromTooltip = false,
 	hotkey                      = "c",
-	picture                     = "329-coheser-3.png",
+	generatePicture = true;
+	-- picture                     = "329-coheser-3.png",
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {

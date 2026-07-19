@@ -8,7 +8,8 @@ return {
 	unitBlurb                   = "Light Command Platform",
 	unitBlurbExcludeFromTooltip = false,
 	hotkey                      = "",
-	picture                     = "329-platform-s.png",
+	generatePicture = true;
+	-- picture                     = "329-platform-s.png",
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {

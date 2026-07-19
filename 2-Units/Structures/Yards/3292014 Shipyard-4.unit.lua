@@ -10,7 +10,8 @@ return {
 	unitBlurb                   = "Produces capital units.", 		-- Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           	-- The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
 	hotkey                      = "g",                             	-- For buildbar. The hotkey for this unit.
-	picture                     = "329-shipyard-4.png",            -- The name of the image file in this folder to be used for this unit.
+	generatePicture = true;
+	-- picture                     = "329-shipyard-4.png",            -- The name of the image file in this folder to be used for this unit.
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {

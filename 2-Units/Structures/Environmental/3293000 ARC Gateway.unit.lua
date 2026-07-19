@@ -8,7 +8,8 @@ return {
 	unitBlurb                   = "Who said gates need to be planes?",
 	unitBlurbExcludeFromTooltip = false,
 	hotkey                      = "",
-	picture                     = "329-gateway.png",
+	generatePicture = true;
+	-- picture                     = "329-gateway.png",
 
 	controllable = false;	-- bool: Can this unit be given move orders with right click?
 	unselectable = true;	-- Cannot be selected.

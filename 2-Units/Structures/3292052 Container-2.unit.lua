@@ -10,7 +10,8 @@ return {
 	unitBlurb                   = "",
 	unitBlurbExcludeFromTooltip = false,
 	hotkey                      = "m",
-	picture                     = "329-storage-m.png",
+	generatePicture = true;
+	-- picture                     = "329-storage-m.png",
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {

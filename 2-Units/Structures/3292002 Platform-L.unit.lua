@@ -8,7 +8,8 @@ return {
 	unitBlurb                   = "Super Command Platform",
 	unitBlurbExcludeFromTooltip = false,
 	hotkey                      = "",
-	picture                     = "329-platform-l.png",
+	generatePicture = true;
+	-- picture                     = "329-platform-l.png",
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {

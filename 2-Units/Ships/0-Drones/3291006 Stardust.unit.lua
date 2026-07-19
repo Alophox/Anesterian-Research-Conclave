@@ -12,7 +12,8 @@ return {
 	unitBlurb                   = "Repair Nanites", -- string: Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           -- bool: The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
 	hotkey                      = "G",                             -- Unity KeyCode: For buildbar. The hotkey for this unit.
-	picture                     = "329-stardust.png",             -- string filename: The name of the image file in this folder to be used for this unit.
+	generatePicture = true;
+	-- picture                     = "329-stardust.png",             -- string filename: The name of the image file in this folder to be used for this unit.
 
 	controllable 	= false;	-- bool: Can this unit be given move orders with right click?
 	unselectable = false;	-- Cannot be selected.

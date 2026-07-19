@@ -11,7 +11,8 @@ return {
 	unitBlurb                   = "What an awful shape, who designed this?!",
 	unitBlurbExcludeFromTooltip = false,
 	hotkey                      = "r",
-	picture                     = "329-reactor-3.png",
+	generatePicture = true;
+	-- picture                     = "329-reactor-3.png",
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {

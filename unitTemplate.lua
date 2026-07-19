@@ -46,7 +46,8 @@ return {
     unitBlurb                   = "",          -- string
     unitBlurbExcludeFromTooltip = false,       -- bool
     hotkey                      = "",          -- string: single character
-    picture                     = "",          -- string: filename (png/jpg in this folder)
+    generatePicture = true;
+	-- picture                     = "",          -- string: filename (png/jpg in this folder)
 
     -- Databank entry
     databankEntry = {

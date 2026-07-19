@@ -10,7 +10,8 @@ return {
 	unitBlurb                   = "It's hollow, how does it do anything?",
 	unitBlurbExcludeFromTooltip = false,
 	hotkey                      = "b",
-	picture                     = "329-logic_node.png",
+	generatePicture = true;
+	-- picture                     = "329-logic_node.png",
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {
