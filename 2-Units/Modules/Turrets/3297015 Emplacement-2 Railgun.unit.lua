@@ -13,7 +13,7 @@ return {
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {
-		visibility                  = "HIDDEN", --VISIBLE (always available) / HIDDEN (never visible)/ DISCOVER (visible once required level)
+		visibility                  = "DISCOVER", --VISIBLE (always available) / HIDDEN (never visible)/ DISCOVER (visible once required level)
 		requiredLevelForVisible     = "",
 		requiredLevelForDescription = "",
 		tactical                    = "", --Added to the top of all tooltips and Databank descriptions. Used to quickly explain what a unit is good at doing. Strong against, decent against, weak against.
