@@ -108,7 +108,7 @@ return {
 
 			particleEmitter = {
 				particleType = "PULSE",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
-				distancePerParticle = .01,       -- decimal
+				distancePerParticle = .1,       -- decimal
 				minSecondsPerParticle = 9999,     -- decimal
 				ejectionVelocity = 0,             -- decimal
 				ejectionVelocityAwayFromEmitter = true, -- bool
