@@ -20,7 +20,7 @@ return {
 		requiredLevelForVisible     = "",
 		requiredLevelForDescription = "",
 		tactical                    = 	""..
-										" - <color=#80ffff>"..(1.5*healthStats.aegisRegen[shipConst.class]* healthStats.structAegisRegenMult).." Aegis/s</color>\n"..
+										" - <color=#80ffff>"..(healthStats.aegisRegen[shipConst.class]* healthStats.structAegisRegenMult).." Aegis/s</color>\n"..
 										"", --Added to the top of all tooltips and Databank descriptions. Used to quickly explain what a unit is good at doing. Strong against, decent against, weak against.
 		description                 =
 		"WOW",
@@ -124,9 +124,9 @@ return {
 	health = {
 		unitClass = "HEAVY",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
 		health = functions.floor((1 - healthStats.proportionRegenMax) * 3000),
-		health_regen_per_second = healthStats.regen[shipConst.class],
+		health_regen_per_second = 2*healthStats.regen[shipConst.class],
 		max_regen_frac = 0,
-		aegis_regen_per_second = 1.5*healthStats.aegisRegen[shipConst.class] * healthStats.structAegisRegenMult,
+		aegis_regen_per_second = healthStats.aegisRegen[shipConst.class] * healthStats.structAegisRegenMult,
 		aegisMaximum = functions.ceil(healthStats.proportionRegenMax * 3000),
 
 		armour = 30,                --Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
