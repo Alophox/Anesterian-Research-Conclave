@@ -54,6 +54,7 @@ weaponStats = {
 }
 
 weaponStats.railgun = {
+	name		= "Plasma Railgun",
 	baseRange	= 12,
 	baseDMG		= 30,
 	baseHeat	= 15,
@@ -82,6 +83,7 @@ weaponStats.railgun = {
 }
 
 weaponStats.cannon = {
+	name		= "Neutron Launcher",
 	baseRange	= 7.5,
 	baseDMG		= 20,
 	baseHeat	= 2,
@@ -114,6 +116,7 @@ weaponStats.cannon = {
 }
 
 weaponStats.laser = {
+	name		= "Laser",
 	baseRange	= 10,
 	baseDMG		= 90, --0 makes weapons not hit anything
 	baseHeat	= 9,
@@ -143,6 +146,7 @@ weaponStats.laser = {
 }
 
 weaponStats.disruptor = {
+	name		= "Disruptor",
 	baseRange	= 7.5,
 	baseDMG		= 20,
 	baseHeat	= 0,
@@ -165,6 +169,7 @@ weaponStats.disruptor = {
 }
 
 weaponStats.lightning = {
+	name		= "Breach Cannon",
 	baseRange	= 8,
 	baseDMG		= 20,
 	baseHeat	= 0,
@@ -202,6 +207,7 @@ weaponStats.lightning = {
 
 -- missiles have two turrets per 'slot', so damage is half
 weaponStats.missile = {
+	name		= "Missile",
 	baseRange	= 13,
 	baseRetargetRange = 14,
 	baseCloakRange = 2,
@@ -240,6 +246,7 @@ weaponStats.missile = {
 }
 
 weaponStats.stardust = {
+	name		= "Stardust",
 	baseRange	= .5,
 	baseDMG		= -.5, --negative damage means healing
 	basePierce	= -1.5,  --negative piercing means aegis shielding
@@ -255,6 +262,7 @@ weaponStats.stardust = {
 }
 
 weaponStats.gwe = {
+	name		= "Gravitational Wave Emitter",
 	baseRange	= 25,
 	baseAOE		= 25,
 	aoeAngle	= 3, --angle of cone from center
@@ -275,6 +283,7 @@ weaponStats.gwe = {
 --1 hangar, for vaalk, is approximately one L turret worth of points, and comes with a capacity of 6 units every 30s
 --hangars have two hangars per 'slot'(aka one per M turret), so capacity is half, and respawn doubled
 weaponStats.hangar = {
+	name		= "Hangar",
 	baseRange	= 20,
 	instances	= 2, --4; drone capacity
 	baseCD		= 30, --10
