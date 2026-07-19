@@ -2,8 +2,8 @@ shipConst = {
 	class="H",
 	standoff=weaponStats.gwe.baseRange - 10,
 	retreat=weaponStats.gwe.baseRange - 14,
+	scaleConst = 2.35,
 }
-scaleConst = 2.35;
 return {
 
 	-- 🟦 DEFINITIONS
@@ -39,7 +39,7 @@ return {
 	},
 
 	-- BODY SETUP
-	scale                       	= scaleConst,                                          -- float: A Tolly is scale 0.4, all units are a uniform scale. Normalise XY mesh size to 1 in Blender. (controls selection ring, among other things. the longest horizontal part (width/length) is 1)
+	scale                       	= shipConst.scaleConst,                                          -- float: A Tolly is scale 0.4, all units are a uniform scale. Normalise XY mesh size to 1 in Blender. (controls selection ring, among other things. the longest horizontal part (width/length) is 1)
 	-- mainMesh                    	= "329-2-Citrine/Citrine-Core-C",   -- string: Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
 	
 	--NOTICE, WORKING WITH MATERIALS AND MESHS:
@@ -90,15 +90,15 @@ return {
 				},
 			},
 		},
-		prefab.ship.unique.orifice.core(scaleConst, false),
-		prefab.ship.unique.orifice.core(scaleConst,true, 0, "aegis_teamColour"),
+		prefab.ship.unique.orifice.core(shipConst.scaleConst, false),
+		prefab.ship.unique.orifice.core(shipConst.scaleConst,true, 0, "aegis_teamColour"),
 	},
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).
 	-- ghostMesh		= "329-2-Citrine/Citrine-Core-C",   -- Used for build ghosts on spawners (yards).
 	-- ghostMaterials = { ghostMat, ghostMat, ghostMat, ghostMat,ghostMat }, -- Used for the ghostMesh for build ghosts on spawners (yards).
 	ghostParts 	= {
-		prefab.ship.unique.orifice.core(scaleConst, true, 2),
+		prefab.ship.unique.orifice.core(shipConst.scaleConst, true, 2),
 	},
 
 	-- 🟦 HEALTH & ARMOR
