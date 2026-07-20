@@ -41,6 +41,26 @@ return {
 		relatedUnitIDs              = {} 	-- int array: TypeID of other units in the family tree
 	},
 
+	-- /// AI EDITOR INFO ///
+    commandAIUsageInformation = {
+        -- TODO: check if this is actually the right syntax
+        -- utilityRoles = "IGNORE", -- enum COMMAND_AI_UTILITY_ROLE - AUTO, MATTER_GENERATOR, ENERGY_GENERATOR, MATTER_STORAGE, ENERGY_STORAGE, LOGISTICS, EXTENDER, MINER. Determines how adaptive AIs will use this unit for economy purposes - multiple utility roles may be assigned. Not sure this is actually the correct syntax for multiple roles though...
+        -- minerInformation = {
+        --     minerID = 0, -- integer - unit ID of the miner this unit spawns. Purpose unclear
+        --     maximumPossibleMatterIncomePerSecond = 0, -- float - maximum amount of matter this mining setup can realistically mine per second
+        --     maximumPossibleEnergyIncomePerSecond = 0, -- float - maximum amount of energy this mining setup can realistically mine per second
+        --     preferredOperatingDistance = 0, -- float - preferred distance between this unit and the resources it wants to mine
+        -- },
+    },
+    unitMetaRole = {
+        defenceRole = "IGNORE", -- enum UNITROLE - IGNORE, MISSILE, DRONE, DRONE_ARMOURED, LIGHT, LIGHT_ARMOUR, MEDIUM, MEDIUM_ARMOUR, MEDIUM_STANDOFF, HEAVY, HEAVY_ARMOUR, HEAVY_STANDOFF, CAPITAL, CAPITAL_ARMOUR, CAPITAL_STANDOFF, TITAN. Determines what adaptive AIs think this unit is good at defending against. Multiple roles may be assigned
+        offenceRole = {"LIGHT","MEDIUM"}, -- enum UNITROLE - IGNORE, MISSILE, DRONE, DRONE_ARMOURED, LIGHT, LIGHT_ARMOUR, MEDIUM, MEDIUM_ARMOUR, MEDIUM_STANDOFF, HEAVY, HEAVY_ARMOUR, HEAVY_STANDOFF, CAPITAL, CAPITAL_ARMOUR, CAPITAL_STANDOFF, TITAN. Determines what adaptive AIs think this unit is good at attacking. Multiple roles may be assigned
+        defenceResponse = {"MEDIUM","MEDIUM_STANDOFF"}, -- enum UNITROLE - IGNORE, MISSILE, DRONE, DRONE_ARMOURED, LIGHT, LIGHT_ARMOUR, MEDIUM, MEDIUM_ARMOUR, MEDIUM_STANDOFF, HEAVY, HEAVY_ARMOUR, HEAVY_STANDOFF, CAPITAL, CAPITAL_ARMOUR, CAPITAL_STANDOFF, TITAN. Determines what defenses adaptive AIs think they should counter this unit with. Multiple roles may be assigned
+        offenceResponse = {"MEDIUM","MEDIUM_STANDOFF"}, -- enum UNITROLE - IGNORE, MISSILE, DRONE, DRONE_ARMOURED, LIGHT, LIGHT_ARMOUR, MEDIUM, MEDIUM_ARMOUR, MEDIUM_STANDOFF, HEAVY, HEAVY_ARMOUR, HEAVY_STANDOFF, CAPITAL, CAPITAL_ARMOUR, CAPITAL_STANDOFF, TITAN. Determines what ships adaptive AIs think they should counter this unit with. Multiple roles may be assigned
+        dangerDistance = 20, -- float - distance at which adaptive AIs will consider this unit to be a threat and factor it into their threat heatmaps. Pretty sure this doesn't affect the distance at which said AIs will react to it though, since that's a separate parameter that the AI itself uses
+        threatValueMultiplier = 0, -- float - how threatening this unit is to adaptive AIs. Larger values will cause them to invest more into defending against this unit. Note that unit class also has a built-in threat multiplier, with larger unit classes being more threatening by default
+    },
+
 	-- BODY SETUP
 	scale = scaleConst,
 	-- mainMesh                    	= "329-3-Topaz/Topaz-Core-P",   -- string: Visual body of this unit. Requires materials to be visible. FileName/ObjectName, looks for FileName.glb and then ObjectName from within that.
