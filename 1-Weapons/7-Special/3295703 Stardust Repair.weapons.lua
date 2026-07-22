@@ -51,7 +51,7 @@ return {
 
 		--Damage Data
 		damageData = {
-			isNondamaging = false,             -- false> normal, true> Healing, armour repair, aegis
+			isNondamaging = true,             -- false> normal, true> Healing, armour repair, aegis
 			instances = 1,                     -- int: How many times is this damage dealt. For making weapons worse against armour.
 			damage = weaponStats.stardust.baseDMG,                      -- float: Raw damage, reduced by armour.
 			piercing = weaponStats.stardust.basePierce,                      -- float: Ignore this much armour. Negative piercing is AEGIS shielding.
@@ -164,7 +164,7 @@ return {
 		acquisition = {
 			-- QUADTREE_AND_MACRO (Local stuff, and MacroTargets), QUADTREE_ONLY (Only local stuff, for turrets), MACRO_ONLY (Only MacroTargets, for Nukes), RAYCAST (by minimumDistance), RAYCAST_VELOCITY (bullets), SPHEREOVERLAP (flak, missiles, by minimumDistance), CAPSULEOVERLAP_VELOCITY, CAPSULEOVERLAP (by minimumDistance, and width as maximumDistance)
 			type = "SPHEREOVERLAP",
-			isFriendly = false, 			--Allowed to target units on the same team/alliance.
+			isFriendly = true, 			--Allowed to target units on the same team/alliance.
 			isResourceMiner = false, 		--Allowed to target the Environmental team.
 			acceptFirstValidTarget = false, 	--For launchers and things that don't need to actually target something. Shoot at the first thing you see.
 			pauseIfHasTarget = false, 		--Don't look for a target again, until you're current one is dead. USE WITH canInvalidateTarget otherwise units WILL get stuck trying to shoot stuff out of their range.
@@ -215,7 +215,7 @@ return {
 		tracking = {
 			positionPredictionType = "NONE", --Algorithm for predicting target position. NONE (lasers, most ships), SIMPLE (bad, nothing uses this), TRIGONOMETRIC (spinal ships, turrets, missiles)
 			predictionVelocityOveride = 0, 	--The speed of the thing we want to hit our target with. For bullets use unitsPerSecond. EG. An Untresnafol has this set to the launch velocity of it's bullet.
-			doAimingComputation = true,   	--For weapons.
+			doAimingComputation = false,   	--For weapons.
 			canInvalidateTarget = false,  	--For units using pauseIfHasTarget.
 			invalidationDistance = 0,
 			invalidationAngle = 0,        	--Radians
