@@ -34,7 +34,8 @@ return {
 										"The Breach Nodes surrounding the Starpost enable it to punch through the strange distortions present within the Spance, providing auxiliary power in addition to strengthened communications."..
 										"\n",
 		weaponInfo                  = functions.combineWeaponInfo({
-			{prefab.weapon_info.hangar.quartz.P(4),},
+			{prefab.weapon_info.hangar.quartz.P(4)},
+			{prefab.weapon_info.special.sensor_em(1)},
 		}),
 		relatedUnitIDs              = {}
 	},
@@ -106,6 +107,13 @@ return {
 		-- 	scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
 		-- 	destroyOnConstructionComplete = true,
 		-- },
+
+		prefab.weapon.special.sensor_em(
+			{0, 0, 0},
+			{ 0, 0, 0 },
+			{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
+			false
+		),
 		{
 			name      = "Drone Bay N",
 			position  = { 0, 8*.1/scaleConst, .75*.1/scaleConst },
@@ -241,7 +249,18 @@ return {
 		alertPlayerOnDeath = false,
 	},
 
-	
+	-- /// CLOAKING ///
+    isCloaking = false, -- bool - enables stealth
+    isCloakDetector = true, -- bool - enables detection of cloaked units
+    cloak = {
+        startingCloakFrac = 0, -- float - determines how soon this unit can cloak after spawning. 0 means wait the full cloaking duration, 1 means cloak immediately
+        cloakTime = 0, -- float - how many seconds it takes for this unit to cloak after being decloaked
+        decloakDistance = 0, -- float - this unit will decloak if enemy units are within this distance (or maybe its distance to target? unsure)
+    },
+    cloakDetector = {
+        range = weaponStats.sensor.baseRange * weaponStats.rangeMult.S, -- float - distance at which cloaked enemy units will be revealed
+        revealDuration = 0, -- float - minimum amount of time that revealed units are forced to wait before they can cloak again (i think)
+    },
 
 	-- 🟦 COMMAND / Platform
 	isCommand = true, -- Allows Platform AIs to be run on this structure.
