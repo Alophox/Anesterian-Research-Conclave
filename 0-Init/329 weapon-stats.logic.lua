@@ -298,6 +298,22 @@ weaponStats.hangar = {
 	accuracy	= 1,
 }
 
+weaponStats.sensor = {
+	name		= "Sensor",
+	baseRange	= 16,
+	baseDMG		= 0, --negative damage means healing
+	basePierce	= 0,  --negative piercing means aegis shielding
+	baseHeat	= 0,
+	baseAOE		= 0,
+	baseShred	= 0,
+	instances	= 1,
+	baseCD		= .1,
+	secondsPerShot=.1,
+	shotsPerBurst = 1,
+	accuracy	= 1,
+	sfxID		= -1,
+}
+
 healthStats = {
 	regen = {
 		D = 0,
