@@ -13,7 +13,6 @@ function prefab.ship.sapphire.thruster(scaleConst, isGhost, ghostIndex, ghostMat
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name     = "Thruster",
 		position = { 0, 0, -12.5 },
@@ -69,7 +68,6 @@ function prefab.ship.sapphire.stern.G(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Stern-G",
 		mesh = "329-6-Sapphire/Sapphire-Stern-G",
@@ -154,7 +152,6 @@ function prefab.ship.sapphire.stern.A(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Stern-A",
 		mesh = "329-6-Sapphire/Sapphire-Stern-A",
@@ -215,7 +212,6 @@ function prefab.ship.sapphire.stern.C(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Stern-C",
 		mesh = "329-6-Sapphire/Sapphire-Stern-C",
@@ -330,7 +326,6 @@ function prefab.ship.sapphire.core.G(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Core-G",
 		mesh = "329-6-Sapphire/Sapphire-Core-G",
@@ -403,7 +398,6 @@ function prefab.ship.sapphire.core.A(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Core-A",
 		mesh = "329-6-Sapphire/Sapphire-Core-A",
@@ -462,7 +456,6 @@ function prefab.ship.sapphire.core.C(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Core-C",
 		mesh = "329-6-Sapphire/Sapphire-Core-C",
@@ -548,7 +541,6 @@ function prefab.ship.sapphire.bow.G(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Bow-G",
 		mesh = "329-6-Sapphire/Sapphire-Bow-G",
@@ -605,7 +597,6 @@ function prefab.ship.sapphire.bow.A(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Sapphire-Bow-A",
 		mesh = "329-6-Sapphire/Sapphire-Bow-A",
@@ -651,7 +642,6 @@ function prefab.ship.sapphire.bow.S(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	spinal_mats = isGhost and {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,} or {"329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", };
 	prefab_part = {
 		name = "Sapphire-Bow-S",

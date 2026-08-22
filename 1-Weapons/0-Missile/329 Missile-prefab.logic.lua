@@ -14,7 +14,6 @@ function prefab.weapon.missile.vls.S(pos, rot, sca, isGhost, ghostIndex, ghostMa
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Small VLS",
 		mesh      = "329-Missiles/Missile-1-VLS",
@@ -62,7 +61,6 @@ function prefab.weapon.missile.vls.M(pos, rot, sca, isGhost, ghostIndex, ghostMa
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Medium VLS",
 		mesh      = "329-Missiles/Missile-2-VLS",
@@ -109,7 +107,6 @@ function prefab.weapon.missile.vls.L(pos, rot, sca, isGhost, ghostIndex, ghostMa
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Large VLS",
 		mesh      = "329-Missiles/Missile-3-VLS",
@@ -156,7 +153,6 @@ function prefab.weapon.missile.vls.X(pos, rot, sca, isGhost, ghostIndex, ghostMa
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Extra Large VLS",
 		mesh      = "329-Missiles/Missile-4-VLS",
@@ -203,7 +199,6 @@ function prefab.weapon.missile.vls.T(pos, rot, sca, isGhost, ghostIndex, ghostMa
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Titanic VLS",
 		mesh      = "329-Missiles/Missile-5-VLS",
@@ -299,7 +294,6 @@ function prefab.weapon.missile.hls.M(pos, rot, sca, isGhost, ghostIndex, ghostMa
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Medium HLS",
 		mesh      = "329-Missiles/Missile-2-HLS",
@@ -346,7 +340,6 @@ function prefab.weapon.missile.hls.L(pos, rot, sca, isGhost, ghostIndex, ghostMa
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Large HLS",
 		mesh      = "329-Missiles/Missile-3-HLS",
@@ -393,7 +386,6 @@ function prefab.weapon.missile.hls.X(pos, rot, sca, isGhost, ghostIndex, ghostMa
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Large HLS",
 		mesh      = "329-Missiles/Missile-4-HLS",
@@ -440,7 +432,6 @@ function prefab.weapon.missile.hls.T(pos, rot, sca, isGhost, ghostIndex, ghostMa
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Large HLS",
 		mesh      = "329-Missiles/Missile-5-HLS",

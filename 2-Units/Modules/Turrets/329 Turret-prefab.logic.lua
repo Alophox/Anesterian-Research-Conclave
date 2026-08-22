@@ -17,7 +17,6 @@ function prefab.part.module.emplacement.S(scaleConst, angleCount, type, isGhost,
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	local prefab_part = {
 		name = "Small Emplacement Cluster",
 		-- mesh = "3-Topaz/Topaz-Stern-P",
@@ -75,7 +74,6 @@ function prefab.part.module.emplacement.missile.S(scaleConst, angleCount, type, 
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	local prefab_part = {
 		name = "Small Emplacement Cluster",
 		-- mesh = "3-Topaz/Topaz-Stern-P",
@@ -152,7 +150,6 @@ function prefab.part.module.emplacement.M(scaleConst, angleCount, type, isGhost,
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	local prefab_part = {
 		name = "Medium Emplacement Cluster",
 		-- mesh = "3-Topaz/Topaz-Stern-P",
@@ -195,7 +192,6 @@ function prefab.part.module.emplacement.missile.M(scaleConst, angleCount, type, 
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	local prefab_part = {
 		name = "Medium Emplacement Cluster",
 		-- mesh = "3-Topaz/Topaz-Stern-P",
@@ -248,7 +244,6 @@ function prefab.part.module.emplacement.L(scaleConst, angleCount, type, isGhost,
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	local prefab_part = {
 		name = "Large Emplacement Cluster",
 		-- mesh = "3-Topaz/Topaz-Stern-P",
@@ -283,7 +278,6 @@ function prefab.part.module.emplacement.missile.L(scaleConst, angleCount, type, 
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	local prefab_part = {
 		name = "Large Emplacement Cluster",
 		-- mesh = "3-Topaz/Topaz-Stern-P",

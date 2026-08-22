@@ -9,7 +9,6 @@ function prefab.weapon.special.spawn_shield(pos, rot, sca, isGhost, ghostIndex, 
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Spawn Shield",
 		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
@@ -52,7 +51,6 @@ function prefab.weapon.special.stardust_repair(pos, rot, sca, isGhost, ghostInde
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Stardust Repair",
 		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
@@ -95,7 +93,6 @@ function prefab.weapon.special.gwe(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Gravitational Wave Ejector",
 		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
@@ -173,7 +170,6 @@ function prefab.weapon.special.sensor_em(pos, rot, sca, isGhost, ghostIndex, gho
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Sensor Suite",
 		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
@@ -215,7 +211,6 @@ function prefab.weapon.special.sensor_gravitic(pos, rot, sca, isGhost, ghostInde
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Sensor Suite",
 		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
@@ -257,7 +252,6 @@ function prefab.weapon.special.sensor_subspace(pos, rot, sca, isGhost, ghostInde
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Sensor Suite",
 		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
@@ -299,7 +293,6 @@ function prefab.weapon.special.sensor_tachyon(pos, rot, sca, isGhost, ghostIndex
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Sensor Suite",
 		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.

@@ -3,7 +3,6 @@ function prefab.part.emblem(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Emblem",
 		mesh = "329-Emblem/Emblem",

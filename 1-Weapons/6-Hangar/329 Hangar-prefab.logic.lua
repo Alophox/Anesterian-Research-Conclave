@@ -13,7 +13,6 @@ function prefab.weapon.hangar.quartz.P(pos, rot, sca, isGhost, ghostIndex, ghost
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Quartz Hangar",
 		mesh      = "329-Hangar/Hangar",
@@ -62,7 +61,6 @@ function prefab.weapon.hangar.quartz.B(pos, rot, sca, isGhost, ghostIndex, ghost
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Quartz Hangar",
 		mesh      = "329-Hangar/Hangar",
@@ -111,7 +109,6 @@ function prefab.weapon.hangar.quartz.G(pos, rot, sca, isGhost, ghostIndex, ghost
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Quartz Hangar",
 		mesh      = "329-Hangar/Hangar",
@@ -160,7 +157,6 @@ function prefab.weapon.hangar.quartz.A(pos, rot, sca, isGhost, ghostIndex, ghost
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Quartz Hangar",
 		mesh      = "329-Hangar/Hangar",
@@ -209,7 +205,6 @@ function prefab.weapon.hangar.quartz.stardust(pos, rot, sca, isGhost, ghostIndex
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Quartz Hangar",
 		mesh      = "329-Hangar/Hangar",
@@ -262,7 +257,6 @@ function prefab.weapon.hangar.ruby(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Ruby Hangar",
 		mesh      = "329-Hangar/Hangar-1",
@@ -349,7 +343,6 @@ function prefab.weapon.hangar.citrine(pos, rot, sca, isGhost, ghostIndex, ghostM
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Ruby Hangar",
 		mesh      = "329-Hangar/Hangar-2",

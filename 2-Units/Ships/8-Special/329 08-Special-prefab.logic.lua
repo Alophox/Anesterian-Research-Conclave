@@ -18,7 +18,6 @@ function prefab.ship.unique.constructor.core(scaleConst, isGhost, ghostIndex, gh
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Citrine-Core-C",
 		mesh = "329-2-Citrine/Citrine-Core-C",
@@ -74,7 +73,6 @@ function prefab.ship.unique.orifice.core(scaleConst, isGhost, ghostIndex, ghostM
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		-- name = "Citrine-Core-C",
 		-- mesh = "329-2-Citrine/Citrine-Core-C",

@@ -10,7 +10,6 @@ function prefab.ship.quartz.thruster(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name     = "Thruster",
 		position = { 0, 0, -.4125 },
@@ -75,7 +74,6 @@ function prefab.ship.quartz.core.P(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Quartz-Core-P",
 		position = {0,0,0},
@@ -129,7 +127,6 @@ function prefab.ship.quartz.core.B(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Quartz-Core-P",
 		position = {0,0,0},
@@ -183,7 +180,6 @@ function prefab.ship.quartz.core.G(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Quartz-Core-P",
 		position = {0,0,0},
@@ -237,7 +233,6 @@ function prefab.ship.quartz.core.A(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Quartz-Core-P",
 		position = {0,0,0},

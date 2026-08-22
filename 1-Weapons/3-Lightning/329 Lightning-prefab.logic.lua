@@ -27,7 +27,6 @@ function prefab.weapon.lightning.D(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Small Turret Base",
 		-- mesh      = "329-Turrets-1/Turret-1-Base",
@@ -78,7 +77,6 @@ function prefab.weapon.lightning.S(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Small Turret Base",
 		mesh      = "329-Turrets-1/Turret-1-Base",
@@ -153,7 +151,6 @@ function prefab.weapon.lightning.M(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Medium Turret Base",
 		mesh      = "329-Turrets-3/Turret-3-Base",
@@ -240,7 +237,6 @@ function prefab.weapon.lightning.L(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Turret-top-base",
 		mesh      = "329-Turrets-5/Turret-5-Base",
@@ -348,7 +344,6 @@ function prefab.weapon.lightning.X(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Turret-top-base",
 		mesh      = "329-Turrets-7/Turret-7-Base",
@@ -484,7 +479,6 @@ function prefab.weapon.lightning.XS(pos, rot, sca, isGhost, ghostIndex, ghostMat
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Turret-top-base",
 		-- mesh      = "329-Turrets-5/Turret-5-Base",
@@ -552,7 +546,6 @@ function prefab.weapon.lightning.TS(pos, rot, sca, isGhost, ghostIndex, ghostMat
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Turret-top-base",
 		-- mesh      = "329-Turrets-5/Turret-5-Base",

@@ -10,7 +10,6 @@ function prefab.ship.topaz.thruster(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name     = "Thruster",
 		position = { 0, 0, -6.5 },
@@ -49,7 +48,6 @@ function prefab.ship.topaz.stern.P(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Topaz-Stern-P",
 		mesh = "329-3-Topaz/Topaz-Stern-P",
@@ -108,7 +106,6 @@ function prefab.ship.topaz.stern.B(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Topaz-Stern-B",
 		mesh = "329-3-Topaz/Topaz-Stern-B",
@@ -179,7 +176,6 @@ function prefab.ship.topaz.stern.M(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Topaz-Stern-M",
 		mesh = "329-3-Topaz/Topaz-Stern-M",
@@ -251,7 +247,6 @@ function prefab.ship.topaz.bow.P(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Topaz-Bow-P",
 		mesh = "329-3-Topaz/Topaz-Bow-P",
@@ -302,7 +297,6 @@ function prefab.ship.topaz.bow.B(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Topaz-Bow-B",
 		mesh = "329-3-Topaz/Topaz-Bow-B",
@@ -354,7 +348,6 @@ function prefab.ship.topaz.bow.M(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Topaz-Bow-M",
 		mesh = "329-3-Topaz/Topaz-Bow-M",

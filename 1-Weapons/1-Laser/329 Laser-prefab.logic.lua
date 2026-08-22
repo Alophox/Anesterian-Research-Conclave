@@ -30,7 +30,6 @@ function prefab.weapon.laser.D(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Drone Laser",
 		-- mesh      = "329-Turrets-1/Turret-1-Base",
@@ -79,7 +78,6 @@ function prefab.weapon.laser.S(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Small Turret Base",
 		mesh      = "329-Turrets-1/Turret-1-Base",
@@ -152,7 +150,6 @@ function prefab.weapon.laser.M(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Medium Laser Base",
 		mesh      = "329-Turrets-3/Turret-3-Base",
@@ -233,7 +230,6 @@ function prefab.weapon.laser.L(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Large Laser Base",
 		mesh      = "329-Turrets-5/Turret-5-Base",
@@ -324,7 +320,6 @@ function prefab.weapon.laser.X(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Extra Large Laser Base",
 		mesh      = "329-Turrets-7/Turret-7-Base",
@@ -428,7 +423,6 @@ function prefab.weapon.laser.XS(pos, rot, sca, isGhost, ghostIndex, ghostMat) --
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Extra Large Laser Base",
 		-- mesh      = "329-Turrets-5/Turret-5-Base",
@@ -481,7 +475,6 @@ function prefab.weapon.laser.TS(pos, rot, sca, isGhost, ghostIndex, ghostMat) --
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Titanic Laser Base",
 		-- mesh      = "329-Turrets-5/Turret-5-Base",

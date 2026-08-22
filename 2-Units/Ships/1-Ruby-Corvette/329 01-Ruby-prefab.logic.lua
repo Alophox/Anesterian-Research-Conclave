@@ -9,7 +9,6 @@ function prefab.ship.ruby.thruster(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name     = "Thruster",
 		position = { 0, 0, -2.25 },
@@ -48,7 +47,6 @@ function prefab.ship.ruby.core.P(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Ruby-Core-P",
 		position = {0,0,0},
@@ -110,7 +108,6 @@ function prefab.ship.ruby.core.B(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Ruby-Core-B",
 		mesh = "329-1-Ruby/Ruby-Core-B",
@@ -170,7 +167,6 @@ function prefab.ship.ruby.core.M(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Ruby-Core-M",
 		mesh = "329-1-Ruby/Ruby-Core-M",

@@ -8,7 +8,6 @@ function prefab.ship.citrine.thruster(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name     = "Thruster",
 		position = { 0, 0, -3.75 },
@@ -48,7 +47,6 @@ function prefab.ship.citrine.core.G(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Citrine-Core-G",
 		mesh = "329-2-Citrine/Citrine-Core-G",
@@ -119,7 +117,6 @@ function prefab.ship.citrine.core.A(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Citrine-Core-A",
 		mesh = "329-2-Citrine/Citrine-Core-A",
@@ -199,7 +196,6 @@ function prefab.ship.citrine.core.C(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Citrine-Core-C",
 		mesh = "329-2-Citrine/Citrine-Core-C",

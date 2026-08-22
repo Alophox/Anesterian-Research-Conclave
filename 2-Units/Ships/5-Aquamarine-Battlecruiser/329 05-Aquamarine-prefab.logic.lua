@@ -13,7 +13,6 @@ function prefab.ship.aquamarine.thruster(scaleConst, isGhost, ghostIndex, ghostM
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name     = "Thruster",
 		position = { 0, 0, -10.5 },
@@ -69,7 +68,6 @@ function prefab.ship.aquamarine.stern.P(scaleConst, isGhost, ghostIndex, ghostMa
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Stern-P",
 		mesh = "329-5-Aquamarine/Aquamarine-Stern-P",
@@ -141,7 +139,6 @@ function prefab.ship.aquamarine.stern.B(scaleConst, isGhost, ghostIndex, ghostMa
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Stern-B",
 		mesh = "329-5-Aquamarine/Aquamarine-Stern-B",
@@ -226,7 +223,6 @@ function prefab.ship.aquamarine.stern.M(scaleConst, isGhost, ghostIndex, ghostMa
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Stern-M",
 		mesh = "329-5-Aquamarine/Aquamarine-Stern-M",
@@ -300,7 +296,6 @@ function prefab.ship.aquamarine.core.P(scaleConst, isGhost, ghostIndex, ghostMat
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Core-P",
 		mesh = "329-5-Aquamarine/Aquamarine-Core-P",
@@ -359,7 +354,6 @@ function prefab.ship.aquamarine.core.B(scaleConst, isGhost, ghostIndex, ghostMat
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Core-B",
 		mesh = "329-5-Aquamarine/Aquamarine-Core-B",
@@ -431,7 +425,6 @@ function prefab.ship.aquamarine.core.M(scaleConst, isGhost, ghostIndex, ghostMat
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Core-M",
 		mesh = "329-5-Aquamarine/Aquamarine-Core-M",
@@ -516,7 +509,6 @@ function prefab.ship.aquamarine.bow.P(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Bow-P",
 		mesh = "329-5-Aquamarine/Aquamarine-Bow-P",
@@ -587,7 +579,6 @@ function prefab.ship.aquamarine.bow.B(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Bow-B",
 		mesh = "329-5-Aquamarine/Aquamarine-Bow-B",
@@ -670,7 +661,6 @@ function prefab.ship.aquamarine.bow.M(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Aquamarine-Bow-M",
 		mesh = "329-5-Aquamarine/Aquamarine-Bow-M",

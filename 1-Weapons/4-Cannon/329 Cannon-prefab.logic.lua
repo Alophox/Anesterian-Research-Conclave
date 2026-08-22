@@ -42,7 +42,6 @@ function prefab.weapon.cannon.D(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Small Turret Base",
 		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
@@ -93,7 +92,6 @@ function prefab.weapon.cannon.S(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Small Turret Base",
 		mesh      = "329-Turrets-1/Turret-1-Base",
@@ -171,7 +169,6 @@ function prefab.weapon.cannon.M(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Medium Cannon Base",
 		mesh      = "329-Turrets-3/Turret-3-Base",
@@ -251,7 +248,6 @@ function prefab.weapon.cannon.L(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Large Cannon Base",
 		mesh      = "329-Turrets-5/Turret-5-Base",
@@ -341,7 +337,6 @@ function prefab.weapon.cannon.X(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Extra Large Cannon Base",
 		mesh      = "329-Turrets-7/Turret-7-Base",
@@ -445,7 +440,6 @@ function prefab.weapon.cannon.XS(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Large Cannon Base",
 		-- mesh      = "329-Turrets-5/Turret-5-Base",
@@ -501,7 +495,6 @@ function prefab.weapon.cannon.TS(pos, rot, sca, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name	= "Large Cannon Base",
 		-- mesh      = "329-Turrets-5/Turret-5-Base",

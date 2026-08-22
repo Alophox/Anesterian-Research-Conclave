@@ -10,7 +10,6 @@ function prefab.ship.emerald.thruster(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name     = "Thruster",
 		position = { 0, 0, -8 },
@@ -50,7 +49,6 @@ function prefab.ship.emerald.stern.G(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Emerald-Stern-G",
 		mesh = "329-4-Emerald/Emerald-Stern-G",
@@ -122,7 +120,6 @@ function prefab.ship.emerald.stern.A(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Emerald-Stern-A",
 		mesh = "329-4-Emerald/Emerald-Stern-A",
@@ -200,7 +197,6 @@ function prefab.ship.emerald.stern.C(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Emerald-Stern-C",
 		mesh = "329-4-Emerald/Emerald-Stern-C",
@@ -275,7 +271,6 @@ function prefab.ship.emerald.bow.G(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Emerald-Bow-G",
 		mesh = "329-4-Emerald/Emerald-Bow-G",
@@ -326,7 +321,6 @@ function prefab.ship.emerald.bow.A(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Emerald-Bow-A",
 		mesh = "329-4-Emerald/Emerald-Bow-A",
@@ -378,7 +372,6 @@ function prefab.ship.emerald.bow.C(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Emerald-Bow-C",
 		mesh = "329-4-Emerald/Emerald-Bow-C",

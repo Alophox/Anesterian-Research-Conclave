@@ -21,7 +21,6 @@ function prefab.ship.amethyst.thruster(scaleConst, isGhost, ghostIndex, ghostMat
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name     = "Thruster",
 		position = { 0, 0, -23.25 },
@@ -92,7 +91,6 @@ function prefab.ship.amethyst.stern.P(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Stern-P",
 		mesh = "329-7-Amethyst/Amethyst-Stern-P",
@@ -152,7 +150,6 @@ function prefab.ship.amethyst.stern.B(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Stern-B",
 		mesh = "329-7-Amethyst/Amethyst-Stern-B",
@@ -212,7 +209,6 @@ function prefab.ship.amethyst.stern.M(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Stern-M",
 		mesh = "329-7-Amethyst/Amethyst-Stern-M",
@@ -284,7 +280,6 @@ function prefab.ship.amethyst.stern.G(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Stern-G",
 		mesh = "329-7-Amethyst/Amethyst-Stern-G",
@@ -343,7 +338,6 @@ function prefab.ship.amethyst.stern.A(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Stern-A",
 		mesh = "329-7-Amethyst/Amethyst-Stern-A",
@@ -406,7 +400,6 @@ function prefab.ship.amethyst.stern.C(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Stern-C",
 		mesh = "329-7-Amethyst/Amethyst-Stern-C",
@@ -527,7 +520,6 @@ function prefab.ship.amethyst.core_aft.P(scaleConst, isGhost, ghostIndex, ghostM
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Core-Aft-P",
 		mesh = "329-7-Amethyst/Amethyst-Core-Aft-P",
@@ -600,7 +592,6 @@ function prefab.ship.amethyst.core_aft.B(scaleConst, isGhost, ghostIndex, ghostM
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Core-Aft-B",
 		mesh = "329-7-Amethyst/Amethyst-Core-Aft-B",
@@ -684,7 +675,6 @@ function prefab.ship.amethyst.core_aft.M(scaleConst, isGhost, ghostIndex, ghostM
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Core-Aft-M",
 		mesh = "329-7-Amethyst/Amethyst-Core-Aft-M",
@@ -767,7 +757,6 @@ function prefab.ship.amethyst.core_aft.G(scaleConst, isGhost, ghostIndex, ghostM
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Core-Aft-G",
 		mesh = "329-7-Amethyst/Amethyst-Core-Aft-G",
@@ -845,7 +834,6 @@ function prefab.ship.amethyst.core_aft.A(scaleConst, isGhost, ghostIndex, ghostM
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Core-Aft-A",
 		mesh = "329-7-Amethyst/Amethyst-Core-Aft-A",
@@ -907,7 +895,6 @@ function prefab.ship.amethyst.core_aft.C(scaleConst, isGhost, ghostIndex, ghostM
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Core-Aft-C",
 		mesh = "329-7-Amethyst/Amethyst-Core-Aft-C",
@@ -1016,7 +1003,6 @@ function prefab.ship.amethyst.core_fore.P(scaleConst, isGhost, ghostIndex, ghost
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Core-Fore-P",
 		mesh = "329-7-Amethyst/Amethyst-Core-Fore-P",
@@ -1113,7 +1099,6 @@ function prefab.ship.amethyst.core_fore.B(scaleConst, isGhost, ghostIndex, ghost
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Core-Fore-B",
 		mesh = "329-7-Amethyst/Amethyst-Core-Fore-B",
@@ -1182,7 +1167,6 @@ function prefab.ship.amethyst.core_fore.M(scaleConst, isGhost, ghostIndex, ghost
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Core-Fore-M",
 		mesh = "329-7-Amethyst/Amethyst-Core-Fore-M",
@@ -1254,7 +1238,6 @@ function prefab.ship.amethyst.core_fore.G(scaleConst, isGhost, ghostIndex, ghost
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Core-Fore-G",
 		mesh = "329-7-Amethyst/Amethyst-Core-Fore-G",
@@ -1311,7 +1294,6 @@ function prefab.ship.amethyst.core_fore.A(scaleConst, isGhost, ghostIndex, ghost
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Core-Fore-A",
 		mesh = "329-7-Amethyst/Amethyst-Core-Fore-A",
@@ -1367,7 +1349,6 @@ function prefab.ship.amethyst.core_fore.C(scaleConst, isGhost, ghostIndex, ghost
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Core-Fore-C",
 		mesh = "329-7-Amethyst/Amethyst-Core-Fore-C",
@@ -1465,7 +1446,6 @@ function prefab.ship.amethyst.core.P(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Core-P",
 		position = {0,0,0},
@@ -1497,7 +1477,6 @@ function prefab.ship.amethyst.core.B(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Core-B",
 		position = {0,0,0},
@@ -1529,7 +1508,6 @@ function prefab.ship.amethyst.core.M(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Core-M",
 		position = {0,0,0},
@@ -1561,7 +1539,6 @@ function prefab.ship.amethyst.core.G(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Core-G",
 		position = {0,0,0},
@@ -1593,7 +1570,6 @@ function prefab.ship.amethyst.core.A(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Core-A",
 		position = {0,0,0},
@@ -1624,7 +1600,6 @@ function prefab.ship.amethyst.core.C(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Core-C",
 		position = {0,0,0},
@@ -1654,7 +1629,6 @@ function prefab.ship.amethyst.bow.P(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Bow-P",
 		mesh = "329-7-Amethyst/Amethyst-Bow-P",
@@ -1709,7 +1683,6 @@ function prefab.ship.amethyst.bow.B(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Bow-B",
 		mesh = "329-7-Amethyst/Amethyst-Bow-B",
@@ -1762,7 +1735,6 @@ function prefab.ship.amethyst.bow.M(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Bow-M",
 		mesh = "329-7-Amethyst/Amethyst-Bow-M",
@@ -1806,7 +1778,6 @@ function prefab.ship.amethyst.bow.G(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Bow-G",
 		mesh = "329-7-Amethyst/Amethyst-Bow-G",
@@ -1859,7 +1830,6 @@ function prefab.ship.amethyst.bow.A(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Bow-A",
 		mesh = "329-7-Amethyst/Amethyst-Bow-A",
@@ -1917,7 +1887,6 @@ function prefab.ship.amethyst.bow.C(scaleConst, isGhost, ghostIndex, ghostMat)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	if(not isGhost and ghostIndex < 0) then return {}; end
 	prefab_part = {
 		name = "Amethyst-Bow-C",
 		mesh = "329-7-Amethyst/Amethyst-Bow-C",
