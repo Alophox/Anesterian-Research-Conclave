@@ -10,15 +10,15 @@ function prefab.weapon_info.module.emplacement.S(count, type)
 	return weapon_info
 end
 function prefab.part.module.emplacement.S(scaleConst, angleCount, type, isGhost, ghostIndex, ghostMat)
-	newPos1 = functions.rotateRecursive({x=0,z=1.25*.1/scaleConst},{x=0,z=0},angleCount)
-	newPos2 = functions.rotateRecursive({x=-1.25*.1/scaleConst,z=0*.1/scaleConst},{x=0,z=0},angleCount)
-	newPos3 = functions.rotateRecursive({x=0,z=-1.25*.1/scaleConst},{x=0,z=0},angleCount)
-	newPos4 = functions.rotateRecursive({x=1.25*.1/scaleConst,z=0*.1/scaleConst},{x=0,z=0},angleCount)
+	local newPos1 = functions.rotateRecursive({x=0,z=1.25*.1/scaleConst},{x=0,z=0},angleCount)
+	local newPos2 = functions.rotateRecursive({x=-1.25*.1/scaleConst,z=0*.1/scaleConst},{x=0,z=0},angleCount)
+	local newPos3 = functions.rotateRecursive({x=0,z=-1.25*.1/scaleConst},{x=0,z=0},angleCount)
+	local newPos4 = functions.rotateRecursive({x=1.25*.1/scaleConst,z=0*.1/scaleConst},{x=0,z=0},angleCount)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
-	prefab_part = {
+	local prefab_part = {
 		name = "Small Emplacement Cluster",
 		-- mesh = "3-Topaz/Topaz-Stern-P",
 		-- materials = {"329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
@@ -58,25 +58,25 @@ function prefab.part.module.emplacement.S(scaleConst, angleCount, type, isGhost,
 	return prefab_part
 end
 function prefab.weapon_info.module.emplacement.missile.S(count, type)
-	weapon_info = {
+	local weapon_info = {
 		prefab.weapon_info.missile[type].S(8*count),
 	}
 	return weapon_info
 end
 function prefab.part.module.emplacement.missile.S(scaleConst, angleCount, type, isGhost, ghostIndex, ghostMat)
-	newPos1 = functions.rotateRecursive({x=0,z=1.25*.1/scaleConst},{x=0,z=0},angleCount)
-	newPos2 = functions.rotateRecursive({x=-1.25*.1/scaleConst,z=0*.1/scaleConst},{x=0,z=0},angleCount)
-	newPos3 = functions.rotateRecursive({x=0,z=-1.25*.1/scaleConst},{x=0,z=0},angleCount)
-	newPos4 = functions.rotateRecursive({x=1.25*.1/scaleConst,z=0*.1/scaleConst},{x=0,z=0},angleCount)
-	newPos5 = functions.rotateRecursive(newPos1,{x=0,z=0},2)
-	newPos6 = functions.rotateRecursive(newPos2,{x=0,z=0},2)
-	newPos7 = functions.rotateRecursive(newPos3,{x=0,z=0},2)
-	newPos8 = functions.rotateRecursive(newPos4,{x=0,z=0},2)
+	local newPos1 = functions.rotateRecursive({x=0,z=1.25*.1/scaleConst},{x=0,z=0},angleCount)
+	local newPos2 = functions.rotateRecursive({x=-1.25*.1/scaleConst,z=0*.1/scaleConst},{x=0,z=0},angleCount)
+	local newPos3 = functions.rotateRecursive({x=0,z=-1.25*.1/scaleConst},{x=0,z=0},angleCount)
+	local newPos4 = functions.rotateRecursive({x=1.25*.1/scaleConst,z=0*.1/scaleConst},{x=0,z=0},angleCount)
+	local newPos5 = functions.rotateRecursive(newPos1,{x=0,z=0},2)
+	local newPos6 = functions.rotateRecursive(newPos2,{x=0,z=0},2)
+	local newPos7 = functions.rotateRecursive(newPos3,{x=0,z=0},2)
+	local newPos8 = functions.rotateRecursive(newPos4,{x=0,z=0},2)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
-	prefab_part = {
+	local prefab_part = {
 		name = "Small Emplacement Cluster",
 		-- mesh = "3-Topaz/Topaz-Stern-P",
 		-- materials = {"329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
@@ -141,19 +141,19 @@ function prefab.part.module.emplacement.missile.S(scaleConst, angleCount, type, 
 end
 
 function prefab.weapon_info.module.emplacement.M(count, type)
-	weapon_info = {
+	local weapon_info = {
 		prefab.weapon_info[type].M(2*count),
 	}
 	return weapon_info
 end
 function prefab.part.module.emplacement.M(scaleConst, angleCount, type, isGhost, ghostIndex)
-	newPos1 = functions.rotateRecursive({x=1.45*.1/scaleConst,z=6.5*.1/scaleConst},{x=0,z=0},angleCount)
-	newPos2 = functions.rotateRecursive({x=-1.45*.1/scaleConst,z=6.5*.1/scaleConst},{x=0,z=0},angleCount)
+	local newPos1 = functions.rotateRecursive({x=1.45*.1/scaleConst,z=6.5*.1/scaleConst},{x=0,z=0},angleCount)
+	local newPos2 = functions.rotateRecursive({x=-1.45*.1/scaleConst,z=6.5*.1/scaleConst},{x=0,z=0},angleCount)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
-	prefab_part = {
+	local prefab_part = {
 		name = "Medium Emplacement Cluster",
 		-- mesh = "3-Topaz/Topaz-Stern-P",
 		-- materials = {"329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
@@ -182,21 +182,21 @@ function prefab.part.module.emplacement.M(scaleConst, angleCount, type, isGhost,
 	return prefab_part
 end
 function prefab.weapon_info.module.emplacement.missile.M(count, type)
-	weapon_info = {
+	local weapon_info = {
 		prefab.weapon_info.missile[type].M(4*count),
 	}
 	return weapon_info
 end
 function prefab.part.module.emplacement.missile.M(scaleConst, angleCount, type, isGhost, ghostIndex)
-	newPos1 = functions.rotateRecursive({x=1.45*.1/scaleConst,z=6.5*.1/scaleConst},{x=0,z=0},angleCount)
-	newPos2 = functions.rotateRecursive({x=-1.45*.1/scaleConst,z=6.5*.1/scaleConst},{x=0,z=0},angleCount)
-	newPos3 = functions.rotateRecursive({x=0*.1/scaleConst,z=5.5*.1/scaleConst},{x=0,z=0},angleCount)
-	newPos4 = functions.rotateRecursive({x=0*.1/scaleConst,z=7.5*.1/scaleConst},{x=0,z=0},angleCount)
+	local newPos1 = functions.rotateRecursive({x=1.45*.1/scaleConst,z=6.5*.1/scaleConst},{x=0,z=0},angleCount)
+	local newPos2 = functions.rotateRecursive({x=-1.45*.1/scaleConst,z=6.5*.1/scaleConst},{x=0,z=0},angleCount)
+	local newPos3 = functions.rotateRecursive({x=0*.1/scaleConst,z=5.5*.1/scaleConst},{x=0,z=0},angleCount)
+	local newPos4 = functions.rotateRecursive({x=0*.1/scaleConst,z=7.5*.1/scaleConst},{x=0,z=0},angleCount)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
-	prefab_part = {
+	local prefab_part = {
 		name = "Medium Emplacement Cluster",
 		-- mesh = "3-Topaz/Topaz-Stern-P",
 		-- materials = {"329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
@@ -238,18 +238,18 @@ function prefab.part.module.emplacement.missile.M(scaleConst, angleCount, type, 
 end
 
 function prefab.weapon_info.module.emplacement.L(count, type)
-	weapon_info = {
+	local weapon_info = {
 		prefab.weapon_info[type].L(1*count),
 	}
 	return weapon_info
 end
 function prefab.part.module.emplacement.L(scaleConst, angleCount, type, isGhost, ghostIndex)
-	newPos1 = functions.rotateRecursive({x=0,z=10*.1/scaleConst},{x=0,z=0},angleCount)
+	local newPos1 = functions.rotateRecursive({x=0,z=10*.1/scaleConst},{x=0,z=0},angleCount)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
-	prefab_part = {
+	local prefab_part = {
 		name = "Large Emplacement Cluster",
 		-- mesh = "3-Topaz/Topaz-Stern-P",
 		-- materials = {"329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
@@ -272,19 +272,19 @@ function prefab.part.module.emplacement.L(scaleConst, angleCount, type, isGhost,
 	return prefab_part
 end
 function prefab.weapon_info.module.emplacement.missile.L(count, type)
-	weapon_info = {
+	local weapon_info = {
 		prefab.weapon_info.missile[type].L(2*count),
 	}
 	return weapon_info
 end
 function prefab.part.module.emplacement.missile.L(scaleConst, angleCount, type, isGhost, ghostIndex)
-	newPos1 = functions.rotateRecursive({x=-1.23438*.1/scaleConst,z=10*.1/scaleConst},{x=0,z=0},angleCount)
-	newPos2 = functions.rotateRecursive({x=1.23438*.1/scaleConst,z=10*.1/scaleConst},{x=0,z=0},angleCount)
+	local newPos1 = functions.rotateRecursive({x=-1.23438*.1/scaleConst,z=10*.1/scaleConst},{x=0,z=0},angleCount)
+	local newPos2 = functions.rotateRecursive({x=1.23438*.1/scaleConst,z=10*.1/scaleConst},{x=0,z=0},angleCount)
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
 	if(not isGhost and ghostIndex < 0) then return {}; end
-	prefab_part = {
+	local prefab_part = {
 		name = "Large Emplacement Cluster",
 		-- mesh = "3-Topaz/Topaz-Stern-P",
 		-- materials = {"329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_engine", "329_MT_arc_teamColour", },
