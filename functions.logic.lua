@@ -1,7 +1,7 @@
 functions = {}
 
 function functions.floor(number)
-	roundNumber = number - number % 1
+	local roundNumber = number - number % 1
 	if number % 1 < 0 then
 		roundNumber = roundNumber - 1
 	end
@@ -17,9 +17,9 @@ end
 
 -- struct in format of { {{0,0,0}, {0,0,0}, ...}, {...}, ... }
 function functions.combineWeaponInfo(struct)
-	return_info = {}
-	combine_step = {}
-	locationDict = {}
+	local return_info = {}
+	local combine_step = {}
+	local locationDict = {}
 	for j=1, #struct do
 		for i=1, #struct[j] do
 			-- flip last three digits of ID to get priority; heavier weaponry will have higher single digit
@@ -38,7 +38,7 @@ function functions.combineWeaponInfo(struct)
 end
 
 function functions.averageMultiplier(struct)
-	return_info = 0;
+	local return_info = 0;
 	for i=1, #struct do
 		return_info = return_info + struct[i]
 	end
@@ -50,10 +50,10 @@ function functions.rotateRecursive(posStruct,originStruct,count)
 	if count <= 0 then
 		return posStruct
 	end
-	cosVal = 0.92387953251
-	sinVal = 0.38268343236
-	newPos = functions.rotateRecursive(posStruct,originStruct,count-1)
-	offsetPos = {x=newPos.x - originStruct.x,z=newPos.z-originStruct.z}
+	local cosVal = 0.92387953251
+	local sinVal = 0.38268343236
+	local newPos = functions.rotateRecursive(posStruct,originStruct,count-1)
+	local offsetPos = {x=newPos.x - originStruct.x,z=newPos.z-originStruct.z}
 	return {
 		x=(cosVal*offsetPos.x - sinVal*offsetPos.z + originStruct.x),
 		z=(sinVal*offsetPos.x + cosVal*offsetPos.z + originStruct.z)
