@@ -4,7 +4,7 @@ prefab.part.module.emplacement.missile = {}
 prefab.weapon_info.module.emplacement.missile = {}
 
 function prefab.weapon_info.module.emplacement.S(count, type)
-	weapon_info = {
+	local weapon_info = {
 		prefab.weapon_info[type].S(4*count),
 	}
 	return weapon_info
