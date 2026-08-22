@@ -123,7 +123,7 @@ return {
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "TITAN",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = functions.floor((1 - healthStats.proportionRegenMax) * 32500),
+		health = math.floor((1 - healthStats.proportionRegenMax) * 32500),
 		health_regen_per_second = healthStats.regen[shipConst.class],
 		max_regen_frac = 0,
 		aegis_regen_per_second = healthStats.aegisRegen[shipConst.class] * healthStats.structAegisRegenMult,

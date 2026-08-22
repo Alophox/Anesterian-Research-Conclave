@@ -116,7 +116,7 @@ return {
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "CAPITAL",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = functions.floor(6000),              --Health, also the unit's heat capacity.
+		health = math.floor(6000),              --Health, also the unit's heat capacity.
 		health_regen_per_second = 10, --Health regen per second. Duh.
 		max_regen_frac = 0,      --The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
 

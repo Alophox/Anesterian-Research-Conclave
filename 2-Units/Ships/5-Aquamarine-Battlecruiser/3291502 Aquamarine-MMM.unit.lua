@@ -134,13 +134,13 @@ return {
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "HEAVY",       -- string enum: UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = functions.floor((1 - healthStats.proportionRegenMax) * healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.M,healthStats.healthMult.M,healthStats.healthMult.M})),
+		health = math.floor((1 - healthStats.proportionRegenMax) * healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.M,healthStats.healthMult.M,healthStats.healthMult.M})),
 		health_regen_per_second = 0,
 		aegisMaximum = functions.ceil(healthStats.proportionRegenMax *  healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.M,healthStats.healthMult.M,healthStats.healthMult.M})), 			-- float: Game will automatically determine, but can be manually set here.
 		aegis_regen_per_second = healthStats.aegisRegen[shipConst.class],
 		max_regen_frac = healthStats.proportionRegenMax,
 
-		armour = functions.floor(healthStats.baseArmor[shipConst.class] * functions.averageMultiplier({healthStats.armorMult.M,healthStats.armorMult.M,healthStats.armorMult.M})),
+		armour = math.floor(healthStats.baseArmor[shipConst.class] * functions.averageMultiplier({healthStats.armorMult.M,healthStats.armorMult.M,healthStats.armorMult.M})),
 		vulnerability_max = 0,
 		shredMultiplier = 0,
 

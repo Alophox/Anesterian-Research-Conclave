@@ -141,7 +141,7 @@ return {
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "TITAN",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = functions.floor(20000000),
+		health = math.floor(20000000),
 		health_regen_per_second = 2000,
 		max_regen_frac = 0,
 

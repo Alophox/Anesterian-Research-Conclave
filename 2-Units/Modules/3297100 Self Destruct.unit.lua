@@ -102,7 +102,7 @@ return {
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "NONE",       -- string enum: UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = functions.floor(1),              -- float: Health, also the unit's heat capacity.
+		health = math.floor(1),              -- float: Health, also the unit's heat capacity.
 		health_regen_per_second = 0, -- float: Health regen per second. Duh.
 		max_regen_frac = 0,      -- float: The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
 

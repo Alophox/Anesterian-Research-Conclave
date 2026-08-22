@@ -131,13 +131,13 @@ return {
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "CAPITAL",       -- string enum: UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = functions.floor( (1 - healthStats.proportionRegenMax) * healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.G,healthStats.healthMult.G,healthStats.healthMult.G,healthStats.healthMult.G})),              -- float: Health, also the unit's heat capacity.
+		health = math.floor( (1 - healthStats.proportionRegenMax) * healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.G,healthStats.healthMult.G,healthStats.healthMult.G,healthStats.healthMult.G})),              -- float: Health, also the unit's heat capacity.
 		health_regen_per_second = 0,
 		aegisMaximum = functions.ceil(healthStats.proportionRegenMax *  healthStats.baseHealth[shipConst.class] * functions.averageMultiplier({healthStats.healthMult.G,healthStats.healthMult.G,healthStats.healthMult.G,healthStats.healthMult.G})), 			-- float: Game will automatically determine, but can be manually set here.
 		aegis_regen_per_second = healthStats.aegisRegen[shipConst.class],
 		max_regen_frac = healthStats.proportionRegenMax,
 
-		armour = functions.floor(healthStats.baseArmor[shipConst.class] * functions.averageMultiplier({healthStats.armorMult.G,healthStats.armorMult.G,healthStats.armorMult.G,healthStats.armorMult.G})),
+		armour = math.floor(healthStats.baseArmor[shipConst.class] * functions.averageMultiplier({healthStats.armorMult.G,healthStats.armorMult.G,healthStats.armorMult.G,healthStats.armorMult.G})),
 		vulnerability_max = 0,   -- float: Prevent the unit from losing more than X fraction of it's armour.
 		shredMultiplier = 0,     -- float: Multiplies incomming shred, pretty self explanatory right?
 
