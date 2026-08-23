@@ -176,6 +176,7 @@ weaponStats.lightning = {
 	baseShred	= 0,
 	instances	= 1,
 	baseCD		= 2,
+	lockTimeRatio = .5,
 	secondsPerShot=.1,
 	trackingMult = {
 		D = 1,
