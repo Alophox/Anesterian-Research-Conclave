@@ -9,6 +9,7 @@
  
 
 return {
+    schemaVersion = 9,
 	modName        = "Anesterian Research Conclave",
 	author         = "Alophox",
 

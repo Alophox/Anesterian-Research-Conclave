@@ -3,6 +3,7 @@ weaponConst = {
 };
 scaleConst = .135;
 return {
+    isCloaking = false,
 
 	-- 🟦 DEFINITIONS
 	unitName                    = "329-chama",                 -- string: Internal name for debugging and errors.
@@ -204,8 +205,6 @@ return {
 		untargetableTime = 0.5,    -- float: Useful on drones/missiles. How long after spawning is this unit untargetable? (0 for everything, except missiles and drones)
 
 		--###################### CLOAK DOES NOT WORK, DON'T USE IT YET. - Luke 2025/04/16
-		doesCloaking = false,                 --Can cloak, and become untargetable.
-		isCloaked = false,                    --Current state of cloak.
 		cloakFrac = 0,
 		cloakTime = 1.0,                      -- float: How long it takes to cloak.
 		decloakDistance = 0, --weaponStats.missile.baseCloakRange * weaponStats.rangeMult[weaponConst.size],                -- float: How close it can get to something before being visible. Used by Glowfish blobs to let them get close enough to targets.
@@ -221,7 +220,6 @@ return {
 		flashSizeOverride = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size] / 20,                	-- float: Size of the white internal flash. 0 is automatic.
 		forceShockwave = false,               	-- bool: Forces a repulsive shockwave to be created, uses explosionSizeOveride or auto if not set.
 		preventShockwave = false,             	-- Prevents a repulsive shockwave from being created automatically on units scale 1+
-		randomiseInAllDirections = false,     	--Let the explosion randomise it's direction.
 		deathUnitSpawnDoNotRandomiseRotation = false, --Randomise the rotation of the unit spawned on death, if any.
 		deathUnitSpawnTypeID = 3294013,            	-- int: The unit spawned when this dies. -1 is nothing. Used for debris, and Glowfish Blobs.
 		invulnerable = false,                 	-- You can't hurt me, little man.
@@ -238,7 +236,7 @@ return {
 	isMobile           = true,
 	movement           = {
 		type = "FREE",                -- string enum: UNITMOVETYPE: MAPLOCKED / FREE --Does this unit act like a normal ship, and stay within the 0-7y world height. Or like a drone/missile?
-		maximumAngleToTarget = .6,        -- float: Radians within in which a unit is allowed to accelerate towards a target.
+		maximumAngleToTargetDegrees = 34.377467707849391,        -- float: Radians within in which a unit is allowed to accelerate towards a target.
 		acceleration = weaponStats.missile.velocity,               -- float: The units per second of the ship's acceleration. A tolly is 0.4 units long, and accelerates at 0.35
 		strafingAccelMultiplier = 0,     -- float: Fraction of accel used for strafing
 		reverseAccelMultiplier = 0,      -- float: Fraction of accel used for reverse/breaking
@@ -259,7 +257,7 @@ return {
 		turnMode = "Acceleration", 	-- string enum: SHIPTURNMODE: Acceleration / Linear
 		baseRotationSpeed = weaponStats.missile.trackingMult[weaponConst.size] * weaponStats.accuracySpread, 		-- float: Degrees/second
 		maxSpeedMultiplier = weaponStats.missile.trackingMult[weaponConst.size] * weaponStats.accuracySpread, 		-- float: For mode Acceleration, baseRotationSpeed becomes acceleration. This is the maximum rotation speed that may be reached.
-		preferredAngle = 0, 		-- float: Degrees. Prefered facing angle from target. Useful for thinks like Skua's (90) and Herons (30) that want to face away from their target for broadsides and cool stuff like strafing.
+		preferredAngleDegrees = 0, 		-- float: Degrees. Prefered facing angle from target. Useful for thinks like Skua's (90) and Herons (30) that want to face away from their target for broadsides and cool stuff like strafing.
 		ignoreWorldUp = true 		-- bool: Good for Lights/Drones/Missiles. Allows this unit to turn upside down, sideways, etc. Looks stupid on most large ships such as Heavies and Capitals.
 	},
 	
@@ -280,7 +278,7 @@ return {
 			minimumHealth = 0, 				-- float: Don't target things with less Max Health than this.
 			minimumDistance = 0, 			-- float: Don't target things that are closer than this.
 			maximumDistance = weaponStats.rangeMult[weaponConst.size] * weaponStats.missile.baseRetargetRange, 			-- float: Important. Scan radius. Don't target things further than this. KEEP THIS NUMBER LOW, SERIOUS PERFORMANCE IMPACT. Light ~15, Medium ~20, Heavy ~25, Capital ~25
-			maximumAngle = 0, 				-- float: Good for spinal weapons/missiles.
+			maximumAngleDegrees = 0, 				-- float: Good for spinal weapons/missiles.
 			addedPreaimDistance = 1, 		-- float: If you have no target in maximumDistance, you may try to target something this far beyond max distance. (use on turrets, not ships)
 			
 			-- Scoring can be negative. Will invert behaviour.
@@ -323,7 +321,7 @@ return {
 			doAimingComputation = false,   	-- For weapons.
 			canInvalidateTarget = false,  	-- For units using pauseIfHasTarget.
 			invalidationDistance = 0,		-- float: 
-			invalidationAngle = 0,        	-- float: Radians
+			invalidationAngleDegrees = 0,        	-- float: Radians
 			invalidationVelocityHeadOn = 0 	-- float: For tractor ships,
 		}
 	},

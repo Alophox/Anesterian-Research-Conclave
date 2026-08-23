@@ -1,5 +1,6 @@
 scaleConst = 2.6671;
 return {
+    isCloaking = false,
 
 	-- 🟦 DEFINITIONS
 	unitName                    = "329-emplacement_3-lightning",              	-- Internal name for debugging and errors.
@@ -139,8 +140,6 @@ return {
 		untargetableTime = 0,    --Useful on drones/missiles. How long after spawning is this unit untargetable? (0 for everything, except missiles and drones)
 
 		--###################### CLOAK DOES NOT WORK, DON'T USE IT YET. - Luke 2025/04/16
-		doesCloaking = false,                 --Can cloak, and become untargetable.
-		isCloaked = false,                    --Current state of cloak.
 		cloakFrac = 0,
 		cloakTime = 1.0,                      --How long it takes to cloak.
 		decloakDistance = 0,                --How close it can get to something before being visible. Used by Glowfish blobs to let them get close enough to targets.
@@ -156,7 +155,6 @@ return {
 		flashSizeOverride = 0,                	-- Size of the white internal flash. 0 is automatic.
 		forceShockwave = false,               	-- Forces a repulsive shockwave to be created, uses explosionSizeOveride or auto if not set.
 		preventShockwave = false,             	-- Prevents a repulsive shockwave from being created automatically on units scale 1+
-		randomiseInAllDirections = false,     	--Let the explosion randomise it's direction.
 		deathUnitSpawnDoNotRandomiseRotation = false, --Randomise the rotation of the unit spawned on death, if any.
 		deathUnitSpawnTypeID = -1,            	--The unit spawned when this dies. -1 is nothing. Used for debris, and Glowfish Blobs.
 		invulnerable = false,                 	--You can't hurt me, little man.

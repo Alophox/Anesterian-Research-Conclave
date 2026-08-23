@@ -1,5 +1,6 @@
 -- Glave Assault Frigate Template
 return {
+    isCloaking = false,
 
 	-- 🟦 DEFINITIONS
 	unitName                    = "329-lancier-budget",                 -- string: Internal name for debugging and errors.
@@ -144,9 +145,7 @@ return {
 									diameter = .5,			--relative to turret scale
 									offset = 0,			--relative to the barrel it gets fired from's facing.
 									rotateZ = true,		--Rotate the effect once randomly on the z axis when used.
-									rotateY = false,		--Rotate the effect once randomly on the y axis when used.
 									rotateZUpdate = false,	--Continuously rotate the effect on the z axis when used.
-									rotateYUpdate = false,	--COntinuously rotate the effect on the y axis when used.
 									noRescaleLength = 0,	--0 means DO rescale like a laser beam. >0 means don't, like a muzzle flashes.
 									noFade = true,			--prevents the effect from fading to nothing over it's duration.
 									noShrink = false,		--prevents the effect from scaling down to nothing over it's duration.
@@ -234,9 +233,7 @@ return {
 													diameter = .5,			--relative to turret scale
 													offset = 0,			--relative to the barrel it gets fired from's facing.
 													rotateZ = true,		--Rotate the effect once randomly on the z axis when used.
-													rotateY = false,		--Rotate the effect once randomly on the y axis when used.
 													rotateZUpdate = false,	--Continuously rotate the effect on the z axis when used.
-													rotateYUpdate = false,	--COntinuously rotate the effect on the y axis when used.
 													noRescaleLength = 0,	--0 means DO rescale like a laser beam. >0 means don't, like a muzzle flashes.
 													noFade = true,			--prevents the effect from fading to nothing over it's duration.
 													noShrink = false,		--prevents the effect from scaling down to nothing over it's duration.
@@ -361,8 +358,6 @@ return {
 		untargetableTime = 0.5,    -- float: Useful on drones/missiles. How long after spawning is this unit untargetable? (0 for everything, except missiles and drones)
 
 		--###################### CLOAK DOES NOT WORK, DON'T USE IT YET. - Luke 2025/04/16
-		doesCloaking = false,                 --Can cloak, and become untargetable.
-		isCloaked = false,                    --Current state of cloak.
 		cloakFrac = 0,
 		cloakTime = 1.0,                      -- float: How long it takes to cloak.
 		decloakDistance = 0,                -- float: How close it can get to something before being visible. Used by Glowfish blobs to let them get close enough to targets.
@@ -378,7 +373,6 @@ return {
 		flashSizeOverride = 0,                	-- float: Size of the white internal flash. 0 is automatic.
 		forceShockwave = false,               	-- bool: Forces a repulsive shockwave to be created, uses explosionSizeOveride or auto if not set.
 		preventShockwave = false,             	-- Prevents a repulsive shockwave from being created automatically on units scale 1+
-		randomiseInAllDirections = false,     	--Let the explosion randomise it's direction.
 		deathUnitSpawnDoNotRandomiseRotation = false, --Randomise the rotation of the unit spawned on death, if any.
 		deathUnitSpawnTypeID = -1,            	-- int: The unit spawned when this dies. -1 is nothing. Used for debris, and Glowfish Blobs.
 		invulnerable = false,                 	-- You can't hurt me, little man.
@@ -395,7 +389,7 @@ return {
 	isMobile           = true,
 	movement           = {
 		type = "MAPLOCKED",                -- string enum: UNITMOVETYPE: MAPLOCKED / FREE --Does this unit act like a normal ship, and stay within the 0-7y world height. Or like a drone/missile?
-		maximumAngleToTarget = 1, -- .2       -- float: Radians within in which a unit is allowed to accelerate towards a target.
+		maximumAngleToTargetDegrees = 57.295779513082323, -- .2       -- float: Radians within in which a unit is allowed to accelerate towards a target.
 		acceleration = 0.35,               -- float: The units per second of the ship's acceleration. A tolly is 0.4 units long, and accelerates at 0.35
 		strafingAccelMultiplier = 0.8,     -- float: Fraction of accel used for strafing
 		reverseAccelMultiplier = 0.6,      -- float: Fraction of accel used for reverse/breaking
@@ -416,7 +410,7 @@ return {
 		turnMode = "Acceleration", 	-- string enum: SHIPTURNMODE: Acceleration / Linear
 		baseRotationSpeed = 50, 		-- float: Degrees/second
 		maxSpeedMultiplier = 2, 		-- float: For mode Acceleration, baseRotationSpeed becomes acceleration. This is the maximum rotation speed that may be reached.
-		preferredAngle = 0, 		-- float: Degrees. Prefered facing angle from target. Useful for thinks like Skua's (90) and Herons (30) that want to face away from their target for broadsides and cool stuff like strafing.
+		preferredAngleDegrees = 0, 		-- float: Degrees. Prefered facing angle from target. Useful for thinks like Skua's (90) and Herons (30) that want to face away from their target for broadsides and cool stuff like strafing.
 		ignoreWorldUp = false 		-- bool: Good for Lights/Drones/Missiles. Allows this unit to turn upside down, sideways, etc. Looks stupid on most large ships such as Heavies and Capitals.
 	},
 	
@@ -437,7 +431,7 @@ return {
 			minimumHealth = 0, 				-- float: Don't target things with less Max Health than this.
 			minimumDistance = 0, 			-- float: Don't target things that are closer than this.
 			maximumDistance = 15, 			-- float: Important. Scan radius. Don't target things further than this. KEEP THIS NUMBER LOW, SERIOUS PERFORMANCE IMPACT. Light ~15, Medium ~20, Heavy ~25, Capital ~25
-			maximumAngle = 0, 				-- float: Good for spinal weapons/missiles.
+			maximumAngleDegrees = 0, 				-- float: Good for spinal weapons/missiles.
 			addedPreaimDistance = 1, 		-- float: If you have no target in maximumDistance, you may try to target something this far beyond max distance. (use on turrets, not ships)
 			
 			-- Scoring can be negative. Will invert behaviour.
@@ -480,7 +474,7 @@ return {
 			doAimingComputation = false,   	-- For weapons.
 			canInvalidateTarget = false,  	-- For units using pauseIfHasTarget.
 			invalidationDistance = 0,		-- float: 
-			invalidationAngle = 0,        	-- float: Radians
+			invalidationAngleDegrees = 0,        	-- float: Radians
 			invalidationVelocityHeadOn = 0 	-- float: For tractor ships,
 		}
 	},

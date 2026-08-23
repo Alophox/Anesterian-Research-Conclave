@@ -1,5 +1,6 @@
 scaleConst = 50;
 return {
+    isCloaking = false,
 
 	-- 🟦 DEFINITIONS
 	unitName                    = "329-gateway",
@@ -163,8 +164,6 @@ return {
 		targetingPriorityMultiplier = 1.0,
 		untargetableTime = 0,
 
-		doesCloaking = false,
-		isCloaked = false,
 		cloakFrac = 0,
 		cloakTime = 1.0,
 		decloakDistance = 0,
@@ -180,7 +179,6 @@ return {
 		flashSizeOverride = 0,
 		forceShockwave = false,
 		preventShockwave = false,
-		randomiseInAllDirections = false,
 		deathUnitSpawnDoNotRandomiseRotation = false,
 		deathUnitSpawnTypeID = -1,
 		invulnerable = false,

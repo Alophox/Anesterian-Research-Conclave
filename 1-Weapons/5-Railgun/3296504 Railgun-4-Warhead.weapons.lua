@@ -41,7 +41,7 @@ return {
 		active = true,                -- is the weapon online (for use with necrofire)
 		oneuse = true,               -- destroy root unit when out of ammo, (for bullets, missiles, etc) (fires entire magazine then destroys the unit it's on)
 		rangeInUnits = .1,            -- Target must be within range, for gun to fire.
-		maximumAngleToTarget = 3.14,   -- Radians, target must be within angle for gun to fire.
+		maximumAngleToTargetDegrees = 179.90874767107849,   -- Radians, target must be within angle for gun to fire.
 		unitsPerSecond = .2,           -- projectile velocity for LAUNCHER in 100m/s
 		spreadDegrees = 0,          -- Radians, spread for LAUNCHER (machine guns, etc)
 		spreadType = "BELLCURVE",       -- Spread style. BELLCURVE (more in the center), RANDOM 
@@ -108,9 +108,7 @@ return {
 						diameter = 1,			--relative to turret scale
 						offset = 0,			--relative to the barrel it gets fired from's facing.
 						rotateZ = true,		--Rotate the effect once randomly on the z axis when used.
-						rotateY = false,		--Rotate the effect once randomly on the y axis when used.
 						rotateZUpdate = false,	--Continuously rotate the effect on the z axis when used.
-						rotateYUpdate = false,	--COntinuously rotate the effect on the y axis when used.
 						noRescaleLength = 0,	--0 means DO rescale like a laser beam. >0 means don't, like a muzzle flashes.
 						noFade = true,			--prevents the effect from fading to nothing over it's duration.
 						noShrink = false,		--prevents the effect from scaling down to nothing over it's duration.
@@ -174,7 +172,7 @@ return {
 			minimumHealth = 0, 				--Don't target things with less Max Health than this.
 			minimumDistance = 0, 			--Don't target things that are closer than this.
 			maximumDistance = 1, 			--Important. Scan radius. Don't target things further than this. KEEP THIS NUMBER LOW, SERIOUS PERFORMANCE IMPACT. Light ~15, Medium ~20, Heavy ~25, Capital ~25
-			maximumAngle = 360, 				--Good for spinal weapons/missiles.
+			maximumAngleDegrees = 20626.480624709635, 				--Good for spinal weapons/missiles.
 			addedPreaimDistance = 1, 		--If you have no target in maximumDistance, you may try to target something this far beyond max distance. (use on turrets, not ships)
 			
 			-- Scoring can be negative. Will invert behaviour.
@@ -217,7 +215,7 @@ return {
 			doAimingComputation = true,   	--For weapons.
 			canInvalidateTarget = false,  	--For units using pauseIfHasTarget.
 			invalidationDistance = 0,
-			invalidationAngle = 0,        	--Radians
+			invalidationAngleDegrees = 0,        	--Radians
 			invalidationVelocityHeadOn = 0 	--For tractor ships,
 		}
 	},
