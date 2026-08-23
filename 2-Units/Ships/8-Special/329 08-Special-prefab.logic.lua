@@ -9,7 +9,7 @@ prefab.weapon_info.unique = {
 }
 
 function prefab.weapon_info.unique.constructor.core()
-	weapon_info = {
+	local weapon_info = {
 		prefab.weapon_info.hangar.quartz.stardust(1),
 	}
 	return weapon_info
@@ -18,7 +18,7 @@ function prefab.ship.unique.constructor.core(scaleConst, isGhost, ghostIndex, gh
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	prefab_part = {
+	local prefab_part = {
 		name = "Citrine-Core-C",
 		mesh = "329-2-Citrine/Citrine-Core-C",
 		materials = { "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamColour" },
@@ -64,7 +64,7 @@ function prefab.ship.unique.constructor.core(scaleConst, isGhost, ghostIndex, gh
 end
 
 function prefab.weapon_info.unique.orifice.core()
-	weapon_info = {
+	local weapon_info = {
 		prefab.weapon_info.special.gwe(1),
 	}
 	return weapon_info
@@ -73,7 +73,7 @@ function prefab.ship.unique.orifice.core(scaleConst, isGhost, ghostIndex, ghostM
 	if(ghostIndex==nil) then ghostIndex=0 end
 	if(ghostMat==nil) then ghostMat="build" end
 	if(ghostIndex < 0) then return {}; end
-	prefab_part = {
+	local prefab_part = {
 		-- name = "Citrine-Core-C",
 		-- mesh = "329-2-Citrine/Citrine-Core-C",
 		materials = { "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamColour" },
