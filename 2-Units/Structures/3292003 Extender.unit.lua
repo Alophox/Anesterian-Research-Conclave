@@ -45,8 +45,8 @@ return {
 		typeID       = 3292003,
 		factionID    = 329,
 		macroType    = "AUTO",
-		cost_matter  = 40, -- Platforms are not buildable, so it does not require a cost.
-		cost_energy  = 80,
+		cost_matter  = 100, -- Platforms are not buildable, so it does not require a cost.
+		cost_energy  = 100,
 		cost_supply  = 0,
 		cost_time    = 25,
 		techRequired = 0
