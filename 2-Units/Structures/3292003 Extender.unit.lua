@@ -169,6 +169,8 @@ return {
 		-- 	1, 1, 1, 1, 1, 1,
 		-- 	0, 1, 1, 1, 1, 0,
 		--  },
+		networkPlacement = true,
+        networkReceiverRadius = 0,
 	},
 
 	isInfluencer = true,
@@ -185,4 +187,9 @@ return {
 		--	0, 1, 1, 1, 0,
 		-- },
 	},
+
+	isNetwork = true,
+    networkData = {
+        radius = 13,
+    },
 }

@@ -293,6 +293,11 @@ return {
 		-- },
 	},
 
+	isNetwork = true,
+    networkData = {
+        radius = 15,
+    },
+
 	-- 🟨 RESOURCE GENERATOR AND STORAGE CONFIGURATION
 	isGenerator        = true,
 	resourceGeneration = {
