@@ -46,7 +46,7 @@ return {
 		spreadDegrees = weaponStats.accuracySpread * ((1 - weaponStats.railgun.accuracy)/(weaponStats.fireRangeMult * weaponStats.rangeMult[weaponConst.size] * weaponStats.railgun.baseRange)),          -- Radians, spread for LAUNCHER (machine guns, etc)
 		spreadType = "BELLCURVE",       -- Spread style. BELLCURVE (more in the center), RANDOM 
 		forceRaycastDirectlyToTarget = false, -- LASERS, forces the laser to hit it's intended target even if the turret is not looking perfectly at it. (Important for PD weapons, and most laser weapons)
-		lockTime = 0,                 -- Seconds this weapon must have the same target before it can fire.
+		lockTime = 0.1,                 -- Seconds this weapon must have the same target before it can fire.
 		simultaniousObjectLimit = 0,  -- LAUNCHER, used for Drones, mines, etc. 0 = no limit.
 
 		--Damage Data
