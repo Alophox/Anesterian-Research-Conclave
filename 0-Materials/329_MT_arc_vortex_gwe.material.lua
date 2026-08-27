@@ -10,7 +10,7 @@ return {
         _FalloffInner = 0,
         _FalloffOuter = 10,
         _InvRStrength = 0.1,
-        _MainTex = { texture = "Textures/gwe_vortex_test.png" },
+        _MainTex = { texture = "Textures/gwe_vortex.png" },
         _NoiseSpeed = { 0, -.5, 0, 0 },
         _NoiseTiling = { 40, 10, 0, 0 },
         _Opacity = 0.1,
