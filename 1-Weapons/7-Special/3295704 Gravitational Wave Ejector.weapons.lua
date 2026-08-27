@@ -19,7 +19,7 @@ return {
 		-- Most weapons will create an AOE explosion if isAreaOfEffect is enabled.
 		-- All weapons will try to use a childed weaponVisual when firing. If there are multiple weaponVisuals, each shot it will use one in child order. (as a laser beam, or as a muzzle flash depending on how you configure the weaponVisual)
 
-		weaponType = "TRACTOR",
+		weaponType = "CONE_INSTANT",
 		
 		-- LASER, raycast forward and damage the first thing you hit. Can do AOE/Damage. Uses weaponVisual as a beam.
 		-- PUREHIT, directly damage the target. Can do AOE/Damage. Uses weaponVisual as a beam.
