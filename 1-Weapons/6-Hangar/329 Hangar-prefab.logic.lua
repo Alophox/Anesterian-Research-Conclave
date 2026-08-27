@@ -417,3 +417,52 @@ function prefab.weapon.hangar.citrine(pos, rot, sca, isGhost, ghostIndex, ghostM
 	end
 	return prefab_part
 end
+
+
+function prefab.weapon_info.hangar.hologram(count)
+	return { 3295607, 1 * count, 3291007 }
+end
+function prefab.weapon.hangar.hologram(pos, rot, sca, isGhost, ghostIndex, ghostMat)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostMat==nil) then ghostMat="build" end
+	if(ghostIndex < 0) then return {}; end
+	prefab_part = {
+		name	= "Hologram Hangar",
+		mesh      = "329-Hangar/Hangar",
+		materials = { "329_MT_arc_hull_dark", "329_MT_arc_teamGlow",  "329_MT_arc_teamColour",  },
+		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
+		rotation  = rot,        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
+		scale 	= sca,					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
+	}
+	-- ghosts should NOT have weapons, as it causes a crash.
+	if isGhost then
+		if (ghostMat == "aegis_teamColour") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
+	else
+		prefab_part.parts={
+			{
+				name      = "Hangar",
+				position  = { 0, 0, -1.5 },    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
+				rotation  = { 0, 0, 0 },        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
+				scale 	= { 1, 1, 1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
+
+				weapon    = {
+					weaponID = 3295607, --int: The weaponData id to be used for this weapon.
+					turnSpeed = 0, 	--float: Degrees per second.
+					turnMode = "Linear", --string enum: Linear / Acceleration
+					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
+					useRootTarget = true,
+					mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
+						left = 180, --float:
+						right = 180,--float:
+						up = 90,	 --float:
+						down = 90  --float:
+					},
+				},
+			},
+		}
+	end
+	return prefab_part
+end
