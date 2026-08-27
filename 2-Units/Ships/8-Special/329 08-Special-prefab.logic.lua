@@ -2,10 +2,12 @@
 prefab.ship.unique = {
 	constructor = {},
 	orifice = {},
+	courier = {},
 }
 prefab.weapon_info.unique = {
 	constructor = {},
 	orifice = {},
+	courier = {},
 }
 
 function prefab.weapon_info.unique.constructor.core()
@@ -130,6 +132,87 @@ function prefab.ship.unique.orifice.core(scaleConst, isGhost, ghostIndex, ghostM
 			prefab.ship.aquamarine.thruster(scaleConst, isGhost, ghostIndex),
 
 			prefab.ship.unique.orifice.core(.1, isGhost, ghostIndex-1, ghostMat),
+		}
+	}
+	if isGhost then
+		if (ghostMat == "aegis_teamColour") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
+	end
+	return prefab_part
+end
+
+function prefab.weapon_info.unique.courier.core()
+	local weapon_info = {
+		prefab.weapon_info.hangar.hologram(1),
+	}
+	return weapon_info
+end
+function prefab.ship.unique.courier.core(scaleConst, isGhost, ghostIndex, ghostMat)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostMat==nil) then ghostMat="build" end
+	if(ghostIndex < 0) then return {}; end
+	local prefab_part = {
+		-- name = "Citrine-Core-C",
+		-- mesh = "329-2-Citrine/Citrine-Core-C",
+		materials = { "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamColour" },
+		position = {0,0,0},
+		rotation = {0,0,0},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
+		parts={
+
+			prefab.weapon.hangar.hologram(
+				{ 0, 0, 7 },
+				{ 0, 0, 0 },
+				{ 1, 1, 1 },
+				isGhost, ghostIndex, ghostMat
+			),
+			{
+				name = "Sapphire-Stern",
+				mesh = "329-6-Sapphire/Sapphire-Stern",
+				materials = (not isGhost) and {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", } or {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,},
+				position = {0,0,0},
+				rotation = {0,0,0},
+				scale = {1, 1, 1},
+				aegisVisual = ghostMat == "aegis_teamColour";
+			},
+			{
+				name = "Sapphire-Core",
+				mesh = "329-6-Sapphire/Sapphire-Core",
+				materials = (not isGhost) and {"329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", } or {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,},
+				position = {0,0,0},
+				rotation = {0,0,0},
+				scale = {1, 1, 1},
+				aegisVisual = ghostMat == "aegis_teamColour";
+			},
+			{
+				name = "Aquamarine-Bow",
+				mesh = "329-6-Sapphire/Sapphire-Bow",
+				materials = (not isGhost) and {"329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", } or {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,},
+				position = {0,0,0},
+				rotation = {0,0,0},
+				scale = {1, 1, 1},
+				aegisVisual = ghostMat == "aegis_teamColour";
+			},
+
+
+			-- prefab.part.emblem(
+			-- 	{ 0, 1.25, -2.75},
+			-- 	{ 0, 0, 0 },
+			-- 	{ 1, 1, 1 },
+			-- 	isGhost, ghostIndex, ghostMat
+			-- ),
+			-- prefab.part.emblem(
+			-- 	{ 0, 1.25, -2.75},
+			-- 	{ 0, 0, 180 },
+			-- 	{ 1, 1, 1 },
+			-- 	isGhost, ghostIndex, ghostMat
+			-- ),
+
+			prefab.ship.sapphire.thruster(scaleConst, isGhost, ghostIndex),
+
+			prefab.ship.unique.courier.core(.1, isGhost, ghostIndex-1, ghostMat),
 		}
 	}
 	if isGhost then
