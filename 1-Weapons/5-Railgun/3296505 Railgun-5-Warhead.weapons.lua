@@ -166,7 +166,7 @@ return {
 			acceptFirstValidTarget = false, 	--For launchers and things that don't need to actually target something. Shoot at the first thing you see.
 			pauseIfHasTarget = false, 		--Don't look for a target again, until you're current one is dead. USE WITH canInvalidateTarget otherwise units WILL get stuck trying to shoot stuff out of their range.
 			ignoreUncapturable = false, 		--If the target is uncapturable, ignore it.
-			secondsPerScan = 1.5, 			--How long to wait before reassessing what you're targeting.
+			secondsPerScan = 0, 			--How long to wait before reassessing what you're targeting.
 
 			ignoreFullHealth = false, 		--Good for healers.
 			minimumHealth = 0, 				--Don't target things with less Max Health than this.

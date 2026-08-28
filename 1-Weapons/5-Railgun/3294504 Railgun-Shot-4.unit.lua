@@ -83,12 +83,12 @@ return {
 				weaponID = 3296504, --int: The weaponData id to be used for this weapon.
 				turnSpeed = 0, 	--float: Degrees per second.
 				turnMode = "Linear", --string enum: Linear / Acceleration
-				turnInstant = true, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
+				turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
 				mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
-					left = 5, --float:
-					right = 5,--float:
-					up = 5,	 --float:
-					down = 5  --float:
+					left = 0, --float:
+					right = 0,--float:
+					up = 0,	 --float:
+					down = 0  --float:
 				},
 			},
 		},
