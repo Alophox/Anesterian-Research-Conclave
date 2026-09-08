@@ -1,3 +1,4 @@
+local __ats_schema_manifest = (function()
  
  --This file controls the modID of your mod, among other attributes.
  --
@@ -28,3 +29,6 @@ return {
 		mergeSameID = false,	--Allows other mods to merge with this mod and override items, aka, mod modding. If false, this mod will be ignored if another with the same ID is already loaded.
 	}
 }
+end)()
+__ats_schema_manifest.schemaVersion = 10
+return __ats_schema_manifest
