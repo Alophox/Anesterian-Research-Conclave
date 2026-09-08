@@ -98,12 +98,12 @@ return {
 
 	ghostParts = {
 		prefab.part.module.emplacement.missile.S(scaleConst, 0, "vls", true),
-		prefab.part.module.rangeIndicator(
-			indicatorIDs["missile"]["S"],
-			"missile",
-			"S",
-			{1,0,0,.2}
-		)
+		-- prefab.part.module.rangeIndicator(
+		-- 	indicatorIDs["missile"]["S"],
+		-- 	"missile",
+		-- 	"S",
+		-- 	{1,0,0,.2}
+		-- )
 	},
 
 	-- 🟦 HEALTH & ARMOR
