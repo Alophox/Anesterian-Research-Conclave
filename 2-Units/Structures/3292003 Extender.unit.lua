@@ -190,6 +190,6 @@ return {
 
 	isNetwork = true,
     networkData = {
-        radius = 13,
+        radius = 13.4,
     },
 }

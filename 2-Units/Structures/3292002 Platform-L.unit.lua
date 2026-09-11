@@ -361,7 +361,7 @@ return {
 
 	isNetwork = true,
     networkData = {
-        radius = 20,
+        radius = 23.6,
     },
 
 	-- 🟨 RESOURCE GENERATOR AND STORAGE CONFIGURATION
