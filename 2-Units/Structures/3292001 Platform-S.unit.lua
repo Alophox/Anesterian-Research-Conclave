@@ -248,7 +248,7 @@ return {
 
 	-- /// CLOAKING ///
     isCloaking = false, -- bool - enables stealth
-    isCloakDetector = true, -- bool - enables detection of cloaked units
+    isCloakDetector = false, -- bool - enables detection of cloaked units
     cloak = {
         startingCloakFrac = 0, -- float - determines how soon this unit can cloak after spawning. 0 means wait the full cloaking duration, 1 means cloak immediately
         cloakTime = 0, -- float - how many seconds it takes for this unit to cloak after being decloaked

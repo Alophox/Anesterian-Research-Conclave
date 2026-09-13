@@ -1,15 +1,11 @@
-shipConst = {
-	class="H",
-}
-scaleConst = 2.8;
+scaleConst=0;
 return {
-    isCloaking = false,
 
 	-- 🟦 DEFINITIONS
 	unitName                    = "329-hologram-module",                 -- string: Internal name for debugging and errors.
-	unitDisplayName             = "Hologram Module",                         -- string: Actual display name of the unit in the Databank, HUD, etc.
+	unitDisplayName             = "EM Sensor Module",                         -- string: Actual display name of the unit in the Databank, HUD, etc.
 	unitTooltip                 = "", 						   -- string: Shown when moused over in the HUD.
-	unitBlurb                   = "EW Drone Module", -- string: Shown just below the unit name in tooltips and databank.
+	unitBlurb                   = "EM Sensor Module", -- string: Shown just below the unit name in tooltips and databank.
 	unitBlurbExcludeFromTooltip = false,                           -- bool: The blurb is automatically added to tooltips, but if you don't want that (looks weird and redundant for most structures) set this.
 	hotkey                      = "G",                             -- Unity KeyCode: For buildbar. The hotkey for this unit.
 	generatePicture = false;
@@ -17,16 +13,15 @@ return {
 
 	controllable 	= false;	-- bool: Can this unit be given move orders with right click?
 	unselectable = true;	-- Cannot be selected.
-	untargetable = false;	-- Cannot be targeted.
+	untargetable = true;	-- Cannot be targeted.
 	unhittable 	= true;  -- Will be ignored by any RAYCAST or CAST based aquisition types (as are used for bullets). Also cannot be hit by explosions or incidental weapon raycasts (lasers). But can still be hit by PureHit weapons.
 
 	-- 📘 DATABANK ENTRY
 	databankEntry               = {
-		visibility                  = "VISIBLE", -- string enum: VISIBLE (always available) / HIDDEN (never visible)/ DISCOVER (visible once required level)
+		visibility                  = "HIDDEN", -- string enum: VISIBLE (always available) / HIDDEN (never visible)/ DISCOVER (visible once required level)
 		requiredLevelForVisible     = "", 			-- string;
 		requiredLevelForDescription = "", 			-- string;
-		tactical                    = 	"<color=yellow>Decoy</color>\n"..
-										" - Vulnerable to AOE\n"..
+		tactical                    = 	"<color=yellow>Anti-Cloak</color>\n"..
 										-- " - <color=#80ffff>"..healthStats.aegisRegen[shipConst.class].." Aegis/s</color>\n"..
 										"",
 		description                 =
@@ -61,14 +56,14 @@ return {
     autoColourElements = true,
     editorDontColour = false,
 	colliderDimensions = {
-		widthMultiplier  = .412, -- float: Multiplied by scale to determine the percieved width of the unit. Long units (Vaalkorei) have this at about 0.5~0.6, aka we're only half as wide as we are long.
-		heightMultiplier = .294, -- float: Multiplied by scale to determine the percieved height of the unit, flat units (Kontaalen) have this at about 0.6, aka we're shorter than we are long.
+		widthMultiplier  = 1, -- float: Multiplied by scale to determine the percieved width of the unit. Long units (Vaalkorei) have this at about 0.5~0.6, aka we're only half as wide as we are long.
+		heightMultiplier = 1, -- float: Multiplied by scale to determine the percieved height of the unit, flat units (Kontaalen) have this at about 0.6, aka we're shorter than we are long.
 		lengthMultiplier = 1.0, -- float: Multiplied by scale to determine the percieved length of the unit. wide units (Soul Warden Fore section) have this at about 0.5, aka we're only half as long as we are wide.
 	},
 
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data = {
-		typeID       = 3297101, -- int: !!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
+		typeID       = 3297110, -- int: !!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
 		factionID    = 329, -- int: The faction this unit is associated with in the Databank.
 		macroType    = "AUTO", -- string enum: MacroTarget state: AUTO (is capital or command?) / TRUE / FALSE
 		cost_matter  = 0, -- int: For structures.
@@ -80,21 +75,7 @@ return {
 
 	-- 🟦 PARTS
 	parts = {
-		{
-			name = "Aegis spawner",
-			autoModule = {
-				moduleTypeID = 3297100,            -- int
-				reportKillsToParent = false, -- bool
-				doDamageToEntityOnDeath = true, -- bool
-				damageToEntityOnDeath = {       -- damage table
-					isNondamaging = false, instances = 1, damage = 100, piercing = 0,
-					shred = 0, heat = 0, vulnerability = 0, decloak = 0,
-					targetingPriorityMultiplier = 0, impulseForce = 0,
-				},
-			},
-		},
-		-- prefab.unique.ship.courier.core(scaleConst, false),
-		prefab.ship.unique.courier.core(scaleConst,true, 0, "aegis_teamColour"),
+		
 	},
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).
@@ -105,12 +86,12 @@ return {
 
 	-- 🟦 HEALTH & ARMOR
 	health = {
-		unitClass = "HEAVY",       -- string enum: UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = math.floor((1 - healthStats.proportionRegenMax) * healthStats.baseHealth[shipConst.class]),              -- float: Health, also the unit's heat capacity.
+		unitClass = "NONE",       -- string enum: UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
+		health = 1,              -- float: Health, also the unit's heat capacity.
 		health_regen_per_second = 0,
-		aegisMaximum = functions.ceil(healthStats.proportionRegenMax *  healthStats.baseHealth[shipConst.class]), 			-- float: Game will automatically determine, but can be manually set here.
-		aegis_regen_per_second = .0001, --healthStats.aegisRegen[shipConst.class],
-		max_regen_frac = healthStats.proportionRegenMax,
+		aegisMaximum = 0, 			-- float: Game will automatically determine, but can be manually set here.
+		aegis_regen_per_second = 0, --healthStats.aegisRegen[shipConst.class],
+		max_regen_frac = 1,
 		armour = 0,                -- int: Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
 		vulnerability_max = 0,   -- float: Prevent the unit from losing more than X fraction of it's armour.
 		shredMultiplier = 0,     -- float: Multiplies incomming shred, pretty self explanatory right?
@@ -138,7 +119,7 @@ return {
 		lifetime = 0,                         -- float: How long in seconds before this unit self-destructs. (drones, missiles, bullets)
 		explodeOnTimeout = false,             -- Was it a peaceful death?
 
-		explosionType = "EXPLOSION",          	-- string enum: EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
+		explosionType = "NONE",          	-- string enum: EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
 		explosionVolatility = 1.0,            	-- float: 1000 * unit scale * volatility = area damage when a unit of scale 2 or greater dies.
 		explosionSizeOveride = 0,             	-- float: Size of the visual explosion. A Tolly is 0.4 in size. 0 is automatic.
 		flashSizeOverride = 0,                	-- float: Size of the white internal flash. 0 is automatic.
@@ -157,7 +138,18 @@ return {
 	},
 
 
-	
+	-- /// CLOAKING ///
+    isCloaking = false, -- bool - enables stealth
+    isCloakDetector = true, -- bool - enables detection of cloaked units
+    cloak = {
+        startingCloakFrac = 0, -- float - determines how soon this unit can cloak after spawning. 0 means wait the full cloaking duration, 1 means cloak immediately
+        cloakTime = 0, -- float - how many seconds it takes for this unit to cloak after being decloaked
+        decloakDistance = 0, -- float - this unit will decloak if enemy units are within this distance (or maybe its distance to target? unsure)
+    },
+    cloakDetector = {
+        range = weaponStats.sensor.baseRange * weaponStats.rangeMult.S, -- float - distance at which cloaked enemy units will be revealed
+        revealDuration = 0, -- float - minimum amount of time that revealed units are forced to wait before they can cloak again (i think)
+    },
 
 	isRepulsor            = false,
 	isNotRepulsed        = true,

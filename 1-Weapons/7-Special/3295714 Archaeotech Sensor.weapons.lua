@@ -3,8 +3,8 @@ weaponConst = {
 };
 return {
 	id = 3295714,
-	name = "??? Sensor Suite",
-	blurb = "Reveals cloaked ships. ???",
+	name = "Archaeotech Sensor Suite",
+	blurb = "Reveals cloaked ships. Little is understood of precursor civilization technlogies, but if it works, don't fix it.",
 	metaNote = "",
 	hideInDatabank = false,
 	displayType = "NORMAL", -- NORMAL, DRONE

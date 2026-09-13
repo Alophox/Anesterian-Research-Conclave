@@ -185,20 +185,17 @@ function prefab.weapon.special.sensor_em(pos, rot, sca, isGhost, ghostIndex, gho
 	else
 		prefab_part.parts={
 			{
-				name      = "Turret",	position  = { 0,0, 0 },	rotation  = { 0, 0, 0 },	scale 	= { 1, 1, 1 },
-				weapon    = {
-					weaponID = 3295710, --int: The weaponData id to be used for this weapon.
-					turnSpeed = 0, 	--float: Degrees per second.
-					turnMode = "Linear", --string enum: Linear / Acceleration
-					turnInstant = true, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
-					mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
-						left = 180, --float:
-						right = 180,--float:
-						up = 90,	 --float:
-						down = 90  --float:
+				name = "Sensor",
+				autoModule = {
+					moduleTypeID = 3297110,            -- int
+					reportKillsToParent = false, -- bool
+					doDamageToEntityOnDeath = true, -- bool
+					damageToEntityOnDeath = {       -- damage table
+						isNondamaging = false, instances = 1, damage = 0, piercing = 0,
+						shred = 0, heat = 0, vulnerability = 0, decloak = 0,
+						targetingPriorityMultiplier = 0, impulseForce = 0,
 					},
 				},
-				
 			},
 		}
 	end
@@ -226,20 +223,17 @@ function prefab.weapon.special.sensor_gravitic(pos, rot, sca, isGhost, ghostInde
 	else
 		prefab_part.parts={
 			{
-				name      = "Turret",	position  = { 0,0, 0 },	rotation  = { 0, 0, 0 },	scale 	= { 1, 1, 1 },
-				weapon    = {
-					weaponID = 3295711, --int: The weaponData id to be used for this weapon.
-					turnSpeed = 0, 	--float: Degrees per second.
-					turnMode = "Linear", --string enum: Linear / Acceleration
-					turnInstant = true, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
-					mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
-						left = 180, --float:
-						right = 180,--float:
-						up = 90,	 --float:
-						down = 90  --float:
+				name = "Sensor",
+				autoModule = {
+					moduleTypeID = 3297111,            -- int
+					reportKillsToParent = false, -- bool
+					doDamageToEntityOnDeath = true, -- bool
+					damageToEntityOnDeath = {       -- damage table
+						isNondamaging = false, instances = 1, damage = 0, piercing = 0,
+						shred = 0, heat = 0, vulnerability = 0, decloak = 0,
+						targetingPriorityMultiplier = 0, impulseForce = 0,
 					},
 				},
-				
 			},
 		}
 	end
@@ -267,20 +261,17 @@ function prefab.weapon.special.sensor_subspace(pos, rot, sca, isGhost, ghostInde
 	else
 		prefab_part.parts={
 			{
-				name      = "Turret",	position  = { 0,0, 0 },	rotation  = { 0, 0, 0 },	scale 	= { 1, 1, 1 },
-				weapon    = {
-					weaponID = 3295712, --int: The weaponData id to be used for this weapon.
-					turnSpeed = 0, 	--float: Degrees per second.
-					turnMode = "Linear", --string enum: Linear / Acceleration
-					turnInstant = true, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
-					mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
-						left = 180, --float:
-						right = 180,--float:
-						up = 90,	 --float:
-						down = 90  --float:
+				name = "Sensor",
+				autoModule = {
+					moduleTypeID = 3297112,            -- int
+					reportKillsToParent = false, -- bool
+					doDamageToEntityOnDeath = true, -- bool
+					damageToEntityOnDeath = {       -- damage table
+						isNondamaging = false, instances = 1, damage = 0, piercing = 0,
+						shred = 0, heat = 0, vulnerability = 0, decloak = 0,
+						targetingPriorityMultiplier = 0, impulseForce = 0,
 					},
 				},
-				
 			},
 		}
 	end
@@ -308,20 +299,17 @@ function prefab.weapon.special.sensor_tachyon(pos, rot, sca, isGhost, ghostIndex
 	else
 		prefab_part.parts={
 			{
-				name      = "Turret",	position  = { 0,0, 0 },	rotation  = { 0, 0, 0 },	scale 	= { 1, 1, 1 },
-				weapon    = {
-					weaponID = 3295713, --int: The weaponData id to be used for this weapon.
-					turnSpeed = 0, 	--float: Degrees per second.
-					turnMode = "Linear", --string enum: Linear / Acceleration
-					turnInstant = true, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
-					mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
-						left = 180, --float:
-						right = 180,--float:
-						up = 90,	 --float:
-						down = 90  --float:
+				name = "Sensor",
+				autoModule = {
+					moduleTypeID = 3297113,            -- int
+					reportKillsToParent = false, -- bool
+					doDamageToEntityOnDeath = true, -- bool
+					damageToEntityOnDeath = {       -- damage table
+						isNondamaging = false, instances = 1, damage = 0, piercing = 0,
+						shred = 0, heat = 0, vulnerability = 0, decloak = 0,
+						targetingPriorityMultiplier = 0, impulseForce = 0,
 					},
 				},
-				
 			},
 		}
 	end
