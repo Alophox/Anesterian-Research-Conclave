@@ -27,7 +27,7 @@ return {
 	},
 
 	controllable = false;
-	unselectable = true;
+	unselectable = false;
 	untargetable = true;
 	unhittable 	= true;
 
@@ -81,10 +81,10 @@ return {
 		typeID       = 3297005, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
 		factionID    = 329, 	--The faction this unit is associated with in the Databank.
 		macroType    = "AUTO", 	--MacroTarget state: AUTO (is capital or command?) / TRUE / FALSE
-		cost_matter  = 10, 		--integer, For structures.
-		cost_energy  = 5, 		--integer, For structures.
+		cost_matter  = 0, 		--integer, For structures.
+		cost_energy  = 0, 		--integer, For structures.
 		cost_supply  = 0, 		--integer, For structures. Logistics cost.
-		cost_time    = 7, 		--integer, For structures, how long in seconds it takes to build.
+		cost_time    = 1, 		--integer, For structures, how long in seconds it takes to build.
 		techRequired = 0
 	},
 
@@ -103,8 +103,8 @@ return {
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "MEDIUM",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = math.floor(500),              --Health, also the unit's heat capacity.
-		health_regen_per_second = 3, --Health regen per second. Duh.
+		health = 1,              --Health, also the unit's heat capacity.
+		health_regen_per_second = 0, --Health regen per second. Duh.
 		max_regen_frac = 0,      --The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
 
 		armour = 10,                --Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
@@ -154,10 +154,10 @@ return {
 	},
 
 	-- 🟦 STRUCTURE
-	isStructure = false,
+	isStructure = true,
 	structure = {
-		type = "NONE", --NONE, ECONOMY, PRODUCTION, DEFENCE, OFFENCE, UTILITY, EXTENDER
-		rectangle = {1,1}, 		-- optional, float2: xz dimensions of the influence, facing ^
+		type = "DEFENSE", --NONE, ECONOMY, PRODUCTION, DEFENCE, OFFENCE, UTILITY, EXTENDER
+		rectangle = {0,0}, 		-- optional, float2: xz dimensions of the influence, facing ^
 		--ring = {0, 2.5},			-- optional, float2: Inner and outer ring radius. Inner > 0 lets you make donuts. If structure footprint is odd, add +0.5 for a cleaner circle.
 		--matrixDimensions = {5,5},
 		--matrix = {				-- optional, int bool: matrix for detailed footprints. 0 = empty space, 1 = occupied space

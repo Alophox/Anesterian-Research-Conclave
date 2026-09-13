@@ -87,7 +87,7 @@ return {
 			name     = "Aegis",
 			mesh    = "329-Emplacement/Emplacement-3",
 			materials = { "329_MT_arc_0_aegis_teamColour", "329_MT_arc_0_aegis_teamColour", "329_MT_arc_0_aegis_teamColour", "329_MT_arc_0_aegis_teamColour" },
-			pos       = { 0, 0, 0 },        --Relative local position of this object.
+			position   = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
 			aegisVisual = true,
@@ -96,7 +96,7 @@ return {
 			name     = "Build",
 			mesh    = "329-Emplacement/Emplacement-3",
 			materials = { "329_MT_arc_1_build", "329_MT_arc_1_build", "329_MT_arc_1_build", "329_MT_arc_1_build" },
-			pos       = { 0, 0, 0 },        --Relative local position of this object.
+			position   = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
 			destroyOnConstructionComplete = true,
@@ -105,18 +105,27 @@ return {
 			name     = "Build",
 			mesh    = "329-Emplacement/Emplacement-3",
 			materials = { "329_MT_arc_2_build", "329_MT_arc_2_build", "329_MT_arc_2_build", "329_MT_arc_2_build" },
-			pos       = { 0, 0, 0 },        --Relative local position of this object.
+			position   = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
 			destroyOnConstructionComplete = true,
 		},
 		{
 			name     = "Spawner Spawn and Ghost Point",	
-			pos       = { 0, 0, 0 },        --Relative local position of this object.
+			position   = { 0, .1*4.5/scaleConst, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
 			spawnerSpawnPoint = {
 				code = 0, -- The code used to identify this spawnpoint, spawnItems with the same code will be spawned at this spawnpoint and any others with the same code.
+			},
+		},
+		{
+			name     = "Spawner Spawn and Ghost Point",	
+			position   = { 0, .1*4.75/scaleConst, 0 },        --Relative local position of this object.
+			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
+			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
+			spawnerSpawnPoint = {
+				code = 1, -- The code used to identify this spawnpoint, spawnItems with the same code will be spawned at this spawnpoint and any others with the same code.
 			},
 		},
 	},
@@ -215,8 +224,8 @@ return {
 	spawnItems = {
 		{
 			id = 3297021, -- typeID of the unit to spawn
-			spawnTime = 0, -- How long to build/spawn
-			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
+			spawnTime = 5, -- How long to build/spawn
+			spawnTimeStart = 0.0000000001, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
 			spawnPointCode = 0,
@@ -229,8 +238,8 @@ return {
 		},
 		{
 			id = 3297024, -- typeID of the unit to spawn
-			spawnTime = 0, -- How long to build/spawn
-			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
+			spawnTime = 5, -- How long to build/spawn
+			spawnTimeStart = 0.0000000001, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
 			spawnPointCode = 0,
@@ -243,8 +252,8 @@ return {
 		},
 		{
 			id = 3297020, -- typeID of the unit to spawn
-			spawnTime = 0, -- How long to build/spawn
-			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
+			spawnTime = 5, -- How long to build/spawn
+			spawnTimeStart = 0.0000000001, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
 			spawnPointCode = 0,
@@ -257,8 +266,8 @@ return {
 		},
 		{
 			id = 3297023, -- typeID of the unit to spawn
-			spawnTime = 0, -- How long to build/spawn
-			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
+			spawnTime = 5, -- How long to build/spawn
+			spawnTimeStart = 0.0000000001, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
 			spawnPointCode = 0,
@@ -271,8 +280,8 @@ return {
 		},
 		{
 			id = 3297025, -- typeID of the unit to spawn
-			spawnTime = 0, -- How long to build/spawn
-			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
+			spawnTime = 5, -- How long to build/spawn
+			spawnTimeStart = 0.0000000001, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
 			spawnPointCode = 0,

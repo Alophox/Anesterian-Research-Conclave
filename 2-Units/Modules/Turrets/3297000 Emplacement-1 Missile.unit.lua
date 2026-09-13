@@ -27,7 +27,7 @@ return {
 	},
 
 	controllable 	= false;
-	unselectable = true;
+	unselectable = false;
 	untargetable = true;
 	unhittable 	= true;
 
@@ -71,10 +71,11 @@ return {
     autoColourElements = true,
     editorDontColour = false,
 	colliderDimensions = {
-		widthMultiplier  = .97, --Multiplied by scale to determine the percieved width of the unit. Long units (Vaalkorei) have this at about 0.5~0.6, aka we're only half as wide as we are long.
-		heightMultiplier = 1, --Multiplied by scale to determine the percieved height of the unit, flat units (Kontaalen) have this at about 0.6, aka we're shorter than we are long.
-		lengthMultiplier = .97, --Multiplied by scale to determine the percieved length of the unit. wide units (Soul Warden Fore section) have this at about 0.5, aka we're only half as long as we are wide.
+		widthMultiplier  = .5, --Multiplied by scale to determine the percieved width of the unit. Long units (Vaalkorei) have this at about 0.5~0.6, aka we're only half as wide as we are long.
+		heightMultiplier = 1.6, --Multiplied by scale to determine the percieved height of the unit, flat units (Kontaalen) have this at about 0.6, aka we're shorter than we are long.
+		lengthMultiplier = .5, --Multiplied by scale to determine the percieved length of the unit. wide units (Soul Warden Fore section) have this at about 0.5, aka we're only half as long as we are wide.
 	},
+	
 
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data                        = {
@@ -98,19 +99,13 @@ return {
 
 	ghostParts = {
 		prefab.part.module.emplacement.missile.S(scaleConst, 0, "vls", true),
-		-- prefab.part.module.rangeIndicator(
-		-- 	indicatorIDs["missile"]["S"],
-		-- 	"missile",
-		-- 	"S",
-		-- 	{1,0,0,.2}
-		-- )
 	},
 
 	-- 🟦 HEALTH & ARMOR
 	health = {
 		unitClass = "MEDIUM",       -- UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
-		health = math.floor(500),              --Health, also the unit's heat capacity.
-		health_regen_per_second = 3, --Health regen per second. Duh.
+		health = 1,              --Health, also the unit's heat capacity.
+		health_regen_per_second = 0, --Health regen per second. Duh.
 		max_regen_frac = 0,      --The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
 
 		armour = 10,                --Reduces incoming damage. Used to allow heavier ship classes to withstand many smaller opponents, but still being countered by anti-armour. Lights ~5, Mediums ~10, Heavies ~20, Capitals ~50
@@ -160,10 +155,10 @@ return {
 	},
 
 	-- 🟦 STRUCTURE
-	isStructure = false,
+	isStructure = true,
 	structure = {
-		type = "NONE", --NONE, ECONOMY, PRODUCTION, DEFENCE, OFFENCE, UTILITY, EXTENDER
-		rectangle = {1,1}, 		-- optional, float2: xz dimensions of the influence, facing ^
+		type = "DEFENSE", --NONE, ECONOMY, PRODUCTION, DEFENCE, OFFENCE, UTILITY, EXTENDER
+		rectangle = {0,0}, 		-- optional, float2: xz dimensions of the influence, facing ^
 		--ring = {0, 2.5},			-- optional, float2: Inner and outer ring radius. Inner > 0 lets you make donuts. If structure footprint is odd, add +0.5 for a cleaner circle.
 		--matrixDimensions = {5,5},
 		--matrix = {				-- optional, int bool: matrix for detailed footprints. 0 = empty space, 1 = occupied space

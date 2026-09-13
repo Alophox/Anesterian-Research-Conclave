@@ -58,6 +58,12 @@ return {
 		lengthMultiplier = .97, --Multiplied by scale to determine the percieved length of the unit. wide units (Soul Warden Fore section) have this at about 0.5, aka we're only half as long as we are wide.
 	},
 
+	boxCollider = {                             -- table
+        center = { 0, 0, 0 },       -- float3 { x, y, z }; default: { 0, 0, 0 }
+        size = { .97, 1.85, .97 },         -- float3 { x, y, z }; default: { 0, 0, 0 }
+        isTrigger = false,          -- boolean; default: false
+    },
+
 	-- 🟦 UNIT ID, STRUCTURE COST, MACROTARGET STATE, TECH
 	data                        = {
 		typeID       = 3292020, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
@@ -89,7 +95,7 @@ return {
 			name     = "Aegis",
 			mesh    = "329-Emplacement/Emplacement-1",
 			materials = { "329_MT_arc_0_aegis_teamColour", "329_MT_arc_0_aegis_teamColour", "329_MT_arc_0_aegis_teamColour", "329_MT_arc_0_aegis_teamColour" },
-			pos       = { 0, 0, 0 },        --Relative local position of this object.
+			position  = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
 			aegisVisual = true,
@@ -98,7 +104,7 @@ return {
 			name     = "Build",
 			mesh    = "329-Emplacement/Emplacement-1",
 			materials = { "329_MT_arc_1_build", "329_MT_arc_1_build", "329_MT_arc_1_build", "329_MT_arc_1_build" },
-			pos       = { 0, 0, 0 },        --Relative local position of this object.
+			position  = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
 			destroyOnConstructionComplete = true,
@@ -107,14 +113,15 @@ return {
 			name     = "Build",
 			mesh    = "329-Emplacement/Emplacement-1",
 			materials = { "329_MT_arc_2_build", "329_MT_arc_2_build", "329_MT_arc_2_build", "329_MT_arc_2_build" },
-			pos       = { 0, 0, 0 },        --Relative local position of this object.
+			position  = { 0, 0, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
 			destroyOnConstructionComplete = true,
 		},
+
 		{
 			name     = "Spawner Spawn and Ghost Point",	
-			pos       = { 0, 0, 0 },        --Relative local position of this object.
+			position  = { 0, .1*3.5/scaleConst, 0 },        --Relative local position of this object.
 			rotation  = { 0, 0, 0 },        	--Eular Angles XYZ, will apply rotation ZXY. Relative local rotation of this object.
 			scale 	= { 1, 1, 1 },			--The nonuniform scale of the part, relative to it's parent's scale.
 			spawnerSpawnPoint = {
@@ -218,8 +225,8 @@ return {
 	spawnItems = {
 		{
 			id = 3297001, -- typeID of the unit to spawn
-			spawnTime = 0, -- How long to build/spawn
-			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
+			spawnTime = 1, -- How long to build/spawn
+			spawnTimeStart = 0.0000000001, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
 			spawnPointCode = 0,
@@ -232,8 +239,8 @@ return {
 		},
 		{
 			id = 3297004, -- typeID of the unit to spawn
-			spawnTime = 0, -- How long to build/spawn
-			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
+			spawnTime = 1, -- How long to build/spawn
+			spawnTimeStart = 0.0000000001, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
 			spawnPointCode = 0,
@@ -246,8 +253,8 @@ return {
 		},
 		{
 			id = 3297000, -- typeID of the unit to spawn
-			spawnTime = 0, -- How long to build/spawn
-			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
+			spawnTime = 1, -- How long to build/spawn
+			spawnTimeStart = 0.0000000001, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
 			spawnPointCode = 0,
@@ -260,8 +267,8 @@ return {
 		},
 		{
 			id = 3297003, -- typeID of the unit to spawn
-			spawnTime = 0, -- How long to build/spawn
-			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
+			spawnTime = 1, -- How long to build/spawn
+			spawnTimeStart = 0.0000000001, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
 			spawnPointCode = 0,
@@ -274,8 +281,8 @@ return {
 		},
 		{
 			id = 3297005, -- typeID of the unit to spawn
-			spawnTime = 0, -- How long to build/spawn
-			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
+			spawnTime = 1, -- How long to build/spawn
+			spawnTimeStart = 0.0000000001, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
 			-- Parts with SpawnerSpawnPoint = { code = X }, will be used by this spawnItem. Controls how many units are spawned, where they are spawned, and where their preview ghosts go.
 			spawnPointCode = 0,

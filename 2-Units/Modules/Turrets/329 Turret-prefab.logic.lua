@@ -26,25 +26,25 @@ function prefab.part.module.emplacement.S(scaleConst, angleCount, type, isGhost,
 		scale = {1,1,1},
 		parts={
 			prefab.weapon[type].S(
-				{newPos1.x, 3.5*.1/scaleConst,newPos1.z},
+				{newPos1.x, 0,newPos1.z},
 				{ 0, -22.5*(angleCount+0), 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon[type].S(
-				{newPos2.x, 3.5*.1/scaleConst,newPos2.z},
+				{newPos2.x, 0,newPos2.z},
 				{ 0, -22.5*(angleCount+4), 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon[type].S(
-				{newPos3.x, 3.5*.1/scaleConst,newPos3.z},
+				{newPos3.x, 0,newPos3.z},
 				{ 0, -22.5*(angleCount+8), 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon[type].S(
-				{newPos4.x, 3.5*.1/scaleConst,newPos4.z},
+				{newPos4.x, 0,newPos4.z},
 				{ 0, -22.5*(angleCount+12), 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost, ghostIndex, ghostMat
@@ -83,49 +83,49 @@ function prefab.part.module.emplacement.missile.S(scaleConst, angleCount, type, 
 		scale = {1,1,1},
 		parts={
 			prefab.weapon.missile[type].S(
-				{newPos1.x, 3.5*.1/scaleConst,newPos1.z},
+				{newPos1.x, 0,newPos1.z},
 				{ -90, -22.5*(angleCount+0), 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.missile[type].S(
-				{newPos2.x, 3.5*.1/scaleConst,newPos2.z},
+				{newPos2.x, 0,newPos2.z},
 				{ -90, -22.5*(angleCount+4), 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.missile[type].S(
-				{newPos3.x, 3.5*.1/scaleConst,newPos3.z},
+				{newPos3.x, 0,newPos3.z},
 				{ -90, -22.5*(angleCount+8), 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.missile[type].S(
-				{newPos4.x, 3.5*.1/scaleConst,newPos4.z},
+				{newPos4.x, 0,newPos4.z},
 				{ -90, -22.5*(angleCount+12), 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.missile[type].S(
-				{newPos5.x, 3.5*.1/scaleConst,newPos5.z},
+				{newPos5.x, 0,newPos5.z},
 				{ -90, -22.5*(angleCount+2), 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.missile[type].S(
-				{newPos6.x, 3.5*.1/scaleConst,newPos6.z},
+				{newPos6.x, 0,newPos6.z},
 				{ -90, -22.5*(angleCount+6), 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.missile[type].S(
-				{newPos7.x, 3.5*.1/scaleConst,newPos7.z},
+				{newPos7.x, 0,newPos7.z},
 				{ -90, -22.5*(angleCount+10), 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.missile[type].S(
-				{newPos8.x, 3.5*.1/scaleConst,newPos8.z},
+				{newPos8.x, 0,newPos8.z},
 				{ -90, -22.5*(angleCount+14), 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost, ghostIndex, ghostMat
@@ -159,13 +159,13 @@ function prefab.part.module.emplacement.M(scaleConst, angleCount, type, isGhost,
 		scale = {1,1,1},
 		parts={
 			prefab.weapon[type].M(
-				{newPos1.x, 4.25*.1/scaleConst,newPos1.z},
+				{newPos1.x, .25*.1/scaleConst,newPos1.z},
 				{ 0, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon[type].M(
-				{newPos2.x, 4.25*.1/scaleConst,newPos2.z},
+				{newPos2.x, .25*.1/scaleConst,newPos2.z},
 				{ 0, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost, ghostIndex, ghostMat
@@ -201,25 +201,25 @@ function prefab.part.module.emplacement.missile.M(scaleConst, angleCount, type, 
 		scale = {1,1,1},
 		parts={
 			prefab.weapon.missile[type].M(
-				{newPos1.x, 4*.1/scaleConst,newPos1.z},
+				{newPos1.x, 0,newPos1.z},
 				{ -90, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.missile[type].M(
-				{newPos2.x, 4*.1/scaleConst,newPos2.z},
+				{newPos2.x, 0,newPos2.z},
 				{ -90, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.missile[type].M(
-				{newPos3.x, 4*.1/scaleConst,newPos3.z},
+				{newPos3.x, 0,newPos3.z},
 				{ -90, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.missile[type].M(
-				{newPos4.x, 4*.1/scaleConst,newPos4.z},
+				{newPos4.x, 0,newPos4.z},
 				{ -90, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost, ghostIndex, ghostMat
@@ -253,7 +253,7 @@ function prefab.part.module.emplacement.L(scaleConst, angleCount, type, isGhost,
 		scale = {1,1,1},
 		parts={
 			prefab.weapon[type].L(
-				{newPos1.x, 4.75*.1/scaleConst,newPos1.z},
+				{newPos1.x, .25*.1/scaleConst,newPos1.z},
 				{ 0, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost, ghostIndex, ghostMat
@@ -287,13 +287,13 @@ function prefab.part.module.emplacement.missile.L(scaleConst, angleCount, type, 
 		scale = {1,1,1},
 		parts={
 			prefab.weapon.missile[type].L(
-				{newPos1.x, 4.5*.1/scaleConst,newPos1.z},
+				{newPos1.x, 0,newPos1.z},
 				{ -90, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost, ghostIndex, ghostMat
 			),
 			prefab.weapon.missile[type].L(
-				{newPos2.x, 4.5*.1/scaleConst,newPos2.z},
+				{newPos2.x, 0,newPos2.z},
 				{ -90, -22.5*angleCount, 0 },
 				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
 				isGhost, ghostIndex, ghostMat
