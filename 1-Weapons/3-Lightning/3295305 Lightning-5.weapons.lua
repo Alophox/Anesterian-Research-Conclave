@@ -76,7 +76,8 @@ return {
 		resumeFireBelowHeatFraction = 0,   -- resume fire if parent heat falls below this threshold
 		isResourceMiner = false,           --Is allowed to target the Environmental team.
 		
-		isPiercing = true,       -- Allows the laser/bullet to pierce through targets they believe they have killed. Weapon will reduce it's damage. Lasers will damage the next target on their raycast. Incompatible with AOE on warheads
+		laserHitAll = true,
+		isPiercing = false,       -- Allows the laser/bullet to pierce through targets they believe they have killed. Weapon will reduce it's damage. Lasers will damage the next target on their raycast. Incompatible with AOE on warheads
 		piercingThreshold = 0,   -- Must have MORE than this much damage remaining after piercing in order to continue piercing. (Prevents scenarios where a super laser murders a capital ship then does 2 damage to a Tolly on the other side)
 
 		-- AOE
@@ -96,8 +97,8 @@ return {
 		lifetime = .2,            --Controls how long the laser lasts,
 		impactSize = 1,          --For LASERS, TESLA, controls the size of the impact effect.
 		impactDuration = 0.2,    --Seconds, controls how long the impact effect lasts.
-		disableImpactEffect = false,  --As on the tin.
-		disableImpactFlash = false,    --Prevents the bright white explosion core.
+		disableImpactEffect = true,  --As on the tin.
+		disableImpactFlash = true,    --Prevents the bright white explosion core.
 		impactEffectType = "EXPLOSION"; --EXPLOSION, EXPLOSION_LOWPOLY, SHOCKWAVE, FLASH, FLAK, SPARKS, FISHEXPLOSION, WARP
 
 		--Laser Visuals defaults.
@@ -198,7 +199,7 @@ return {
 			-- Multiplies the target score by this.
 			classMultMissile = -1,
 			classMultDrone = -1,
-			classMultLight = 0,
+			classMultLight = -1,
 			classMultMedium = .1,
 			classMultHeavy = 1,
 			classMultCapital = 1,
