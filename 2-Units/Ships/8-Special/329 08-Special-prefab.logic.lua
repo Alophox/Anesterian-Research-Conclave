@@ -1,11 +1,13 @@
 
 prefab.ship.unique = {
 	constructor = {},
+	explorer = {},
 	orifice = {},
 	courier = {},
 }
 prefab.weapon_info.unique = {
 	constructor = {},
+	explorer = {},
 	orifice = {},
 	courier = {},
 }
@@ -54,6 +56,78 @@ function prefab.ship.unique.constructor.core(scaleConst, isGhost, ghostIndex, gh
 			prefab.ship.citrine.thruster(scaleConst, isGhost, ghostIndex),
 
 			prefab.ship.unique.constructor.core(.1, isGhost, ghostIndex-1, ghostMat),
+		}
+	}
+	if isGhost then
+		if (ghostMat == "aegis_teamColour") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
+	end
+	return prefab_part
+end
+
+function prefab.weapon_info.unique.explorer.core()
+	local weapon_info = {
+		prefab.weapon_info.special.sensor_em(1),
+	}
+	return weapon_info
+end
+function prefab.ship.unique.explorer.core(scaleConst, isGhost, ghostIndex, ghostMat)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostMat==nil) then ghostMat="build" end
+	if(ghostIndex < 0) then return {}; end
+	local prefab_part = {
+		-- name = "Citrine-Core-C",
+		-- mesh = "329-2-Citrine/Citrine-Core-C",
+		materials = { "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamColour" },
+		position = {0,0,0},
+		rotation = {0,0,0},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
+		parts={
+
+			prefab.weapon.special.sensor_em(
+				{0, 0, 0},
+				{ 0, 0, 0 },
+				{ .1/scaleConst, .1/scaleConst, .1/scaleConst },
+				false
+			),
+			{
+				name = "Emerald-Stern",
+				mesh = "329-4-Emerald/Emerald-Stern",
+				materials = (not isGhost) and {"329_MT_arc_hull_dark","329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", } or {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,},
+				position = {0,0,0},
+				rotation = {0,0,0},
+				scale = {1, 1, 1},
+				aegisVisual = ghostMat == "aegis_teamColour";
+			},
+			{
+				name = "Emerald-Bow",
+				mesh = "329-4-Emerald/Emerald-Bow",
+				materials = (not isGhost) and {"329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_teamColour", } or {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,},
+				position = {0,0,0},
+				rotation = {0,0,0},
+				scale = {1, 1, 1},
+				aegisVisual = ghostMat == "aegis_teamColour";
+			},
+
+
+			-- prefab.part.emblem(
+			-- 	{ 0, 1.25, -2.75},
+			-- 	{ 0, 0, 0 },
+			-- 	{ 1, 1, 1 },
+			-- 	isGhost, ghostIndex, ghostMat
+			-- ),
+			-- prefab.part.emblem(
+			-- 	{ 0, 1.25, -2.75},
+			-- 	{ 0, 0, 180 },
+			-- 	{ 1, 1, 1 },
+			-- 	isGhost, ghostIndex, ghostMat
+			-- ),
+
+			prefab.ship.emerald.thruster(scaleConst, isGhost, ghostIndex),
+
+			prefab.ship.unique.explorer.core(.1, isGhost, ghostIndex-1, ghostMat),
 		}
 	}
 	if isGhost then
