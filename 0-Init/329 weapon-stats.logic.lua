@@ -264,21 +264,21 @@ weaponStats.stardust = {
 
 weaponStats.gwe = {
 	name		= "Gravitational Wave Emitter",
-	baseRange	= 25,
-	baseAOE		= 25,
+	baseRange	= 30,
+	baseAOE		= 30,
 	aoeAngle	= 3, --angle of cone from center
-	coneWidth	= 10*1.31019, -- the scale applied to the cone visual so that it matches the aoe. 10* (height of right triangle where base is baseAOE). The scaling is dependant on the model.
+	coneWidth	= 10*1.57223, -- the scale applied to the cone visual so that it matches the aoe. 10* (height of right triangle where base is baseAOE). The scaling is dependant on the model.
 	minAOEMult	= .1,
-	baseDMG		= .5,
-	baseHeat	= 1,
+	baseDMG		= .25,
+	baseHeat	= .5,
 	basePierce	= 50,
 	instances	= 1,
-	baseCD		= .1,
-	secondsPerShot=.1,
+	baseCD		= .05,
+	secondsPerShot=.05,
 	trackingMult = 0,
 	shotsPerBurst = 1,
 	sfxID		= 25,
-	impulse		= -.05,
+	impulse		= -.025,
 }
 
 --1 hangar, for vaalk, is approximately one L turret worth of points, and comes with a capacity of 6 units every 30s
