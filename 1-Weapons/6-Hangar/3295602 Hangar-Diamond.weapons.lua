@@ -153,6 +153,41 @@ return {
 
      },
 
+     -- Spawned unit operations
+     spawnedUnitOperationalPolicy = {
+          enabled = true,
+          anchorOrigin = "IMMEDIATE_SPAWNER",
+          distanceMode = "SPHERE",
+          operatingRadius = 35,
+          returnReleaseRadius = 30,
+          allowAnchorTeamChange = false,
+          changeTeamOnAnchorTeamChange = false,
+          maximumTargetDistanceFromAnchor = 0,
+          maximumTargetDistanceFromUnit = 0,
+          scoreForAnchorDistance = 0,
+          scoreForUnitDistance = 0,
+          allowMacroTargets = false,
+          suppressTargetingWhileReturning = false,
+          outsideExpirySeconds = 30,
+          missingAnchorExpirySeconds = 30,
+          waypointPolicy = "CLAMP_TO_RADIUS",
+          useFormationWhenIdle = true,
+          formationPointCode = 1,
+          formationAlignmentDistance = 0,
+          wanderWhenIdle = true,
+          wanderRadiusMinimum = 2,
+          wanderRadius = 5,
+          wanderIntervalMinimum = 0,
+          wanderIntervalMaximum = 2,
+          wanderArrivalDistance = .1,
+          wanderVerticalFraction = .2,
+          wanderSeed = 0,
+     },
+     spawnedUnitCoordinationPolicy = {
+          enabled = true,
+          objectiveSource = "ROOT_UNIT",
+     },
+
      -- Same definition as used by units.
      targeting = {
           acquisition = {

@@ -30,5 +30,5 @@ return {
 	}
 }
 end)()
-__ats_schema_manifest.schemaVersion = 10
+__ats_schema_manifest.schemaVersion = 12
 return __ats_schema_manifest
