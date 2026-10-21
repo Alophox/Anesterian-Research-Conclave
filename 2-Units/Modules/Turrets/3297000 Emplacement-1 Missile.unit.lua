@@ -82,10 +82,10 @@ return {
 		typeID       = 3297000, 	--!!! IMPORTANT !!! The unique id of this unit. Must be higher than 99999 (ATS reserved). Used by maps and many things. If you change this any maps made with it won't be able to find the unit and will just spawn nothing.
 		factionID    = 329, 	--The faction this unit is associated with in the Databank.
 		macroType    = "AUTO", 	--MacroTarget state: AUTO (is capital or command?) / TRUE / FALSE
-		cost_matter  = 10, 		--integer, For structures.
-		cost_energy  = 5, 		--integer, For structures.
+		cost_matter  = 0, 		--integer, For structures.
+		cost_energy  = 0, 		--integer, For structures.
 		cost_supply  = 0, 		--integer, For structures. Logistics cost.
-		cost_time    = 7, 		--integer, For structures, how long in seconds it takes to build.
+		cost_time    = 1, 		--integer, For structures, how long in seconds it takes to build.
 		techRequired = 0
 	},
 
