@@ -147,6 +147,7 @@ return {
 		isUncapturable = false,    	-- bool: Prevents capture, such as from Glowfish.
 		ignoreImpulse = false,     	-- bool: Prevents getting pushed around by attacks. Such as Untresnafol bullets, or Heron railgun rounds.
 
+		specialType = 3291005,
 		targetingPriorityMultiplier = 1.0, -- float: Useful on torpedos. How important is this unit to attack? Strix torpedos = ~2
 		untargetableTime = 0,    -- float: Useful on drones/missiles. How long after spawning is this unit untargetable? (0 for everything, except missiles and drones)
 
@@ -284,6 +285,10 @@ return {
 			invalidationVelocityHeadOn = 0 	-- float: For tractor ships,
 		}
 	},
+
+	isMinionAdoptable = true,
+	adoptionCode = 3291002,
+    isMinionAdopter = false,
 
 	-- 🟥 PAYLOAD (AOE, for missiles, flak, etc.)
 	hasPayload = false,

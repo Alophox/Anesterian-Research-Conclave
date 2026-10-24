@@ -264,7 +264,6 @@ function prefab.ship.quartz.core.A(scaleConst, isGhost, ghostIndex, ghostMat)
 			prefab.ship.quartz.thruster(scaleConst, isGhost, ghostIndex),
 
 			prefab.ship.quartz.core.A(.1, isGhost, ghostIndex-1, ghostMat),
-	
 		}
 	}
 	if isGhost then
@@ -273,5 +272,81 @@ function prefab.ship.quartz.core.A(scaleConst, isGhost, ghostIndex, ghostMat)
 		end
 		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
 	end
+	return prefab_part
+end
+
+function prefab.ship.quartz.formationHangar(weaponId)
+	local prefab_part = {
+		parts= {
+			{
+				name      = "Squad",
+				position  = { 0, 0, 0 },
+				rotation  = { 0, 0, 0 },
+				scale 	= { 1, 1, 1 },
+
+				weapon    = {
+					weaponID = weaponId, --int: The weaponData id to be used for this weapon.
+					turnSpeed = 0, 	--float: Degrees per second.
+					turnMode = "Linear", --string enum: Linear / Acceleration
+					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
+					useRootTarget = true,
+					mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
+						left = 180, --float:
+						right = 180,--float:
+						up = 90,	 --float:
+						down = 90  --float:
+					},
+				},
+
+				parts= {
+
+					{	name      = "Turret Muzzle",	position  = { 0, 0, 0 },	rotation  = { 0, 0, 0 },	scale 	= { 1, 1, 1 },	barrel    = true,},	
+					{	name      = "Turret Muzzle",	position  = { 0, -.16, -1 },	rotation  = { 0, 0, 0 },	scale 	= { 1, 1, 1 },	barrel    = true,},	
+					{	name      = "Turret Muzzle",	position  = {  0, .16, -1 },	rotation  = { 0, 0, 0 },	scale 	= { 1, 1, 1 },	barrel    = true,},	
+
+				}
+			},
+		}
+	}
+	return prefab_part
+end
+
+function prefab.ship.quartz.formation()
+	local prefab_part = {
+		name = "Drone Formation",
+		position = {0,0,0},
+		rotation = {0,0,0},
+		parts={
+			
+			prefab.ship.quartz.formationPoint(
+				1,
+				{-.4,0,-.8},
+				{0,0,0}
+			),
+			prefab.ship.quartz.formationPoint(
+				1,
+				{.4,0,-.8},
+				{0,0,0}
+			),
+			prefab.ship.quartz.formationPoint(
+				1,
+				{0,0,0},
+				{0,0,0}
+			),
+		}
+	}
+	return prefab_part;
+end
+
+function prefab.ship.quartz.formationPoint(id, position, rotation)
+	local prefab_part = {
+		name = "Formation-Point",
+		position = position,
+		rotation = rotation,
+		minionFormationPoint = {
+			code = id,
+		},
+	}
+
 	return prefab_part
 end

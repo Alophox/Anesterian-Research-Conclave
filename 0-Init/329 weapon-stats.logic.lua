@@ -8,7 +8,7 @@
 --base heat and damage are the totals; burst weapons will add up to these values(multi-shot lasers, multi-instance plasma)
 weaponStats = {
 	damageMult = {
-		D = .5,
+		D = .5*2/3,
 		S = 1,
 		M = 3, --2.5
 		L = 9, --6
@@ -285,8 +285,8 @@ weaponStats.gwe = {
 --hangars have two hangars per 'slot'(aka one per M turret), so capacity is half, and respawn doubled
 weaponStats.hangar = {
 	name		= "Hangar",
-	baseRange	= 20,
-	instances	= 2, --4; drone capacity
+	baseRange	= 35,
+	instances	= 3, --4; drone capacity
 	baseCD		= 30, --10
 	CD = {
 		ruby = 15,
@@ -294,9 +294,17 @@ weaponStats.hangar = {
 	},
 	secondsPerShot= .5,
 	trackingMult= 1,
-	shotsPerBurst= 2, --how many drones launched at once
+	shotsPerBurst= 3, --how many drones launched at once
 	velocity	= .7,
 	accuracy	= 1,
+	wander = {
+		radiusMin = 1,
+		radiusMax = 3,
+		intervalMin = 3,
+		intervalMax = 5,
+		arrivalDistance = .1,
+		verticalFraction = .4,
+	}
 }
 
 weaponStats.sensor = {

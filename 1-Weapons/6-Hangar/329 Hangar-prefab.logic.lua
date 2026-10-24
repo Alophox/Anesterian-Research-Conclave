@@ -36,7 +36,7 @@ function prefab.weapon.hangar.quartz.P(pos, rot, sca, isGhost, ghostIndex, ghost
 				scale 	= { 1, 1, 1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 
 				weapon    = {
-					weaponID = 3295601, --int: The weaponData id to be used for this weapon.
+					weaponID = 3294601, --int: The weaponData id to be used for this weapon.
 					turnSpeed = 0, 	--float: Degrees per second.
 					turnMode = "Linear", --string enum: Linear / Acceleration
 					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -84,7 +84,7 @@ function prefab.weapon.hangar.quartz.B(pos, rot, sca, isGhost, ghostIndex, ghost
 				scale 	= { 1, 1, 1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 
 				weapon    = {
-					weaponID = 3295602, --int: The weaponData id to be used for this weapon.
+					weaponID = 3294602, --int: The weaponData id to be used for this weapon.
 					turnSpeed = 0, 	--float: Degrees per second.
 					turnMode = "Linear", --string enum: Linear / Acceleration
 					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -132,7 +132,7 @@ function prefab.weapon.hangar.quartz.G(pos, rot, sca, isGhost, ghostIndex, ghost
 				scale 	= { 1, 1, 1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 
 				weapon    = {
-					weaponID = 3295604, --int: The weaponData id to be used for this weapon.
+					weaponID = 3294604, --int: The weaponData id to be used for this weapon.
 					turnSpeed = 0, 	--float: Degrees per second.
 					turnMode = "Linear", --string enum: Linear / Acceleration
 					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
@@ -180,7 +180,7 @@ function prefab.weapon.hangar.quartz.A(pos, rot, sca, isGhost, ghostIndex, ghost
 				scale 	= { 1, 1, 1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
 
 				weapon    = {
-					weaponID = 3295605, --int: The weaponData id to be used for this weapon.
+					weaponID = 3294605, --int: The weaponData id to be used for this weapon.
 					turnSpeed = 0, 	--float: Degrees per second.
 					turnMode = "Linear", --string enum: Linear / Acceleration
 					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)

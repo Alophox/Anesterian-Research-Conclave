@@ -315,3 +315,168 @@ function prefab.weapon.special.sensor_tachyon(pos, rot, sca, isGhost, ghostIndex
 	end
 	return prefab_part
 end
+
+--regen is always treated as negative
+function prefab.weapon.special.negativeRegen(regen)
+	local prefab_part = {
+		name = "negative regen",
+
+		-- Geometry
+		position = { 0, 0, 0 },
+		rotation = { 0, 0, 0 },
+		scale = { 1, 1, 1 },
+
+		-- Behaviours
+		weapon = {
+			weaponID = 0,
+			turnSpeed = 0,
+			turnMode = "Linear",
+			turnInstant = true,
+			targetRootUnit = true,
+			mountAngles = {
+				use = false,
+			},
+			weaponData = {
+				-- Firing behaviour
+				weaponType = "SPARKLER",
+				alwaysfire = true,
+				magdump = false,
+				necrofire = false,
+				active = true,
+				oneuse = false,
+				exemptFromRangeSanityChecks = false,
+				rangeInUnits = 0,
+				maximumAngleToTargetDegrees = 0,
+				unitsPerSecond = 0,
+				velocityStd = 0,
+				spreadDegrees = 0,
+				spreadType = "BELLCURVE",
+				forceRaycastDirectlyToTarget = false,
+				lockTime = 0,
+				simultaniousObjectLimit = 0,
+				DontReloadWhileActiveObjects = false,
+				forbidOrphanedObjects = false,
+
+				-- Damage
+				damageData = {
+					targetsFriendly = true,
+					ignoreResistances = true,
+					instances = 0,
+					damage = 0,
+					piercing = 0,
+					shred = 0,
+					heat = 0,
+					vulnerability = 0,
+					decloak = false,
+					targetingPriorityMultiplier = 0,
+					impulseForce = 0,
+				},
+
+				-- Self-effects and restrictions
+				selfHealRatio = 0,
+				selfDamage = math.abs(regen) * .1,
+				selfHeat = 0,
+				selfImpulseForce = 0,
+				isNonDecloaking = true,
+
+				-- Area effects
+				isAreaOfEffect = false,
+
+				-- Audio and visuals
+				sfxID = 0,
+				SFXIntensity = 0,
+				sizeInUnits = 0,
+				lifetime = 0,
+				impactSize = 0,
+				impactDuration = 0,
+				disableImpactEffect = true,
+				disableImpactFlash = true,
+				impactColour = { 0, 0, 0, 0 },
+				impactFresnelStrength = 0,
+				disableImpactSizeVariance = false,
+				snapUnitDeathExplosionToImpactPosition = false,
+				impactEffectType = "EXPLOSION",
+				laserDescription = {
+					duration = 0.45,
+					opacity = 0,
+					fadeCurve = 0,
+					diameter = 0.67,
+					offset = 0,
+					rotateZ = false,
+					rotateZUpdate = false,
+					rotateZUpdatesPerSecond = 0,
+					noRescaleLength = 0,
+					noFade = false,
+					noShrink = false,
+				},
+				lasersPerShot = 0,
+				barrelCount = 0,
+				barrelSpacing = 0,
+				virtualBarrelOffset = { 0, 0, 0 },
+				barrelIndexCurrent = 0,
+
+				-- Spawn behaviour
+				spawnID = 0,
+				checkForWaypoints = false,
+				ignoreRootVelocity = false,
+				setAutoWaypointTargetToWeaponTarget = false,
+				setAutoWaypointPositionToWeaponTarget = false,
+
+				-- Cycle and magazine
+				reloadAmount = 0,
+				secondsPerCycle = .1,
+				secondsPerCycleCurrent = 0,
+				shotsPerCycle = 1,
+				shotsPerCycleCurrent = 0,
+				simultaniousShots = 0,
+				minBurstSize = 0,
+				secondsPerShot = 0,
+				secondsBetweenBursts = 0,
+				secondsPerShotCurrent = 0,
+			},
+			targeting = {
+				acquisition = {
+					type = "QUADTREE_ONLY",
+				},
+				tracking = {
+					positionPredictionType = "NONE",
+				},
+			},
+		},
+	}
+	return prefab_part
+end
+
+-- For as Long as I Shall Live
+function prefab.weapon.special.healSelfIfChildLives(regen, childTargetType)
+	local prefab_part = {
+		prefab_part = {
+		name	= "self heal",
+		position  = {0,0,0},    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
+		rotation  = {0,0,0},        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
+		scale 	= {1,1,1},					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
+		}
+	}
+	prefab_part.parts={
+		{
+			name      = "self heal",
+			position  = { 0, 0, 0 },    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
+			rotation  = { 0, 0, 0 },        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
+			scale 	= { 1, 1, 1 },					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
+
+			weapon    = {
+				weaponID = 3295720, --int: The weaponData id to be used for this weapon.
+				turnSpeed = 0, 	--float: Degrees per second.
+				turnMode = "Linear", --string enum: Linear / Acceleration
+				turnInstant = true, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
+				mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
+					left = 180, --float:
+					right = 180,--float:
+					up = 90,	 --float:
+					down = 90  --float:
+				},
+			},
+		}
+	}
+	return prefab_part
+end

@@ -148,8 +148,8 @@ return {
           simultaniousShots = 1,        --How many shots we can make at once. (shotgun, cluster bomb)
 
           --Fire Rate
-          secondsPerShot = weaponStats.hangar.secondsPerShot,           --Delay between shots.
-          secondsPerShotCurrent = weaponStats.hangar.secondsPerShot,    --Starting delay.
+          secondsPerShot = 0,           --Delay between shots.
+          secondsPerShotCurrent = 0,    --Starting delay.
 
      },
 
@@ -158,15 +158,15 @@ return {
           enabled = true,
           anchorOrigin = "IMMEDIATE_SPAWNER",
           distanceMode = "SPHERE",
-          operatingRadius = 35,
-          returnReleaseRadius = 30,
+          operatingRadius = weaponStats.hangar.baseRange,
+          returnReleaseRadius = weaponStats.hangar.baseRange-5,
           allowAnchorTeamChange = false,
           changeTeamOnAnchorTeamChange = false,
-          maximumTargetDistanceFromAnchor = 0,
+          maximumTargetDistanceFromAnchor = weaponStats.hangar.baseRange,
           maximumTargetDistanceFromUnit = 0,
           scoreForAnchorDistance = 0,
           scoreForUnitDistance = 0,
-          allowMacroTargets = false,
+          allowMacroTargets = true,
           suppressTargetingWhileReturning = false,
           outsideExpirySeconds = 30,
           missingAnchorExpirySeconds = 30,
