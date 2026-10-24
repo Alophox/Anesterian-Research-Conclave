@@ -78,19 +78,7 @@ return {
 
 	-- 🟦 PARTS
 	parts = {
-		{
-			name = "Aegis spawner",
-			autoModule = {
-				moduleTypeID = 3297100,            -- int
-				reportKillsToParent = false, -- bool
-				doDamageToEntityOnDeath = true, -- bool
-				damageToEntityOnDeath = {       -- damage table
-					isNondamaging = true, instances = 1, damage = 0, piercing = -9999999999,
-					shred = 0, heat = 0, vulnerability = 0, decloak = 0,
-					targetingPriorityMultiplier = 0, impulseForce = 0,
-				},
-			},
-		},
+		
 		prefab.ship.unique.explorer.core(shipConst.scaleConst, false),
 		prefab.ship.unique.explorer.core(shipConst.scaleConst,true, 0, "aegis_teamColour"),
 	},
