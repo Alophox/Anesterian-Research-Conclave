@@ -41,9 +41,9 @@ return {
 		active = true,                -- is the weapon online (for use with necrofire)
 		oneuse = false,               -- destroy root unit when out of ammo, (for bullets, missiles, etc) (fires entire magazine then destroys the unit it's on)
 		rangeInUnits = weaponStats.rangeMult[weaponConst.size] * weaponStats.laser.baseRange ,            -- Target must be within range, for gun to fire.
-		maximumAngleToTargetDegrees = 0.57295779513082323,   -- Radians, target must be within angle for gun to fire.
+		maximumAngleToTargetDegrees = .5,   -- Degrees, target must be within angle for gun to fire.
 		unitsPerSecond = 0,           -- projectile velocity for LAUNCHER in 100m/s
-		spreadDegrees = 0,          -- Radians, spread for LAUNCHER (machine guns, etc)
+		spreadDegrees = 0,          -- Degrees, spread for LAUNCHER (machine guns, etc)
 		spreadType = "BELLCURVE",       -- Spread style. BELLCURVE (more in the center), RANDOM 
 		forceRaycastDirectlyToTarget = false, -- LASERS, forces the laser to hit it's intended target even if the turret is not looking perfectly at it. (Important for PD weapons, and most laser weapons)
 		lockTime = 0,                 -- Seconds this weapon must have the same target before it can fire.
@@ -216,7 +216,7 @@ return {
 			doAimingComputation = true,   	--For weapons.
 			canInvalidateTarget = true,  	--For units using pauseIfHasTarget.
 			invalidationDistance = weaponStats.fireRangeMult * weaponStats.rangeMult[weaponConst.size] * weaponStats.laser.baseRange,
-			invalidationAngleDegrees = 0,        	--Radians
+			invalidationAngleDegrees = 0,        	--Degrees
 			invalidationVelocityHeadOn = 0 	--For tractor ships,
 		}
 	},

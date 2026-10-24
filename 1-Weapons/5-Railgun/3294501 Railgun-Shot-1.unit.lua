@@ -204,7 +204,7 @@ return {
 	isMobile           = false,
 	movement           = {
 		type = "FREE",                -- string enum: UNITMOVETYPE: MAPLOCKED / FREE --Does this unit act like a normal ship, and stay within the 0-7y world height. Or like a drone/missile?
-		maximumAngleToTargetDegrees = 0,        -- float: Radians within in which a unit is allowed to accelerate towards a target.
+		maximumAngleToTargetDegrees = 0,        -- float: Degrees within in which a unit is allowed to accelerate towards a target.
 		acceleration = 3,               -- float: The units per second of the ship's acceleration. A tolly is 0.4 units long, and accelerates at 0.35
 		strafingAccelMultiplier = 0,     -- float: Fraction of accel used for strafing
 		reverseAccelMultiplier = 0,      -- float: Fraction of accel used for reverse/breaking
@@ -289,7 +289,7 @@ return {
 			doAimingComputation = false,   	-- For weapons.
 			canInvalidateTarget = false,  	-- For units using pauseIfHasTarget.
 			invalidationDistance = 0,		-- float: 
-			invalidationAngleDegrees = 0,        	-- float: Radians
+			invalidationAngleDegrees = 0,        	-- float: Degrees
 			invalidationVelocityHeadOn = 0 	-- float: For tractor ships,
 		}
 	},
