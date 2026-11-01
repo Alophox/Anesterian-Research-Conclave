@@ -38,7 +38,7 @@ return {
 		active = true,                -- is the weapon online (for use with necrofire)
 		oneuse = false,               -- destroy root unit when out of ammo, (for bullets, missiles, etc) (fires entire magazine then destroys the unit it's on)
 		rangeInUnits = 1,            -- Target must be within range, for gun to fire.
-		maximumAngleToTargetDegrees = 11.459155902616466,   -- Degrees, target must be within angle for gun to fire.
+		maximumAngleToTargetDegrees = 15,   -- Degrees, target must be within angle for gun to fire.
 		unitsPerSecond = .1,           -- projectile velocity for LAUNCHER in 100m/s
 		spreadDegrees = 1.14,          -- Degrees, spread for LAUNCHER (machine guns, etc)
 		spreadType = "BELLCURVE",       -- Spread style. BELLCURVE (more in the center), RANDOM 
