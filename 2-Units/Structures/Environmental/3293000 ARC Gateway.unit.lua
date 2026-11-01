@@ -89,7 +89,10 @@ return {
 					rotation = {0,0,0},
 					position = {0,0,0},
 					scale = {1,1,1},
-				}
+				},
+				prefab.part.gatewayparticles({1,0,0}),
+				prefab.part.gatewayparticles({0,1,0}),
+				prefab.part.gatewayparticles({0,0,1}),
 				
 			}
 		},
@@ -133,8 +136,10 @@ return {
 					rotation = {0,0,0},
 					position = {0,0,0},
 					scale = {1,1,1},
-				}
-				
+				},
+				prefab.part.gatewayparticles({1,0,0}),
+				prefab.part.gatewayparticles({0,1,0}),
+				prefab.part.gatewayparticles({0,0,1}),
 			}
 		},
 	},
