@@ -1,16 +1,72 @@
 
 prefab.ship.unique = {
+	proplyd = {},
 	constructor = {},
 	explorer = {},
 	orifice = {},
 	courier = {},
 }
 prefab.weapon_info.unique = {
+	proplyd = {},
 	constructor = {},
 	explorer = {},
 	orifice = {},
 	courier = {},
 }
+
+function prefab.weapon_info.unique.proplyd.core()
+	local weapon_info = {
+		prefab.weapon_info.special.cuttingLaser(1),
+	}
+	return weapon_info
+end
+function prefab.ship.unique.proplyd.core(scaleConst, isGhost, ghostIndex, ghostMat)
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostMat==nil) then ghostMat="build" end
+	if(ghostIndex < 0) then return {}; end
+	local prefab_part = {
+		name = "Proplyd-Core-C",
+		mesh = "329-1-Ruby/Ruby-Core-P",
+		materials = { "329_MT_arc_teamGlow", "329_MT_arc_hull", "329_MT_arc_hull_dark", "329_MT_arc_teamColour" },
+		position = {0,0,0},
+		rotation = {0,0,0},
+		scale = {.1/scaleConst,.1/scaleConst,.1/scaleConst},
+		parts={
+
+			prefab.weapon.special.pointer_enemies(
+				{ 0, 0, 0 },
+				{ 0, 0, 0 },
+				{ 1, 1, 1 },
+				isGhost, ghostIndex, ghostMat
+			),
+
+			prefab.weapon.special.cuttingLaser(
+				{ 0, 0, 0 },
+				{ 0, 0, 0 },
+				{ 1, 1, 1 },
+				isGhost, ghostIndex, ghostMat
+			),
+
+			{
+				name = "Mining targeter module (do not remove)",
+				autoModule = {
+					moduleTypeID = 3297103,
+				},
+			},
+
+			prefab.ship.ruby.thruster(scaleConst, isGhost, ghostIndex),
+
+			prefab.ship.unique.proplyd.core(.1, isGhost, ghostIndex-1, ghostMat),
+		}
+	}
+	if isGhost then
+		if (ghostMat == "aegis_teamColour") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials= {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
+	end
+	return prefab_part
+end
 
 function prefab.weapon_info.unique.constructor.core()
 	local weapon_info = {

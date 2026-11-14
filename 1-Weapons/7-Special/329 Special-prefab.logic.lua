@@ -480,3 +480,238 @@ function prefab.weapon.special.healSelfIfChildLives(regen, childTargetType)
 	}
 	return prefab_part
 end
+
+
+function prefab.weapon_info.special.pointer_asteroids(count)
+	return { 3295705, 1 * count, 0 }
+end
+function prefab.weapon.special.pointer_asteroids(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{float3}, {float3}, {float3}, bool
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostMat==nil) then ghostMat="build" end
+	if(ghostIndex < 0) then return {}; end
+	local prefab_part = {
+		name	= "Small Turret Base",
+		-- mesh      = "329-Turrets-1/Turret-1-Base",
+		-- materials = { "329_MT_arc_hull",  "329_MT_arc_teamColour", "329_MT_arc_teamGlow", "329_MT_arc_hull_dark" },
+		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
+		rotation  = rot,        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
+		scale 	= sca,					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
+	}
+	-- ghosts should NOT have weapons, as it causes a crash.
+	if isGhost then
+		if (ghostMat == "aegis_teamColour") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
+	else
+		prefab_part.parts={
+			{
+				name      = "Turret-top",	position  = { 0,0, 0 },	rotation  = { 0, 0, 0 },	scale 	= { 1, 1, 1 },
+				weapon    = {
+					weaponID = 3295705, --int: The weaponData id to be used for this weapon.
+					turnSpeed = 0, 	--float: Degrees per second.
+					turnMode = "Linear", --string enum: Linear / Acceleration
+					turnInstant = true, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
+					mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
+						left = 180, --float:
+						right = 180,--float:
+						up = 90,	 --float:
+						down = 90  --float:
+					},
+				},
+
+				parts = {
+					{
+						name      = "Turret Muzzle",
+						position  = { 0, 0, .15 },
+						rotation  = { 0, 0, 0 },
+						scale 	= { 1, 1, 1 },
+						autoModule = {
+							moduleTypeID = 3297102,
+							reportKillsToParent = false,
+							doDamageToEntityOnDeath = false,
+							damageToEntityOnDeath = {
+							},
+						},
+					},
+				},
+			},
+		}
+	end
+	return prefab_part
+end
+
+function prefab.weapon_info.special.pointer_enemies(count)
+	return { 3295706, 1 * count, 0 }
+end
+function prefab.weapon.special.pointer_enemies(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{float3}, {float3}, {float3}, bool
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostMat==nil) then ghostMat="build" end
+	if(ghostIndex < 0) then return {}; end
+	local prefab_part = {
+		name	= "Small Turret Base",
+		-- mesh      = "329-Turrets-1/Turret-1-Base",
+		-- materials = { "329_MT_arc_hull",  "329_MT_arc_teamColour", "329_MT_arc_teamGlow", "329_MT_arc_hull_dark" },
+		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
+		rotation  = rot,        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
+		scale 	= sca,					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
+	}
+	-- ghosts should NOT have weapons, as it causes a crash.
+	if isGhost then
+		if (ghostMat == "aegis_teamColour") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
+	else
+		prefab_part.parts={
+			{
+				name      = "Turret-top",	position  = { 0,0, 0 },	rotation  = { 0, 0, 0 },	scale 	= { 1, 1, 1 },
+				weapon    = {
+					weaponID = 3295706, --int: The weaponData id to be used for this weapon.
+					turnSpeed = 0, 	--float: Degrees per second.
+					turnMode = "Linear", --string enum: Linear / Acceleration
+					turnInstant = true, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
+					mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
+						left = 180, --float:
+						right = 180,--float:
+						up = 90,	 --float:
+						down = 90  --float:
+					},
+				},
+
+				parts = {
+					{
+						name      = "Turret Muzzle",
+						position  = { 0, 0, .2 },
+						rotation  = { 0, 0, 0 },
+						scale 	= { 1, 1, 1 },
+						autoModule = {
+							moduleTypeID = 3297102,
+							reportKillsToParent = false,
+							doDamageToEntityOnDeath = false,
+							damageToEntityOnDeath = {
+							},
+						},
+					},
+				},
+			},
+		}
+	end
+	return prefab_part
+end
+
+function prefab.weapon_info.special.cuttingLaser(count)
+	return { 3295707, 1 * count, 0 }
+end
+function prefab.weapon.special.cuttingLaser(pos, rot, sca, isGhost, ghostIndex, ghostMat) --{float3}, {float3}, {float3}, bool
+	if(ghostIndex==nil) then ghostIndex=0 end
+	if(ghostMat==nil) then ghostMat="build" end
+	if(ghostIndex < 0) then return {}; end
+	local prefab_part = {
+		name	= "Small Turret Base",
+		mesh      = "329-Turrets-1/Turret-1-Base",
+		materials = { "329_MT_arc_hull",  "329_MT_arc_teamColour", "329_MT_arc_teamGlow", "329_MT_arc_hull_dark" },
+		position  = pos,    	-- float3: XYZ Relative local position of this object. Copy positions from Blender to help you out. NOTICE: Blender uses +Z as up, but this is converted to +Y (is up) when used in game.
+		rotation  = rot,        			-- float3: XYZ Eular Angles, will apply rotation ZXY. Relative local rotation of this object.
+		scale 	= sca,					-- float3: XYZ The nonuniform scale of the part, relative to it's parent's scale.
+	}
+	-- ghosts should NOT have weapons, as it causes a crash.
+	if isGhost then
+		if (ghostMat == "aegis_teamColour") then
+			prefab_part.aegisVisual = true;
+		end
+		prefab_part.materials = {"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,"329_MT_arc_"..ghostIndex.."_"..ghostMat,}
+	else
+		prefab_part.parts={
+			{
+				name      = "Turret-top",	position  = { 0,.75, 0 },	rotation  = { 0, 0, 0 },	scale 	= { 1, 1, 1 },
+				weapon    = {
+					weaponID = 3295707, --int: The weaponData id to be used for this weapon.
+					turnSpeed = weaponStats.baseTracking*weaponStats.cuttingLaser.trackingMult.S, 	--float: Degrees per second.
+					turnMode = "Linear", --string enum: Linear / Acceleration
+					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
+					mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
+						left = 10, --float:
+						right = 10,--float:
+						up = 10,	 --float:
+						down = 10  --float:
+					},
+				},
+
+				parts = {
+					-- {
+					-- 	name		 = "Turret Body",
+					-- 	mesh       = "329-Turrets-1/Turret-1-Body",
+					-- 	materials  = { "329_MT_arc_hull" },
+					-- 	position   = { 0, -.25, 0},
+					-- 	rotation   = { 0, 0, 0 },
+					-- 	scale 	 = { 1, 1, 1 },
+					-- 	turretBody = true, --Assigns this part as a body to the parent turret. Will rotate on a flat plan while the turret moves, giving the illusion of a 2-axis machine.
+					-- },
+					-- {
+					-- 	name      = "Turret Barrel",
+					-- 	mesh      = "329-Turrets-1/Turret-1-Laser", --The mesh to be used for this part, works the same as mainMesh.
+					-- 	materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow" },
+					-- 	position  = { 0, 0, 0 },
+					-- 	rotation  = { 0, 0, 0 },
+					-- 	scale 	= { 1, 1, 1 },
+					-- },
+					-- {
+					-- 	name      = "Turret Muzzle",
+					-- 	position  = { 0, 0, .6 },
+					-- 	rotation  = { 0, 0, 0 },
+					-- 	scale 	= { 1, 1, 1 },
+					-- 	barrel    = true, --Assigns this part as a barrel to the parent's weapon. Barrels are where lasers, units, and weaponVisuals are placed or fired from.
+					-- },
+
+					prefab.weapon.laser_effect(),
+				},
+			},
+			{
+				name      = "Turret-top",	position  = { 0,.75, 0 },	rotation  = { 0, 0, 0 },	scale 	= { 1, 1, 1 },
+				weapon    = {
+					weaponID = 3295708, --int: The weaponData id to be used for this weapon.
+					turnSpeed = weaponStats.baseTracking*weaponStats.cuttingLaser.trackingMult.S, 	--float: Degrees per second.
+					turnMode = "Linear", --string enum: Linear / Acceleration
+					turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
+					mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
+						left = 10, --float:
+						right = 10,--float:
+						up = 10,	 --float:
+						down = 10  --float:
+					},
+				},
+
+				parts = {
+					-- {
+					-- 	name		 = "Turret Body",
+					-- 	mesh       = "329-Turrets-1/Turret-1-Body",
+					-- 	materials  = { "329_MT_arc_hull" },
+					-- 	position   = { 0, -.25, 0},
+					-- 	rotation   = { 0, 0, 0 },
+					-- 	scale 	 = { 1, 1, 1 },
+					-- 	turretBody = true, --Assigns this part as a body to the parent turret. Will rotate on a flat plan while the turret moves, giving the illusion of a 2-axis machine.
+					-- },
+					-- {
+					-- 	name      = "Turret Barrel",
+					-- 	mesh      = "329-Turrets-1/Turret-1-Laser", --The mesh to be used for this part, works the same as mainMesh.
+					-- 	materials = { "329_MT_arc_hull", "329_MT_arc_teamGlow" },
+					-- 	position  = { 0, 0, 0 },
+					-- 	rotation  = { 0, 0, 0 },
+					-- 	scale 	= { 1, 1, 1 },
+					-- },
+					-- {
+					-- 	name      = "Turret Muzzle",
+					-- 	position  = { 0, 0, .6 },
+					-- 	rotation  = { 0, 0, 0 },
+					-- 	scale 	= { 1, 1, 1 },
+					-- 	barrel    = true, --Assigns this part as a barrel to the parent's weapon. Barrels are where lasers, units, and weaponVisuals are placed or fired from.
+					-- },
+
+					prefab.weapon.laser_effect(),
+				},
+			},
+		}
+	end
+	return prefab_part
+end

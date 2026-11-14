@@ -281,6 +281,37 @@ weaponStats.gwe = {
 	impulse		= -.025,
 }
 
+weaponStats.cuttingLaser = {
+	name		= "Waffle Array",
+	baseRange	= 5,
+	baseDMG		= .3, --incidentally, vaalk(drone) and kontaalen(medium) follow my damage formula with this as roughly the base...
+	baseHeat	= 0,
+	basePierce 	= 0,
+	baseShred	= 3,
+	instances	= 1,
+	baseCD		= .3, --incidentally, vaalk(drone) and kontaalen(medium) follow my damage formula with this as roughly the base...
+	baseDuration= 0,
+	secondsPerShot=.1,
+	trackingMult = {
+		D = 1,
+		S = .6,
+		M = .3,
+		L = .10,
+		X = .05,
+		T = .02
+	},
+	shotsPerBurst = {
+		D = 1,
+		S = 1,
+		M = 1,
+		L = 1,
+		X = 1,
+		T = 1
+	},
+	accuracy	= 1,
+	sfxID		= 14,
+}
+
 --1 hangar, for vaalk, is approximately one L turret worth of points, and comes with a capacity of 6 units every 30s
 --hangars have two hangars per 'slot'(aka one per M turret), so capacity is half, and respawn doubled
 weaponStats.hangar = {

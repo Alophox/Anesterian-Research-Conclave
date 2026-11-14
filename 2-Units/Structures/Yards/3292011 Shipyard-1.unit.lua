@@ -301,7 +301,7 @@ return {
 		},
 
 		{
-			id = 3299700, -- typeID of the unit to spawn
+			id = 3291800, -- typeID of the unit to spawn
 			spawnTime = 15, -- How long to build/spawn
 			spawnTimeStart = 0, -- Delay before first spawn, can be used to boost the initial production of a yard.
 
