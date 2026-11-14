@@ -54,7 +54,7 @@ return {
 			isNondamaging = false,             -- false> normal, true> Healing, armour repair, aegis
 			instances = weaponStats.lightning.instances,                     -- int: How many times is this damage dealt. For making weapons worse against armour.
 			damage = (weaponStats.damageMult[weaponConst.size] * weaponStats.lightning.baseDMG / (weaponStats.lightning.shotsPerBurst[weaponConst.size]))/weaponStats.lightning.instances,                       -- float: Raw damage, reduced by armour.
-			piercing = 1000,                      -- float: Ignore this much armour. Negative piercing is AEGIS shielding.
+			piercing = 1000/0,                      -- float: Ignore this much armour. Negative piercing is AEGIS shielding.
 			shred = (weaponStats.damageMult[weaponConst.size] * weaponStats.lightning.baseShred / (weaponStats.lightning.shotsPerBurst[weaponConst.size]))/weaponStats.lightning.instances,                      -- float: Destroy this much armour * class shred resistance. Negative heals armour.
 			heat = (weaponStats.damageMult[weaponConst.size] * weaponStats.lightning.baseHeat / (weaponStats.lightning.shotsPerBurst[weaponConst.size]))/weaponStats.lightning.instances,                          -- float: Apply this much heat. Health is heat capacity.
 			vulnerability = 0,               -- float: Negate this much armour. Negative vulnerability is CAPTURE.
