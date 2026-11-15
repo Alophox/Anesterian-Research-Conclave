@@ -236,7 +236,7 @@ return {
 	isMobile           = true,
 	movement           = {
 		type = "FREE",                -- string enum: UNITMOVETYPE: MAPLOCKED / FREE --Does this unit act like a normal ship, and stay within the 0-7y world height. Or like a drone/missile?
-		maximumAngleToTargetDegrees = 35,        -- float: Degrees within in which a unit is allowed to accelerate towards a target.
+		maximumAngleToTargetDegrees = 1,        -- float: Degrees within in which a unit is allowed to accelerate towards a target.
 		acceleration = weaponStats.missile.velocity,               -- float: The units per second of the ship's acceleration. A tolly is 0.4 units long, and accelerates at 0.35
 		strafingAccelMultiplier = 0,     -- float: Fraction of accel used for strafing
 		reverseAccelMultiplier = 0,      -- float: Fraction of accel used for reverse/breaking
@@ -248,7 +248,9 @@ return {
 		useMinimumWorldYPosition = false,
 		minimumWorldYPosition = 0,         -- float: What does this unit consider the lowest it can go? Capitals and Heavies often use 3~4 to stop them sinking into bases, and keep them looking imposing.
 		alwaysFaceCombatTarget = false,     -- Important for things like Hemedalls.
-		GoToStructurePlaneForFinalWaypoint = false -- Important for things like the Redemption Foundary MkX's waypointable Kontaalagrad. So that it actually hits the thing you point it to.
+		GoToStructurePlaneForFinalWaypoint = false, -- Important for things like the Redemption Foundary MkX's waypointable Kontaalagrad. So that it actually hits the thing you point it to.
+		missileFinForceFraction = 0.25,
+        finForceToFacing = true,
 	},
 
 	-- 🟦 ROTATION
