@@ -105,13 +105,13 @@ return {
 		laserDescription = { 		--"laser" description, but is actually a maleable visual effect.
 						duration = .2,			--seconds
 						opacity = .3,			--float, 0-1
-						diameter = .8,			--relative to turret scale
+						diameter = .7,			--relative to turret scale
 						offset = 0,			--relative to the barrel it gets fired from's facing.
-						rotateZ = true,		--Rotate the effect once randomly on the z axis when used.
+						rotateZ = false,		--Rotate the effect once randomly on the z axis when used.
 						rotateZUpdate = false,	--Continuously rotate the effect on the z axis when used.
 						noRescaleLength = 0,	--0 means DO rescale like a laser beam. >0 means don't, like a muzzle flashes.
-						noFade = true,			--prevents the effect from fading to nothing over it's duration.
-						noShrink = false,		--prevents the effect from scaling down to nothing over it's duration.
+						noFade = false,			--prevents the effect from fading to nothing over it's duration.
+						noShrink = true,		--prevents the effect from scaling down to nothing over it's duration.
 						}, 
 
 		lasersPerShot = 1, --How many "weaponVisualConfig parts" to use at once. For having multiple laser/muzzle effects at the same time. (reminder that each WVC can define it's own laserDescription)

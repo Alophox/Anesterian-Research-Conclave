@@ -136,8 +136,8 @@ weaponStats.laser = {
 	shotsPerBurst = {
 		D = 1,
 		S = 1,
-		M = 5,
-		L = 9,
+		M = 2,
+		L = 3,
 		X = 4,
 		T = 5
 	},
