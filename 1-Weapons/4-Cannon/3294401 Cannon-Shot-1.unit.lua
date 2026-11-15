@@ -98,7 +98,7 @@ return {
 			name="star",
 			mesh  = "329-Turrets-1/Turret-1-Cannon-Star-Effect",
 			materials = { "329_MT_arc_bright_teamGlow" },
-			scale = { .75, .3, .1},
+			scale = { .5, .5, .1},
 			faceCamera=true,
 		}
 	},

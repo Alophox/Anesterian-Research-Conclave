@@ -44,7 +44,7 @@ return {
 	--Inorder for ATS to know which material goes to which material slot on a mesh, we must define the ordering.
 	--Assign materials here in the same order as they are defined on the object in your Blender file. 
 	--(Can only get materials from .materials.lua files in this mod folder.)
-	materials                   = { "329_MT_arc_teamGlow", "329_MT_arc_weapon_teamGlow" },
+	materials                   = { "329_MT_arc_bright_teamGlow", "329_MT_arc_weapon_teamGlow" },
 
 	-- Percieved dimensions of the unit. Multiplied against scale. Controls how big the unit is percieved by other units. 
 	-- Units cannot actually "see" anything, so we need to mathematically define how big the unit is for standoff behaviour among other things.

@@ -12,7 +12,7 @@ function prefab.weapon.laser_effect(mesh)
 	return {
 		name		 = "Turret Laser",
 		mesh       = meshes[mesh],
-		materials  = { "329_MT_arc_weapon_teamGlow", "329_MT_arc_teamGlow" },
+		materials  = { "329_MT_arc_weapon_teamGlow", "329_MT_arc_weapon_teamGlow" },
 		position   = { 0, 0, 0 },
 		rotation   = { 0, 0, 0 },
 		scale 	 = {.1,.1,.1},

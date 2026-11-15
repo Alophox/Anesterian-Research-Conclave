@@ -112,7 +112,7 @@ return {
 						rotateZUpdate = false,	--Continuously rotate the effect on the z axis when used.
 						noRescaleLength = 0,	--0 means DO rescale like a laser beam. >0 means don't, like a muzzle flashes.
 						noFade = false,			--prevents the effect from fading to nothing over it's duration.
-						noShrink = false,		--prevents the effect from scaling down to nothing over it's duration.
+						noShrink = true,		--prevents the effect from scaling down to nothing over it's duration.
 						}, 
 
 		lasersPerShot = 1, --How many "weaponVisualConfig parts" to use at once. For having multiple laser/muzzle effects at the same time. (reminder that each WVC can define it's own laserDescription)
