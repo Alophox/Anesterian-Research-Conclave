@@ -24,7 +24,7 @@ return {
         _EmissionColor = { 0.4, 1, 1, 1 },
         _EnvironmentReflections = 0,
         _Metallic = 0,
-        _OcclusionStrength = 1,
+        _OcclusionStrength = 0,
         _Parallax = 0.02,
         _QueueOffset = 1,
         _ReceiveShadows = 0,
