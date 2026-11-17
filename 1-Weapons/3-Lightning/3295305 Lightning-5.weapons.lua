@@ -106,7 +106,7 @@ return {
 		laserDescription = { 		--"laser" description, but is actually a maleable visual effect.
 						duration = .2,			--seconds
 						opacity = .7,			--float, 0-1
-						diameter = .7,			--relative to turret scale
+						diameter = .45,			--relative to turret scale
 						offset = 0,			--relative to the barrel it gets fired from's facing.
 						rotateZ = true,		--Rotate the effect once randomly on the z axis when used.
 						rotateZUpdate = false,	--Continuously rotate the effect on the z axis when used.
