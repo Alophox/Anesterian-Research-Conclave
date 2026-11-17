@@ -59,3 +59,25 @@ function functions.rotateRecursive(posStruct,originStruct,count)
 		z=(sinVal*offsetPos.x + cosVal*offsetPos.z + originStruct.z)
 	}
 end
+
+-- takes and returns {x,y,z}
+-- not actually evenly distributed, but it's much faster for that
+function functions.randomPointOnOvaloid(dimensions)
+	local unitSpherePoint = functions.randomPointOnUnitSphere();
+	return {
+		unitSpherePoint[1]*dimensions[1],
+		unitSpherePoint[2]*dimensions[2],
+		unitSpherePoint[3]*dimensions[3]
+	}
+end
+
+function functions.randomPointOnUnitSphere()
+	local randZ = math.random() * 2 - 1       --[-1, 1]
+    local randTheta = math.random() * 2 * math.pi -- [0, 2*pi]
+    
+    local sqrtOneMinusZ2 = math.sqrt(1 - randZ * randZ)
+    local x = sqrtOneMinusZ2 * math.cos(randTheta)
+    local y = sqrtOneMinusZ2 * math.sin(randTheta)
+    local z = randZ
+	return {x,y,z}
+end

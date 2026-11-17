@@ -102,6 +102,7 @@ return {
 		
 		prefab.ship.ruby.core.P(scaleConst, false),
 		prefab.ship.ruby.core.P(scaleConst,true, 0, "aegis_teamColour"),
+		prefab.part.deathflash_shell(scaleConst, {.435,.261,1}, 1),
 	},
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).

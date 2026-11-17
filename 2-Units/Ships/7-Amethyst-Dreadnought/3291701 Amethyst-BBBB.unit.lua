@@ -106,6 +106,7 @@ return {
 		prefab.ship.amethyst.stern.B(scaleConst,true, 0, "aegis_teamColour"),
 		prefab.ship.amethyst.core.B(scaleConst,true, 0, "aegis_teamColour"),
 		prefab.ship.amethyst.bow.B(scaleConst,true, 0, "aegis_teamColour"),
+		prefab.part.deathflash_shell(scaleConst, {.293,.253,1}, 10),
 	},
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).
@@ -163,7 +164,7 @@ return {
 		deathUnitSpawnTypeID = -1,            	-- int: The unit spawned when this dies. -1 is nothing. Used for debris, and Glowfish Blobs.
 		invulnerable = false,                 	-- You can't hurt me, little man.
 		unkillable = false,                   	-- Even in death, I am eternal.
-		death_countdown = 1,                  	-- float: If the unit dies, but has not taken enough damage for InstaDeath, count down this long then blowup.
+		death_countdown = 10,                  	-- float: If the unit dies, but has not taken enough damage for InstaDeath, count down this long then blowup.
 		mass = 0,                             	-- float: Mass override, leave 0 for automatic (calculated from health, armour, and densityMult). Affects repulsion and impulse from damage.
 		densityMult = 1.0,                    	-- float: Multiplied agains the automatic mass calculation.
 		tonnage = 40,                         	-- float: Visual display value, does nothing.

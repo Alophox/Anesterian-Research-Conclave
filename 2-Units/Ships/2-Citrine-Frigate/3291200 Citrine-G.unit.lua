@@ -101,6 +101,7 @@ return {
 		
 		prefab.ship.citrine.core.G(scaleConst, false),
 		prefab.ship.citrine.core.G(scaleConst,true, 0, "aegis_teamColour"),
+		prefab.part.deathflash_shell(scaleConst, {.412,.294,1}, 1),
 
 	},
 

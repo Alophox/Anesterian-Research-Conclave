@@ -102,6 +102,7 @@ return {
 		
 		prefab.ship.ruby.core.B(scaleConst, false),
 		prefab.ship.ruby.core.B(scaleConst,true, 0, "aegis_teamColour"),
+		prefab.part.deathflash_shell(scaleConst, {.507,.25,1}, 1),
 
 	},
 
