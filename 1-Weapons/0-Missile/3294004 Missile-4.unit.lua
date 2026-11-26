@@ -144,11 +144,11 @@ return {
 			rotation = { 0, 0, 0 },
 			scale 	= { 1, 1, 1 },
 
-			particleEmitter = {
+			motionEmitter = {
 				particleType = "RIBBON",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
 				distancePerParticle = .2,       -- decimal
 				minSecondsPerParticle = 0,     -- decimal
-				ejectionVelocity = 2,             -- decimal
+				ejectionVelocity = -1,             -- decimal
 				ejectionVelocityAwayFromEmitter = false, -- bool
 				randomRadius = 0,                 -- decimal
 				randomScaleMinFraction = 1,       -- decimal
@@ -160,6 +160,15 @@ return {
 				scaleStart  = scaleConst/2,                  -- decimal
 				scaleEnd    = scaleConst,                  -- decimal
 				lifetime    = 1,                  -- decimal
+
+				-- edgeGradientSmoothness = .5, -- (fadeout toward trail edges; 0 = special value which keeps old appearance)
+				-- graininess = .5, -- (density of subparticles in trail)
+				-- grainSizeMult = .5, -- (subparticle scale multiplier)
+				-- grainIntensity = .5, -- (subparticle brightness)
+				-- startTaperLengthSeconds = .5, -- (trail expands to full width over this duration)
+				-- startTaperWidthFraction = .5, -- (trail starts at this fraction of full width)
+				-- startFadeInSeconds = .02, -- (trail fades in from 0 opacity over this duration)
+				-- noiseSpeed = -1, -- (RIBBON|SMOKE only; controls smoke animation speed; negative values invert smoke flow direction)
 			},
 			
 		},

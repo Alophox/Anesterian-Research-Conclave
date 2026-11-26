@@ -144,11 +144,11 @@ return {
 			rotation = { 0, 0, 0 },
 			scale 	= { 1, 1, 1 },
 
-			particleEmitter = {
+			motionEmitter = {
 				particleType = "RIBBON",        -- enum EMITTERTYPE -- PARTICLE, RIBBON, PULSE
 				distancePerParticle = .2,       -- decimal
 				minSecondsPerParticle = 0,     -- decimal
-				ejectionVelocity = 2,             -- decimal
+				ejectionVelocity = -1,             -- decimal
 				ejectionVelocityAwayFromEmitter = false, -- bool
 				randomRadius = 0,                 -- decimal
 				randomScaleMinFraction = 1,       -- decimal
