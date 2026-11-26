@@ -139,7 +139,7 @@ return {
           -- > 0 : reload a set amount at a time, cannot be interupted. Starts reloading the moment shotsPerCycleCurrent < shotsPerCycle
           -- < 0 : reload a set amount at a time, interupted when firing. The moment the weapon fires, will reset the secondsPerCycleCurrent to secondsPerCycle.
           reloadAmount = 0,             --Normal weapons use 0, aka full
-          secondsPerCycle = -1,        --Seconds per reload. Negative value prevent reloading (limited ammo weapons).
+          secondsPerCycle = weaponStats.hangar.baseCD,        --Seconds per reload. Negative value prevent reloading (limited ammo weapons).
           secondsPerCycleCurrent = 0,   --Starting delay. Good if you don't want your bomber launching bombs the moment it spawns.
 
           --Magazine Size
