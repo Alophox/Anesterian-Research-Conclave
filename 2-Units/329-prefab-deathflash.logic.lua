@@ -68,7 +68,7 @@ function prefab.part.deathflash(scaleConst, position, time)
 				impactDuration = deathflashSize,
 				disableImpactEffect = false,
 				disableImpactFlash = false,
-				-- impactColour = { 1, .5, 1, .1 },
+				impactColour = { .5, .1, .5, .1 },
 				impactFresnelStrength = .1,
 				disableImpactSizeVariance = false,
 				snapUnitDeathExplosionToImpactPosition = false,
