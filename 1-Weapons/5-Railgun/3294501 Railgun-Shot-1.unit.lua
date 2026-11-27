@@ -182,12 +182,17 @@ return {
 		lifetime = weaponStats.railgun.baseRange * weaponStats.overShootMult * weaponStats.rangeMult[weaponConst.size] / weaponStats.railgun.velocity,                         -- float: How long in seconds before this unit self-destructs. (drones, missiles, bullets)
 		explodeOnTimeout = false,             -- Was it a peaceful death?
 
-		explosionType = "VOLTJUMP",          	-- string enum: EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
-		explosionVolatility = 1.0,            	-- float: 1000 * unit scale * volatility = area damage when a unit of scale 2 or greater dies.
-		explosionSizeOveride = 0,             	-- float: Size of the visual explosion. A Tolly is 0.4 in size. 0 is automatic.
+		explosionType = "FLAK_HOLLOW",          	-- string enum: EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
+		explosionVolatility = 0,            	-- float: 1000 * unit scale * volatility = area damage when a unit of scale 2 or greater dies.
+		explosionSizeOveride = .1 * weaponStats.rangeMult[weaponConst.size],             	-- float: Size of the visual explosion. A Tolly is 0.4 in size. 0 is automatic.
 		flashSizeOverride = 0,                	-- float: Size of the white internal flash. 0 is automatic.
 		forceShockwave = false,               	-- bool: Forces a repulsive shockwave to be created, uses explosionSizeOveride or auto if not set.
 		preventShockwave = false,             	-- Prevents a repulsive shockwave from being created automatically on units scale 1+
+		deathExplosionVisual = {                            -- table
+            useColour = true,                  -- boolean; default: false
+            startColour = { 1, .25, 0, .2 },       -- color { r, g, b, a }; default: { 0, 0, 0, 0 }
+            fresnelStrength = .2,                -- float; default: 0
+        },
 		deathUnitSpawnDoNotRandomiseRotation = false, --Randomise the rotation of the unit spawned on death, if any.
 		deathUnitSpawnTypeID = -1,            	-- int: The unit spawned when this dies. -1 is nothing. Used for debris, and Glowfish Blobs.
 		invulnerable = false,                 	-- You can't hurt me, little man.
