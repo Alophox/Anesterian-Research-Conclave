@@ -44,7 +44,7 @@ return {
 	--Inorder for ATS to know which material goes to which material slot on a mesh, we must define the ordering.
 	--Assign materials here in the same order as they are defined on the object in your Blender file. 
 	--(Can only get materials from .materials.lua files in this mod folder.)
-	materials                   = { "329_MT_arc_hull","329_MT_arc_teamColour","329_MT_arc_engine","329_MT_arc_hull_dark","329_MT_arc_teamGlow" },
+	materials                   = { "329_MT_arc_hull","329_MT_arc_teamColour","329_MT_arc_teamGlow","329_MT_arc_hull_dark","329_MT_arc_teamGlow" },
 
 	-- Percieved dimensions of the unit. Multiplied against scale. Controls how big the unit is percieved by other units. 
 	-- Units cannot actually "see" anything, so we need to mathematically define how big the unit is for standoff behaviour among other things.
@@ -83,7 +83,7 @@ return {
 				weaponID = 3296005, --int: The weaponData id to be used for this weapon.
 				turnSpeed = 0, 	--float: Degrees per second.
 				turnMode = "Linear", --string enum: Linear / Acceleration
-				turnInstant = true, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
+				turnInstant = false, --bool: Ignore turn speed, snap to target. (Beam Spire, point defence)
 				mountAngles = { -- Weapon's firing angles in degrees. Won't aquire targets outside this field of view.
 					left = 180, --float:
 					right = 180,--float:
@@ -100,7 +100,7 @@ return {
 			scale 	= { 1, 1, 1 },
 			thruster = {
 				-- This part will respond to how the ship tries to move. It will scale along the Z axis (XYZ) starting from 0 (invisible), and return up to it's starting scale.
-				decayTime = 0,	--float: Seconds, how long it takes for the thruster to shrink to 0, or return to full scale.
+				decayTime = .2,	--float: Seconds, how long it takes for the thruster to shrink to 0, or return to full scale.
 				workWhenThrustWithinAngleDegrees = 360, --float: Thrusters are purely visual. For them to know when to visually "thrust" they check the direction that the parent ship is thrusting. How many degrees off can the thrust direction be before the thruster ignores it.
 			},
 
@@ -154,8 +154,8 @@ return {
 				randomScaleMinFraction = 1,       -- decimal
 				startDisabled = false,            -- bool
 				stateToggleTrigger = "None",      -- enum EMITTERSTATETRIGGER
-				colourStart = {0,1,1},            -- decimals
-				colourEnd   = {1,1,1},            -- decimals
+				colourStart = {0.890, 0.064, 0.012},            -- decimals
+				colourEnd   = {1, .5, 1},            -- decimals
 				opacity     = .2,                  -- decimal
 				scaleStart  = scaleConst/2,                  -- decimal
 				scaleEnd    = scaleConst,                  -- decimal
@@ -167,7 +167,7 @@ return {
 
 	-- Defines what the yard production ghost of this unit looks like. AKA, when a yard is building a unit, this is what it displays. Useful for construction effects like drones (Vaalkorei).
 	ghostMesh		= "329-Missiles/Missile-1-Zerda",   -- Used for build ghosts on spawners (yards).
-	ghostMaterials                   = { "329_MT_arc_hull","329_MT_arc_teamColour","329_MT_arc_teamGlow","329_MT_arc_hull_dark","329_MT_arc_teamGlow"   }, -- Used for the ghostMesh for build ghosts on spawners (yards).
+	ghostMaterials                   = { "329_MT_arc_hull","329_MT_arc_teamColour","329_MT_arc_engine","329_MT_arc_hull_dark","329_MT_arc_teamGlow"   }, -- Used for the ghostMesh for build ghosts on spawners (yards).
 	ghostParts 	= {
 		-- {
 		-- 	name      = "Turret",
@@ -181,7 +181,7 @@ return {
 
 	-- 🟦 HEALTH & ARMOR
 	health = {
-		unitClass = "LIGHT",       -- string enum: UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
+		unitClass = "MISSILE",       -- string enum: UNITCLASS: NONE, MISSILE, DRONE, LIGHT, MEDIUM, HEAVY, CAPITAL, TITAN
 		health = weaponStats.missile.baseHP * weaponStats.damageMult[weaponConst.size],              -- float: Health, also the unit's heat capacity.
 		health_regen_per_second = 0, -- float: Health regen per second. Duh.
 		max_regen_frac = 0,      -- float: The maximum health regen can regenerate back to. 0.2 == 20% of health. Health regen will stop when health hits this fraction of total health.
@@ -214,14 +214,26 @@ return {
 		lifetime = (((weaponStats.missile.baseRange * weaponStats.overShootMult * weaponStats.rangeMult[weaponConst.size]) / weaponStats.missile.velocity)^(0.5))*2.6,                         -- float: How long in seconds before this unit self-destructs. (drones, missiles, bullets)
 		explodeOnTimeout = false,             -- Was it a peaceful death?
 
-		explosionType = "FLASH",          	-- string enum: EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
+		explosionType = "EXPLOSION",          	-- string enum: EXPLOSION \ EXPLOSION_LOWPOLY \ SHOCKWAVE \ FLASH \ FLAK \ SPARKS (railgun bullet) \ FISHEXPLOSION \ WARP \ NONE \ VOLTJUMP
 		explosionVolatility = 0,            	-- float: 1000 * unit scale * volatility = area damage when a unit of scale 2 or greater dies.
-		explosionSizeOveride = 0.001, -- weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size],             	-- float: Size of the visual explosion. A Tolly is 0.4 in size. 0 is automatic.
-		flashSizeOverride = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size] / 20,                	-- float: Size of the white internal flash. 0 is automatic.
+		explosionSizeOveride = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size], -- weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size],             	-- float: Size of the visual explosion. A Tolly is 0.4 in size. 0 is automatic.
+		flashSizeOverride = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size] / 8,                	-- float: Size of the white internal flash. 0 is automatic.
 		forceShockwave = false,               	-- bool: Forces a repulsive shockwave to be created, uses explosionSizeOveride or auto if not set.
-		preventShockwave = false,             	-- Prevents a repulsive shockwave from being created automatically on units scale 1+
+		preventShockwave = true,             	-- Prevents a repulsive shockwave from being created automatically on units scale 1+
+		deathExplosionVisual = {                            -- table
+            type = "FLASH",                 -- enum<VISUALEFFECTTYPE>; default: "EXPLOSION"
+                                                -- values: EXPLOSION, POINTSHADOW, SHOCKWAVE, FLASH, FLAK, SPARKS, FISHEXPLOSION, WARP, NONE, VOLTJUMP, FLAK_HOLLOW
+            easingType = "NONE",                -- enum<EasingType>; default: "None"
+                                                -- values: None, Linear, InQuad, OutQuad, InOutQuad, InCubic, OutCubic, InOutCubic, InQuart, OutQuart, InOutQuart, InQuint, OutQuint, InOutQuint, InSine, OutSine, InOutSine, InExpo, OutExpo, InOutExpo, InCirc, OutCirc, InOutCirc, InBack, OutBack, InOutBack, InElastic, OutElastic, InOutElastic, InBounce, OutBounce, InOutBounce, SmoothStep, SmootherStep
+            diameter = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size]/8,                       -- float; default: 0
+            duration = .1,                       -- float; default: 0
+            useColour = true,                  -- boolean; default: false
+            startColour = { 1, .05, 1, .2 },       -- color { r, g, b, a }; default: { 0, 0, 0, 0 }
+            fresnelStrength = .2,                -- float; default: 0
+            endColour = { 1, 1, 1, .5 },         -- color { r, g, b, a }; default: { 0, 0, 0, 0 }
+        },
 		deathUnitSpawnDoNotRandomiseRotation = false, --Randomise the rotation of the unit spawned on death, if any.
-		deathUnitSpawnTypeID = 3294015,            	-- int: The unit spawned when this dies. -1 is nothing. Used for debris, and Glowfish Blobs.
+		-- deathUnitSpawnTypeID = 3294015,            	-- int: The unit spawned when this dies. -1 is nothing. Used for debris, and Glowfish Blobs.
 		invulnerable = false,                 	-- You can't hurt me, little man.
 		unkillable = false,                   	-- Even in death, I am eternal.
 		death_countdown = 0,                  	-- float: If the unit dies, but has not taken enough damage for InstaDeath, count down this long then blowup.
@@ -329,7 +341,7 @@ return {
 	},
 
 	-- 🟥 PAYLOAD (AOE, for missiles, flak, etc.)
-	hasPayload = false,
+	hasPayload = true,
 	payload = {
 		damage = {
 			isNondamaging = false,

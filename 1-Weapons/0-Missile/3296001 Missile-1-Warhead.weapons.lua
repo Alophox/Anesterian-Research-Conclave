@@ -22,7 +22,7 @@ return {
           -- Most weapons will create an AOE explosion if isAreaOfEffect is enabled.
           -- All weapons will try to use a childed weaponVisual when firing. If there are multiple weaponVisuals, each shot it will use one in child order. (as a laser beam, or as a muzzle flash depending on how you configure the weaponVisual)
 
-          weaponType = "WARHEAD_TRIGGER",
+          weaponType = "EXPLODER",
           
           -- LASER, raycast forward and damage the first thing you hit. Can do AOE/Damage. Uses weaponVisual as a beam.
           -- PUREHIT, directly damage the target. Can do AOE/Damage. Uses weaponVisual as a beam.
@@ -67,7 +67,7 @@ return {
 
           --Self Effects
           selfHealRatio = 0,       -- heal parent by this fraction of damage dealt. // I don't know why this is like this.
-          selfDamage = 0,          -- damage done to root unit per shot.
+          selfDamage = 999999999,          -- damage done to root unit per shot.
           selfHeat = 0,            -- heat done to root unit per shot.
           selfImpulseForce = 0,              -- Force applied opposite the firing direction.
           dontFireBelowHealthFraction = 0,   -- hold fire if parent health falls below this threshold
@@ -92,13 +92,15 @@ return {
           SFXIntensity = 0.5,      --float, controls how far the sound reaches, and how important it is.
 
           --Visuals
-          sizeInUnits = 1,         --Controls laser width, 
-          lifetime = 1,            --Controls how long the laser lasts,
-          impactSize = 1,          --For LASERS, TESLA, controls the size of the impact effect.
+          sizeInUnits = .1,         --Controls laser width, 
+          lifetime = .5,            --Controls how long the laser lasts,
+          impactSize = weaponStats.missile.baseAOE * weaponStats.rangeMult[weaponConst.size],          --For LASERS, TESLA, controls the size of the impact effect.
           impactDuration = 0.5,    --Seconds, controls how long the impact effect lasts.
           disableImpactEffect = false,  --As on the tin.
           disableImpactFlash = true,    --Prevents the bright white explosion core.
-          impactEffectType = "EXPLOSION"; --EXPLOSION, EXPLOSION_LOWPOLY, SHOCKWAVE, FLASH, FLAK, SPARKS, FISHEXPLOSION, WARP
+          impactColour = { 1, .05, 1, .2 },                      -- color { r, g, b, a }; default: { 0, 0, 0, 0 }
+          impactFresnelStrength = .6,
+          impactEffectType = "SHOCKWAVE"; --EXPLOSION, EXPLOSION_LOWPOLY, SHOCKWAVE, FLASH, FLAK, SPARKS, FISHEXPLOSION, WARP
 
           --Laser Visuals defaults.
           --If a laserDescription part is tagged as "use parent laserDescription" then it will use this.
